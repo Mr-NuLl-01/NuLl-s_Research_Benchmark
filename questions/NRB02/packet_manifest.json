@@ -1,0 +1,14 @@
+{
+  "task_id": "NRB02",
+  "seed": 0,
+  "benchmark_version": "0.1.0",
+  "case_hash": "804df9717ebe922dfc6ef08679ace40d8b1751d3b14bd914b09efc8520cd372e",
+  "files": {
+    "baseline.json": "23f9e2a676e7f5090fc45d385dad55653b7046237999d8a742cee339d78005f4",
+    "instruction.md": "7367cddbbfde49bdc778a231d86815a2b8e27961d3ef6259bbe1dae3f2d223d0",
+    "intervention_observations.json": "f76103b1e6790d92c8ca194b6e422b9d76c5e6d8f274cb395a053ed85ccc00a8",
+    "interventions.json": "4af64c7018899408695d9700ff774ecfebf67ae874fc29a9cad82a820ba85947",
+    "prediction.json": "6fc0b79864585dbe8e2ed4a700041fa9e5f3062755d9ce5b2be09ccdce7841f9"
+  },
+  "contains_answers": false
+}

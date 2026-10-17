@@ -1,0 +1,11 @@
+{
+  "task_id": "NRB08",
+  "seed": 0,
+  "benchmark_version": "0.1.0",
+  "case_hash": "2ea93b5918d437fed413c17d5c7feac654737e0f94dfd9d820e75551baffcba8",
+  "files": {
+    "affine.json": "45e83c537d78286d9166aec06d332478bd72ef7888b50baee878f93470b37170",
+    "instruction.md": "b8447c5e9f88a06ebd03fb47b51d198c9f0c2fd4640640f2417b6b1fddea0b0f"
+  },
+  "contains_answers": false
+}

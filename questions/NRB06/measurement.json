@@ -1,0 +1,7 @@
+{
+  "mean_voltage_mV": 1623.060309,
+  "repeatability_sigma_mean_mV": 1.561912,
+  "display_step_mV": 1.058606,
+  "band_low_Hz": 37.8753,
+  "band_high_Hz": 2106.0035
+}

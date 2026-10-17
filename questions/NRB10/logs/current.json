@@ -1,0 +1,11 @@
+{
+  "run_id": "synth-audit-00000000",
+  "source_revision": "1a00d133e34075bce136ae730bd098bbff265d9d",
+  "platform": "Linux",
+  "command": "python -m unittest discover -s tests -p test_calibration.py",
+  "exit_code": 0,
+  "tests_run": 7,
+  "scope": "calibration arithmetic only",
+  "render_check": "not_run",
+  "other_platform_checks": "not_run"
+}

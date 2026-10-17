@@ -1,0 +1,24 @@
+{
+  "benchmark_version": "0.1.0",
+  "task_count": 10,
+  "expected_tasks": 10,
+  "missing_tasks": [],
+  "complete_auto": true,
+  "auto_macro_percent": 0.0,
+  "reviewed_macro_total": null,
+  "review_coverage": 0.0,
+  "purpose": "Offline native runner delivery test with ten empty submissions; no AI model",
+  "model_calls": 0,
+  "attempt_statuses": [
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "completed"
+  ]
+}

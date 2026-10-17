@@ -1,0 +1,19 @@
+{
+  "task_id": "NRB10",
+  "seed": 0,
+  "benchmark_version": "0.1.0",
+  "case_hash": "2a8a6fcceed622c2ec00387e146fb10d5c0421cec446f6af96949956c5d3b5fd",
+  "files": {
+    "archive/README.old.md": "d62f5aa70a1ceabf627ca7991aed72826e390d08facd8cbbc382432a84a27dc6",
+    "bundle/manifest.json": "93f483f3775f9ff8b4d6471142a02f94c0250b53f52a8831727e4ffb42657e99",
+    "bundle/model.txt": "e440226a85e63b8d7930b05031f87b0c2895fc056ed161c26c5d78ce10e46355",
+    "bundle/plot.svg": "c31307211e0b7b417f2bf2d92b653f6a56c716bd55af83a84ef756d40ec60b8a",
+    "bundle/values.csv": "6684058b4f12cbb4108b65520c64feed177669b15c9cdc0ea5b5290a7880bccd",
+    "current_request.md": "b38af7a69eaed25bae4788c1c751b8c95011c35e5ccc1a4160840dad1dea1361",
+    "draft_excerpt.md": "4bc858919bd01c3d8e159064b0fc1092f136188d5c80d5e0bb65c87605ed8a41",
+    "instruction.md": "64124d0039ac87384c2532834273b72b4749e4b5bdda7d4515931016fad8df6f",
+    "logs/current.json": "cf48aa20b5e2b39e7e6086ca496801e96f8864a5054534cd6824fbff4aa56bfe",
+    "logs/legacy.json": "9bc0fb13a5be964f94c294e5dbc6e0926887fb3fd371535ea1427e89542d2ced"
+  },
+  "contains_answers": false
+}

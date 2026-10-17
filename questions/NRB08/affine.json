@@ -1,0 +1,41 @@
+{
+  "provenance": "Original synthetic affine system using classical linear algebra.",
+  "A": [
+    [
+      0.13,
+      0.01125,
+      0.0425
+    ],
+    [
+      1.44,
+      0.17,
+      0.56
+    ],
+    [
+      0.48,
+      -0.025,
+      0.12
+    ]
+  ],
+  "b": [
+    -2.4696875,
+    3.1875,
+    2.86625
+  ],
+  "weights": [
+    1,
+    16,
+    4
+  ],
+  "x_hat": [
+    -2.72,
+    -0.39,
+    1.87
+  ],
+  "domain": "R^3",
+  "map": "F(x)=A*x+b",
+  "norm": "||v||_(infinity,w)=max_i |v_i|/weights_i",
+  "residual_definition": "F(x_hat)-x_hat",
+  "number_convention": "Displayed finite decimals define the input matrix and vectors.",
+  "false_claim": "For every affine F with spectral radius rho(A)<1, in the ordinary infinity norm: ||x_hat-x_star|| <= ||F(x_hat)-x_hat||/(1-rho(A))."
+}

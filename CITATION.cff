@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the exact repository commit and evaluation configuration used."
+title: "NuLl's Research Benchmark: NRB-10"
+authors:
+  - name: "Mr-NuLl-01 and contributors"
+type: software
+version: 0.1.0
+date-released: 2026-10-17
+url: "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark"
+repository-code: "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark"
+license: MIT
+abstract: "Ten seeded synthetic scientific-workflow tasks with a shared deterministic scorer, independent quality review, and model and agent harness adapters. Public development benchmark; no model leaderboard claims."

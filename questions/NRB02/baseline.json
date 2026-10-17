@@ -1,0 +1,36 @@
+{
+  "provenance": "original deterministic synthetic observations, not measured data",
+  "power_W": 8.6,
+  "initial_temperature_difference_K": 0,
+  "observations": [
+    [
+      0.0,
+      0.02
+    ],
+    [
+      1.7,
+      0.40616796443105
+    ],
+    [
+      3.4,
+      0.74827477179635
+    ],
+    [
+      5.1,
+      1.05134773078226
+    ],
+    [
+      6.8,
+      1.31984054206501
+    ],
+    [
+      8.5,
+      1.55769874608202
+    ]
+  ],
+  "columns": [
+    "time_s",
+    "sensor_reading"
+  ],
+  "noise": "none; rounded to 14 decimal places"
+}

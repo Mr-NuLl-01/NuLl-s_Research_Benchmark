@@ -1,0 +1,64 @@
+{
+  "provenance": "Original synthetic calibration-design instance; no real experiment data.",
+  "model": "y=intercept+slope*x+epsilon; intercept and slope both unknown",
+  "x": [
+    -5,
+    -2,
+    0,
+    1,
+    3
+  ],
+  "costs": [
+    3,
+    1,
+    1,
+    1,
+    3
+  ],
+  "max_replicates": [
+    5,
+    4,
+    3,
+    6,
+    3
+  ],
+  "budget": 28,
+  "min_total": 8,
+  "max_total": 12,
+  "min_center": 2,
+  "min_each_side": 2,
+  "max_extreme_total": 6,
+  "variance_scenarios": [
+    [
+      3.75,
+      3.49,
+      2.66,
+      1.64,
+      1.02
+    ],
+    [
+      2.84,
+      1.06,
+      3.18,
+      1.08,
+      2.52
+    ],
+    [
+      0.83,
+      1.75,
+      2.84,
+      3.25,
+      6.39
+    ]
+  ],
+  "variance_units": "sensor_reading squared; these are variances, NOT standard deviations",
+  "assumptions": [
+    "All replicate errors independent with zero mean.",
+    "The listed variance is per single measurement at each x.",
+    "The design must be chosen before the scenario is revealed.",
+    "A separate calibration identifies the true scenario before analysis; use its correct WLS weights.",
+    "The model is linear over these levels; center quota is an imposed practical constraint."
+  ],
+  "objective": "minimize the maximum variance of the estimated slope across the three scenarios",
+  "tie_policy": "Any globally optimal allocation is accepted; the runner-up means the next strictly larger objective (difference >1e-12)."
+}

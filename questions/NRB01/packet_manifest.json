@@ -1,0 +1,13 @@
+{
+  "task_id": "NRB01",
+  "seed": 0,
+  "benchmark_version": "0.1.0",
+  "case_hash": "79ab4b01367f204074611ad066d57278a78956b52b164c48be5cbed6e33e1f38",
+  "files": {
+    "claims.json": "07aa3d7a14e81ebc066853cc01a49b051078670d37d98909d20a704363bb71cf",
+    "corrected_table.csv": "b35b20d1642ae89c9cacc773bcae66011d1891c633108789c4a624ba56c6133f",
+    "evidence_packet.md": "73625fbdff3e650817965902843cdd97795f7867207cc25e2014bb075b00d83f",
+    "instruction.md": "d20cd4bdf566f3dc42006a07909b31bf4962271aaf3416a24bfb5c61dacbc473"
+  },
+  "contains_answers": false
+}

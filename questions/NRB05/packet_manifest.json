@@ -1,0 +1,13 @@
+{
+  "task_id": "NRB05",
+  "seed": 0,
+  "benchmark_version": "0.1.0",
+  "case_hash": "184c7f0f1817fcf1fc0cbe4ad1b38615b07534f19f53cf8b7bf87d0ffe54f331",
+  "files": {
+    "API.md": "5eec6d7513c4e7dae4f203d6f87f86e2863efece2af855ce553a52dab9d3c4d7",
+    "input.json": "3d19d807cf3dc44aac7512a996f14acd30a7abb9b40dbcdc0a7ee81f0a6af25c",
+    "instruction.md": "d6bd5682cb87c6d3191607df4aaf9653109c96218d2ddf743540508f1621252e",
+    "starter.py": "c2138c9cde20d3842872094b10977802767b56b4e1454d06068fd57eec8e0676"
+  },
+  "contains_answers": false
+}

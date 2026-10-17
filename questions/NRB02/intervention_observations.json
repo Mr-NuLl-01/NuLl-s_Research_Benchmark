@@ -1,0 +1,37 @@
+{
+  "provenance": "original deterministic synthetic intervention observations",
+  "power_W": 8.6,
+  "added_capacity_J_per_K": 41.5,
+  "assumptions": "Only C changes to C+delta_C; G, gain and offset are unchanged.",
+  "initial_temperature_difference_K": 0,
+  "observations": [
+    [
+      0.0,
+      0.02
+    ],
+    [
+      1.7,
+      0.22346733928642
+    ],
+    [
+      3.4,
+      0.41470280950264
+    ],
+    [
+      5.1,
+      0.59444175530631
+    ],
+    [
+      6.8,
+      0.76337531455705
+    ],
+    [
+      8.5,
+      0.92215307590153
+    ]
+  ],
+  "columns": [
+    "time_s",
+    "sensor_reading"
+  ]
+}

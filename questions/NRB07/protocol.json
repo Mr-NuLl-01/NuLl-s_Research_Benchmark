@@ -1,0 +1,12 @@
+{
+  "label_order": [
+    "intact",
+    "surface_wear",
+    "joint_loose"
+  ],
+  "split_rule": "Within each true class, sort all distinct machine_id strings lexicographically. The first 7 machines are train, the next 2 validation, the last 3 test. Apply one split to every reading of a machine.",
+  "selection": "Choose the model with greatest row-level macro-F1 on the repaired validation split. Exact ties use lexicographically smaller model name. Freeze it before test evaluation.",
+  "metric_definition": "Confusion matrix rows=true labels, columns=predicted labels, in label_order. Precision/recall/F1 with a zero denominator are zero. Macro-F1 and balanced accuracy average over all three fixed labels, including labels absent from a resample.",
+  "bootstrap_definition": "Each bootstrap_plan.json row samples all nine test-machine clusters with replacement. Include ALL readings every time a machine is selected; preserve duplicate selections. Keep the selected classifier fixed. Report sample SD (ddof=1) of replicate macro-F1 as bootstrap standard error. Percentile endpoints use linear interpolation: h=(B-1)*p, between floor(h) and ceil(h).",
+  "synthetic": true
+}

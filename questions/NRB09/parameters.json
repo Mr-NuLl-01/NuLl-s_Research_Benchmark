@@ -1,0 +1,9 @@
+{
+  "A_m": 0.018408043580644316,
+  "gamma_per_s": 0.23796190552586483,
+  "omega_rad_per_s": 3.8768109403630167,
+  "model": "A*exp(-gamma*t)*cos(omega*t)",
+  "status": "fixed generating model; not fitted to observations",
+  "data_origin": "synthetic",
+  "uncertainty_band": "not supplied"
+}

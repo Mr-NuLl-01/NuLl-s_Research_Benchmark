@@ -1,0 +1,11 @@
+{
+  "task_id": "NRB03",
+  "seed": 0,
+  "benchmark_version": "0.1.0",
+  "case_hash": "b174a45d4728d10b2edda454d6d264e1c1d500045da001f9067df725512719cf",
+  "files": {
+    "design.json": "fe19e66c2b14baae81cac49f175d216bfb7b1159cbbec77204115766a4d011ce",
+    "instruction.md": "6bf6e775f73f5e4818debaea5751167553c8df95cfdb4582003787750079d31e"
+  },
+  "contains_answers": false
+}

@@ -1,0 +1,13 @@
+{
+  "configuration": "original C (added capacity removed)",
+  "power_W": 3.2,
+  "pulse_on_interval_s": [
+    0,
+    24.4
+  ],
+  "observation_times_s": [
+    24.4,
+    35.7
+  ],
+  "initial_temperature_difference_K": 0
+}

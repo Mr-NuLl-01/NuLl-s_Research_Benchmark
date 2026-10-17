@@ -1,0 +1,28 @@
+{
+  "isolation": {
+    "status": "REPLACE_WITH_ACTUAL_SETUP",
+    "candidate_image_digest": "REPLACE",
+    "evaluator_image_digest": "REPLACE",
+    "visible_files": "one exported candidate packet only",
+    "network": "REPLACE_WITH_ENFORCED_POLICY"
+  },
+  "tool_policy": {
+    "shell": "REPLACE",
+    "python": "REPLACE",
+    "renderer": "REPLACE",
+    "external_search": false,
+    "benchmark_source_access": false
+  },
+  "model_version": "REPLACE_WITH_EXACT_MODEL_SNAPSHOT",
+  "harness_version": "REPLACE_WITH_INSTALLED_VERSION_AND_CONFIG_HASH",
+  "skills": [],
+  "reasoning": "REPLACE_WITH_ACTUAL_SETTING_OR_NOT_EXPOSED",
+  "budget": {
+    "wall_time_seconds_per_task": 900,
+    "token_limit": "REPLACE_WITH_ACTUAL_LIMIT_OR_NOT_EXPOSED",
+    "tool_call_limit": "REPLACE_WITH_ACTUAL_LIMIT_OR_NOT_EXPOSED",
+    "attempts_per_case": 1
+  },
+  "repetition": 1,
+  "notes": "Template only. Fields are operator attestations; replacing text does not enforce isolation or limits."
+}
