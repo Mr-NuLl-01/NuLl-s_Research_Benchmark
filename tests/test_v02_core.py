@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import json
 import os
 from pathlib import Path
 import shutil
@@ -17,6 +18,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import nrb
 from nrb.analysis import paired_comparison
@@ -191,6 +193,26 @@ class EvaluatorIdentityContracts(unittest.TestCase):
         self.report = grade_submission(self.case, self.submission)
         self.review = fixture_review(self.case, self.submission, self.report)
 
+    def metadata_run_fixture(self, metadata):
+        # This explicitly synthetic commit fixture removes the independent
+        # missing-commit gate, so a metadata defect cannot hide behind it.
+        # No model run or real evaluator commit is claimed by this unit test.
+        with patch("nrb.provenance._git_commit", return_value="a"*40):
+            report = grade_submission(self.case, self.submission)
+            run = diagnostic_run(report)
+        run.update(track="agent-controlled", metadata=copy.deepcopy(metadata))
+        return run
+
+    def complete_metadata_fixture(self):
+        return {
+            "isolation": {"status": "synthetic operator-attestation fixture", "network": "disabled"},
+            "tool_policy": {"shell": False, "python": True, "external_search": False, "allowed_hosts": []},
+            "model_version": "synthetic-model-snapshot", "harness_version": "synthetic-harness-v1",
+            "skills": [], "reasoning": "not_exposed",
+            "budget": {"wall_time_seconds_per_task": 900, "token_limit": "not_exposed",
+                       "tool_call_limit": "not_exposed", "attempts_per_case": 1},
+        }
+
     def test_real_grader_change_changes_digest_with_identical_candidate_prompt(self):
         original_root = Path(nrb.__file__).resolve().parent
         with tempfile.TemporaryDirectory() as root:
@@ -315,6 +337,53 @@ class EvaluatorIdentityContracts(unittest.TestCase):
         controlled = dict(run, track="agent-controlled")
         with self.assertRaises(ValueError):
             paired_comparison([controlled], [controlled], mode="controlled", draws=100)
+
+    def test_example_nested_placeholders_are_reported_and_rejected_for_controlled_comparison(self):
+        metadata = json.loads((Path(nrb.__file__).resolve().parent.parent / "examples" / "run-config.json").read_text(encoding="utf-8"))
+        metadata.update(model_version="synthetic-model-snapshot", harness_version="synthetic-harness-v1",
+                        reasoning="not_exposed")
+        run = self.metadata_run_fixture(metadata)
+        diagnostic = paired_comparison([run], [run], mode="diagnostic", draws=100)
+        expected = {"isolation.status", "isolation.candidate_image_digest", "isolation.evaluator_image_digest",
+                    "isolation.network", "tool_policy.shell", "tool_policy.python", "tool_policy.renderer",
+                    "budget.token_limit", "budget.tool_call_limit"}
+        for entry in diagnostic["missing_metadata"]:
+            self.assertLessEqual(expected, set(entry["fields"]))
+        self.assertEqual(len(diagnostic["missing_metadata"]), 2)
+        with self.assertRaises(ValueError):
+            paired_comparison([run], [run], mode="controlled", draws=100)
+
+    def test_empty_required_containers_and_nested_blanks_are_missing(self):
+        mutations = (
+            ("isolation", {}, "isolation"),
+            ("tool_policy", {}, "tool_policy"),
+            ("budget", {}, "budget"),
+            ("budget", [], "budget"),
+            ("tool_policy", {"shell": "  "}, "tool_policy.shell"),
+            ("budget", {"token_limit": None}, "budget.token_limit"),
+            ("isolation", {"container": {}}, "isolation.container"),
+            ("skills", [{"name": "fixture", "configuration": {"version": "REPLACE"}}], "skills[0].configuration.version"),
+        )
+        for key, value, expected_path in mutations:
+            with self.subTest(path=expected_path):
+                metadata = self.complete_metadata_fixture()
+                metadata[key] = value
+                run = self.metadata_run_fixture(metadata)
+                diagnostic = paired_comparison([run], [run], mode="diagnostic", draws=100)
+                self.assertEqual({path for entry in diagnostic["missing_metadata"] for path in entry["fields"]}, {expected_path})
+                with self.assertRaises(ValueError):
+                    paired_comparison([run], [run], mode="controlled", draws=100)
+
+    def test_explicit_not_exposed_and_no_skills_are_valid_metadata_disclosures(self):
+        for whole_budget_not_exposed in (False, True):
+            with self.subTest(budget_not_exposed=whole_budget_not_exposed):
+                metadata = self.complete_metadata_fixture()
+                if whole_budget_not_exposed:
+                    metadata["budget"] = "not_exposed"
+                run = self.metadata_run_fixture(metadata)
+                result = paired_comparison([run], [run], mode="controlled", draws=100)
+                self.assertEqual(result["missing_metadata"], [])
+                self.assertEqual(result["macro_delta_b_minus_a"], 0)
 
 
 if __name__ == "__main__":

@@ -70,7 +70,10 @@ jobs:
       - name: Actual promptfoo CLI with ten expected empty failures
         run: python adapters/promptfoo/smoke.py --dest /tmp/nrb-promptfoo-smoke
       - name: Actual SVG rendering with seven negative controls
-        run: python scripts/check_rendering.py --out /tmp/nrb-render-controls
+        run: |
+          python -m unittest discover -s tests -p test_figure_visibility.py -v
+          python -m unittest discover -s tests -p test_review_evidence.py -v
+          python scripts/check_rendering.py --out /tmp/nrb-render-controls
       - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:

@@ -124,6 +124,30 @@ def svg_viewbox(root):
     return view
 
 
+def _remove_empty_marker_references(root):
+    """Omit no-op marker references only in the renderer's private SVG copy.
+
+    CairoSVG 2.8.2 crashes when it computes a bounding box for a marker with no
+    graphic descendants. Such a marker paints nothing; removing the reference
+    preserves that drawing semantics. Do not remove nonempty, degenerate or
+    malformed graphic contents: those require normal renderer error handling.
+    The candidate SVG and its raw hash remain untouched.
+    """
+    graphics = {"rect", "circle", "ellipse", "line", "polyline", "polygon", "path", "text", "tspan"}
+    empty_ids = {node.attrib["id"] for node in root.iter()
+                 if _tag(node) == "marker" and "id" in node.attrib
+                 and not any(_tag(child) in graphics for child in node.iter() if child is not node)}
+    removed = []
+    for node in root.iter():
+        for attribute in URL_ATTRIBUTES:
+            value = node.attrib.get(attribute, "")
+            match = re.fullmatch(r"url\(#([A-Za-z0-9_-]+)\)", value)
+            if match and match.group(1) in empty_ids:
+                del node.attrib[attribute]
+                removed.append(match.group(1))
+    return removed
+
+
 def _png_dimensions(data):
     if len(data) < 33 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
         raise ValueError("Renderer did not produce PNG bytes")
@@ -193,6 +217,7 @@ def render_svg(svg_text, output_png, *, case_hash, submission_hash, evaluator_id
     root.set("width", str(width))
     root.set("height", str(height))
     root.set("preserveAspectRatio", "xMidYMid meet")
+    empty_marker_references = _remove_empty_marker_references(root)
     normalized = ET.tostring(root, encoding="utf-8")
     with tempfile.TemporaryDirectory(prefix="nrb-svg-render-") as temporary:
         env = dict(os.environ)
@@ -235,7 +260,11 @@ def render_svg(svg_text, output_png, *, case_hash, submission_hash, evaluator_id
             "evaluator_identity": json.loads(json.dumps(evaluator_identity, allow_nan=False)),
             "raw_svg_sha256": hashlib.sha256(svg_text.encode("utf-8")).hexdigest(),
             "output_png_sha256": hashlib.sha256(png).hexdigest(), "renderer": renderer,
-            "display_width_mm": display_width_mm, "dpi": dpi, "width_px": width, "height_px": height}
+            "display_width_mm": display_width_mm, "dpi": dpi, "width_px": width, "height_px": height,
+            "normalization": {"version": "nrb-static-svg-normalize-v1",
+                              "empty_marker_reference_count": len(empty_marker_references),
+                              "empty_marker_ids": sorted(set(empty_marker_references)),
+                              "normalized_svg_sha256": hashlib.sha256(normalized).hexdigest()}}
 
 
 def validate_render_receipt(receipt, svg_text, *, case_hash, submission_hash, evaluator_identity, png_path):

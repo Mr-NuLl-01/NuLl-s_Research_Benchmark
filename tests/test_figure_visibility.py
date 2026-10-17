@@ -1,6 +1,9 @@
 """NRB09 physical visibility, safe rendering and material-binding controls."""
 import copy
 import hashlib
+import importlib.metadata
+import io
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -133,6 +136,52 @@ class RenderingEvidence(unittest.TestCase):
                 render_svg(s["artifacts"]["figure.svg"], Path(dest)/"no.png", case_hash=c["case_hash"],
                            submission_hash=fingerprint(s), evaluator_identity={"test": "identity"})
             self.assertFalse((Path(dest)/"no.png").exists())
+
+    def test_render_check_cli_exposes_per_control_errors_without_claiming_review(self):
+        from scripts.check_rendering import main
+        with tempfile.TemporaryDirectory() as dest, patch("sys.argv", ["check_rendering.py", "--out", str(Path(dest)/"controls")]), patch("scripts.check_rendering.render_svg", side_effect=RendererUnavailable("contract fixture: child renderer failed with exact diagnostic")), patch("sys.stdout", new_callable=io.StringIO) as output:
+            status = main()
+        summary = json.loads(output.getvalue())
+        self.assertEqual(status, 2)
+        self.assertEqual(summary["render_status"], "unavailable")
+        self.assertEqual(summary["review_status"], "unassessed")
+        self.assertEqual({row["label"] for row in summary["render_errors"]}, {"oracle", "minimalpoint", "zerostroke", "whitecover", "emptydiagram", "offcanvastext", "nestedopacity", "emptymarker"})
+        self.assertTrue(all("exact diagnostic" in row["error"] for row in summary["render_errors"]))
+
+    def test_actual_cairosvg_empty_marker_draws_same_pixels_as_no_arrowhead(self):
+        try:
+            importlib.metadata.version("CairoSVG")
+        except importlib.metadata.PackageNotFoundError:
+            self.skipTest("CairoSVG not installed: actual empty-marker runtime regression unavailable")
+        case = get_case("NRB09", 0)
+        empty = negative_controls(reference_submission(case))["emptymarker"]
+        original_svg = empty["artifacts"]["figure.svg"]
+        no_arrowhead = copy.deepcopy(empty)
+        root = ET.fromstring(original_svg)
+        arrow = next(node for node in root.iter() if node.attrib.get("id") == "displacement-arrow")
+        del arrow.attrib["marker-end"]
+        no_arrowhead["artifacts"]["figure.svg"] = ET.tostring(root, encoding="unicode")
+        identity = {"evaluation_schema_version": "test-empty-marker", "evaluator_digest": "test"}
+        with tempfile.TemporaryDirectory() as dest:
+            receipts = []
+            for label, submission in (("empty", empty), ("no-arrowhead", no_arrowhead)):
+                path = Path(dest)/(label+".png")
+                kwargs = dict(case_hash=case["case_hash"], submission_hash=fingerprint(submission), evaluator_identity=identity)
+                receipt = render_svg(submission["artifacts"]["figure.svg"], path, **kwargs)
+                self.assertEqual(receipt["renderer"]["name"], "CairoSVG")
+                self.assertTrue(receipt["rendered"])
+                self.assertEqual(validate_render_receipt(receipt, submission["artifacts"]["figure.svg"], png_path=path, **kwargs), [])
+                receipts.append(receipt)
+            self.assertEqual((Path(dest)/"empty.png").read_bytes(), (Path(dest)/"no-arrowhead.png").read_bytes())
+        self.assertEqual(empty["artifacts"]["figure.svg"], original_svg)
+        self.assertEqual(receipts[0]["raw_svg_sha256"], hashlib.sha256(original_svg.encode()).hexdigest())
+        self.assertNotEqual(receipts[0]["raw_svg_sha256"], receipts[1]["raw_svg_sha256"])
+        self.assertEqual(receipts[0]["normalization"]["empty_marker_reference_count"], 1)
+        self.assertEqual(receipts[0]["normalization"]["empty_marker_ids"], ["arrow"])
+        self.assertEqual(receipts[1]["normalization"]["empty_marker_reference_count"], 0)
+        checks = {row["id"]: row for row in t09.grade(case, empty)}
+        self.assertFalse(checks["schematic_direction"]["passed"])
+        self.assertEqual(sum(row["points"] for row in checks.values() if row["passed"]), 65)
 
     def test_actual_optional_renderer_and_receipt_binding(self):
         try:

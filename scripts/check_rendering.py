@@ -135,7 +135,9 @@ def main():
     args = parser.parse_args()
     result = run(args.out, args.seed, args.dpi)
     print(json.dumps({"render_status": result["render_status"], "review_status": result["review_status"],
-                      "controls": len(result["controls"]), "manifest": str(args.out / "manifest.json")}))
+                      "controls": len(result["controls"]), "manifest": str(args.out / "manifest.json"),
+                      "render_errors": [{"label": item["label"], "error": item["render_error"]}
+                                        for item in result["controls"] if "render_error" in item]}))
     return 2 if result["render_status"] == "unavailable" else 0
 
 

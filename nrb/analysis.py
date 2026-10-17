@@ -8,6 +8,30 @@ from .provenance import identity_from
 from .core import validate_final_report
 
 
+def _unfilled_metadata(value, path, *, required=False):
+    """List unresolved configuration paths; values remain operator attestations.
+
+    An empty skills list explicitly means no skills; nested empty lists can
+    likewise declare no allowed resources. Other empty top-level containers
+    cannot describe a required configuration. A nonempty outer object does not
+    resolve nested template placeholders. The literal not_exposed is an
+    explicit disclosure and is not a missing value.
+    """
+    if value is None or (isinstance(value, str) and (not value.strip() or "REPLACE" in value)):
+        return [path]
+    if isinstance(value, dict):
+        if not value:
+            return [path]
+        return [missing for key, item in value.items()
+                for missing in _unfilled_metadata(item, f"{path}.{key}")]
+    if isinstance(value, list):
+        if not value:
+            return [path] if required and path != "skills" else []
+        return [missing for index, item in enumerate(value)
+                for missing in _unfilled_metadata(item, f"{path}[{index}]")]
+    return []
+
+
 def paired_comparison(runs_a, runs_b, *, bootstrap_seed=7201, draws=4000,
                       score_kind="automatic", mode="diagnostic"):
     if score_kind not in {"automatic", "reviewed"} or mode not in {"diagnostic", "controlled"}:
@@ -33,8 +57,8 @@ def paired_comparison(runs_a, runs_b, *, bootstrap_seed=7201, draws=4000,
             meta = run.get("metadata", {})
             if not isinstance(meta, dict):
                 raise ValueError("Run metadata must be an object")
-            absent = [key for key in required_metadata if key not in meta or meta[key] is None
-                      or (isinstance(meta[key], str) and (not meta[key].strip() or "REPLACE" in meta[key]))]
+            absent = [missing for key in required_metadata
+                      for missing in ([key] if key not in meta else _unfilled_metadata(meta[key], key, required=True))]
             absent += [key for key in ("model_label", "harness_label") if not run.get(key)]
             if identity.get("evaluator_commit") is None:
                 absent.append("evaluator_commit")
