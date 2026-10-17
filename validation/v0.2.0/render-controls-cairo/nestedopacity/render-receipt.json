@@ -1,0 +1,30 @@
+{
+  "schema_version": "nrb-svg-render-v1",
+  "task_id": "NRB09",
+  "rendered": true,
+  "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+  "submission_hash": "e60a6d1ea9230000c1df92c120033986a7b39ce97218fa29eecef73a943533ca",
+  "evaluator_identity": {
+    "benchmark_version": "0.2.0",
+    "evaluation_schema_version": "2.0",
+    "evaluator_commit": null,
+    "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+    "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+  },
+  "raw_svg_sha256": "5bcc87a1b8cb89b371f86bef3601b062635608dca6213208d79733824da8bde1",
+  "output_png_sha256": "e715c3335c39d2af0a1a8b2e8560e5262fdca54dff83512c2f9a33f150a87a02",
+  "renderer": {
+    "name": "CairoSVG",
+    "version": "2.8.2"
+  },
+  "display_width_mm": 180.0,
+  "dpi": 144.0,
+  "width_px": 1020,
+  "height_px": 612,
+  "normalization": {
+    "version": "nrb-static-svg-normalize-v1",
+    "empty_marker_reference_count": 0,
+    "empty_marker_ids": [],
+    "normalized_svg_sha256": "20ff4182c7f48a9d81ce07fc43b42a5c3baa084b1c260e64196bfc00cd6edb4e"
+  }
+}

@@ -43,6 +43,20 @@ references are permitted. Input, element count, raster dimensions, child CPU,
 memory and wall time are bounded. Rendering normalizes the reviewer viewport to
 180 mm while preserving the root viewBox aspect ratio.
 
+A renderer-copy normalization handles an empty-marker incompatibility in
+CairoSVG 2.8.2. Its `draw_markers` implementation attempts to index a missing
+bounding box when a referenced marker contains no graphic contents. The first
+CairoSVG CI run rendered seven figures successfully and failed only on this
+empty-marker control. A marker with no graphic or text descendants paints
+nothing, so the private renderer copy removes references to that marker. It does
+not add an arrowhead, edit candidate SVG bytes, or turn the static schematic
+failure into a pass. Nonempty or degenerate graphic contents are not removed by
+this rule. The receipt records the number/IDs of removed references and the
+normalized SVG hash, alongside the unchanged original SVG hash. An actual
+CairoSVG regression verifies that the empty-marker PNG is byte-identical to the
+explicit no-arrowhead reference. A successful render remains distinct from
+rendered-legibility acceptance.
+
 The output path belongs to the trusted reviewer workspace, never to a candidate
 artifact. The rendering receipt binds the exact original SVG bytes, case hash,
 submission hash, evaluator identity, renderer name/version, raster dimensions,
@@ -85,20 +99,40 @@ an actual inspection or marks a reviewer template as passed.
 | nestedopacity | Reject observation geometry | Ancestor opacity 0.5 × child opacity 0.5 produces faint observations at 0.25. |
 | emptymarker | Reject schematic | The displacement line has no visible arrowhead. |
 
-## Scope of the implementation inspection
+## Scope of the implementation inspections
 
-On 2026-10-17, the eight control figures were actually rasterized locally by
-Inkscape 1.2.2 (`b0a8486541, 2022-12-01`) and all eight full PNGs were opened for
-LLM inspection. The 180 mm equivalent rendering at 144 DPI was 1020 × 612 pixels;
-the complete oracle was readable at this scale. The missing objects, missing
-labels, faint observations, absent arrowhead, and blank white-cover figure were
-visible as described above. The opacity limit excludes the intentionally faint
-control; this is engineering calibration against the normal oracle and extreme
-controls, not a universal perceptual threshold.
+On 2026-10-17, two distinct local material sets were rendered and inspected:
 
-This inspection covers these public classical synthetic oscillator assets only.
-It is not human review, physical monitor calibration, validation of arbitrary SVG
-semantics, or acceptance of future candidate figures. Every candidate still
-requires its own exact-material rendering and review. CI produces current bound
-materials and unassessed templates; an earlier inspection is not transferred to
-new SVG bytes or a revised evaluator.
+| Material | Renderer | Evaluator digest | Actual inspection |
+|---|---|---|---|
+| [Historical Inkscape controls](../validation/v0.2.0/render-controls/README.md) | Inkscape 1.2.2 (`b0a8486541, 2022-12-01`) | `1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba` | All eight complete PNGs individually opened; provisional oracle pass and seven control failures. |
+| [Post-fix CairoSVG controls](../validation/v0.2.0/render-controls-cairo/README.md) | CairoSVG 2.8.2 with cairocffi 1.7.1 | `8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b` | All eight freshly generated complete PNGs individually opened again; provisional oracle pass and seven control failures. |
+
+Both sets use a 180 mm equivalent target at 144 DPI, producing 1020 × 612
+rasters. The CairoSVG set contains a fresh independent review, not a transfer of
+the earlier Inkscape judgment. Its raw SVG, PNG, case, submission and evaluator
+bindings were verified; normalized SVG hashes were independently rebuilt and
+checked for all eight figures. Only `emptymarker` removes one no-op reference;
+the observed image contains the displacement shaft without an arrowhead, and
+its static schematic check still fails. All other normalization counts are zero.
+
+The complete CairoSVG oracle was readable at this scale. Missing points, the
+missing model curve, absent schematic objects, missing labels, faint observations,
+the absent arrowhead and the fully blank white-cover figure were visible as
+described above. Faint observations remain partly visible: their rejection uses
+the disclosed provisional effective-opacity threshold, not a universal human
+perceptual claim. The white-cover figure still earns 70 automatic points and
+fails actual rendered-legibility inspection.
+
+Each directory contains its unmodified generation manifest with unassessed
+reviewer templates, an independent `reviewer-results.json` recording the
+subsequent image inspection, and a final file-hash manifest. Original commit
+identity is recorded as null when unavailable rather than invented. The old
+Inkscape material was preserved unchanged after the renderer fix.
+
+These inspections cover the exact public classical synthetic oscillator assets
+only. They are LLM provisional reviews, not human review, physical monitor
+calibration, validation of arbitrary SVG semantics, or acceptance of future
+candidate figures. Every candidate still requires its own exact-material
+rendering and review. An identical raster under a different evaluator commit is
+still a distinct provenance record and does not inherit an earlier pass.

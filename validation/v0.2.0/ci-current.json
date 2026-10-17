@@ -1,0 +1,1150 @@
+{
+  "schema_version": "nrb-ci-validation-v1",
+  "kind": "repository_implementation_validation",
+  "not_model_performance": true,
+  "observed_at_utc": "2026-10-17T13:32:58Z",
+  "repository": "Mr-NuLl-01/NuLl-s_Research_Benchmark",
+  "tested_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+  "workflow_run": {
+    "id": 39036404174,
+    "url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39036404174",
+    "status": "completed",
+    "conclusion": "success",
+    "started_at": "2026-10-17T13:24:09Z",
+    "updated_at": "2026-10-17T13:30:52Z"
+  },
+  "jobs": [
+    {
+      "id": 117407033750,
+      "name": "Core Python 3.11",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install evaluator",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Core contracts and scientific negative controls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Thirty seeded oracle and empty controls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Frozen public packets match generators",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v7.0.2",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 117407033957,
+      "name": "Inspect, promptfoo, Harbor schema",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v7.1.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install pinned optional runtimes",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Actual Inspect mock eval and Harbor schema",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Actual promptfoo CLI with ten expected empty failures",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Actual SVG rendering with seven negative controls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v7.0.2",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v7.1.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 117407034014,
+      "name": "Docker and separate Harbor verifier",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install evaluator and pinned Harbor",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Actual candidate-code container checks",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Actual candidate image isolation and offline network probe",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Actual Harbor oracle, artifact transfer, and separate verifier",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v7.0.2",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 117407034025,
+      "name": "Core Python 3.12",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install evaluator",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Core contracts and scientific negative controls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Thirty seeded oracle and empty controls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Frozen public packets match generators",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v7.0.2",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v7.0.0",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v7.0.1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12102800443,
+      "name": "core-python-3.11",
+      "size_in_bytes": 9503,
+      "digest": "sha256:2dc34c412ee05437bb6bf15966b134a3e4a73f403713e022e522dadf10be3cfa",
+      "url": "https://api.github.com/repos/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/artifacts/12102800443",
+      "expires_at": "2027-01-15T13:24:10Z",
+      "tested_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3"
+    },
+    {
+      "id": 12102695844,
+      "name": "core-python-3.12",
+      "size_in_bytes": 9502,
+      "digest": "sha256:0cb829a7358ab285c4aad2436e293c7e66e54355031b1b8628d47e3568e15c85",
+      "url": "https://api.github.com/repos/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/artifacts/12102695844",
+      "expires_at": "2027-01-15T13:24:10Z",
+      "tested_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3"
+    },
+    {
+      "id": 12102044786,
+      "name": "docker-harbor-runtime",
+      "size_in_bytes": 1821748,
+      "digest": "sha256:8409e1c1f9ee32fd6ea5ff5bba68f96f68e91275816e0646e00ef33bfdcacb78",
+      "url": "https://api.github.com/repos/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/artifacts/12102044786",
+      "expires_at": "2027-01-15T13:24:10Z",
+      "tested_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3"
+    },
+    {
+      "id": 12101803583,
+      "name": "framework-runtime",
+      "size_in_bytes": 963233,
+      "digest": "sha256:9bd3838413581b9ded0749e0155541c167e3e9db7c9914365f9345f2184f7f28",
+      "url": "https://api.github.com/repos/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/artifacts/12101803583",
+      "expires_at": "2027-01-15T13:24:10Z",
+      "tested_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3"
+    }
+  ],
+  "evaluator_identity": {
+    "benchmark_version": "0.2.0",
+    "evaluation_schema_version": "2.0",
+    "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+    "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+    "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+  },
+  "candidate_isolation": {
+    "kind": "offline_candidate_image_probe",
+    "scope": "Offline Docker candidate-image isolation only; no live API allowlist validation.",
+    "api_provider_calls": 0,
+    "evaluator_identity": {
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+      "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+    },
+    "runtime_status": "executed",
+    "passed": true,
+    "actual_image_id": "sha256:1dd5aa93422521e878bc858513d83c9adf8aff9ab659d74fc93d1d05f01887bd",
+    "actual_repo_digests": [],
+    "container_boundary": {
+      "network_mode": "none",
+      "privileged": false,
+      "host_bind_mounts": null,
+      "host_mounts": []
+    },
+    "runtime_probe": {
+      "checks": {
+        "forbidden_paths_absent": true,
+        "nrb_not_importable": true,
+        "only_candidate_files": true,
+        "candidate_files_unchanged": true,
+        "blank_submission": true,
+        "loopback_only": true,
+        "external_socket_blocked": true
+      },
+      "passed": true,
+      "present_forbidden_paths": [],
+      "candidate_files": [
+        "claims.json",
+        "corrected_table.csv",
+        "evidence_packet.md",
+        "instruction.md",
+        "packet_manifest.json",
+        "submission.json"
+      ],
+      "network_interfaces": [
+        "lo"
+      ]
+    },
+    "static_build_context": {
+      "passed": true,
+      "only_packet_copied": true,
+      "oracle_excluded": true
+    }
+  },
+  "python_image": {
+    "requested": "python:3.12-slim",
+    "actual_id": "sha256:df18428df8a0f9189c84e7424d214b4c50092af1f9dca5842a00c41c39bda316",
+    "repo_digests": [
+      "python@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1"
+    ]
+  },
+  "candidate_code_docker": {
+    "passed": true,
+    "tasks": [
+      {
+        "task_id": "NRB04",
+        "oracle": {
+          "auto_points": 70.0,
+          "coverage": 1.0,
+          "completion_status": "pending_review",
+          "critical_failures": [],
+          "pending_items": [
+            "essential:conservation_explanation",
+            "quality_review"
+          ]
+        },
+        "buggy_starter": {
+          "auto_points": 20.0,
+          "coverage": 1.0,
+          "completion_status": "failed",
+          "critical_failures": [
+            "insulated_nonuniform",
+            "flux_source_capacity"
+          ],
+          "pending_items": [
+            "essential:conservation_explanation",
+            "quality_review"
+          ]
+        }
+      },
+      {
+        "task_id": "NRB05",
+        "oracle": {
+          "auto_points": 70.0,
+          "coverage": 1.0,
+          "completion_status": "pending_review",
+          "critical_failures": [],
+          "pending_items": [
+            "essential:lifecycle_explanation",
+            "quality_review"
+          ]
+        },
+        "buggy_starter": {
+          "auto_points": 20.0,
+          "coverage": 1.0,
+          "completion_status": "failed",
+          "critical_failures": [
+            "vector_rejection_and_rollback",
+            "finite_minimum_step_failure",
+            "failed_clipped_endpoint_is_not_committed"
+          ],
+          "pending_items": [
+            "essential:lifecycle_explanation",
+            "quality_review"
+          ]
+        }
+      },
+      {
+        "task_id": "NRB03",
+        "oracle": {
+          "auto_points": 70.0,
+          "coverage": 1.0,
+          "completion_status": "pending_review",
+          "critical_failures": [],
+          "pending_items": [
+            "essential:search_reproduced",
+            "essential:optimality_explanation",
+            "quality_review"
+          ]
+        },
+        "broken_search": {
+          "auto_points": 70.0,
+          "coverage": 1.0,
+          "completion_status": "failed",
+          "critical_failures": [
+            "execution:solve_reproduction"
+          ],
+          "pending_items": [
+            "essential:search_reproduced",
+            "essential:optimality_explanation",
+            "quality_review"
+          ]
+        },
+        "raw_score_preserved_but_completion_failed": true
+      }
+    ]
+  },
+  "harbor": {
+    "kind": "harbor_oracle_runtime_smoke",
+    "not_model_performance": true,
+    "trial_count": 10,
+    "expected_tasks": [
+      "NRB01",
+      "NRB02",
+      "NRB03",
+      "NRB04",
+      "NRB05",
+      "NRB06",
+      "NRB07",
+      "NRB08",
+      "NRB09",
+      "NRB10"
+    ],
+    "missing_tasks": [],
+    "entries": [
+      {
+        "trial": "nrb01__dLj6XRX",
+        "passed": true,
+        "exception_info": null,
+        "task_id": "NRB01",
+        "reward": 1.0,
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "duplicate": false
+      },
+      {
+        "trial": "nrb02__m5M9KbL",
+        "passed": true,
+        "exception_info": null,
+        "task_id": "NRB02",
+        "reward": 1.0,
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "duplicate": false
+      },
+      {
+        "trial": "nrb03__mrCLwCc",
+        "passed": true,
+        "exception_info": null,
+        "task_id": "NRB03",
+        "reward": 1.0,
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "duplicate": false
+      },
+      {
+        "trial": "nrb04__jFcNqJJ",
+        "passed": true,
+        "exception_info": null,
+        "task_id": "NRB04",
+        "reward": 1.0,
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "duplicate": false
+      },
+      {
+        "trial": "nrb05__m6cB2ER",
+        "passed": true,
+        "exception_info": null,
+        "task_id": "NRB05",
+        "reward": 1.0,
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "duplicate": false
+      },
+      {
+        "trial": "nrb06__iw9Ntt4",
+        "passed": true,
+        "exception_info": null,
+        "task_id": "NRB06",
+        "reward": 1.0,
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "duplicate": false
+      },
+      {
+        "trial": "nrb07__Y4hE2HV",
+        "passed": true,
+        "exception_info": null,
+        "task_id": "NRB07",
+        "reward": 1.0,
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "duplicate": false
+      },
+      {
+        "trial": "nrb08__6feQxye",
+        "passed": true,
+        "exception_info": null,
+        "task_id": "NRB08",
+        "reward": 1.0,
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "duplicate": false
+      },
+      {
+        "trial": "nrb09__x22dtxM",
+        "passed": true,
+        "exception_info": null,
+        "task_id": "NRB09",
+        "reward": 1.0,
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "duplicate": false
+      },
+      {
+        "trial": "nrb10__y8R4djy",
+        "passed": true,
+        "exception_info": null,
+        "task_id": "NRB10",
+        "reward": 1.0,
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "duplicate": false
+      }
+    ],
+    "passed": true,
+    "harbor_version": "0.24.0",
+    "schema_version": "1.4",
+    "seed": 0,
+    "cli_exit_code": 0,
+    "timed_out": false,
+    "api_provider_calls": 0,
+    "verifier_reports": [
+      {
+        "task_id": "NRB01",
+        "seed": 0,
+        "case_hash": "a2603a05e4b362bd9b2f5d2dbabaa3a514e7c4d2f2104eb655beaf84ef5c5afa",
+        "submission_hash": "d10b48428aec6d0ff1a4c6eed36fab615944554be041621d6484344cfa625989",
+        "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "completion_status": "pending_review",
+        "quality_qualified": null,
+        "critical_failures": [],
+        "pending_items": [
+          "essential:evidence_scope",
+          "quality_review"
+        ],
+        "automatic_report_hash": "e012d78a485b616128f51ae6b36ededefb82698cf0c728f24432f7362135ef47",
+        "execution_boundary": "separate_network_disabled_container_with_unprivileged_candidate_child",
+        "input_integrity": {
+          "unchanged": true,
+          "changed_files": [],
+          "missing_files": [],
+          "symlink_files": []
+        },
+        "comparison_eligible": true,
+        "protocol_violation": null,
+        "original_artifact_path": "tmp/nrb-harbor-smoke/jobs/oracle/nrb01__dLj6XRX/verifier/report.json"
+      },
+      {
+        "task_id": "NRB02",
+        "seed": 0,
+        "case_hash": "ebe10a288f48ef84b5c9c3a93d1a6e3e8ff45b90365c783baf7f50ffcf88a43f",
+        "submission_hash": "84eea89522cc5e0cf3a8ee3ac4f2886e5c3f8545c0f6354591d4a2f35f274e1b",
+        "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "completion_status": "pending_review",
+        "quality_qualified": null,
+        "critical_failures": [],
+        "pending_items": [
+          "essential:equivalence_proof",
+          "essential:intervention_conditions",
+          "quality_review"
+        ],
+        "automatic_report_hash": "61284c157c5705bf2884c61598a619d568250ddb0c88df0386738561b089162e",
+        "execution_boundary": "separate_network_disabled_container_with_unprivileged_candidate_child",
+        "input_integrity": {
+          "unchanged": true,
+          "changed_files": [],
+          "missing_files": [],
+          "symlink_files": []
+        },
+        "comparison_eligible": true,
+        "protocol_violation": null,
+        "original_artifact_path": "tmp/nrb-harbor-smoke/jobs/oracle/nrb02__m5M9KbL/verifier/report.json"
+      },
+      {
+        "task_id": "NRB03",
+        "seed": 0,
+        "case_hash": "323f5f039e5d306bea9480071108b303e46003b5e24f0b206dc7acebf33758ba",
+        "submission_hash": "4fe7932c8621c329b3f1ec0bc765e904f496e0ea0446e9250c3e54648f4589e5",
+        "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "completion_status": "pending_review",
+        "quality_qualified": null,
+        "critical_failures": [],
+        "pending_items": [
+          "essential:search_reproduced",
+          "essential:optimality_explanation",
+          "quality_review"
+        ],
+        "automatic_report_hash": "8144ab5fe53fa0e8ffc024dbcd4c2a2c28219e50497a6e2334b0d2320f73e1a3",
+        "execution_boundary": "separate_network_disabled_container_with_unprivileged_candidate_child",
+        "input_integrity": {
+          "unchanged": true,
+          "changed_files": [],
+          "missing_files": [],
+          "symlink_files": []
+        },
+        "comparison_eligible": true,
+        "protocol_violation": null,
+        "original_artifact_path": "tmp/nrb-harbor-smoke/jobs/oracle/nrb03__mrCLwCc/verifier/report.json"
+      },
+      {
+        "task_id": "NRB04",
+        "seed": 0,
+        "case_hash": "063005adc3aa54382ad0ace154bb6a191678151cac1487a02963948ad7310853",
+        "submission_hash": "5ac66375c3c871bbf71e7c72de21420b71fe4cfe44f2a45bebfdbc4516d2c4eb",
+        "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "completion_status": "pending_review",
+        "quality_qualified": null,
+        "critical_failures": [],
+        "pending_items": [
+          "essential:conservation_explanation",
+          "quality_review"
+        ],
+        "automatic_report_hash": "c9786057b918556f20a0ac27e084cf75a3a6c94fba9cedffa8a6a86ef9acfa88",
+        "execution_boundary": "separate_network_disabled_container_with_unprivileged_candidate_child",
+        "input_integrity": {
+          "unchanged": true,
+          "changed_files": [],
+          "missing_files": [],
+          "symlink_files": []
+        },
+        "comparison_eligible": true,
+        "protocol_violation": null,
+        "original_artifact_path": "tmp/nrb-harbor-smoke/jobs/oracle/nrb04__jFcNqJJ/verifier/report.json"
+      },
+      {
+        "task_id": "NRB05",
+        "seed": 0,
+        "case_hash": "ef2759885f62e28b30ff7b5aa25b36099154178a79b29b3db3bbb3e2c653b40b",
+        "submission_hash": "0067eb2897f7623ae0639174495b8918c64c3ff329d1dbe3f49f25792ebe499b",
+        "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "completion_status": "pending_review",
+        "quality_qualified": null,
+        "critical_failures": [],
+        "pending_items": [
+          "essential:lifecycle_explanation",
+          "quality_review"
+        ],
+        "automatic_report_hash": "deaf8f4b94c6cda7497dbd145ecfc79a6ad39802320c90efc85e2670e061b1dd",
+        "execution_boundary": "separate_network_disabled_container_with_unprivileged_candidate_child",
+        "input_integrity": {
+          "unchanged": true,
+          "changed_files": [],
+          "missing_files": [],
+          "symlink_files": []
+        },
+        "comparison_eligible": true,
+        "protocol_violation": null,
+        "original_artifact_path": "tmp/nrb-harbor-smoke/jobs/oracle/nrb05__m6cB2ER/verifier/report.json"
+      },
+      {
+        "task_id": "NRB06",
+        "seed": 0,
+        "case_hash": "f3f79e408f623255a2c62ba48f1eb5b87f0a8670ce381f42be8b34f02641ce6a",
+        "submission_hash": "c3bb0be79291d180aaf4e44075fcddf726ae657f1e101caec51013354a3cb42d",
+        "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "completion_status": "pending_review",
+        "quality_qualified": null,
+        "critical_failures": [],
+        "pending_items": [
+          "essential:uncertainty_interpretation",
+          "quality_review"
+        ],
+        "automatic_report_hash": "1e94ebcff013617c70ba61a5c43b764b3ab48482917129d9e865b032b9c8ae0f",
+        "execution_boundary": "separate_network_disabled_container_with_unprivileged_candidate_child",
+        "input_integrity": {
+          "unchanged": true,
+          "changed_files": [],
+          "missing_files": [],
+          "symlink_files": []
+        },
+        "comparison_eligible": true,
+        "protocol_violation": null,
+        "original_artifact_path": "tmp/nrb-harbor-smoke/jobs/oracle/nrb06__iw9Ntt4/verifier/report.json"
+      },
+      {
+        "task_id": "NRB07",
+        "seed": 0,
+        "case_hash": "41aeb4a277bf98862a595768200c2fc8326881dc5e05c432ad567e514940533d",
+        "submission_hash": "bdbc4162676942aeb666cd8ac221d21b3cefe6b0ad97795f721fb74b5b4035a0",
+        "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "completion_status": "pending_review",
+        "quality_qualified": null,
+        "critical_failures": [],
+        "pending_items": [
+          "essential:evaluation_scope",
+          "quality_review"
+        ],
+        "automatic_report_hash": "8efa584a6b3d0e55f18f34eca39a363b18eaf2c94efd070cf0d0542ab75f9c3d",
+        "execution_boundary": "separate_network_disabled_container_with_unprivileged_candidate_child",
+        "input_integrity": {
+          "unchanged": true,
+          "changed_files": [],
+          "missing_files": [],
+          "symlink_files": []
+        },
+        "comparison_eligible": true,
+        "protocol_violation": null,
+        "original_artifact_path": "tmp/nrb-harbor-smoke/jobs/oracle/nrb07__Y4hE2HV/verifier/report.json"
+      },
+      {
+        "task_id": "NRB08",
+        "seed": 0,
+        "case_hash": "54527a26d112611e8e9c80ac8fb51592add5042a993831c05d33a802384e0779",
+        "submission_hash": "aad71c5e6c18e372992379d079bb8eb0a8137c40bfe3ba49908533989ede4615",
+        "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "completion_status": "pending_review",
+        "quality_qualified": null,
+        "critical_failures": [],
+        "pending_items": [
+          "essential:existence_uniqueness",
+          "essential:residual_bound_proof",
+          "essential:counterexample_explanation",
+          "quality_review"
+        ],
+        "automatic_report_hash": "17d8605081eb243fbb816dd7b0115559aae7dbca45eaa8fdf5422d55c9ca3f7a",
+        "execution_boundary": "separate_network_disabled_container_with_unprivileged_candidate_child",
+        "input_integrity": {
+          "unchanged": true,
+          "changed_files": [],
+          "missing_files": [],
+          "symlink_files": []
+        },
+        "comparison_eligible": true,
+        "protocol_violation": null,
+        "original_artifact_path": "tmp/nrb-harbor-smoke/jobs/oracle/nrb08__6feQxye/verifier/report.json"
+      },
+      {
+        "task_id": "NRB09",
+        "seed": 0,
+        "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+        "submission_hash": "295c3e9f0f11c866db1128dff67e65e9f788fe2937723e4849fc02a5c14902c0",
+        "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "completion_status": "pending_review",
+        "quality_qualified": null,
+        "critical_failures": [],
+        "pending_items": [
+          "essential:render_legibility",
+          "essential:schematic_correctness",
+          "essential:caption_fidelity",
+          "quality_review"
+        ],
+        "automatic_report_hash": "5d9751c866d65d274eac9ffc0f082578acbf9a1836e2f5e7b678f5aac4c99a82",
+        "execution_boundary": "separate_network_disabled_container_with_unprivileged_candidate_child",
+        "input_integrity": {
+          "unchanged": true,
+          "changed_files": [],
+          "missing_files": [],
+          "symlink_files": []
+        },
+        "comparison_eligible": true,
+        "protocol_violation": null,
+        "original_artifact_path": "tmp/nrb-harbor-smoke/jobs/oracle/nrb09__x22dtxM/verifier/report.json"
+      },
+      {
+        "task_id": "NRB10",
+        "seed": 0,
+        "case_hash": "90ec4b7fa5c11c4015cd60b0c52cba8d02dd167fdf12b3ee8148af75e8dc9316",
+        "submission_hash": "5668bce3fe786e616524627fef62c48e72f4187f547a6b799e773aa185fb66b3",
+        "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "auto_points": 70.0,
+        "coverage": 1.0,
+        "completion_status": "pending_review",
+        "quality_qualified": null,
+        "critical_failures": [],
+        "pending_items": [
+          "essential:english_fidelity",
+          "essential:handoff_actionable",
+          "essential:execution_honesty",
+          "quality_review"
+        ],
+        "automatic_report_hash": "9fb10822a38d19d7eb573375ae7dfe1c454861c0fcdc6f94de0bdef9495badea",
+        "execution_boundary": "separate_network_disabled_container_with_unprivileged_candidate_child",
+        "input_integrity": {
+          "unchanged": true,
+          "changed_files": [],
+          "missing_files": [],
+          "symlink_files": []
+        },
+        "comparison_eligible": true,
+        "protocol_violation": null,
+        "original_artifact_path": "tmp/nrb-harbor-smoke/jobs/oracle/nrb10__y8R4djy/verifier/report.json"
+      }
+    ]
+  },
+  "promptfoo": {
+    "framework": "promptfoo",
+    "version_output": "0.124.1",
+    "kind": "empty_submission_runtime_smoke",
+    "not_model_performance": true,
+    "cli_exit_code": 100,
+    "stats": {
+      "successes": 0,
+      "failures": 10,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 0,
+        "total": 0,
+        "numRequests": 10,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "durationMs": 1108,
+      "evaluationDurationMs": 1108
+    },
+    "task_count": 10,
+    "passed": true,
+    "score_kind": "automatic_only",
+    "api_provider_calls": 0
+  },
+  "render_controls": {
+    "schema_version": "nrb-render-controls-v1",
+    "evaluator_identity": {
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": "f125975aa914e4c9dcf9c06402c358bed21232e3",
+      "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+    },
+    "display_width_mm": 180.0,
+    "scope": "Public classical synthetic oscillator only. Rasterization is not visual acceptance.",
+    "render_status": "rendered",
+    "review_status": "unassessed",
+    "controls": [
+      {
+        "label": "oracle",
+        "static_points": 70.0,
+        "static_failed_checks": [],
+        "render_status": "rendered",
+        "reviewer_result": {
+          "id": "rendered_legibility",
+          "outcome": "unassessed",
+          "inspected_whole_figure": false,
+          "inspected_at_180mm": false,
+          "evidence": "",
+          "rationale": ""
+        }
+      },
+      {
+        "label": "minimalpoint",
+        "static_points": 45.0,
+        "static_failed_checks": [
+          "observation_geometry",
+          "residual_geometry"
+        ],
+        "render_status": "rendered",
+        "reviewer_result": {
+          "id": "rendered_legibility",
+          "outcome": "unassessed",
+          "inspected_whole_figure": false,
+          "inspected_at_180mm": false,
+          "evidence": "",
+          "rationale": ""
+        }
+      },
+      {
+        "label": "zerostroke",
+        "static_points": 60.0,
+        "static_failed_checks": [
+          "model_geometry"
+        ],
+        "render_status": "rendered",
+        "reviewer_result": {
+          "id": "rendered_legibility",
+          "outcome": "unassessed",
+          "inspected_whole_figure": false,
+          "inspected_at_180mm": false,
+          "evidence": "",
+          "rationale": ""
+        }
+      },
+      {
+        "label": "emptydiagram",
+        "static_points": 65.0,
+        "static_failed_checks": [
+          "schematic_direction"
+        ],
+        "render_status": "rendered",
+        "reviewer_result": {
+          "id": "rendered_legibility",
+          "outcome": "unassessed",
+          "inspected_whole_figure": false,
+          "inspected_at_180mm": false,
+          "evidence": "",
+          "rationale": ""
+        }
+      },
+      {
+        "label": "offcanvastext",
+        "static_points": 65.0,
+        "static_failed_checks": [
+          "labels_and_layout"
+        ],
+        "render_status": "rendered",
+        "reviewer_result": {
+          "id": "rendered_legibility",
+          "outcome": "unassessed",
+          "inspected_whole_figure": false,
+          "inspected_at_180mm": false,
+          "evidence": "",
+          "rationale": ""
+        }
+      },
+      {
+        "label": "nestedopacity",
+        "static_points": 55.0,
+        "static_failed_checks": [
+          "observation_geometry"
+        ],
+        "render_status": "rendered",
+        "reviewer_result": {
+          "id": "rendered_legibility",
+          "outcome": "unassessed",
+          "inspected_whole_figure": false,
+          "inspected_at_180mm": false,
+          "evidence": "",
+          "rationale": ""
+        }
+      },
+      {
+        "label": "emptymarker",
+        "static_points": 65.0,
+        "static_failed_checks": [
+          "schematic_direction"
+        ],
+        "render_status": "rendered",
+        "reviewer_result": {
+          "id": "rendered_legibility",
+          "outcome": "unassessed",
+          "inspected_whole_figure": false,
+          "inspected_at_180mm": false,
+          "evidence": "",
+          "rationale": ""
+        }
+      },
+      {
+        "label": "whitecover",
+        "static_points": 70.0,
+        "static_failed_checks": [],
+        "render_status": "rendered",
+        "reviewer_result": {
+          "id": "rendered_legibility",
+          "outcome": "unassessed",
+          "inspected_whole_figure": false,
+          "inspected_at_180mm": false,
+          "evidence": "",
+          "rationale": ""
+        }
+      }
+    ],
+    "note": "CI performed rasterization only. Actual LLM provisional visual review is separately bound to the local CairoSVG materials and its actual null-commit identity."
+  },
+  "core_unit_tests_per_python": {
+    "python_versions": [
+      "3.11",
+      "3.12"
+    ],
+    "ran": 186,
+    "passed": 179,
+    "skipped": 7,
+    "result": "success",
+    "note": "Optional framework/renderer checks run separately; renderer class skips change the discovered count."
+  },
+  "local_full_unit_tests": {
+    "ran": 193,
+    "passed": 189,
+    "skipped": 4,
+    "record": "unit-tests-current.txt",
+    "evaluator_commit": null,
+    "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b"
+  },
+  "additional_actual_framework_checks": {
+    "inspect_and_harbor_schema": {
+      "tests": 4,
+      "passed": 4,
+      "inspect_ai_version": "0.3.281",
+      "harbor_version": "0.24.0"
+    },
+    "cairosvg_figure_visibility": {
+      "tests": 11,
+      "passed": 11,
+      "renderer": "CairoSVG",
+      "version": "2.8.2"
+    },
+    "bound_review_evidence": {
+      "tests": 12,
+      "passed": 12
+    }
+  },
+  "other_ci_gates": {
+    "seeded_oracle_and_empty_selftest": {
+      "seeds": [
+        0,
+        17,
+        101
+      ],
+      "tasks_per_seed": 10,
+      "status": "passed",
+      "not_model_performance": true
+    },
+    "frozen_questions_match_generators": "passed"
+  },
+  "source_artifact_file_sha256": {
+    "home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/candidate-isolation.json": "5449458539338852c1c2ddd7a31e31eee9d6a1234a4db31bdf6fbadc0df1cf5f",
+    "home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/docker-image.json": "21164100d0e3b59e01e5c2a1b50499bed52066ff73eab34606139760f091277f",
+    "home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/docker-checks.json": "ed49cce874888e4612acb75dde8ca5a4d0357abd0e8ead906e68ddfd96043514",
+    "tmp/nrb-harbor-smoke/smoke_report.json": "f74e156204390b5a71432eb9752bc885a537306b2ca3d9d74b2056c4ec36e302",
+    "tmp/nrb-harbor-smoke/jobs/oracle/nrb01__dLj6XRX/verifier/report.json": "da8504f07a107aeff0eb5ef6ff527026d720c4162735e59aae70eaee4cab87a1",
+    "tmp/nrb-harbor-smoke/jobs/oracle/nrb02__m5M9KbL/verifier/report.json": "3d8f19cb8e572b7a3337b9e46f334d07504c584169b448cabf2ef4424f0354a2",
+    "tmp/nrb-harbor-smoke/jobs/oracle/nrb03__mrCLwCc/verifier/report.json": "35f2b957270e6a1936e77c5c5412663ccf875084718252f26d524115495b4b9c",
+    "tmp/nrb-harbor-smoke/jobs/oracle/nrb04__jFcNqJJ/verifier/report.json": "cd2a195911cae5184dbb4d991e7eb9762a8dfc9b4c0295f1f136187e7e99a8de",
+    "tmp/nrb-harbor-smoke/jobs/oracle/nrb05__m6cB2ER/verifier/report.json": "0a1d573c7da677a94c29a56dca249291b9b4144ef41d47636fb27b33f5958748",
+    "tmp/nrb-harbor-smoke/jobs/oracle/nrb06__iw9Ntt4/verifier/report.json": "2c0a064993578aceb38ec4862b1319d3ab29fdad99983e277e09adedf113d630",
+    "tmp/nrb-harbor-smoke/jobs/oracle/nrb07__Y4hE2HV/verifier/report.json": "30d900df512df54cb3bc68807754a32611391336a59113dea932798297e64dec",
+    "tmp/nrb-harbor-smoke/jobs/oracle/nrb08__6feQxye/verifier/report.json": "248e60594929f93b357025f45ecf7bbed8069c65a9ae76ab406dc6fdf4fd4357",
+    "tmp/nrb-harbor-smoke/jobs/oracle/nrb09__x22dtxM/verifier/report.json": "0562ce659bb99f1c6cd7f6bc9089268fe827541f82d6288b480a3f0b406d347a",
+    "tmp/nrb-harbor-smoke/jobs/oracle/nrb10__y8R4djy/verifier/report.json": "7152892bc1b1e7843a12eaa085dddf0742e1db9b891b1cd70d529aff2b40cd23",
+    "tmp/nrb-promptfoo-smoke/smoke_report.json": "5c63547b86b8131721eb56342403bbb556219e99cce5d95c2a039e2b1006bf29",
+    "tmp/nrb-render-controls/manifest.json": "48ffff67cf93894118467a45a7ffe117695f2f65bd132c1428c246075b12b6d4"
+  },
+  "limitations": [
+    "No commercial model was evaluated and no provider API calls were made.",
+    "Oracle automatic 70/70 and Harbor reward 1.0 are implementation checks; essential and quality reviews remain pending.",
+    "The offline image probe does not certify live API allowlist enforcement or provider-side tool disablement.",
+    "CI rasterization does not imply human or LLM visual acceptance.",
+    "Historical first-release, current local null-commit and fixed CI commit identities are not merged or restamped.",
+    "Public questions and public solutions cannot prove absence of pretraining or prior-context contamination."
+  ]
+}

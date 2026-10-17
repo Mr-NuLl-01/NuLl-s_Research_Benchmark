@@ -1,0 +1,440 @@
+{
+  "schema_version": "nrb-render-review-results-v1",
+  "task_id": "NRB09",
+  "seed": 0,
+  "review_date_utc": "2026-10-17",
+  "review_status": "llm_reviewed_provisional",
+  "evaluator_identity": {
+    "benchmark_version": "0.2.0",
+    "evaluation_schema_version": "2.0",
+    "evaluator_commit": null,
+    "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+    "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+  },
+  "generation_manifest_file": "manifest.json",
+  "generation_manifest_sha256": "ad164d19895a28aa0198313ba101f7e60c4d6c503b8438c0d4f4033f064e1725",
+  "scope": "All eight complete newly generated CairoSVG 2.8.2 PNGs were opened individually and inspected after the empty-marker normalization fix. This is a fresh inspection of this exact source identity and material, not a transfer of the earlier Inkscape review.",
+  "limits": [
+    "LLM provisional review; not human review.",
+    "180 mm equivalent raster inspection at 144 DPI; no physical display calibration.",
+    "Visible-content and provisional engineering-contract review only; no certification of arbitrary SVG semantics or independent physical-model validity.",
+    "No transfer of review to different SVG/PNG bytes, submission, evaluator digest or evaluator commit, even if the raster happens to be identical.",
+    "Generated manifest reviewer templates remain unassessed; this independent file records the subsequent actual image inspection.",
+    "The earlier render-controls directory remains an unchanged historical Inkscape/source-identity record."
+  ],
+  "normalization_scope": "Only references to markers with no graphic or text descendants are removed in the private renderer copy. Original candidate SVG bytes and static failure remain intact. Normalized SVG hashes were recomputed and verified for all eight controls.",
+  "summary": {
+    "rendered": 8,
+    "complete_pngs_opened": 8,
+    "provisional_pass": 1,
+    "provisional_fail": 7,
+    "png_total_bytes": 395165
+  },
+  "reviews": [
+    {
+      "label": "oracle",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "295c3e9f0f11c866db1128dff67e65e9f788fe2937723e4849fc02a5c14902c0",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "oracle/render-receipt.json",
+      "render_receipt_sha256": "e440f330bd3adce563e1b02bcfc6b66941d83fe2978a526a29b9ea5b3e5285b1",
+      "raw_svg_sha256": "0ac185b7641a350fb3b22543b3e49630f463c8ab896c18c487722e65c17f6611",
+      "output_png_sha256": "ea42a21fd841fc02a676a4ec25614cef82ba540cc790b44f4b3f2ecd11c68c0c",
+      "renderer": {
+        "name": "CairoSVG",
+        "version": "2.8.2"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "render_normalization": {
+        "version": "nrb-static-svg-normalize-v1",
+        "empty_marker_reference_count": 0,
+        "empty_marker_ids": [],
+        "normalized_svg_sha256": "9f2d9b465d357cc00ab8f358c32a2d4973c328b65d267aa000d6269bfb99710c"
+      },
+      "receipt_binding_verified": true,
+      "normalization_verified": true,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen 8dfb824 CairoSVG control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete newly generated CairoSVG PNG individually; 180 mm equivalent at 144 DPI. No physical monitor calibration.",
+      "id": "render_legibility",
+      "outcome": "pass",
+      "evidence_file": "oracle/figure.png",
+      "evidence": "Whole complete raster: panels a/b/c, all labels, schematic and positive-displacement indicator, model/observation window and residual window.",
+      "rationale": "The complete CairoSVG raster is readable at the 180 mm equivalent scale. The support, spring, damper and mass are drawn; the displacement indicator has a visible rightward head. Model line and observation symbols are distinguishable, residual symbols and unit labels are readable, and the model text states prescribed generation with no parameter fitting.",
+      "observed_defects": [],
+      "static_points": 70.0,
+      "static_failed_checks": []
+    },
+    {
+      "label": "minimalpoint",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "ee2685ec04a65690f6a5b9bbb849cea427267fbf97079358304644a663887043",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "minimalpoint/render-receipt.json",
+      "render_receipt_sha256": "5ddaf7cb4840236b690baf133f980cbca388ecd0db45a2aac477fbf931cda8e6",
+      "raw_svg_sha256": "2b4070c231a3fd100ec844143ac9eeab73c1c63f6043c93e9dba98deff5199e4",
+      "output_png_sha256": "954dcad6e1b9eeae3247f56e8543aadae001b1fc09661f7bd08f709a282fc0ed",
+      "renderer": {
+        "name": "CairoSVG",
+        "version": "2.8.2"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "render_normalization": {
+        "version": "nrb-static-svg-normalize-v1",
+        "empty_marker_reference_count": 0,
+        "empty_marker_ids": [],
+        "normalized_svg_sha256": "28c8a570d8f46fc59970bd4027e4d7f6c4d2b0dbd67e03e1bead3c25f8a98e54"
+      },
+      "receipt_binding_verified": true,
+      "normalization_verified": true,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen 8dfb824 CairoSVG control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete newly generated CairoSVG PNG individually; 180 mm equivalent at 144 DPI. No physical monitor calibration.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "minimalpoint/figure.png",
+      "evidence": "Panel b observation locations and the residual data window in panel c.",
+      "rationale": "The plotted observations and residual points effectively disappear, while the model line and the legend observation dot remain. The legend symbol does not substitute for visible scientific data.",
+      "observed_defects": [
+        "missing_data_points"
+      ],
+      "static_points": 45.0,
+      "static_failed_checks": [
+        "observation_geometry",
+        "residual_geometry"
+      ]
+    },
+    {
+      "label": "zerostroke",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "f792ae122951fbc47cd41078f37624149559e8be2f59553dcebfbae1937c307d",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "zerostroke/render-receipt.json",
+      "render_receipt_sha256": "2ba4ddf71fcb4c74833d288456b391f6656ba4c29531ea1e25af66b3d5ad2475",
+      "raw_svg_sha256": "7189548bcb7e24bc7f2960867b929f7392e2b98a5ad2261003931491b1b9d548",
+      "output_png_sha256": "d3b4330e13ea0495278ce4ed7afbd903c154e807c9428a9d29cd9627f198d12e",
+      "renderer": {
+        "name": "CairoSVG",
+        "version": "2.8.2"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "render_normalization": {
+        "version": "nrb-static-svg-normalize-v1",
+        "empty_marker_reference_count": 0,
+        "empty_marker_ids": [],
+        "normalized_svg_sha256": "7ca6b787c27a5f9810116a3f6c3f8543c4d693d11c394a6e3288f28893e34e50"
+      },
+      "receipt_binding_verified": true,
+      "normalization_verified": true,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen 8dfb824 CairoSVG control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete newly generated CairoSVG PNG individually; 180 mm equivalent at 144 DPI. No physical monitor calibration.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "zerostroke/figure.png",
+      "evidence": "Panel b, including the contrast between the surviving model legend sample and the missing curve.",
+      "rationale": "The observation points remain visible but no fixed-model curve appears in the plotting window. The model legend line alone cannot satisfy the requested model display.",
+      "observed_defects": [
+        "missing_model_curve"
+      ],
+      "static_points": 60.0,
+      "static_failed_checks": [
+        "model_geometry"
+      ]
+    },
+    {
+      "label": "emptydiagram",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "1b53fefedb8918eaa953802207f0ae0004bac386108e2d2b49d1c20c20b96b77",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "emptydiagram/render-receipt.json",
+      "render_receipt_sha256": "f3cab2e6a197024fee5d2ef825aaefd8c85e9bfea563b5b5de54604ae6339657",
+      "raw_svg_sha256": "6c695b8cf360f349359647ec7aa9b6f64f71299862c429f51e94adaa841ac322",
+      "output_png_sha256": "d98a30d64afca3683b1a27162783c3d122562f3e7df9fffb97af71adc626d7a0",
+      "renderer": {
+        "name": "CairoSVG",
+        "version": "2.8.2"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "render_normalization": {
+        "version": "nrb-static-svg-normalize-v1",
+        "empty_marker_reference_count": 0,
+        "empty_marker_ids": [],
+        "normalized_svg_sha256": "b58d8095eadb2dae5312e2796b19d17d20d97017640e58d2c9a1eb1b4c64dbae"
+      },
+      "receipt_binding_verified": true,
+      "normalization_verified": true,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen 8dfb824 CairoSVG control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete newly generated CairoSVG PNG individually; 180 mm equivalent at 144 DPI. No physical monitor calibration.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "emptydiagram/figure.png",
+      "evidence": "Panel a: visible support line, spring/damper/mass text, and displacement arrow, with the component graphics absent.",
+      "rationale": "The spring path, damper graphics and mass rectangle are absent. Their remaining labels are readable but do not provide the required mechanical diagram. The two data panels remain visible.",
+      "observed_defects": [
+        "missing_schematic_components"
+      ],
+      "static_points": 65.0,
+      "static_failed_checks": [
+        "schematic_direction"
+      ]
+    },
+    {
+      "label": "offcanvastext",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "49c2914d4fd324d9a89e4d4beec23f80365121698e54acdf015388abfc0a7ef8",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "offcanvastext/render-receipt.json",
+      "render_receipt_sha256": "132a7a9fb190adbc153ae6cdd7d3c27d54f01c8ee97cbcc784bb5e39ae047ac7",
+      "raw_svg_sha256": "90044e098a716cebb2886557aac88d470b3667aae0aed68e727ebc90327c1964",
+      "output_png_sha256": "b4a1a37ea580cd0b275425ecc52e98b6601214cc94f3c0be67c295905f5a2dcd",
+      "renderer": {
+        "name": "CairoSVG",
+        "version": "2.8.2"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "render_normalization": {
+        "version": "nrb-static-svg-normalize-v1",
+        "empty_marker_reference_count": 0,
+        "empty_marker_ids": [],
+        "normalized_svg_sha256": "d5559df05cbcb8f42f7ea717025e5f6d59826482ea9decc31ef2e2d44347a715"
+      },
+      "receipt_binding_verified": true,
+      "normalization_verified": true,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen 8dfb824 CairoSVG control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete newly generated CairoSVG PNG individually; 180 mm equivalent at 144 DPI. No physical monitor calibration.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "offcanvastext/figure.png",
+      "evidence": "The complete figure, especially the two axes and legends and panel a text positions.",
+      "rationale": "No required labels or units are visible. Curves, points, schematic geometry and legend symbols remain, confirming the specific off-canvas-text defect.",
+      "observed_defects": [
+        "missing_required_labels"
+      ],
+      "static_points": 65.0,
+      "static_failed_checks": [
+        "labels_and_layout"
+      ]
+    },
+    {
+      "label": "nestedopacity",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "e60a6d1ea9230000c1df92c120033986a7b39ce97218fa29eecef73a943533ca",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "nestedopacity/render-receipt.json",
+      "render_receipt_sha256": "e94d4f67ec61ceee8284a6a1e8e29e561af0b7de4b9e024dba7acb2d549d6f7a",
+      "raw_svg_sha256": "5bcc87a1b8cb89b371f86bef3601b062635608dca6213208d79733824da8bde1",
+      "output_png_sha256": "e715c3335c39d2af0a1a8b2e8560e5262fdca54dff83512c2f9a33f150a87a02",
+      "renderer": {
+        "name": "CairoSVG",
+        "version": "2.8.2"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "render_normalization": {
+        "version": "nrb-static-svg-normalize-v1",
+        "empty_marker_reference_count": 0,
+        "empty_marker_ids": [],
+        "normalized_svg_sha256": "20ff4182c7f48a9d81ce07fc43b42a5c3baa084b1c260e64196bfc00cd6edb4e"
+      },
+      "receipt_binding_verified": true,
+      "normalization_verified": true,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen 8dfb824 CairoSVG control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete newly generated CairoSVG PNG individually; 180 mm equivalent at 144 DPI. No physical monitor calibration.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "nestedopacity/figure.png",
+      "evidence": "Panel b observation points compared with the oracle, model line, legend point and panel c residual points.",
+      "rationale": "The observations are visibly faint but still partly visible. Their effective opacity is 0.5 x 0.5 = 0.25, below the task's disclosed provisional 0.30 threshold. This is a rejection under that engineering contract, not a claim of complete invisibility or a universal perceptual limit.",
+      "observed_defects": [
+        "observations_below_provisional_opacity_limit"
+      ],
+      "static_points": 55.0,
+      "static_failed_checks": [
+        "observation_geometry"
+      ]
+    },
+    {
+      "label": "emptymarker",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "700adeb23f5c532dc388727b24e72f1028050d40bc3cd0b05827ed7babbe261c",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "emptymarker/render-receipt.json",
+      "render_receipt_sha256": "2abdc78d0ce583bdf329aee77e75fc59cf22abe6449f6078cf0aa765f3facaa6",
+      "raw_svg_sha256": "24b332721523eb666486df063af175b329a777953a0111dead4af6e161ee0f00",
+      "output_png_sha256": "bae427038041156bcf46d4c232aeac2aa14ac03aa47c0df93586070f09f588e0",
+      "renderer": {
+        "name": "CairoSVG",
+        "version": "2.8.2"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "render_normalization": {
+        "version": "nrb-static-svg-normalize-v1",
+        "empty_marker_reference_count": 1,
+        "empty_marker_ids": [
+          "arrow"
+        ],
+        "normalized_svg_sha256": "88b919a269b2fe6f72180c310d71028d3c824ab0d113918e9f846db0e2fb33f9"
+      },
+      "receipt_binding_verified": true,
+      "normalization_verified": true,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen 8dfb824 CairoSVG control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete newly generated CairoSVG PNG individually; 180 mm equivalent at 144 DPI. No physical monitor calibration.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "emptymarker/figure.png",
+      "evidence": "Panel a displacement indicator immediately above the +x label.",
+      "rationale": "The displacement shaft is visible but has no arrowhead. The normalized renderer copy removes a reference to an entirely empty marker because that marker paints nothing; the raw candidate SVG remains unchanged. The resulting line without a head preserves the negative-control defect and the static schematic check remains failed.",
+      "observed_defects": [
+        "missing_displacement_arrowhead"
+      ],
+      "static_points": 65.0,
+      "static_failed_checks": [
+        "schematic_direction"
+      ]
+    },
+    {
+      "label": "whitecover",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "1270c95c6ce300df5cbf8afbb107d13d1d09392e57ac0277f71a0a08f30d4afb",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "whitecover/render-receipt.json",
+      "render_receipt_sha256": "708f07570a52043086646815ccb4ba5535a64e2825ef404eded15ed297ee4d28",
+      "raw_svg_sha256": "a1833297fa42a8e5fb558a4badac5b6bd43bee33abdc283acf5060555901fbc0",
+      "output_png_sha256": "c66e1597121bb56c51d33c3189baaa648f200ed4d18893e354a6b2298df239ba",
+      "renderer": {
+        "name": "CairoSVG",
+        "version": "2.8.2"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "render_normalization": {
+        "version": "nrb-static-svg-normalize-v1",
+        "empty_marker_reference_count": 0,
+        "empty_marker_ids": [],
+        "normalized_svg_sha256": "6fb75e9e16749342fe01a44f09ba6ae0c4003d65e47ebba8d0f85d8b51ca2042"
+      },
+      "receipt_binding_verified": true,
+      "normalization_verified": true,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen 8dfb824 CairoSVG control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete newly generated CairoSVG PNG individually; 180 mm equivalent at 144 DPI. No physical monitor calibration.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "whitecover/figure.png",
+      "evidence": "Every pixel region of the complete 1020 x 612 raster.",
+      "rationale": "The entire figure is blank white: no panel, label, data point, curve, schematic or arrow remains visible. The figure therefore fails actual rendered-legibility review despite retaining 70 automatic XML/data points.",
+      "observed_defects": [
+        "complete_opaque_occlusion"
+      ],
+      "static_points": 70.0,
+      "static_failed_checks": []
+    }
+  ]
+}

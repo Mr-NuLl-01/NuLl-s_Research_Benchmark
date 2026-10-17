@@ -1,0 +1,771 @@
+{
+  "purpose": "repository self-test, NOT model performance or empirical difficulty calibration",
+  "benchmark_version": "0.2.0",
+  "evaluation_schema_version": "2.0",
+  "evaluator_commit": null,
+  "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+  "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+  "execution": "trusted repository code only",
+  "python": "3.12.14",
+  "platform": "Linux",
+  "passed": true,
+  "cases_checked": 30,
+  "checks": [
+    {
+      "task_id": "NRB01",
+      "seed": 0,
+      "case_hash": "a2603a05e4b362bd9b2f5d2dbabaa3a514e7c4d2f2104eb655beaf84ef5c5afa",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB02",
+      "seed": 0,
+      "case_hash": "ebe10a288f48ef84b5c9c3a93d1a6e3e8ff45b90365c783baf7f50ffcf88a43f",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB03",
+      "seed": 0,
+      "case_hash": "323f5f039e5d306bea9480071108b303e46003b5e24f0b206dc7acebf33758ba",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [
+        {
+          "id": "solve_reproduction",
+          "task_id": "NRB03",
+          "case_hash": "323f5f039e5d306bea9480071108b303e46003b5e24f0b206dc7acebf33758ba",
+          "submission_hash": "4fe7932c8621c329b3f1ec0bc765e904f496e0ea0446e9250c3e54648f4589e5",
+          "source_hash": "e7b00f48a481d9768a2ca680e74e849140170ca85d8e3fd125af185046fa94ba",
+          "input_hash": "20a7ce3cab04ef5fa71338dcc4c72d5e4ba12a724c1022ee32ba6059bd52f107",
+          "result_hash": "1a0e5a69c69788dc6b1fe0ede52fcc8ad6b8e43eeb5e7b1a1033463344e8944f",
+          "execution": "trusted",
+          "status": "pass",
+          "passed": true,
+          "detail": "Executed trusted repository code (not sandboxed)",
+          "checks": [
+            {
+              "id": "integer_allocation",
+              "points": 5.0,
+              "passed": true,
+              "detail": "每水平一个真正的非负整数次数。",
+              "critical": false
+            },
+            {
+              "id": "replicate_bounds",
+              "points": 5.0,
+              "passed": true,
+              "detail": "分配符合每水平上限。",
+              "critical": false
+            },
+            {
+              "id": "all_design_constraints",
+              "points": 10.0,
+              "passed": true,
+              "detail": "预算、总数、中心、两侧与端点约束全部满足。",
+              "critical": true
+            },
+            {
+              "id": "reported_cost",
+              "points": 5.0,
+              "passed": true,
+              "detail": "报告实际分配的总成本。",
+              "critical": false
+            },
+            {
+              "id": "reported_count",
+              "points": 5.0,
+              "passed": true,
+              "detail": "报告实际分配的总测量次数。",
+              "critical": false
+            },
+            {
+              "id": "scenario_variance_1",
+              "points": 5.0,
+              "passed": true,
+              "detail": "核验所交分配在该情景的含截距斜率方差。",
+              "critical": false
+            },
+            {
+              "id": "scenario_variance_2",
+              "points": 5.0,
+              "passed": true,
+              "detail": "核验所交分配在该情景的含截距斜率方差。",
+              "critical": false
+            },
+            {
+              "id": "scenario_variance_3",
+              "points": 5.0,
+              "passed": true,
+              "detail": "核验所交分配在该情景的含截距斜率方差。",
+              "critical": false
+            },
+            {
+              "id": "minimax_objective",
+              "points": 5.0,
+              "passed": true,
+              "detail": "取三个情景的最大值及其实际编号。",
+              "critical": false
+            },
+            {
+              "id": "global_optimality",
+              "points": 10.0,
+              "passed": true,
+              "detail": "实际提交的可行分配达到精确全局最优；显示容差不扩大最优集合。",
+              "critical": true
+            },
+            {
+              "id": "strict_runner_up",
+              "points": 5.0,
+              "passed": true,
+              "detail": "严格次优分配、值与最优差共同一致；并列最优不算严格次优。",
+              "critical": true
+            },
+            {
+              "id": "feasible_search_count",
+              "points": 5.0,
+              "passed": true,
+              "detail": "完整有限可行域的向量计数。",
+              "critical": false
+            },
+            {
+              "id": "solve_return_contract",
+              "points": 0.0,
+              "passed": true,
+              "detail": "solve(problem) returns exactly the declared answer dictionary.",
+              "critical": false
+            },
+            {
+              "id": "solve_matches_submission",
+              "points": 0.0,
+              "passed": true,
+              "detail": "Both answers are scientifically valid and reproduce the same chosen vectors and their values.",
+              "critical": false
+            }
+          ],
+          "execution_status": "ok",
+          "evaluator_identity": {
+            "benchmark_version": "0.2.0",
+            "evaluation_schema_version": "2.0",
+            "evaluator_commit": null,
+            "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+            "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+          }
+        }
+      ],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB04",
+      "seed": 0,
+      "case_hash": "063005adc3aa54382ad0ace154bb6a191678151cac1487a02963948ad7310853",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB05",
+      "seed": 0,
+      "case_hash": "ef2759885f62e28b30ff7b5aa25b36099154178a79b29b3db3bbb3e2c653b40b",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB06",
+      "seed": 0,
+      "case_hash": "f3f79e408f623255a2c62ba48f1eb5b87f0a8670ce381f42be8b34f02641ce6a",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB07",
+      "seed": 0,
+      "case_hash": "41aeb4a277bf98862a595768200c2fc8326881dc5e05c432ad567e514940533d",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB08",
+      "seed": 0,
+      "case_hash": "54527a26d112611e8e9c80ac8fb51592add5042a993831c05d33a802384e0779",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB09",
+      "seed": 0,
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB10",
+      "seed": 0,
+      "case_hash": "90ec4b7fa5c11c4015cd60b0c52cba8d02dd167fdf12b3ee8148af75e8dc9316",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB01",
+      "seed": 17,
+      "case_hash": "6f463e992c794a600e17ebbf4be4222121067022b0cd9a1dcc827422a6597040",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB02",
+      "seed": 17,
+      "case_hash": "ea2aa7a69b347d3a11b0d4a7c57bdeb9f8daede153ed7e3d33ec6ad6b69693b3",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB03",
+      "seed": 17,
+      "case_hash": "d6a462be49611c9bbd35ba812e46ac9d4e2c6063395a044a80ff999fd1040f10",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [
+        {
+          "id": "solve_reproduction",
+          "task_id": "NRB03",
+          "case_hash": "d6a462be49611c9bbd35ba812e46ac9d4e2c6063395a044a80ff999fd1040f10",
+          "submission_hash": "d31a9d317f0822d86999d1a552a2336f7b5676973703c31cbf8f6929017cef1c",
+          "source_hash": "e7b00f48a481d9768a2ca680e74e849140170ca85d8e3fd125af185046fa94ba",
+          "input_hash": "1f529a9e69f551f37ac60ed13ef11e38ffe42f83679d3aa03c050be0b73fe269",
+          "result_hash": "b3cb486af6ea151fd617b89d088e81afc7b11c86f4466fc9aa7a5b4bb5f7c50b",
+          "execution": "trusted",
+          "status": "pass",
+          "passed": true,
+          "detail": "Executed trusted repository code (not sandboxed)",
+          "checks": [
+            {
+              "id": "integer_allocation",
+              "points": 5.0,
+              "passed": true,
+              "detail": "每水平一个真正的非负整数次数。",
+              "critical": false
+            },
+            {
+              "id": "replicate_bounds",
+              "points": 5.0,
+              "passed": true,
+              "detail": "分配符合每水平上限。",
+              "critical": false
+            },
+            {
+              "id": "all_design_constraints",
+              "points": 10.0,
+              "passed": true,
+              "detail": "预算、总数、中心、两侧与端点约束全部满足。",
+              "critical": true
+            },
+            {
+              "id": "reported_cost",
+              "points": 5.0,
+              "passed": true,
+              "detail": "报告实际分配的总成本。",
+              "critical": false
+            },
+            {
+              "id": "reported_count",
+              "points": 5.0,
+              "passed": true,
+              "detail": "报告实际分配的总测量次数。",
+              "critical": false
+            },
+            {
+              "id": "scenario_variance_1",
+              "points": 5.0,
+              "passed": true,
+              "detail": "核验所交分配在该情景的含截距斜率方差。",
+              "critical": false
+            },
+            {
+              "id": "scenario_variance_2",
+              "points": 5.0,
+              "passed": true,
+              "detail": "核验所交分配在该情景的含截距斜率方差。",
+              "critical": false
+            },
+            {
+              "id": "scenario_variance_3",
+              "points": 5.0,
+              "passed": true,
+              "detail": "核验所交分配在该情景的含截距斜率方差。",
+              "critical": false
+            },
+            {
+              "id": "minimax_objective",
+              "points": 5.0,
+              "passed": true,
+              "detail": "取三个情景的最大值及其实际编号。",
+              "critical": false
+            },
+            {
+              "id": "global_optimality",
+              "points": 10.0,
+              "passed": true,
+              "detail": "实际提交的可行分配达到精确全局最优；显示容差不扩大最优集合。",
+              "critical": true
+            },
+            {
+              "id": "strict_runner_up",
+              "points": 5.0,
+              "passed": true,
+              "detail": "严格次优分配、值与最优差共同一致；并列最优不算严格次优。",
+              "critical": true
+            },
+            {
+              "id": "feasible_search_count",
+              "points": 5.0,
+              "passed": true,
+              "detail": "完整有限可行域的向量计数。",
+              "critical": false
+            },
+            {
+              "id": "solve_return_contract",
+              "points": 0.0,
+              "passed": true,
+              "detail": "solve(problem) returns exactly the declared answer dictionary.",
+              "critical": false
+            },
+            {
+              "id": "solve_matches_submission",
+              "points": 0.0,
+              "passed": true,
+              "detail": "Both answers are scientifically valid and reproduce the same chosen vectors and their values.",
+              "critical": false
+            }
+          ],
+          "execution_status": "ok",
+          "evaluator_identity": {
+            "benchmark_version": "0.2.0",
+            "evaluation_schema_version": "2.0",
+            "evaluator_commit": null,
+            "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+            "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+          }
+        }
+      ],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB04",
+      "seed": 17,
+      "case_hash": "16b19af5cc98acbb9d6ba3549060f3048c1a00b01e22126b4d4624aff0156db4",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB05",
+      "seed": 17,
+      "case_hash": "9a3fda92e7e1e424ed240f6e195b007bb4ddcb535608b43f90e7f858c3593017",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB06",
+      "seed": 17,
+      "case_hash": "17b9e505580f20c956969df921d5858e4631a6080410fcbe52a43ff1b6b02408",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB07",
+      "seed": 17,
+      "case_hash": "e91b211d9103c12f538f253b3912a9cdb81078f9b11805c1d2fe2dbfc58d10af",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB08",
+      "seed": 17,
+      "case_hash": "673e626553b23bcb12dccac1af08e036b84ed38277504b8ba8a638427c35e4c3",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB09",
+      "seed": 17,
+      "case_hash": "d6f8f513917f2a0df263894ba88dfbfffe60ad9b34ac6f212af55c5d291178aa",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB10",
+      "seed": 17,
+      "case_hash": "6f5ecaa40e8fca29fda44c6a0eca005b476689f85544e3d1b6527e4b94d115bc",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB01",
+      "seed": 101,
+      "case_hash": "8a1c7a3f83da7962010f704fc3615e7e29a20cb5623ebfc0f993666c280381ce",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB02",
+      "seed": 101,
+      "case_hash": "b6f259d0234306dfaac9be2641c1e615c6ea6d73f9360c49341c9e88a6eaec52",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB03",
+      "seed": 101,
+      "case_hash": "d39b91d9139a1d721c9c6afce2111ba109b4ffa018644e490f2b2b0a592b96af",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [
+        {
+          "id": "solve_reproduction",
+          "task_id": "NRB03",
+          "case_hash": "d39b91d9139a1d721c9c6afce2111ba109b4ffa018644e490f2b2b0a592b96af",
+          "submission_hash": "4f04c8d1575be6417ffa5f7787cb9dd9aea8e6fdc30ecb4639efbc92da889ff8",
+          "source_hash": "e7b00f48a481d9768a2ca680e74e849140170ca85d8e3fd125af185046fa94ba",
+          "input_hash": "cf53f765c5d9ad8ee5d7d3b618853a35a139e0e61f1b6559d578d8caf452d1e1",
+          "result_hash": "250bd41028c4d45074ba9c73c96a3603d0069cdd8b732c6ee28433ce088635e4",
+          "execution": "trusted",
+          "status": "pass",
+          "passed": true,
+          "detail": "Executed trusted repository code (not sandboxed)",
+          "checks": [
+            {
+              "id": "integer_allocation",
+              "points": 5.0,
+              "passed": true,
+              "detail": "每水平一个真正的非负整数次数。",
+              "critical": false
+            },
+            {
+              "id": "replicate_bounds",
+              "points": 5.0,
+              "passed": true,
+              "detail": "分配符合每水平上限。",
+              "critical": false
+            },
+            {
+              "id": "all_design_constraints",
+              "points": 10.0,
+              "passed": true,
+              "detail": "预算、总数、中心、两侧与端点约束全部满足。",
+              "critical": true
+            },
+            {
+              "id": "reported_cost",
+              "points": 5.0,
+              "passed": true,
+              "detail": "报告实际分配的总成本。",
+              "critical": false
+            },
+            {
+              "id": "reported_count",
+              "points": 5.0,
+              "passed": true,
+              "detail": "报告实际分配的总测量次数。",
+              "critical": false
+            },
+            {
+              "id": "scenario_variance_1",
+              "points": 5.0,
+              "passed": true,
+              "detail": "核验所交分配在该情景的含截距斜率方差。",
+              "critical": false
+            },
+            {
+              "id": "scenario_variance_2",
+              "points": 5.0,
+              "passed": true,
+              "detail": "核验所交分配在该情景的含截距斜率方差。",
+              "critical": false
+            },
+            {
+              "id": "scenario_variance_3",
+              "points": 5.0,
+              "passed": true,
+              "detail": "核验所交分配在该情景的含截距斜率方差。",
+              "critical": false
+            },
+            {
+              "id": "minimax_objective",
+              "points": 5.0,
+              "passed": true,
+              "detail": "取三个情景的最大值及其实际编号。",
+              "critical": false
+            },
+            {
+              "id": "global_optimality",
+              "points": 10.0,
+              "passed": true,
+              "detail": "实际提交的可行分配达到精确全局最优；显示容差不扩大最优集合。",
+              "critical": true
+            },
+            {
+              "id": "strict_runner_up",
+              "points": 5.0,
+              "passed": true,
+              "detail": "严格次优分配、值与最优差共同一致；并列最优不算严格次优。",
+              "critical": true
+            },
+            {
+              "id": "feasible_search_count",
+              "points": 5.0,
+              "passed": true,
+              "detail": "完整有限可行域的向量计数。",
+              "critical": false
+            },
+            {
+              "id": "solve_return_contract",
+              "points": 0.0,
+              "passed": true,
+              "detail": "solve(problem) returns exactly the declared answer dictionary.",
+              "critical": false
+            },
+            {
+              "id": "solve_matches_submission",
+              "points": 0.0,
+              "passed": true,
+              "detail": "Both answers are scientifically valid and reproduce the same chosen vectors and their values.",
+              "critical": false
+            }
+          ],
+          "execution_status": "ok",
+          "evaluator_identity": {
+            "benchmark_version": "0.2.0",
+            "evaluation_schema_version": "2.0",
+            "evaluator_commit": null,
+            "evaluator_digest": "8dfb824a40469966a1fb8def3de39611608c28b2b8d84557210f40e44fb8d20b",
+            "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+          }
+        }
+      ],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB04",
+      "seed": 101,
+      "case_hash": "7a99dda072b2abea34464a1e97e2e606b7cddfc7104e542669a229b767103c56",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB05",
+      "seed": 101,
+      "case_hash": "6aaf2b373a216a6866b18fb12723f011f40a81841257dabf79ee4633126c9422",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB06",
+      "seed": 101,
+      "case_hash": "4a339a34944ca48167d603b093950b8b6b36d87e7742bfdd919a4ab0fed1bb94",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB07",
+      "seed": 101,
+      "case_hash": "a0184bb7ac2e2ea7a51e55ad2b62c5ff7d097305c4e84f7f6c0fb7e6e9d4b280",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB08",
+      "seed": 101,
+      "case_hash": "ca31eb4cf0fc90e5903478a56727375389a93d349ef1a8cba2b96e66cab89948",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB09",
+      "seed": 101,
+      "case_hash": "7f461377cc5662cdb2cbceb8a242f65c815fe31b50f11fa9575736883ee6ea18",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    },
+    {
+      "task_id": "NRB10",
+      "seed": 101,
+      "case_hash": "c8e9fd6d7c5d718102eade5c03c82ddf149e37830fd53211cd4ec27df71199ca",
+      "oracle_auto_points": 70.0,
+      "oracle_coverage": 1.0,
+      "empty_auto_points": 0,
+      "empty_coverage": 1.0,
+      "deterministic": true,
+      "mandatory_execution": [],
+      "passed": true,
+      "failed_or_pending": []
+    }
+  ]
+}

@@ -95,8 +95,28 @@ API calls and does not establish that a Harbor backend correctly enforces its
 live API allowlist. Missing Docker/daemon is `runtime_status=unavailable` with
 `passed=false` and a nonzero exit status. The implementation environment used
 for this change had no Docker executable; its static screen ran, while the
-container probe remained unavailable. Real Docker checks belong in the Docker
-CI job or an equivalently configured local installation.
+container probe remained unavailable. That local record remains unchanged.
+
+The first published CI run at commit
+`f9772d5c1f3fb2ce37c315428e2082fa4ee9150f` subsequently executed the real Docker
+probe successfully: its log reports `runtime_status=executed` and `passed=true`.
+The same Docker job passed the three candidate-code checks and all ten Harbor
+oracle trials with no missing tasks and zero provider API calls. See the
+[actual Docker job and logs](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39035695079/job/117404907579).
+This is evidence of the offline image/probe and separate-verifier paths at that
+commit, not a live API-host allowlist test or a model-performance result. Later
+source identities require their own CI execution; this earlier pass is not
+silently reassigned to the CairoSVG-fix revision.
+
+The final scoring revision `f125975aa914e4c9dcf9c06402c358bed21232e3` has now
+independently repeated and passed the actual probe, the three Docker code checks,
+and all ten separate-verifier Harbor oracle trials in
+[CI run 39036404174](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39036404174).
+The [fixed CI record](../validation/v0.2.0/ci-current.json) includes the actual
+image digest, probe findings, artifact hashes, and the commit/content identity
+verified in every one of the ten reports. This remains an offline implementation
+validation with zero provider API calls. The live network and provider-side tool
+limitations below still apply.
 
 ## Remaining provider and state responsibilities
 
