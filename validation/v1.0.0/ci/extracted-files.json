@@ -1,0 +1,104 @@
+[
+  {
+    "artifact": "v1-core-python-3.11",
+    "member": "v1-selftest.json",
+    "saved_as": "validation/v1.0.0/ci/core-python-3.11/selftest.json",
+    "sha256": "c455ac655b28c49e44968bbfea541e557cb519f489a19ce5d7f8128dbc234ef9"
+  },
+  {
+    "artifact": "v1-core-python-3.11",
+    "member": "v1-tests.log",
+    "saved_as": "validation/v1.0.0/ci/core-python-3.11/tests.log",
+    "sha256": "c3f178a463830671447344f64acf6b6c23eaed1a4a78b0da186faafc6a188520"
+  },
+  {
+    "artifact": "v1-core-python-3.11",
+    "member": "fortran-version.txt",
+    "saved_as": "validation/v1.0.0/ci/core-python-3.11/fortran-version.txt",
+    "sha256": "c077c93e4d08c80bcaaca8856d54d860655a989eb6820a5e807ac798e452e222"
+  },
+  {
+    "artifact": "v1-core-python-3.12",
+    "member": "v1-selftest.json",
+    "saved_as": "validation/v1.0.0/ci/core-python-3.12/selftest.json",
+    "sha256": "e1d2e783bd9f3455ff045348125654f63303cf658c708d47afb95299ba7a6ebf"
+  },
+  {
+    "artifact": "v1-core-python-3.12",
+    "member": "v1-tests.log",
+    "saved_as": "validation/v1.0.0/ci/core-python-3.12/tests.log",
+    "sha256": "be7e2279a26f2a43e4bb5c8a7ca7f52bcc5c10df3402f675b44e42699ccda376"
+  },
+  {
+    "artifact": "v1-core-python-3.12",
+    "member": "fortran-version.txt",
+    "saved_as": "validation/v1.0.0/ci/core-python-3.12/fortran-version.txt",
+    "sha256": "c077c93e4d08c80bcaaca8856d54d860655a989eb6820a5e807ac798e452e222"
+  },
+  {
+    "artifact": "v1-framework-runtime",
+    "member": "home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/v1-framework.log",
+    "saved_as": "validation/v1.0.0/ci/framework/framework-tests.log",
+    "sha256": "1fa91e3f22821c5391ea20d0ce5275143f09b37a583b8f006f4213282554ff62"
+  },
+  {
+    "artifact": "v1-framework-runtime",
+    "member": "home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/v1-promptfoo-version.txt",
+    "saved_as": "validation/v1.0.0/ci/framework/promptfoo-version.txt",
+    "sha256": "3e884541c2dd90ae141ac80ce279bc0346a6c279d980d788530892c7e61e42a6"
+  },
+  {
+    "artifact": "v1-framework-runtime",
+    "member": "home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/v1-python-packages.txt",
+    "saved_as": "validation/v1.0.0/ci/framework/python-packages.txt",
+    "sha256": "3cd9675bf6b78cdd0d4dd2d8e91c9c84fd035ff6f30aba5c21dd3f45579191a9"
+  },
+  {
+    "artifact": "v1-framework-runtime",
+    "member": "tmp/v1-promptfoo/nrb_report.json",
+    "saved_as": "validation/v1.0.0/ci/framework/promptfoo-canonical-report.json",
+    "sha256": "8c6ed632d8d2389574ccf3ee710c13b5bf58ecd7c5b977918b7e783dfd19c262"
+  },
+  {
+    "artifact": "v1-framework-runtime",
+    "member": "tmp/v1-promptfoo/smoke_report.json",
+    "saved_as": "validation/v1.0.0/ci/framework/promptfoo-smoke.json",
+    "sha256": "65b1e8bc7274f266182db89f41641d69518990e6a04df2a9833fb2db71c8380a"
+  },
+  {
+    "artifact": "v1-docker-harbor-runtime",
+    "member": "home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/v1-docker-check.json",
+    "saved_as": "validation/v1.0.0/ci/docker/science.json",
+    "sha256": "cb772964e4941171f469e4cc02219911736c332a89d028d45db97a7429f19ad6"
+  },
+  {
+    "artifact": "v1-docker-harbor-runtime",
+    "member": "home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/v1-isolation.json",
+    "saved_as": "validation/v1.0.0/ci/docker/isolation.json",
+    "sha256": "d719a30f45b150d9126afa8fd298826d83d70bcf38f52718bf556edf5a513860"
+  },
+  {
+    "artifact": "v1-docker-harbor-runtime",
+    "member": "home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/v1-image.json",
+    "saved_as": "validation/v1.0.0/ci/docker/image.json",
+    "sha256": "fcffcb0650b5589c9861dec9f819a02b16e0c87657a67fc6facf3b1329ab71ae"
+  },
+  {
+    "artifact": "v1-docker-harbor-runtime",
+    "member": "home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/v1-docker-version.txt",
+    "saved_as": "validation/v1.0.0/ci/docker/docker-version.txt",
+    "sha256": "7ba4296d98811b3f6017879e4adb5452f8fe84ab8242b9bfd4fe14e394459098"
+  },
+  {
+    "artifact": "v1-docker-harbor-runtime",
+    "member": "tmp/v1-harbor/schema_report.json",
+    "saved_as": "validation/v1.0.0/ci/docker/harbor-schema.json",
+    "sha256": "7c1649845cfa176b7e80a604b6e5a62e69efff1ef773c2cf10891b689192f2c1"
+  },
+  {
+    "artifact": "v1-docker-harbor-runtime",
+    "member": "tmp/v1-harbor/smoke_report.json",
+    "saved_as": "validation/v1.0.0/ci/docker/harbor-runtime.json",
+    "sha256": "9ccc25b9894bd8a30264e14257cef248f27554eef8d54dfb6753c86b450b36e9"
+  }
+]

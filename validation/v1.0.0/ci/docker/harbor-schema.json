@@ -1,0 +1,121 @@
+{
+  "framework": "harbor",
+  "version": "0.24.0",
+  "kind": "schema_and_export_validation",
+  "not_model_performance": true,
+  "runtime_executed": false,
+  "api_provider_calls": 0,
+  "entries": [
+    {
+      "task_id": "C01",
+      "schema_version": "1.4",
+      "candidate_files": [
+        ".dockerignore",
+        "Dockerfile",
+        "packet/task.md"
+      ],
+      "separate_verifier": "separate",
+      "passed": true
+    },
+    {
+      "task_id": "C02",
+      "schema_version": "1.4",
+      "candidate_files": [
+        ".dockerignore",
+        "Dockerfile",
+        "packet/task.md"
+      ],
+      "separate_verifier": "separate",
+      "passed": true
+    },
+    {
+      "task_id": "C03",
+      "schema_version": "1.4",
+      "candidate_files": [
+        ".dockerignore",
+        "Dockerfile",
+        "packet/task.md"
+      ],
+      "separate_verifier": "separate",
+      "passed": true
+    },
+    {
+      "task_id": "C04",
+      "schema_version": "1.4",
+      "candidate_files": [
+        ".dockerignore",
+        "Dockerfile",
+        "packet/task.md"
+      ],
+      "separate_verifier": "separate",
+      "passed": true
+    },
+    {
+      "task_id": "C05",
+      "schema_version": "1.4",
+      "candidate_files": [
+        ".dockerignore",
+        "Dockerfile",
+        "packet/task.md"
+      ],
+      "separate_verifier": "separate",
+      "passed": true
+    },
+    {
+      "task_id": "C06",
+      "schema_version": "1.4",
+      "candidate_files": [
+        ".dockerignore",
+        "Dockerfile",
+        "packet/task.md"
+      ],
+      "separate_verifier": "separate",
+      "passed": true
+    },
+    {
+      "task_id": "C07",
+      "schema_version": "1.4",
+      "candidate_files": [
+        ".dockerignore",
+        "Dockerfile",
+        "packet/task.md"
+      ],
+      "separate_verifier": "separate",
+      "passed": true
+    },
+    {
+      "task_id": "C08",
+      "schema_version": "1.4",
+      "candidate_files": [
+        ".dockerignore",
+        "Dockerfile",
+        "packet/task.md"
+      ],
+      "separate_verifier": "separate",
+      "passed": true
+    },
+    {
+      "task_id": "C09",
+      "schema_version": "1.4",
+      "candidate_files": [
+        ".dockerignore",
+        "Dockerfile",
+        "packet/task.md"
+      ],
+      "separate_verifier": "separate",
+      "passed": true
+    },
+    {
+      "task_id": "C10",
+      "schema_version": "1.4",
+      "candidate_files": [
+        ".dockerignore",
+        "Dockerfile",
+        "packet/task.md"
+      ],
+      "separate_verifier": "separate",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

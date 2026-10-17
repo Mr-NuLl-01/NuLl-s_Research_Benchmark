@@ -12,6 +12,8 @@
 
 [完整设计报告](docs/v1/design-report.md) · [运行及 harness 指南](docs/v1/usage.md) · [评分规则](docs/v1/scoring.md) · [科研题详细人工量表](docs/v1/research-guide.md) · [防答案访问](docs/v1/closed-evaluation.md) · [验证记录](docs/v1/validation.md)
 
+**发布验证：[最终 CI 八个作业全部通过](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39054465838)。** 十题真实 Harbor 链路、Docker 中的 Python／Fortran 执行和候选镜像隔离均已验证；[原始证据与精确提交](docs/v1/validation.md) 已归档。这些是基础设施和科学错误控制验证，没有实际模型排名。
+
 ## 十道代码题
 
 每题 **70 自动分 + 30 人工质量分**；自动分分为基础 20、科学正确性 30、压力与边界 20。题目不仅要求代码，还要求科学说明和独立测试。Fortran 必须实际编译，候选 Python 必须实际执行。

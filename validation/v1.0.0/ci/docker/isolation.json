@@ -1,0 +1,264 @@
+{
+  "schema": "nrb-v1-candidate-isolation-check-v1",
+  "kind": "actual_offline_harbor_candidate_image_probe",
+  "not_model_performance": true,
+  "api_provider_calls": 0,
+  "evaluator_identity": {
+    "benchmark_version": "1.0.0",
+    "scoring_schema": "nrb-v1.0",
+    "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+    "digest_algorithm": "sha256-path-content-v1"
+  },
+  "started_utc": "2026-10-17T17:37:10.808513+00:00",
+  "requested_base_image": "nrb-v1:local",
+  "seed": 17,
+  "scope": "C01 candidate image build context and actual disconnected runtime only; separate-verifier checks are a different CI gate.",
+  "materials": "v1-isolation-materials",
+  "runtime_status": "executed",
+  "passed": true,
+  "checks": {
+    "no_oracle_export": true,
+    "separate_verifier_export": true,
+    "offline_agent_export": true,
+    "base_image_unchanged": true,
+    "inspected_container_boundary": true,
+    "actual_runtime_probe": true,
+    "evaluator_unchanged": true
+  },
+  "static_build_context": {
+    "passed": true,
+    "only_packet_copied": true,
+    "reference_solution_not_exported": true,
+    "expected_candidate_files": {
+      "task.md": "45fa2976990638ece24f61101a51c97502578566f085e7a7d535d84db1ff4bad"
+    },
+    "build_files": {
+      ".dockerignore": "41db257c82e85141d1e59125293b71ab983a97a535e927a5e908b37331e46563",
+      "Dockerfile": "b626be79adc169095ea94d727f9b306f4936a9b532dc368abccea9e110eb6e87",
+      "packet/task.md": "45fa2976990638ece24f61101a51c97502578566f085e7a7d535d84db1ff4bad"
+    }
+  },
+  "docker_version": {
+    "Client": {
+      "Platform": {
+        "Name": "Docker Engine - Community"
+      },
+      "Version": "28.0.4",
+      "ApiVersion": "1.48",
+      "DefaultAPIVersion": "1.48",
+      "GitCommit": "b8034c0",
+      "GoVersion": "go1.23.7",
+      "Os": "linux",
+      "Arch": "amd64",
+      "BuildTime": "Tue Mar 25 15:07:16 2025",
+      "Context": "default"
+    },
+    "Server": {
+      "Platform": {
+        "Name": "Docker Engine - Community"
+      },
+      "Components": [
+        {
+          "Name": "Engine",
+          "Version": "28.0.4",
+          "Details": {
+            "ApiVersion": "1.48",
+            "Arch": "amd64",
+            "BuildTime": "Tue Mar 25 15:07:16 2025",
+            "Experimental": "false",
+            "GitCommit": "6430e49",
+            "GoVersion": "go1.23.7",
+            "KernelVersion": "6.17.0-1022-azure",
+            "MinAPIVersion": "1.24",
+            "Os": "linux"
+          }
+        },
+        {
+          "Name": "containerd",
+          "Version": "v2.4.1",
+          "Details": {
+            "GitCommit": "f2551031d7276a770f65f98c9b52e57e7dad07e8"
+          }
+        },
+        {
+          "Name": "runc",
+          "Version": "1.5.2",
+          "Details": {
+            "GitCommit": "v1.5.2-0-g29dd3dc2"
+          }
+        },
+        {
+          "Name": "docker-init",
+          "Version": "0.19.0",
+          "Details": {
+            "GitCommit": "de40ad0"
+          }
+        }
+      ],
+      "Version": "28.0.4",
+      "ApiVersion": "1.48",
+      "MinAPIVersion": "1.24",
+      "GitCommit": "6430e49",
+      "GoVersion": "go1.23.7",
+      "Os": "linux",
+      "Arch": "amd64",
+      "KernelVersion": "6.17.0-1022-azure",
+      "BuildTime": "2025-03-25T15:07:16.000000000+00:00"
+    }
+  },
+  "base_image": {
+    "Id": "sha256:cdc7a498cfea7bcc86caaa3dd6bfd795ebc1e4d58bc87095472a71bd62e8c6f5",
+    "RepoTags": [
+      "nrb-v1:local"
+    ],
+    "RepoDigests": [],
+    "Created": "2026-10-17T17:37:03.21042349Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  "build": {
+    "exit_code": 0,
+    "wall_seconds": 5.164835976000006
+  },
+  "candidate_image": {
+    "Id": "sha256:4262fe80b8d1510ee2fa7bc3907cbabd9098e873fe22b42a7d73782842fdef55",
+    "RepoTags": [
+      "nrb-v1-isolation-97ab329572f84fcd85371b3e5f23ef13:latest"
+    ],
+    "RepoDigests": [],
+    "Created": "2026-10-17T17:37:14.936919414Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  "container_boundary": {
+    "passed": true,
+    "checks": {
+      "network_none": true,
+      "not_privileged": true,
+      "read_only_root": true,
+      "no_host_bind_mounts": true,
+      "no_host_mounts": true,
+      "capabilities_dropped": true,
+      "no_new_privileges": true,
+      "unprivileged_user": true
+    },
+    "network_mode": "none",
+    "privileged": false,
+    "root_readonly": true,
+    "user": "65534:65534",
+    "bind_mounts": null,
+    "mounts": []
+  },
+  "probe_execution": {
+    "exit_code": 0,
+    "wall_seconds": 0.11220638000000349
+  },
+  "runtime_probe": {
+    "passed": true,
+    "checks": {
+      "unprivileged_probe": true,
+      "forbidden_paths_not_accessible": true,
+      "repository_paths_absent": true,
+      "evaluator_packages_not_importable": true,
+      "only_candidate_files": true,
+      "no_candidate_symlinks": true,
+      "candidate_files_unchanged": true,
+      "blank_submission": true,
+      "loopback_only": true,
+      "external_socket_blocked": true
+    },
+    "uid": 65534,
+    "candidate_files": [
+      "submission.json",
+      "task.md"
+    ],
+    "symlinks": [],
+    "present_forbidden_paths": [],
+    "absent_forbidden_paths": [
+      "/grader",
+      "/solution",
+      "/tests",
+      "/app/nrb",
+      "/app/nrb_v1",
+      "/app/.git",
+      "/app/solution",
+      "/app/tests",
+      "/task/nrb",
+      "/task/nrb_v1",
+      "/task/.git",
+      "/repo",
+      "/workspace/NuLl-s_Research_Benchmark",
+      "/var/run/docker.sock",
+      "/run/docker.sock"
+    ],
+    "denied_paths": [
+      "/root/NuLl-s_Research_Benchmark"
+    ],
+    "repository_entries": [],
+    "importable_evaluator_packages": {
+      "nrb": false,
+      "nrb_v1": false
+    },
+    "network_interfaces": [
+      "lo"
+    ]
+  },
+  "cleanup": [
+    {
+      "target": "container",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "target": "candidate_image",
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "material_sha256": {
+    "build-stderr.txt": "c320a4b2848548008b7d6d03969e18224965d115a79881d0857ce1453a5b535e",
+    "build-stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docker-version-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docker-version.json": "c92731ec13258e3e458a7933683d40f878dfb2ab8241584ed16c14e265b407dd",
+    "export/README.md": "135027b90dea844009a65e9bf624392ce99af90dd542918bcd5c0310791d14b0",
+    "export/c01/environment/.dockerignore": "41db257c82e85141d1e59125293b71ab983a97a535e927a5e908b37331e46563",
+    "export/c01/environment/Dockerfile": "b626be79adc169095ea94d727f9b306f4936a9b532dc368abccea9e110eb6e87",
+    "export/c01/environment/packet/task.md": "45fa2976990638ece24f61101a51c97502578566f085e7a7d535d84db1ff4bad",
+    "export/c01/instruction.md": "e8ca06105b0816dae0aa68dc46c6edcb92269d5dfa44b38f527e0177f3afbc14",
+    "export/c01/task.toml": "f1b85c571c16e8e3fa8454ec03d088a1fa984830d6e18abe003544d09f938222",
+    "export/c01/tests/Dockerfile": "35281c59fc88d9205ab62d017a8bb6e67992a25d24c5e6505aaf381723806a99",
+    "export/c01/tests/grader/case_identity.json": "3cea34e1701347554d430eb725631279c4eb457370b854214c1a36871e2236b9",
+    "export/c01/tests/grader/nrb_v1/__init__.py": "cbf880a4afd9c1810476eb27d799da6fa961cdbfb80b2bbd1ab63fb428c7eb00",
+    "export/c01/tests/grader/nrb_v1/__main__.py": "6ce05b79ee1666025af142adc913f1d468781e77af67ae431fe163472a52fb3a",
+    "export/c01/tests/grader/nrb_v1/_origin.json": "c6f887e5d4d4a9d800293661a7c24521b8906da1b0bfe947891e6e05f9eb8c35",
+    "export/c01/tests/grader/nrb_v1/adapters.py": "9980c1484a2e83eb20a2a475588246f77a699314b54fde08f3ab85c138a1dd43",
+    "export/c01/tests/grader/nrb_v1/artifacts.py": "4a17cef26a47355e2d4dca9ad359392ad3765ba5b973ca07457962bd91c89495",
+    "export/c01/tests/grader/nrb_v1/cli.py": "c7e19805959f9f5214e6917dd1080c81d1fd05014580a2f96fafc11a3761f5d7",
+    "export/c01/tests/grader/nrb_v1/execution.py": "45d023b41f4be3f0c84f4fa1efd3f27fcb82423dc7fe379fb4c08018a1f4490c",
+    "export/c01/tests/grader/nrb_v1/grading.py": "ede212b483647181b0e0bf65c2441a4f1f36e61a83dc161b2f2da31f132b2458",
+    "export/c01/tests/grader/nrb_v1/packets.py": "ddd2e27375a66e2ada35c3bbf07ac4a730fdfd2ad75b43cdcf7a4c63514834fd",
+    "export/c01/tests/grader/nrb_v1/policy.json": "bd13a4cf49f4be9b47bd2b812494d5dbedfa6b1a5f4883506b726bc6421af78b",
+    "export/c01/tests/grader/nrb_v1/provenance.py": "220027a923b83c264ce14465ffc27d7221a28a04c6874c67bf51257655085da0",
+    "export/c01/tests/grader/nrb_v1/registry.py": "b75b73136bab14331ae885288786674ab2aa75f94e42b7b81c68d32c21abde77",
+    "export/c01/tests/grader/nrb_v1/research.py": "f060291741df09dbccd958288e5e5f201488b1ebd2eb508e66a3099a688c78f0",
+    "export/c01/tests/grader/nrb_v1/tasks/__init__.py": "9a6247bf6ac75f9480935d00cd962444bae110902822da15bffa9aa0bb80218c",
+    "export/c01/tests/grader/nrb_v1/tasks/c01.py": "f9c6bbeb7e31d2cd2350d2ab67137c112846a37bba32c63b970405ecc6b5c519",
+    "export/c01/tests/grader/nrb_v1/tasks/c02.py": "f70a50d919be224053f353e164841233eec780f29970758148a3008e50076df1",
+    "export/c01/tests/grader/nrb_v1/tasks/c03.py": "d6f788f4c2edf05561c4743318bf511ed00ff368f03dd876084f9628104651c3",
+    "export/c01/tests/grader/nrb_v1/tasks/c04.py": "41f3b539d5a4672513406b6bbdcce00cfc6257b68fcbbc2b2fcfbc6473acb3c9",
+    "export/c01/tests/grader/nrb_v1/tasks/c05.py": "a6dddbf01d9e71c733db5d131a8c735fd94248888079c5b6725144a19727c31c",
+    "export/c01/tests/grader/nrb_v1/tasks/c06.py": "4227e6eb3343f39d447bd87795ce272cf0e3c98f75b1a96e50aaa23f9dc04bca",
+    "export/c01/tests/grader/nrb_v1/tasks/c07.py": "21b4429a4840e38fb38ad1d18ba464679351991ef0ae0ef267b0f42a9b62f7dc",
+    "export/c01/tests/grader/nrb_v1/tasks/c08.py": "a86ad6471e126b0c6e699bcf381a0adb5611a5e8ff60b6f21e09473137b40654",
+    "export/c01/tests/grader/nrb_v1/tasks/c09.py": "be9e76ce6d307478b18072dedda33ba496e150b8a18e7948c52de3dd1de5e9c8",
+    "export/c01/tests/grader/nrb_v1/tasks/c10.py": "c18e63348a1686398136d10b3742979fe820cd6bdf2b3d0ca358520797d3229a",
+    "export/c01/tests/grader/verify.py": "a5b887799b8916afcc750f41e760cab24e113b66ee6b1681a4c808c3ea3bea7b",
+    "export/c01/tests/test.sh": "73b327a4b20cf1e9f09c4cceef9bf6e31ace369839065e03b9ae8cd135c15be0",
+    "export/manifest.json": "be5b8a506e71d2acff6fbe0c6188011fab41faef29c62fcb7d9692b0db7535e6",
+    "probe-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe-stdout.txt": "69e1d5d0d9336c6e725756c8346fca044d773ed7707de673d9e28ecb667d35a7"
+  },
+  "wall_seconds": 5.39485731100001,
+  "report_hash": "83591455a4f040b9fe04eb1bb8fa78815ab4abff4a7c95a8e1e45c775286fb05"
+}

@@ -1,0 +1,34 @@
+test_candidate_samples_are_blank_target_and_packet_bound (test_adapters.AdapterCoreContracts.test_candidate_samples_are_blank_target_and_packet_bound) ... ok
+test_exports_have_no_default_oracle_and_use_exact_candidate_bytes (test_adapters.AdapterCoreContracts.test_exports_have_no_default_oracle_and_use_exact_candidate_bytes) ... ok
+test_fresh_exports_reject_dangling_destination_symlinks (test_adapters.AdapterCoreContracts.test_fresh_exports_reject_dangling_destination_symlinks) ... ok
+test_harbor_trial_checker_requires_canonical_evidence_not_reward_only (test_adapters.AdapterCoreContracts.test_harbor_trial_checker_requires_canonical_evidence_not_reward_only) ... ok
+test_inspect_summary_preserves_partial_report_and_redacts_only_credentials (test_adapters.AdapterCoreContracts.test_inspect_summary_preserves_partial_report_and_redacts_only_credentials) ... ok
+test_invalid_envelope_scores_zero_but_unavailable_execution_is_unscored (test_adapters.AdapterCoreContracts.test_invalid_envelope_scores_zero_but_unavailable_execution_is_unscored) ... ok
+test_promptfoo_redaction_recovery_is_bound_to_full_logged_prompt (test_adapters.AdapterCoreContracts.test_promptfoo_redaction_recovery_is_bound_to_full_logged_prompt) ... ok
+test_promptfoo_summary_preserves_denominator_and_generation_budget (test_adapters.AdapterCoreContracts.test_promptfoo_summary_preserves_denominator_and_generation_budget) ... ok
+test_provenance_drift_rejected_before_actual_grading (test_adapters.AdapterCoreContracts.test_provenance_drift_rejected_before_actual_grading) ... ok
+test_real_grade_partial_score_and_incomplete_manual_total (test_adapters.AdapterCoreContracts.test_real_grade_partial_score_and_incomplete_manual_total) ... ok
+test_nonfinite_or_invalid_unicode_envelopes_are_candidate_failures (test_adapters.MalformedEnvelopeRegression.test_nonfinite_or_invalid_unicode_envelopes_are_candidate_failures) ... ok
+test_all_ten_exports_parse_actual_task_config (test_adapters.RealHarborSchemaRuntime.test_all_ten_exports_parse_actual_task_config) ... ok
+test_task_construction_and_actual_mock_eval (test_adapters.RealInspectRuntime.test_task_construction_and_actual_mock_eval) ... /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/inspect_ai/model/_retry.py:126: DeprecationWarning: The 'initial' parameter is deprecated, use 'multiplier' instead
+  else wait_exponential_jitter(initial=3, max=(30 * 60), jitter=3)
+/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/anyio/streams/memory.py:190: ResourceWarning: Unclosed <MemoryObjectReceiveStream at 7f07932b0620>
+  warnings.warn(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/inspect_ai/model/_retry.py:126: DeprecationWarning: The 'initial' parameter is deprecated, use 'multiplier' instead
+  else wait_exponential_jitter(initial=3, max=(30 * 60), jitter=3)
+/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/anyio/streams/memory.py:190: ResourceWarning: Unclosed <MemoryObjectReceiveStream at 7f079303d250>
+  warnings.warn(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/inspect_ai/model/_retry.py:126: DeprecationWarning: The 'initial' parameter is deprecated, use 'multiplier' instead
+  else wait_exponential_jitter(initial=3, max=(30 * 60), jitter=3)
+/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/anyio/streams/memory.py:190: ResourceWarning: Unclosed <MemoryObjectReceiveStream at 7f0793025b80>
+  warnings.warn(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_actual_empty_cli_ten_expected_failures (test_adapters.RealPromptfooRuntime.test_actual_empty_cli_ten_expected_failures) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 10.007s
+
+OK

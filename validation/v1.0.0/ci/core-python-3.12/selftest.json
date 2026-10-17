@@ -1,0 +1,4267 @@
+{
+  "kind": "reference_and_wrong_candidate_validation",
+  "not_model_performance": true,
+  "api_provider_calls": 0,
+  "evaluator_identity": {
+    "benchmark_version": "1.0.0",
+    "scoring_schema": "nrb-v1.0",
+    "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+    "digest_algorithm": "sha256-path-content-v1"
+  },
+  "backend": "trusted",
+  "entries": [
+    {
+      "task_id": "C01",
+      "seed": 0,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033642960000001665,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "428585062a14181fd75f62d812afb18423dbca58c23717e02ad65387b7e6521f"
+    },
+    {
+      "task_id": "C01",
+      "seed": 0,
+      "label": "duplicate_first",
+      "passed": true,
+      "auto_points": 55,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033657853000001126,
+      "critical_failures": [
+        "duplicates_missing"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "cd8c1e42e4d5e41d249f796cb1ef9ef34f0bb377402eb74b794de484f2c437bb"
+    },
+    {
+      "task_id": "C01",
+      "seed": 0,
+      "label": "unweighted_summary",
+      "passed": true,
+      "auto_points": 18,
+      "tier_scores": {
+        "basic": {
+          "earned": 8,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03379968099999786,
+      "critical_failures": [
+        "parse_units",
+        "duplicates_missing"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "4df91ec75c05333393bc2cda11322c7e9cce14a84b64c61566b728b11f746937"
+    },
+    {
+      "task_id": "C02",
+      "seed": 0,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03367517899999939,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "3fbd813fdcd7bbf4fd3b40fda7efd5089a2c0575a07ef2e98cfbff122b057329"
+    },
+    {
+      "task_id": "C02",
+      "seed": 0,
+      "label": "technical_pseudoreplication",
+      "passed": true,
+      "auto_points": 45,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03363084100000435,
+      "critical_failures": [
+        "unequal_technical_repeats"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "e2cd35594ced4cc3e0e13121b69ba7e5deaf40b5de1fb123ce893b9867b949c7"
+    },
+    {
+      "task_id": "C02",
+      "seed": 0,
+      "label": "pooled_strata",
+      "passed": true,
+      "auto_points": 40,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03358675300000158,
+      "critical_failures": [
+        "unequal_technical_repeats",
+        "stratum_target"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "7812e4f5c5a6c4e57485747f9a937b89f05ada23573bb9fe4a97eabbcb720fd5"
+    },
+    {
+      "task_id": "C03",
+      "seed": 0,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03371221599999785,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "bd2b11c7b3d385b3c1e3c8e169e95d12d588c33f49de89c7620b4e8b5b4e6ab1"
+    },
+    {
+      "task_id": "C03",
+      "seed": 0,
+      "label": "arithmetic_interface",
+      "passed": true,
+      "auto_points": 40,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.0664138269999981,
+      "critical_failures": [
+        "heterogeneous_conservative",
+        "source_fixed_mix"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "4a841bc6ec2d84590370a1990a6b41a17e7356f6e9aadcf5d801322bef203221"
+    },
+    {
+      "task_id": "C03",
+      "seed": 0,
+      "label": "lost_left_boundary_one_cell",
+      "passed": true,
+      "auto_points": 60,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03380374799999686,
+      "critical_failures": [
+        "one_cell_two_boundaries"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "a1220bbb411f9b01968e6f2dbb0868bceab03da37ed706b602aa6418947d370d"
+    },
+    {
+      "task_id": "C04",
+      "seed": 0,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03377354099999508,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "b17da66637080cb5192ade8db4eba06dcc68d4c73016a8a791a6fbaa6bbff751"
+    },
+    {
+      "task_id": "C04",
+      "seed": 0,
+      "label": "amplitude_as_power",
+      "passed": true,
+      "auto_points": 25,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 15,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033759078000002773,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "7f14184b033e346097416ccf5e13e8fed517a391c945c0e79735c3d2ccb01b94"
+    },
+    {
+      "task_id": "C04",
+      "seed": 0,
+      "label": "ignore_p_polarization",
+      "passed": true,
+      "auto_points": 39,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 9,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033867245000003265,
+      "critical_failures": [
+        "oblique_absorbing_p",
+        "brewster_and_lossless",
+        "opaque_layer"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "cfc750ca23e4da2e9c668c01764b0de22078f70f5bc619e5aea9ed587aa9bdbc"
+    },
+    {
+      "task_id": "C04",
+      "seed": 0,
+      "label": "opaque_cutoff",
+      "passed": true,
+      "auto_points": 29,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 9,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033756774000003986,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p",
+        "opaque_layer"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "2e200ff50c10929d368efd06577c032928300dbd6d8c69f49bda5958d1d559ad"
+    },
+    {
+      "task_id": "C05",
+      "seed": 0,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.06598546499999713,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "e02266404e8aa0df68454b0e3ea0e97e1914a5770c3a5c46dec79e7b2156cac6"
+    },
+    {
+      "task_id": "C05",
+      "seed": 0,
+      "label": "accept_rejected_state",
+      "passed": true,
+      "auto_points": 33,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033608184000001984,
+      "critical_failures": [
+        "stiff_rollback",
+        "right_continuous_schedule"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "095d9fe1836bacd57aba7372983e1465bc855a2d8cedba75dd7cb8aa01b1583b"
+    },
+    {
+      "task_id": "C05",
+      "seed": 0,
+      "label": "left_continuous_source",
+      "passed": true,
+      "auto_points": 55,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.06572807599999919,
+      "critical_failures": [
+        "right_continuous_schedule"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "0f80dff5915f9a98aebf6e7f2b88318480cc4489318fc0795e41835297085e33"
+    },
+    {
+      "task_id": "C05",
+      "seed": 0,
+      "label": "discard_small_remainder",
+      "passed": true,
+      "auto_points": 48,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.06574465099999571,
+      "critical_failures": [
+        "stiff_rollback",
+        "large_absolute_clock"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "53b8b98253eda49fdea34d60707d2dfaed4c6e93439d4ccb0592092fff9c59e2"
+    },
+    {
+      "task_id": "C06",
+      "seed": 0,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.21599962500000203,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "e66f372fff2b4cf43130116fcb4cbad5ae5870c3b0cc464305e33ae59d238f4b"
+    },
+    {
+      "task_id": "C06",
+      "seed": 0,
+      "label": "central_drift",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.21604886899999798,
+      "critical_failures": [
+        "constant_drift_exponential",
+        "heterogeneous_nonuniform",
+        "negative_drift_boundary_layer",
+        "peclet_2250_positive"
+      ],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "93b7bae673bd1fd0d7476c50637fac6d5ef1fa459735e8fc95f5fc290e96d1d4"
+    },
+    {
+      "task_id": "C06",
+      "seed": 0,
+      "label": "uniform_control_volume",
+      "passed": true,
+      "auto_points": 60,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.21611821399999798,
+      "critical_failures": [
+        "heterogeneous_nonuniform"
+      ],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "86523b834b7dce19488eed88b9419ddd8c4b4fcf6e69163a84e84361a68ba68b"
+    },
+    {
+      "task_id": "C06",
+      "seed": 0,
+      "label": "wrong_right_boundary",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.21600237799999888,
+      "critical_failures": [
+        "constant_drift_exponential",
+        "heterogeneous_nonuniform",
+        "negative_drift_boundary_layer",
+        "peclet_2250_positive"
+      ],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "d0c08a7d05b28a5a84e11e7c92ffeb17fc555bf1ce1f789ee036d4ac15fe1dba"
+    },
+    {
+      "task_id": "C07",
+      "seed": 0,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.1161356679999983,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "fea62c020f2235bfa281f596be320bf5fbcef341bcd0daa971bdf174b307b178"
+    },
+    {
+      "task_id": "C07",
+      "seed": 0,
+      "label": "discard_baseline",
+      "passed": true,
+      "auto_points": 6,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11608709099999714,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "structurally_flat",
+        "weak_full_interval"
+      ],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "cd14dab95d6e6f566511f385a5edc56bfd4d958d92710d343157b3587defd89a"
+    },
+    {
+      "task_id": "C07",
+      "seed": 0,
+      "label": "ignore_heteroscedastic_sigma",
+      "passed": true,
+      "auto_points": 13,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11608011299999532,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval"
+      ],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "23e1b7c0eb48a539612c2ff4c2f42ac625e8677e3c307c776a5aec6f75194563"
+    },
+    {
+      "task_id": "C07",
+      "seed": 0,
+      "label": "conditional_information",
+      "passed": true,
+      "auto_points": 13,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11619489499999958,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval"
+      ],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "bbbf99ea82a1980b507553a5b75e15b96ccfb2e60677be8e22df0e18bd737924"
+    },
+    {
+      "task_id": "C08",
+      "seed": 0,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.18881139699999494,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "775ba6a54ba898521b809a094943aba92d04a460a06563076c3e56bfe35c8f63"
+    },
+    {
+      "task_id": "C08",
+      "seed": 0,
+      "label": "arithmetic_interface",
+      "passed": true,
+      "auto_points": 46,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.1884248810000031,
+      "critical_failures": [
+        "nonuniform_interfaces",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "357f82992b06b51678a429b83ebdbcdaf1a14e841781d77ad3fdd9b3ea7956c5"
+    },
+    {
+      "task_id": "C08",
+      "seed": 0,
+      "label": "swap_tensor_directions",
+      "passed": true,
+      "auto_points": 26,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.1370848010000003,
+      "critical_failures": [
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "7fccecec6733bf3b46d5598249e5fcf830eb93805d14a4673d2ec65834a00b61"
+    },
+    {
+      "task_id": "C08",
+      "seed": 0,
+      "label": "reverse_west_flux",
+      "passed": true,
+      "auto_points": 6,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.18796746000000297,
+      "critical_failures": [
+        "affine_harmonic",
+        "isotropic_manufactured",
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "06c36c33db920414ec9e71b3d285a18242131ac3423e49bf186c8f41828fb84b"
+    },
+    {
+      "task_id": "C09",
+      "seed": 0,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.3162972200000027,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "5098909a7552dcb554c00c051ffc1cbf22a7d1c29e3400f7183293641d4a4764"
+    },
+    {
+      "task_id": "C09",
+      "seed": 0,
+      "label": "wrong_poisson_mesh_scale",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.3163795250000021,
+      "critical_failures": [
+        "boltzmann_zero_flux",
+        "coupled_manufactured_sources",
+        "potential_gauge_shift",
+        "screening_refined"
+      ],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "2ff9bc32f17b1e113e16eaa878ec92a61cb5dbe2fba02cb37f3063bbbfe13b30"
+    },
+    {
+      "task_id": "C09",
+      "seed": 0,
+      "label": "remove_gauge_boundary",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.31651783399999545,
+      "critical_failures": [
+        "boltzmann_zero_flux",
+        "coupled_manufactured_sources",
+        "potential_gauge_shift",
+        "screening_refined"
+      ],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "437aa0132d4d8d2f479b2b07197f199ee03488875516d9e894361f9e4eb24124"
+    },
+    {
+      "task_id": "C09",
+      "seed": 0,
+      "label": "drift_sign_reversal",
+      "passed": true,
+      "auto_points": 22,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.3165203579999982,
+      "critical_failures": [
+        "affine_potential_nonzero_current",
+        "boltzmann_zero_flux",
+        "coupled_manufactured_sources",
+        "potential_gauge_shift",
+        "screening_refined"
+      ],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "eb184b4bd63b4afdcc6160067e33015014f39c87f0f3bdf88a7e2f566d99ab38"
+    },
+    {
+      "task_id": "C10",
+      "seed": 0,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11637783200000484,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "4aa0fd9823e763dd61fce1363e81af274cb5ec580a2b102aae9651530ce0390b"
+    },
+    {
+      "task_id": "C10",
+      "seed": 0,
+      "label": "lagged_reaction_transfer",
+      "passed": true,
+      "auto_points": 14,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 4,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.1663340579999968,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative",
+        "rank_deficient_uniform_initial"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "2b26632abc504a1f4caf7833672770e543bc3e0b21eb8b05d558254054a7283c"
+    },
+    {
+      "task_id": "C10",
+      "seed": 0,
+      "label": "reset_checkpoint_tangents",
+      "passed": true,
+      "auto_points": 39,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 9,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11630061099999978,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "5cc4cac736c90318eeb72247ac1ad17855dd0578eb6639c00eb4a6e0d8063eae"
+    },
+    {
+      "task_id": "C10",
+      "seed": 0,
+      "label": "relative_sigma_covariance",
+      "passed": true,
+      "auto_points": 50,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11614876600000201,
+      "critical_failures": [
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "82466aee5daed5bfb23e4d6bc6bbfbec39f89bb0f57412f6abab30971d563091"
+    },
+    {
+      "task_id": "C10",
+      "seed": 0,
+      "label": "reuse_bootstrap_noise",
+      "passed": true,
+      "auto_points": 60,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11622433000000143,
+      "critical_failures": [
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "b947dd9c6b3112b04ffaf0901b2ab6a7b730ea9f560ea1824612edb07dcc1cdf"
+    },
+    {
+      "task_id": "C01",
+      "seed": 17,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03369348300000041,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "c7f0adc6dc1acd98786e6455baba5e935c0f132b848d4184eff267207a08ea47"
+    },
+    {
+      "task_id": "C01",
+      "seed": 17,
+      "label": "duplicate_first",
+      "passed": true,
+      "auto_points": 55,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03357440300000292,
+      "critical_failures": [
+        "duplicates_missing"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "14d349d5aba0535121b9f4b483e3e91d3657ac56f8428a05791ae79a57f0d5d4"
+    },
+    {
+      "task_id": "C01",
+      "seed": 17,
+      "label": "unweighted_summary",
+      "passed": true,
+      "auto_points": 18,
+      "tier_scores": {
+        "basic": {
+          "earned": 8,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03363280199999963,
+      "critical_failures": [
+        "parse_units",
+        "duplicates_missing"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "674b97b8d097a089355a5c11f3835078064009395e3569b812229c2a6018db39"
+    },
+    {
+      "task_id": "C02",
+      "seed": 17,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03361794900000348,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "b4b7e91f99d401cd9367f058323cce0c902ce560577660cc419b346677c65b84"
+    },
+    {
+      "task_id": "C02",
+      "seed": 17,
+      "label": "technical_pseudoreplication",
+      "passed": true,
+      "auto_points": 45,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03356122299999953,
+      "critical_failures": [
+        "unequal_technical_repeats"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "0149ef0ad47a0157ab3b77aa05407960eb78aa6316588a6d7de8124243b5fbcd"
+    },
+    {
+      "task_id": "C02",
+      "seed": 17,
+      "label": "pooled_strata",
+      "passed": true,
+      "auto_points": 40,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03367023799999913,
+      "critical_failures": [
+        "unequal_technical_repeats",
+        "stratum_target"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "b453e3217d068c0b11f95aa74eb5c8ce8bf375a637c2b3330ac9d508156fd7ab"
+    },
+    {
+      "task_id": "C03",
+      "seed": 17,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03380554799999658,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "2b4b61df58b7888c2111e26813583b069c711408805b82e86f4edbf23645675f"
+    },
+    {
+      "task_id": "C03",
+      "seed": 17,
+      "label": "arithmetic_interface",
+      "passed": true,
+      "auto_points": 40,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.06946637999999439,
+      "critical_failures": [
+        "heterogeneous_conservative",
+        "source_fixed_mix"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "7f0e967ad67a711cfe914907d52a0765f49f1adfa13f6e1f8555148e35ac758c"
+    },
+    {
+      "task_id": "C03",
+      "seed": 17,
+      "label": "lost_left_boundary_one_cell",
+      "passed": true,
+      "auto_points": 60,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033937272999992274,
+      "critical_failures": [
+        "one_cell_two_boundaries"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "07b73248467dd79dadd1200569bb1a379020cba2bfcabb41ccba3e13b6196f6e"
+    },
+    {
+      "task_id": "C04",
+      "seed": 17,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03371413499999676,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "978e5f9a0c5ab4a6a3380855073ca54dc46f06b8c51bb6f4d970a1ffab65de48"
+    },
+    {
+      "task_id": "C04",
+      "seed": 17,
+      "label": "amplitude_as_power",
+      "passed": true,
+      "auto_points": 25,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 15,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03382046499999092,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "42e48495ba46de4c9c39fd181bebf0894c28beaf1b1b144506ef8eb91fee5cb4"
+    },
+    {
+      "task_id": "C04",
+      "seed": 17,
+      "label": "ignore_p_polarization",
+      "passed": true,
+      "auto_points": 39,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 9,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03369523700000343,
+      "critical_failures": [
+        "oblique_absorbing_p",
+        "brewster_and_lossless",
+        "opaque_layer"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "f30b1de47165b10887fa8b0d70af7ea1402f5210e501935a1a820ae7332f680d"
+    },
+    {
+      "task_id": "C04",
+      "seed": 17,
+      "label": "opaque_cutoff",
+      "passed": true,
+      "auto_points": 29,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 9,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033621274000012136,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p",
+        "opaque_layer"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "02b31990294c113fb0ec5abdc236fe6a90257218692dd229743542618160c7d0"
+    },
+    {
+      "task_id": "C05",
+      "seed": 17,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.06588981699999863,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "5fbb17244e54fe68b3ea156b0c20ee45c117a92e8b19300ae7e433204fcd2635"
+    },
+    {
+      "task_id": "C05",
+      "seed": 17,
+      "label": "accept_rejected_state",
+      "passed": true,
+      "auto_points": 33,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03375783199999205,
+      "critical_failures": [
+        "stiff_rollback",
+        "right_continuous_schedule"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "26cfff69bb970b00c96246cac908c2d118cab6bae192a84992ee40bf2e1a5710"
+    },
+    {
+      "task_id": "C05",
+      "seed": 17,
+      "label": "left_continuous_source",
+      "passed": true,
+      "auto_points": 55,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.06603704799999832,
+      "critical_failures": [
+        "right_continuous_schedule"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "1b3fd5e79501ca686f9be1008afba5a68880f3597b85e3b73c51223cf29dd954"
+    },
+    {
+      "task_id": "C05",
+      "seed": 17,
+      "label": "discard_small_remainder",
+      "passed": true,
+      "auto_points": 48,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.06592044200000657,
+      "critical_failures": [
+        "stiff_rollback",
+        "large_absolute_clock"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "6640ef2ac5b53a72ad31b1a56e361517e05a8b3bc263413da56972354ca99442"
+    },
+    {
+      "task_id": "C06",
+      "seed": 17,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.21622135599999126,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "21931116859e110c81d678e09485f9712f7034881223abfd641559f4bf07c321"
+    },
+    {
+      "task_id": "C06",
+      "seed": 17,
+      "label": "central_drift",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.21615192100000513,
+      "critical_failures": [
+        "constant_drift_exponential",
+        "heterogeneous_nonuniform",
+        "negative_drift_boundary_layer",
+        "peclet_2250_positive"
+      ],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "5a61b814c9b8d885bf2af1d35fbe5ecf0957c115c973357990e26323f3f19a27"
+    },
+    {
+      "task_id": "C06",
+      "seed": 17,
+      "label": "uniform_control_volume",
+      "passed": true,
+      "auto_points": 60,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.21610384899999246,
+      "critical_failures": [
+        "heterogeneous_nonuniform"
+      ],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "1ef3fa43d14ecb7af29e33ee8793baddc56c6e6efed3044384932c783edbd961"
+    },
+    {
+      "task_id": "C06",
+      "seed": 17,
+      "label": "wrong_right_boundary",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.21621881199999393,
+      "critical_failures": [
+        "constant_drift_exponential",
+        "heterogeneous_nonuniform",
+        "negative_drift_boundary_layer",
+        "peclet_2250_positive"
+      ],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "95116408b616ce7539d2f8ad2534d0d912aa5f21d027cc88f119fcf0cb15f84e"
+    },
+    {
+      "task_id": "C07",
+      "seed": 17,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11624379900000292,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "d7356d15f638ec6cb31575f91a67cd259af61d24073a2ed08ba1ffe0609fffa9"
+    },
+    {
+      "task_id": "C07",
+      "seed": 17,
+      "label": "discard_baseline",
+      "passed": true,
+      "auto_points": 6,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11623943200000042,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "structurally_flat",
+        "weak_full_interval"
+      ],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "a84d0cbacf7b125ad5428788c3a685a917f570aef660b9573e58b9a4b07ab984"
+    },
+    {
+      "task_id": "C07",
+      "seed": 17,
+      "label": "ignore_heteroscedastic_sigma",
+      "passed": true,
+      "auto_points": 13,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11622475999999438,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval"
+      ],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "a9f6a4c1fe10b813b9b8d69875aff06734cde075b175f00151474e0d49d85ef6"
+    },
+    {
+      "task_id": "C07",
+      "seed": 17,
+      "label": "conditional_information",
+      "passed": true,
+      "auto_points": 13,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11608377800000369,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval"
+      ],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "062334983a9b0c92979e911a6f81f4e9d28a7817fc9a9ae983f7a164d6d68ea4"
+    },
+    {
+      "task_id": "C08",
+      "seed": 17,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.18726589400000648,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "6bf707e2367f803e75e2848782221db8a1979f6b4d125a18bbe41d187fe22c25"
+    },
+    {
+      "task_id": "C08",
+      "seed": 17,
+      "label": "arithmetic_interface",
+      "passed": true,
+      "auto_points": 46,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.18847806399999456,
+      "critical_failures": [
+        "nonuniform_interfaces",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "9b2c36cc2d7c390c66499411e064d659df6a805a7025ebb712076a3e676a136f"
+    },
+    {
+      "task_id": "C08",
+      "seed": 17,
+      "label": "swap_tensor_directions",
+      "passed": true,
+      "auto_points": 26,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.1883444609999998,
+      "critical_failures": [
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "f82fc3161fbda63860e6b4cfc81793c86f7f70311d243e22f0c8db466b9a7341"
+    },
+    {
+      "task_id": "C08",
+      "seed": 17,
+      "label": "reverse_west_flux",
+      "passed": true,
+      "auto_points": 6,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.18947311399999478,
+      "critical_failures": [
+        "affine_harmonic",
+        "isotropic_manufactured",
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "9d03aac1397d132a51ee2015299597142011f0474b355821428d985f4a4fd469"
+    },
+    {
+      "task_id": "C09",
+      "seed": 17,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.31633752499999446,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "45d59dacd8496a94624162cae42565898e95a83c51ed2ec12833706f845315fc"
+    },
+    {
+      "task_id": "C09",
+      "seed": 17,
+      "label": "wrong_poisson_mesh_scale",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.3165480100000053,
+      "critical_failures": [
+        "boltzmann_zero_flux",
+        "coupled_manufactured_sources",
+        "potential_gauge_shift",
+        "screening_refined"
+      ],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "7e0172f3506b681978c941973de782974fdd4f5719ead3ba7e9bbd45994c0055"
+    },
+    {
+      "task_id": "C09",
+      "seed": 17,
+      "label": "remove_gauge_boundary",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.31658807500001274,
+      "critical_failures": [
+        "boltzmann_zero_flux",
+        "coupled_manufactured_sources",
+        "potential_gauge_shift",
+        "screening_refined"
+      ],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "2f5a75c8e6c33283af0bef3ff4dcfd49cadaa836a3af9d9e44cbc9f3dda77b11"
+    },
+    {
+      "task_id": "C09",
+      "seed": 17,
+      "label": "drift_sign_reversal",
+      "passed": true,
+      "auto_points": 22,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.31644771199999866,
+      "critical_failures": [
+        "affine_potential_nonzero_current",
+        "boltzmann_zero_flux",
+        "coupled_manufactured_sources",
+        "potential_gauge_shift",
+        "screening_refined"
+      ],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "a130fa99ff5f1538ee2f3c8645afc8aa13c166e199212bab70235a4919a1e683"
+    },
+    {
+      "task_id": "C10",
+      "seed": 17,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11629388800000129,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "dcc336f3e7166d9a2be9b7dca8781bd0d9e484504dbece3caadabf17d9cb664a"
+    },
+    {
+      "task_id": "C10",
+      "seed": 17,
+      "label": "lagged_reaction_transfer",
+      "passed": true,
+      "auto_points": 14,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 4,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.16624503200000618,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative",
+        "rank_deficient_uniform_initial"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "a7c52440a70b6b9ea05c0b28ba2c4c9bd395863278558cf2a8eef3b27685f78e"
+    },
+    {
+      "task_id": "C10",
+      "seed": 17,
+      "label": "reset_checkpoint_tangents",
+      "passed": true,
+      "auto_points": 39,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 9,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11630959200000746,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "d556230ed0a3ec1a8a2511cfd9540948c8d60c84aab8ed6ca204516c6bb980e6"
+    },
+    {
+      "task_id": "C10",
+      "seed": 17,
+      "label": "relative_sigma_covariance",
+      "passed": true,
+      "auto_points": 50,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11622440400000755,
+      "critical_failures": [
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "71c9e5f354c9a7ae895fb6bb7e725022c9e22012b6166d6b3750e3351fc212b4"
+    },
+    {
+      "task_id": "C10",
+      "seed": 17,
+      "label": "reuse_bootstrap_noise",
+      "passed": true,
+      "auto_points": 60,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.1161430000000081,
+      "critical_failures": [
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "442bb60703e0aa2c397b86da6213c5f06dd8c9fdc289974954f8137c286c69c2"
+    },
+    {
+      "task_id": "C01",
+      "seed": 2026,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033737244000008104,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "b01d25c4dca6157d5648ba78d50b65a58043cdd848dc245befa16ef6f51dee78"
+    },
+    {
+      "task_id": "C01",
+      "seed": 2026,
+      "label": "duplicate_first",
+      "passed": true,
+      "auto_points": 55,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03371797500000184,
+      "critical_failures": [
+        "duplicates_missing"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "e19ab8c8f997e40e6f0e2bfe6b07034d84845f56aeb8ae7f4f8d953ea4d99553"
+    },
+    {
+      "task_id": "C01",
+      "seed": 2026,
+      "label": "unweighted_summary",
+      "passed": true,
+      "auto_points": 18,
+      "tier_scores": {
+        "basic": {
+          "earned": 8,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03384560799999292,
+      "critical_failures": [
+        "parse_units",
+        "duplicates_missing"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "ccabd3f3db70fc28f49818c6ada39e5bd77e61b5137687a074050b1fbadf80f0"
+    },
+    {
+      "task_id": "C02",
+      "seed": 2026,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03361493899998891,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "49b8a78ff83e1e1c2a1f1ae116074f6a9934591080b537a9c0840602a323b0c1"
+    },
+    {
+      "task_id": "C02",
+      "seed": 2026,
+      "label": "technical_pseudoreplication",
+      "passed": true,
+      "auto_points": 45,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03363364700000204,
+      "critical_failures": [
+        "unequal_technical_repeats"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "037f8706422e92168f6d790abe89872f0b6ef18f90bb0a21e488f2d5b66d6f0a"
+    },
+    {
+      "task_id": "C02",
+      "seed": 2026,
+      "label": "pooled_strata",
+      "passed": true,
+      "auto_points": 40,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03371132400000931,
+      "critical_failures": [
+        "unequal_technical_repeats",
+        "stratum_target"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "f4e2733fad6bf9039f83497d80a661d7c1dd7994e67d42ac523b97b4d9c46061"
+    },
+    {
+      "task_id": "C03",
+      "seed": 2026,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033747719000004395,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "d0da6a6ca65756a24d67cb69f01ee494f55ed5a80eed1a52cfd7df62c3e24ebf"
+    },
+    {
+      "task_id": "C03",
+      "seed": 2026,
+      "label": "arithmetic_interface",
+      "passed": true,
+      "auto_points": 40,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03368324199999506,
+      "critical_failures": [
+        "heterogeneous_conservative",
+        "source_fixed_mix"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "d6916a3d1d80f225483d38338c3c0d8350d655890096fc46ce518b1294e4a793"
+    },
+    {
+      "task_id": "C03",
+      "seed": 2026,
+      "label": "lost_left_boundary_one_cell",
+      "passed": true,
+      "auto_points": 60,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03382366499999989,
+      "critical_failures": [
+        "one_cell_two_boundaries"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "71bfbc3b4073f3610f220692e2deeff78d841c9874566684456c53f06eeafefb"
+    },
+    {
+      "task_id": "C04",
+      "seed": 2026,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033910625999993727,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "4214a0e218ec6b120f93a0e5c77d6cb4865d6131b95428b23c9d973748c89aab"
+    },
+    {
+      "task_id": "C04",
+      "seed": 2026,
+      "label": "amplitude_as_power",
+      "passed": true,
+      "auto_points": 25,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 15,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.033813238999997,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "537311caab01f5c3415ac76fa37c031766eeafe6614180ec66a04b40eeb7b922"
+    },
+    {
+      "task_id": "C04",
+      "seed": 2026,
+      "label": "ignore_p_polarization",
+      "passed": true,
+      "auto_points": 39,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 9,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03381774599999687,
+      "critical_failures": [
+        "oblique_absorbing_p",
+        "brewster_and_lossless",
+        "opaque_layer"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "e0e376e50ec946b237d5c28e2abf823c0a02c3e895199e437d032e866b080cdc"
+    },
+    {
+      "task_id": "C04",
+      "seed": 2026,
+      "label": "opaque_cutoff",
+      "passed": true,
+      "auto_points": 29,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 9,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03376789099999655,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p",
+        "opaque_layer"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "570750c0c69c7a887c89ba12b84886cf7afa58ee85782b77a030069788642fc0"
+    },
+    {
+      "task_id": "C05",
+      "seed": 2026,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.06601991499999826,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "c9a30922f455c7340e1f9833d0263752198f414a7c27a6e13c10c14245926bbd"
+    },
+    {
+      "task_id": "C05",
+      "seed": 2026,
+      "label": "accept_rejected_state",
+      "passed": true,
+      "auto_points": 33,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.03412525099999186,
+      "critical_failures": [
+        "stiff_rollback",
+        "right_continuous_schedule"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "6a17646b3f2b21b8ad3e6e0176749a881226c081404ee11b25e2eced3b221fae"
+    },
+    {
+      "task_id": "C05",
+      "seed": 2026,
+      "label": "left_continuous_source",
+      "passed": true,
+      "auto_points": 55,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.06610834899998963,
+      "critical_failures": [
+        "right_continuous_schedule"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "9395796d73e55edb716cf35447734f1e367e4c9a77b46628901ae0635214042a"
+    },
+    {
+      "task_id": "C05",
+      "seed": 2026,
+      "label": "discard_small_remainder",
+      "passed": true,
+      "auto_points": 48,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 15,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.06611660199999392,
+      "critical_failures": [
+        "stiff_rollback",
+        "large_absolute_clock"
+      ],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "report_hash": "030db05786212c1185fd9c9f4b968939e08a73578f04a187b501458c606550bb"
+    },
+    {
+      "task_id": "C06",
+      "seed": 2026,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.216170309000006,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "31dcf8dd6c73f9df3b758133a15f5f6c911da020dc25d064db56cf0a859beded"
+    },
+    {
+      "task_id": "C06",
+      "seed": 2026,
+      "label": "central_drift",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.2161772190000022,
+      "critical_failures": [
+        "constant_drift_exponential",
+        "heterogeneous_nonuniform",
+        "negative_drift_boundary_layer",
+        "peclet_2250_positive"
+      ],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "36064dd8536c54b32d206fa0d099d8fab8283eb4f7a3382b2474d10a6cdb94a8"
+    },
+    {
+      "task_id": "C06",
+      "seed": 2026,
+      "label": "uniform_control_volume",
+      "passed": true,
+      "auto_points": 60,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.21627997500000617,
+      "critical_failures": [
+        "heterogeneous_nonuniform"
+      ],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "6ae258e4828ff60ae37cdeb0fe1b64da18ec3aa30cb1257f666c587fef2eb82b"
+    },
+    {
+      "task_id": "C06",
+      "seed": 2026,
+      "label": "wrong_right_boundary",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.21618298699999627,
+      "critical_failures": [
+        "constant_drift_exponential",
+        "heterogeneous_nonuniform",
+        "negative_drift_boundary_layer",
+        "peclet_2250_positive"
+      ],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "report_hash": "d7b82f7b6b1c291c7ccdfce1e9a1c5a88ec6b92a408c41dc8e01e469e872e0dd"
+    },
+    {
+      "task_id": "C07",
+      "seed": 2026,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11622143900000026,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "e5dcf80c6a2da2510e32d304e7c0447673b8cf21cf801696cb216417b7174a1e"
+    },
+    {
+      "task_id": "C07",
+      "seed": 2026,
+      "label": "discard_baseline",
+      "passed": true,
+      "auto_points": 6,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11628510500000289,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "structurally_flat",
+        "weak_full_interval"
+      ],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "d48c1b487635ad3ef10a25beedc586d4fdc3a813cd289c1b74df0a417c0fb6e8"
+    },
+    {
+      "task_id": "C07",
+      "seed": 2026,
+      "label": "ignore_heteroscedastic_sigma",
+      "passed": true,
+      "auto_points": 13,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11651994100000707,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval"
+      ],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "173c3b4bcf0a739ce32796320cd990d23a506ec17a8975a8d4608a631de2ee2f"
+    },
+    {
+      "task_id": "C07",
+      "seed": 2026,
+      "label": "conditional_information",
+      "passed": true,
+      "auto_points": 13,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 13,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11619233700000109,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval"
+      ],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "report_hash": "22653c63a8e4693b60d7ea328e1dda4c8a6bb66d3aa72f86958476c3ef250854"
+    },
+    {
+      "task_id": "C08",
+      "seed": 2026,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.1874564250000077,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "33160c4bb6e620c2405862a0bf62205b233deb0f27c5e39c647510ffcedbe953"
+    },
+    {
+      "task_id": "C08",
+      "seed": 2026,
+      "label": "arithmetic_interface",
+      "passed": true,
+      "auto_points": 46,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.1882968070000004,
+      "critical_failures": [
+        "nonuniform_interfaces",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "7ce2a9b928e4d567329ccacb62386cc1b3061da902dd5bcfa820d83b6988a44a"
+    },
+    {
+      "task_id": "C08",
+      "seed": 2026,
+      "label": "swap_tensor_directions",
+      "passed": true,
+      "auto_points": 26,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.1374189389999998,
+      "critical_failures": [
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "5f3fc3c311d406e36fd88621ae98d3d3e0e8b96c94510264a363d71e3d4189a4"
+    },
+    {
+      "task_id": "C08",
+      "seed": 2026,
+      "label": "reverse_west_flux",
+      "passed": true,
+      "auto_points": 6,
+      "tier_scores": {
+        "basic": {
+          "earned": 0,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 6,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.18901502499998912,
+      "critical_failures": [
+        "affine_harmonic",
+        "isotropic_manufactured",
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "d7829cc98a41e54d636265ab4d0f712a3f35be2b8a35e39090622e00dc82bb6f"
+    },
+    {
+      "task_id": "C09",
+      "seed": 2026,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.3166022099999992,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "b1e0fefd92e38371b8fdd9d856e6c13290eda90610d0cbb257a69fbe882c1dc9"
+    },
+    {
+      "task_id": "C09",
+      "seed": 2026,
+      "label": "wrong_poisson_mesh_scale",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.31652640299999746,
+      "critical_failures": [
+        "boltzmann_zero_flux",
+        "coupled_manufactured_sources",
+        "potential_gauge_shift",
+        "screening_refined"
+      ],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "f52229649a68e99df6273827d9ddb3086ffdbd397b4a67487fd411324595f2af"
+    },
+    {
+      "task_id": "C09",
+      "seed": 2026,
+      "label": "remove_gauge_boundary",
+      "passed": true,
+      "auto_points": 32,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.2663332799999978,
+      "critical_failures": [
+        "boltzmann_zero_flux",
+        "coupled_manufactured_sources",
+        "potential_gauge_shift",
+        "screening_refined"
+      ],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "25d20abaaea68ebb470fc741d29e95dd58e00168fffd71fb6fbf6f54d52124f3"
+    },
+    {
+      "task_id": "C09",
+      "seed": 2026,
+      "label": "drift_sign_reversal",
+      "passed": true,
+      "auto_points": 22,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 12,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.31683179399999517,
+      "critical_failures": [
+        "affine_potential_nonzero_current",
+        "boltzmann_zero_flux",
+        "coupled_manufactured_sources",
+        "potential_gauge_shift",
+        "screening_refined"
+      ],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "report_hash": "a2479cf44637a21eb1381f9ad6fbcc6a4a83113eb4b4af0594414bb011be5c11"
+    },
+    {
+      "task_id": "C10",
+      "seed": 2026,
+      "label": "reference",
+      "passed": true,
+      "auto_points": 70,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11675935699999229,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "eaf701b154b0723a543c75628e5c952b6ab5a95aa0f049e29309d9c0acd70d9c"
+    },
+    {
+      "task_id": "C10",
+      "seed": 2026,
+      "label": "lagged_reaction_transfer",
+      "passed": true,
+      "auto_points": 14,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 0,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 4,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.16642424799999844,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative",
+        "rank_deficient_uniform_initial"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "215e4dcde9e42b89e817ff60406d91f7d671b1971908343eb327ed8370d5cb78"
+    },
+    {
+      "task_id": "C10",
+      "seed": 2026,
+      "label": "reset_checkpoint_tangents",
+      "passed": true,
+      "auto_points": 39,
+      "tier_scores": {
+        "basic": {
+          "earned": 10,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 9,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11612640799999951,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "b0d5e235ff5cbd439a5fce4daf15dda351ad6c9338ce048909faa6578ad03448"
+    },
+    {
+      "task_id": "C10",
+      "seed": 2026,
+      "label": "relative_sigma_covariance",
+      "passed": true,
+      "auto_points": 50,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 10,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11624918399999729,
+      "critical_failures": [
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "085f9e45c22749a1906cd08f0a12b58e9b5ef19927218bb16d7ca6b1d6dad922"
+    },
+    {
+      "task_id": "C10",
+      "seed": 2026,
+      "label": "reuse_bootstrap_noise",
+      "passed": true,
+      "auto_points": 60,
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 20,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "execution_status": "executed",
+      "execution_seconds": 0.11638606100000004,
+      "critical_failures": [
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "report_hash": "355425d3ab838544563a2092a932d4601844411ad0fc0cbc5856824aa76c83f5"
+    }
+  ],
+  "passed": true
+}

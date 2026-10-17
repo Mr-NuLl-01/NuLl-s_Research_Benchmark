@@ -2,6 +2,33 @@
 
 本页记录评分器、参考实现、已知错误候选、框架和隔离的实际检查，不是被测 AI 成绩。版本发布前后的 GitHub Actions 原始报告按精确提交保存；所有 mock、oracle 和自检均标记 `not_model_performance=true`，模型提供商调用数为 0。
 
+## 最终 GitHub CI：8 / 8 作业通过
+
+[运行 39054465838](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39054465838) 已完成，八个作业全部成功。实际验证的源码提交是 [9d03a3ba33dfe78f6365d78fa50f4da478f683b3](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/commit/9d03a3ba33dfe78f6365d78fa50f4da478f683b3)。
+
+| 实际检查 | 结果与范围 |
+| --- | --- |
+| V1 Python 3.11 / 3.12 | 每个环境注册 59 项，执行 56 项通过、3 项可选框架检查跳过；另有独立框架作业实际执行对应检查。 |
+| 三种子科学自检 | 每个 Python 环境完成 114 次参考／错误候选验证，全部符合预期；两种环境是重复验证，不增加独立任务家族数。 |
+| 冻结题包 | 十九份单文件与生成器输出逐字节一致。 |
+| Inspect / promptfoo / Harbor schema | 独立框架作业实际执行 14 项检查，全部通过；promptfoo 十个空提交得到 10 个预期失败、0 个框架错误。 |
+| Docker 科学执行 | 十个参考实现自动 70/70，八个有明确科学缺陷的候选被相应检查拒绝，18 次结果全部符合预期；实际编译 Fortran。 |
+| 候选镜像隔离 | 实际非 root、只读根目录、无主机挂载、不可导入评分器、只含题目和空提交、仅 loopback 网络，所有检查通过。 |
+| Harbor 全链路 | 十个实际 trial 全通过；分别转移成果并用独立 verifier 评分。全部自动 70/70，人工分和总分仍为 null，状态均为 `pending_review`。 |
+| 历史协议 | V0.2 的两个 Python 作业、框架作业、Docker / Harbor 作业均通过。 |
+
+已将四份 V1 CI ZIP 的 SHA-256 与 GitHub artifact 摘要核对，并保留其关键原始报告。38 份候选标准报告通过内容封印、精确提交和评分器源码指纹复核。详见 [CI 摘要](../../validation/v1.0.0/ci-summary.json)、[原始证据目录](../../validation/v1.0.0/ci/README.md)、[Docker 科学报告](../../validation/v1.0.0/ci/docker/science.json)、[实际隔离报告](../../validation/v1.0.0/ci/docker/isolation.json) 和 [十题 Harbor 报告](../../validation/v1.0.0/ci/docker/harbor-runtime.json)。
+
+这次运行的评分器内容指纹为 `237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7`。实际科学镜像 ID 是 `sha256:cdc7a498cfea7bcc86caaa3dd6bfd795ebc1e4d58bc87095472a71bd62e8c6f5`；Docker Engine 28.0.4，容器内 Python 3.12.15、GNU Fortran 14.2.0。镜像 ID 是本次构建的执行证据，不是承诺未来从浮动基础标签重建出相同字节。
+
+发布收尾的文档／证据提交不改写这些报告中的 `evaluator_commit`。要精确复现本次 CI 身份，应 checkout 上述源码提交；在新的提交上开始模型比较时，应让所有比较对象使用同一新身份，不把不同 commit 的分数混合。
+
+### 保留首次失败与修复
+
+首次源码提交 `12b245b0664dc44f31fe6dbc886f57b489fe11c8` 的 Docker 科学检查已经通过，但隔离探针对一个 `/root` 子路径调用 `Path.exists()` 时遇到 `PermissionError`，提前退出，因而当时没有把隔离或尚未执行的 Harbor 标记为成功。修复使用明确 `lstat()` 分类：不存在、权限拒绝、存在三种状态分开记录；其他异常仍使探针失败。
+
+最终真实探针记录 **15 个不存在路径、1 个权限拒绝路径、0 个存在的禁用路径**。权限拒绝的路径没有被宣称为不存在。[首次失败摘要](../../validation/v1.0.0/first-ci-isolation-failure.json) 保留原提交、运行和 artifact 身份；成功结论只来自修复后的实际 CI。
+
 ## 本地结果
 
 发布源码完成后，本地合并测试 **59 项通过、0 跳过**；其中运行了真实 Inspect/promptfoo/Harbor schema 检查。三个种子的 **114 次参考/错误候选验证全部符合预期**。旧协议 **193 项检查通过，5 项可选环境跳过**。安装后的 wheel 从仓库外成功生成十九题，与冻结题面字节一致。
@@ -39,7 +66,7 @@ python -m nrb_v1 export --format files --tasks all --seed 17 --dest regenerated
 - Docker：科学镜像内执行十个参考和八个指定科学错误候选，实际编译 Fortran；记录镜像 ID、编译器与依赖版本。
 - 隔离：构建真实候选镜像，检查无评分器/仓库/主机挂载、非 root、只读根目录、断网和题包完整性；Harbor 验证器另检查 root 独占评分路径与日志权限。
 
-本地开发环境没有 Docker，不能把静态配置测试当作容器执行成功。真实 Docker/Harbor 执行结果由 GitHub Actions 对发布源码提交运行，并在发布收尾时将摘要和链接补入本页。当前运行清单见仓库 Actions，原始结果文件按对应任务 artifact 保存。
+本地开发环境没有 Docker，真实 Docker/Harbor 由上面的 GitHub Actions 运行提供证据。隔离探针的实际镜像检查范围是 C01；十题的成果转移、独立验证器和权限检查由 Harbor 全链路另行完成。没有验证真实推理 API 白名单或任意宿主 CLI 的隔离，也没有把静态 schema 检查当成容器运行。
 
 ## 证据解释限制
 

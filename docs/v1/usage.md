@@ -15,7 +15,7 @@ V1 默认本地离线工具合同。若另测云端媒体生成服务、联网�
 
 ## 2. 评分端准备
 
-Python 3.11+。以下操作只在评测者环境进行：
+核心评分器支持 Python 3.11+；使用本版固定的 Harbor 0.24.0 时需 Python 3.12+。promptfoo 0.124.1 另需 Node.js 22.22.0+（本版 CI 使用 Node.js 24）。以下操作只在评测者环境进行：
 
 ```bash
 git clone https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark.git
@@ -145,7 +145,7 @@ result = summarize_inspect_log("logs/inspect-v1/实际日志.json", selection="c
 
 ## 7. promptfoo
 
-验证目标版本为 **promptfoo 0.124.1**：
+验证目标版本为 **promptfoo 0.124.1**，先安装 **Node.js 22.22.0+**：
 
 ```bash
 npm install -g promptfoo@0.124.1
@@ -166,7 +166,7 @@ Python assertion 的标量为 `auto_points/70`。完整报告保留于 metadata 
 
 ## 8. Harbor
 
-验证目标 **Harbor 0.24.0**、任务 schema **1.4**：
+验证目标 **Harbor 0.24.0**、任务 schema **1.4**；以下安装及运行使用 **Python 3.12+**：
 
 ```bash
 python -m pip install 'harbor==0.24.0'

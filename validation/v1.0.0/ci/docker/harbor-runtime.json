@@ -1,0 +1,1955 @@
+{
+  "kind": "harbor_oracle_runtime_smoke",
+  "not_model_performance": true,
+  "job_dir": "/tmp/v1-harbor/jobs/oracle",
+  "expected_tasks": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10"
+  ],
+  "missing_tasks": [],
+  "trial_count": 10,
+  "entries": [
+    {
+      "trial": "c01__73ExomY",
+      "passed": true,
+      "exception_info": null,
+      "task_id": "C01",
+      "reward": 1.0,
+      "auto_points": 70,
+      "duplicate": false
+    },
+    {
+      "trial": "c02__W6ZeWke",
+      "passed": true,
+      "exception_info": null,
+      "task_id": "C02",
+      "reward": 1.0,
+      "auto_points": 70,
+      "duplicate": false
+    },
+    {
+      "trial": "c03__pryuyPi",
+      "passed": true,
+      "exception_info": null,
+      "task_id": "C03",
+      "reward": 1.0,
+      "auto_points": 70,
+      "duplicate": false
+    },
+    {
+      "trial": "c04__WarGv3B",
+      "passed": true,
+      "exception_info": null,
+      "task_id": "C04",
+      "reward": 1.0,
+      "auto_points": 70,
+      "duplicate": false
+    },
+    {
+      "trial": "c05__gwkefJv",
+      "passed": true,
+      "exception_info": null,
+      "task_id": "C05",
+      "reward": 1.0,
+      "auto_points": 70,
+      "duplicate": false
+    },
+    {
+      "trial": "c06__G2kJYvS",
+      "passed": true,
+      "exception_info": null,
+      "task_id": "C06",
+      "reward": 1.0,
+      "auto_points": 70,
+      "duplicate": false
+    },
+    {
+      "trial": "c07__q6DM3eV",
+      "passed": true,
+      "exception_info": null,
+      "task_id": "C07",
+      "reward": 1.0,
+      "auto_points": 70,
+      "duplicate": false
+    },
+    {
+      "trial": "c08__EMWzQKa",
+      "passed": true,
+      "exception_info": null,
+      "task_id": "C08",
+      "reward": 1.0,
+      "auto_points": 70,
+      "duplicate": false
+    },
+    {
+      "trial": "c09__XVyECxQ",
+      "passed": true,
+      "exception_info": null,
+      "task_id": "C09",
+      "reward": 1.0,
+      "auto_points": 70,
+      "duplicate": false
+    },
+    {
+      "trial": "c10__SFr3Ew2",
+      "passed": true,
+      "exception_info": null,
+      "task_id": "C10",
+      "reward": 1.0,
+      "auto_points": 70,
+      "duplicate": false
+    }
+  ],
+  "reports": [
+    {
+      "task_id": "C01",
+      "seed": 17,
+      "track": "coding",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+        "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "packet_hash": "45fa2976990638ece24f61101a51c97502578566f085e7a7d535d84db1ff4bad",
+      "submission_hash": "ee02cae6b1dfa61e9460541688c65ddebf8c44036e609ffe11097367809ac78c",
+      "rubric_hash": "d0048698a236c50f49456971229f47ca2d59b4e1143709585fdf1be0292dba1c",
+      "checks": [
+        {
+          "id": "parse_units",
+          "tier": "basic",
+          "weight": 12,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "empty",
+          "tier": "basic",
+          "weight": 8,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "duplicates_missing",
+          "tier": "scientific",
+          "weight": 15,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "quoted_bom",
+          "tier": "scientific",
+          "weight": 15,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "scaled_variance",
+          "tier": "stress",
+          "weight": 10,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "invalid_0",
+          "tier": "stress",
+          "weight": 2,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "invalid_1",
+          "tier": "stress",
+          "weight": 2,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "invalid_2",
+          "tier": "stress",
+          "weight": 2,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "invalid_3",
+          "tier": "stress",
+          "weight": 2,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "invalid_4",
+          "tier": "stress",
+          "weight": 2,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "missing_artifacts": [],
+      "essential_review": [
+        {
+          "id": "api",
+          "requirement": "solution.py 提供 solve(problem)，返回约定的 JSON 可序列化值，错误输入抛 ValueError。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "science",
+          "requirement": "report.md 解释科学定义、算法、单位、验证依据及适用范围。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "tests",
+          "requirement": "tests.py 包含可运行且有断言的独立测试，至少覆盖一个非平凡性质和一个边界。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 70,
+      "auto_max": 70,
+      "review_points": null,
+      "review_max": 30,
+      "total": null,
+      "reviewer_type": null,
+      "execution": {
+        "backend": "container",
+        "language": "python",
+        "input_hash": "83ab1422f31193623746b019d869c33ff0445f966fabbf782098e5667b3a2eea",
+        "source_hash": "b222e7149f53d6f358349039928edf08e9420c090eadfca4d413139f3c0b9d86",
+        "wall_seconds": 0.033264962999993486,
+        "image_id": null,
+        "compiler": null,
+        "exit_code": 0,
+        "stdout_hash": "5a6ca5a41763a1dbc679b61e08a2af6e09cba58c381711b0c1f57b1bfec7411e",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "8bcadec271b008d7dac050518ce23e0ce94c9f0ef1907b630be96ed24074fcf1"
+      },
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "generation": {
+        "wall_seconds": null,
+        "tokens": null,
+        "cost": null,
+        "note": "Not recorded by file-only grading"
+      },
+      "test_manifest_hash": "7cc60eb6d6f82ee8ff4bc401606bd2942af359b8e1d2e9fac5870d41f07f13db",
+      "auto_scored_max": 70,
+      "auto_percent": 100.0,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "completion_status": "pending_review",
+      "quality_qualified": null,
+      "report_hash": "2a4779057ef760bef76013f463b92e350ade31dc136f03613bd0efeb254387f4",
+      "invalid_submission": null,
+      "raw_response_hash": "4e93fa31566de0723152b8582b8326e287ac541f5fe346fee09edac333bb87e4",
+      "adapter": "harbor",
+      "input_integrity": {
+        "unchanged": true
+      },
+      "comparison_eligible": true,
+      "execution_boundary": "separate_offline_verifier_unprivileged_candidate_child",
+      "verifier_log_permissions": {
+        "owner_uid": 0,
+        "mode": "0o755"
+      }
+    },
+    {
+      "task_id": "C02",
+      "seed": 17,
+      "track": "coding",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+        "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "packet_hash": "30f1effee6f860df0b1e1a328ff112593f1f8e1e622c00f279862a56f56be446",
+      "submission_hash": "870f9adadb99f9394bad47dec55b24ce6a5c66d1dab378ed49369bbfd8fb8995",
+      "rubric_hash": "d0048698a236c50f49456971229f47ca2d59b4e1143709585fdf1be0292dba1c",
+      "checks": [
+        {
+          "id": "one_group",
+          "tier": "basic",
+          "weight": 10,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "paired_groups",
+          "tier": "basic",
+          "weight": 10,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "unequal_technical_repeats",
+          "tier": "scientific",
+          "weight": 15,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "stratum_target",
+          "tier": "scientific",
+          "weight": 15,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "zero_and_uint32",
+          "tier": "stress",
+          "weight": 10,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "invalid_0",
+          "tier": "stress",
+          "weight": 5,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "invalid_1",
+          "tier": "stress",
+          "weight": 5,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "missing_artifacts": [],
+      "essential_review": [
+        {
+          "id": "api",
+          "requirement": "solution.py 提供 solve(problem)，返回约定的 JSON 可序列化值，错误输入抛 ValueError。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "science",
+          "requirement": "report.md 解释科学定义、算法、单位、验证依据及适用范围。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "tests",
+          "requirement": "tests.py 包含可运行且有断言的独立测试，至少覆盖一个非平凡性质和一个边界。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 70,
+      "auto_max": 70,
+      "review_points": null,
+      "review_max": 30,
+      "total": null,
+      "reviewer_type": null,
+      "execution": {
+        "backend": "container",
+        "language": "python",
+        "input_hash": "d569f83509181969c3b38cd7a0228078eb4e146c735cc99d52398110a6dac881",
+        "source_hash": "38af27e3a05f8371ad21519ed0fa451347f75e80f9edea61a819819d20bd367b",
+        "wall_seconds": 0.0332432900000299,
+        "image_id": null,
+        "compiler": null,
+        "exit_code": 0,
+        "stdout_hash": "bacffca1b765ba75149d4aa280f1ada5e956a61e4b7e806ee0b7094d2f068c45",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "be62b3834ec46ab77c6cab61a37687f0318f9e254cc4194707513599af0afc4b"
+      },
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "generation": {
+        "wall_seconds": null,
+        "tokens": null,
+        "cost": null,
+        "note": "Not recorded by file-only grading"
+      },
+      "test_manifest_hash": "92fc9379729beb822dd5f4a3d7277dd3a11500a29f66bebf5980ce1b48e5147e",
+      "auto_scored_max": 70,
+      "auto_percent": 100.0,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "completion_status": "pending_review",
+      "quality_qualified": null,
+      "report_hash": "6449a57ab255b5b7b64dbdc15058a98c008cd14b34b228b7b03428048dfa6578",
+      "invalid_submission": null,
+      "raw_response_hash": "cd3b5116510d02c2e5afb86a08c6b62f798e3129c2a6fe64d4bc6377bb3fcdea",
+      "adapter": "harbor",
+      "input_integrity": {
+        "unchanged": true
+      },
+      "comparison_eligible": true,
+      "execution_boundary": "separate_offline_verifier_unprivileged_candidate_child",
+      "verifier_log_permissions": {
+        "owner_uid": 0,
+        "mode": "0o755"
+      }
+    },
+    {
+      "task_id": "C03",
+      "seed": 17,
+      "track": "coding",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+        "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "packet_hash": "94a905c064bbbe2794e5d8b15b85720191d9346dd71f49412ed262ba1dabbd4f",
+      "submission_hash": "efe87e5fa7c4b88bc817937b20de8e223bd447287818ae0ca12d5d5ceba9cf9e",
+      "rubric_hash": "d0048698a236c50f49456971229f47ca2d59b4e1143709585fdf1be0292dba1c",
+      "checks": [
+        {
+          "id": "one_cell_two_boundaries",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "zero_steps",
+          "tier": "basic",
+          "weight": 10,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "heterogeneous_conservative",
+          "tier": "scientific",
+          "weight": 15,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "source_fixed_mix",
+          "tier": "scientific",
+          "weight": 15,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "one_cell_source",
+          "tier": "stress",
+          "weight": 5,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "stiff_implicit",
+          "tier": "stress",
+          "weight": 10,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "nonpositive_width",
+          "tier": "stress",
+          "weight": 5,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "missing_artifacts": [],
+      "essential_review": [
+        {
+          "id": "api",
+          "requirement": "solution.py 提供 solve(problem)，返回约定的 JSON 可序列化值，错误输入抛 ValueError。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "science",
+          "requirement": "report.md 解释科学定义、算法、单位、验证依据及适用范围。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "tests",
+          "requirement": "tests.py 包含可运行且有断言的独立测试，至少覆盖一个非平凡性质和一个边界。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 70,
+      "auto_max": 70,
+      "review_points": null,
+      "review_max": 30,
+      "total": null,
+      "reviewer_type": null,
+      "execution": {
+        "backend": "container",
+        "language": "python",
+        "input_hash": "66a18a3097fd92f9d0c4759700c956bd9d3553c9f6782bb07e4fcac748a4c6b9",
+        "source_hash": "ef41689b8612fd339e687e2c68b32b5ff5b10b4bdbd29f813ae2a1069afa2b78",
+        "wall_seconds": 0.0332167400000003,
+        "image_id": null,
+        "compiler": null,
+        "exit_code": 0,
+        "stdout_hash": "3c67625e99dbe1eda63c818662b2eacfc02130939e7f0eda3209ae24ea6cddb5",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "73eeb65ca56f91a1cbf83d598c9ad856723f633ad20cecd47c16dafc4edf9415"
+      },
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "generation": {
+        "wall_seconds": null,
+        "tokens": null,
+        "cost": null,
+        "note": "Not recorded by file-only grading"
+      },
+      "test_manifest_hash": "4e5ed9ccedf0016ac3a4e72007e8ff2b2d66a521e15eba75e2e0260226836084",
+      "auto_scored_max": 70,
+      "auto_percent": 100.0,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "completion_status": "pending_review",
+      "quality_qualified": null,
+      "report_hash": "5c86da4e73066464e85803421fe987c758bbe21e5f70a61155d3a7db8477da91",
+      "invalid_submission": null,
+      "raw_response_hash": "60742829fe2c109865c74f4114d8631eb73ea1a77ed01ce44d98d5318152e199",
+      "adapter": "harbor",
+      "input_integrity": {
+        "unchanged": true
+      },
+      "comparison_eligible": true,
+      "execution_boundary": "separate_offline_verifier_unprivileged_candidate_child",
+      "verifier_log_permissions": {
+        "owner_uid": 0,
+        "mode": "0o755"
+      }
+    },
+    {
+      "task_id": "C04",
+      "seed": 17,
+      "track": "coding",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+        "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "packet_hash": "4f55a0ea369608f6dcc4b21442e9bed554d0698130d52a78dbcfaeff1d3e7413",
+      "submission_hash": "2c97eef4820159407c992d52854adb2c40b3bebf77ffad5db29a31b1f161e4ac",
+      "rubric_hash": "d0048698a236c50f49456971229f47ca2d59b4e1143709585fdf1be0292dba1c",
+      "checks": [
+        {
+          "id": "interface_power",
+          "tier": "basic",
+          "weight": 10,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "quarterwave",
+          "tier": "basic",
+          "weight": 10,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "oblique_absorbing_s",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "oblique_absorbing_p",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "brewster_and_lossless",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "opaque_layer",
+          "tier": "stress",
+          "weight": 6,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "evanescent_substrate",
+          "tier": "stress",
+          "weight": 5,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "long_bragg",
+          "tier": "stress",
+          "weight": 5,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "gain_rejected",
+          "tier": "stress",
+          "weight": 4,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "missing_artifacts": [],
+      "essential_review": [
+        {
+          "id": "api",
+          "requirement": "solution.py 提供 solve(problem)，返回约定的 JSON 可序列化值，错误输入抛 ValueError。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "science",
+          "requirement": "report.md 解释科学定义、算法、单位、验证依据及适用范围。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "tests",
+          "requirement": "tests.py 包含可运行且有断言的独立测试，至少覆盖一个非平凡性质和一个边界。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 70,
+      "auto_max": 70,
+      "review_points": null,
+      "review_max": 30,
+      "total": null,
+      "reviewer_type": null,
+      "execution": {
+        "backend": "container",
+        "language": "python",
+        "input_hash": "a526f88a3538373f302533b76c4e58c20db7e2bf962a28fe0b4f3c47dcd17c29",
+        "source_hash": "0390a9b62859973ba8aa62d62243fe9bebdd256d5a1bdc5ac7a3f83c9f138de8",
+        "wall_seconds": 0.03306214000002683,
+        "image_id": null,
+        "compiler": null,
+        "exit_code": 0,
+        "stdout_hash": "2d89d8b0036995fedb0cf4fa4411e4add628213915b0d2e761567676d4b93fb2",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "478a33dc370ce8b3a0882eb9760629509b0c01d08c469dcc8cb110dd8d6b461c"
+      },
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "generation": {
+        "wall_seconds": null,
+        "tokens": null,
+        "cost": null,
+        "note": "Not recorded by file-only grading"
+      },
+      "test_manifest_hash": "6645e9d980362fd0fc412d203950c0bc04abee2515164ead7d83b5345ba85d24",
+      "auto_scored_max": 70,
+      "auto_percent": 100.0,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "completion_status": "pending_review",
+      "quality_qualified": null,
+      "report_hash": "622f2b7e067eeee3c939e1734c880e168e4185d90db1f688b973bdff09f70c09",
+      "invalid_submission": null,
+      "raw_response_hash": "18ea2fc07005627c043c997bdf68eff3c08ca1bf12d2d09e73250c7d2c79e4eb",
+      "adapter": "harbor",
+      "input_integrity": {
+        "unchanged": true
+      },
+      "comparison_eligible": true,
+      "execution_boundary": "separate_offline_verifier_unprivileged_candidate_child",
+      "verifier_log_permissions": {
+        "owner_uid": 0,
+        "mode": "0o755"
+      }
+    },
+    {
+      "task_id": "C05",
+      "seed": 17,
+      "track": "coding",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+        "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "packet_hash": "612c1bbb356e9974cf2ae4d9910d9b02686e9f1defc6d4e2e8efa758ab25547e",
+      "submission_hash": "f0ec83086546739f410f4ab9b7c3088b6d7bf2d2a0ec2f1012915ab904cef498",
+      "rubric_hash": "d0048698a236c50f49456971229f47ca2d59b4e1143709585fdf1be0292dba1c",
+      "checks": [
+        {
+          "id": "equilibrium",
+          "tier": "basic",
+          "weight": 10,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "zero_rates_source",
+          "tier": "basic",
+          "weight": 10,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "stiff_rollback",
+          "tier": "scientific",
+          "weight": 15,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "right_continuous_schedule",
+          "tier": "scientific",
+          "weight": 15,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "large_absolute_clock",
+          "tier": "stress",
+          "weight": 7,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "floating_endpoint",
+          "tier": "stress",
+          "weight": 7,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "single_observation",
+          "tier": "stress",
+          "weight": 2,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "invalid_0",
+          "tier": "stress",
+          "weight": 2,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "invalid_1",
+          "tier": "stress",
+          "weight": 2,
+          "critical": false,
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "missing_artifacts": [],
+      "essential_review": [
+        {
+          "id": "api",
+          "requirement": "solution.py 提供 solve(problem)，返回约定的 JSON 可序列化值，错误输入抛 ValueError。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "science",
+          "requirement": "report.md 解释科学定义、算法、单位、验证依据及适用范围。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "tests",
+          "requirement": "tests.py 包含可运行且有断言的独立测试，至少覆盖一个非平凡性质和一个边界。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 70,
+      "auto_max": 70,
+      "review_points": null,
+      "review_max": 30,
+      "total": null,
+      "reviewer_type": null,
+      "execution": {
+        "backend": "container",
+        "language": "python",
+        "input_hash": "962023c1ceb966e7965bc82a97941f852d45cca36b3c154597755bf1b9caeade",
+        "source_hash": "ba799971b9407d2f831a6a814bf682001c1e35f0bf6539161af30fd588cff2e5",
+        "wall_seconds": 0.06529223500001535,
+        "image_id": null,
+        "compiler": null,
+        "exit_code": 0,
+        "stdout_hash": "a50d67f8d5e81df696f80b35bb61f715625aad062ddd1ee97bee51b95261eb79",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "9679ba5a897493601957593b9ee3c6f9059bc8a775d6b108a18265502fb3be01"
+      },
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "generation": {
+        "wall_seconds": null,
+        "tokens": null,
+        "cost": null,
+        "note": "Not recorded by file-only grading"
+      },
+      "test_manifest_hash": "6a92c3f09aa8e885e3a4e025b4fe603283db9b6ffe65da0af27e4f1be79e7788",
+      "auto_scored_max": 70,
+      "auto_percent": 100.0,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:api",
+        "essential:science",
+        "essential:tests",
+        "quality_review"
+      ],
+      "completion_status": "pending_review",
+      "quality_qualified": null,
+      "report_hash": "58fd7d88dfe6568b324937f44d998aceaa444112f6fe84963f14c174892ff843",
+      "invalid_submission": null,
+      "raw_response_hash": "9f42b10f46c0e512063887a1113e3223a1409d11c505515ff2fe7c1ceff07beb",
+      "adapter": "harbor",
+      "input_integrity": {
+        "unchanged": true
+      },
+      "comparison_eligible": true,
+      "execution_boundary": "separate_offline_verifier_unprivileged_candidate_child",
+      "verifier_log_permissions": {
+        "owner_uid": 0,
+        "mode": "0o755"
+      }
+    },
+    {
+      "task_id": "C06",
+      "seed": 17,
+      "track": "coding",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+        "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "packet_hash": "566406708066a968f0435f262f29231b7cda04263a784b0cbe5435d74583387c",
+      "submission_hash": "beb36111a66a90cb393e94d17951c7ff7ade54dead03135cbc5e9ed24ca71661",
+      "rubric_hash": "3578cef4b5087849b50d27d4c8538835a1ba23fc9eeb0ce85792335da8a30f47",
+      "checks": [
+        {
+          "id": "zero_drift_linear",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_reaction_balance",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_drift_exponential",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "heterogeneous_nonuniform",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "negative_drift_boundary_layer",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "peclet_2250_positive",
+          "tier": "stress",
+          "weight": 8,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "near_zero_bernoulli",
+          "tier": "stress",
+          "weight": 6,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_collapsed_cell",
+          "tier": "stress",
+          "weight": 3,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_diffusion",
+          "tier": "stress",
+          "weight": 3,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "missing_artifacts": [],
+      "essential_review": [
+        {
+          "id": "conservation",
+          "requirement": "逐控制体满足带源和衰减的离散守恒",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "limits",
+          "requirement": "零漂移、反向漂移和大网格 Peclet 数均稳定",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "boundaries",
+          "requirement": "保留非均匀控制体宽度与两个 Dirichlet 边界",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 70,
+      "auto_max": 70,
+      "review_points": null,
+      "review_max": 30,
+      "total": null,
+      "reviewer_type": null,
+      "execution": {
+        "backend": "container",
+        "language": "fortran",
+        "input_hash": "99015c3fdf87ceae4e1605234924413788c06346f04fb5c00cb881003af7c161",
+        "source_hash": "0d91de7ead3b7db5582d77954495d806635254c3d665f933a26678a9cc68a427",
+        "wall_seconds": 0.21559297200002447,
+        "image_id": null,
+        "compiler": "GNU Fortran (Debian 14.2.0-19) 14.2.0",
+        "exit_code": 0,
+        "stdout_hash": "97ad0dbca9ed80a17cf445b844af5b1cac8604ce4365144abbe9ada561d2fc30",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "609b7c41b26bf2d962c37f647bb09af0c307d4cb3b6c4484374157f1ee73aa1b"
+      },
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "generation": {
+        "wall_seconds": null,
+        "tokens": null,
+        "cost": null,
+        "note": "Not recorded by file-only grading"
+      },
+      "test_manifest_hash": "bf9a6036cee619f5f7b4527ba1c8e7ef1bcf3c9c98f2ac58ab0cc54b89ca9f15",
+      "auto_scored_max": 70,
+      "auto_percent": 100.0,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:conservation",
+        "essential:limits",
+        "essential:boundaries",
+        "quality_review"
+      ],
+      "completion_status": "pending_review",
+      "quality_qualified": null,
+      "report_hash": "ee917bd76c1518aac9248a73350d0a6b59552074e8fc7c0eb25aa1361522c474",
+      "invalid_submission": null,
+      "raw_response_hash": "a7962177b1428e90ae7e862c588fe06eb195cbfb7fa8acb94e64da7e9516c9aa",
+      "adapter": "harbor",
+      "input_integrity": {
+        "unchanged": true
+      },
+      "comparison_eligible": true,
+      "execution_boundary": "separate_offline_verifier_unprivileged_candidate_child",
+      "verifier_log_permissions": {
+        "owner_uid": 0,
+        "mode": "0o755"
+      }
+    },
+    {
+      "task_id": "C07",
+      "seed": 17,
+      "track": "coding",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+        "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "packet_hash": "afc0808e06fd2640eda69f9ea803d92c27ad982cf9b4012c5196688ee467d812",
+      "submission_hash": "cfabfa20893e85f95afb0e2745ee00719ba7f31e59392aaf63168ef39ba8f154",
+      "rubric_hash": "ee000f4bdc644efa8374c6034c705b27b120127c3d24e0032e38ce16a60e1184",
+      "checks": [
+        {
+          "id": "noiseless_nuisance",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "known_sigma_scale",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "heteroscedastic_shared_D",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "negative_amplitude",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "one_sided_profile",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "structurally_flat",
+          "tier": "stress",
+          "weight": 7,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "weak_full_interval",
+          "tier": "stress",
+          "weight": 7,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_sigma",
+          "tier": "stress",
+          "weight": 3,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unresolved_times",
+          "tier": "stress",
+          "weight": 3,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "missing_artifacts": [],
+      "essential_review": [
+        {
+          "id": "nuisance",
+          "requirement": "同时消除每条实验的独立幅度和基线，使用已知异方差",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "profile",
+          "requirement": "对非线性扩散系数构造绝对χ²剖面区间并标记边界截断",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "rank",
+          "requirement": "区分有限最小二乘点估计与参数不可识别",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 70,
+      "auto_max": 70,
+      "review_points": null,
+      "review_max": 30,
+      "total": null,
+      "reviewer_type": null,
+      "execution": {
+        "backend": "container",
+        "language": "python",
+        "input_hash": "a993e86523ba5d2959f597208bcc3fc5d77b28dbfc2ace00f45cb243bba25a8a",
+        "source_hash": "20322b85373e7f0db6e131ed6ff602a42d6614a936885bf32c9bef7617a49e2c",
+        "wall_seconds": 0.11550305899999103,
+        "image_id": null,
+        "compiler": null,
+        "exit_code": 0,
+        "stdout_hash": "da9b1b9ee7beb22f448bc8b54aea1bccb0463d4037d7e7c8cac05568f36cec45",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "9e3b489d318fe47ab71acbe735383ba4c3f21345884c0ac7f8e2e45838aa4b06"
+      },
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "generation": {
+        "wall_seconds": null,
+        "tokens": null,
+        "cost": null,
+        "note": "Not recorded by file-only grading"
+      },
+      "test_manifest_hash": "25abff96771f74f661cbcf0350e55765a61d93979d47eb78eb1d324fdc5ee76d",
+      "auto_scored_max": 70,
+      "auto_percent": 100.0,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:nuisance",
+        "essential:profile",
+        "essential:rank",
+        "quality_review"
+      ],
+      "completion_status": "pending_review",
+      "quality_qualified": null,
+      "report_hash": "fb84b312fd6804d275d8ad7a0f7213109c8bb6e8c036c67701c4f8fd11747b07",
+      "invalid_submission": null,
+      "raw_response_hash": "8826469ec5ba524b6482f8e3181dfdb1bc40b01a85938116ddb5aec379a928e1",
+      "adapter": "harbor",
+      "input_integrity": {
+        "unchanged": true
+      },
+      "comparison_eligible": true,
+      "execution_boundary": "separate_offline_verifier_unprivileged_candidate_child",
+      "verifier_log_permissions": {
+        "owner_uid": 0,
+        "mode": "0o755"
+      }
+    },
+    {
+      "task_id": "C08",
+      "seed": 17,
+      "track": "coding",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+        "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "packet_hash": "bb3a9bc72100d2a307b66a944eec55856621d4875b0d2685985e33e16d0140d8",
+      "submission_hash": "60e101af2c9a1bc6bad5a5f54055156a74ade2bea507417177611d57ab561599",
+      "rubric_hash": "c12d27308d0f8a6753651adbcd71b691bcf74537875bf90466e0b1effd40f6c3",
+      "checks": [
+        {
+          "id": "affine_harmonic",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "isotropic_manufactured",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "directional_anisotropy",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "nonuniform_interfaces",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "refined_manufactured",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "high_contrast_interfaces",
+          "tier": "stress",
+          "weight": 8,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "rectangular_nonuniform",
+          "tier": "stress",
+          "weight": 6,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_conductivity",
+          "tier": "stress",
+          "weight": 3,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_collapsed_y",
+          "tier": "stress",
+          "weight": 3,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "missing_artifacts": [],
+      "essential_review": [
+        {
+          "id": "operator",
+          "requirement": "使用非均匀控制体和方向相关的谐均面系数",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "flux",
+          "requirement": "输出与线性系统同一离散定义的四侧外向积分通量",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "verification",
+          "requirement": "独立制造解、全局守恒和网格细化检验",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 70,
+      "auto_max": 70,
+      "review_points": null,
+      "review_max": 30,
+      "total": null,
+      "reviewer_type": null,
+      "execution": {
+        "backend": "container",
+        "language": "python",
+        "input_hash": "304dd71f1cce5b8e7e8bc0a64131f75e1432f8cce7b5b1763e90de914185b8bb",
+        "source_hash": "a5cc737d2240c2dad2c7626a2c119d50399e05e17573ba44138735285a04941f",
+        "wall_seconds": 0.18739060600000812,
+        "image_id": null,
+        "compiler": null,
+        "exit_code": 0,
+        "stdout_hash": "695c627aca9119eb5d0c7ac77a15eb72a6ede69e001e90f401d554ccb9c5121a",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "8d4ef83b3d5b468020b7b2da67b0eb4c61dfe530271cea89f704bc615fb66dde"
+      },
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "generation": {
+        "wall_seconds": null,
+        "tokens": null,
+        "cost": null,
+        "note": "Not recorded by file-only grading"
+      },
+      "test_manifest_hash": "7987d306933df096f1e2ebeca5b41a7de6fed6613dd30d87758b55b6da81e536",
+      "auto_scored_max": 70,
+      "auto_percent": 100.0,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:operator",
+        "essential:flux",
+        "essential:verification",
+        "quality_review"
+      ],
+      "completion_status": "pending_review",
+      "quality_qualified": null,
+      "report_hash": "416da4cb9aa685856d5434e55cf813376008f0876925e759a5432c8e756e1a49",
+      "invalid_submission": null,
+      "raw_response_hash": "fc0428524d9dcf5f32221d60c25307bca2e62a533c1a6dfa9fd9122ae155c281",
+      "adapter": "harbor",
+      "input_integrity": {
+        "unchanged": true
+      },
+      "comparison_eligible": true,
+      "execution_boundary": "separate_offline_verifier_unprivileged_candidate_child",
+      "verifier_log_permissions": {
+        "owner_uid": 0,
+        "mode": "0o755"
+      }
+    },
+    {
+      "task_id": "C09",
+      "seed": 17,
+      "track": "coding",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+        "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "packet_hash": "9c64f6c80790cbcf76a7396f2826b45ae71e36e14a8d09152c9870626027beb9",
+      "submission_hash": "fa89816a833ea39639947d0ba36c1c3081d0e9864551ceda08c1b7a2fc4d3fb5",
+      "rubric_hash": "15289a0a1d43d8c6d21196de96b26ba214499d81d70d0a076c70364b4a3dfd35",
+      "checks": [
+        {
+          "id": "neutral_equilibrium",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "affine_potential_nonzero_current",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "boltzmann_zero_flux",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "coupled_manufactured_sources",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "potential_gauge_shift",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "screening_refined",
+          "tier": "stress",
+          "weight": 8,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "small_field_cancellation",
+          "tier": "stress",
+          "weight": 6,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_screening",
+          "tier": "stress",
+          "weight": 3,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_contact_density",
+          "tier": "stress",
+          "weight": 3,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "missing_artifacts": [],
+      "essential_review": [
+        {
+          "id": "self_consistency",
+          "requirement": "同时求解给定离散Poisson与SG连续性方程，而非冻结电势",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "positivity",
+          "requirement": "正密度和阻尼非线性收敛，不能裁剪输出掩盖残差",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "verification",
+          "requirement": "平衡零流、带流制造解、规范平移和网格检验",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 70,
+      "auto_max": 70,
+      "review_points": null,
+      "review_max": 30,
+      "total": null,
+      "reviewer_type": null,
+      "execution": {
+        "backend": "container",
+        "language": "fortran",
+        "input_hash": "2fcc0ead7e24091f3015b5c0b4b649643f4d2a4e23dc007af66e2f30be42fb60",
+        "source_hash": "9ff8c4cc7c8ef12ce91206a61ad889806589ed49e359fee358c4301e3df7949c",
+        "wall_seconds": 0.31561664800000244,
+        "image_id": null,
+        "compiler": "GNU Fortran (Debian 14.2.0-19) 14.2.0",
+        "exit_code": 0,
+        "stdout_hash": "5155a96291550f6a9a46e1710513fe5151b740776d32f27835c152d5c721edf1",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "d6f58a0296cd0e8241db560e769f040c54497b5f03ceb060ec8389890ab90e63"
+      },
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "generation": {
+        "wall_seconds": null,
+        "tokens": null,
+        "cost": null,
+        "note": "Not recorded by file-only grading"
+      },
+      "test_manifest_hash": "c7450255f39469f99a04adddec4eb409a689498fa790fd7c6c66ec5ea286e4bb",
+      "auto_scored_max": 70,
+      "auto_percent": 100.0,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:self_consistency",
+        "essential:positivity",
+        "essential:verification",
+        "quality_review"
+      ],
+      "completion_status": "pending_review",
+      "quality_qualified": null,
+      "report_hash": "287f4e1036f9a3176ac1ca0f3102fdbb48a446b3c4e3d542b863b9c9f5432e40",
+      "invalid_submission": null,
+      "raw_response_hash": "161159d284a27a0aa4c8e05a833c13223db7086f74fe427e661ab93eed1a2e07",
+      "adapter": "harbor",
+      "input_integrity": {
+        "unchanged": true
+      },
+      "comparison_eligible": true,
+      "execution_boundary": "separate_offline_verifier_unprivileged_candidate_child",
+      "verifier_log_permissions": {
+        "owner_uid": 0,
+        "mode": "0o755"
+      }
+    },
+    {
+      "task_id": "C10",
+      "seed": 17,
+      "track": "coding",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+        "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "packet_hash": "060241fb0473728df2e8e0565bf2989e9c3a1f87482fb4a6e9e625751381c9b9",
+      "submission_hash": "05c6fb3ef5256d27ac62762e5dc54906217e4163047b90104a6c0cc7be3924a3",
+      "rubric_hash": "01c78fe541421c3c3443bc2075eb1d25d60d5243bc0b6b910810f64feb1f6293",
+      "checks": [
+        {
+          "id": "pure_reaction_conservation",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "periodic_diffusion_mode",
+          "tier": "basic",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "coupled_discrete_tangents",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "noiseless_two_parameter_inverse",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "absolute_sigma_parametric_bootstrap",
+          "tier": "scientific",
+          "weight": 10,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "resume_nonzero_tangent_state",
+          "tier": "stress",
+          "weight": 6,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "stiff_positive_conservative",
+          "tier": "stress",
+          "weight": 5,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "rank_deficient_uniform_initial",
+          "tier": "stress",
+          "weight": 5,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_initial",
+          "tier": "stress",
+          "weight": 2,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_incomplete_checkpoint",
+          "tier": "stress",
+          "weight": 2,
+          "critical": true,
+          "passed": true,
+          "detail": ""
+        }
+      ],
+      "missing_artifacts": [],
+      "essential_review": [
+        {
+          "id": "physics",
+          "requirement": "隐式两物种转化严格守恒，且切线导数针对离散更新",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "inference",
+          "requirement": "已知绝对sigma的加权双参数反演、秩诊断及正确协方差",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "restart",
+          "requirement": "JSON重启完整保留物理状态与参数切线状态",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "uncertainty",
+          "requirement": "指定独立伪随机流的参数自举可复现并真正重拟合",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 70,
+      "auto_max": 70,
+      "review_points": null,
+      "review_max": 30,
+      "total": null,
+      "reviewer_type": null,
+      "execution": {
+        "backend": "container",
+        "language": "python",
+        "input_hash": "a54b2ab0c441ca228e24558aff2bdaf9b9fc02ff4a1cf66cb1def29e5b2ca8e2",
+        "source_hash": "8a0b13f22f013686b58d8b16d3bcc9779cbda554394481816aa1c5ca095504d5",
+        "wall_seconds": 0.11534370900005797,
+        "image_id": null,
+        "compiler": null,
+        "exit_code": 0,
+        "stdout_hash": "42d8059c4c7d5bb503801ebc1bb494f57ae6ccd68e401a572c83d62b819808cb",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "9ef871df1572276134e54e441315f4cff06c93e2b4a6228b54ed7afd4987bd70"
+      },
+      "tier_scores": {
+        "basic": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        },
+        "scientific": {
+          "earned": 30,
+          "scored_max": 30,
+          "max": 30
+        },
+        "stress": {
+          "earned": 20,
+          "scored_max": 20,
+          "max": 20
+        }
+      },
+      "generation": {
+        "wall_seconds": null,
+        "tokens": null,
+        "cost": null,
+        "note": "Not recorded by file-only grading"
+      },
+      "test_manifest_hash": "d27df20cef03807027a6c7d4fe6a5a86f5d56364277310bdd6960cf8abdeb08d",
+      "auto_scored_max": 70,
+      "auto_percent": 100.0,
+      "critical_failures": [],
+      "pending_items": [
+        "essential:physics",
+        "essential:inference",
+        "essential:restart",
+        "essential:uncertainty",
+        "quality_review"
+      ],
+      "completion_status": "pending_review",
+      "quality_qualified": null,
+      "report_hash": "83694b6551c2238c3cefddbb17aee020c5ce901c940eceb83cc0fd0086abaaa8",
+      "invalid_submission": null,
+      "raw_response_hash": "e0a15c7815f5dea46cef42d6d4af7e16c0ceae9bd335f03f73b27da489159047",
+      "adapter": "harbor",
+      "input_integrity": {
+        "unchanged": true
+      },
+      "comparison_eligible": true,
+      "execution_boundary": "separate_offline_verifier_unprivileged_candidate_child",
+      "verifier_log_permissions": {
+        "owner_uid": 0,
+        "mode": "0o755"
+      }
+    }
+  ],
+  "passed": true,
+  "framework": "harbor",
+  "version": "0.24.0",
+  "schema_version": "1.4",
+  "runtime_executed": true,
+  "command_argv": [
+    "/opt/hostedtoolcache/Python/3.12.15/x64/bin/harbor",
+    "run",
+    "-p",
+    "/tmp/v1-harbor/export",
+    "-a",
+    "oracle",
+    "--env",
+    "docker",
+    "--jobs-dir",
+    "/tmp/v1-harbor/jobs",
+    "--job-name",
+    "oracle",
+    "--n-concurrent",
+    "1",
+    "--n-attempts",
+    "1",
+    "--max-retries",
+    "0"
+  ],
+  "image": "nrb-v1:local",
+  "seed": 17,
+  "cli_exit_code": 0,
+  "timed_out": false,
+  "api_provider_calls": 0
+}

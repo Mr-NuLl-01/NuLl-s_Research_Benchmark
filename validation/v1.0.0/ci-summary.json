@@ -1,0 +1,102 @@
+{
+  "kind": "release_ci_validation_summary",
+  "not_model_performance": true,
+  "api_provider_calls": 0,
+  "source_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+  "evaluator_identity": {
+    "benchmark_version": "1.0.0",
+    "scoring_schema": "nrb-v1.0",
+    "evaluator_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+    "digest_algorithm": "sha256-path-content-v1"
+  },
+  "workflow_run_id": 39054465838,
+  "workflow_url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39054465838",
+  "workflow_conclusion": "success",
+  "jobs_passed": 8,
+  "core_matrix": {
+    "python_versions": [
+      "3.11",
+      "3.12"
+    ],
+    "registered_unit_tests_per_job": 59,
+    "executed_unit_tests_per_job": 56,
+    "optional_runtime_tests_skipped_in_each_core_job": 3,
+    "reference_mutant_runs_per_job": 114,
+    "reference_mutant_runs_passed": true,
+    "frozen_packets_exact_match": 19
+  },
+  "framework": {
+    "registered_and_executed_adapter_tests": 14,
+    "passed": true,
+    "inspect_version": "0.3.281",
+    "inspect_scope": "Actual mock evals and JSON canonical conversion; no real model and no native .eval ZIP verification claim.",
+    "promptfoo_version": "0.124.1",
+    "promptfoo_empty_submissions": 10,
+    "promptfoo_expected_failures": 10,
+    "promptfoo_errors": 0,
+    "harbor_version": "0.24.0",
+    "harbor_schema": "1.4"
+  },
+  "docker_science": {
+    "runtime_status": "executed",
+    "reference_count": 10,
+    "scientific_wrong_controls": 8,
+    "all_expected_outcomes_passed": true,
+    "image_id": "sha256:cdc7a498cfea7bcc86caaa3dd6bfd795ebc1e4d58bc87095472a71bd62e8c6f5",
+    "docker_engine": "28.0.4",
+    "runtime": {
+      "python": "3.12.15 (main, Oct  6 2026, 02:02:22) [GCC 14.2.0]",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.41",
+      "uid": 65534,
+      "gfortran": "GNU Fortran (Debian 14.2.0-19) 14.2.0",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "matplotlib": "3.10.8",
+        "Pillow": "12.3.0",
+        "CairoSVG": "2.8.2"
+      }
+    }
+  },
+  "candidate_isolation": {
+    "passed": true,
+    "runtime_status": "executed",
+    "absent_forbidden_paths": 15,
+    "denied_paths": [
+      "/root/NuLl-s_Research_Benchmark"
+    ],
+    "present_forbidden_paths": [],
+    "network_interfaces": [
+      "lo"
+    ],
+    "scope": "C01 candidate image build context and actual disconnected runtime only; separate-verifier checks are a different CI gate."
+  },
+  "harbor": {
+    "actual_trials": 10,
+    "all_passed": true,
+    "all_auto_points": 70,
+    "manual_points": null,
+    "total": null,
+    "completion_status": "pending_review",
+    "verifier_log_permissions": {
+      "owner_uid": 0,
+      "mode": "0o755"
+    },
+    "missing_tasks": []
+  },
+  "artifact_audit": {
+    "canonical_report_seals_checked": 38,
+    "all_match_source_commit_and_digest": true,
+    "retained_files_sha256_verified": 17,
+    "zip_artifact_digests_verified": 4,
+    "artifact_manifest": "ci/artifacts.json",
+    "extracted_file_manifest": "ci/extracted-files.json"
+  },
+  "scope_limits": [
+    "Reference, deliberately wrong candidate, and mock infrastructure validation only; no AI capability ranking.",
+    "Core environment repetitions do not create additional independent task families.",
+    "Original initial isolation-probe failure is retained separately; final run passed after the explicit PermissionError classification repair.",
+    "Final documentation/evidence commits do not retroactively change the evaluator commit recorded in these original CI reports."
+  ]
+}

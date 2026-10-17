@@ -1,0 +1,90 @@
+[
+  {
+    "id": 12109485064,
+    "name": "framework-runtime",
+    "size_in_bytes": 963295,
+    "digest": "sha256:61972143b3bab3c69b94d876a09f21ad479789cf07578f1ea05d1fcd8581cf4e",
+    "source_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "created_at": "2026-10-17T17:38:06Z",
+    "expires_at": "2027-01-15T17:36:01Z",
+    "zip_download_sha256_verified": false,
+    "selected_reports_archived": false
+  },
+  {
+    "id": 12109400702,
+    "name": "docker-harbor-runtime",
+    "size_in_bytes": 1821829,
+    "digest": "sha256:811b89505a1d702af9e27fba16c2fc83bac712b77f25314695c1745d528971a5",
+    "source_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "created_at": "2026-10-17T17:42:32Z",
+    "expires_at": "2027-01-15T17:36:01Z",
+    "zip_download_sha256_verified": false,
+    "selected_reports_archived": false
+  },
+  {
+    "id": 12109295594,
+    "name": "v1-core-python-3.11",
+    "size_in_bytes": 13422,
+    "digest": "sha256:c432edb69ad4ae26d7709e1ccdca008be0738a6b304679ec0bb9859b4f921b8c",
+    "source_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "created_at": "2026-10-17T17:37:17Z",
+    "expires_at": "2027-01-15T17:36:01Z",
+    "zip_download_sha256_verified": true,
+    "selected_reports_archived": true
+  },
+  {
+    "id": 12109192318,
+    "name": "v1-docker-harbor-runtime",
+    "size_in_bytes": 1588078,
+    "digest": "sha256:e878fe8bc0c12e2135309d45c5f689ac8259b1c416b2a8d7e435bb9b3c28dc2d",
+    "source_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "created_at": "2026-10-17T17:42:48Z",
+    "expires_at": "2027-01-15T17:36:01Z",
+    "zip_download_sha256_verified": true,
+    "selected_reports_archived": true
+  },
+  {
+    "id": 12109186599,
+    "name": "core-python-3.12",
+    "size_in_bytes": 9503,
+    "digest": "sha256:5e933be7b87378014274ae14ecf3b1de2b1c6f1523d60b26935e29ba583f3591",
+    "source_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "created_at": "2026-10-17T17:36:23Z",
+    "expires_at": "2027-01-15T17:36:01Z",
+    "zip_download_sha256_verified": false,
+    "selected_reports_archived": false
+  },
+  {
+    "id": 12109156483,
+    "name": "core-python-3.11",
+    "size_in_bytes": 9502,
+    "digest": "sha256:8869892a9a631004d66008c5fa71b08a7965100a0a60edb97f597a4c6823b2e1",
+    "source_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "created_at": "2026-10-17T17:36:19Z",
+    "expires_at": "2027-01-15T17:36:01Z",
+    "zip_download_sha256_verified": false,
+    "selected_reports_archived": false
+  },
+  {
+    "id": 12108887793,
+    "name": "v1-framework-runtime",
+    "size_in_bytes": 307927,
+    "digest": "sha256:dbb5322800c59e9d7356be9388f7bbf3448f76fa64d29b4bee76985161b9456b",
+    "source_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "created_at": "2026-10-17T17:37:55Z",
+    "expires_at": "2027-01-15T17:36:01Z",
+    "zip_download_sha256_verified": true,
+    "selected_reports_archived": true
+  },
+  {
+    "id": 12108733819,
+    "name": "v1-core-python-3.12",
+    "size_in_bytes": 13412,
+    "digest": "sha256:f938460ea573f850a5f2d5b3865dc2809b9a8fafc1fd2a8dc2c3228dc1630cc7",
+    "source_commit": "9d03a3ba33dfe78f6365d78fa50f4da478f683b3",
+    "created_at": "2026-10-17T17:36:57Z",
+    "expires_at": "2027-01-15T17:36:01Z",
+    "zip_download_sha256_verified": true,
+    "selected_reports_archived": true
+  }
+]
