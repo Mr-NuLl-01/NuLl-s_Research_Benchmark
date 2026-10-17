@@ -153,6 +153,58 @@ def parse_fortran(stdout):
     return dict(density=values[:n],flux=values[n:2*n-1],mass=values[-2],residual_inf=values[-1])
 
 
+def validate_output(case, output):
+    """Bind diagnostics to the returned density, not the reference solution.
+
+    Field, flux, mass, and boundary comparisons retain the case's numerical
+    tolerances.  The raw density-equation residual instead has the fixed 2e-8
+    absolute limit stated in the task; a small field error need not satisfy it.
+    Reported/recomputed residuals may differ by that same absolute tolerance
+    because equivalent floating-point evaluations need not agree bit for bit.
+    """
+    from ..grading import compare_value
+
+    try:
+        rtol, atol = case.get('rtol', 2e-8), case.get('atol', 2e-8)
+        ok, detail = compare_value(output, case['expected'], rtol, atol, exact_integer_paths=frozenset())
+        if not ok:
+            return ok, detail
+        p = case['input']
+        u = output['density']
+        n = len(p['x'])
+        close = lambda a, b: abs(a-b) <= atol+rtol*abs(b)
+        if not close(u[0], p['left']) or not close(u[-1], p['right']):
+            return False, 'Dirichlet boundary mismatch'
+
+        # Re-evaluate the specified face law directly; do not reuse the
+        # tridiagonal solve or the candidate's reported flux in the residual.
+        h = [p['x'][i+1]-p['x'][i] for i in range(n-1)]
+        flux = []
+        for i in range(n-1):
+            pe = p['velocity'][i]*h[i]/p['diffusion'][i]
+            a = p['diffusion'][i]/h[i]*_bernoulli(-pe)
+            b = p['diffusion'][i]/h[i]*_bernoulli(pe)
+            flux.append(a*u[i]-b*u[i+1])
+        mass = math.fsum(h[i]*(u[i]+u[i+1])/2 for i in range(n-1))
+        residual = max(abs((flux[i+1]-flux[i])/((h[i]+h[i+1])/2)
+                           +p['decay'][i]*u[i+1]-p['source'][i])
+                       for i in range(n-2))
+        if not all(math.isfinite(z) for z in flux+[mass, residual]):
+            return False, 'nonfinite recomputed transport diagnostic'
+        if any(not close(a, b) for a, b in zip(output['flux'], flux)):
+            return False, 'reported flux is inconsistent with the specified SG law'
+        if not close(output['mass'], mass):
+            return False, 'reported mass is inconsistent with the returned density'
+        if residual > 2e-8:
+            return False, 'recomputed transport residual exceeds 2e-8'
+        reported = output['residual_inf']
+        if reported < 0 or abs(reported-residual) > 2e-8:
+            return False, 'reported residual is inconsistent with the original equations'
+        return True, ''
+    except (KeyError, IndexError, TypeError, ValueError, OverflowError, ZeroDivisionError):
+        return False, 'invalid transport solution object'
+
+
 def _case(cid,tier,p,weight,critical=True):
     try:
         expected=_reference(p)

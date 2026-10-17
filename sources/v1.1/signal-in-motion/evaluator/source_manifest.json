@@ -1,0 +1,35 @@
+{
+  "title": "Tears of Steel / shot 04_3b / 10-second technical-demo excerpt",
+  "creator": "Blender Foundation",
+  "year": 2012,
+  "license": "CC-BY-3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "source_directory": "https://media.xiph.org/tearsofsteel/tearsofsteel-footage-exr/04_3b/linear_hd/",
+  "license_evidence": [
+    "https://mango.blender.org/sharing/",
+    "https://mango.blender.org/production/4-tb-original-4k-footage-available-as-cc-by/",
+    "https://media.xiph.org/tearsofsteel/README.txt"
+  ],
+  "frame_first": 0,
+  "frame_last": 239,
+  "frame_count": 240,
+  "playback_fps": 24,
+  "duration_seconds": 10,
+  "source_width": 1920,
+  "source_height": 1012,
+  "source_color": "scene-linear Rec.709 RGB OpenEXR",
+  "audio": "none; source is image sequence",
+  "no_looping": true,
+  "no_interpolation": true,
+  "attribution": "(CC) Blender Foundation | mango.blender.org",
+  "verified_utc": "2026-10-17",
+  "caveats": [
+    "Performer portrait/privacy rights retained; technical demos are expressly contemplated; do not imply advertising endorsement.",
+    "Site logos and trademarks excluded.",
+    "Brown floor mat and tracking markers require extra masking for clean full-body keying."
+  ],
+  "source_derivative_file": "tears_04_3b_source_10s_bt709.mp4",
+  "source_derivative_sha256": "a882854e0d1b007e247ffc507fccee31c9bb5671810428dfe422a94317a98302",
+  "source_derivative_bytes": 25090487,
+  "display_conversion": "FFmpeg zscale: transferin=linear:primariesin=709:matrixin=gbr:rangein=full:transfer=709:primaries=709:matrix=709:range=limited; yuv420p H.264 CRF 17"
+}

@@ -18,7 +18,7 @@ def fingerprint(value):
 
 def identity():
     root = Path(__file__).resolve().parent
-    files = [*root.rglob("*.py"), root / "policy.json"]
+    files = [*root.rglob("*.py"), root / "policy.json", root / "video_rubrics.json"]
     manifest = {p.relative_to(root).as_posix(): fingerprint(p.read_bytes()) for p in sorted(files)
                 if "__pycache__" not in p.parts}
     digest = fingerprint({"algorithm": "sha256-path-content-v1", "files": manifest})
@@ -36,7 +36,7 @@ def identity():
         if origin_data["evaluator_digest"] != digest:
             raise ValueError("Exported evaluator source changed")
         commit = commit or origin_data.get("evaluator_commit")
-    return {"benchmark_version": __version__, "scoring_schema": "nrb-v1.0",
+    return {"benchmark_version": __version__, "scoring_schema": "nrb-v1.1",
             "evaluator_commit": commit, "evaluator_digest": digest,
             "digest_algorithm": "sha256-path-content-v1"}
 

@@ -241,7 +241,7 @@ def export_harbor(dest,selection="coding",seed=17,image="nrb-v1:local",agent_hos
         _write(directory/"instruction.md",packet["content"]+"\n\n## Harbor delivery\nThe complete original task is /app/task.md. Keep it unchanged. Replace /app/submission.json with the complete JSON submission. Do not edit any verifier or result files.\n")
         grader=directory/"tests/grader"
         for file in sorted(pkg.rglob("*")):
-            if file.is_file() and (file.suffix==".py" or file.name=="policy.json") and "__pycache__" not in file.parts:
+            if file.is_file() and (file.suffix==".py" or file.name in ("policy.json","video_rubrics.json")) and "__pycache__" not in file.parts:
                 target=grader/"nrb_v1"/file.relative_to(pkg)
                 target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(file,target)
         # Coding imports do not need the research article archive; no archive
@@ -258,7 +258,7 @@ artifacts = ["/app/"]
 name = "null-research-v1/{tid.lower()}-seed-{seed}"
 description = {json.dumps(task['title'],ensure_ascii=False)}
 [metadata]
-benchmark_version = "1.0.0"
+benchmark_version = "1.1.0"
 task_id = "{tid}"
 seed = {seed}
 score_kind = "automatic_only_70_points"
@@ -318,7 +318,10 @@ def harbor_verify(grader_dir="/grader",candidate_dir="/app",logs_dir="/logs/veri
 
 def run_command(command,dest,selection="coding",seed=17,model_label="unspecified",harness_label="native",metadata=None,timeout=1800,execution="docker",image=None):
     if not isinstance(command,list) or not command or not all(isinstance(x,str) for x in command):raise ValueError("command-json must be an argv string list")
-    selected=ids(selection);dest=_fresh(dest);metadata=_redact(metadata or {})
+    selected=ids(selection)
+    if any(t in ("X04","X05") for t in selected):
+        raise ValueError("X04/X05 require complete media bundles; use generate-pack and a media-capable harness, not text-only run")
+    dest=_fresh(dest);metadata=_redact(metadata or {})
     reports=[];runs=[]
     for tid in selected:
         directory=dest/tid;work=directory/"candidate";work.mkdir(parents=True)
@@ -340,7 +343,8 @@ def run_command(command,dest,selection="coding",seed=17,model_label="unspecified
         unchanged=task_path.is_file() and not task_path.is_symlink() and fingerprint(task_path.read_bytes())==packet["packet_hash"]
         report=score_output(tid,seed,output,execution if status!="harness_error" else "none",packet["packet_hash"],image=image)
         report["generation"]={"status":status,"wall_seconds":outcome["wall_seconds"],"exit_code":outcome["exit_code"],"tokens":None,"cost":None,
-                              "model_label":model_label,"harness_label":harness_label,"metadata":metadata,
+                              "model_label":model_label,"harness_label":harness_label,"metadata":metadata,"timeout_seconds":timeout,
+                              "execution_backend":execution,"execution_image":image,
                               "command_fingerprint":fingerprint(command),"execution_boundary":"host_process_not_a_generation_sandbox"}
         report.update(input_integrity={"unchanged":unchanged},comparison_eligible=unchanged and status!="harness_error")
         report["report_hash"]=seal(report);_write(directory/"report.json",report)

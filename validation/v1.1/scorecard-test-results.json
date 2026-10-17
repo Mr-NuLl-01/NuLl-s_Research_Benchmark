@@ -1,0 +1,30 @@
+{
+  "scope": "Synthetic software QA only. Minimal DOM stub, not actual browser/visual/printing tests.",
+  "checks_passed": 19,
+  "checks": [
+    "21 actual task rubrics loaded; untouched preview remains unassessed",
+    "All 21 task views render in both languages without runtime errors",
+    "Untouched nrb-review-v1 draft round-trip exactly preserves metadata and nulls",
+    "Checked export requires reviewer, levels, evidence and rationale",
+    "Manual weighted score is 50/100 while core failure remains independent",
+    "Clearing a score restores null and removes the complete numeric total",
+    "LLM authority is provisional and model/prompt identity are mandatory",
+    "C manual maximum is 30; unavailable automatic zero is never a known score",
+    "Complete C total uses 70+30; explicit comparison ineligibility suppresses ranking total",
+    "Tampered weights, fractional scores and boolean scores rejected",
+    "Canonical anchor edits and mismatched automatic-report bindings rejected",
+    "Core pass requires genuine modality observation fields",
+    "Candidate markup is escaped and prototype-pollution keys rejected",
+    "Nonfinite/unsafe JSON numbers cannot be silently reserialized",
+    "Video A stays separate, preserves full blank protocol, and requires output watching even if all core gates fail",
+    "Video timecodes must be finite and inside the fixed scene interval, including drafts",
+    "Video B reference protocol and missing-audio/fail branch serialize for real CLI validation",
+    "Language switches never mutate canonical rubric or ledger content",
+    "Static inspection: no network/storage calls; CSP and print stylesheet present (browser behavior unverified)"
+  ],
+  "browser_verification": "Blocked: local Chromium socket unavailable; escalation mount setup failed; cloud browser rejects file://. No bypass attempted.",
+  "cli_round_trips": [
+    "R03: manual 50, core failed, quality_qualified false",
+    "X05: manual 50, core failed, audio missing branch, quality_qualified false"
+  ]
+}

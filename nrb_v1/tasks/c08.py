@@ -98,6 +98,79 @@ def _manufactured(x,y,kx,ky,u):
     return dict(x=x,y=y,kx=kx,ky=ky,source=f,boundary=u)
 
 
+def validate_output(case, output):
+    """Recompute face divergence and integrals from the returned temperature.
+
+    Keep the existing numerical-match tolerances for fields and integrals.
+    The residual has its existing absolute 4e-7 tolerance, independent of field
+    amplitude or mesh spacing.  The same absolute tolerance accommodates the
+    rounding difference between face-divergence and assembled-matrix residuals.
+    """
+    from ..grading import compare_value
+
+    try:
+        rtol, atol = case.get('rtol', 3e-7), case.get('atol', 4e-7)
+        ok, detail = compare_value(output, case['expected'], rtol, atol, exact_integer_paths=frozenset())
+        if not ok:
+            return ok, detail
+        p = case['input']
+        u = output['field']
+        nx, ny = len(p['x']), len(p['y'])
+        close = lambda a, b: abs(a-b) <= atol+rtol*abs(b)
+        if any(not close(u[j][i], p['boundary'][j][i])
+               for j in range(ny) for i in range(nx)
+               if j in (0, ny-1) or i in (0, nx-1)):
+            return False, 'Dirichlet boundary mismatch'
+        hx = [p['x'][i+1]-p['x'][i] for i in range(nx-1)]
+        hy = [p['y'][j+1]-p['y'][j] for j in range(ny-1)]
+        wx = [(hx[i-1]+hx[i])/2 for i in range(1, nx-1)]
+        wy = [(hy[j-1]+hy[j])/2 for j in range(1, ny-1)]
+
+        def harmonic(a, b):
+            # Algebraically 2*a*b/(a+b), without the intermediate product.
+            lo, hi = min(a, b), max(a, b)
+            return lo*(2/(1+lo/hi))
+
+        def qx(j, i):
+            k = harmonic(p['kx'][j][i], p['kx'][j][i+1])
+            return -k*(u[j][i+1]-u[j][i])/hx[i]
+
+        def qy(j, i):
+            k = harmonic(p['ky'][j][i], p['ky'][j+1][i])
+            return -k*(u[j+1][i]-u[j][i])/hy[j]
+
+        # This face-divergence path is independent of SOLUTION's integrated
+        # matrix assembly and its reported residual or boundary-flux totals.
+        residuals = []
+        source_terms = []
+        for j in range(1, ny-1):
+            for i in range(1, nx-1):
+                residuals.append(abs((qx(j, i)-qx(j, i-1))/wx[i-1]
+                                     +(qy(j, i)-qy(j-1, i))/wy[j-1]
+                                     -p['source'][j][i]))
+                source_terms.append(p['source'][j][i]*wx[i-1]*wy[j-1])
+        flux = [math.fsum(-qx(j, 0)*wy[j-1] for j in range(1, ny-1)),
+                math.fsum(qx(j, nx-2)*wy[j-1] for j in range(1, ny-1)),
+                math.fsum(-qy(0, i)*wx[i-1] for i in range(1, nx-1)),
+                math.fsum(qy(ny-2, i)*wx[i-1] for i in range(1, nx-1))]
+        source = math.fsum(source_terms)
+        if not all(math.isfinite(z) for z in residuals+flux+[source]):
+            return False, 'nonfinite recomputed elliptic diagnostic'
+        residual = max(residuals)
+        if any(not close(a, b) for a, b in zip(output['boundary_flux'], flux)):
+            return False, 'reported boundary flux is inconsistent with the returned field'
+        if not close(output['integrated_source'], source):
+            return False, 'reported integrated source is inconsistent with the input'
+        if residual > 4e-7:
+            return False, 'recomputed elliptic residual exceeds 4e-7'
+        reported = output['residual_inf']
+        if reported < 0 or abs(reported-residual) > 4e-7:
+            return False, 'reported residual is inconsistent with the original equations'
+        return True, ''
+    except (KeyError, IndexError, TypeError, ValueError, OverflowError, ZeroDivisionError):
+        return False, 'invalid elliptic solution object'
+
+
 def cases(seed=17):
     rng=random.Random(seed)
     truths={}

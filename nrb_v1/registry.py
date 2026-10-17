@@ -4,7 +4,8 @@ from .provenance import fingerprint
 
 CODING_IDS = tuple(f"C{i:02d}" for i in range(1, 11))
 RESEARCH_IDS = tuple(f"R{i:02d}" for i in range(1, 7))
-OPTIONAL_IDS = tuple(f"X{i:02d}" for i in range(1, 4))
+OPTIONAL_IDS = tuple(f"X{i:02d}" for i in range(1, 6))
+VIDEO_IDS = ("X04", "X05")
 
 
 def module(task_id):
@@ -19,6 +20,9 @@ def research_tasks():
 
 
 def spec(task_id):
+    if task_id in VIDEO_IDS:
+        from .video import task
+        return task(task_id)
     if task_id in CODING_IDS:
         return dict(module(task_id).TASK, track="coding", format="md")
     for task in research_tasks():
@@ -31,6 +35,7 @@ def ids(selection="required"):
     if selection == "coding": return list(CODING_IDS)
     if selection == "research": return list(RESEARCH_IDS)
     if selection == "optional": return list(OPTIONAL_IDS)
+    if selection == "video": return list(VIDEO_IDS)
     if selection == "required": return [*CODING_IDS, *RESEARCH_IDS]
     if selection == "all": return [*CODING_IDS, *RESEARCH_IDS, *OPTIONAL_IDS]
     selected = selection.split(",")

@@ -1,0 +1,67 @@
+{
+  "version": "1.1.0",
+  "date_utc": "2026-10-17",
+  "status": "local_integration_verified_remote_ci_not_yet_verified",
+  "evaluator_identity": {
+    "benchmark_version": "1.1.0",
+    "scoring_schema": "nrb-v1.1",
+    "evaluator_commit": null,
+    "evaluator_digest": "7e6da2258b69ca804c04d6443ce041435823213943b5ef674e7879c854c57ae1",
+    "digest_algorithm": "sha256-path-content-v1"
+  },
+  "unit_tests": {
+    "run": 104,
+    "passed": 100,
+    "skipped": 4,
+    "failed": 0,
+    "log": "unit-tests.log",
+    "skip_reasons": [
+      "Harbor unavailable",
+      "Inspect AI unavailable",
+      "promptfoo unavailable",
+      "gfortran unavailable"
+    ]
+  },
+  "controlled_python_checks": {
+    "passed": 90,
+    "seeds": [
+      0,
+      17,
+      2026
+    ],
+    "model_api_calls": 0,
+    "report": "python-reference-selftest.json"
+  },
+  "materials": {
+    "legacy_frozen_task_files_unchanged": 19,
+    "manifest_files_verified": 37,
+    "video_task_ids": [
+      "X04",
+      "X05"
+    ],
+    "common_assets_match": true,
+    "a_has_no_reference": true,
+    "candidate_implementation_excluded": true
+  },
+  "scorecard": {
+    "logic_checks_passed": 19,
+    "real_cli_roundtrips_passed": 2,
+    "actual_browser_visual_mobile_print_verification": "not_performed_due_to_environment_restrictions",
+    "report": "scorecard-test-results.json",
+    "limitations": "scorecard-qa.md"
+  },
+  "packaging": {
+    "wheel_build": "passed",
+    "offline_install": "passed",
+    "installed_video_packs_from_outside_checkout": "X04 and X05 passed",
+    "tested_wheel_sha256": "91c1dac8e695c0b421b5a89958bf2dcc517bf36c4cbda516b978c89d9002216b",
+    "scope": "Evaluator and video data package tested. No model capability result."
+  },
+  "regression_fixes_verified": [
+    "Unwatched output cannot receive finalized visual credit, including when every core gate fails.",
+    "Changed evaluator source/reference/audio bytes and symlink inputs are rejected.",
+    "Authoritative video rubric is evaluator-identity bound; mixed per-task rubric hashes are rejected."
+  ],
+  "not_model_performance": true,
+  "remote_ci": "not_yet_verified_for_new_commit"
+}

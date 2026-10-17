@@ -25,11 +25,13 @@ def write(path, value):
 
 
 def main(argv=None):
-    parser=argparse.ArgumentParser(prog="nrb-v1",description="NRB V1.0 offline task packets and research scoring")
+    parser=argparse.ArgumentParser(prog="nrb-v1",description="NRB V1.1 offline task packets, isolated video bundles and evidence-based scoring")
     parser.add_argument("--version",action="version",version=__version__)
     sub=parser.add_subparsers(dest="cmd",required=True)
     p=sub.add_parser("list"); p.add_argument("--tasks",default="all")
     p=sub.add_parser("identity")
+    p=sub.add_parser("generate-pack");p.add_argument("--task",choices=["X04","X05"],required=True);p.add_argument("--dest",required=True);p.add_argument("--seed",type=int,default=17)
+    p=sub.add_parser("evaluate-skeleton");p.add_argument("--task",choices=["X04","X05"],required=True);p.add_argument("--submission",required=True);p.add_argument("--dest",required=True);p.add_argument("--seed",type=int,default=17)
     p=sub.add_parser("export"); p.add_argument("--format",choices=["files","jsonl","promptfoo","harbor"],default="files")
     p.add_argument("--tasks",default="all");p.add_argument("--seed",type=int,default=17);p.add_argument("--dest",required=True)
     p.add_argument("--image",default="nrb-v1:local");p.add_argument("--agent-hosts",default="")
@@ -55,6 +57,12 @@ def main(argv=None):
     try:
         if args.cmd=="list":write(None,[public_metadata(i) for i in ids(args.tasks)])
         elif args.cmd=="identity":write(None,identity())
+        elif args.cmd=="generate-pack":
+            from .video import generate_pack
+            write(None,generate_pack(args.task,args.dest,args.seed))
+        elif args.cmd=="evaluate-skeleton":
+            from .video import evaluate_skeleton
+            write(None,evaluate_skeleton(args.task,read(args.submission),args.dest,args.seed))
         elif args.cmd=="pack":write(args.out,pack(args.task,args.from_dir))
         elif args.cmd=="export":
             if args.format=="files":result=freeze(args.dest,args.tasks,args.seed)

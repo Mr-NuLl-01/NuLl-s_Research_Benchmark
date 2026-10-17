@@ -1,0 +1,12 @@
+{
+  "commands_checked": 68,
+  "syntax_failures": [],
+  "local_links_checked": 58,
+  "missing_links": [],
+  "documents": {
+    "README.en.md": "635b96f4c6676219c2129ccd8225351dc35cfecce25d0dbd2ef977b0d6c9f1b7",
+    "README.zh-CN.md": "b3658f7c93927ef21f766bd8f2697dbf22600d39656efa48bbb91311f803b083",
+    "docs/v1.1/usage.en.md": "8b8561a86640d899df15a89bca7dfdd4b833726f1064f285ba3aa956ddd7884e",
+    "docs/v1.1/usage.zh-CN.md": "9aa3aee03f25e53d8af168be63f1342dab559312eebf492caa362d20ffb42f65"
+  }
+}

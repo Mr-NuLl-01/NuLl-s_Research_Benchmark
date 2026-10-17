@@ -1,0 +1,164 @@
+{
+  "X04": {
+    "track": "A",
+    "profile": "optional_video_a",
+    "rubric": [
+      {
+        "id": "X04-technical",
+        "name": "技术交付 / Technical delivery",
+        "weight": 10,
+        "anchors": {
+          "0": "No valid playable video or seriously corrupted media.",
+          "2": "Playable video with a material size, frame-rate or decoding defect.",
+          "4": "Complete 1920×1080 H.264 output, 24 fps and 240 frames, with no unintended corrupt or black frames."
+        }
+      },
+      {
+        "id": "X04-timing",
+        "name": "时间结构 / Temporal structure",
+        "weight": 15,
+        "anchors": {
+          "0": "Major scenes are missing, out of order or temporally unusable.",
+          "2": "Six scenes are present but cuts, duration or transitions have substantial defects.",
+          "4": "All six scenes and target intervals are clear; transitions and action establish coherent pacing without penalizing harmless one-frame overlap."
+        }
+      },
+      {
+        "id": "X04-keying",
+        "name": "绿幕合成 / Chroma-key compositing",
+        "weight": 15,
+        "anchors": {
+          "0": "Studio background, rectangular source frame or major subject loss remains.",
+          "2": "Subject is separated but green spill, edge chatter, floor mat or holes remain visibly distracting.",
+          "4": "Hair, hands and moving contours remain stable; spill and studio artifacts are controlled without losing the subject or held object."
+        }
+      },
+      {
+        "id": "X04-typography",
+        "name": "排版与文字 / Typography and copy",
+        "weight": 15,
+        "anchors": {
+          "0": "Required copy is missing or largely unreadable.",
+          "2": "Most copy is correct but hierarchy, placement or motion reduces readability.",
+          "4": "All COPY.txt text is exact, clearly organized and legible; typography actively participates in the required animation."
+        }
+      },
+      {
+        "id": "X04-motion",
+        "name": "运动设计 / Motion design",
+        "weight": 20,
+        "anchors": {
+          "0": "Required mechanisms are absent or replaced by static images.",
+          "2": "Recognizable motion exists but trajectories, easing or continuous mechanisms have major defects.",
+          "4": "Orbit, waves, ribbons, iris and confetti show coherent trajectories, continuous motion, intentional speed and controlled transitions."
+        }
+      },
+      {
+        "id": "X04-depth",
+        "name": "遮挡与空间 / Occlusion and depth",
+        "weight": 10,
+        "anchors": {
+          "0": "Depth interactions are absent or faked only by global opacity.",
+          "2": "Some depth cues work but orbit or ribbon ordering is inconsistent or incomplete.",
+          "4": "Text and ribbon genuinely pass behind and in front of the actor with legible depth changes and sound layer ordering."
+        }
+      },
+      {
+        "id": "X04-finish",
+        "name": "视觉完成度 / Visual finish",
+        "weight": 15,
+        "anchors": {
+          "0": "The sequence is incoherent, unfinished or unreadable.",
+          "2": "A usable design exists but palette, spacing, framing or ending has visible weaknesses.",
+          "4": "Six scenes form a consistent readable design with balanced color, spacing and framing, and a complete stable ending."
+        }
+      }
+    ]
+  },
+  "X05": {
+    "track": "B",
+    "profile": "optional_video_b",
+    "rubric": [
+      {
+        "id": "X05-technical",
+        "name": "技术交付 / Technical delivery",
+        "weight": 10,
+        "anchors": {
+          "0": "No valid playable video or seriously corrupted media.",
+          "2": "Playable video with a material size, frame-rate or decoding defect.",
+          "4": "Complete 1920×1080 H.264 output, 24 fps and 240 frames, with no unintended corrupt or black frames."
+        }
+      },
+      {
+        "id": "X05-timing",
+        "name": "时间结构 / Temporal structure",
+        "weight": 10,
+        "anchors": {
+          "0": "Major scenes are missing, out of order or temporally unusable.",
+          "2": "Six scenes are present but cuts, duration or transitions have substantial defects.",
+          "4": "All six scenes and target intervals are clear; transitions and action establish coherent pacing without penalizing harmless one-frame overlap."
+        }
+      },
+      {
+        "id": "X05-keying",
+        "name": "绿幕合成 / Chroma-key compositing",
+        "weight": 15,
+        "anchors": {
+          "0": "Studio background, rectangular source frame or major subject loss remains.",
+          "2": "Subject is separated but green spill, edge chatter, floor mat or holes remain visibly distracting.",
+          "4": "Hair, hands and moving contours remain stable; spill and studio artifacts are controlled without losing the subject or held object."
+        }
+      },
+      {
+        "id": "X05-typography",
+        "name": "排版与文字 / Typography and copy",
+        "weight": 10,
+        "anchors": {
+          "0": "Required copy is missing or largely unreadable.",
+          "2": "Most copy is correct but hierarchy, placement or motion reduces readability.",
+          "4": "All COPY.txt text is exact, clearly organized and legible; typography actively participates in the required animation."
+        }
+      },
+      {
+        "id": "X05-motion",
+        "name": "运动设计 / Motion design",
+        "weight": 15,
+        "anchors": {
+          "0": "Required mechanisms are absent or replaced by static images.",
+          "2": "Recognizable motion exists but trajectories, easing or continuous mechanisms have major defects.",
+          "4": "Orbit, waves, ribbons, iris and confetti show coherent trajectories, continuous motion, intentional speed and controlled transitions."
+        }
+      },
+      {
+        "id": "X05-depth",
+        "name": "遮挡与空间 / Occlusion and depth",
+        "weight": 10,
+        "anchors": {
+          "0": "Depth interactions are absent or faked only by global opacity.",
+          "2": "Some depth cues work but orbit or ribbon ordering is inconsistent or incomplete.",
+          "4": "Text and ribbon genuinely pass behind and in front of the actor with legible depth changes and sound layer ordering."
+        }
+      },
+      {
+        "id": "X05-finish",
+        "name": "视觉完成度 / Visual finish",
+        "weight": 10,
+        "anchors": {
+          "0": "The sequence is incoherent, unfinished or unreadable.",
+          "2": "A usable design exists but palette, spacing, framing or ending has visible weaknesses.",
+          "4": "Six scenes form a consistent readable design with balanced color, spacing and framing, and a complete stable ending."
+        }
+      },
+      {
+        "id": "X05-reference",
+        "name": "参考重建 / Reference reconstruction",
+        "weight": 20,
+        "anchors": {
+          "0": "The submitted work does not meaningfully reconstruct the supplied reference.",
+          "2": "Some reference structure is reproduced but composition, timing or movement differs materially.",
+          "4": "Composition and scale, trajectory and rhythm, palette and depth, and transitions closely reconstruct the supplied reference without requiring pixel identity."
+        }
+      }
+    ]
+  }
+}

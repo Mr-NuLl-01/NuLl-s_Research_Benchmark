@@ -1,0 +1,72 @@
+{
+  "benchmark_version": "1.1.0",
+  "kind": "media_directory_instructions_index",
+  "tasks": [
+    {
+      "id": "X04",
+      "title": "SIGNAL IN MOTION: prompt-driven video design",
+      "track": "optional_video_a",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "video",
+        "compositing",
+        "motion_design",
+        "typography"
+      ],
+      "language": null,
+      "modality": [
+        "text",
+        "video",
+        "audio",
+        "code"
+      ],
+      "time_budget_s": 3600,
+      "required_artifacts": [
+        "output.mp4",
+        "source.zip",
+        "README.md",
+        "LICENSES.md",
+        "run-record.json"
+      ],
+      "seed": 17,
+      "packet_hash": "8856a9ab7a66f371e4624bddaf2a57ee6cd7b4ac8343252718d0264fd6cb3a37",
+      "packet_kind": "media_directory",
+      "file": "X04/TASK.md"
+    },
+    {
+      "id": "X05",
+      "title": "SIGNAL IN MOTION: reference video reconstruction",
+      "track": "optional_video_b",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "video",
+        "compositing",
+        "motion_design",
+        "typography",
+        "reference_reconstruction"
+      ],
+      "language": null,
+      "modality": [
+        "text",
+        "video",
+        "audio",
+        "code"
+      ],
+      "time_budget_s": 3600,
+      "required_artifacts": [
+        "output.mp4",
+        "source.zip",
+        "README.md",
+        "LICENSES.md",
+        "run-record.json"
+      ],
+      "seed": 17,
+      "packet_hash": "f8190a1132fd730d4fba280f0387601f8e6b305ed260435513cabd8fa30c7bad",
+      "packet_kind": "media_directory",
+      "file": "X05/TASK.md"
+    }
+  ],
+  "note": "These .md files are instructions only; use generate-pack to obtain the complete candidate media directory."
+}

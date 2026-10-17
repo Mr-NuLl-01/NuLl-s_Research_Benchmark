@@ -27,11 +27,20 @@ if data['language']=='python':
         mod=importlib.util.module_from_spec(spec)
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
             spec.loader.exec_module(mod)
+            solve=getattr(mod,'solve',None)
+            if not callable(solve):
+                raise TypeError('Candidate must define callable solve(problem)')
+    except BaseException as e:
+        # Loading a candidate is not an attempted solution of an individual
+        # case, even when its exception type matches an invalid-input check.
+        records=[{'ok':False,'error':'WorkerInitializationError',
+                  'detail':type(e).__name__+': '+str(e)[:500]} for _ in data['runs']]
+    else:
         for item in data['runs']:
             original=json.dumps(item,sort_keys=True,allow_nan=False)
             try:
                 with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
-                    value=mod.solve(item)
+                    value=solve(item)
             except BaseException as e:
                 record={'ok':False,'error':type(e).__name__,'detail':str(e)[:500]}
             else:
@@ -46,8 +55,6 @@ if data['language']=='python':
             except BaseException:
                 record={'ok':False,'error':'InputMutation','detail':'solve changed the supplied problem object'}
             records.append(record)
-    except BaseException as e:
-        records=[{'ok':False,'error':type(e).__name__,'detail':str(e)[:500]} for _ in data['runs']]
 else:
     with tempfile.TemporaryDirectory(prefix='nrb-compile-') as out:
         binary=str(pathlib.Path(out)/'candidate')
@@ -102,7 +109,7 @@ def execute(task_module, submission, cases, backend="docker", timeout=120, image
     source_name="main.f90" if language=="fortran" else "solution.py"
     common={"backend":backend,"language":language,"input_hash":fingerprint([c["input"] for c in cases]),
             "source_hash":fingerprint(submission["artifacts"].get(source_name,"")),"wall_seconds":None,
-            "image_id":None,"compiler":None}
+            "image_id":None,"compiler":None,"timeout_seconds":timeout}
     if source_name not in submission["artifacts"]:
         return dict(common,status="failed",error="Missing source",records=[{"ok":False,"error":"MissingSource"} for _ in cases])
     if backend=="none": return dict(common,status="unavailable",error="Execution disabled",records=[])
@@ -183,3 +190,4 @@ def execute(task_module, submission, cases, backend="docker", timeout=120, image
         return dict(common,status="executed",records=records,result_hash=fingerprint(records))
     except (ValueError,TypeError,KeyError) as exc:
         return dict(common,status="failed",error=str(exc),records=[{"ok":False,"error":"WorkerFailure"} for _ in cases])
+

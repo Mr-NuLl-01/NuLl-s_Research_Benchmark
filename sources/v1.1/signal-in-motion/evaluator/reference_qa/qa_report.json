@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "video": {
+    "path": "reference.mp4",
+    "bytes": 3940450,
+    "sha256": "62f5b074c10642b4f3de80676f1463e05bbc81bcc2211d7095fd62894f7193f4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "frames": 240,
+    "duration_seconds": 10.0,
+    "codecs": [
+      "H.264",
+      "AAC"
+    ],
+    "full_decode_errors": ""
+  },
+  "source": {
+    "file_name": "tears_04_3b_source_10s_bt709.mp4",
+    "sha256": "a882854e0d1b007e247ffc507fccee31c9bb5671810428dfe422a94317a98302",
+    "mapping": "Output n uses source n for all n=0..239; same n in all three split panels",
+    "audio_included": false
+  },
+  "audio": {
+    "file": "assets/soundtrack.wav",
+    "sha256": "37ed2a662d04f833165358f81374d51e59904afb9c4c00e8a9e9fad588a7145c",
+    "original_samples_per_channel": 480000,
+    "sample_rate": 48000,
+    "channels": 2,
+    "bpm": 120,
+    "aac_vs_supplied_wav_correlation": 0.9997483351409483,
+    "aac_peak_dbfs": -2.161423683166504,
+    "clipped_aac_samples": 0,
+    "method": "Original deterministic synthesis; no external samples; public-release license pending"
+  },
+  "matte": {
+    "source_crop": [
+      800,
+      292,
+      550,
+      720
+    ],
+    "frames_checked": 240,
+    "minimum_actor_x": 38,
+    "maximum_actor_x": 413,
+    "garbage_mask_boundary_hits": [],
+    "ground_contact": "Cuff-following floor mask plus deliberate stage foreground lip",
+    "note": "Procedural chroma key, not manual feature-film rotoscoping"
+  },
+  "visual_review": {
+    "stills": "qa/contactsheet_final.jpg",
+    "inspected": "All six sections and both sides of section boundaries; early pointing gesture; silhouette and prop; final title",
+    "last_half_second_graphics_max_pixel_change_outside_actor": 0.0,
+    "note": "Assistant visual inspection plus complete technical decode; no subjective audio-listening claim"
+  },
+  "frame_statistics": {
+    "minimum_mean_luma": 21.164930555555557,
+    "maximum_mean_luma": 45.75,
+    "unique_low_resolution_frames": 240
+  },
+  "software": {
+    "python": "3.12.14",
+    "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers"
+  },
+  "copyright": "Source footage CC BY 3.0, DejaVu font terms retained; new code/audio public-release license pending."
+}

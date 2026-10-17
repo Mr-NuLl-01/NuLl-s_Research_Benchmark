@@ -1,0 +1,48 @@
+{
+  "kind": "documentation_command_smoke",
+  "model_run_performed": false,
+  "candidate_code_executed": false,
+  "temporary_output": "/tmp/nrb-docs-final-wt9tfk18",
+  "checks": [
+    {
+      "command": "python -m nrb_v1 export --format files --tasks C04 --seed 17 --dest /tmp/nrb-docs-final-wt9tfk18/C04",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m nrb_v1 generate-pack --task X04 --dest /tmp/nrb-docs-final-wt9tfk18/X04",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m nrb_v1 generate-pack --task X05 --dest /tmp/nrb-docs-final-wt9tfk18/X05",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m nrb_v1 pack --task X04 --from-dir /tmp/nrb-docs-final-wt9tfk18/empty-artifacts --out /tmp/nrb-docs-final-wt9tfk18/X04-empty.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m nrb_v1 evaluate-skeleton --task X04 --submission /tmp/nrb-docs-final-wt9tfk18/X04-empty.json --dest /tmp/nrb-docs-final-wt9tfk18/review-X04",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m nrb_v1 review-packet --task X04 --submission /tmp/nrb-docs-final-wt9tfk18/X04-empty.json --dest /tmp/nrb-docs-final-wt9tfk18/review-X04-direct",
+      "exit_code": 0
+    }
+  ],
+  "verified": [
+    "frozen C04 bytes",
+    "A omits B reference",
+    "common A/B input identity",
+    "no demonstration renderer in candidate inputs",
+    "empty submission remains unassessed",
+    "six-scene formal review",
+    "both review commands preserve inputs/"
+  ],
+  "evaluator_identity": {
+    "benchmark_version": "1.1.0",
+    "scoring_schema": "nrb-v1.1",
+    "evaluator_commit": null,
+    "evaluator_digest": "7e6da2258b69ca804c04d6443ce041435823213943b5ef674e7879c854c57ae1",
+    "digest_algorithm": "sha256-path-content-v1"
+  }
+}

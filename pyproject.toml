@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "null-research-benchmark"
-version = "1.0.0"
-description = "Ten scientific-coding tasks, six research tasks, and three optional media tasks with offline single-file packets"
+version = "1.1.0"
+description = "Ten scientific-coding tasks, six research tasks, and five optional tasks with isolated video bundles"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
 readme = "README.md"
@@ -25,7 +25,7 @@ include = ["nrb*"]
 
 [tool.setuptools.package-data]
 nrb = ["evaluation_policy.json", "_evaluator_origin.json"]
-nrb_v1 = ["policy.json", "_origin.json"]
+nrb_v1 = ["policy.json", "video_rubrics.json", "_origin.json"]
 
 [project.urls]
 Repository = "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark"
@@ -34,3 +34,16 @@ Repository = "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark"
 "share/null-research-benchmark/sources/v1" = ["sources/v1/article-packets.json", "sources/v1/manifest.json", "sources/v1/README.md"]
 "share/null-research-benchmark/sources/v1/offline-figures" = ["sources/v1/offline-figures/weissgerber2015-fig2.png", "sources/v1/offline-figures/rougier2014-fig7.png", "sources/v1/offline-figures/crameri2020-fig3.png"]
 "share/null-research-benchmark/sources/v1/synthetic" = ["sources/v1/synthetic/input-figure.svg"]
+
+# V1.1 optional video material files
+"share/null-research-benchmark/sources/v1.1/signal-in-motion" = ["sources/v1.1/signal-in-motion/LICENSE.txt", "sources/v1.1/signal-in-motion/MATERIAL_MANIFEST.json", "sources/v1.1/signal-in-motion/PACKAGE_LICENSE_STATUS.md", "sources/v1.1/signal-in-motion/README.md"]
+"share/null-research-benchmark/sources/v1.1/signal-in-motion/demo_project" = ["sources/v1.1/signal-in-motion/demo_project/README.md", "sources/v1.1/signal-in-motion/demo_project/SOURCE_LICENSE.md", "sources/v1.1/signal-in-motion/demo_project/requirements.txt", "sources/v1.1/signal-in-motion/demo_project/run_demo.py"]
+"share/null-research-benchmark/sources/v1.1/signal-in-motion/demo_project/source" = ["sources/v1.1/signal-in-motion/demo_project/source/audit.py", "sources/v1.1/signal-in-motion/demo_project/source/prepare_assets.py", "sources/v1.1/signal-in-motion/demo_project/source/render.py"]
+"share/null-research-benchmark/sources/v1.1/signal-in-motion/evaluator" = ["sources/v1.1/signal-in-motion/evaluator/nrb_rubrics.json", "sources/v1.1/signal-in-motion/evaluator/rubric.md", "sources/v1.1/signal-in-motion/evaluator/run_record.template.json", "sources/v1.1/signal-in-motion/evaluator/scene_spec.json", "sources/v1.1/signal-in-motion/evaluator/source_manifest.json"]
+"share/null-research-benchmark/sources/v1.1/signal-in-motion/evaluator/reference_qa" = ["sources/v1.1/signal-in-motion/evaluator/reference_qa/QA_SUMMARY.md", "sources/v1.1/signal-in-motion/evaluator/reference_qa/contactsheet_final.jpg", "sources/v1.1/signal-in-motion/evaluator/reference_qa/decode_errors.txt", "sources/v1.1/signal-in-motion/evaluator/reference_qa/ffprobe.json", "sources/v1.1/signal-in-motion/evaluator/reference_qa/frame_mapping.csv", "sources/v1.1/signal-in-motion/evaluator/reference_qa/matte_bounds.json", "sources/v1.1/signal-in-motion/evaluator/reference_qa/qa_report.json"]
+"share/null-research-benchmark/sources/v1.1/signal-in-motion/shared_assets" = ["sources/v1.1/signal-in-motion/shared_assets/soundtrack.wav", "sources/v1.1/signal-in-motion/shared_assets/source.mp4"]
+"share/null-research-benchmark/sources/v1.1/signal-in-motion/shared_assets/LICENSES" = ["sources/v1.1/signal-in-motion/shared_assets/LICENSES/DejaVu-LICENSE.txt", "sources/v1.1/signal-in-motion/shared_assets/LICENSES/SOURCE_LICENSE.md"]
+"share/null-research-benchmark/sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence" = ["sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/CC-BY-3.0-legalcode.txt", "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/README-original.txt", "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/raw-footage-release.html", "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/sharing.html"]
+"share/null-research-benchmark/sources/v1.1/signal-in-motion/shared_assets/fonts" = ["sources/v1.1/signal-in-motion/shared_assets/fonts/DejaVuSansCondensed-Bold.ttf", "sources/v1.1/signal-in-motion/shared_assets/fonts/DejaVuSansMono.ttf"]
+"share/null-research-benchmark/sources/v1.1/signal-in-motion/tracks/A" = ["sources/v1.1/signal-in-motion/tracks/A/COPY.txt", "sources/v1.1/signal-in-motion/tracks/A/TASK.md"]
+"share/null-research-benchmark/sources/v1.1/signal-in-motion/tracks/B" = ["sources/v1.1/signal-in-motion/tracks/B/COPY.txt", "sources/v1.1/signal-in-motion/tracks/B/TASK.md", "sources/v1.1/signal-in-motion/tracks/B/reference.mp4"]

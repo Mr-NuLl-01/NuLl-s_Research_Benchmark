@@ -4,7 +4,7 @@ import html
 import json
 from pathlib import Path
 from . import __version__
-from .registry import CODING_IDS, ids, module, spec, rubric
+from .registry import CODING_IDS, VIDEO_IDS, ids, module, spec, rubric
 from .provenance import fingerprint, identity
 
 SUBMISSION_CONTRACT = '''
@@ -31,9 +31,12 @@ Fortran任务将 `solution.py` 换为题目指定的 `main.f90`。所有必需�
 
 
 def candidate(task_id, seed=17):
+    if task_id in VIDEO_IDS:
+        from .video import candidate as video_candidate
+        return video_candidate(task_id, seed)
     task = spec(task_id)
     if task_id in CODING_IDS:
-        header = f"# NRB V{__version__} · {task_id} · {task['title']}\n\n"
+        header = f"# NRB V1.0.0 · {task_id} · {task['title']}\n\n"
         header += f"任务种子：{seed}。设计难度：{task['difficulty']}/5（待真实模型校准）。\n\n"
         text = header + module(task_id).prompt(seed) + SUBMISSION_CONTRACT.replace("TASK_ID", task_id)
         text += "\n## 核心完成责任\n\n" + "\n".join("- " + e["requirement"] for e in task["essential"])
@@ -52,7 +55,9 @@ def public_metadata(task_id, seed=17):
             "difficulty_status":"design_prior_not_empirically_calibrated", "capabilities":task.get("capabilities",[]),
             "language":task.get("language"),"modality":task.get("modality",["text","code"]),
             "time_budget_s":task.get("time_budget_s"),"required_artifacts":task["required_artifacts"],
-            "seed":seed,"packet_hash":packet["packet_hash"],"file":task_id+"."+packet["format"]}
+            "seed":seed,"packet_hash":packet["packet_hash"],
+            "packet_kind":packet.get("packet_kind","single_file"),
+            "file":task_id+"/TASK.md" if task_id in VIDEO_IDS else task_id+"."+packet["format"]}
 
 
 def freeze(dest, selection="all", seed=17, replace=False):
@@ -64,14 +69,18 @@ def freeze(dest, selection="all", seed=17, replace=False):
     entries = []
     for task_id in selected:
         packet = candidate(task_id, seed)
-        path = dest / (task_id + "." + packet["format"])
-        path.write_text(packet["content"], encoding="utf-8")
+        if task_id in VIDEO_IDS:
+            from .video import generate_pack
+            generate_pack(task_id, dest / task_id, seed)
+        else:
+            path = dest / (task_id + "." + packet["format"])
+            path.write_text(packet["content"], encoding="utf-8")
         entries.append(public_metadata(task_id, seed))
     manifest = {"benchmark_version":__version__,"kind":"candidate_only_catalog","seed":seed,
-                "tasks":entries,"note":"Only one task file is needed by each candidate; do not provide evaluator files."}
+                "tasks":entries,"note":"Legacy tasks use a single file; X04/X05 require their entire media directory. Do not provide evaluator files."}
     (dest / "catalog.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\n")
-    lines=["# V1.0 候选题包\n", "每题一个自包含文件。下载单题文件交给AI；不需要克隆仓库或让候选联网。\n",
-           "代码题10道；科研题6道；可选扩展3道。设计难度为先验，尚未通过真实模型标定。\n",
+    lines=["# V1.1 候选题包\n", "原 V1.0 题目仍为单文件；X04/X05 必须连同生成目录内的媒体、字体和许可交付。无需让候选访问仓库或联网。\n",
+           "代码题10道；科研题6道；可选扩展5道（含新增两条独立视频轨道）。设计难度为先验，尚未通过真实模型标定。\n",
            "|题号|任务|轨道|设计难度|单文件|\n|---|---|---|---:|---|\n"]
     for e in entries:
         lines.append(f"|{e['id']}|{e['title']}|{e['track']}|{e['difficulty']}/5|[{e['file']}]({e['file']})|\n")

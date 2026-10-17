@@ -1,18 +1,22 @@
-# NuLl's Research Benchmark · V1.0
+# NuLl's Research Benchmark · V1.1
 
-**10 道有难度梯度的科学编程题 + 6 道科研工作流题 + 3 道可选扩展题。每题一个离线文件，统一评分并单独判断核心责任是否完成。**
+**10 道科学编程题 + 6 道科研工作流题 + 5 道可选扩展题。原 19 题保留单文件，新视频 X04/X05 使用独立媒体包。**
+
+[中文说明](README.zh-CN.md) · [English](README.en.md) · [中文使用指南](docs/v1.1/usage.zh-CN.md) · [English usage](docs/v1.1/usage.en.md) · [双语人工评分页面 / Bilingual scorecard](docs/v1.1/scorecard.html)
+
+V1.1 包含会改变评分结果的[评分修复](docs/v1/scoring-fixes-20261017.md)及一个新增的可选[视频评估选项](docs/v1.1/video-protocol.md)（A/B 两种独立模式）。旧分数需用同一 V1.1 评分器重新评定后再比较；原 V1.0 题号和冻结题面保留。
 
 [![NRB validation](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/workflows/ci.yml)
 
 面向把研究想法变成可检查成果的日常工作：Python 数据与数值计算、TMM 仿真、Fortran 漂移扩散、复杂 bug 修复、科研绘图、保守英文修订、图文写作、论文精读与部分方法复现、综述综合。全部例子来自经典公开问题、公开许可文献和原创合成数据；不使用个人正在推进的研究、未发表数据或私有代码。
 
-当前是 **V1.0.0 公开开发基准**。难度 1–5 是设计先验；参考实现和错误候选用于检验评分，不能代替真实模型的难度校准。仓库不把 oracle、mock 或人工规则测试登记为 AI 成绩。
+当前是 **V1.1.0 公开开发基准**。难度 1–5 是设计先验；参考实现和错误候选用于检验评分，不能代替真实模型的难度校准。仓库不把 oracle、mock 或人工规则测试登记为 AI 成绩。
 
-**直接下载题目： [tasks/v1.0/](tasks/v1.0/README.md)**。候选每次只拿其中一个 `.md` 或 `.html` 文件。HTML 已嵌入所需图像、数据和论文文本；下载后打开即可，不需要让被测 AI 克隆或搜索这个仓库。
+**原 19 题：[tasks/v1.0/](tasks/v1.0/README.md)；新增视频题：[tasks/v1.1/](tasks/v1.1/README.md)**。原题候选每次只拿一个 `.md` 或 `.html` 文件；X04/X05 必须用 generate-pack 提供完整媒体目录。HTML 已嵌入所需图像、数据和论文文本；下载后打开即可，不需要让被测 AI 克隆或搜索这个仓库。
 
 [完整设计报告](docs/v1/design-report.md) · [运行及 harness 指南](docs/v1/usage.md) · [评分规则](docs/v1/scoring.md) · [科研题详细人工量表](docs/v1/research-guide.md) · [防答案访问](docs/v1/closed-evaluation.md) · [验证记录](docs/v1/validation.md)
 
-**发布验证：[最终 CI 八个作业全部通过](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39054465838)。** 十题真实 Harbor 链路、Docker 中的 Python／Fortran 执行和候选镜像隔离均已验证；[原始证据与精确提交](docs/v1/validation.md) 已归档。这些是基础设施和科学错误控制验证，没有实际模型排名。
+**V1.0 历史发布基线：[当时 CI 八个作业全部通过](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39054465838)。** 十题真实 Harbor 链路、Docker 中的 Python／Fortran 执行和候选镜像隔离均已验证；[原始证据与精确提交](docs/v1/validation.md) 已归档。这些仅是该 V1.0 提交的基础设施和科学错误控制验证，没有实际模型排名，不能作为 V1.1 已通过 CI 的证据。V1.1 的变更与本地验证范围见[发布说明](docs/v1.1/release-notes.md)。
 
 ## 十道代码题
 
@@ -35,7 +39,7 @@
 
 ## 科研与可选扩展题
 
-每题 100 分人工评阅，五个维度按 0–4 级加权。必须给证据和理由；看图、交互、视频、音频有明确的实际观察要求。
+每题 100 分人工评阅，按各题量表以整数 0–4 级加权。必须给证据和理由；看图、交互、视频、音频有明确的实际观察要求。
 
 | 题目 | 核心工作 | 必须检查的成果 |
 |---|---|---|
@@ -48,6 +52,10 @@
 | [X01](tasks/v1.0/X01.html) 可选 HTML | 离线科学仪表板及真实交互 | 单 HTML、交互核对记录 |
 | [X02](tasks/v1.0/X02.html) 可选视频 | 45–60 秒科学解释、字幕、场景证据和来源 | 实际 MP4、SRT、可编辑源项目 |
 | [X03](tasks/v1.0/X03.html) 可选音乐/音频 | 32 秒原创器乐，服务旁白和时间结构 | 实际 WAV、可编辑源文件、技术与听评记录 |
+| [X04](tasks/v1.1/X04.md) 可选视频 A | 10 秒绿幕合成与文字驱动动态排版 | 实际 MP4、可编辑工程、真实观察与来源记录 |
+| [X05](tasks/v1.1/X05.md) 可选视频 B | 同一素材的参考视觉重建 | 实际 MP4、与参考对齐的时间码证据、可编辑工程 |
+
+新增视频是一个可选评估选项，包含 A/X04 和 B/X05 两种模式，默认核心测试不启用。两模式各自 100 分人工视觉评阅，单独报告，既不相互平均，也不并入科学分数。两轨道使用独立新会话；A 不提供参考成片，B 额外提供。音轨单独核对，不给视觉分数新增权重。原片 CC BY 3.0，保留完整署名、修改说明和肖像/无代言边界。
 
 三篇离线文献是 Weissgerber et al. (2015)、Rougier et al. (2014)、Crameri et al. (2020) 的公开图形与科学传播研究。全文供给范围、17 张原始图像的来源和准确许可见 [sources/v1/README.md](sources/v1/README.md)。这些材料检验真实阅读和方法落地，不能据此声称覆盖了所有专业领域。
 
@@ -99,8 +107,8 @@ python -m nrb_v1 grade --task R01 --submission received/R01.json \
 
 ## Harness 支持
 
-- **单文件 / 任意文件型 harness**：十九题均可，成果统一 `pack → grade → review-packet`。
-- **原生命令适配器**：十九题均可；传命令 argv，保存原始输出和正式报告。宿主进程不是隔离边界，正式闭卷须使用独立环境。
+- **原十九题单文件 / 任意文件型 harness**：成果统一 `pack → grade → review-packet`。新增 X04/X05 先 `generate-pack`，用可实际观看和处理视频的 harness，随后 `pack → evaluate-skeleton → grade --review`。
+- **原生命令适配器**：原十九题均可，X04/X05 因需要媒体传输而明确拒绝；传命令 argv，保存原始输出和正式报告。宿主进程不是隔离边界，正式闭卷须使用独立环境。
 - **Inspect AI**：十道代码题，默认 response-only；公开导出不含 target 答案，统一自动评分及完整结果日志。
 - **promptfoo**：十道代码题，Python assertion 调用同一评分器；默认空 mock，不发生模型调用。
 - **Harbor**：十道代码题，candidate 与 verifier 分别构建容器，默认候选断网，参考程序仅在评分端；不默认导出 oracle。
@@ -115,7 +123,7 @@ python -m nrb_v1 export --format harbor --tasks coding --dest exports/harbor
 
 ## 版本与验证
 
-新 CLI 是 `nrb-v1` / `python -m nrb_v1`。旧 `nrb` 与 [questions/](questions/) 保留为 V0.2 历史协议，旧分数与 V1.0 不混比。
+新 CLI 是 `nrb-v1` / `python -m nrb_v1`。旧 `nrb` 与 [questions/](questions/) 保留为 V0.2 历史协议，旧分数与 V1.x 不混比。V1.0 与 V1.1 评分器报告也不能混比。
 
 ```bash
 python -m unittest discover -s tests_v1 -v

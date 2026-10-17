@@ -142,10 +142,8 @@ jobs:
         run: python -m unittest discover -s tests_v1 -v 2>&1 | tee v1-tests.log
       - name: Thirty seeded references and eighty-four executable wrong controls
         run: python -m nrb_v1 selftest --tasks coding --seeds 0,17,2026 --include-mutants --execution trusted --out v1-selftest.json
-      - name: Nineteen standalone files match exact generators
-        run: |
-          python -m nrb_v1 export --format files --tasks all --seed 17 --dest /tmp/v1-frozen
-          diff -r tasks/v1.0 /tmp/v1-frozen
+      - name: Legacy frozen inputs and V1.1 media manifests match exact bytes
+        run: python scripts/v1/check_v11_materials.py
       - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:

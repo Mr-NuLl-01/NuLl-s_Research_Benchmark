@@ -1,0 +1,26 @@
+{
+  "title": "SIGNAL IN MOTION",
+  "duration_seconds": 10,
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "frame_count": 240,
+  "source_shot": "Tears of Steel 04_3b",
+  "source_frame_range_inclusive": [0, 239],
+  "source_mapping": "One-to-one chronological frames; no looping or speed change.",
+  "palette": {
+    "navy": "#071321",
+    "cyan": "#63F3E6",
+    "warm_white": "#F4F1E8",
+    "magenta_accent": "#F16CA3"
+  },
+  "soundtrack": {"filename": "soundtrack.wav", "tempo_bpm": 120, "beats": 20, "method": "Original procedural synthesis; no external samples."},
+  "scenes": [
+    {"time_seconds": [0, 1.5], "frames_inclusive": [0, 35], "text": ["SIGNAL IN MOTION"], "effect": "Expanding radial signal halos; brief readable title jitter."},
+    {"time_seconds": [1.5, 4], "frames_inclusive": [36, 95], "text": ["STAY IN ORBIT"], "effect": "Spatial text orbit; clear behind-to-in-front actor occlusion."},
+    {"time_seconds": [4, 5.5], "frames_inclusive": [96, 131], "text": ["CAPTURE", "SPLIT", "RECOMBINE"], "effect": "Three simultaneous vertical panels; synchronized source time, distinct crop or scale."},
+    {"time_seconds": [5.5, 7], "frames_inclusive": [132, 167], "text": ["RIDE THE WAVE"], "effect": "Continuous waves and ribbons; at least one clear actor/ribbon depth interaction."},
+    {"time_seconds": [7, 8.5], "frames_inclusive": [168, 203], "text": ["LOCK ON"], "effect": "Hexagonal iris contracts then expands into the new composition."},
+    {"time_seconds": [8.5, 10], "frames_inclusive": [204, 239], "text": ["SIGNAL RECEIVED"], "effect": "Abstract stage, restrained geometric confetti, last half-second legible held outro."}
+  ]
+}

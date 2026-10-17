@@ -1,0 +1,198 @@
+{
+  "title": "SIGNAL IN MOTION / NRB optional video extension",
+  "version": "1.1.0",
+  "created_date_utc": "2026-10-17",
+  "model_testing_status": "not_run",
+  "new_material_public_license": "MIT; new code, docs, prompts, rubrics, synthesized soundtrack and original graphic elements only",
+  "source_footage_license": "CC-BY-3.0",
+  "font_license": "Bitstream Vera / DejaVu; see font notices",
+  "source_attribution": "Tears of Steel, shot 04_3b. (CC) Blender Foundation | https://mango.blender.org. CC BY 3.0.",
+  "no_endorsement": true,
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "bytes": 1067,
+      "sha256": "65a06b7d18310e6ce10add5a3576dd15c4c18505529fe202a18d4ddf9965bb35"
+    },
+    {
+      "path": "PACKAGE_LICENSE_STATUS.md",
+      "bytes": 2208,
+      "sha256": "c3fcd5569e99b74354b16de8df811aa0670c2a3205635c5e1cea225fe2dda9b5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1534,
+      "sha256": "cafd4c394a0af4f5f337f888720140d1fc092cc211f63022493dce42df10ef4e"
+    },
+    {
+      "path": "demo_project/README.md",
+      "bytes": 5166,
+      "sha256": "6734cead2a4d8a83b6b597c9dfa5be4c9f969fa9b758a7bfc1ab30545d6d67bf"
+    },
+    {
+      "path": "demo_project/SOURCE_LICENSE.md",
+      "bytes": 3161,
+      "sha256": "ff52a9a63704e99f964b85bd6413ac93056e8f9976fcd4931539bb8502d733bf"
+    },
+    {
+      "path": "demo_project/requirements.txt",
+      "bytes": 42,
+      "sha256": "0c019304303f7a5d2a33eec66879a0c6803bc4f03e61bc7cd3df8eee818721b4"
+    },
+    {
+      "path": "demo_project/run_demo.py",
+      "bytes": 1834,
+      "sha256": "9017f2296d1713bfcf3b294fe56092f80333e0253dfc3ca6971e596b0a546be5"
+    },
+    {
+      "path": "demo_project/source/audit.py",
+      "bytes": 5163,
+      "sha256": "0636dd4575672abc2ced7462ba903af558614b13e067734624ad31740d48d87c"
+    },
+    {
+      "path": "demo_project/source/prepare_assets.py",
+      "bytes": 6863,
+      "sha256": "db66d9213e75616d0bfc4f3cacda9f61dd8840cbf83d7cbec92db26ad3aab586"
+    },
+    {
+      "path": "demo_project/source/render.py",
+      "bytes": 15722,
+      "sha256": "72d2251b3b2df3f30ab27afff0fd560569414b8352843e59afd0aa2ccbae04a1"
+    },
+    {
+      "path": "evaluator/nrb_rubrics.json",
+      "bytes": 7350,
+      "sha256": "c6f0d98e6595184707c9e2933da06ff218055deb4eea5c7bf951d518ebbfec7b"
+    },
+    {
+      "path": "evaluator/reference_qa/QA_SUMMARY.md",
+      "bytes": 2013,
+      "sha256": "e169622578e8b16c4a5d0d6a6053686b5d6852f7d5fbd3c234667133fd322882"
+    },
+    {
+      "path": "evaluator/reference_qa/contactsheet_final.jpg",
+      "bytes": 545605,
+      "sha256": "f1c7165008777a84cabd1867e24e3c59d8cba42d739ce5a156c68b19132be8c4"
+    },
+    {
+      "path": "evaluator/reference_qa/decode_errors.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evaluator/reference_qa/ffprobe.json",
+      "bytes": 3969,
+      "sha256": "2b4294e8e90a1d2e72fc9536f710cb74e4422ab56ae3074dc0ffb9f25bac0cfd"
+    },
+    {
+      "path": "evaluator/reference_qa/frame_mapping.csv",
+      "bytes": 4387,
+      "sha256": "a5fbdae3ff8244917a8b5abe1164c781121f3ed56eacdc80d9167f8e1cb7de0c"
+    },
+    {
+      "path": "evaluator/reference_qa/matte_bounds.json",
+      "bytes": 15817,
+      "sha256": "f224a95031354f943719abc46bd596f96ae0ec1bc0fefc7baebcf238f78702ec"
+    },
+    {
+      "path": "evaluator/reference_qa/qa_report.json",
+      "bytes": 2257,
+      "sha256": "63dcf71f4f41e8ff766ba4b1f108731de66f5b8ca8fd7dcfb06403be195b7859"
+    },
+    {
+      "path": "evaluator/rubric.md",
+      "bytes": 5024,
+      "sha256": "5f0183ec1c171a78036f6f9b85751d4bd663f740c13fbfb36863c9b4189f4f45"
+    },
+    {
+      "path": "evaluator/run_record.template.json",
+      "bytes": 1161,
+      "sha256": "15b21c458f39f015ec3b6e7e6c099219eaa43d7ffd31fa079388b2e2239aad36"
+    },
+    {
+      "path": "evaluator/scene_spec.json",
+      "bytes": 1659,
+      "sha256": "0e1d0b6a7b55507486e43e0607f4108f92d31b9c5a24a73272dbbba8e2b59706"
+    },
+    {
+      "path": "evaluator/source_manifest.json",
+      "bytes": 1609,
+      "sha256": "f034a022765d9fed4774239d32978b8db6718627ee5db91e5c8b3ea0774bb8fa"
+    },
+    {
+      "path": "shared_assets/LICENSES/DejaVu-LICENSE.txt",
+      "bytes": 3859,
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    {
+      "path": "shared_assets/LICENSES/SOURCE_LICENSE.md",
+      "bytes": 3161,
+      "sha256": "ff52a9a63704e99f964b85bd6413ac93056e8f9976fcd4931539bb8502d733bf"
+    },
+    {
+      "path": "shared_assets/LICENSES/evidence/CC-BY-3.0-legalcode.txt",
+      "bytes": 19467,
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+    },
+    {
+      "path": "shared_assets/LICENSES/evidence/README-original.txt",
+      "bytes": 343,
+      "sha256": "3622773b7986ac4f4807352b94c111670ac5f888b558f6f70f95c0b7d253aba1"
+    },
+    {
+      "path": "shared_assets/LICENSES/evidence/raw-footage-release.html",
+      "bytes": 28258,
+      "sha256": "5c1dc6f2e00cde27d236a00fddfa6d62b0df302df2d58e6b1f6002f55cb57f85"
+    },
+    {
+      "path": "shared_assets/LICENSES/evidence/sharing.html",
+      "bytes": 11331,
+      "sha256": "c3defc0521e16af0a3afb6a96d084517620adf6434038e6a3a2ba1cf50f86947"
+    },
+    {
+      "path": "shared_assets/fonts/DejaVuSansCondensed-Bold.ttf",
+      "bytes": 667844,
+      "sha256": "21f02ebcea75529d3ed9d26e089cd1b9c59a4b784119ba3a96e9bc83cf755ec7"
+    },
+    {
+      "path": "shared_assets/fonts/DejaVuSansMono.ttf",
+      "bytes": 343140,
+      "sha256": "54bf827eb99404e8f430c330ad30f063334f637eba0109b6a18d4f566a8e9dd8"
+    },
+    {
+      "path": "shared_assets/soundtrack.wav",
+      "bytes": 1920044,
+      "sha256": "37ed2a662d04f833165358f81374d51e59904afb9c4c00e8a9e9fad588a7145c"
+    },
+    {
+      "path": "shared_assets/source.mp4",
+      "bytes": 25090487,
+      "sha256": "a882854e0d1b007e247ffc507fccee31c9bb5671810428dfe422a94317a98302"
+    },
+    {
+      "path": "tracks/A/COPY.txt",
+      "bytes": 93,
+      "sha256": "f55e5b74810440b24f56ad9724c544220fa577583f95db8cc7dcf764c77ce852"
+    },
+    {
+      "path": "tracks/A/TASK.md",
+      "bytes": 5006,
+      "sha256": "33871bcbeb397732203e5d0b217f61dcfb5e343ceaa39ad194e60217d1e76f15"
+    },
+    {
+      "path": "tracks/B/COPY.txt",
+      "bytes": 93,
+      "sha256": "f55e5b74810440b24f56ad9724c544220fa577583f95db8cc7dcf764c77ce852"
+    },
+    {
+      "path": "tracks/B/TASK.md",
+      "bytes": 5319,
+      "sha256": "1a8358ed42d3ac19f0b834b65dabad3eb46e92da68f177554e00d7f8ee6daab9"
+    },
+    {
+      "path": "tracks/B/reference.mp4",
+      "bytes": 3940450,
+      "sha256": "62f5b074c10642b4f3de80676f1463e05bbc81bcc2211d7095fd62894f7193f4"
+    }
+  ]
+}
