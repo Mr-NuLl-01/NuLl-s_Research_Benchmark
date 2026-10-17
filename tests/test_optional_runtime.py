@@ -112,7 +112,7 @@ class HarborSchemaRuntime(unittest.TestCase):
                     self.assertEqual(data["schema_version"], "1.4")
                     self.assertEqual(data["verifier"]["environment_mode"], "separate")
                     self.assertEqual(data["verifier"]["environment"]["network_mode"], "no-network")
-                    self.assertEqual(data["agent"]["network_mode"], "allowlist")
+                    self.assertEqual(data["agent"]["network_mode"], "no-network")
                     self.assertEqual(data["artifacts"], ["/app/"])
 
 

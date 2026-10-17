@@ -1,0 +1,379 @@
+{
+  "schema_version": "nrb-render-review-results-v1",
+  "task_id": "NRB09",
+  "seed": 0,
+  "review_date_utc": "2026-10-17",
+  "review_status": "llm_reviewed_provisional",
+  "evaluator_identity": {
+    "benchmark_version": "0.2.0",
+    "evaluation_schema_version": "2.0",
+    "evaluator_commit": null,
+    "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+    "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+  },
+  "generation_manifest_file": "manifest.json",
+  "generation_manifest_sha256": "26cb4433070511d085bd57da8b3e9fe3ae646fec6844ffa4bd028e130e5e904d",
+  "scope": "All eight complete public synthetic oscillator PNGs were actually opened and inspected after rendering. Findings cover visible content and minimum display requirements; they do not certify arbitrary SVG semantics or independent physical-model validity.",
+  "limits": [
+    "LLM provisional review; not human review.",
+    "180 mm equivalent raster inspection; no physical display calibration is claimed.",
+    "No automatic transfer of review to another SVG, PNG, submission, evaluator digest or evaluator commit. Identical pixels under a different commit still require a distinct bound record.",
+    "Generation manifest reviewer templates intentionally remain unassessed; this separate file records the subsequent actual image inspection."
+  ],
+  "summary": {
+    "rendered": 8,
+    "complete_pngs_opened": 8,
+    "provisional_pass": 1,
+    "provisional_fail": 7,
+    "png_total_bytes": 483332
+  },
+  "reviews": [
+    {
+      "label": "oracle",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "295c3e9f0f11c866db1128dff67e65e9f788fe2937723e4849fc02a5c14902c0",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "oracle/render-receipt.json",
+      "render_receipt_sha256": "c0cee1e3b7fd727ee36d5ffdc8b85b45e7f1ae76b9dc34464fcbfbd63de29340",
+      "raw_svg_sha256": "0ac185b7641a350fb3b22543b3e49630f463c8ab896c18c487722e65c17f6611",
+      "output_png_sha256": "ccdcc6b558e670fd65366aef8f6c438be60ec4ee16d013661065a9d45342a486",
+      "renderer": {
+        "name": "Inkscape",
+        "version": "1.2.2 (b0a8486541, 2022-12-01)"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen-source NRB09 control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete PNG individually with image viewing; 180 mm equivalent raster at 144 DPI.",
+      "id": "render_legibility",
+      "outcome": "pass",
+      "evidence_file": "oracle/figure.png",
+      "evidence": "Whole figure, panels a/b/c; arrows and schematic at left, model/observations at upper right, residuals at lower right.",
+      "rationale": "The spring, damper and mass are visible and connected to the support/mass drawing. The positive displacement arrow has a rightward head. Panel titles, axis units, legend text, model line, observation points and residual points are readable in the complete raster. The displayed text correctly distinguishes the prescribed generating model from parameter fitting.",
+      "observed_defects": [],
+      "static_points": 70.0,
+      "static_failed_checks": [],
+      "receipt_binding_verified": true
+    },
+    {
+      "label": "minimalpoint",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "ee2685ec04a65690f6a5b9bbb849cea427267fbf97079358304644a663887043",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "minimalpoint/render-receipt.json",
+      "render_receipt_sha256": "fce39d4a78bd8b5f6fb9b8cca80d7a945c7fa4afd3b32f49abfcb2dc47d4318d",
+      "raw_svg_sha256": "2b4070c231a3fd100ec844143ac9eeab73c1c63f6043c93e9dba98deff5199e4",
+      "output_png_sha256": "9f6fbd4eb13128a0c8fc364d3b990db748ca1c5f08a07cb51cf26520e90ae197",
+      "renderer": {
+        "name": "Inkscape",
+        "version": "1.2.2 (b0a8486541, 2022-12-01)"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen-source NRB09 control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete PNG individually with image viewing; 180 mm equivalent raster at 144 DPI.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "minimalpoint/figure.png",
+      "evidence": "Panel b observation positions and panel c residual plot; the legend observation dot remains visible.",
+      "rationale": "The observation data and residual data disappear at the 180 mm equivalent scale. A surviving legend symbol does not supply the missing measurements. The plotted model remains visible, confirming the specific missing-data defect.",
+      "observed_defects": [
+        "missing_data_points"
+      ],
+      "static_points": 45.0,
+      "static_failed_checks": [
+        "observation_geometry",
+        "residual_geometry"
+      ],
+      "receipt_binding_verified": true
+    },
+    {
+      "label": "zerostroke",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "f792ae122951fbc47cd41078f37624149559e8be2f59553dcebfbae1937c307d",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "zerostroke/render-receipt.json",
+      "render_receipt_sha256": "338ef2918dab5aa614bd1e98b3ad82fa0df40bf564ce0795852344ad2949ed29",
+      "raw_svg_sha256": "7189548bcb7e24bc7f2960867b929f7392e2b98a5ad2261003931491b1b9d548",
+      "output_png_sha256": "6eafc0ea49c0b1e44555bcd18ea661d0d7b3525203f2495df89c68786ead0e78",
+      "renderer": {
+        "name": "Inkscape",
+        "version": "1.2.2 (b0a8486541, 2022-12-01)"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen-source NRB09 control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete PNG individually with image viewing; 180 mm equivalent raster at 144 DPI.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "zerostroke/figure.png",
+      "evidence": "Panel b; model legend sample remains at the top, but the fixed model curve is absent across the data window.",
+      "rationale": "The observation points are visible while the fixed model curve is absent. The visible model legend line does not repair the missing scientific curve.",
+      "observed_defects": [
+        "missing_model_curve"
+      ],
+      "static_points": 60.0,
+      "static_failed_checks": [
+        "model_geometry"
+      ],
+      "receipt_binding_verified": true
+    },
+    {
+      "label": "emptydiagram",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "1b53fefedb8918eaa953802207f0ae0004bac386108e2d2b49d1c20c20b96b77",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "emptydiagram/render-receipt.json",
+      "render_receipt_sha256": "abdfcbe8af73396aab2296d2c017eeceefd8692cc25143f08de46af69675ff85",
+      "raw_svg_sha256": "6c695b8cf360f349359647ec7aa9b6f64f71299862c429f51e94adaa841ac322",
+      "output_png_sha256": "f59d2334f5f1d401a6b7ffd30519a33f58094f6d5ee417bfc85368bc3f1c9998",
+      "renderer": {
+        "name": "Inkscape",
+        "version": "1.2.2 (b0a8486541, 2022-12-01)"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen-source NRB09 control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete PNG individually with image viewing; 180 mm equivalent raster at 144 DPI.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "emptydiagram/figure.png",
+      "evidence": "Panel a; support line, spring/damper labels, mass label and displacement arrow remain.",
+      "rationale": "The spring path, damper graphics and mass rectangle are absent. Their text labels remain, but do not substitute for the requested diagram. The right-hand data panels are otherwise visible.",
+      "observed_defects": [
+        "missing_schematic_components"
+      ],
+      "static_points": 65.0,
+      "static_failed_checks": [
+        "schematic_direction"
+      ],
+      "receipt_binding_verified": true
+    },
+    {
+      "label": "offcanvastext",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "49c2914d4fd324d9a89e4d4beec23f80365121698e54acdf015388abfc0a7ef8",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "offcanvastext/render-receipt.json",
+      "render_receipt_sha256": "890c6b7300f2a96dfaa40e62a49a2a44bf636caedfb81129f994a48fc82c728e",
+      "raw_svg_sha256": "90044e098a716cebb2886557aac88d470b3667aae0aed68e727ebc90327c1964",
+      "output_png_sha256": "37e960c442ca853a36f6ad0a29aeb8bef85173afc1903ac42c6c49a2b0c8fa5f",
+      "renderer": {
+        "name": "Inkscape",
+        "version": "1.2.2 (b0a8486541, 2022-12-01)"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen-source NRB09 control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete PNG individually with image viewing; 180 mm equivalent raster at 144 DPI.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "offcanvastext/figure.png",
+      "evidence": "Whole figure, including both plot axes, legends and schematic labeling.",
+      "rationale": "No text labels or units are visible in the raster. The curve, points, schematic graphics and legend symbols remain, confirming that the required editable text was positioned outside the viewable canvas.",
+      "observed_defects": [
+        "missing_required_labels"
+      ],
+      "static_points": 65.0,
+      "static_failed_checks": [
+        "labels_and_layout"
+      ],
+      "receipt_binding_verified": true
+    },
+    {
+      "label": "nestedopacity",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "e60a6d1ea9230000c1df92c120033986a7b39ce97218fa29eecef73a943533ca",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "nestedopacity/render-receipt.json",
+      "render_receipt_sha256": "9d359fcffe2fd33666ce13caefbda78fee831d62db6d6310ed06c5fdc1eeeebb",
+      "raw_svg_sha256": "5bcc87a1b8cb89b371f86bef3601b062635608dca6213208d79733824da8bde1",
+      "output_png_sha256": "a41c9d621abee81bf9872413783af259f3e01afb23f706208fa114ee03617fa6",
+      "renderer": {
+        "name": "Inkscape",
+        "version": "1.2.2 (b0a8486541, 2022-12-01)"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen-source NRB09 control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete PNG individually with image viewing; 180 mm equivalent raster at 144 DPI.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "nestedopacity/figure.png",
+      "evidence": "Panel b observation points compared with the oracle and with the dark residual points in panel c.",
+      "rationale": "The observation points are visibly faint relative to the oracle, model line, legend symbol and residual points. They are still partially visible; this control fails the disclosed provisional effective-opacity requirement because 0.5 x 0.5 = 0.25 is below 0.30. This is an engineering rejection, not a claim that every observer must find them completely invisible.",
+      "observed_defects": [
+        "observations_below_provisional_opacity_limit"
+      ],
+      "static_points": 55.0,
+      "static_failed_checks": [
+        "observation_geometry"
+      ],
+      "receipt_binding_verified": true
+    },
+    {
+      "label": "emptymarker",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "700adeb23f5c532dc388727b24e72f1028050d40bc3cd0b05827ed7babbe261c",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "emptymarker/render-receipt.json",
+      "render_receipt_sha256": "0ccd138f4427ea110502d99dafbc0a986fccb931bf23a71d25bfb1dff7e9fb4c",
+      "raw_svg_sha256": "24b332721523eb666486df063af175b329a777953a0111dead4af6e161ee0f00",
+      "output_png_sha256": "c25be8121b47f66cf201cc2728117fdac132e0a6f8c867fe1820e7b2f1944cae",
+      "renderer": {
+        "name": "Inkscape",
+        "version": "1.2.2 (b0a8486541, 2022-12-01)"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen-source NRB09 control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete PNG individually with image viewing; 180 mm equivalent raster at 144 DPI.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "emptymarker/figure.png",
+      "evidence": "Panel a displacement indicator above the +x label.",
+      "rationale": "The displacement line has no visible arrowhead, while the oracle has a clearly rightward head. The label and horizontal shaft alone do not draw the prescribed positive direction.",
+      "observed_defects": [
+        "missing_displacement_arrowhead"
+      ],
+      "static_points": 65.0,
+      "static_failed_checks": [
+        "schematic_direction"
+      ],
+      "receipt_binding_verified": true
+    },
+    {
+      "label": "whitecover",
+      "task_id": "NRB09",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "1270c95c6ce300df5cbf8afbb107d13d1d09392e57ac0277f71a0a08f30d4afb",
+      "evaluator_identity": {
+        "benchmark_version": "0.2.0",
+        "evaluation_schema_version": "2.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+        "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+      },
+      "render_receipt_file": "whitecover/render-receipt.json",
+      "render_receipt_sha256": "392ca9f32a740ebeaca8451be963d723990a5bd54c2aa05e1569e65074952476",
+      "raw_svg_sha256": "a1833297fa42a8e5fb558a4badac5b6bd43bee33abdc283acf5060555901fbc0",
+      "output_png_sha256": "c9ad83587206d533166232ac230c6503ce4c8e2882f8e3ba308fc06f74f72d9b",
+      "renderer": {
+        "name": "Inkscape",
+        "version": "1.2.2 (b0a8486541, 2022-12-01)"
+      },
+      "display_width_mm": 180.0,
+      "dpi": 144.0,
+      "width_px": 1020,
+      "height_px": 612,
+      "reviewer_type": "llm",
+      "reviewer_id": "GPT-6 Astra Pro / frozen-source NRB09 control inspection",
+      "review_status": "llm_reviewed_provisional",
+      "inspected_whole_figure": true,
+      "inspected_at_180mm": true,
+      "inspection_method": "Opened this complete PNG individually with image viewing; 180 mm equivalent raster at 144 DPI.",
+      "id": "render_legibility",
+      "outcome": "fail",
+      "evidence_file": "whitecover/figure.png",
+      "evidence": "Entire 1020 x 612 raster, including all three panel regions.",
+      "rationale": "The whole figure is blank white. No data, text, schematic components or arrow can be seen. This is a confirmed rendered-legibility failure even though the original XML geometry/data checks award 70 automatic points.",
+      "observed_defects": [
+        "complete_opaque_occlusion"
+      ],
+      "static_points": 70.0,
+      "static_failed_checks": [],
+      "receipt_binding_verified": true
+    }
+  ]
+}

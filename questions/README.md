@@ -15,9 +15,9 @@
 | [NRB07](NRB07/instruction.md) | 重复测量下的数据泄漏与分组评测 | reasoning.md |
 | [NRB08](NRB08/instruction.md) | 仿射收缩的证明、反例与误差证书 | reasoning.md |
 | [NRB09](NRB09/instruction.md) | 从合成振子数据制作可编辑科研图 | figure.svg, caption.md |
-| [NRB10](NRB10/instruction.md) | 交接证据审计与保守英文修订 | audit.md, revised_excerpt.md, reproduce.md |
+| [NRB10](NRB10/instruction.md) | 交接证据审计与英文修订 | audit.md, revised_excerpt.md, reproduce.md |
 
-每题自动 70 分，三项独立质量审阅各 10 分。答题协议和自动核验对象见题面；分数含义、缺失处理及质量审阅流程见 [评分方法](../docs/scoring.md)。
+每题自动 70 分，三项独立质量审阅各 10 分；核心责任另判 pass/fail/unassessed，原始总分不代替完成状态。答题协议和核心责任见题面；分数含义、缺失处理及质量审阅流程见 [评分方法](../docs/scoring.md)。
 
 ```bash
 python -m nrb export --format native --seed 17 --dest exports/native-s17

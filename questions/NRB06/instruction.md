@@ -52,6 +52,15 @@ answer 使用本题字段。代码、推导、图和修订稿放入 artifacts，
   }
 ]
 
+## 核心完成条件（独立于分数）
+以下责任逐项以 pass/fail/unassessed 审阅；高分不能补偿核心责任失败。
+[
+  {
+    "id": "uncertainty_interpretation",
+    "requirement": "量纲、已知绝对方差和相关项的解释正确，无严重不确定度或频谱定义误述。"
+  }
+]
+
 Required artifacts: reasoning.md
 
 
@@ -99,14 +108,14 @@ repeatability uncertainty. No spectral extrapolation is needed.
 <BEGIN_INPUT_FILE>
 
 id,reference_mm,voltage_mV,sigma_mV,status
-C01,0.0,86.195872,4.20023,valid
-C02,0.5661,403.956003,4.36708,valid
+C01,0.0,84.787085,4.20023,valid
+C02,0.5661,403.853026,4.36708,valid
 C_SAT,6.11389,2100.0,3.0,saturated
-C03,1.35864,848.131429,4.34317,valid
-C04,1.92474,1177.072751,3.99133,valid
-C05,2.71728,1635.328949,3.22854,valid
-C06,3.50983,2085.398519,4.92806,valid
-C07,4.52881,2661.331065,4.8673,valid
+C03,1.35864,850.053374,4.34317,valid
+C04,1.92474,1177.105879,3.99133,valid
+C05,2.71728,1633.363921,3.22854,valid
+C06,3.50983,2083.775998,4.92806,valid
+C07,4.52881,2660.926342,4.8673,valid
 
 
 <END_INPUT_FILE>

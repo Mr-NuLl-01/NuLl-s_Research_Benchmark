@@ -157,12 +157,13 @@ answer 的精确结构：
  "weighted_operator_norm":0,"unweighted_operator_norm":0,
  "fixed_point":[0,0,0],"residual_vector":[0,0,0],"weighted_residual_norm":0,
  "certified_weighted_error_bound":0,"actual_weighted_error":0,
- "claims":{"unique_fixed_point":true,"ordinary_infinity_contraction":false,
-   "spectral_radius_substitution_universally_valid":false},
+ "claims":{"unique_fixed_point":"boolean，由你判断","ordinary_infinity_contraction":"boolean，由你判断",
+   "spectral_radius_substitution_universally_valid":"boolean，由你判断"},
  "counterexample":{"A":[[0,0],[0,0]],"b":[0,0],"x_hat":[0,0],
    "fixed_point":[0,0],"spectral_radius":0,"residual_infinity_norm":0,
    "actual_infinity_error":0,"claimed_bound":0}
 }
+claims 中三个字段的提交类型均为 JSON boolean；上面的类型说明不是待复制的取值。
 reasoning.md 须包含：算子范数的推导、完备性与自映射条件、存在及唯一性论证、
 对任意候选点成立的残差不等式推导，以及反例如何击破原命题。
 普通无穷范数不收缩不能单独推出固定点不存在。数值保留至少 8 位有效数字；
@@ -225,7 +226,7 @@ def grade(case: dict, submission, execution="none") -> list:
     ex = case["expected"]["answer"]
     out = [check("weighted_induced_norm", 10,
                  _near(ans.get("weighted_operator_norm"), ex["weighted_operator_norm"]),
-                 "精确加权诱导范数，而非谱半径或普通范数。"),
+                 "精确加权诱导范数，而非谱半径或普通范数。", critical=True),
            check("ordinary_induced_norm", 5,
                  _near(ans.get("unweighted_operator_norm"), ex["unweighted_operator_norm"]),
                  "普通无穷范数的绝对行和最大值。"),
@@ -238,7 +239,7 @@ def grade(case: dict, submission, execution="none") -> list:
                  "指定权重下的残差范数。"),
            check("residual_certificate", 10,
                  _near(ans.get("certified_weighted_error_bound"), ex["certified_weighted_error_bound"]),
-                 "同一加权范数下的 r/(1-q) 解析上界。"),
+                 "同一加权范数下的 r/(1-q) 解析上界。", critical=True),
            check("actual_error", 5, _near(ans.get("actual_weighted_error"), ex["actual_weighted_error"]),
                  "区分实际误差与其保守上界。")]
     counterexample = _mapping(ans.get("counterexample"))
@@ -247,7 +248,7 @@ def grade(case: dict, submission, execution="none") -> list:
              and cv["residual_infinity_norm"] > 1e-8
              and cv["actual_infinity_error"] >= 1.2*cv["claimed_bound"])
     out.append(check("counterexample_validity", 10, valid,
-                     "从所交矩阵重新验证谱半径条件及被反驳的误差不等式。"))
+                     "从所交矩阵重新验证谱半径条件及被反驳的误差不等式。", critical=True))
     values_correct = (cv is not None and _vnear(counterexample.get("fixed_point"), cv["fixed_point"])
                       and all(_near(counterexample.get(k), cv[k]) for k in
                               ["spectral_radius", "residual_infinity_norm", "actual_infinity_error", "claimed_bound"]))

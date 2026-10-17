@@ -5,6 +5,7 @@ from __future__ import annotations
 import copy
 from decimal import Decimal, localcontext
 import json
+import math
 import random
 
 from nrb.checks import check, numbers_close
@@ -15,7 +16,12 @@ REFERENCE_SOURCE = '''import math
 
 def solve(payload):
     def number(x):
-        return isinstance(x, (int, float)) and not isinstance(x, bool) and math.isfinite(x)
+        if not isinstance(x, (int, float)) or isinstance(x, bool):
+            return False
+        try:
+            return math.isfinite(x)
+        except OverflowError:
+            return False
     y0 = payload.get("y0")
     if number(y0):
         y = [float(y0)]
@@ -37,15 +43,18 @@ def solve(payload):
     for key in ("t_end", "dt_initial", "dt_min", "dt_max"):
         if not number(payload.get(key)):
             raise ValueError("invalid time setting")
-    end = float(payload["t_end"])
+    start = payload.get("t_start", 0.0)
+    if not number(start):
+        raise ValueError("invalid t_start")
+    start, end = float(start), float(payload["t_end"])
     dt_min, dt_max = float(payload["dt_min"]), float(payload["dt_max"])
     proposed = float(payload["dt_initial"])
     budget = payload.get("max_trials")
-    if end < 0 or dt_min <= 0 or dt_max < dt_min or not dt_min <= proposed <= dt_max:
+    if end < 0 or start > end or dt_min <= 0 or dt_max < dt_min or not dt_min <= proposed <= dt_max:
         raise ValueError("invalid time range")
     if not isinstance(budget, int) or isinstance(budget, bool) or budget < 1:
         raise ValueError("invalid max_trials")
-    t, accepted, rejected = 0.0, 0, 0
+    t, accepted, rejected = start, 0, 0
     history = [{"t": t, "y": y[:]}]
     attempts = []
     status = "finished"
@@ -106,52 +115,69 @@ STARTER_SOURCE = '''def solve(payload):
 
 
 def _oracle(payload):
-    """Independent Decimal recurrence, with a documented double-time guard."""
+    """Independent high-precision states with public binary64 control semantics.
+
+    Decimal computes the reported numerical states. A parallel binary64 state
+    computes the discontinuous accept/reject and step-size decisions; Decimal
+    clocks or threshold decisions would define a different scheduler near E=1
+    and adjacent floating-point endpoint values.
+    """
     with localcontext() as ctx:
-        ctx.prec = 45
-        D = lambda v: Decimal(str(v))
+        ctx.prec = 65
+        D = lambda v: Decimal.from_float(float(v))
         y0 = payload["y0"]
-        y = [D(v) for v in (y0 if isinstance(y0, list) else [y0])]
+        initial = y0 if isinstance(y0, list) else [y0]
+        y, control_y = [D(v) for v in initial], [float(v) for v in initial]
         def vec(key):
             values = payload[key]
-            return [D(v) for v in values] if isinstance(values, list) else [D(values)]*len(y)
+            return [float(v) for v in values] if isinstance(values, list) else [float(values)]*len(y)
         rates, absolute, relative, floor = [vec(key) for key in ("rates", "atol", "rtol", "scale_floor")]
-        end, minimum, maximum, h_next = [D(payload[key]) for key in ("t_end", "dt_min", "dt_max", "dt_initial")]
-        zero, one, two, half, safety = D(0), D(1), D(2), D("0.2"), D("0.9")
-        t = zero
-        states = [{"t": 0.0, "y": [float(v) for v in y]}]
+        end, minimum, maximum, h_next = [float(payload[key]) for key in ("t_end", "dt_min", "dt_max", "dt_initial")]
+        one, two = D(1), D(2)
+        t = float(payload.get("t_start", 0.0))
+        states = [{"t": t, "y": [float(v) for v in y]}]
         attempts, accept_count, reject_count = [], 0, 0
         status = "finished"
         while t < end:
             if len(attempts) == payload["max_trials"]:
                 status = "max_trials_reached"
                 break
-            h = min(h_next, end-t)
-            if float(t)+float(h) <= float(t):
+            remaining = end-t
+            h = min(h_next, remaining)
+            if t+h <= t:
                 status = "time_stalled"
                 break
-            direct = [v/(one+r*h) for v, r in zip(y, rates)]
-            stage = [v/(one+r*h/two) for v, r in zip(y, rates)]
-            candidate = [v/(one+r*h/two) for v, r in zip(stage, rates)]
-            err = max(abs(d-c)/(absolute[i]+relative[i]*max(abs(d), abs(c), floor[i]))
-                      for i, (d, c) in enumerate(zip(direct, candidate)))
-            accepted = err <= one
-            attempts.append({"t": float(t), "h": float(h), "error": float(err), "accepted": accepted,
+            candidate, control_trial, component_errors = [], [], []
+            for i in range(len(y)):
+                # Two backward-Euler half steps, independently evaluated in
+                # high precision; no reference source is executed or imported.
+                divisor = one+D(rates[i])*D(h)/two
+                candidate.append((y[i]/divisor)/divisor)
+                rate_step = rates[i]*h
+                direct = control_y[i]/(1.0+rate_step)
+                half_divisor = 1.0+rate_step/2.0
+                trial = (control_y[i]/half_divisor)/half_divisor
+                control_trial.append(trial)
+                scale = absolute[i]+relative[i]*max(abs(direct), abs(trial), floor[i])
+                component_errors.append(abs(direct-trial)/scale)
+            error = max(component_errors)
+            accepted = error <= 1.0
+            attempts.append({"t": t, "h": h, "error": error, "accepted": accepted,
                              "y_before": [float(v) for v in y], "y_trial": [float(v) for v in candidate]})
             if accepted:
-                t += h
-                y = candidate
+                t = end if h == remaining else t+h
+                y, control_y = candidate, control_trial
                 accept_count += 1
-                states.append({"t": float(t), "y": [float(v) for v in y]})
-                multiplier = two if err == zero else max(half, min(two, safety/err.sqrt()))
+                states.append({"t": t, "y": [float(v) for v in y]})
+                multiplier = 2.0 if error == 0 else max(0.2, min(2.0, 0.9/math.sqrt(error)))
             else:
                 reject_count += 1
-                if h <= minimum*(one+D("1e-12")):
+                if h <= minimum*(1.0+1e-12):
                     status = "dt_min_reached"
                     break
-                multiplier = max(half, min(safety, safety/err.sqrt()))
+                multiplier = max(0.2, min(0.9, 0.9/math.sqrt(error)))
             h_next = max(minimum, min(maximum, h*multiplier))
-        return {"status": status, "t": float(t), "y": [float(v) for v in y],
+        return {"status": status, "t": t, "y": [float(v) for v in y],
                 "accepted_steps": accept_count, "rejected_steps": reject_count,
                 "history": states, "attempts": attempts}
 
@@ -164,7 +190,7 @@ def _base(rng):
             "dt_initial": 0.3, "dt_min": 0.00001, "dt_max": 0.4, "max_trials": 1200}
 
 
-def _hidden(seed):
+def _hidden_with_groups(seed):
     rng = random.Random(f"NRB05:hidden:{seed}")
     cases = [("vector_rejection_and_rollback", _base(rng), "ok")]
     p = _base(rng)
@@ -198,26 +224,111 @@ def _hidden(seed):
     p = _base(rng)
     p["rates"] = [1.0, 2.0, 3.0]
     cases.append(("reject_vector_shape_mismatch", p, "ValueError"))
-    return cases
+    members = {name: [name] for name, _, _ in cases}
+    def extra(name, field, value, group):
+        item = _base(rng)
+        if isinstance(field, tuple):
+            item[field[0]][field[1]] = value
+        else:
+            item[field] = value
+        cases.append((name, item, "ValueError"))
+        members[group].append(name)
+
+    for value, tag in ((-1.0, "negative"), (True, "boolean")):
+        extra("reject_"+tag+"_rates", ("rates", 0), value, "zero_mode_and_vector_floors")
+    for token in ("nan", "inf", "-inf"):
+        extra("reject_"+token+"_rates", ("rates", 0), {"__nrb_float__": token}, "zero_mode_and_vector_floors")
+    for key in ("t_end", "dt_initial", "dt_min", "dt_max"):
+        extra("reject_boolean_"+key, key, True, "final_clip_below_minimum")
+        for token in ("nan", "inf", "-inf"):
+            extra("reject_"+token+"_"+key, key, {"__nrb_float__": token}, "final_clip_below_minimum")
+    for key, value, tag in (("t_end", -1.0, "negative_horizon"),
+                            ("dt_min", 0.0, "zero_minimum"),
+                            ("dt_min", -0.1, "negative_minimum"),
+                            ("dt_max", 1e-6, "reversed_bounds"),
+                            ("dt_initial", 1e-6, "initial_below_minimum"),
+                            ("dt_initial", 0.5, "initial_above_maximum")):
+        extra("reject_"+tag, key, value, "final_clip_below_minimum")
+    for value, tag in ((True, "boolean"), (2.0, "float"), (2.5, "fractional"),
+                       (0, "zero"), (-1, "negative"), ("2", "string")):
+        extra("reject_"+tag+"_budget", "max_trials", value, "attempt_budget_preserves_last_accepted_state")
+    for key in ("y0", "atol", "rtol", "scale_floor"):
+        extra("reject_boolean_"+key, key, True, "reject_zero_absolute_tolerance")
+        for token in ("nan", "inf", "-inf"):
+            extra("reject_"+token+"_"+key, key, {"__nrb_float__": token}, "reject_zero_absolute_tolerance")
+    extra("reject_negative_rtol", "rtol", -0.1, "reject_zero_absolute_tolerance")
+    extra("reject_negative_scale_floor", "scale_floor", -0.1, "reject_zero_absolute_tolerance")
+    extra("reject_empty_y0", "y0", [], "reject_vector_shape_mismatch")
+    for key in ("atol", "rtol", "scale_floor"):
+        extra("reject_shape_"+key, key, [0.1], "reject_vector_shape_mismatch")
+    # These exact powers and integers make full=4, two_half=3. Thus E=1
+    # exactly when atol=1, with neighboring binary64 tolerances on each side.
+    for atol, tag in ((1.0, "exact"), (math.nextafter(1.0, math.inf), "below"),
+                      (math.nextafter(1.0, 0.0), "above")):
+        p = {"y0": 12.0, "rates": 2.0, "atol": atol, "rtol": 0.0, "scale_floor": 0.0,
+             "t_end": 1.0, "dt_initial": 1.0, "dt_min": 1.0, "dt_max": 1.0, "max_trials": 3}
+        name = "acceptance_error_"+tag+"_one"
+        cases.append((name, p, "ok"))
+        members["vector_rejection_and_rollback"].append(name)
+    p = {"y0": 1.0, "rates": 0.0, "atol": 1.0, "rtol": 0.0, "scale_floor": 0.0,
+         "t_end": math.nextafter(0.3, math.inf), "dt_initial": 0.1,
+         "dt_min": 0.01, "dt_max": 0.2, "max_trials": 5}
+    cases.append(("adjacent_binary64_endpoint", p, "ok"))
+    members["final_clip_below_minimum"].append("adjacent_binary64_endpoint")
+    p = dict(p, dt_initial=0.3, dt_max=0.3)
+    cases.append(("adjacent_endpoint_requires_final_step", p, "ok"))
+    members["final_clip_below_minimum"].append("adjacent_endpoint_requires_final_step")
+    p = {"y0": 1.0, "rates": 0.0, "atol": 1.0, "rtol": 0.0, "scale_floor": 0.0,
+         "t_start": 1e16, "t_end": 1e16+4.0, "dt_initial": 1.0,
+         "dt_min": 0.5, "dt_max": 2.0, "max_trials": 5}
+    cases.append(("continuation_time_stalled", p, "ok"))
+    members["attempt_budget_preserves_last_accepted_state"].append("continuation_time_stalled")
+    p = dict(p, t_start=2.0, t_end=2.3, dt_initial=0.1, dt_min=0.01, dt_max=0.2)
+    cases.append(("nonzero_continuation", p, "ok"))
+    members["scalar_negative_state"].append("nonzero_continuation")
+    p = dict(p, t_end=2.0)
+    cases.append(("nonzero_zero_horizon", p, "ok"))
+    members["zero_horizon"].append("nonzero_zero_horizon")
+    extra("reject_boolean_t_start", "t_start", True, "zero_horizon")
+    for token in ("nan", "inf", "-inf"):
+        extra("reject_"+token+"_t_start", "t_start", {"__nrb_float__": token}, "zero_horizon")
+    extra("reject_start_after_end", "t_start", 1.0, "zero_horizon")
+    return cases, members
+
+
+def _hidden(seed):
+    return _hidden_with_groups(seed)[0]
 
 
 def build(seed=0):
     visible = _base(random.Random(f"NRB05:visible:{seed}"))
+    hidden, hidden_groups = _hidden_with_groups(seed)
     contract = """# Public API: adaptive test-equation integrator
 
-Integrate independent classical decay equations y_i'=-rates_i*y_i from 0 to t_end.
+Integrate independent classical decay equations y_i'=-rates_i*y_i from t_start
+to t_end. Optional t_start defaults to 0; it is an absolute initial time, and
+y0 is the state at that time. t_start must be finite, nonboolean and <=t_end.
 This is a synthetic numerical-analysis exercise with dimensionless inputs.
 solve(payload) accepts y0 as a finite scalar or nonempty list. rates, atol, rtol,
 scale_floor each accept a scalar (broadcast) or a list of the same length.
 rates >= 0, atol > 0, rtol >= 0, scale_floor >= 0. All values are finite;
-booleans are invalid numeric inputs. t_end >= 0; 0 < dt_min <= dt_initial <= dt_max;
-max_trials is an integer >= 1. Invalid inputs raise ValueError.
+booleans and numeric strings are invalid numeric inputs. A number is a Python
+int or float representable as a finite binary64 value; IEEE NaN and infinities
+are invalid even in direct Python API calls (JSON transport remains strict).
+t_end >= 0; 0 < dt_min <= dt_initial <= dt_max;
+max_trials must have Python int type and be >= 1, so 2.0 and True are invalid.
+Invalid inputs raise ValueError. All scheduling, error comparisons and time
+arithmetic use binary64 floats. E<=1 is inclusive with no extra acceptance
+tolerance; a value just above 1 is rejected. Do not use a higher-precision clock
+to create an extra endpoint step that binary64 addition already completed.
 
-Start t=0, state=y0, proposed=dt_initial. While t<t_end:
+Start t=t_start (default 0), state=y0, proposed=dt_initial. While t<t_end:
 1. Stop with max_trials_reached if the attempt budget has been exhausted.
 2. Set h=min(proposed,t_end-t). If floating-point t+h<=t, stop time_stalled.
 3. From the unchanged committed state, compute full=y/(1+rates*h) and
-   two_half=y/(1+rates*h/2)^2, componentwise.
+   half=y/(1+rates*h/2), then two_half=half/(1+rates*h/2), componentwise.
+   Use two successive divisions and binary64 operations for the acceptance
+   decision, including the indicated multiplication/division order.
 4. E=max_i(abs(full_i-two_half_i)/(atol_i+rtol_i*
    max(abs(full_i),abs(two_half_i),scale_floor_i))). Accept iff E<=1.
 5. Record the attempt with t,h,error=E,accepted,y_before,y_trial=two_half.
@@ -232,7 +343,10 @@ Start t=0, state=y0, proposed=dt_initial. While t<t_end:
 A final endpoint-clipped h below dt_min is permitted once; a failed clipped
 attempt terminates under rule 7. Do not claim finished after failure. The final
 state must be the last accepted state. No Richardson extrapolation is allowed.
-Successful completion has status finished. t_end=0 gives no attempts.
+Successful completion has status finished. t_start=t_end gives no attempts;
+this includes the default-start t_end=0 case. Large absolute continuation times
+may trigger time_stalled even when h is positive; do not advance or record an
+attempt when binary64 t+h<=t.
 All returned y arrays are lists even for a scalar input.
 
 Output fields:
@@ -256,7 +370,7 @@ status 必须取其中一个枚举值，不得照抄竖线分隔模板。隐藏�
     return {"id": "NRB05", "seed": seed, "title": "自适应积分器的回滚与终止", "domain": "adaptive-numerics",
             "prompt": prompt,
             "files": {"API.md": contract, "input.json": json.dumps(visible, indent=2), "starter.py": STARTER_SOURCE},
-            "expected": {"visible": _oracle(visible), "hidden": _hidden(seed)},
+            "expected": {"visible": _oracle(visible), "hidden": hidden, "hidden_groups": hidden_groups},
             "rubric": [
                 {"id": "numerical_reasoning", "title": "误差与方法阶数", "anchors": {"0": "误解接受状态或宣称该方法为高阶而无推导。", "5": "正确描述后向欧拉和步长缩放，但局部/全局误差区分不完整。", "10": "说明全步与两半步差的二阶小步长尺度、平方根控制器、一阶全局精度及所用相对误差分母；条件清楚。"}},
                 {"id": "lifecycle", "title": "状态生命周期与失败语义", "anchors": {"0": "把失败当完成，或拒绝步仍推进状态。", "5": "正确说明回滚，但对端点截断、最小步长或预算解释不完整。", "10": "清楚区分试探、接受、回滚、端点及终止状态；给出能发现状态污染的验证，准确报告尚未运行的部分。"}},
@@ -273,11 +387,20 @@ def _batch_source(source):
     return source + '''
 
 _nrb_original_solve = solve
+def _nrb_materialize(value):
+    if isinstance(value, dict):
+        if set(value) == {"__nrb_float__"}:
+            return float(value["__nrb_float__"])
+        return {key: _nrb_materialize(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_nrb_materialize(item) for item in value]
+    return value
+
 def solve(payload):
     records = []
     for item in payload["nrb_cases"]:
         try:
-            records.append({"status": "ok", "result": _nrb_original_solve(item)})
+            records.append({"status": "ok", "result": _nrb_original_solve(_nrb_materialize(item))})
         except Exception as exc:
             records.append({"status": "error", "type": type(exc).__name__})
     return {"nrb_results": records}
@@ -295,17 +418,20 @@ def grade(case, submission, execution="none"):
               ("visible_committed_history", ("history",)),
               ("visible_attempt_trace", ("attempts",))]
     results = [check(name, 5, numbers_close({key: value.get(key) for key in keys}, {key: expected[key] for key in keys}),
-                     "按独立高精度递推核对可见结果。", critical=name == "visible_status_and_counts") for name, keys in groups]
+                     "按高精度状态递推及 binary64 调度语义核对可见结果。", critical=name == "visible_status_and_counts") for name, keys in groups]
     artifacts = submission.get("artifacts", {}) if isinstance(submission, dict) else {}
     source = artifacts.get("solution.py") if isinstance(artifacts, dict) else None
     hidden = case["expected"]["hidden"]
+    groups = case["expected"]["hidden_groups"]
+    critical = {"vector_rejection_and_rollback", "finite_minimum_step_failure", "failed_clipped_endpoint_is_not_committed"}
     if not isinstance(source, str) or not source.strip():
-        return results+[check(name, 5, False, "缺少 solution.py。") for name, _, _ in hidden]
+        return results+[check(name, 5, False, "缺少 solution.py。", critical=name in critical) for name in groups]
     run = run_python(_batch_source(source), {"nrb_cases": [p for _, p, _ in hidden]}, execution=execution, timeout=5)
     if run.get("status") == "unavailable":
-        return results+[check(name, 5, None, run.get("detail", "未启用代码执行；此项未评。")) for name, _, _ in hidden]
+        return results+[check(name, 5, None, run.get("detail", "未启用代码执行；此项未评。"), critical=name in critical) for name in groups]
     result = run.get("result")
     batch = result.get("nrb_results") if isinstance(result, dict) else None
+    outcomes = {}
     for i, (name, payload, state) in enumerate(hidden):
         observed = batch[i] if isinstance(batch, list) and i < len(batch) and isinstance(batch[i], dict) else {}
         if state == "ValueError":
@@ -314,7 +440,13 @@ def grade(case, submission, execution="none"):
             actual = observed.get("result")
             oracle = _oracle(payload)
             passed = observed.get("status") == "ok" and isinstance(actual, dict) and numbers_close({key: actual.get(key) for key in oracle}, oracle, rtol=2e-7, atol=1e-10)
-        results.append(check(name, 5, passed,
-                             "按独立高精度行为参考核对调度轨迹。" if run.get("status") == "ok" else run.get("detail", "执行失败。"),
-                             critical=name in ("vector_rejection_and_rollback", "finite_minimum_step_failure", "failed_clipped_endpoint_is_not_committed")))
+        outcomes[name] = passed
+    for name, members in groups.items():
+        failed = [member for member in members if not outcomes[member]]
+        detail = "组内逐例核对；失败案例：" + (", ".join(failed) if failed else "无")
+        if run.get("status") != "ok":
+            detail += "；" + run.get("detail", "执行失败。")
+        row = check(name, 5, not failed, detail, critical=name in critical)
+        row["cases"] = [{"id": member, "passed": outcomes[member]} for member in members]
+        results.append(row)
     return results

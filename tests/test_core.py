@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 from nrb.core import (get_case, reference_submission, grade_submission, parse_submission,
-                      write_candidate_packet, summarize, attach_review, fingerprint, safe_relative)
+                      write_candidate_packet, summarize, attach_review, fingerprint, safe_relative, review_ledger)
 from nrb.checks import close, numbers_close
 from nrb.analysis import paired_comparison
 
@@ -55,14 +55,14 @@ class CoreContracts(unittest.TestCase):
         c = get_case("NRB10", 0)
         s = reference_submission(c)
         r = grade_submission(c, s)
-        review = {"task_id": c["id"], "case_hash": c["case_hash"], "submission_hash": fingerprint(s),
-                  "reviewer_id": "test-human", "reviewer_type": "human",
-                  "criteria": [{"id": x["id"], "score": 5, "rationale": "Test fixture only", "evidence": "Test fixture only"} for x in c["rubric"]]}
-        out = attach_review(c, r, review)
+        review = review_ledger(c, s, report=r)
+        review["reviewer_id"] = "test-human"
+        review["criteria"] = [{"id": x["id"], "score": 5, "rationale": "Test fixture only", "evidence": "Test fixture only"} for x in c["rubric"]]
+        out = attach_review(c, r, review, submission=s)
         self.assertEqual(out["total"], 85)
         review["submission_hash"] = "wrong"
         with self.assertRaises(ValueError):
-            attach_review(c, r, review)
+            attach_review(c, r, review, submission=s)
 
     def test_invalid_model_json_is_zero_but_grader_error_is_unscored(self):
         c = get_case("NRB10", 0)
@@ -83,13 +83,12 @@ class CoreContracts(unittest.TestCase):
     def test_paired_comparison_uses_equal_inputs_and_family_clusters(self):
         c = get_case("NRB10", 0)
         a = grade_submission(c, reference_submission(c))
-        b = copy.deepcopy(a)
-        b["auto_percent"] = 80
-        left = {"benchmark_version": "0.1.0", "reports": [a]}
-        right = {"benchmark_version": "0.1.0", "reports": [b]}
+        b = grade_submission(c, {"task_id": "NRB10", "answer": {}, "artifacts": {}})
+        left = summarize([a], expected_ids=("NRB10",))
+        right = summarize([b], expected_ids=("NRB10",))
         result = paired_comparison([left, left], [right, right])
         self.assertEqual(result["task_families"], 1)
-        self.assertEqual(result["macro_delta_b_minus_a"], -20)
+        self.assertEqual(result["macro_delta_b_minus_a"], -100)
         b["case_hash"] = "different"
         with self.assertRaises(ValueError):
             paired_comparison([left], [right])
@@ -100,10 +99,10 @@ class CoreContracts(unittest.TestCase):
             paired_comparison([empty], [empty])
         case = get_case("NRB10", 0)
         report = grade_submission(case, reference_submission(case))
-        run = {"benchmark_version": "0.1.0", "track": "agent-controlled",
+        run = {**summarize([report], expected_ids=("NRB10",)), "track": "agent-controlled",
                "model_label": "model-a", "harness_label": "harness-a",
                "metadata": {"budget": 900, "repetition": 1}, "reports": [report]}
-        for key, value in (("benchmark_version", "0.2.0"), ("track", "agent-diagnostic"),
+        for key, value in (("benchmark_version", "0.3.0"), ("track", "agent-diagnostic"),
                            ("model_label", "model-x"), ("harness_label", "harness-x"),
                            ("metadata", {"budget": 1800, "repetition": 2})):
             different = copy.deepcopy(run)

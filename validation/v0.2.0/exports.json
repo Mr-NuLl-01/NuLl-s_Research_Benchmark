@@ -1,0 +1,35 @@
+{
+  "purpose": "export interface validation, not model performance",
+  "benchmark_version": "0.2.0",
+  "evaluation_schema_version": "2.0",
+  "evaluator_commit": null,
+  "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+  "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+  "passed": true,
+  "exports": [
+    {
+      "format": "native",
+      "exit_code": 0,
+      "stdout": "{\"exported\": \"/tmp/nrb-v02-export-validation/native\", \"tasks\": 10, \"format\": \"native\"}",
+      "stderr": ""
+    },
+    {
+      "format": "jsonl",
+      "exit_code": 0,
+      "stdout": "{\"exported\": \"/tmp/nrb-v02-export-validation/jsonl.jsonl\", \"tasks\": 10, \"format\": \"jsonl\"}",
+      "stderr": ""
+    },
+    {
+      "format": "promptfoo",
+      "exit_code": 0,
+      "stdout": "{\"exported\": \"/tmp/nrb-v02-export-validation/promptfoo\", \"tasks\": 10, \"format\": \"promptfoo\"}",
+      "stderr": ""
+    },
+    {
+      "format": "harbor",
+      "exit_code": 0,
+      "stdout": "{\"exported\": \"/tmp/nrb-v02-export-validation/harbor\", \"tasks\": 10, \"format\": \"harbor\"}",
+      "stderr": ""
+    }
+  ]
+}

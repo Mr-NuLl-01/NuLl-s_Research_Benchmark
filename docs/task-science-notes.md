@@ -1,271 +1,176 @@
-# 科学工作流任务的设计与数学核验
-
-本文说明 NRB01、NRB02、NRB03 和 NRB08 的设计理由、自动评分边界与独立检查。
-四题均为新建的通用合成问题；来源卡片、仪器编号、数值和计算实例均非真实研究记录。
-它们评价能迁移到研究工作的能力，不包含未公开研究内容。
-
-每题自动检查上限为 70 分，另外三项人工论证标准各 0–10 分。自动检查不使用
-“出现某个关键词即给分”的方式，也不把语言流畅度当作推导正确性。
-这四题的自动部分检查结构化答案和数学结果；论证文本是否完整、代码是否与文字
-相符、科学限定是否合理，保留给人工评分。自动 70/70 不能自行升级为完整 100/100。
-
-## NRB01：版本冲突下的证据与贡献审计
-
-### 能力目标
-
-固定证据包包括已被更正的原始表、更正记录、随机或观察性外场记录、独立采样或旧数据
-再分析、仿真消融输出，以及夸大结论的二次评论。模型必须同时完成来源追溯、配对统计、
-证据分级、因果判断和贡献表述。
-
-全部卡片显式标注为合成材料，不配伪造 DOI。它们不是实际出版物。
-本题衡量**固定材料的阅读与审计**；不衡量联网检索召回率、数据库覆盖度、付费全文获取
-或在开放文献中判断真实新颖性的能力。开放检索应在独立扩展协议中评价，不能由本题
-分数替代。
-
-### 随机变体与可核验答案
-
-`seed` 改变设备数、技术重复数、更正数据、效果阈值、来源标识、外场分配设计、后续
-数据是否独立，以及移除模块后是否仍有收益。C1、C3、C4、C5 的正确结论会随变体变化。
-不是只改题目标题或调换来源名称。
-
-若设备级配对数据为 \(B_i,A_i\)，则
-
-\[
-d_i=B_i-A_i,\quad
-\bar d=\frac1n\sum_i d_i,\quad
-\operatorname{SE}(\bar d)=\sqrt{\frac{\sum_i(d_i-\bar d)^2}{n(n-1)}}.
-\]
-
-相对下降定义为 \(100(\bar B-\bar A)/\bar B\)，不等于逐设备百分比的平均。
-技术重复先在设备内平均，不能扩充独立设备数。此处使用的是绝对误差指标的前后差，
-不是温度误差方向的推断。
-
-对每项论断，自动评分分别检查判断和直接来源。允许相关版本来源，但不接受把所有
-来源统一粘贴。源卡片的更新关系和数据独立性是真实评分条件。
-
-| 自动检查 | 满分 |
-| --- | ---: |
-| 6 项论断判断，每项 3 分 | 18 |
-| 6 项直接来源绑定，每项 2 分 | 12 |
-| 当前有效数据来源 | 5 |
-| 独立统计单位数 | 5 |
-| 两个当前设备均值 | 5 |
-| 相对下降、配对均值差、配对标准误 | 15 |
-| 六类来源角色判断 | 5 |
-| 有依据的贡献范围选择 | 5 |
-| 合计 | 70 |
-
-人工评分看的是逐条理由是否支持其结论，而不只是选择代码。尤其应检查：随机分配的
-因果解释是否保留题定假设，有限网格的消融结果是否被扩大为普适或唯一机制，缺少一年
-数据是否被误写成长期失败的反证，以及是否保留受限但有价值的经验贡献。
-
-## NRB02：热响应中的参数退化与判别实验
-
-### 模型与主要推导
-
-合成系统为经典集中热容模型
-
-\[
-C\dot\theta=P-G\theta,\qquad y=b+\alpha\theta,
-\qquad C,G,\alpha>0,\quad \theta(0)=0.
-\]
-
-输入功率有绝对标定，传感器增益未知。令 \(z=y-b\)，则
-
-\[
-\dot z=-\frac GCz+\frac\alpha C P.
-\]
-
-因此基线响应只能识别三个独立组合，例如 \(b,\tau=C/G,K=\alpha/G\)。
-对任何 \(s>0\)，变换 \((C,G,\alpha,b)\mapsto(sC,sG,s\alpha,b)\)
-对任意已知功率波形保持输出和零初态。加密采样、延长实验、重复采样和改变已知输入
-幅值都不破除该结构退化；更精确地估计相同组合不等于识别更多参数。
-
-在给定保持条件下，加入已知热容 \(\Delta C>0\) 后
-
-\[
-\tau'=\frac{C+\Delta C}{G},\qquad
-G=\frac{\Delta C}{\tau'-\tau},\qquad C=G\tau,\qquad \alpha=GK.
-\]
-
-这使四个原始未知量可恢复。题目明确要求验证加入附件后 \(G,\alpha,b\) 保持；若它们
-同时未知地改变，上述识别结论不自动成立。
-
-基线和干预数据均为解析模型产生的无噪声合成数值，仅有小数舍入。参数恢复可用等距
-采样增量之比直接计算，也可使用其他正确方法。人工评分必须检查结构可辨识性与实际
-估计精度的区别：当 \(\tau'-\tau\) 很小时，其分母会放大拟合误差。
-
-题目还要求把额外热容移除，预测一个新功率脉冲的关断瞬间和关断后响应。偏移 \(b\)
-不应随温度衰减。这样可以发现只会拟合给定曲线、不能处理独立输入或测量方程的答案。
-
-| 自动检查 | 满分 |
-| --- | ---: |
-| 时间常数、输出稳态增益、偏移 | 15 |
-| 结构秩、尺度等价族、不可分别辨识的参数 | 15 |
-| 判别干预选择与四个方案的结构秩比较 | 10 |
-| 干预后绝对参数及时间常数 | 20 |
-| 两个独立脉冲预测值 | 10 |
-| 合计 | 70 |
-
-不同种子改变全部绝对参数、阶跃功率、采样间距、附加热容、干预选项位置和预测脉冲。
-这是结构推理与条件化预测任务，不是现实噪声参数拟合能力的全面测评。
-
-## NRB03：有限预算下的鲁棒校准设计
-
-### 精确有限优化问题
-
-这是与任何特定材料体系无关的通用线性量具校准：
-\(y=a+bx+\varepsilon\)，截距与斜率都未知。
-选择五个水平的整数测量次数 \(n_i\)，满足预算、次数上限、中心配额、两侧配额、
-端点次数和总样本量约束。设计时三个方差情景未知；题定独立校准在分析前确定真实情景，
-因此分析使用对应情景的正确 WLS 权重。这一条件避免把未知权重下的固定估计器与
-已知情景的协方差公式混在一起。
-
-对每个情景，令
-
-\[
-S_0=\sum_i\frac{n_i}{v_i},\quad
-S_1=\sum_i\frac{n_ix_i}{v_i},\quad
-S_2=\sum_i\frac{n_ix_i^2}{v_i}.
-\]
-
-因截距未知，斜率方差为
-
-\[
-V=\frac{S_0}{S_0S_2-S_1^2}
-  =\frac{1}{\sum_i(n_i/v_i)(x_i-\bar x_w)^2}.
-\]
-
-目标为三个情景的 \(\max_s V_s\)，不是情景均值。各情景没有概率。
-输入值是单次测量方差，不是标准差；错误地再平方会改变最优设计。
-
-自动评分从实际提交的分配重新检查约束和方差，防止用不可行设计配上正确最优值。
-全局最优分配允许并列解，不强制与参考字典中的同一个向量相同；严格次优指下一项
-目标值，而不是另一个并列最优设计。题定严格区分阈值为 \(10^{-12}\)。
-
-| 自动检查 | 满分 |
-| --- | ---: |
-| 整数形状、各水平上限 | 10 |
-| 全部设计约束及可估计性 | 10 |
-| 实际总成本、实际总次数 | 10 |
-| 三个情景的斜率方差 | 15 |
-| 最坏情景与目标 | 5 |
-| 实际提交分配的全局最优性 | 10 |
-| 严格次优分配、值和目标差 | 5 |
-| 完整可行域的向量计数 | 5 |
-| 合计 | 70 |
-
-种子改变输入水平、成本、次数上限、预算、配额及三个方差情景，所以最佳分配也改变。
-参考答案附带只用标准 Python 和可见 `design.json` 的独立枚举脚本。
-某些变体中平均目标和最坏目标可能碰巧给出同一分配；正确分配仍应得分。
-默认种子已用不同目标的错误实现验证存在可区分的结果。
-
-本题的最优性只限所列模型、独立误差和有限情景集合。它不替代对真实仪器漂移、相关
-误差、模型曲率或新增方差情景的验证。人工评分评价这些解释以及完整搜索证据。
-
-## NRB08：仿射收缩的证明、反例与误差证书
-
-### 三个分别承担的责任
-
-1. **一般推导：** 对正权重 \(w_i\)，诱导范数为
-   \(q=\max_i\sum_j|A_{ij}|w_j/w_i\)。在完整空间 \(\mathbb R^3\) 上的仿射自映射
-   若 \(q<1\)，存在唯一固定点。
-2. **具体求值：** 求解 \((I-A)x^*=b\)，对给定候选点计算残差和实际误差，核对
-   范数与向量的定义。数值点检查不替代第一项的定理责任。
-3. **反例：** 自行给出一个满足明确条件的 2×2 系统，击破错误的普适上界。
-
-令 \(r=F(\hat x)-\hat x\)。三角不等式给出
-
-\[
-\|\hat x-x^*\|_w\leq\|r\|_w+q\|\hat x-x^*\|_w,
-\qquad
-\|\hat x-x^*\|_w\leq\frac{\|r\|_w}{1-q}.
-\]
-
-题目中的错误命题试图在普通无穷范数中无条件把 \(q\) 换成谱半径 \(\rho(A)\)。
-一个透明反例族为
-
-\[
-A=\begin{pmatrix}r&M\\0&r\end{pmatrix},\quad b=0,\quad
-\hat x=\begin{pmatrix}M/(1-r)\\1\end{pmatrix},
-\qquad 0<r<1,\quad M>1-r.
-\]
-
-其固定点为零，残差为 \((0,-(1-r))^T\)，错误上界为 1，而实际误差可任意超过 1。
-评分器接受其他有效反例，并从提交矩阵重新计算特征值、固定点、残差及失败不等式。
-仅给一个非正规矩阵或写“谱半径不够”不会拿到反例验证分。
-
-| 自动检查 | 满分 |
-| --- | ---: |
-| 加权诱导范数、普通诱导范数 | 15 |
-| 固定点 | 10 |
-| 残差向量及加权范数 | 10 |
-| 残差理论上界 | 10 |
-| 实际加权误差 | 5 |
-| 自交反例的数学有效性 | 10 |
-| 反例的完整数值复算 | 5 |
-| 三个逻辑判断 | 5 |
-| 合计 | 70 |
-
-矩阵、权重、右端、候选点及参考反例随种子变化。普通无穷范数不收缩，并不意味着
-固定点不存在；这正是范数条件与数学结论容易混淆的地方。
-
-输入有限小数定义实际数学数据。理论不等式有效，小数输出只是其近似展示；本题不
-要求有向舍入区间证明，也不声称自动检查等于 Lean 形式化验证。人工评阅负责完整证明。
-
-## 已执行的核验与范围
-
-`tests/test_science_tasks.py` 提供 18 个标准库单元测试；编写时已实际运行全部测试并通过。
-测试包括多个种子的参考答案、70 分上限、格式损坏和非有限数值输入、独立数学复算，
-以及能够得到部分分但失去关键分的错误答案。它们验证题目和评分机制，**不是模型排名
-或区分度的实测样本**。未在这些测试中调用外部模型。
-
-独立计算使用不同形式或数据路径：
-
-- NRB01：直接读取可见 CSV，以有理数计算设备均值、差值及标准误平方。
-- NRB02：对不等长、多段输入进行解析积分，检查尺度变换的输出等价；恢复参数需能
-  重现两轮所有可见观测点。
-- NRB03：使用 `Fraction` 精确枚举，通过加权中心化的信息公式独立核对最优值、次优值
-  和可行向量数；还在独立临时目录真实运行参考 `solve.py`，没有导入 benchmark 模块。
-- NRB08：以 `Fraction` 独立高斯消元和精确残差计算核对证书，检查另一个有效反例可被
-  接受，并检查满足上界等号的系统不能伪装成反例。
-
-| 错误答案测试 | 自动评分结果或关键行为 |
-| --- | --- |
-| NRB01：技术重复充独立样本并粘贴全部来源 | 不超过 45/70 |
-| NRB02：声称原数据满秩、无退化并选择重复观测 | 50/70 |
-| NRB02：将传感器偏移随冷却衰减 | 65/70 |
-| NRB03：优化三个情景的平均值，其他数字诚实重算 | 60/70（默认种子） |
-| NRB03：不可行次数向量但填写正确最优数字 | 可行性与全局最优性检查失败 |
-| NRB08：数字一致但未违反命题的“反例” | 60/70 |
-| NRB08：直接把残差大小作为理论误差上界 | 60/70 |
-
-这些部分分是刻意的：例如诚实计算了一个错误设计目标的模型，仍可以在约束与矩阵
-计算上得到分数；是否理解目标的错误应由关键项目失分和人工理由分体现。
-
-## 方法来源与实际阅读范围
-
-下列资料仅用于核对公开数学/统计方法，没有复用它们的题目或真实研究数据。
-访问日期为 2026-10-17。
-
-- [NIST/SEMATECH，7.3.1.1 Analysis of paired observations](https://www.itl.nist.gov/div898/handbook/prc/section3/prc311.htm)：
-  阅读该短页，核对配对差、样本标准差、自由度和配对统计量分母。
-- [NIST Dataplot，T TEST](https://itl.nist.gov/div898/software/dataplot/refman1/auxillar/t_test.htm)：
-  阅读定义和配对检验部分，核对配对/独立两样本区别；未声称逐项复现该页面的软件示例。
-- [Dimitri P. Bertsekas，Abstract Dynamic Programming 第二版的作者公开附录](https://web.mit.edu/dimitrib/www/Appendixes_REFS_Abstract_DP_2ND_EDITION.pdf)：
-  阅读 Appendix B 的相关部分，印刷页 325–331 中的收缩定理、加权上确界范数和仿射矩阵
-  条件。没有声称阅读完整教材或 PDF 全部内容。
-
-热模型的等价族、已知附加热容恢复公式、有限 WLS 设计和反例均在本任务中直接推导。
-它们是经典工具的教学问题，不提出新数学发现或科学原创性主张。
-
-## 给评测主持者的边界
-
-只把导出的候选题包交给受测系统。源文件中的 `expected`、`reference()` 和评分器属于
-评测端；让受测系统读取它们会把推理任务变成答案提取。公开仓库有助复查，但不能
-保证模型从未见过答案。使用未提前指定的种子、保存候选端文件清单和运行记录，可以
-减少无意泄漏；它们不能证明无训练污染。
-
-这四题本身不执行候选代码来决定数学分数，因此其 `execution` 参数不改变自动检查。
-代码与完整论证的人工核验应据实记录；不能仅因结构化答案正确就宣称候选脚本已运行、
-证明已形式化或真实实验已完成。
+# v0.2 science task contracts
+
+All examples and generated packets in these task families are original synthetic
+teaching instances based on classical statistics, linear algebra and ordinary
+measurement models. They contain no private research results. The changes here
+preserve the ten task families and the existing 70 automatic points per task.
+
+## Numerical display contract: NRB01–03
+
+Candidate-facing prompts now recommend full floating-point precision and require
+at least **nine significant digits** if numbers are shortened. Scientific notation
+should be used for small nonzero quantities. This is an output contract, not a
+claim that additional decimal places create experimental precision.
+
+Existing field comparisons are retained:
+
+| Task | Relative tolerance | Absolute tolerance | Scope |
+|---|---:|---:|---|
+| NRB01 | `2e-6` | `1e-9` | Reported paired descriptive statistics |
+| NRB02 | `3e-6` | `1e-9` | Reported identifiable combinations, recovery and predictions |
+| NRB03 | `3e-7` | `1e-10` | Displayed variances, worst objective and runner-up gap |
+
+Integer fields, identities and classifications keep their separate exact checks.
+The analytic example `tau=21/1.7=12.352941176470589` makes the old mismatch concrete:
+`.6g` gives `12.3529`, which fails the NRB02 comparison; `.9g` gives
+`12.3529412`, which passes. Tests round the complete numeric answer recursively
+with `.9g` on seeds `0, 1, 17, 37, 101, 255, 2026`. They also exercise zero,
+small signed values, order-of-magnitude boundaries and malformed numbers. No
+blanket tolerance relaxation was introduced.
+
+## NRB03: exact objective membership and displayed values
+
+The finite decimal values appearing in `design.json` define the mathematical
+input. `Fraction(str(value))` reconstructs those decimal values, avoiding the
+unintended alternative interpretation of exact binary floating-point payloads.
+For each scenario, rational information terms are scaled to a common integer
+denominator before enumeration. This preserves exact arithmetic while keeping
+the small finite search inexpensive.
+
+The scorer separates three questions:
+
+1. Does the chosen integer vector satisfy every design constraint and have an
+   invertible intercept/slope information matrix?
+2. Is its exact maximum scenario variance the exact finite-set minimum?
+3. Are the submitted decimal numbers reasonable rounded displays of the values
+   computed for that actual chosen vector?
+
+The global minimizer set uses exact equality. The runner-up set is the smallest
+exact objective **strictly greater than the exact minimum plus `1/10**12`**.
+Objectives between the exact minimum and that threshold are neither global
+minimizers nor eligible runner-ups. All vectors at either accepted exact level
+are legal. Numeric display tolerance never broadens either vector set.
+
+Regression controls include a four-allocation instance where a nonoptimal
+objective is just `2e-13` above the minimum, and the first eligible runner-up is
+`1e-9` above the minimum. They reject a near-optimal vector as a global optimum,
+reject tied optima and below-threshold vectors as runner-ups, and reject a
+nonminimum eligible runner-up even when its displayed value lies within the
+numeric tolerance. An exact `1e-12` decimal boundary case is explicitly excluded
+by the strict inequality. A separate tied instance accepts distinct exact global and
+runner-up vectors.
+
+### Mandatory executable reproduction contract
+
+`solve.py` must expose this standard-library Python interface:
+
+```python
+def solve(problem: dict) -> dict:
+    # problem is the JSON-decoded contents of design.json.
+    # Return exactly the declared answer dictionary, without wrappers.
+    ...
+```
+
+The returned dictionary has exactly the same fields and types as the submitted
+`answer`. Importing the module must not run a CLI or open an input file. A guarded
+`if __name__ == "__main__"` CLI is allowed. The reference CLI retains a historical
+`feasible_count` output alias for existing local tools, but `solve(problem)`
+returns only the declared answer fields.
+
+Independent quality acceptance must **actually call** this entry point; presence
+of a script or a prose claim of execution cannot establish reproduction. The
+module helper is:
+
+```python
+from nrb.tasks.t03 import reproduce_solution
+receipt = reproduce_solution(case, submission, execution="docker")
+```
+
+The helper uses the existing bounded `nrb.execution.run_python` backend, validates
+the returned dictionary with all ordinary task checks, and verifies that its
+chosen optimum and runner-up vectors agree with the submitted vectors and
+reported values. A candidate may choose any exact tied optimum and reproduce that
+choice; a different valid vector returned by unrelated code is not evidence that
+the submitted choice was reproduced. Legitimate numeric rounding is accepted.
+
+The receipt has `id=solve_reproduction`, `status=pass|fail|unassessed`, a tri-state
+`passed` field, task/case/submission/source/input/result hashes, the backend,
+execution outcome, detail and zero-weight verification records. It does not add
+or redistribute automatic points. Missing or broken code is a failure;
+unavailable execution is unassessed evidence. Review integration should require
+this receipt for the `search_reproduced` essential responsibility. External
+submissions require the isolated Docker/container backend. `trusted` is reserved
+for repository-owned reference and deliberate mutation tests and is not an
+isolation boundary.
+
+The regression suite actually executes the reference entry point on seeds
+`0,17,101`, a correct alternate tied solution, and deliberate invalid, unrelated,
+malformed and broken implementations using the trusted repository-test backend.
+These local tests do not claim Docker or another external harness was run.
+
+## NRB08: Boolean schema without filled decisions
+
+The three `claims` fields now show Boolean type descriptions rather than
+`true,false,false` answer values. Candidates must submit actual JSON Booleans.
+Copying the type strings earns no logical-claims credit. Mathematical proof,
+numeric evaluation, and counterexample evidence remain separate responsibilities.
+
+## NRB10: synchronized evidence states
+
+The candidate prompt provides types and full enums, with no filled evidence or
+handoff verdicts. Eight deterministic semantic variants update the packet logs,
+manifest, active request and expected decisions together:
+
+| Seed modulo 8 | Variant | Main current evidence | Integrity | Handoff |
+|---:|---|---|---|---|
+| 0 | Integrity conflict | Arithmetic pass, render/platform not run | One mismatch | `needs_integrity_repair` |
+| 1 | Arithmetic failure | Arithmetic fail, render/platform pass | All match | `checks_pending` |
+| 2 | Not run | All required checks not run | All match | `checks_pending` |
+| 3 | Insufficient scope | Import smoke test does not cover required arithmetic | All match | `checks_pending` |
+| 4 | Revision mismatch | Apparently successful records concern another revision | All match | `checks_pending` |
+| 5 | Rendering failure | Arithmetic/platform pass, render fail | All match | `checks_pending` |
+| 6 | Platform failure | Arithmetic/render pass, platform fail | All match | `checks_pending` |
+| 7 | Ready | All required checks pass for active revision | All match | `ready_for_author_review` |
+
+Legacy identity independently covers `same_revision`, `stale_revision`, and
+`insufficient`. The public `validation_scope.md` defines every evidence label and
+the exact required scope. `full_validation=true` requires all three payload
+hashes to match and the current active-revision arithmetic, rendering and
+cross-platform checks all to pass. This means that the supplied evidence covers
+the stated packet checks; it does not establish independent execution or
+real-world deployment validity. Matching legacy identity never substitutes for
+a missing required current record.
+
+The ready variant positively supports the claim that all stated checks are
+complete. A copied old template that always reports `not_run`, stale history and
+an incomplete handoff fails that variant. Failed or irrelevant logs do not become
+successful evidence merely because hashes match. Reference prose and future
+handoff actions are generated from the actual evidence state, including the case
+where author review is the correct next action.
+
+The no-new-simulations rule remains an explicit **fixed authorization protocol**:
+audit calculations on supplied synthetic values are permitted; new simulations,
+publication and overwriting the original bundle are not. Its Boolean is checked
+as a protocol responsibility, and it is not presented as variation in research
+judgment. SHA256 binds byte identity, not scientific correctness.
+
+## Automatic critical check identifiers
+
+These identifiers mark core automatic scientific/evidence responsibilities and
+retain their existing point weights:
+
+| Task | Critical check IDs |
+|---|---|
+| NRB01 | `current_source`, `independent_units` |
+| NRB02 | `structural_rank`, `scale_symmetry`, `discriminating_intervention` |
+| NRB03 | `all_design_constraints`, `global_optimality`, `strict_runner_up` |
+| NRB08 | `weighted_induced_norm`, `residual_certificate`, `counterexample_validity` |
+| NRB10 | `integrity_model.txt`, `integrity_plot.svg`, `integrity_values.csv`; `evidence_current_arithmetic`, `evidence_legacy_summary`, `evidence_rendering`, `evidence_cross_platform`, `evidence_full_validation`; `handoff_revision`, `handoff_status` |
+
+Core completion additionally needs independent essential review: NRB01 evidence
+scope; NRB02 arbitrary-input equivalence and intervention assumptions; NRB03
+complete-domain optimality/code consistency and executed reproduction; NRB08
+existence/uniqueness proof, general residual-bound proof and counterexample
+explanation; NRB10 meaningful faithful English, no fabricated execution, and an
+actionable continuation. The presence of prose artifacts alone does not satisfy
+these responsibilities.

@@ -30,7 +30,7 @@ def main():
             "请只把单题目录或新导出的题包交给被测 agent。本仓库其余目录含评分器和参考答案，不能暴露给候选系统。正式比较建议生成新的种子变体；公开种子不构成无污染保证。", "",
             "| ID | 任务 | 必需交付物 |", "|---|---|---|"]
     rows += [f"| [{c['id']}]({c['id']}/instruction.md) | {c['title']} | {', '.join(c['required_artifacts'])} |" for c in cases]
-    rows += ["", "每题自动 70 分，三项独立质量审阅各 10 分。答题协议和自动核验对象见题面；分数含义、缺失处理及质量审阅流程见 [评分方法](../docs/scoring.md)。", "",
+    rows += ["", "每题自动 70 分，三项独立质量审阅各 10 分；核心责任另判 pass/fail/unassessed，原始总分不代替完成状态。答题协议和核心责任见题面；分数含义、缺失处理及质量审阅流程见 [评分方法](../docs/scoring.md)。", "",
              "```bash", "python -m nrb export --format native --seed 17 --dest exports/native-s17", "```", ""]
     (dest / "README.md").write_text("\n".join(rows), encoding="utf-8")
     print(json.dumps({"destination": str(dest), "task_count": len(cases), "seed": 0}))

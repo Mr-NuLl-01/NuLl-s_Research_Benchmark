@@ -120,7 +120,9 @@ steady_gain_per_W 指 y 的稳态变化除以 P，非温度增益。scale_powers
 rank_after_interventions 指原数据加该方案的新数据后，对原四个未知量的结构秩。
 reasoning.md 应推导组合、等价性及破退化条件，解释额外采样为何不一定增加结构秩，
 并说明“无噪声可唯一恢复”与有噪声时的实用可辨识性差别。提供可复查计算。
-数字保留至少 6 位有效数字。
+数值建议直接保留计算结果的浮点精度；如需缩短，至少保留 9 位有效数字。
+使用科学计数法表示小量，不把谱密度、协方差或目标差舍入为零。
+评分容差按字段定义，不要求输出额外无意义的小数。
 """
     rubric = [
         {"id": "identifiability_proof", "title": "结构可辨识性推导", "anchors": {
@@ -197,11 +199,11 @@ def grade(case: dict, submission, execution="none") -> list:
                  "从阶跃响应识别的输出组合。") for k, v in ex["baseline"].items()]
     out.append(check("structural_rank", 5,
                      type(ans.get("structural_rank")) is int and ans["structural_rank"] == 3,
-                     "原四未知量仅有三个独立响应组合。"))
+                     "原四未知量仅有三个独立响应组合。", critical=True))
     powers = ans.get("scale_powers_C_G_gain_offset")
     valid_powers = (isinstance(powers, list) and len(powers) == 4
                     and all(_near(x, y) for x, y in zip(powers, [1, 1, 1, 0])))
-    out.append(check("scale_symmetry", 5, valid_powers, "保持输出的整族尺度变换。"))
+    out.append(check("scale_symmetry", 5, valid_powers, "保持输出的整族尺度变换。", critical=True))
     params = ans.get("nonidentifiable_parameters")
     valid_params = (isinstance(params, list) and all(isinstance(x, str) for x in params)
                     and len(params) == 3 and set(params) == set(ex["nonidentifiable_parameters"]))
@@ -209,7 +211,7 @@ def grade(case: dict, submission, execution="none") -> list:
                      "基线不能分别识别 C、G 和传感器增益。"))
     out.append(check("discriminating_intervention", 5,
                      ans.get("chosen_intervention") == ex["chosen_intervention"],
-                     "额外独立绝对尺度约束才能破退化。"))
+                     "额外独立绝对尺度约束才能破退化。", critical=True))
     ranks = _mapping(ans.get("rank_after_interventions"))
     out.append(check("intervention_rank_comparison", 5,
                      ranks == ex["rank_after_interventions"]

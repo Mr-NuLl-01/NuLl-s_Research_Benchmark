@@ -63,8 +63,11 @@ def candidate_sha256(case):
     return hashlib.sha256(candidate_prompt(case).encode("utf-8")).hexdigest()
 
 
-def score_output(task_id, seed, output, execution="docker", *, candidate_hash=None):
+def score_output(task_id, seed, output, execution="docker", *, candidate_hash=None, evaluator_id=None):
     from nrb.core import get_case, grade_submission
+    from nrb.provenance import evaluator_identity
+    if evaluator_id is not None and evaluator_id != evaluator_identity():
+        raise ProvenanceError("Evaluator scoring source changed after export; restore the exact exported evaluator identity")
     case = get_case(task_id, int(seed))
     if candidate_hash is not None and candidate_sha256(case) != candidate_hash:
         raise ProvenanceError("Candidate prompt changed after export; restore the evaluator commit and seed used for this run")
@@ -74,10 +77,13 @@ def score_output(task_id, seed, output, execution="docker", *, candidate_hash=No
 def inspect_samples(seed=0):
     """Inspect-shaped records; no optional dependency, target, or answer leakage."""
     from nrb.core import build_suite, candidate_prompt
+    from nrb.provenance import evaluator_identity
+    identity = evaluator_identity()
     return [{"id": case["id"], "input": candidate_prompt(case), "target": "",
              "metadata": {"task_id": case["id"], "seed": case["seed"], "domain": case["domain"],
                           "benchmark_version": case["benchmark_version"],
-                          "case_hash": case["case_hash"], "candidate_sha256": candidate_sha256(case)}}
+                          "case_hash": case["case_hash"], "candidate_sha256": candidate_sha256(case),
+                          "evaluator_identity": identity}}
             for case in build_suite(seed)]
 
 
@@ -94,6 +100,7 @@ def summarize_inspect_log(log, *, epoch=1):
     if getattr(log, "invalidated", False):
         raise ProvenanceError("Inspect log contains invalidated samples")
     reports, unscored, seeds = [], [], set()
+    unverified_identity = []
     for sample in log.samples or []:
         if sample.epoch != epoch:
             continue
@@ -105,6 +112,13 @@ def summarize_inspect_log(log, *, epoch=1):
         report = found[0]
         if str(sample.id) != report["task_id"]:
             raise ProvenanceError("Inspect sample ID differs from the grader report")
+        recorded_identity = (getattr(sample, "metadata", None) or {}).get("evaluator_identity")
+        from nrb.provenance import identity_from
+        canonical_identity = identity_from(report)
+        if recorded_identity is not None and recorded_identity != canonical_identity:
+            raise ProvenanceError("Inspect exported evaluator identity differs from the canonical report")
+        if recorded_identity is None or canonical_identity is None:
+            unverified_identity.append(str(sample.id))
         seeds.add(report.get("seed"))
         reports.append(report)
     if len(seeds) > 1:
@@ -143,6 +157,7 @@ def summarize_inspect_log(log, *, epoch=1):
                   model_label=spec.get("model"), harness_label="inspect_ai", metadata=metadata,
                   metadata_incomplete=bool(missing_metadata), missing_metadata=missing_metadata,
                   not_model_performance=str(spec.get("model", "")).startswith("mockllm/"),
+                  adapter_provenance={"unverified_export_identity_samples": unverified_identity},
                   source_log={"eval_id": spec.get("eval_id"), "run_id": spec.get("run_id"),
                               "created": spec.get("created"), "task_args": task_args})
     if log.status != "success" or unscored:
@@ -155,7 +170,7 @@ def promptfoo_assertion(output, context):
     variables = context["vars"]
     report = score_output(variables["task_id"], variables["seed"], output,
                           execution=variables.get("execution", "docker"),
-                          candidate_hash=variables["candidate_sha256"])
+                          candidate_hash=variables["candidate_sha256"], evaluator_id=variables.get("evaluator_identity"))
     if report["auto_percent"] is None:
         raise IncompleteGrade("Automatic scoring incomplete; this is an evaluator/infrastructure error, not model accuracy. "
                               + json.dumps(report, ensure_ascii=False))
@@ -186,7 +201,7 @@ def summarize_promptfoo_results(data):
     if len(providers) > 1 or len(prompts) > 1:
         raise ValueError("Summarize one provider and one prompt per results file; keep comparison arms separate")
     reports, errors, seeds, seen = [], [], set(), set()
-    recovered_hashes = []
+    recovered_hashes, recovered_evaluator_identities, unverified_evaluator_identities = [], [], []
     mock = False
     prefix = "NRB automatic-only score; independent 30-point review remains pending. "
 
@@ -194,11 +209,14 @@ def summarize_promptfoo_results(data):
         if not isinstance(grading, dict):
             return []
         report = (grading.get("metadata") or {}).get("nrb_report")
-        if report is not None:
-            return [report]
         reason = grading.get("reason", "")
-        if isinstance(reason, str) and reason.startswith(prefix):
-            return [json.loads(reason[len(prefix):])]
+        reason_report = json.loads(reason[len(prefix):]) if isinstance(reason, str) and reason.startswith(prefix) else None
+        if report is not None:
+            if reason_report is not None and report != reason_report:
+                raise ProvenanceError("promptfoo canonical report metadata differs from its recorded reason")
+            return [report]
+        if reason_report is not None:
+            return [reason_report]
         found = []
         for component in grading.get("componentResults") or []:
             found.extend(find_reports(component))
@@ -220,6 +238,22 @@ def summarize_promptfoo_results(data):
             errors.append({"row": index, "task_id": task_id, "kind": "canonical_report_missing_or_ambiguous"})
             continue
         report = found[0]
+        from nrb.provenance import identity_from
+        canonical_identity = identity_from(report)
+        recorded_identity = variables.get("evaluator_identity")
+        if recorded_identity is None or canonical_identity is None:
+            unverified_evaluator_identities.append(task_id)
+        if recorded_identity is not None:
+            if not isinstance(recorded_identity, dict) or canonical_identity is None or set(recorded_identity) != set(canonical_identity):
+                raise ProvenanceError("promptfoo exported evaluator identity is invalid or has no canonical report identity")
+            for key, value in recorded_identity.items():
+                if value == "[REDACTED]" and key in {"evaluator_digest", "evaluator_commit"}:
+                    # Recover only from the exact logged canonical report. Never
+                    # stamp historical rows with today's evaluator fingerprint.
+                    if task_id not in recovered_evaluator_identities:
+                        recovered_evaluator_identities.append(task_id)
+                elif value != canonical_identity[key]:
+                    raise ProvenanceError("promptfoo exported evaluator identity differs from canonical report")
         if task_id != report["task_id"] or int(variables["seed"]) != report["seed"]:
             raise ProvenanceError("promptfoo task identity differs from canonical report")
         case = get_case(task_id, report["seed"])
@@ -279,7 +313,9 @@ def summarize_promptfoo_results(data):
                   promptfoo_stats=envelope["stats"], not_model_performance=mock,
                   model_label=provider_id, harness_label="promptfoo", metadata=metadata,
                   metadata_incomplete=bool(missing_metadata), missing_metadata=missing_metadata,
-                  provenance={"hash_recovered_from_full_logged_prompt": recovered_hashes},
+                  provenance={"hash_recovered_from_full_logged_prompt": recovered_hashes,
+                              "evaluator_identity_recovered_from_canonical_report": recovered_evaluator_identities,
+                              "unverified_export_evaluator_identity": unverified_evaluator_identities},
                   source_log={"eval_id": data.get("evalId"), "export_metadata": export_metadata})
     if errors or envelope["stats"]["errors"]:
         result.update(complete_auto=False, auto_macro_percent=None, reviewed_macro_total=None)
@@ -353,7 +389,8 @@ def _write(path, text):
 
 
 def _manifest(dest, adapter, cases, **kwargs):
-    manifest = {"adapter": adapter, "task_count": len(cases),
+    from nrb.provenance import evaluator_identity
+    manifest = {"adapter": adapter, "task_count": len(cases), "evaluator_identity": evaluator_identity(),
                 "cases": [{"task_id": c["id"], "seed": c["seed"],
                            "benchmark_version": c["benchmark_version"],
                            "case_hash": c["case_hash"], "candidate_sha256": candidate_sha256(c)} for c in cases],
@@ -366,6 +403,8 @@ def _manifest(dest, adapter, cases, **kwargs):
 def export_promptfoo(cases, dest, execution="docker"):
     """Export a self-contained promptfoo config; install this evaluator package."""
     from nrb.core import candidate_prompt
+    from nrb.provenance import evaluator_identity
+    identity = evaluator_identity()
     cases = list(cases)
     if execution not in {"docker", "none", "trusted"}:
         raise ValueError("Unsupported promptfoo execution backend")
@@ -374,13 +413,14 @@ def export_promptfoo(cases, dest, execution="docker"):
     _write(dest / "mock_provider.py", "from nrb.adapters import promptfoo_mock_provider as call_api\n")
     _write(dest / "command_provider.py", "from nrb.adapters import promptfoo_command_provider as call_api\n")
     config = {
-        "description": "NRB 0.1 automatic-only evaluation; mock provider is plumbing, not an AI result",
+        "description": "NRB automatic-only evaluation; mock provider is plumbing, not an AI result",
         "prompts": ["{{prompt}}"],
         "providers": [{"id": "file://mock_provider.py", "label": "offline-empty-smoke", "config": {"mode": "empty"}}],
         "defaultTest": {"assert": [{"type": "python", "value": "file://assertion.py", "metric": "NRB-auto"}]},
         "tests": [{"description": f"{c['id']} {c['title']}",
                    "vars": {"prompt": candidate_prompt(c), "task_id": c["id"], "seed": c["seed"],
-                            "candidate_sha256": candidate_sha256(c), "execution": execution}} for c in cases],
+                            "candidate_sha256": candidate_sha256(c), "execution": execution,
+                            "evaluator_identity": identity}} for c in cases],
     }
     # JSON is also valid YAML; no YAML package is needed to export the config.
     _write(dest / "promptfooconfig.yaml", json.dumps(config, ensure_ascii=False, indent=2) + "\n")
@@ -417,7 +457,7 @@ harbor_verify()
 '''
 
 
-def export_harbor(cases, dest, *, python_image="python:3.12-slim", include_solution=True,
+def export_harbor(cases, dest, *, python_image="python:3.12-slim", include_solution=False,
                   agent_hosts=None):
     """Export Harbor schema 1.4 tasks using a separate verifier container.
 
@@ -427,13 +467,16 @@ def export_harbor(cases, dest, *, python_image="python:3.12-slim", include_solut
     """
     from nrb.core import candidate_prompt, reference_submission, write_candidate_packet
     from nrb.harness import _snapshot
+    from nrb.provenance import evaluator_identity
+    identity = evaluator_identity()
     cases = list(cases)
     if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._/:@-]*", python_image):
         raise ValueError("python_image must be a single container image reference")
     if agent_hosts is None:
-        agent_hosts = ["api.openai.com", "chatgpt.com", "auth.openai.com", "api.anthropic.com",
-                       "generativelanguage.googleapis.com", "oauth2.googleapis.com", "cloudcode-pa.googleapis.com"]
-    if not all(isinstance(x, str) and re.fullmatch(r"[a-zA-Z0-9.-]+", x) for x in agent_hosts):
+        agent_hosts = []
+    if (not isinstance(agent_hosts, (list, tuple))
+            or not all(isinstance(x, str) and re.fullmatch(r"(?=.{1,253}\Z)(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)*[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?", x) for x in agent_hosts)
+            or len(set(agent_hosts)) != len(agent_hosts)):
         raise ValueError("agent_hosts must contain exact DNS hostnames")
     dest = _fresh(dest)
     package_root = Path(__file__).resolve().parent
@@ -457,7 +500,11 @@ def export_harbor(cases, dest, *, python_image="python:3.12-slim", include_solut
                 target = grader_dir / "nrb" / path.relative_to(package_root)
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(path, target)
-        meta = {"task_id": case["id"], "seed": case["seed"], "case_hash": case["case_hash"],
+        # The digest includes policy bytes; the origin stamp is deliberately
+        # outside the digest and preserves exporter commit identity in Docker.
+        shutil.copyfile(package_root / "evaluation_policy.json", grader_dir / "nrb" / "evaluation_policy.json")
+        _write(grader_dir / "nrb" / "_evaluator_origin.json", json.dumps(identity, indent=2) + "\n")
+        meta = {"task_id": case["id"], "evaluator_identity": identity, "seed": case["seed"], "case_hash": case["case_hash"],
                 "candidate_sha256": candidate_sha256(case), "candidate_files": manifest,
                 "python_image": python_image, "execution": "container"}
         _write(grader_dir / "case_identity.json", json.dumps(meta, ensure_ascii=False, indent=2) + "\n")
@@ -487,8 +534,8 @@ score_kind = "automatic_only_70_points"
 
 [agent]
 timeout_sec = 900.0
-network_mode = "allowlist"
-allowed_hosts = {json.dumps(list(agent_hosts))}
+network_mode = {json.dumps("allowlist" if agent_hosts else "no-network")}
+{("allowed_hosts = " + json.dumps(list(agent_hosts))) if agent_hosts else ""}
 
 [environment]
 build_timeout_sec = 900.0
@@ -509,22 +556,24 @@ memory_mb = 512
 storage_mb = 2048
 '''
         _write(task_dir / "task.toml", config)
-    _write(dest / "README.md", "# NRB Harbor export\n\nUse `harbor run -p . -a oracle` for a plumbing self-test, "
+    _write(dest / "README.md", "# NRB Harbor export\n\nOracle solutions are excluded by default; export with --include-oracle only for evaluator plumbing tests. "
+           "For that opt-in export use `harbor run -p . -a oracle`, "
            "or replace `oracle` with the installed agent and specify its model. Tasks use schema 1.4 and a separate verifier. "
            "Pin the Python image digest and Harbor version before comparative runs. The agent image excludes all evaluator code. "
            "The verifier denies networking; submitted Python runs under UID 65534 and cannot read /grader. "
            "The scalar reward is automatic points / 70; the independent 30-point review remains pending. "
            "See the full `report.json`, input integrity, and coverage; absent reward on infrastructure/provenance failure is not a model score. "
-           "Agent setup has network access for installing its runtime; its run is restricted to configured model API hosts. "
+           "Agent setup has network access for installing its runtime; agent runs are offline by default. "
+           "An explicit --agent-hosts allowlist can permit the exact required model API hosts. "
            "Closed-track rules still prohibit remote search/source access through provider tools.\n")
     return _manifest(dest, "harbor", cases, schema_version="1.4", python_image=python_image,
-                     separate_verifier=True, execution="container", include_solution=include_solution,
+                     separate_verifier=True, execution="container", include_solution=include_solution, agent_hosts=list(agent_hosts),
                      validation="Export format, content separation, and Python contracts tested; Harbor/Docker runtime not validated here")
 
 
 def harbor_verify(grader_dir="/grader", candidate_dir="/app", logs_dir="/logs/verifier"):
     """Entry point inside the root-owned, network-disabled verifier container."""
-    from nrb.core import MAX_SUBMISSION_BYTES
+    from nrb.core import MAX_SUBMISSION_BYTES, seal_report
     from nrb.harness import _integrity
     grader_dir, candidate_dir, logs_dir = Path(grader_dir), Path(candidate_dir), Path(logs_dir)
     if (os.name != "posix" or os.geteuid() != 0 or os.environ.get("NRB_CONTAINER_VERIFIER") != "1"
@@ -546,6 +595,9 @@ def harbor_verify(grader_dir="/grader", candidate_dir="/app", logs_dir="/logs/ve
         if (logs_dir / filename).exists() or (logs_dir / filename).is_symlink():
             raise ProvenanceError("A fresh verifier log directory is required")
     meta = json.loads((grader_dir / "case_identity.json").read_text(encoding="utf-8"))
+    from nrb.provenance import evaluator_identity
+    if meta.get("evaluator_identity") != evaluator_identity():
+        raise ProvenanceError("Exported verifier identity differs from its source/policy bytes or origin stamp")
     integrity = _integrity(candidate_dir, meta["candidate_files"])
     path = candidate_dir / "submission.json"
     if path.is_symlink():
@@ -562,13 +614,19 @@ def harbor_verify(grader_dir="/grader", candidate_dir="/app", logs_dir="/logs/ve
     else:
         submission = ""
     report = score_output(meta["task_id"], meta["seed"], submission, execution="container",
-                          candidate_hash=meta["candidate_sha256"])
+                          candidate_hash=meta["candidate_sha256"], evaluator_id=meta["evaluator_identity"])
     report["input_integrity"] = integrity
     report["adapter"] = "harbor"
     report["execution_boundary"] = "separate_network_disabled_container_with_unprivileged_candidate_child"
     report["verifier_log_permissions"] = {"owner_uid": logs_dir.stat().st_uid,
                                          "mode": oct(stat.S_IMODE(logs_dir.stat().st_mode))}
     report["comparison_eligible"] = integrity["unchanged"] and report["auto_percent"] is not None
+    report["protocol_violation"] = None if integrity["unchanged"] else "candidate_input_modified"
+    if not integrity["unchanged"]:
+        report["status"] = "protocol_violation"
+    # Candidate integrity and comparison eligibility are part of the automatic
+    # evidence seal. Publish only after all adapter boundary fields are final.
+    report = seal_report(report)
     _write(logs_dir / "report.json", json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     if not integrity["unchanged"]:
         raise ProvenanceError("Candidate changed supplied input files; protocol violation recorded in report.json")

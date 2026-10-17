@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60"><text x="5" y="30">Draft placeholder</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120"><rect x="1" y="1" width="298" height="118" fill="white" stroke="black"/><text x="15" y="35" font-size="18">Synthetic estimator audit</text><text x="15" y="65" font-size="14">Values: bundle/values.csv</text><path d="M15 100H285" stroke="black" fill="none"/></svg>

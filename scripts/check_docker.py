@@ -24,6 +24,18 @@ def main():
     passed = all(row["oracle"]["coverage"] == 1 and row["oracle"]["auto_points"] == 70
                  and row["buggy_starter"]["coverage"] == 1 and row["buggy_starter"]["auto_points"] < 70
                  for row in results)
+    case = get_case("NRB03", 17)
+    correct = reference_submission(case)
+    oracle = grade_submission(case, correct, execution="docker")
+    broken = reference_submission(case)
+    broken["artifacts"]["solve.py"] = "def solve(problem):\n    return {}\n"
+    negative = grade_submission(case, broken, execution="docker")
+    search_ok = (oracle["auto_points"] == 70 and oracle["mandatory_execution"][0]["passed"] is True
+                 and negative["auto_points"] == 70 and negative["mandatory_execution"][0]["passed"] is False
+                 and negative["completion_status"] == "failed")
+    passed = passed and search_ok
+    results.append({"task_id": "NRB03", "oracle": oracle, "broken_search": negative,
+                    "raw_score_preserved_but_completion_failed": search_ok})
     report = {"purpose": "actual Docker execution of repository oracle and negative controls; not model performance",
               "passed": passed, "results": results}
     path.parent.mkdir(parents=True, exist_ok=True)

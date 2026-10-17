@@ -1,0 +1,2335 @@
+{
+  "benchmark_version": "0.2.0",
+  "evaluation_schema_version": "2.0",
+  "evaluator_commit": null,
+  "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+  "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+  "scoring_identity_status": "verified_content",
+  "comparison_eligible": true,
+  "task_count": 10,
+  "expected_tasks": 10,
+  "missing_tasks": [],
+  "complete_auto": true,
+  "auto_macro_percent": 0.0,
+  "reviewed_macro_total": null,
+  "automatic_critical_free_rate": 0.0,
+  "critical_free_rate": 0.0,
+  "critical_failure_rate_bounds": [
+    1.0,
+    1.0
+  ],
+  "completion_counts": {
+    "complete": 0,
+    "failed": 10,
+    "pending_review": 0,
+    "infrastructure_unscored": 0,
+    "legacy_unverified": 0,
+    "missing": 0
+  },
+  "completion_rate": 0.0,
+  "completion_rate_bounds": [
+    0.0,
+    0.0
+  ],
+  "pending_task_count": 0,
+  "review_status": "unreviewed",
+  "review_coverage": 0.0,
+  "min_task_auto_percent": 0.0,
+  "min_task_reviewed_total": null,
+  "task_table": [
+    {
+      "task_id": "NRB01",
+      "auto_points": 0,
+      "auto_percent": 0.0,
+      "review_points": null,
+      "total": null,
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "critical_failures": [
+        "current_source",
+        "independent_units",
+        "required_artifacts"
+      ],
+      "pending_items": [
+        "essential:evidence_scope",
+        "quality_review"
+      ]
+    },
+    {
+      "task_id": "NRB02",
+      "auto_points": 0,
+      "auto_percent": 0.0,
+      "review_points": null,
+      "total": null,
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "critical_failures": [
+        "structural_rank",
+        "scale_symmetry",
+        "discriminating_intervention",
+        "required_artifacts"
+      ],
+      "pending_items": [
+        "essential:equivalence_proof",
+        "essential:intervention_conditions",
+        "quality_review"
+      ]
+    },
+    {
+      "task_id": "NRB03",
+      "auto_points": 0,
+      "auto_percent": 0.0,
+      "review_points": null,
+      "total": null,
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "critical_failures": [
+        "all_design_constraints",
+        "global_optimality",
+        "strict_runner_up",
+        "required_artifacts",
+        "execution:solve_reproduction"
+      ],
+      "pending_items": [
+        "essential:search_reproduced",
+        "essential:optimality_explanation",
+        "quality_review"
+      ]
+    },
+    {
+      "task_id": "NRB04",
+      "auto_points": 0,
+      "auto_percent": 0.0,
+      "review_points": null,
+      "total": null,
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "critical_failures": [
+        "visible_energy_balance",
+        "insulated_nonuniform",
+        "flux_source_capacity",
+        "required_artifacts"
+      ],
+      "pending_items": [
+        "essential:conservation_explanation",
+        "quality_review"
+      ]
+    },
+    {
+      "task_id": "NRB05",
+      "auto_points": 0,
+      "auto_percent": 0.0,
+      "review_points": null,
+      "total": null,
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "critical_failures": [
+        "visible_status_and_counts",
+        "vector_rejection_and_rollback",
+        "finite_minimum_step_failure",
+        "failed_clipped_endpoint_is_not_committed",
+        "required_artifacts"
+      ],
+      "pending_items": [
+        "essential:lifecycle_explanation",
+        "quality_review"
+      ]
+    },
+    {
+      "task_id": "NRB06",
+      "auto_points": 0,
+      "auto_percent": 0.0,
+      "review_points": null,
+      "total": null,
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "critical_failures": [
+        "absolute_covariance",
+        "covariance_variance_term",
+        "asd_to_psd",
+        "required_artifacts"
+      ],
+      "pending_items": [
+        "essential:uncertainty_interpretation",
+        "quality_review"
+      ]
+    },
+    {
+      "task_id": "NRB07",
+      "auto_points": 0,
+      "auto_percent": 0.0,
+      "review_points": null,
+      "total": null,
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "critical_failures": [
+        "group_leakage_inventory",
+        "frozen_group_partition",
+        "validation_only_selection",
+        "required_artifacts"
+      ],
+      "pending_items": [
+        "essential:evaluation_scope",
+        "quality_review"
+      ]
+    },
+    {
+      "task_id": "NRB08",
+      "auto_points": 0,
+      "auto_percent": 0.0,
+      "review_points": null,
+      "total": null,
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "critical_failures": [
+        "weighted_induced_norm",
+        "residual_certificate",
+        "counterexample_validity",
+        "required_artifacts"
+      ],
+      "pending_items": [
+        "essential:existence_uniqueness",
+        "essential:residual_bound_proof",
+        "essential:counterexample_explanation",
+        "quality_review"
+      ]
+    },
+    {
+      "task_id": "NRB09",
+      "auto_points": 0,
+      "auto_percent": 0.0,
+      "review_points": null,
+      "total": null,
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "critical_failures": [
+        "provenance",
+        "observation_geometry",
+        "model_geometry",
+        "residual_geometry",
+        "schematic_direction",
+        "required_artifacts"
+      ],
+      "pending_items": [
+        "essential:render_legibility",
+        "essential:schematic_correctness",
+        "essential:caption_fidelity",
+        "quality_review"
+      ]
+    },
+    {
+      "task_id": "NRB10",
+      "auto_points": 0,
+      "auto_percent": 0.0,
+      "review_points": null,
+      "total": null,
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "critical_failures": [
+        "integrity_model.txt",
+        "integrity_plot.svg",
+        "integrity_values.csv",
+        "evidence_current_arithmetic",
+        "evidence_legacy_summary",
+        "evidence_rendering",
+        "evidence_cross_platform",
+        "evidence_full_validation",
+        "handoff_revision",
+        "handoff_status",
+        "required_artifacts"
+      ],
+      "pending_items": [
+        "essential:english_fidelity",
+        "essential:handoff_actionable",
+        "essential:execution_honesty",
+        "quality_review"
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "task_id": "NRB01",
+      "seed": 0,
+      "case_hash": "a2603a05e4b362bd9b2f5d2dbabaa3a514e7c4d2f2104eb655beaf84ef5c5afa",
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": null,
+      "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+      "submission_hash": "8ab6d892366143c2eb16de52f7d90f025be9409fc7b3e909677bc8a7f1cf4493",
+      "answer_key_hash": "611f0be492ac43f015b0dafda778d5e519100e3521ac37c80d8d725198b9dadf",
+      "rubric_hash": "515e3cbc2e20bf8b235ed828d0ea706e387b63e502108eb2419f9c277b895a7e",
+      "review_policy_version": "essential-review-0.2.0",
+      "essential_review": [
+        {
+          "id": "evidence_scope",
+          "requirement": "贡献表述与直接证据、统计单位和适用范围一致，没有严重来源或因果误述。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 0,
+      "auto_max": 70,
+      "scored_max": 70.0,
+      "auto_percent": 0.0,
+      "coverage": 1.0,
+      "checks": [
+        {
+          "id": "C1_verdict",
+          "points": 3.0,
+          "passed": false,
+          "detail": "判断必须与直接证据及限定范围一致。",
+          "critical": false
+        },
+        {
+          "id": "C1_sources",
+          "points": 2.0,
+          "passed": false,
+          "detail": "来源必须覆盖直接证据；无关来源堆砌不计分。",
+          "critical": false
+        },
+        {
+          "id": "C2_verdict",
+          "points": 3.0,
+          "passed": false,
+          "detail": "判断必须与直接证据及限定范围一致。",
+          "critical": false
+        },
+        {
+          "id": "C2_sources",
+          "points": 2.0,
+          "passed": false,
+          "detail": "来源必须覆盖直接证据；无关来源堆砌不计分。",
+          "critical": false
+        },
+        {
+          "id": "C3_verdict",
+          "points": 3.0,
+          "passed": false,
+          "detail": "判断必须与直接证据及限定范围一致。",
+          "critical": false
+        },
+        {
+          "id": "C3_sources",
+          "points": 2.0,
+          "passed": false,
+          "detail": "来源必须覆盖直接证据；无关来源堆砌不计分。",
+          "critical": false
+        },
+        {
+          "id": "C4_verdict",
+          "points": 3.0,
+          "passed": false,
+          "detail": "判断必须与直接证据及限定范围一致。",
+          "critical": false
+        },
+        {
+          "id": "C4_sources",
+          "points": 2.0,
+          "passed": false,
+          "detail": "来源必须覆盖直接证据；无关来源堆砌不计分。",
+          "critical": false
+        },
+        {
+          "id": "C5_verdict",
+          "points": 3.0,
+          "passed": false,
+          "detail": "判断必须与直接证据及限定范围一致。",
+          "critical": false
+        },
+        {
+          "id": "C5_sources",
+          "points": 2.0,
+          "passed": false,
+          "detail": "来源必须覆盖直接证据；无关来源堆砌不计分。",
+          "critical": false
+        },
+        {
+          "id": "C6_verdict",
+          "points": 3.0,
+          "passed": false,
+          "detail": "判断必须与直接证据及限定范围一致。",
+          "critical": false
+        },
+        {
+          "id": "C6_sources",
+          "points": 2.0,
+          "passed": false,
+          "detail": "来源必须覆盖直接证据；无关来源堆砌不计分。",
+          "critical": false
+        },
+        {
+          "id": "current_source",
+          "points": 5.0,
+          "passed": false,
+          "detail": "采用当前有效更正记录。",
+          "critical": true
+        },
+        {
+          "id": "independent_units",
+          "points": 5.0,
+          "passed": false,
+          "detail": "独立设备数，而非技术重复次数。",
+          "critical": true
+        },
+        {
+          "id": "corrected_means",
+          "points": 5.0,
+          "passed": false,
+          "detail": "从当前表复算的两个设备均值。",
+          "critical": false
+        },
+        {
+          "id": "relative_reduction_percent",
+          "points": 5.0,
+          "passed": false,
+          "detail": "以独立配对设备和题定分母计算。",
+          "critical": false
+        },
+        {
+          "id": "paired_mean_difference_K",
+          "points": 5.0,
+          "passed": false,
+          "detail": "以独立配对设备和题定分母计算。",
+          "critical": false
+        },
+        {
+          "id": "paired_standard_error_K",
+          "points": 5.0,
+          "passed": false,
+          "detail": "以独立配对设备和题定分母计算。",
+          "critical": false
+        },
+        {
+          "id": "source_roles",
+          "points": 5.0,
+          "passed": false,
+          "detail": "区分原始更正、随机/观察、独立/再分析、仿真及二次来源。",
+          "critical": false
+        },
+        {
+          "id": "bounded_contribution",
+          "points": 5.0,
+          "passed": false,
+          "detail": "保留受限实证价值，同时守住真实证据强度。",
+          "critical": false
+        }
+      ],
+      "critical_failures": [
+        "current_source",
+        "independent_units",
+        "required_artifacts"
+      ],
+      "review_pending": true,
+      "review_points": null,
+      "total": null,
+      "status": "complete_auto",
+      "error": null,
+      "automatic_critical_failures": [
+        "current_source",
+        "independent_units",
+        "required_artifacts"
+      ],
+      "review_critical_failures": [],
+      "pending_items": [
+        "essential:evidence_scope",
+        "quality_review"
+      ],
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "qualification_threshold": 80,
+      "completion_judgement": "unreviewed",
+      "automatic_report_hash": "4f190383494c65af24d90be2b15aa92b55d67260fc4e5673fe5f6968dcd2429f",
+      "missing_artifacts": [
+        "reasoning.md"
+      ],
+      "delivery_complete": false,
+      "run_status": "completed",
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB02",
+      "seed": 0,
+      "case_hash": "ebe10a288f48ef84b5c9c3a93d1a6e3e8ff45b90365c783baf7f50ffcf88a43f",
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": null,
+      "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+      "submission_hash": "22213286c98455dd861e703b5dce544dfb04d0e998ba1701c83314881dd73823",
+      "answer_key_hash": "cb615924a5f54714aa3036c38141dc006732f7de220d56edb0e17943c70cfb2b",
+      "rubric_hash": "39025de0f6e100909469e534d50fa88365a738835a7793bdd32749745fa68cb5",
+      "review_policy_version": "essential-review-0.2.0",
+      "essential_review": [
+        {
+          "id": "equivalence_proof",
+          "requirement": "给出任意已知输入下的参数等价族论证，未以单次拟合代替可辨识性。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "intervention_conditions",
+          "requirement": "说明判别干预为何有效及需要保持不变的模型条件。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 0,
+      "auto_max": 70,
+      "scored_max": 70.0,
+      "auto_percent": 0.0,
+      "coverage": 1.0,
+      "checks": [
+        {
+          "id": "baseline_tau_s",
+          "points": 5.0,
+          "passed": false,
+          "detail": "从阶跃响应识别的输出组合。",
+          "critical": false
+        },
+        {
+          "id": "baseline_steady_gain_per_W",
+          "points": 5.0,
+          "passed": false,
+          "detail": "从阶跃响应识别的输出组合。",
+          "critical": false
+        },
+        {
+          "id": "baseline_offset",
+          "points": 5.0,
+          "passed": false,
+          "detail": "从阶跃响应识别的输出组合。",
+          "critical": false
+        },
+        {
+          "id": "structural_rank",
+          "points": 5.0,
+          "passed": false,
+          "detail": "原四未知量仅有三个独立响应组合。",
+          "critical": true
+        },
+        {
+          "id": "scale_symmetry",
+          "points": 5.0,
+          "passed": false,
+          "detail": "保持输出的整族尺度变换。",
+          "critical": true
+        },
+        {
+          "id": "individual_parameters",
+          "points": 5.0,
+          "passed": false,
+          "detail": "基线不能分别识别 C、G 和传感器增益。",
+          "critical": false
+        },
+        {
+          "id": "discriminating_intervention",
+          "points": 5.0,
+          "passed": false,
+          "detail": "额外独立绝对尺度约束才能破退化。",
+          "critical": true
+        },
+        {
+          "id": "intervention_rank_comparison",
+          "points": 5.0,
+          "passed": false,
+          "detail": "逐项区分结构信息增加与重复/加密采样。",
+          "critical": false
+        },
+        {
+          "id": "recovered_C_J_per_K",
+          "points": 5.0,
+          "passed": false,
+          "detail": "由两个时间常数和已知附加热容恢复。",
+          "critical": false
+        },
+        {
+          "id": "recovered_G_W_per_K",
+          "points": 5.0,
+          "passed": false,
+          "detail": "由两个时间常数和已知附加热容恢复。",
+          "critical": false
+        },
+        {
+          "id": "recovered_sensor_gain",
+          "points": 5.0,
+          "passed": false,
+          "detail": "由两个时间常数和已知附加热容恢复。",
+          "critical": false
+        },
+        {
+          "id": "recovered_intervention_tau_s",
+          "points": 5.0,
+          "passed": false,
+          "detail": "由两个时间常数和已知附加热容恢复。",
+          "critical": false
+        },
+        {
+          "id": "pulse_prediction_0",
+          "points": 5.0,
+          "passed": false,
+          "detail": "原热容配置的新功率脉冲；传感器偏移不随冷却衰减。",
+          "critical": false
+        },
+        {
+          "id": "pulse_prediction_1",
+          "points": 5.0,
+          "passed": false,
+          "detail": "原热容配置的新功率脉冲；传感器偏移不随冷却衰减。",
+          "critical": false
+        }
+      ],
+      "critical_failures": [
+        "structural_rank",
+        "scale_symmetry",
+        "discriminating_intervention",
+        "required_artifacts"
+      ],
+      "review_pending": true,
+      "review_points": null,
+      "total": null,
+      "status": "complete_auto",
+      "error": null,
+      "automatic_critical_failures": [
+        "structural_rank",
+        "scale_symmetry",
+        "discriminating_intervention",
+        "required_artifacts"
+      ],
+      "review_critical_failures": [],
+      "pending_items": [
+        "essential:equivalence_proof",
+        "essential:intervention_conditions",
+        "quality_review"
+      ],
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "qualification_threshold": 80,
+      "completion_judgement": "unreviewed",
+      "automatic_report_hash": "1923143b657cd4d8fed3b34f1d9bdf36c4245792b9eb5a406ee711124ca15b36",
+      "missing_artifacts": [
+        "reasoning.md"
+      ],
+      "delivery_complete": false,
+      "run_status": "completed",
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB03",
+      "seed": 0,
+      "case_hash": "323f5f039e5d306bea9480071108b303e46003b5e24f0b206dc7acebf33758ba",
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": null,
+      "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+      "submission_hash": "b2a6a2a06aa1076420ad85998e14fde4903bf01ebdbda8873cd07e898dd5039e",
+      "answer_key_hash": "9b6fe34021e17927ef884fc47e00191a5ab08c4f731e93a9a7ba8b0fdfaa6758",
+      "rubric_hash": "304369c06ee312977a2c12b039229fe1d713c6a90cedb22bfe92c88e7b6d7c04",
+      "review_policy_version": "essential-review-0.2.0",
+      "essential_review": [
+        {
+          "id": "search_reproduced",
+          "requirement": "按公开 solve(problem) 入口实际执行必交搜索代码，结果与提交和精确最优层级一致；须有绑定的执行回执。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "optimality_explanation",
+          "requirement": "搜索、全部约束与最优性论证可复查，和交付代码相符。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 0,
+      "auto_max": 70,
+      "scored_max": 70.0,
+      "auto_percent": 0.0,
+      "coverage": 1.0,
+      "checks": [
+        {
+          "id": "integer_allocation",
+          "points": 5.0,
+          "passed": false,
+          "detail": "每水平一个真正的非负整数次数。",
+          "critical": false
+        },
+        {
+          "id": "replicate_bounds",
+          "points": 5.0,
+          "passed": false,
+          "detail": "分配符合每水平上限。",
+          "critical": false
+        },
+        {
+          "id": "all_design_constraints",
+          "points": 10.0,
+          "passed": false,
+          "detail": "预算、总数、中心、两侧与端点约束全部满足。",
+          "critical": true
+        },
+        {
+          "id": "reported_cost",
+          "points": 5.0,
+          "passed": false,
+          "detail": "报告实际分配的总成本。",
+          "critical": false
+        },
+        {
+          "id": "reported_count",
+          "points": 5.0,
+          "passed": false,
+          "detail": "报告实际分配的总测量次数。",
+          "critical": false
+        },
+        {
+          "id": "scenario_variance_1",
+          "points": 5.0,
+          "passed": false,
+          "detail": "核验所交分配在该情景的含截距斜率方差。",
+          "critical": false
+        },
+        {
+          "id": "scenario_variance_2",
+          "points": 5.0,
+          "passed": false,
+          "detail": "核验所交分配在该情景的含截距斜率方差。",
+          "critical": false
+        },
+        {
+          "id": "scenario_variance_3",
+          "points": 5.0,
+          "passed": false,
+          "detail": "核验所交分配在该情景的含截距斜率方差。",
+          "critical": false
+        },
+        {
+          "id": "minimax_objective",
+          "points": 5.0,
+          "passed": false,
+          "detail": "取三个情景的最大值及其实际编号。",
+          "critical": false
+        },
+        {
+          "id": "global_optimality",
+          "points": 10.0,
+          "passed": false,
+          "detail": "实际提交的可行分配达到精确全局最优；显示容差不扩大最优集合。",
+          "critical": true
+        },
+        {
+          "id": "strict_runner_up",
+          "points": 5.0,
+          "passed": false,
+          "detail": "严格次优分配、值与最优差共同一致；并列最优不算严格次优。",
+          "critical": true
+        },
+        {
+          "id": "feasible_search_count",
+          "points": 5.0,
+          "passed": false,
+          "detail": "完整有限可行域的向量计数。",
+          "critical": false
+        }
+      ],
+      "critical_failures": [
+        "all_design_constraints",
+        "global_optimality",
+        "strict_runner_up",
+        "required_artifacts",
+        "execution:solve_reproduction"
+      ],
+      "review_pending": true,
+      "review_points": null,
+      "total": null,
+      "status": "complete_auto",
+      "error": null,
+      "automatic_critical_failures": [
+        "all_design_constraints",
+        "global_optimality",
+        "strict_runner_up",
+        "required_artifacts"
+      ],
+      "review_critical_failures": [],
+      "pending_items": [
+        "essential:search_reproduced",
+        "essential:optimality_explanation",
+        "quality_review"
+      ],
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "qualification_threshold": 80,
+      "completion_judgement": "unreviewed",
+      "automatic_report_hash": "ef3c98564187ada1f7adf7de30159f6e6a5b00bbeeda9cb40f900f13907c8778",
+      "missing_artifacts": [
+        "reasoning.md",
+        "solve.py"
+      ],
+      "delivery_complete": false,
+      "mandatory_execution": [
+        {
+          "id": "solve_reproduction",
+          "task_id": "NRB03",
+          "case_hash": "323f5f039e5d306bea9480071108b303e46003b5e24f0b206dc7acebf33758ba",
+          "submission_hash": "b2a6a2a06aa1076420ad85998e14fde4903bf01ebdbda8873cd07e898dd5039e",
+          "source_hash": null,
+          "input_hash": "20a7ce3cab04ef5fa71338dcc4c72d5e4ba12a724c1022ee32ba6059bd52f107",
+          "result_hash": null,
+          "execution": "none",
+          "status": "fail",
+          "passed": false,
+          "detail": "Missing mandatory solve.py source",
+          "checks": [],
+          "evaluator_identity": {
+            "benchmark_version": "0.2.0",
+            "evaluation_schema_version": "2.0",
+            "evaluator_commit": null,
+            "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+            "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+          }
+        }
+      ],
+      "run_status": "completed",
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB04",
+      "seed": 0,
+      "case_hash": "063005adc3aa54382ad0ace154bb6a191678151cac1487a02963948ad7310853",
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": null,
+      "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+      "submission_hash": "d4bfbf8392ae6bcd61de4af30b9edf91023f03638117f10cde4c25cedd5ca6ea",
+      "answer_key_hash": "466349f1a63989d85638f1916edf832f943e31b01509539fd8c97fa5e5834012",
+      "rubric_hash": "2fc10e13a3620c044a9793d1adb5410e9537cd51cca6c2545be136e3762a5094",
+      "review_policy_version": "essential-review-0.2.0",
+      "essential_review": [
+        {
+          "id": "conservation_explanation",
+          "requirement": "守恒、界面和边界说明与交付实现一致，无破坏核心科学含义的误述。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 0,
+      "auto_max": 70,
+      "scored_max": 70.0,
+      "auto_percent": 0.0,
+      "coverage": 1.0,
+      "checks": [
+        {
+          "id": "visible_temperature",
+          "points": 8.0,
+          "passed": false,
+          "detail": "可见输入的最终单元温度。",
+          "critical": false
+        },
+        {
+          "id": "visible_face_flux",
+          "points": 4.0,
+          "passed": false,
+          "detail": "最终状态面通量；并非最后一次更新前的旧通量。",
+          "critical": false
+        },
+        {
+          "id": "visible_initial_energy",
+          "points": 4.0,
+          "passed": false,
+          "detail": "按体积热容与单元宽度积分。",
+          "critical": false
+        },
+        {
+          "id": "visible_energy_balance",
+          "points": 4.0,
+          "passed": false,
+          "detail": "最终热量及累积外部输入。",
+          "critical": true
+        },
+        {
+          "id": "insulated_nonuniform",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": true
+        },
+        {
+          "id": "discontinuous_conductivity",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "flux_source_capacity",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": true
+        },
+        {
+          "id": "two_temperature_boundaries",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "mixed_boundary",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "one_cell_flux",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "zero_step_flux_at_initial_state",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "reject_nonincreasing_edges",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "reject_invalid_capacity",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "reject_unstable_step",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        }
+      ],
+      "critical_failures": [
+        "visible_energy_balance",
+        "insulated_nonuniform",
+        "flux_source_capacity",
+        "required_artifacts"
+      ],
+      "review_pending": true,
+      "review_points": null,
+      "total": null,
+      "status": "complete_auto",
+      "error": null,
+      "automatic_critical_failures": [
+        "visible_energy_balance",
+        "insulated_nonuniform",
+        "flux_source_capacity",
+        "required_artifacts"
+      ],
+      "review_critical_failures": [],
+      "pending_items": [
+        "essential:conservation_explanation",
+        "quality_review"
+      ],
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "qualification_threshold": 80,
+      "completion_judgement": "unreviewed",
+      "automatic_report_hash": "e1266dd546614d6c21c8d834f7a165172d85828ae901bc0c2942bd7446955440",
+      "missing_artifacts": [
+        "reasoning.md",
+        "solution.py"
+      ],
+      "delivery_complete": false,
+      "run_status": "completed",
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB05",
+      "seed": 0,
+      "case_hash": "ef2759885f62e28b30ff7b5aa25b36099154178a79b29b3db3bbb3e2c653b40b",
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": null,
+      "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+      "submission_hash": "1dee220565f7d4b6dc68210d0df96fa67d1803d7b3c02d9eabadeb01d2ebe25f",
+      "answer_key_hash": "aaee67f519c92f416c2dbc54b01ceb27f701450bdf04d84d30e7186a98b836ac",
+      "rubric_hash": "d6915eb2797ed9d05432ae26bbeda5047a225a89b8a79a5862db029bca835945",
+      "review_policy_version": "essential-review-0.2.0",
+      "essential_review": [
+        {
+          "id": "lifecycle_explanation",
+          "requirement": "试探、接受、拒步回滚及终止语义完整且与代码一致。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 0,
+      "auto_max": 70,
+      "scored_max": 70.0,
+      "auto_percent": 0.0,
+      "coverage": 1.0,
+      "checks": [
+        {
+          "id": "visible_final_state",
+          "points": 5.0,
+          "passed": false,
+          "detail": "按高精度状态递推及 binary64 调度语义核对可见结果。",
+          "critical": false
+        },
+        {
+          "id": "visible_status_and_counts",
+          "points": 5.0,
+          "passed": false,
+          "detail": "按高精度状态递推及 binary64 调度语义核对可见结果。",
+          "critical": true
+        },
+        {
+          "id": "visible_committed_history",
+          "points": 5.0,
+          "passed": false,
+          "detail": "按高精度状态递推及 binary64 调度语义核对可见结果。",
+          "critical": false
+        },
+        {
+          "id": "visible_attempt_trace",
+          "points": 5.0,
+          "passed": false,
+          "detail": "按高精度状态递推及 binary64 调度语义核对可见结果。",
+          "critical": false
+        },
+        {
+          "id": "vector_rejection_and_rollback",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": true
+        },
+        {
+          "id": "scalar_negative_state",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "zero_mode_and_vector_floors",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "finite_minimum_step_failure",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": true
+        },
+        {
+          "id": "final_clip_below_minimum",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "attempt_budget_preserves_last_accepted_state",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "zero_horizon",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "failed_clipped_endpoint_is_not_committed",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": true
+        },
+        {
+          "id": "reject_zero_absolute_tolerance",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        },
+        {
+          "id": "reject_vector_shape_mismatch",
+          "points": 5.0,
+          "passed": false,
+          "detail": "缺少 solution.py。",
+          "critical": false
+        }
+      ],
+      "critical_failures": [
+        "visible_status_and_counts",
+        "vector_rejection_and_rollback",
+        "finite_minimum_step_failure",
+        "failed_clipped_endpoint_is_not_committed",
+        "required_artifacts"
+      ],
+      "review_pending": true,
+      "review_points": null,
+      "total": null,
+      "status": "complete_auto",
+      "error": null,
+      "automatic_critical_failures": [
+        "visible_status_and_counts",
+        "vector_rejection_and_rollback",
+        "finite_minimum_step_failure",
+        "failed_clipped_endpoint_is_not_committed",
+        "required_artifacts"
+      ],
+      "review_critical_failures": [],
+      "pending_items": [
+        "essential:lifecycle_explanation",
+        "quality_review"
+      ],
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "qualification_threshold": 80,
+      "completion_judgement": "unreviewed",
+      "automatic_report_hash": "5ca6fa5ffcd47769363cea9405c38a13fb27b2ed4c4c5d3894c8fd99c2589413",
+      "missing_artifacts": [
+        "reasoning.md",
+        "solution.py"
+      ],
+      "delivery_complete": false,
+      "run_status": "completed",
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB06",
+      "seed": 0,
+      "case_hash": "f3f79e408f623255a2c62ba48f1eb5b87f0a8670ce381f42be8b34f02641ce6a",
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": null,
+      "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+      "submission_hash": "cd60b74c4a5f5be29a85c1f801c15cb4f26f7b67869a335f572580bfc8682503",
+      "answer_key_hash": "28f157414797aed78aefe6534c702de1e450dcbfc78cc14014144093ae6b2658",
+      "rubric_hash": "1e5bc434bf1311fa6a2822f9d083e07ac2c758022c4758bdb4308229641d7e6c",
+      "review_policy_version": "essential-review-0.2.0",
+      "essential_review": [
+        {
+          "id": "uncertainty_interpretation",
+          "requirement": "量纲、已知绝对方差和相关项的解释正确，无严重不确定度或频谱定义误述。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 0,
+      "auto_max": 70,
+      "scored_max": 70.0,
+      "auto_percent": 0.0,
+      "coverage": 1.0,
+      "checks": [
+        {
+          "id": "quality_flag_selection",
+          "points": 5.0,
+          "passed": false,
+          "detail": "仅使用有效校准行，并保留文件顺序。",
+          "critical": false
+        },
+        {
+          "id": "weighted_calibration",
+          "points": 10.0,
+          "passed": false,
+          "detail": "WLS 系数与 mV 到 V 转换。",
+          "critical": false
+        },
+        {
+          "id": "absolute_covariance",
+          "points": 10.0,
+          "passed": false,
+          "detail": "绝对已知权重的协方差，不按约化卡方缩放。",
+          "critical": true
+        },
+        {
+          "id": "fit_diagnostic",
+          "points": 5.0,
+          "passed": false,
+          "detail": "残差卡方和自由度单独报告。",
+          "critical": false
+        },
+        {
+          "id": "inverse_calibration",
+          "points": 5.0,
+          "passed": false,
+          "detail": "样品均值的逆校准。",
+          "critical": false
+        },
+        {
+          "id": "independent_variance_terms",
+          "points": 5.0,
+          "passed": false,
+          "detail": "均值、显示量化和参数方差贡献。",
+          "critical": false
+        },
+        {
+          "id": "covariance_variance_term",
+          "points": 5.0,
+          "passed": false,
+          "detail": "正确保留带符号的参数协方差贡献。",
+          "critical": true
+        },
+        {
+          "id": "combined_uncertainty",
+          "points": 5.0,
+          "passed": false,
+          "detail": "标准不确定度与指定 k=2 扩展值。",
+          "critical": false
+        },
+        {
+          "id": "asd_to_psd",
+          "points": 8.0,
+          "passed": false,
+          "detail": "小量专用绝对容差，零谱不能误获分。",
+          "critical": true
+        },
+        {
+          "id": "partial_band_integral",
+          "points": 6.0,
+          "passed": false,
+          "detail": "在线性 PSD 插值下积分完整与部分区间。",
+          "critical": false
+        },
+        {
+          "id": "rms_and_input_referred_noise",
+          "points": 6.0,
+          "passed": false,
+          "detail": "平方根及除以校准灵敏度。",
+          "critical": false
+        }
+      ],
+      "critical_failures": [
+        "absolute_covariance",
+        "covariance_variance_term",
+        "asd_to_psd",
+        "required_artifacts"
+      ],
+      "review_pending": true,
+      "review_points": null,
+      "total": null,
+      "status": "complete_auto",
+      "error": null,
+      "automatic_critical_failures": [
+        "absolute_covariance",
+        "covariance_variance_term",
+        "asd_to_psd",
+        "required_artifacts"
+      ],
+      "review_critical_failures": [],
+      "pending_items": [
+        "essential:uncertainty_interpretation",
+        "quality_review"
+      ],
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "qualification_threshold": 80,
+      "completion_judgement": "unreviewed",
+      "automatic_report_hash": "ea86aa762c3a4095a8381dfc7084b3a11b468cf238e7695ef62eecd4e6fd729a",
+      "missing_artifacts": [
+        "reasoning.md"
+      ],
+      "delivery_complete": false,
+      "run_status": "completed",
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB07",
+      "seed": 0,
+      "case_hash": "41aeb4a277bf98862a595768200c2fc8326881dc5e05c432ad567e514940533d",
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": null,
+      "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+      "submission_hash": "71237d608d0545846d3cf53db9c4cc8e45bbfa98ab69b8d71eeb5eba17f94782",
+      "answer_key_hash": "54ed7db6778745969ee52cee85c93800d270e7a4935194c5dfed4f4f8f590d80",
+      "rubric_hash": "2b49c4a50be492104aed1e79d9f62647fdcbbf995d58bbf90e4027ed100f8369",
+      "review_policy_version": "essential-review-0.2.0",
+      "essential_review": [
+        {
+          "id": "evaluation_scope",
+          "requirement": "按独立机器与验证选模解释结果，准确区分合成预测评测与真实训练验证。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 0,
+      "auto_max": 70,
+      "scored_max": 70.0,
+      "auto_percent": 0.0,
+      "coverage": 1.0,
+      "checks": [
+        {
+          "id": "group_leakage_inventory",
+          "points": 10.0,
+          "passed": false,
+          "detail": "按原始 proposed_split 精确列出跨划分机器。",
+          "critical": true
+        },
+        {
+          "id": "split_machine_coverage",
+          "points": 5.0,
+          "passed": false,
+          "detail": "每台机器恰有一个输出归属，无缺失或多余机器。",
+          "critical": false
+        },
+        {
+          "id": "frozen_group_partition",
+          "points": 5.0,
+          "passed": false,
+          "detail": "按预先给定类内排序划分，所有重复读数共享组归属。",
+          "critical": true
+        },
+        {
+          "id": "validation_only_selection",
+          "points": 5.0,
+          "passed": false,
+          "detail": "选择按验证 macro-F1；构造中 accuracy 与测试重选会给出不同决策。",
+          "critical": true
+        },
+        {
+          "id": "validation_macro_f1",
+          "points": 5.0,
+          "passed": false,
+          "detail": "两个候选的验证集宏平均 F1。",
+          "critical": false
+        },
+        {
+          "id": "test_confusion_orientation",
+          "points": 10.0,
+          "passed": false,
+          "detail": "所选模型的测试混淆矩阵，真实标签为行。",
+          "critical": false
+        },
+        {
+          "id": "test_class_metrics",
+          "points": 10.0,
+          "passed": false,
+          "detail": "逐类 precision、recall 和 F1，固定三类。",
+          "critical": false
+        },
+        {
+          "id": "test_aggregates",
+          "points": 5.0,
+          "passed": false,
+          "detail": "区分总准确率、宏 F1 与均衡准确率。",
+          "critical": false
+        },
+        {
+          "id": "cluster_bootstrap",
+          "points": 10.0,
+          "passed": false,
+          "detail": "整组重采样、重复次数、ddof=1 和明确分位数定义。",
+          "critical": false
+        },
+        {
+          "id": "independent_sample_size",
+          "points": 5.0,
+          "passed": false,
+          "detail": "分别报告测试读数数目和独立机器数。",
+          "critical": false
+        }
+      ],
+      "critical_failures": [
+        "group_leakage_inventory",
+        "frozen_group_partition",
+        "validation_only_selection",
+        "required_artifacts"
+      ],
+      "review_pending": true,
+      "review_points": null,
+      "total": null,
+      "status": "complete_auto",
+      "error": null,
+      "automatic_critical_failures": [
+        "group_leakage_inventory",
+        "frozen_group_partition",
+        "validation_only_selection",
+        "required_artifacts"
+      ],
+      "review_critical_failures": [],
+      "pending_items": [
+        "essential:evaluation_scope",
+        "quality_review"
+      ],
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "qualification_threshold": 80,
+      "completion_judgement": "unreviewed",
+      "automatic_report_hash": "7f895731c665e44e592d851a473edbe88cae2f0d6a73a44452e3612f733c44c1",
+      "missing_artifacts": [
+        "reasoning.md"
+      ],
+      "delivery_complete": false,
+      "run_status": "completed",
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB08",
+      "seed": 0,
+      "case_hash": "54527a26d112611e8e9c80ac8fb51592add5042a993831c05d33a802384e0779",
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": null,
+      "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+      "submission_hash": "51bed4061588a63e7d69ec1984b2a4b61e2fb7e0c74dfd97656eb402bbdaf030",
+      "answer_key_hash": "317ec7c4675a1a06cbd80b30525019c1e6d50a90ad188fdd77ab9e3a6e01b251",
+      "rubric_hash": "4ca1cda51c0ee6993b2ad5a1e9e124e7a5fab45bf7c43343335694015c0b0ff8",
+      "review_policy_version": "essential-review-0.2.0",
+      "essential_review": [
+        {
+          "id": "existence_uniqueness",
+          "requirement": "完整证明存在唯一性，明确空间、范数和收缩条件。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "residual_bound_proof",
+          "requirement": "推导一般残差误差界，范数、常数和不等式方向一致。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "counterexample_explanation",
+          "requirement": "反例满足所检验前提并确实推翻指定结论，有可核查解释。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 0,
+      "auto_max": 70,
+      "scored_max": 70.0,
+      "auto_percent": 0.0,
+      "coverage": 1.0,
+      "checks": [
+        {
+          "id": "weighted_induced_norm",
+          "points": 10.0,
+          "passed": false,
+          "detail": "精确加权诱导范数，而非谱半径或普通范数。",
+          "critical": true
+        },
+        {
+          "id": "ordinary_induced_norm",
+          "points": 5.0,
+          "passed": false,
+          "detail": "普通无穷范数的绝对行和最大值。",
+          "critical": false
+        },
+        {
+          "id": "fixed_point",
+          "points": 10.0,
+          "passed": false,
+          "detail": "求解题给十进制矩阵的 (I-A)x=b。",
+          "critical": false
+        },
+        {
+          "id": "residual_vector",
+          "points": 5.0,
+          "passed": false,
+          "detail": "方向必须为 F(x_hat)-x_hat。",
+          "critical": false
+        },
+        {
+          "id": "residual_norm",
+          "points": 5.0,
+          "passed": false,
+          "detail": "指定权重下的残差范数。",
+          "critical": false
+        },
+        {
+          "id": "residual_certificate",
+          "points": 10.0,
+          "passed": false,
+          "detail": "同一加权范数下的 r/(1-q) 解析上界。",
+          "critical": true
+        },
+        {
+          "id": "actual_error",
+          "points": 5.0,
+          "passed": false,
+          "detail": "区分实际误差与其保守上界。",
+          "critical": false
+        },
+        {
+          "id": "counterexample_validity",
+          "points": 10.0,
+          "passed": false,
+          "detail": "从所交矩阵重新验证谱半径条件及被反驳的误差不等式。",
+          "critical": true
+        },
+        {
+          "id": "counterexample_calculations",
+          "points": 5.0,
+          "passed": false,
+          "detail": "反例的特征值、固定点、残差及实际误差均由输入重算。",
+          "critical": false
+        },
+        {
+          "id": "logical_claims",
+          "points": 5.0,
+          "passed": false,
+          "detail": "区分固定点唯一、指定范数收缩及普适谱半径替换命题。",
+          "critical": false
+        }
+      ],
+      "critical_failures": [
+        "weighted_induced_norm",
+        "residual_certificate",
+        "counterexample_validity",
+        "required_artifacts"
+      ],
+      "review_pending": true,
+      "review_points": null,
+      "total": null,
+      "status": "complete_auto",
+      "error": null,
+      "automatic_critical_failures": [
+        "weighted_induced_norm",
+        "residual_certificate",
+        "counterexample_validity",
+        "required_artifacts"
+      ],
+      "review_critical_failures": [],
+      "pending_items": [
+        "essential:existence_uniqueness",
+        "essential:residual_bound_proof",
+        "essential:counterexample_explanation",
+        "quality_review"
+      ],
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "qualification_threshold": 80,
+      "completion_judgement": "unreviewed",
+      "automatic_report_hash": "63b0c6cab41196758586da86d507cc2a709910a468aafdca73d3fd5f5b50107c",
+      "missing_artifacts": [
+        "reasoning.md"
+      ],
+      "delivery_complete": false,
+      "run_status": "completed",
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB09",
+      "seed": 0,
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": null,
+      "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+      "submission_hash": "ba7c87089d601c20653440782ea9f7367fd820e2c5a8c67bf1e5cbe6b89c2f9f",
+      "answer_key_hash": "d71d60ca33ec621d1b999809ec67b240faee3f4a0d2dd5045e994ed8d1515def",
+      "rubric_hash": "59f9fa6dd8f040ed2e54bc42d872bdd6e5733cb3ecc429e7d91750cf63f64219",
+      "review_policy_version": "essential-review-0.2.0",
+      "essential_review": [
+        {
+          "id": "render_legibility",
+          "requirement": "实际查看绑定的渲染图，核对整图与180mm等效展示可读，无关键遮挡或近乎不可见内容。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "schematic_correctness",
+          "requirement": "示意部件、连接和箭头正确表达本题经典模型。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "caption_fidelity",
+          "requirement": "图注与实际数据、合成来源、给定模型和残差一致。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 0,
+      "auto_max": 70,
+      "scored_max": 70.0,
+      "auto_percent": 0.0,
+      "coverage": 1.0,
+      "checks": [
+        {
+          "id": "metrics",
+          "points": 10.0,
+          "passed": false,
+          "detail": "",
+          "critical": false
+        },
+        {
+          "id": "provenance",
+          "points": 5.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "editable_svg",
+          "points": 5.0,
+          "passed": false,
+          "detail": "SVG syntax, editable text, no scripts/bitmaps/external resources",
+          "critical": false
+        },
+        {
+          "id": "observation_geometry",
+          "points": 15.0,
+          "passed": false,
+          "detail": "CSV coordinates and provisional minimum diameter 0.2 mm/effective opacity 0.3 at 180 mm",
+          "critical": true
+        },
+        {
+          "id": "model_geometry",
+          "points": 10.0,
+          "passed": false,
+          "detail": "CSV model, positive effective stroke; provisional minimum 0.08 mm at 180 mm",
+          "critical": true
+        },
+        {
+          "id": "residual_geometry",
+          "points": 10.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "legend_and_identity",
+          "points": 5.0,
+          "passed": false,
+          "detail": "",
+          "critical": false
+        },
+        {
+          "id": "schematic_direction",
+          "points": 5.0,
+          "passed": false,
+          "detail": "Nonempty on-canvas schematic and a painted marker; connections require actual review",
+          "critical": true
+        },
+        {
+          "id": "labels_and_layout",
+          "points": 5.0,
+          "passed": false,
+          "detail": "Required labels have on-canvas approximate text bounds; actual glyph layout/occlusion requires rendering",
+          "critical": false
+        }
+      ],
+      "critical_failures": [
+        "provenance",
+        "observation_geometry",
+        "model_geometry",
+        "residual_geometry",
+        "schematic_direction",
+        "required_artifacts"
+      ],
+      "review_pending": true,
+      "review_points": null,
+      "total": null,
+      "status": "complete_auto",
+      "error": null,
+      "automatic_critical_failures": [
+        "provenance",
+        "observation_geometry",
+        "model_geometry",
+        "residual_geometry",
+        "schematic_direction",
+        "required_artifacts"
+      ],
+      "review_critical_failures": [],
+      "pending_items": [
+        "essential:render_legibility",
+        "essential:schematic_correctness",
+        "essential:caption_fidelity",
+        "quality_review"
+      ],
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "qualification_threshold": 80,
+      "completion_judgement": "unreviewed",
+      "automatic_report_hash": "f02ce0a0ea4314dae6fcb1f642c1ce6409ac4d8a8cf47e1928f31f46795eec28",
+      "missing_artifacts": [
+        "figure.svg",
+        "caption.md"
+      ],
+      "delivery_complete": false,
+      "run_status": "completed",
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB10",
+      "seed": 0,
+      "case_hash": "90ec4b7fa5c11c4015cd60b0c52cba8d02dd167fdf12b3ee8148af75e8dc9316",
+      "benchmark_version": "0.2.0",
+      "evaluation_schema_version": "2.0",
+      "evaluator_commit": null,
+      "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+      "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1",
+      "submission_hash": "a18b5c5ca64278be70931696c75875f82cd351e56124cb0df1c590590e7354de",
+      "answer_key_hash": "c63c83967717e225b7f1af295d956628c78d101e93ebda719784bcce26e1636a",
+      "rubric_hash": "ee5a0bd8f34b839e3a0f007e6f6ab94ace8702d9b8f432ca30250d4c88848eb3",
+      "review_policy_version": "essential-review-0.2.0",
+      "essential_review": [
+        {
+          "id": "english_fidelity",
+          "requirement": "英文正文连贯可用，忠实保留给定证据强度、数值与结论范围。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "handoff_actionable",
+          "requirement": "交接清楚列明当前版本、已完成与待办工作，他人可据此接续。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        },
+        {
+          "id": "execution_honesty",
+          "requirement": "不把所提供日志冒称为本次实际执行，不虚构检查、平台或授权。",
+          "outcome": "unassessed",
+          "evidence": "",
+          "rationale": ""
+        }
+      ],
+      "auto_points": 0,
+      "auto_max": 70,
+      "scored_max": 70.0,
+      "auto_percent": 0.0,
+      "coverage": 1.0,
+      "checks": [
+        {
+          "id": "integrity_model.txt",
+          "points": 5.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "integrity_plot.svg",
+          "points": 5.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "integrity_values.csv",
+          "points": 5.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "sample_count",
+          "points": 2.0,
+          "passed": false,
+          "detail": "",
+          "critical": false
+        },
+        {
+          "id": "rmse",
+          "points": 4.0,
+          "passed": false,
+          "detail": "",
+          "critical": false
+        },
+        {
+          "id": "max_error",
+          "points": 4.0,
+          "passed": false,
+          "detail": "",
+          "critical": false
+        },
+        {
+          "id": "evidence_current_arithmetic",
+          "points": 3.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "evidence_legacy_summary",
+          "points": 3.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "evidence_rendering",
+          "points": 3.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "evidence_cross_platform",
+          "points": 3.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "evidence_full_validation",
+          "points": 3.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "claim_C1",
+          "points": 2.5,
+          "passed": false,
+          "detail": "",
+          "critical": false
+        },
+        {
+          "id": "claim_C2",
+          "points": 2.5,
+          "passed": false,
+          "detail": "",
+          "critical": false
+        },
+        {
+          "id": "claim_C3",
+          "points": 2.5,
+          "passed": false,
+          "detail": "",
+          "critical": false
+        },
+        {
+          "id": "claim_C4",
+          "points": 2.5,
+          "passed": false,
+          "detail": "",
+          "critical": false
+        },
+        {
+          "id": "handoff_revision",
+          "points": 5.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "handoff_status",
+          "points": 5.0,
+          "passed": false,
+          "detail": "",
+          "critical": true
+        },
+        {
+          "id": "complete_artifacts",
+          "points": 5.0,
+          "passed": false,
+          "detail": "Presence only; scientific/textual quality is reviewed separately",
+          "critical": false
+        },
+        {
+          "id": "artifact_byte_hashes",
+          "points": 5.0,
+          "passed": false,
+          "detail": "",
+          "critical": false
+        }
+      ],
+      "critical_failures": [
+        "integrity_model.txt",
+        "integrity_plot.svg",
+        "integrity_values.csv",
+        "evidence_current_arithmetic",
+        "evidence_legacy_summary",
+        "evidence_rendering",
+        "evidence_cross_platform",
+        "evidence_full_validation",
+        "handoff_revision",
+        "handoff_status",
+        "required_artifacts"
+      ],
+      "review_pending": true,
+      "review_points": null,
+      "total": null,
+      "status": "complete_auto",
+      "error": null,
+      "automatic_critical_failures": [
+        "integrity_model.txt",
+        "integrity_plot.svg",
+        "integrity_values.csv",
+        "evidence_current_arithmetic",
+        "evidence_legacy_summary",
+        "evidence_rendering",
+        "evidence_cross_platform",
+        "evidence_full_validation",
+        "handoff_revision",
+        "handoff_status",
+        "required_artifacts"
+      ],
+      "review_critical_failures": [],
+      "pending_items": [
+        "essential:english_fidelity",
+        "essential:handoff_actionable",
+        "essential:execution_honesty",
+        "quality_review"
+      ],
+      "completion_status": "failed",
+      "quality_qualified": false,
+      "qualification_threshold": 80,
+      "completion_judgement": "unreviewed",
+      "automatic_report_hash": "c5fa52a91723985a204932a8b722cd28e41aa2ebd87c8511827c21776003a008",
+      "missing_artifacts": [
+        "audit.md",
+        "revised_excerpt.md",
+        "reproduce.md"
+      ],
+      "delivery_complete": false,
+      "run_status": "completed",
+      "protocol_violation": null
+    }
+  ],
+  "model_label": "offline-empty-control",
+  "harness_label": "native-cli",
+  "track": "agent-diagnostic",
+  "metadata": {},
+  "attempts": [
+    {
+      "task_id": "NRB01",
+      "seed": 0,
+      "candidate_sha256": "6dcb68bb60cead08e8cc93ef88abf478766acdbd37efc7b2c6e9ca2e48c89708",
+      "prompt_sha256": "ad9ba6c101f5cb854f16eb72bc16d27ef2b6860139675e76312d414471209d2b",
+      "command_argv": [
+        "python",
+        "-c",
+        "\"\"\"Offline delivery-chain check only: deliberately scores zero, no AI model.\"\"\"\nimport json\nfrom pathlib import Path\n\nmanifest = json.loads(Path(\"packet_manifest.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"task_id\": manifest[\"task_id\"], \"answer\": {}, \"artifacts\": {}}))\n"
+      ],
+      "workdir": "/tmp/nrb-v02-native-portable/NRB01",
+      "logs_dir": "/tmp/nrb-v02-native-portable/NRB01.evaluator",
+      "timeout_seconds": 30.0,
+      "stdout_format": "plain",
+      "execution_boundary": "host_process_no_security_isolation",
+      "started_utc": "2026-10-17T13:10:10.537035+00:00",
+      "status": "completed",
+      "infra_error": null,
+      "output_error": null,
+      "envelope_error": null,
+      "exit_code": 0,
+      "usage": null,
+      "cost_usd": null,
+      "cost_kind": null,
+      "submission_source": "stdout",
+      "submission_sha256": "f4ac96bb79ee3aeb54307987f4aed497f3036a305f4c2d90625ee011ee6de97d",
+      "finished_utc": "2026-10-17T13:10:10.569773+00:00",
+      "elapsed_seconds": 0.032627,
+      "output_bytes": {
+        "stdout": 52,
+        "stderr": 0
+      },
+      "input_integrity": {
+        "unchanged": true,
+        "changed_files": [],
+        "missing_files": [],
+        "symlink_files": []
+      },
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB02",
+      "seed": 0,
+      "candidate_sha256": "1a7219b429836cc03340203d4f82960d7c7af709300706656bee20e9724f1fc5",
+      "prompt_sha256": "101ae40657189ae54a629ce52e1d8fbb127670df0563ef1ac0c7dfebf1ca3bf8",
+      "command_argv": [
+        "python",
+        "-c",
+        "\"\"\"Offline delivery-chain check only: deliberately scores zero, no AI model.\"\"\"\nimport json\nfrom pathlib import Path\n\nmanifest = json.loads(Path(\"packet_manifest.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"task_id\": manifest[\"task_id\"], \"answer\": {}, \"artifacts\": {}}))\n"
+      ],
+      "workdir": "/tmp/nrb-v02-native-portable/NRB02",
+      "logs_dir": "/tmp/nrb-v02-native-portable/NRB02.evaluator",
+      "timeout_seconds": 30.0,
+      "stdout_format": "plain",
+      "execution_boundary": "host_process_no_security_isolation",
+      "started_utc": "2026-10-17T13:10:10.578415+00:00",
+      "status": "completed",
+      "infra_error": null,
+      "output_error": null,
+      "envelope_error": null,
+      "exit_code": 0,
+      "usage": null,
+      "cost_usd": null,
+      "cost_kind": null,
+      "submission_source": "stdout",
+      "submission_sha256": "093a307b0960ad9926afa9104ff447924c913a5eacf74fe659e4859cf4192668",
+      "finished_utc": "2026-10-17T13:10:10.611078+00:00",
+      "elapsed_seconds": 0.032531,
+      "output_bytes": {
+        "stdout": 52,
+        "stderr": 0
+      },
+      "input_integrity": {
+        "unchanged": true,
+        "changed_files": [],
+        "missing_files": [],
+        "symlink_files": []
+      },
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB03",
+      "seed": 0,
+      "candidate_sha256": "cbefd829b602ed6e035cef4573876e83f9af02693efa4b494a0f7fd5906adee9",
+      "prompt_sha256": "9ff9af126c3160b359b6bde3c2a28b60cdf7a2fcf7d418c9089a4013ea496dab",
+      "command_argv": [
+        "python",
+        "-c",
+        "\"\"\"Offline delivery-chain check only: deliberately scores zero, no AI model.\"\"\"\nimport json\nfrom pathlib import Path\n\nmanifest = json.loads(Path(\"packet_manifest.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"task_id\": manifest[\"task_id\"], \"answer\": {}, \"artifacts\": {}}))\n"
+      ],
+      "workdir": "/tmp/nrb-v02-native-portable/NRB03",
+      "logs_dir": "/tmp/nrb-v02-native-portable/NRB03.evaluator",
+      "timeout_seconds": 30.0,
+      "stdout_format": "plain",
+      "execution_boundary": "host_process_no_security_isolation",
+      "started_utc": "2026-10-17T13:10:10.616704+00:00",
+      "status": "completed",
+      "infra_error": null,
+      "output_error": null,
+      "envelope_error": null,
+      "exit_code": 0,
+      "usage": null,
+      "cost_usd": null,
+      "cost_kind": null,
+      "submission_source": "stdout",
+      "submission_sha256": "1caa8d7db12ff16ce7dcc76390cc302e0f4286ef35dfde8df174a8eb7c38caf2",
+      "finished_utc": "2026-10-17T13:10:10.649180+00:00",
+      "elapsed_seconds": 0.032373,
+      "output_bytes": {
+        "stdout": 52,
+        "stderr": 0
+      },
+      "input_integrity": {
+        "unchanged": true,
+        "changed_files": [],
+        "missing_files": [],
+        "symlink_files": []
+      },
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB04",
+      "seed": 0,
+      "candidate_sha256": "d0c9e4e80687cac40e6acbb695e30944071b20745b20d46faa8b9d224df1e299",
+      "prompt_sha256": "973dfe3b7345aedb5eb3fa46af8be2c5b2fbd020ba6e8a07d5849a8f6afd9b74",
+      "command_argv": [
+        "python",
+        "-c",
+        "\"\"\"Offline delivery-chain check only: deliberately scores zero, no AI model.\"\"\"\nimport json\nfrom pathlib import Path\n\nmanifest = json.loads(Path(\"packet_manifest.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"task_id\": manifest[\"task_id\"], \"answer\": {}, \"artifacts\": {}}))\n"
+      ],
+      "workdir": "/tmp/nrb-v02-native-portable/NRB04",
+      "logs_dir": "/tmp/nrb-v02-native-portable/NRB04.evaluator",
+      "timeout_seconds": 30.0,
+      "stdout_format": "plain",
+      "execution_boundary": "host_process_no_security_isolation",
+      "started_utc": "2026-10-17T13:10:10.655356+00:00",
+      "status": "completed",
+      "infra_error": null,
+      "output_error": null,
+      "envelope_error": null,
+      "exit_code": 0,
+      "usage": null,
+      "cost_usd": null,
+      "cost_kind": null,
+      "submission_source": "stdout",
+      "submission_sha256": "df4a5880891c71ff87e325275518d4f0eee9db081c524ec1f1b247b8ef34c31f",
+      "finished_utc": "2026-10-17T13:10:10.687728+00:00",
+      "elapsed_seconds": 0.03222,
+      "output_bytes": {
+        "stdout": 52,
+        "stderr": 0
+      },
+      "input_integrity": {
+        "unchanged": true,
+        "changed_files": [],
+        "missing_files": [],
+        "symlink_files": []
+      },
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB05",
+      "seed": 0,
+      "candidate_sha256": "60208cded89efb3789adafe8dd7da1b5cb3e4c3e3fa3484a4ee9956ebfd83fc4",
+      "prompt_sha256": "64143e2d81ee06528835e128f8558f7f419b73cacd6067a7bb3a2a76530b4542",
+      "command_argv": [
+        "python",
+        "-c",
+        "\"\"\"Offline delivery-chain check only: deliberately scores zero, no AI model.\"\"\"\nimport json\nfrom pathlib import Path\n\nmanifest = json.loads(Path(\"packet_manifest.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"task_id\": manifest[\"task_id\"], \"answer\": {}, \"artifacts\": {}}))\n"
+      ],
+      "workdir": "/tmp/nrb-v02-native-portable/NRB05",
+      "logs_dir": "/tmp/nrb-v02-native-portable/NRB05.evaluator",
+      "timeout_seconds": 30.0,
+      "stdout_format": "plain",
+      "execution_boundary": "host_process_no_security_isolation",
+      "started_utc": "2026-10-17T13:10:10.694218+00:00",
+      "status": "completed",
+      "infra_error": null,
+      "output_error": null,
+      "envelope_error": null,
+      "exit_code": 0,
+      "usage": null,
+      "cost_usd": null,
+      "cost_kind": null,
+      "submission_source": "stdout",
+      "submission_sha256": "31a83658019bd2ca71433744befe69ac906d144e87c7f612f5abe6501f7c7025",
+      "finished_utc": "2026-10-17T13:10:10.726789+00:00",
+      "elapsed_seconds": 0.032444,
+      "output_bytes": {
+        "stdout": 52,
+        "stderr": 0
+      },
+      "input_integrity": {
+        "unchanged": true,
+        "changed_files": [],
+        "missing_files": [],
+        "symlink_files": []
+      },
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB06",
+      "seed": 0,
+      "candidate_sha256": "7be4b2fe4e4742d974dc342b8da58b68c0e4246a008e9df93009a1d8e2e32946",
+      "prompt_sha256": "042e69b22b05f00454b57fb87f13bdaf9e8596181e1b62999f1de3c2d8234be4",
+      "command_argv": [
+        "python",
+        "-c",
+        "\"\"\"Offline delivery-chain check only: deliberately scores zero, no AI model.\"\"\"\nimport json\nfrom pathlib import Path\n\nmanifest = json.loads(Path(\"packet_manifest.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"task_id\": manifest[\"task_id\"], \"answer\": {}, \"artifacts\": {}}))\n"
+      ],
+      "workdir": "/tmp/nrb-v02-native-portable/NRB06",
+      "logs_dir": "/tmp/nrb-v02-native-portable/NRB06.evaluator",
+      "timeout_seconds": 30.0,
+      "stdout_format": "plain",
+      "execution_boundary": "host_process_no_security_isolation",
+      "started_utc": "2026-10-17T13:10:10.733597+00:00",
+      "status": "completed",
+      "infra_error": null,
+      "output_error": null,
+      "envelope_error": null,
+      "exit_code": 0,
+      "usage": null,
+      "cost_usd": null,
+      "cost_kind": null,
+      "submission_source": "stdout",
+      "submission_sha256": "6c5bb0dac81b51b20a879100ff78fb446bd72c49b5f5ccfd0302b2764091721f",
+      "finished_utc": "2026-10-17T13:10:10.768504+00:00",
+      "elapsed_seconds": 0.034792,
+      "output_bytes": {
+        "stdout": 52,
+        "stderr": 0
+      },
+      "input_integrity": {
+        "unchanged": true,
+        "changed_files": [],
+        "missing_files": [],
+        "symlink_files": []
+      },
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB07",
+      "seed": 0,
+      "candidate_sha256": "ce956ebe386538b4c1df5dd522d9270c5d0ad1392924b61469ce0daf241d0238",
+      "prompt_sha256": "cc50032acb8640e662bd6e8f085774e38b9a3d0c1dad3ff2bc16dbc795d8ce36",
+      "command_argv": [
+        "python",
+        "-c",
+        "\"\"\"Offline delivery-chain check only: deliberately scores zero, no AI model.\"\"\"\nimport json\nfrom pathlib import Path\n\nmanifest = json.loads(Path(\"packet_manifest.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"task_id\": manifest[\"task_id\"], \"answer\": {}, \"artifacts\": {}}))\n"
+      ],
+      "workdir": "/tmp/nrb-v02-native-portable/NRB07",
+      "logs_dir": "/tmp/nrb-v02-native-portable/NRB07.evaluator",
+      "timeout_seconds": 30.0,
+      "stdout_format": "plain",
+      "execution_boundary": "host_process_no_security_isolation",
+      "started_utc": "2026-10-17T13:10:10.775149+00:00",
+      "status": "completed",
+      "infra_error": null,
+      "output_error": null,
+      "envelope_error": null,
+      "exit_code": 0,
+      "usage": null,
+      "cost_usd": null,
+      "cost_kind": null,
+      "submission_source": "stdout",
+      "submission_sha256": "4247e4e69c2d25568ed33250666fed70dd916ca85e66b5fcc1e9fa33bfd8e9ce",
+      "finished_utc": "2026-10-17T13:10:10.807914+00:00",
+      "elapsed_seconds": 0.032625,
+      "output_bytes": {
+        "stdout": 52,
+        "stderr": 0
+      },
+      "input_integrity": {
+        "unchanged": true,
+        "changed_files": [],
+        "missing_files": [],
+        "symlink_files": []
+      },
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB08",
+      "seed": 0,
+      "candidate_sha256": "62c4bb9d153a7a2f86ec68bb49c4cf95433a34f29280a1e08c8acf89fb39c8fa",
+      "prompt_sha256": "721fcec6c552164344becb0c211d8871e29b7c3fda01170a70360bf866039e3c",
+      "command_argv": [
+        "python",
+        "-c",
+        "\"\"\"Offline delivery-chain check only: deliberately scores zero, no AI model.\"\"\"\nimport json\nfrom pathlib import Path\n\nmanifest = json.loads(Path(\"packet_manifest.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"task_id\": manifest[\"task_id\"], \"answer\": {}, \"artifacts\": {}}))\n"
+      ],
+      "workdir": "/tmp/nrb-v02-native-portable/NRB08",
+      "logs_dir": "/tmp/nrb-v02-native-portable/NRB08.evaluator",
+      "timeout_seconds": 30.0,
+      "stdout_format": "plain",
+      "execution_boundary": "host_process_no_security_isolation",
+      "started_utc": "2026-10-17T13:10:10.814911+00:00",
+      "status": "completed",
+      "infra_error": null,
+      "output_error": null,
+      "envelope_error": null,
+      "exit_code": 0,
+      "usage": null,
+      "cost_usd": null,
+      "cost_kind": null,
+      "submission_source": "stdout",
+      "submission_sha256": "729d26134b33654cff2e6180c7b085bab167b80d312960e500b13aba56d39a66",
+      "finished_utc": "2026-10-17T13:10:10.847190+00:00",
+      "elapsed_seconds": 0.032154,
+      "output_bytes": {
+        "stdout": 52,
+        "stderr": 0
+      },
+      "input_integrity": {
+        "unchanged": true,
+        "changed_files": [],
+        "missing_files": [],
+        "symlink_files": []
+      },
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB09",
+      "seed": 0,
+      "candidate_sha256": "02d596426c0e6b15b0a662cfc294e79029c4acec06727b595df268f974d71d71",
+      "prompt_sha256": "d213f106d7897147926840bb42f13be05334a2d6aa4a506503c7471684456952",
+      "command_argv": [
+        "python",
+        "-c",
+        "\"\"\"Offline delivery-chain check only: deliberately scores zero, no AI model.\"\"\"\nimport json\nfrom pathlib import Path\n\nmanifest = json.loads(Path(\"packet_manifest.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"task_id\": manifest[\"task_id\"], \"answer\": {}, \"artifacts\": {}}))\n"
+      ],
+      "workdir": "/tmp/nrb-v02-native-portable/NRB09",
+      "logs_dir": "/tmp/nrb-v02-native-portable/NRB09.evaluator",
+      "timeout_seconds": 30.0,
+      "stdout_format": "plain",
+      "execution_boundary": "host_process_no_security_isolation",
+      "started_utc": "2026-10-17T13:10:10.853432+00:00",
+      "status": "completed",
+      "infra_error": null,
+      "output_error": null,
+      "envelope_error": null,
+      "exit_code": 0,
+      "usage": null,
+      "cost_usd": null,
+      "cost_kind": null,
+      "submission_source": "stdout",
+      "submission_sha256": "d96acb5b4916cd6c571251bae6dffe2eafd529c29f0f4f1ecf7ec8ffb3ab8380",
+      "finished_utc": "2026-10-17T13:10:10.885735+00:00",
+      "elapsed_seconds": 0.032195,
+      "output_bytes": {
+        "stdout": 52,
+        "stderr": 0
+      },
+      "input_integrity": {
+        "unchanged": true,
+        "changed_files": [],
+        "missing_files": [],
+        "symlink_files": []
+      },
+      "protocol_violation": null
+    },
+    {
+      "task_id": "NRB10",
+      "seed": 0,
+      "candidate_sha256": "03173176f808bbd70d5f127083eb66744a289182b2dcbe4802f0ee3a82086bdf",
+      "prompt_sha256": "e19f0c2395a525655905a17a0fe269363fe5f60a9e7751cf9fe8c0ae1008a6ae",
+      "command_argv": [
+        "python",
+        "-c",
+        "\"\"\"Offline delivery-chain check only: deliberately scores zero, no AI model.\"\"\"\nimport json\nfrom pathlib import Path\n\nmanifest = json.loads(Path(\"packet_manifest.json\").read_text(encoding=\"utf-8\"))\nprint(json.dumps({\"task_id\": manifest[\"task_id\"], \"answer\": {}, \"artifacts\": {}}))\n"
+      ],
+      "workdir": "/tmp/nrb-v02-native-portable/NRB10",
+      "logs_dir": "/tmp/nrb-v02-native-portable/NRB10.evaluator",
+      "timeout_seconds": 30.0,
+      "stdout_format": "plain",
+      "execution_boundary": "host_process_no_security_isolation",
+      "started_utc": "2026-10-17T13:10:10.893273+00:00",
+      "status": "completed",
+      "infra_error": null,
+      "output_error": null,
+      "envelope_error": null,
+      "exit_code": 0,
+      "usage": null,
+      "cost_usd": null,
+      "cost_kind": null,
+      "submission_source": "stdout",
+      "submission_sha256": "886ee273819d065cea5a0b58465346c9d7a9d2cc7d2648caef6d0727022b91a9",
+      "finished_utc": "2026-10-17T13:10:10.925591+00:00",
+      "elapsed_seconds": 0.032171,
+      "output_bytes": {
+        "stdout": 52,
+        "stderr": 0
+      },
+      "input_integrity": {
+        "unchanged": true,
+        "changed_files": [],
+        "missing_files": [],
+        "symlink_files": []
+      },
+      "protocol_violation": null
+    }
+  ],
+  "started_environment": {
+    "python": "3.12.14",
+    "os": "Linux"
+  },
+  "note": "Agent-controlled isolation is operator-attested. Agent-diagnostic is not an isolated leaderboard run."
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "nrb-svg-render-v1",
+  "task_id": "NRB09",
+  "rendered": true,
+  "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+  "submission_hash": "1b53fefedb8918eaa953802207f0ae0004bac386108e2d2b49d1c20c20b96b77",
+  "evaluator_identity": {
+    "benchmark_version": "0.2.0",
+    "evaluation_schema_version": "2.0",
+    "evaluator_commit": null,
+    "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+    "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+  },
+  "raw_svg_sha256": "6c695b8cf360f349359647ec7aa9b6f64f71299862c429f51e94adaa841ac322",
+  "output_png_sha256": "f59d2334f5f1d401a6b7ffd30519a33f58094f6d5ee417bfc85368bc3f1c9998",
+  "renderer": {
+    "name": "Inkscape",
+    "version": "1.2.2 (b0a8486541, 2022-12-01)"
+  },
+  "display_width_mm": 180.0,
+  "dpi": 144.0,
+  "width_px": 1020,
+  "height_px": 612
+}

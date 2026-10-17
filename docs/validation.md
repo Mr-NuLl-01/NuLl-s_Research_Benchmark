@@ -1,83 +1,62 @@
-# 验证记录
+# v0.2 验证记录
 
-本页记录做过什么、结果支持什么。没有真实模型的能力排名，也没有将参考答案当成模型作答。
+本页只记录实际完成的验证，不包含真实模型能力成绩。v0.1 的代码与证据保留在历史commit及[原始验证说明](validation-v0.1.md)，不能用旧版CI代替v0.2结果。
 
-## 首次构建环境的实际结果
+## 本地已完成的验证
 
-日期：2026-10-17；Python 3.12.14，Linux。自动检查使用 Python 标准库；代码题自检运行仓库自有的可信代码。
+日期2026-10-17，Python3.12.14/Linux。代码自检只执行仓库自己的参考程序和错误控制。冻结评分内容指纹：
 
-| 核验 | 实际结果 | 可支持的结论 |
+```
+1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba
+```
+
+本地导入工作区没有Git HEAD，回执如实保留 `evaluator_commit=null`；没有把尚未发布的commit填成实际运行来源。远端CI检出固定commit后，会在其报告内记录真实commit。内容相同仍不能把不同commit身份混入一次比较。
+
+| 核验 | 实际结果 | 支持范围 |
 |---|---|---|
-| `python -m unittest discover -s tests -v` | **98 项：94 通过，4 因可选依赖未安装而跳过** | 核心科学判据、协议、离线适配器及错误控制通过；跳过的项目不是兼容性通过。 |
-| `nrb selftest --seeds 0,17,101` | 30 个任务实例的 oracle 均 **70/70**，empty 均 **0/70**，输入重生成哈希一致 | 参考交付、零控制和这些变体可运行；不是实证难度校准。 |
-| 原生 `nrb run` + 空提交测试程序 | 10 次真实子进程调用均完成，完整自动均分 **0**，质量总分仍为 `null` | 从题包、进程、输出收集到套题评分的 CLI 链已实际走通。 |
-| JSONL / promptfoo / Harbor 导出 | 每种格式均成功生成十题 | 导出代码运行成功；导出成功本身不代表外部框架已经执行。 |
-| NRB09 参考 SVG | 实际转换为 PNG 并查看，另有坐标核验和比例缩放回归 | 该参考实例能渲染，未因此给任何候选作品预填质量分。 |
+| 完整回归 | **188项，184通过，4因可选框架依赖缺失跳过** | 科学/数值、候选错误行为、核心完成、报告身份、真实本地渲染与离线适配器契约 |
+| 3个seed × 10题selftest | 30个oracle均70/70，empty均0/70；哈希可复现，NRB03搜索实际执行通过 | 程序和变体自检，不是模型能力或质量30分 |
+| 原生空提交runner | 10次真实子进程完成，自动均分0，完整质量总分null | 题包、进程、提交归一化和统一汇总实际走通 |
+| native/JSONL/promptfoo/Harbor导出 | 四种格式均实际生成10题 | 导出成功；框架实际执行另列 |
+| NRB09参考与7种负控制 | **8张实际渲染，逐张打开查看**；Inkscape1.2.2，1020×612、144DPI、180mm等效 | LLM provisional检查，非人工审阅或物理屏幕校准 |
+| 本地候选隔离探针 | 静态材料检查通过；实际Docker执行为unavailable，退出2 | 本地没有Docker，不能写成容器隔离已通过 |
 
-原始可复查记录：[unit-tests.txt](../validation/unit-tests.txt)、[selftest.json](../validation/selftest.json)、[native-smoke.json](../validation/native-smoke.json)。这些文件只记录自检，不包含用户实验资料或真实模型调用。
+记录：[完整回归](../validation/v0.2.0/unit-tests.txt)、[selftest](../validation/v0.2.0/selftest.json)、[原生runner](../validation/v0.2.0/native-smoke.json)、[导出](../validation/v0.2.0/exports.json)、[本地隔离探针](../validation/v0.2.0/local-isolation.json)。
 
-## 独立科学核验
+## 实际看图证据
 
-自动评分并非只让一份实现与它自己比较。
+[完整渲染材料](../validation/v0.2.0/render-controls/)保留SVG、提交、PNG、渲染收据、材料哈希和独立[看图记录](../validation/v0.2.0/render-controls/reviewer-results.json)。生成器的空审阅模板仍是unassessed，实际看图结论单独记录为LLM provisional。
 
-- NRB01 用精确有理数从 CSV 复算配对均值与标准误。
-- NRB02 用分段、非等长输入独立检查尺度等价，并核验恢复参数能重现两轮观测。
-- NRB03 用精确有理数和加权中心化公式枚举可行分配；检查全局最优、严格次优和计数。种子 0–127 的严格次优均不会误入最优解容差。
-- NRB04 的参考程序用面通量更新，行为评分参考用矩阵装配；另有单/双单元手算与离散能量平衡检查。
-- NRB05 的评分参考用 `Decimal` 高精度递推，交付程序用浮点调度；覆盖回滚、终止、端点及明确失败。
-- NRB06 检查手算 WLS、协方差传播和分段线性 PSD 的解析积分；针对小量使用合适的绝对容差。
-- NRB07 直接展开抽到的机器组复算 bootstrap，核验重复抽样的 multiplicity 没有被去重；另验混淆矩阵与宏平均。
-- NRB08 用有理数线性代数复算误差证书，评分器接受有效的不同反例。
-- NRB09 核对实际 SVG 图元坐标，剔除隐藏样式、外部样式和定义区图元；同比改变 viewBox 与图形坐标不改变分数。
-- NRB10 从合成字节复核哈希和误差数字；合理的不同否定标签可通过，具体判断理由由质量审阅负责。
+| 图 | 自动分 | 实际可见问题与结论 |
+|---|---:|---|
+| oracle | 70 | 三个面板及科学内容可读，provisional pass |
+| minimalpoint | 45 | 数据/残差点几乎消失，fail |
+| zerostroke | 60 | 模型曲线消失，fail |
+| whitecover | 70 | 整图空白，必须在核心看图责任失败 |
+| emptydiagram | 65 | 示意部件图形缺失，fail |
+| offcanvastext | 65 | 标签和单位在画布外，fail |
+| nestedopacity | 55 | 数据仍部分可见但明显变淡，有效0.25低于公开暂定0.30，fail |
+| emptymarker | 65 | 位移线无箭头头部，fail |
 
-更多公式、独立核验和自动分配见 [科学任务笔记](task-science-notes.md)及 [数值任务笔记](task-numerical-notes.md)。
+尺寸/opacity阈值是针对正常参考图与极端反例的工程标尺，不宣称是通用感知或期刊标准。未来候选仍要按其真实提交单独渲染和审阅。
 
-## 错误控制与审查修复
+## 科学与评分负控制
 
-当前错误控制能识别：把技术重复当独立实验、把不可辨识参数声称为唯一、优化平均情景代替最坏情景、把接口串联热阻改为简单平均、拒步后仍推进状态、漏掉相关项、使用零谱/零协方差、根据测试集选模、把重抽组去重、假反例、把残差当作误差界、只填正确图形元数据但画错、以旧日志宣布当前全面通过。
+- NRB01–03的多个seed按最低9位有效数字舍入后仍通过；旧六位热时间常数例子与新约定被分别测试。
+- NRB03独立有理数公式、最优/次优并列向量、严格阈值边界和极小目标差均被实际核验。必交搜索代码错误时，即使数值70也核心失败；selftest亦断言执行结果。
+- NRB04/05新增80/78个候选行为案例，包含只缺对应处理的错误实现；50分行为总权重保持不变。
+- NRB06用随机数接口替身直接核验传入sigma，另由公开CSV独立重算WLS；全零协方差/PSD、漏相关项等仍失败。
+- NRB08自动70+质量0/0/10仍为原始80，但缺两个证明时failed/false；NRB10坏英文、NRB09白遮挡也不能补过。
+- 已有分数、审阅、执行收据、协议资格或完成状态被改动后，附加审阅、汇总与比较不能沿用原封存身份。评分源码改变而题面不变时，内容digest确实改变。
 
-发布前独立复查还修复了以下问题，并加入回归：
+具体回归见[tests](../tests/)、[科学任务说明](task-science-notes.md)、[数值任务说明](task-numerical-notes.md)和[评分规范](scoring.md)。
 
-1. SVG 在 DOM 中存在、实际隐藏时不应得几何分；SVG 的坐标单位选择也不应影响分数。
-2. 很大的合法 JSON 整数属于候选答案，需要正常判错，不能把它变成评分环境缺项。
-3. 两种有合理解释的否定标签不应只因不同于参考措辞而失分。
-4. CLI 明确报告失败时，不能被同时写出的合法文件覆盖为成功；畸形 JSONL 事件也不能使整套运行崩溃。
-5. 比较工具不得跨重复混合模型、harness、配置、版本或轨道后输出一个均值和区间。
+## v0.2 外部框架及容器CI
 
-这些控制支持对明确错误的检测，仍不能证明“能够阻止任何投机答案”。例如 SVG 全部视觉质量、证明中的每个逻辑细节、英文段落是否科学保真仍需独立审阅；自动分 70/70 不是完整科研质量 100/100。
+工作流设置了Python3.11/3.12核心测试；固定版本Inspect mock、promptfoo空provider、Harbor schema；真实CairoSVG渲染控制；真实Docker下的NRB03/04/05、候选镜像无答案/无网络探针，以及Harbor十题oracle与独立verifier。
 
-## 外部框架与容器的真实运行
+**此段在发布时仍待本次固定commit的远端结果，不能以v0.1绿灯或本地跳过代替。** 实际日志、安装版本、镜像与执行回执由[GitHub Actions](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/workflows/ci.yml)保留；观察到结果后在此追加固定run与commit证据。
 
-首次本地构建环境未安装 Inspect、promptfoo、Harbor 或 Docker，因此本地没有真实执行这些框架。仓库 CI 已配置对应的实际运行检查：
+## 仍未得到的证据
 
-| CI 检查 | 验证目标 |
-|---|---|
-| Core Python 3.11 / 3.12 | 标准库测试、30 个参考/空控制、冻结题包与生成器一致 |
-| Inspect / promptfoo / Harbor schema | 指定 Inspect 版本用真实 mock 模型调用 eval/scorer/log；真实 promptfoo CLI 执行十个空提交；真实 Harbor `TaskConfig` 解析导出配置 |
-| Docker / Harbor | 代码题在真实 Docker 中执行参考与错误程序；Harbor 实际 oracle、artifact 传递、独立 verifier、核心报告与框架 reward 一致 |
-
-状态和日志以 [GitHub Actions](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/workflows/ci.yml) 中**对应 commit** 的结果为准。尚未完成的运行不能称为通过；CI 安装失败也不代表模型低分。mock 和 oracle 均无需商业模型 API，不建立能力排名。
-
-### 已观察到的远端运行
-
-[首次 CI：commit bfa818d](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39027479074) 已实际完成：Python 3.11 和 3.12 的核心检查均通过；Inspect 的四项真实可选运行检查（含 Harbor schema）通过；Docker 中的代码题参考及错误程序检查通过；Harbor 0.24.0/schema 1.4 的十题 oracle 均得到核心 70/70、框架 reward=1、完整覆盖和独立 verifier，未产生模型 API 调用。
-
-首次 CI 的 promptfoo 步骤发现了真实兼容性问题：promptfoo 默认将结果文件里的哈希脱敏为 `[REDACTED]`，导致结果转换器拒绝该结果。修复保留严格来源核验：只有明确的脱敏标记可以用日志中保留的完整题面重新计算哈希补证；题面缺失、改变或非脱敏的错误哈希仍会失败。首次整体 CI 因此没有全绿。
-
-### 修复后的完整验证：四个作业全部通过
-
-[第二次 CI：commit 755b624](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39028114298) 已实际完成，整体结论为 **success**。本页的证据记录只更新文档和验证摘要，不改变该次通过的代码、题包、评分器或工作流。
-
-| 作业 | 已观察结果 |
-|---|---|
-| Core Python 3.11 | 通过：核心回归、30 个 seeded oracle/empty 控制、冻结题包一致性 |
-| Core Python 3.12 | 通过：与 3.11 相同的检查 |
-| Inspect、promptfoo、Harbor schema | 通过：四项真实可选运行测试；promptfoo 0.124.1 的十份空提交产生 10 个预期断言失败、0 个运行错误，统一报告完整且自动分为 0 |
-| Docker 与独立 Harbor verifier | 通过：两道代码题的参考/错误程序控制；十道 Harbor oracle 的核心分均为 70/70、reward 均为 1、覆盖完整，artifact 传递与独立 verifier 已运行 |
-
-机器可读摘要：[ci-2026-10-17.json](../validation/ci-2026-10-17.json)。具体日志与 CI artifacts 在上面的固定 run 链接中。Inspect 使用 mock、Harbor 使用 oracle、promptfoo 使用空提交 provider；这些检查未调用商业模型 API，也未产生真实模型能力成绩。
-
-## 尚未得到的证据
-
-真实模型/真实代理的十题成绩、题目难度分布、强弱模型之间的实际区分度、评阅者一致性、跨平台的完整支持范围，均待真实运行。首次正式评估应按 [方法文档](methodology.md) 的固定配置、重复与盲审方案进行。未经这些步骤，不把本仓库宣传为“已经统计证明优于某基准”或“已经确定哪种 AI 最适合科研”。
+本次未调用商业模型API。真实模型分数、强弱配置区分度、排序稳定性、双人评分一致性、在线API白名单在所有后端的执行情况，以及完整跨平台支持仍需相应实测。隔离探针只证明其测试的实际离线镜像；公开seed与答案可能被训练学习，不能因此宣称绝无污染。

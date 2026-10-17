@@ -13,7 +13,8 @@ def nrb_automatic(execution: str = "docker"):
         meta = state.metadata
         try:
             report = score_output(meta["task_id"], meta["seed"], state.output.completion,
-                                  execution=execution, candidate_hash=meta["candidate_sha256"])
+                                  execution=execution, candidate_hash=meta["candidate_sha256"],
+                                  evaluator_id=meta.get("evaluator_identity"))
         except ProvenanceError as exc:
             return Score.unscored(reason="provenance_drift", explanation=str(exc))
         if report["auto_percent"] is None:

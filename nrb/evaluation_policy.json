@@ -1,0 +1,12 @@
+{
+  "evaluation_schema_version": "2.0",
+  "review_policy_version": "essential-review-0.2.0",
+  "quality_threshold": 80,
+  "automatic_max": 70,
+  "quality_max": 30,
+  "digest_includes": ["nrb/**/*.py", "nrb/evaluation_policy.json"],
+  "digest_excludes": ["__pycache__", "_evaluator_origin.json", "questions", "tests", "docs", "validation"],
+  "hidden_behavior_tests_location": "nrb/tasks/t*.py",
+  "runtime_versions_are_recorded_separately": true,
+  "completion_is_independent_of_review_score_thresholds": true
+}

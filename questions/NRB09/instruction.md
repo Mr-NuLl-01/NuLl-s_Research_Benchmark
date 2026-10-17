@@ -14,9 +14,10 @@
 3. id=signal-model 的 polyline 按时间递增，包含映射后的全部CSV模型点；可按 parameters.json 的公式添加更密的点以获得平滑曲线；显式 stroke（#RRGGBB），fill=none。
 4. id=residual-points 的 g 中包含同序 circle，纵坐标为 observed_m-model_m 的线性映射，颜色与 observations 一致。
 5. id=legend-observation 的 circle 与观测同色；id=legend-model 的 line 与模型同色。观测与模型须用不同颜色且可通过点/线区分。
-6. 示意图区应包含 id=mass、spring、damper 的可见图元；id=displacement-arrow 是带 marker-end 的 line，x2>x1、y2=y1 表示定义的正位移向右。箭头不是完整力学受力图。
-7. 保留可编辑 text，至少包含标签 Time (s)、Displacement (m)、Residual (m)、Synthetic observations、Fixed model。
-8. SVG 只能使用内嵌静态矢量与文字；不允许脚本、外部链接、位图或外部样式。颜色/字体使用SVG属性，不用 style 元素或 style 属性；不使用 mask/filter/clip-path 隐藏内容。不得用隐藏元素代替可见图。
+6. 示意图区应包含 id=mass、spring、damper 的可见图元；这些图元及其祖先也使用根viewBox坐标，不加transform（可用含实际图元的g）；id=displacement-arrow 是带 marker-end 的 line，x2>x1、y2=y1 表示定义的正位移向右。箭头不是完整力学受力图。
+7. 保留可编辑 text；位置、字号、半径与线宽用不带单位的viewBox数值。文字可用rotate(angle cx cy)旋转，关键文字/示意不使用其他transform。至少包含标签 Time (s)、Displacement (m)、Residual (m)、Synthetic observations、Fixed model。
+8. 以180 mm宽度展示时，数据点直径至少0.2 mm、关键线宽至少0.08 mm，祖先opacity乘积与继承的绘制透明度合并后至少0.3。这是排除近乎不可见对象的暂定工程阈值，并非期刊通用标准。示意g/marker必须含有实际可见图元；标签与示意落在画布内。
+9. SVG 只能使用内嵌静态矢量与文字；不允许脚本、外部链接、位图或外部样式。颜色/字体使用SVG属性，不用 style 元素或 style 属性；不使用 mask/filter/clip-path 隐藏内容。不得用隐藏元素代替可见图。
 自动检查只覆盖数据绑定、文件与部分科学语义。最终可读性、图注证据强度、图形质量须看实际渲染后独立评分。
 
 
@@ -56,6 +57,23 @@ answer 使用本题字段。代码、推导、图和修订稿放入 artifacts，
       "5": "点线、颜色和面板组织能区分主要信息。",
       "10": "示意、预测、观测与残差形成清晰叙述；色彩一致且有冗余编码，细节服务问题而非模板。"
     }
+  }
+]
+
+## 核心完成条件（独立于分数）
+以下责任逐项以 pass/fail/unassessed 审阅；高分不能补偿核心责任失败。
+[
+  {
+    "id": "render_legibility",
+    "requirement": "实际查看绑定的渲染图，核对整图与180mm等效展示可读，无关键遮挡或近乎不可见内容。"
+  },
+  {
+    "id": "schematic_correctness",
+    "requirement": "示意部件、连接和箭头正确表达本题经典模型。"
+  },
+  {
+    "id": "caption_fidelity",
+    "requirement": "图注与实际数据、合成来源、给定模型和残差一致。"
   }
 ]
 

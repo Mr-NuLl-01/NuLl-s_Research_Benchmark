@@ -37,10 +37,17 @@ def check_job(job_dir, expected_ids, *, seed=0):
             continue
         report = json.loads(report_path.read_text(encoding="utf-8"))
         reward = float(reward_path.read_text(encoding="utf-8").strip())
+        from nrb.core import validate_final_report
+        try:
+            validate_final_report(report)
+        except ValueError as exc:
+            entry["error"] = "Invalid canonical verifier report: " + str(exc)
+            continue
         task_id = report["task_id"]
         duplicate = task_id in seen
         seen.add(task_id)
-        report_ok = (report.get("adapter") == "harbor" and report.get("seed") == seed
+        from nrb.provenance import evaluator_identity, identity_from
+        report_ok = (identity_from(report) == evaluator_identity() and report.get("adapter") == "harbor" and report.get("seed") == seed
                      and report["auto_points"] == 70 and report["auto_percent"] == 100
                      and report["coverage"] == 1 and not report["critical_failures"]
                      and report["review_pending"] is True and report["total"] is None
@@ -94,7 +101,7 @@ def run_smoke(dest, *, tasks="NRB04,NRB05,NRB09", seed=0,
     export_dir, jobs_dir = dest / "export", dest / "jobs"
     export_argv = [sys.executable, "-m", "nrb", "export", "--format", "harbor",
                    "--seed", str(seed), "--tasks", ",".join(task_ids), "--python-image", python_image,
-                   "--dest", str(export_dir)]
+                   "--include-oracle", "--dest", str(export_dir)]
     exported = _run(export_argv, cwd=REPO, stdout_path=dest / "export-stdout.txt",
                     stderr_path=dest / "export-stderr.txt", timeout=60)
     if exported:

@@ -1,0 +1,225 @@
+{
+  "schema_version": "nrb-render-controls-v1",
+  "task_id": "NRB09",
+  "seed": 0,
+  "evaluator_identity": {
+    "benchmark_version": "0.2.0",
+    "evaluation_schema_version": "2.0",
+    "evaluator_commit": null,
+    "evaluator_digest": "1b872d660f0a56f05c9ec390a90a150bed78d9af918efa81c5a8fcfb0f4e7cba",
+    "evaluator_digest_algorithm": "sha256-canonical-path-content-manifest-v1"
+  },
+  "display_width_mm": 180.0,
+  "scope": "Public classical synthetic oscillator only. Rasterization is not visual acceptance.",
+  "render_status": "rendered",
+  "review_status": "unassessed",
+  "controls": [
+    {
+      "label": "oracle",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "295c3e9f0f11c866db1128dff67e65e9f788fe2937723e4849fc02a5c14902c0",
+      "static_failed_checks": [],
+      "static_points": 70.0,
+      "expected_review_outcome": "pass",
+      "review_required": true,
+      "render_status": "rendered",
+      "render_receipt": "oracle/render-receipt.json",
+      "png": "oracle/figure.png",
+      "reviewer_result": {
+        "id": "rendered_legibility",
+        "outcome": "unassessed",
+        "inspected_whole_figure": false,
+        "inspected_at_180mm": false,
+        "evidence": "",
+        "rationale": ""
+      }
+    },
+    {
+      "label": "minimalpoint",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "ee2685ec04a65690f6a5b9bbb849cea427267fbf97079358304644a663887043",
+      "static_failed_checks": [
+        "observation_geometry",
+        "residual_geometry"
+      ],
+      "static_points": 45.0,
+      "expected_review_outcome": "fail",
+      "review_required": true,
+      "render_status": "rendered",
+      "render_receipt": "minimalpoint/render-receipt.json",
+      "png": "minimalpoint/figure.png",
+      "reviewer_result": {
+        "id": "rendered_legibility",
+        "outcome": "unassessed",
+        "inspected_whole_figure": false,
+        "inspected_at_180mm": false,
+        "evidence": "",
+        "rationale": ""
+      }
+    },
+    {
+      "label": "zerostroke",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "f792ae122951fbc47cd41078f37624149559e8be2f59553dcebfbae1937c307d",
+      "static_failed_checks": [
+        "model_geometry"
+      ],
+      "static_points": 60.0,
+      "expected_review_outcome": "fail",
+      "review_required": true,
+      "render_status": "rendered",
+      "render_receipt": "zerostroke/render-receipt.json",
+      "png": "zerostroke/figure.png",
+      "reviewer_result": {
+        "id": "rendered_legibility",
+        "outcome": "unassessed",
+        "inspected_whole_figure": false,
+        "inspected_at_180mm": false,
+        "evidence": "",
+        "rationale": ""
+      }
+    },
+    {
+      "label": "emptydiagram",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "1b53fefedb8918eaa953802207f0ae0004bac386108e2d2b49d1c20c20b96b77",
+      "static_failed_checks": [
+        "schematic_direction"
+      ],
+      "static_points": 65.0,
+      "expected_review_outcome": "fail",
+      "review_required": true,
+      "render_status": "rendered",
+      "render_receipt": "emptydiagram/render-receipt.json",
+      "png": "emptydiagram/figure.png",
+      "reviewer_result": {
+        "id": "rendered_legibility",
+        "outcome": "unassessed",
+        "inspected_whole_figure": false,
+        "inspected_at_180mm": false,
+        "evidence": "",
+        "rationale": ""
+      }
+    },
+    {
+      "label": "offcanvastext",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "49c2914d4fd324d9a89e4d4beec23f80365121698e54acdf015388abfc0a7ef8",
+      "static_failed_checks": [
+        "labels_and_layout"
+      ],
+      "static_points": 65.0,
+      "expected_review_outcome": "fail",
+      "review_required": true,
+      "render_status": "rendered",
+      "render_receipt": "offcanvastext/render-receipt.json",
+      "png": "offcanvastext/figure.png",
+      "reviewer_result": {
+        "id": "rendered_legibility",
+        "outcome": "unassessed",
+        "inspected_whole_figure": false,
+        "inspected_at_180mm": false,
+        "evidence": "",
+        "rationale": ""
+      }
+    },
+    {
+      "label": "nestedopacity",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "e60a6d1ea9230000c1df92c120033986a7b39ce97218fa29eecef73a943533ca",
+      "static_failed_checks": [
+        "observation_geometry"
+      ],
+      "static_points": 55.0,
+      "expected_review_outcome": "fail",
+      "review_required": true,
+      "render_status": "rendered",
+      "render_receipt": "nestedopacity/render-receipt.json",
+      "png": "nestedopacity/figure.png",
+      "reviewer_result": {
+        "id": "rendered_legibility",
+        "outcome": "unassessed",
+        "inspected_whole_figure": false,
+        "inspected_at_180mm": false,
+        "evidence": "",
+        "rationale": ""
+      }
+    },
+    {
+      "label": "emptymarker",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "700adeb23f5c532dc388727b24e72f1028050d40bc3cd0b05827ed7babbe261c",
+      "static_failed_checks": [
+        "schematic_direction"
+      ],
+      "static_points": 65.0,
+      "expected_review_outcome": "fail",
+      "review_required": true,
+      "render_status": "rendered",
+      "render_receipt": "emptymarker/render-receipt.json",
+      "png": "emptymarker/figure.png",
+      "reviewer_result": {
+        "id": "rendered_legibility",
+        "outcome": "unassessed",
+        "inspected_whole_figure": false,
+        "inspected_at_180mm": false,
+        "evidence": "",
+        "rationale": ""
+      }
+    },
+    {
+      "label": "whitecover",
+      "case_hash": "33b4c6c6308d6fca0591b1acdbb7e50814d5247f8e3d285a5ba506a72a225063",
+      "submission_hash": "1270c95c6ce300df5cbf8afbb107d13d1d09392e57ac0277f71a0a08f30d4afb",
+      "static_failed_checks": [],
+      "static_points": 70.0,
+      "expected_review_outcome": "fail",
+      "review_required": true,
+      "render_status": "rendered",
+      "render_receipt": "whitecover/render-receipt.json",
+      "png": "whitecover/figure.png",
+      "reviewer_result": {
+        "id": "rendered_legibility",
+        "outcome": "unassessed",
+        "inspected_whole_figure": false,
+        "inspected_at_180mm": false,
+        "evidence": "",
+        "rationale": ""
+      }
+    }
+  ],
+  "material_sha256": {
+    "emptydiagram/figure.png": "f59d2334f5f1d401a6b7ffd30519a33f58094f6d5ee417bfc85368bc3f1c9998",
+    "emptydiagram/figure.svg": "6c695b8cf360f349359647ec7aa9b6f64f71299862c429f51e94adaa841ac322",
+    "emptydiagram/render-receipt.json": "abdfcbe8af73396aab2296d2c017eeceefd8692cc25143f08de46af69675ff85",
+    "emptydiagram/submission.json": "1779bfba1539d8f0e9deaacb870964e935662cb3a00adf8574e9b290c190eea0",
+    "emptymarker/figure.png": "c25be8121b47f66cf201cc2728117fdac132e0a6f8c867fe1820e7b2f1944cae",
+    "emptymarker/figure.svg": "24b332721523eb666486df063af175b329a777953a0111dead4af6e161ee0f00",
+    "emptymarker/render-receipt.json": "0ccd138f4427ea110502d99dafbc0a986fccb931bf23a71d25bfb1dff7e9fb4c",
+    "emptymarker/submission.json": "f88ba11b0f917ae5907850e8ccf7c493096431265752ce31b617a9d14633fd27",
+    "minimalpoint/figure.png": "9f6fbd4eb13128a0c8fc364d3b990db748ca1c5f08a07cb51cf26520e90ae197",
+    "minimalpoint/figure.svg": "2b4070c231a3fd100ec844143ac9eeab73c1c63f6043c93e9dba98deff5199e4",
+    "minimalpoint/render-receipt.json": "fce39d4a78bd8b5f6fb9b8cca80d7a945c7fa4afd3b32f49abfcb2dc47d4318d",
+    "minimalpoint/submission.json": "a58d4489b610defdc5b932d21d6a1409367e33cd299e51dc876a649874e469fd",
+    "nestedopacity/figure.png": "a41c9d621abee81bf9872413783af259f3e01afb23f706208fa114ee03617fa6",
+    "nestedopacity/figure.svg": "5bcc87a1b8cb89b371f86bef3601b062635608dca6213208d79733824da8bde1",
+    "nestedopacity/render-receipt.json": "9d359fcffe2fd33666ce13caefbda78fee831d62db6d6310ed06c5fdc1eeeebb",
+    "nestedopacity/submission.json": "8258776a63df5521b01e6b4d6b8405a3563bd1f626eadf9a0a8ad7a812484346",
+    "offcanvastext/figure.png": "37e960c442ca853a36f6ad0a29aeb8bef85173afc1903ac42c6c49a2b0c8fa5f",
+    "offcanvastext/figure.svg": "90044e098a716cebb2886557aac88d470b3667aae0aed68e727ebc90327c1964",
+    "offcanvastext/render-receipt.json": "890c6b7300f2a96dfaa40e62a49a2a44bf636caedfb81129f994a48fc82c728e",
+    "offcanvastext/submission.json": "6c5376c007d5d2d0e1e3fe414e741e5bce4b0f6258e1fdbab31239db57cba8ea",
+    "oracle/figure.png": "ccdcc6b558e670fd65366aef8f6c438be60ec4ee16d013661065a9d45342a486",
+    "oracle/figure.svg": "0ac185b7641a350fb3b22543b3e49630f463c8ab896c18c487722e65c17f6611",
+    "oracle/render-receipt.json": "c0cee1e3b7fd727ee36d5ffdc8b85b45e7f1ae76b9dc34464fcbfbd63de29340",
+    "oracle/submission.json": "b69f5e112815ba50d46c7ecb0b6db5a9f5f5233b9ab47b66da2ffabb9f90938f",
+    "whitecover/figure.png": "c9ad83587206d533166232ac230c6503ce4c8e2882f8e3ba308fc06f74f72d9b",
+    "whitecover/figure.svg": "a1833297fa42a8e5fb558a4badac5b6bd43bee33abdc283acf5060555901fbc0",
+    "whitecover/render-receipt.json": "392ca9f32a740ebeaca8451be963d723990a5bd54c2aa05e1569e65074952476",
+    "whitecover/submission.json": "48a523a7b3f37e94834591ad4ce923a33876c979691bc0e52cfa65a8e8bb06a9",
+    "zerostroke/figure.png": "6eafc0ea49c0b1e44555bcd18ea661d0d7b3525203f2495df89c68786ead0e78",
+    "zerostroke/figure.svg": "7189548bcb7e24bc7f2960867b929f7392e2b98a5ad2261003931491b1b9d548",
+    "zerostroke/render-receipt.json": "338ef2918dab5aa614bd1e98b3ad82fa0df40bf564ce0795852344ad2949ed29",
+    "zerostroke/submission.json": "f4e19949cc27453c0ba3c0dae3e827ae2fff1c3600bb958365cf8c0abfca2a25"
+  }
+}

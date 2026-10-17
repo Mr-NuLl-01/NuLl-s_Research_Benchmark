@@ -173,7 +173,9 @@ randomized_primary, observational_primary, independent_primary, reanalysis, simu
 secondary_commentary 中按证据选择。reasoning.md 中逐条给出理由、统计公式、来源位置、
 因果与推广边界，以及一段可接受的贡献表述和下一项最有价值的验证。
 配对差定义为 baseline-corrected；相对下降使用设备均值之差除以基线设备均值，
-不是逐设备百分比的平均。保留至少 6 位有效数字。中文或英文论证均可。
+不是逐设备百分比的平均。数值建议直接保留计算结果的浮点精度；如需缩短，至少保留 9 位有效数字。
+使用科学计数法表示小量，不把谱密度、协方差或目标差舍入为零。
+评分容差按字段定义，不要求输出额外无意义的小数。中文或英文论证均可。
 """
     rubric = [
         {"id": "evidence_reasoning", "title": "来源判断与论断边界", "anchors": {
@@ -262,11 +264,11 @@ def grade(case: dict, submission, execution="none") -> list:
                             "来源必须覆盖直接证据；无关来源堆砌不计分。"))
     checks.append(check("current_source", 5,
                         ans.get("authoritative_table_source") == ex["authoritative_table_source"],
-                        "采用当前有效更正记录。"))
+                        "采用当前有效更正记录。", critical=True))
     checks.append(check("independent_units", 5,
                         type(ans.get("independent_units")) is int
                         and ans["independent_units"] == ex["independent_units"],
-                        "独立设备数，而非技术重复次数。"))
+                        "独立设备数，而非技术重复次数。", critical=True))
     calc, exp_calc = _mapping(ans.get("calculations")), ex["calculations"]
     checks.append(check("corrected_means", 5,
                         all(_near(calc.get(k), exp_calc[k]) for k in ["mean_baseline_K", "mean_corrected_K"]),

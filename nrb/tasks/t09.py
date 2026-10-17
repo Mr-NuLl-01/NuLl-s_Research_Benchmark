@@ -9,6 +9,7 @@ import random
 import re
 import xml.etree.ElementTree as ET
 from nrb.checks import check, close, numbers_close
+from nrb.rendering import parse_static_svg, svg_viewbox
 
 
 def build(seed=0):
@@ -46,9 +47,10 @@ def build(seed=0):
 3. id=signal-model 的 polyline 按时间递增，包含映射后的全部CSV模型点；可按 parameters.json 的公式添加更密的点以获得平滑曲线；显式 stroke（#RRGGBB），fill=none。
 4. id=residual-points 的 g 中包含同序 circle，纵坐标为 observed_m-model_m 的线性映射，颜色与 observations 一致。
 5. id=legend-observation 的 circle 与观测同色；id=legend-model 的 line 与模型同色。观测与模型须用不同颜色且可通过点/线区分。
-6. 示意图区应包含 id=mass、spring、damper 的可见图元；id=displacement-arrow 是带 marker-end 的 line，x2>x1、y2=y1 表示定义的正位移向右。箭头不是完整力学受力图。
-7. 保留可编辑 text，至少包含标签 Time (s)、Displacement (m)、Residual (m)、Synthetic observations、Fixed model。
-8. SVG 只能使用内嵌静态矢量与文字；不允许脚本、外部链接、位图或外部样式。颜色/字体使用SVG属性，不用 style 元素或 style 属性；不使用 mask/filter/clip-path 隐藏内容。不得用隐藏元素代替可见图。
+6. 示意图区应包含 id=mass、spring、damper 的可见图元；这些图元及其祖先也使用根viewBox坐标，不加transform（可用含实际图元的g）；id=displacement-arrow 是带 marker-end 的 line，x2>x1、y2=y1 表示定义的正位移向右。箭头不是完整力学受力图。
+7. 保留可编辑 text；位置、字号、半径与线宽用不带单位的viewBox数值。文字可用rotate(angle cx cy)旋转，关键文字/示意不使用其他transform。至少包含标签 Time (s)、Displacement (m)、Residual (m)、Synthetic observations、Fixed model。
+8. 以180 mm宽度展示时，数据点直径至少0.2 mm、关键线宽至少0.08 mm，祖先opacity乘积与继承的绘制透明度合并后至少0.3。这是排除近乎不可见对象的暂定工程阈值，并非期刊通用标准。示意g/marker必须含有实际可见图元；标签与示意落在画布内。
+9. SVG 只能使用内嵌静态矢量与文字；不允许脚本、外部链接、位图或外部样式。颜色/字体使用SVG属性，不用 style 元素或 style 属性；不使用 mask/filter/clip-path 隐藏内容。不得用隐藏元素代替可见图。
 自动检查只覆盖数据绑定、文件与部分科学语义。最终可读性、图注证据强度、图形质量须看实际渲染后独立评分。
 """
     return {"id": "NRB09", "seed": seed, "title": "从合成振子数据制作可编辑科研图", "domain": "scientific_visualization",
@@ -92,14 +94,14 @@ def reference(case):
         x, y, w, h = answer["panel_bounds"][name]
         for i in range(5):
             px = x+w*i/4
-            labels.append(f'<line x1="{px}" y1="{y+h}" x2="{px}" y2="{y+h+5}" stroke="#64748B"/>')
+            labels.append(f'<line x1="{px}" y1="{y+h}" x2="{px}" y2="{y+h+5}" stroke="#64748B" stroke-width="1"/>')
             labels.append(f'<text x="{px}" y="{y+h+25}" text-anchor="middle" font-size="16">{rows[-1][0]*i/4:.1f}</text>')
         for i in range(3):
             py = y+h*i/2
             val = yr[1]-(yr[1]-yr[0])*i/2
             labels.append(f'<text x="{x-12}" y="{py+5}" text-anchor="end" font-size="16">{val:.4f}</text>')
-        labels.append(f'<path d="M {x} {y} V {y+h} H {x+w}" stroke="#475569" fill="none"/>')
-        labels.append(f'<line x1="{x}" y1="{y+h/2}" x2="{x+w}" y2="{y+h/2}" stroke="#CBD5E1" stroke-dasharray="4 4"/>')
+        labels.append(f'<path d="M {x} {y} V {y+h} H {x+w}" stroke="#475569" stroke-width="1" fill="none"/>')
+        labels.append(f'<line x1="{x}" y1="{y+h/2}" x2="{x+w}" y2="{y+h/2}" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 4"/>')
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="180mm" height="108mm">
 <title>Synthetic damped oscillator: fixed model, observations and residuals</title>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#475569"/></marker></defs>
@@ -132,30 +134,213 @@ def reference(case):
     return {"task_id": case["id"], "answer": answer, "artifacts": {"figure.svg": svg, "caption.md": caption}}
 
 
+# Provisional engineering limits for rejecting nearly invisible *essential*
+# objects at the task's 180 mm displayed width. These are not journal standards
+# or a substitute for actual rendering/reviewer acceptance.
+DISPLAY_WIDTH_MM = 180.0
+MIN_POINT_DIAMETER_MM = 0.20
+MIN_STROKE_MM = 0.08
+MIN_EFFECTIVE_OPACITY = 0.30
+
+
 def _svg_info(text):
-    if any(x in text.lower() for x in ("<!doctype", "<!entity", "@import", "<?xml-stylesheet")):
-        raise ValueError("External/entity/style directives are forbidden")
-    root = ET.fromstring(text)
-    by_id = {}
-    forbidden = {"script", "image", "foreignobject", "iframe", "style", "animate", "animatetransform", "animatemotion", "set"}
-    for node in root.iter():
-        if node.tag.split("}")[-1].lower() in forbidden:
-            raise ValueError("Noneditable or active SVG element")
-        for attr, value in node.attrib.items():
-            if attr.split("}")[-1].lower() in ("style", "filter", "mask", "clip-path"):
-                raise ValueError("Use explicit SVG presentation attributes; hidden CSS/effects are not permitted")
-            if attr.lower().startswith("on") or (attr.endswith("href") and not value.startswith("#")):
-                raise ValueError("Active or externally linked SVG")
-            if "url(" in value.lower() and not re.fullmatch(r"url\(#[A-Za-z0-9_-]+\)", value):
-                raise ValueError("External SVG resource")
-            if (attr in ("opacity", "fill-opacity", "stroke-opacity") and (not math.isfinite(float(value)) or float(value) < 0.3)) or (attr == "display" and value.strip().lower() == "none") or (attr == "visibility" and value.strip().lower() in ("hidden", "collapse")):
-                raise ValueError("Hidden/transparent elements cannot satisfy the figure contract")
-        if "id" in node.attrib:
-            if node.attrib["id"] in by_id:
-                raise ValueError("Duplicate SVG ID")
-            by_id[node.attrib["id"]] = node
-    parents = {child: parent for parent in root.iter() for child in parent}
-    return root, by_id, parents
+    return parse_static_svg(text)
+
+
+def _inherited(node, parents, attr, default):
+    while node is not None:
+        if attr in node.attrib:
+            return node.attrib[attr]
+        node = parents.get(node)
+    return default
+
+
+def _opacity(node, parents, paint):
+    """SVG opacity composites at every ancestor; paint opacity is inherited."""
+    opacity = float(_inherited(node, parents, paint + "-opacity", "1"))
+    while node is not None:
+        opacity *= float(node.attrib.get("opacity", "1"))
+        node = parents.get(node)
+    return opacity
+
+
+def _stroke_visible(node, parents, view):
+    color = _inherited(node, parents, "stroke", "none").strip().lower()
+    width = float(_inherited(node, parents, "stroke-width", "1"))
+    # A non-scaling stroke is viewport-dependent and outside this protocol.
+    return (color not in {"none", "transparent"} and math.isfinite(width)
+            and width * DISPLAY_WIDTH_MM / view[2] >= MIN_STROKE_MM
+            and _opacity(node, parents, "stroke") >= MIN_EFFECTIVE_OPACITY
+            and _inherited(node, parents, "vector-effect", "none") == "none")
+
+
+def _fill_visible(node, parents):
+    return (_inherited(node, parents, "fill", "#000000").strip().lower() not in {"none", "transparent"}
+            and _opacity(node, parents, "fill") >= MIN_EFFECTIVE_OPACITY)
+
+
+def _root_coordinates(node, parents):
+    while node is not None:
+        if "transform" in node.attrib:
+            return False
+        node = parents.get(node)
+    return True
+
+
+def _path_vertices(data):
+    """Conservative path hull in path coordinates, including curve controls.
+
+    This is a minimum coordinate screen, not a renderer. Curve-control hulls
+    can be larger than the painted curve; actual occlusion always needs review.
+    """
+    pattern = r"[-+]?(?:\d*\.\d+|\d+\.?\d*)(?:[eE][-+]?\d+)?"
+    tokens = re.findall(r"[A-Za-z]|" + pattern, data)
+    if re.sub(r"[A-Za-z]|" + pattern + r"|[\s,]", "", data):
+        raise ValueError("Invalid path token")
+    counts = {"M": 2, "L": 2, "H": 1, "V": 1, "C": 6, "S": 4, "Q": 4, "T": 2, "A": 7}
+    x = y = 0.0
+    start = (0.0, 0.0)
+    vertices, index, command = [], 0, None
+    while index < len(tokens):
+        if tokens[index].isalpha():
+            command = tokens[index]
+            index += 1
+            if command.upper() == "Z":
+                x, y = start
+                vertices.append(start)
+                command = None
+                continue
+        if command is None or command.upper() not in counts:
+            raise ValueError("Invalid path command")
+        name, relative = command.upper(), command.islower()
+        count = counts[name]
+        values = [float(v) for v in tokens[index:index+count]]
+        if len(values) != count or not all(math.isfinite(v) for v in values):
+            raise ValueError("Invalid path coordinates")
+        index += count
+        if name == "H":
+            x = values[0] + (x if relative else 0)
+            vertices.append((x, y))
+        elif name == "V":
+            y = values[0] + (y if relative else 0)
+            vertices.append((x, y))
+        elif name == "A":
+            rx, ry, angle, large, sweep, ex, ey = values
+            if min(rx, ry) < 0 or large not in (0, 1) or sweep not in (0, 1):
+                raise ValueError("Invalid arc parameters")
+            ex, ey = ex + (x if relative else 0), ey + (y if relative else 0)
+            # Rotated elliptical arcs remain within this conservative envelope.
+            radius = math.hypot(rx, ry)
+            vertices.extend(((min(x, ex)-radius, min(y, ey)-radius),
+                             (max(x, ex)+radius, max(y, ey)+radius), (ex, ey)))
+            x, y = ex, ey
+        else:
+            coords = [(values[j]+(x if relative else 0), values[j+1]+(y if relative else 0)) for j in range(0, count, 2)]
+            vertices.extend(coords)
+            x, y = coords[-1]
+            if name == "M":
+                start = (x, y)
+                command = "l" if relative else "L"
+    return vertices
+
+
+def _geometry_box(node):
+    name = node.tag.split("}")[-1]
+    def number(key, default=None):
+        value = float(node.attrib[key] if default is None else node.attrib.get(key, default))
+        if not math.isfinite(value):
+            raise ValueError("Nonfinite SVG geometry")
+        return value
+    if name == "rect":
+        x, y, w, h = number("x", 0), number("y", 0), number("width"), number("height")
+        if min(w, h) <= 0:
+            raise ValueError("Empty rectangle")
+        return x, y, x+w, y+h
+    if name in {"circle", "ellipse"}:
+        x, y = number("cx", 0), number("cy", 0)
+        rx = number("r") if name == "circle" else number("rx")
+        ry = rx if name == "circle" else number("ry")
+        if min(rx, ry) <= 0:
+            raise ValueError("Empty ellipse")
+        return x-rx, y-ry, x+rx, y+ry
+    if name == "line":
+        pts = [(number("x1", 0), number("y1", 0)), (number("x2", 0), number("y2", 0))]
+    elif name in {"polyline", "polygon"}:
+        values = [float(v) for v in re.split(r"[\s,]+", node.attrib["points"].strip())]
+        if len(values) % 2 or not all(math.isfinite(v) for v in values):
+            raise ValueError("Invalid points")
+        pts = list(zip(values[::2], values[1::2]))
+    elif name == "path":
+        pts = _path_vertices(node.attrib["d"])
+    else:
+        raise ValueError("Not a drawable geometric primitive")
+    if len(set(pts)) < 2:
+        raise ValueError("Empty geometry")
+    return min(x for x, _ in pts), min(y for _, y in pts), max(x for x, _ in pts), max(y for _, y in pts)
+
+
+def _inside(box, view):
+    tol = view[2] * 1e-9
+    return (box[0] >= view[0]-tol and box[1] >= view[1]-tol
+            and box[2] <= view[0]+view[2]+tol and box[3] <= view[1]+view[3]+tol)
+
+
+def _visible_graphic(node, parents, view, *, in_marker=False, mm_per_unit=None):
+    """At least one nondegenerate painted primitive; empty groups do not count."""
+    for child in node.iter():
+        if child.tag.split("}")[-1] not in {"rect", "circle", "ellipse", "line", "polyline", "polygon", "path"}:
+            continue
+        try:
+            if not _root_coordinates(child, parents):
+                continue
+            if not in_marker and not _directly_rendered(child, parents):
+                continue
+            box = _geometry_box(child)
+            if not _inside(box, view):
+                continue
+            name = child.tag.split("}")[-1]
+            width, height = box[2]-box[0], box[3]-box[1]
+            filled = name not in {"line", "polyline"} and min(width, height) > 0 and _fill_visible(child, parents)
+            stroke_view = view if mm_per_unit is None else [0, 0, DISPLAY_WIDTH_MM/mm_per_unit, 1]
+            stroked = _stroke_visible(child, parents, stroke_view)
+            physical_scale = DISPLAY_WIDTH_MM / view[2] if mm_per_unit is None else mm_per_unit
+            if (filled or stroked) and max(width, height) * physical_scale >= MIN_POINT_DIAMETER_MM:
+                return True
+        except (ValueError, KeyError, TypeError, OverflowError):
+            continue
+    return False
+
+
+def _text_in_canvas(node, parents, view):
+    try:
+        if not _directly_rendered(node, parents) or not _fill_visible(node, parents):
+            return False
+        # SVG labels use root coordinates; permit the oracle's ordinary rotated
+        # axis labels, while rejecting transforms whose mapping we cannot audit.
+        x, y = float(node.attrib.get("x", "0")), float(node.attrib.get("y", "0"))
+        size = float(_inherited(node, parents, "font-size", "16"))
+        if not all(math.isfinite(v) for v in (x, y, size)) or size <= 0:
+            return False
+        length = len("".join(node.itertext())) * size * 0.6
+        anchor = _inherited(node, parents, "text-anchor", "start")
+        x -= length / 2 if anchor == "middle" else length if anchor == "end" else 0
+        points = [(x, y-size), (x+length, y-size), (x, y+size*.2), (x+length, y+size*.2)]
+        current = node
+        while current is not None:
+            transform = current.attrib.get("transform")
+            if transform:
+                values = re.fullmatch(r"rotate\(\s*([-+0-9.eE]+)(?:[\s,]+([-+0-9.eE]+)[\s,]+([-+0-9.eE]+))?\s*\)", transform)
+                if not values:
+                    return False
+                angle, cx, cy = [float(v or 0) for v in values.groups()]
+                theta = math.radians(angle)
+                points = [(cx+(px-cx)*math.cos(theta)-(py-cy)*math.sin(theta),
+                           cy+(px-cx)*math.sin(theta)+(py-cy)*math.cos(theta)) for px, py in points]
+            current = parents.get(current)
+        return _inside((min(x for x, _ in points), min(y for _, y in points),
+                        max(x for x, _ in points), max(y for _, y in points)), view)
+    except (ValueError, TypeError, OverflowError):
+        return False
 
 
 def _directly_rendered(node, parents):
@@ -176,8 +361,7 @@ def grade(case, submission, execution="none"):
               check("provenance", 5, a.get("data_sha256") == ex["data_hash"] and a.get("data_origin") == "synthetic" and a.get("model_status") == "fixed_not_fitted" and a.get("uncertainty_band") is False, critical=True)]
     try:
         root, ids, parents = _svg_info(art.get("figure.svg", ""))
-        view = [float(x) for x in root.attrib["viewBox"].replace(",", " ").split()]
-        assert len(view) == 4 and all(math.isfinite(x) for x in view) and view[2] > 0 and view[3] > 0
+        view = svg_viewbox(root)
         svg_ok = root.tag.split("}")[-1] == "svg" and any(n.tag.endswith("text") and _directly_rendered(n, parents) for n in root.iter())
     except (ValueError, KeyError, TypeError, OverflowError, ET.ParseError, AssertionError):
         svg_ok, ids, parents, root, view = False, {}, {}, None, [0, 0, 0, 0]
@@ -220,10 +404,10 @@ def grade(case, submission, execution="none"):
                 return False
             points = list(ids[id])
             target = _mapped(ex["rows"], a["x_limits"], a[ylimits], boxes[panel], column)
-            return len(points) == len(target) and all(p.tag.endswith("circle") and untransformed(p) and math.isfinite(float(p.attrib.get("r", 0))) and float(p.attrib.get("r", 0)) > 0 and close(float(p.attrib["cx"]), x, rtol=0, atol=xtol) and close(float(p.attrib["cy"]), y, rtol=0, atol=ytol) for p, (x, y) in zip(points, target))
+            return len(points) == len(target) and all(p.tag.endswith("circle") and untransformed(p) and math.isfinite(float(p.attrib.get("r", 0))) and 2*float(p.attrib.get("r", 0))*DISPLAY_WIDTH_MM/view[2] >= MIN_POINT_DIAMETER_MM and _fill_visible(p, parents) and close(float(p.attrib["cx"]), x, rtol=0, atol=xtol) and close(float(p.attrib["cy"]), y, rtol=0, atol=ytol) for p, (x, y) in zip(points, target))
         except (ValueError, KeyError, TypeError, OverflowError):
             return False
-    checks.append(check("observation_geometry", 15, mark_check("observations", 1, "signal", "signal_y_limits"), "Every visible observation must match the CSV after declared axis mapping", critical=True))
+    checks.append(check("observation_geometry", 15, mark_check("observations", 1, "signal", "signal_y_limits"), "CSV coordinates and provisional minimum diameter 0.2 mm/effective opacity 0.3 at 180 mm", critical=True))
     model_ok = False
     if bounds_ok and "signal-model" in ids:
         try:
@@ -242,10 +426,10 @@ def grade(case, submission, execution="none"):
                 m = params["A_m"]*math.exp(-params["gamma_per_s"]*t)*math.cos(params["omega_rad_per_s"]*t)
                 target_y = by+(yhi-m)/(yhi-ylo)*bh
                 formula_ok = formula_ok and bx-xtol <= px <= bx+bw+xtol and abs(py-target_y) <= ytol*4/3
-            model_ok = len(vals) % 2 == 0 and len(points) >= len(required) and all(p[0]<q[0] for p,q in zip(points,points[1:])) and node.tag.endswith("polyline") and untransformed(node) and node.attrib.get("fill") == "none" and includes_required and formula_ok
+            model_ok = len(vals) % 2 == 0 and len(points) >= len(required) and all(p[0]<q[0] for p,q in zip(points,points[1:])) and node.tag.endswith("polyline") and untransformed(node) and node.attrib.get("fill") == "none" and _stroke_visible(node, parents, view) and includes_required and formula_ok
         except (ValueError, KeyError, TypeError, OverflowError):
             pass
-    checks.append(check("model_geometry", 10, model_ok))
+    checks.append(check("model_geometry", 10, model_ok, "CSV model, positive effective stroke; provisional minimum 0.08 mm at 180 mm", critical=True))
     checks.append(check("residual_geometry", 10, mark_check("residual-points", 3, "residual", "residual_y_limits"), critical=True))
     colors_ok = False
     try:
@@ -260,10 +444,31 @@ def grade(case, submission, execution="none"):
     try:
         ar = ids["displacement-arrow"]
         marker = ar.attrib["marker-end"]
-        schematic_ok = all(x in ids and _directly_rendered(ids[x], parents) for x in ("mass", "spring", "damper", "displacement-arrow")) and ar.tag.endswith("line") and float(ar.attrib["x2"]) > float(ar.attrib["x1"]) and close(float(ar.attrib["y2"]), float(ar.attrib["y1"])) and marker.startswith("url(#") and marker[5:-1] in ids
+        marker_id = marker[5:-1] if re.fullmatch(r"url\(#[A-Za-z0-9_-]+\)", marker) else ""
+        marker_node = ids.get(marker_id)
+        marker_width = float(marker_node.attrib.get("markerWidth", "3")) if marker_node is not None else 0
+        marker_height = float(marker_node.attrib.get("markerHeight", "3")) if marker_node is not None else 0
+        marker_view = [0, 0, marker_width, marker_height]
+        if marker_node is not None and "viewBox" in marker_node.attrib:
+            marker_view = svg_viewbox(marker_node)
+        marker_ref = [float(marker_node.attrib.get("refX", "0")), float(marker_node.attrib.get("refY", "0"))] if marker_node is not None else [0, 0]
+        marker_units = marker_node.attrib.get("markerUnits", "strokeWidth") if marker_node is not None else ""
+        marker_multiplier = float(_inherited(ar, parents, "stroke-width", "1")) if marker_units == "strokeWidth" else 1
+        marker_scale = (min(marker_width/marker_view[2], marker_height/marker_view[3])
+                        * marker_multiplier * DISPLAY_WIDTH_MM/view[2]) if min(marker_view[2:]) > 0 else 0
+        marker_ok = (marker_node is not None and marker_node.tag.split("}")[-1] == "marker"
+                     and marker_units in {"strokeWidth", "userSpaceOnUse"}
+                     and min(marker_width, marker_height) > 0 and math.isfinite(marker_scale) and marker_scale > 0
+                     and all(math.isfinite(v) for v in marker_view + marker_ref)
+                     and _inside([marker_ref[0], marker_ref[1], marker_ref[0], marker_ref[1]], marker_view)
+                     and _visible_graphic(marker_node, parents, marker_view, in_marker=True, mm_per_unit=marker_scale))
+        schematic_ok = (all(x in ids and _visible_graphic(ids[x], parents, view) for x in ("mass", "spring", "damper", "displacement-arrow"))
+                        and ar.tag.endswith("line") and float(ar.attrib["x2"]) > float(ar.attrib["x1"])
+                        and close(float(ar.attrib["y2"]), float(ar.attrib["y1"]), rtol=0, atol=ytol)
+                        and _stroke_visible(ar, parents, view) and marker_ok)
     except (ValueError, KeyError, TypeError):
         pass
-    checks.append(check("schematic_direction", 5, schematic_ok))
-    labels = " ".join("".join(n.itertext()) for n in root.iter() if n.tag.endswith("text") and _directly_rendered(n, parents)) if root is not None else ""
-    checks.append(check("labels_and_layout", 5, bounds_ok and all(x in labels for x in ("Time (s)", "Displacement (m)", "Residual (m)", "Synthetic observations", "Fixed model")), "Exact unit labels are a rendering contract, not a quality score"))
+    checks.append(check("schematic_direction", 5, schematic_ok, "Nonempty on-canvas schematic and a painted marker; connections require actual review", critical=True))
+    labels = " ".join("".join(n.itertext()) for n in root.iter() if n.tag.endswith("text") and _text_in_canvas(n, parents, view)) if root is not None else ""
+    checks.append(check("labels_and_layout", 5, bounds_ok and all(x in labels for x in ("Time (s)", "Displacement (m)", "Residual (m)", "Synthetic observations", "Fixed model")), "Required labels have on-canvas approximate text bounds; actual glyph layout/occlusion requires rendering"))
     return checks

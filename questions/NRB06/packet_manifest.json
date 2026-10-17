@@ -1,12 +1,12 @@
 {
   "task_id": "NRB06",
   "seed": 0,
-  "benchmark_version": "0.1.0",
-  "case_hash": "9585e29057076c72c45809f47c4c09f66db93bb427e8f21f99b5f1770accf057",
+  "benchmark_version": "0.2.0",
+  "case_hash": "f3f79e408f623255a2c62ba48f1eb5b87f0a8670ce381f42be8b34f02641ce6a",
   "files": {
     "DATA_README.md": "19066f38a0168dde636532db1a450c2a0e81435e04654dce805bf032a70c616d",
-    "calibration.csv": "2755e4eea794ce24b36fba8c67b82825e60b6580f2841070eb88b577446994d9",
-    "instruction.md": "51514d257222207fcfcafd3f06c13ef5a7bdc3bb275adc853c98f7873629b8f2",
+    "calibration.csv": "96da1ac78f0e2afa87fd16fa4b9331e53de8044c521ebcbbc6dba5df5b8d2bdf",
+    "instruction.md": "7be4b2fe4e4742d974dc342b8da58b68c0e4246a008e9df93009a1d8e2e32946",
     "measurement.json": "bac443b62b52e114bc797ddc7a875e2206ececba31cfb40560f0067e77de244d",
     "noise.csv": "6eb23379e582b3c343ece65ce27b782b03b4c742ded556b7b1222a306f8b42cc"
   },

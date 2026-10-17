@@ -20,7 +20,12 @@ REFERENCE_SOURCE = '''import math
 
 def solve(payload):
     def finite_number(value):
-        return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
+        if not isinstance(value, (int, float)) or isinstance(value, bool):
+            return False
+        try:
+            return math.isfinite(value)
+        except OverflowError:
+            return False
     edges = payload.get("edges", [])
     if not isinstance(edges, list) or len(edges) < 2 or not all(finite_number(x) for x in edges):
         raise ValueError("edges must contain at least two finite numbers")
@@ -171,7 +176,7 @@ def _generated(rng, n=4, left="flux", right="flux"):
     return p
 
 
-def _hidden(seed):
+def _hidden_with_groups(seed):
     rng = random.Random(f"NRB04:hidden:{seed}")
     cases = []
     p = _generated(rng, 5)
@@ -199,12 +204,83 @@ def _hidden(seed):
     p = _generated(rng, 4, "temperature", "temperature")
     p["dt"] = 1.4*_stability_limit(p)
     cases.append(("reject_unstable_step", p, "ValueError"))
-    return cases
+
+    # The harness materializes these JSON-safe descriptors only inside the
+    # candidate process, so strict JSON transport and execution remain intact.
+    def extra(name, field, value, group):
+        item = _generated(rng, 3)
+        if isinstance(field, tuple):
+            item[field[0]][field[1]] = value
+        else:
+            item[field] = value
+        cases.append((name, item, "ValueError"))
+        members[group].append(name)
+
+    members = {name: [name] for name, _, _ in cases}
+    for boundary in ("left", "right", "both"):
+        p = _generated(rng, 1,
+                       "temperature" if boundary in ("left", "both") else "flux",
+                       "temperature" if boundary in ("right", "both") else "flux")
+        name = "one_cell_temperature_" + boundary
+        cases.append((name, p, "ok"))
+        members["two_temperature_boundaries"].append(name)
+    for value, tag in ((0.0, "zero"), (-1.0, "negative")):
+        extra("reject_"+tag+"_conductivity", ("conductivity", 1), value, "discontinuous_conductivity")
+    for key in ("edges", "conductivity", "capacity", "temperature", "source"):
+        group = "reject_nonincreasing_edges" if key == "edges" else "reject_invalid_capacity"
+        extra("reject_boolean_"+key, (key, 1), True, group)
+        for token in ("nan", "inf", "-inf"):
+            extra("reject_"+token+"_"+key, (key, 1), {"__nrb_float__": token}, group)
+        extra("reject_nonlist_"+key, key, "not a list", group)
+        if key != "edges":
+            extra("reject_short_"+key, key, [1.0, 1.0], group)
+            extra("reject_long_"+key, key, [1.0]*4, group)
+    extra("reject_too_few_edges", "edges", [0.0], "reject_nonincreasing_edges")
+    for boundary in ("left", "right"):
+        for value, tag in ((None, "object"), ({"kind": "unknown", "value": 0.0}, "kind"),
+                           ({"kind": "flux"}, "missing_value"),
+                           ({"kind": "flux", "value": True}, "boolean_value")):
+            extra("reject_"+boundary+"_"+tag, boundary, value, "mixed_boundary")
+        for token in ("nan", "inf", "-inf"):
+            extra("reject_"+boundary+"_"+token, boundary,
+                  {"kind": "temperature", "value": {"__nrb_float__": token}}, "mixed_boundary")
+    for value, tag in ((True, "boolean"), (1.0, "float"), (-1, "negative"), ("2", "string")):
+        extra("reject_"+tag+"_steps", "steps", value, "zero_step_flux_at_initial_state")
+    for token in ("nan", "inf", "-inf"):
+        extra("reject_"+token+"_steps", "steps", {"__nrb_float__": token}, "zero_step_flux_at_initial_state")
+    extra("reject_zero_capacity", ("capacity", 1), 0.0, "reject_invalid_capacity")
+    for value, tag in ((True, "boolean"), (0.0, "zero"), (-0.1, "negative")):
+        extra("reject_"+tag+"_dt", "dt", value, "reject_unstable_step")
+    for token in ("nan", "inf", "-inf"):
+        extra("reject_"+token+"_dt", "dt", {"__nrb_float__": token}, "reject_unstable_step")
+    p = _generated(rng, 1, "temperature", "temperature")
+    p["dt"], p["steps"] = 1.4*_stability_limit(p), 0
+    name = "reject_unstable_zero_step_single_cell"
+    cases.append((name, p, "ValueError"))
+    members["reject_unstable_step"].append(name)
+    # A single cell has two independent half-cell boundary conductances.
+    p = {"edges": [0.0, 2.0], "conductivity": [4.0], "capacity": [3.0],
+         "temperature": [5.0], "source": [2.0], "steps": 1,
+         "left": {"kind": "temperature", "value": 1.0},
+         "right": {"kind": "temperature", "value": 7.0}}
+    threshold = 0.75*(1.0+1e-12)
+    for dt, name, state in ((threshold, "stability_threshold_inclusive", "ok"),
+                             (math.nextafter(threshold, math.inf), "reject_above_stability_threshold", "ValueError")):
+        item = copy.deepcopy(p)
+        item["dt"] = dt
+        cases.append((name, item, state))
+        members["reject_unstable_step"].append(name)
+    return cases, members
+
+
+def _hidden(seed):
+    return _hidden_with_groups(seed)[0]
 
 
 def build(seed=0):
     rng = random.Random(f"NRB04:visible:{seed}")
     visible = _generated(rng, rng.randint(3, 5), "temperature", "flux")
+    hidden, hidden_groups = _hidden_with_groups(seed)
     contract = """# Public API: scalar heat transport
 
 All quantities are dimensionless synthetic classroom values; cross-section is 1.
@@ -212,8 +288,11 @@ All quantities are dimensionless synthetic classroom values; cross-section is 1.
 capacity[n] > 0 (volumetric), temperature[n], source[n] (per unit volume),
 dt > 0, integer steps >= 0, and left/right boundary objects.
 Each boundary is {"kind": "flux" | "temperature", "value": finite_number}.
-All numeric inputs must be finite; edges strictly increase; arrays must be lists
-with the specified length. Boolean values are not valid numbers or step counts.
+A numeric input is a Python int or float representable as a finite binary64
+value; bool is excluded. Numeric strings are invalid. IEEE NaN and both
+infinities are invalid, including direct Python API calls (JSON transport itself
+remains strict). Edges strictly increase; arrays must be lists with the specified
+length. steps must have Python int type, so 1.0 and True are invalid step counts.
 Raise ValueError for invalid inputs or violation of the stability bound below.
 
 Let h_i=edges[i+1]-edges[i]. For a face between i and i+1,
@@ -250,7 +329,7 @@ visible_result 是 input.json 的结果；数组长度须遵循该输入。solut
     return {"id": "NRB04", "seed": seed, "title": "非均匀网格上的守恒热扩散修复", "domain": "numerical-code-repair",
             "prompt": prompt,
             "files": {"API.md": contract, "input.json": json.dumps(visible, indent=2), "starter.py": STARTER_SOURCE},
-            "expected": {"visible": _oracle(visible), "hidden": _hidden(seed)},
+            "expected": {"visible": _oracle(visible), "hidden": hidden, "hidden_groups": hidden_groups},
             "rubric": [
                 {"id": "derivation", "title": "离散物理与误差解释", "anchors": {"0": "没有推导，或守恒/边界方向解释错误。", "5": "说明主要离散关系，但未清楚区分导热率、单元热容量及边界距离。", "10": "从单元热量平衡推导面热阻、源项、边界方向和非负权重步长条件，明确时间/空间离散误差。"}},
                 {"id": "verification", "title": "有效验证与执行诚实性", "anchors": {"0": "无可核验验证，或把未执行测试写成已通过。", "5": "展示一个有效守恒或解析例，并准确说明执行范围。", "10": "使用机制不同的例子检验守恒、异质界面、边界条件及拒绝非法输入；给出可复现命令/结果并如实说明范围。"}},
@@ -267,11 +346,20 @@ def _batch_source(source):
     return source + '''
 
 _nrb_original_solve = solve
+def _nrb_materialize(value):
+    if isinstance(value, dict):
+        if set(value) == {"__nrb_float__"}:
+            return float(value["__nrb_float__"])
+        return {key: _nrb_materialize(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_nrb_materialize(item) for item in value]
+    return value
+
 def solve(payload):
     results = []
     for item in payload["nrb_cases"]:
         try:
-            results.append({"status": "ok", "result": _nrb_original_solve(item)})
+            results.append({"status": "ok", "result": _nrb_original_solve(_nrb_materialize(item))})
         except Exception as exc:
             results.append({"status": "error", "type": type(exc).__name__})
     return {"nrb_results": results}
@@ -291,13 +379,16 @@ def grade(case, submission, execution="none"):
     artifacts = submission.get("artifacts", {}) if isinstance(submission, dict) else {}
     source = artifacts.get("solution.py") if isinstance(artifacts, dict) else None
     hidden = case["expected"]["hidden"]
+    groups = case["expected"]["hidden_groups"]
+    critical = {"insulated_nonuniform", "flux_source_capacity"}
     if not isinstance(source, str) or not source.strip():
-        return results + [check(name, 5, False, "缺少 solution.py。") for name, _, _ in hidden]
+        return results + [check(name, 5, False, "缺少 solution.py。", critical=name in critical) for name in groups]
     run = run_python(_batch_source(source), {"nrb_cases": [p for _, p, _ in hidden]}, execution=execution, timeout=5)
     if run.get("status") == "unavailable":
-        return results + [check(name, 5, None, run.get("detail", "未启用代码执行；此项未评。")) for name, _, _ in hidden]
+        return results + [check(name, 5, None, run.get("detail", "未启用代码执行；此项未评。"), critical=name in critical) for name in groups]
     output = run.get("result")
     batch = output.get("nrb_results") if isinstance(output, dict) else None
+    outcomes = {}
     for i, (name, p, state) in enumerate(hidden):
         observed = batch[i] if isinstance(batch, list) and i < len(batch) and isinstance(batch[i], dict) else {}
         if state == "ValueError":
@@ -306,5 +397,13 @@ def grade(case, submission, execution="none"):
             result = observed.get("result")
             oracle = _oracle(p)
             passed = observed.get("status") == "ok" and isinstance(result, dict) and numbers_close({key: result.get(key) for key in oracle}, oracle)
-        results.append(check(name, 5, passed, "生成行为测试，使用独立矩阵计算核对。" if run.get("status") == "ok" else run.get("detail", "代码执行失败。"), critical=name in ("insulated_nonuniform", "flux_source_capacity")))
+        outcomes[name] = passed
+    for name, members in groups.items():
+        failed = [member for member in members if not outcomes[member]]
+        detail = "组内逐例核对；失败案例：" + (", ".join(failed) if failed else "无")
+        if run.get("status") != "ok":
+            detail += "；" + run.get("detail", "代码执行失败。")
+        row = check(name, 5, not failed, detail, critical=name in critical)
+        row["cases"] = [{"id": member, "passed": outcomes[member]} for member in members]
+        results.append(row)
     return results

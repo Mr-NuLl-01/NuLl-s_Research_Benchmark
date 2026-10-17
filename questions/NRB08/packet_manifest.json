@@ -1,11 +1,11 @@
 {
   "task_id": "NRB08",
   "seed": 0,
-  "benchmark_version": "0.1.0",
-  "case_hash": "2ea93b5918d437fed413c17d5c7feac654737e0f94dfd9d820e75551baffcba8",
+  "benchmark_version": "0.2.0",
+  "case_hash": "54527a26d112611e8e9c80ac8fb51592add5042a993831c05d33a802384e0779",
   "files": {
     "affine.json": "45e83c537d78286d9166aec06d332478bd72ef7888b50baee878f93470b37170",
-    "instruction.md": "b8447c5e9f88a06ebd03fb47b51d198c9f0c2fd4640640f2417b6b1fddea0b0f"
+    "instruction.md": "62c4bb9d153a7a2f86ec68bb49c4cf95433a34f29280a1e08c8acf89fb39c8fa"
   },
   "contains_answers": false
 }

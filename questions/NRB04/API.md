@@ -5,8 +5,11 @@ All quantities are dimensionless synthetic classroom values; cross-section is 1.
 capacity[n] > 0 (volumetric), temperature[n], source[n] (per unit volume),
 dt > 0, integer steps >= 0, and left/right boundary objects.
 Each boundary is {"kind": "flux" | "temperature", "value": finite_number}.
-All numeric inputs must be finite; edges strictly increase; arrays must be lists
-with the specified length. Boolean values are not valid numbers or step counts.
+A numeric input is a Python int or float representable as a finite binary64
+value; bool is excluded. Numeric strings are invalid. IEEE NaN and both
+infinities are invalid, including direct Python API calls (JSON transport itself
+remains strict). Edges strictly increase; arrays must be lists with the specified
+length. steps must have Python int type, so 1.0 and True are invalid step counts.
 Raise ValueError for invalid inputs or violation of the stability bound below.
 
 Let h_i=edges[i+1]-edges[i]. For a face between i and i+1,

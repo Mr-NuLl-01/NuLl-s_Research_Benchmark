@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "null-research-benchmark"
-version = "0.1.0"
+version = "0.2.0"
 description = "Ten public, synthetic scientific-workflow task families with a shared scorer and multiple harness adapters"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
@@ -14,12 +14,16 @@ dependencies = []
 
 [project.optional-dependencies]
 inspect = ["inspect-ai==0.3.281"]
+render = ["CairoSVG==2.8.2"]
 
 [project.scripts]
 nrb = "nrb.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["nrb*"]
+
+[tool.setuptools.package-data]
+nrb = ["evaluation_policy.json", "_evaluator_origin.json"]
 
 [project.urls]
 Repository = "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark"

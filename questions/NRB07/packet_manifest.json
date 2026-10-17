@@ -1,12 +1,12 @@
 {
   "task_id": "NRB07",
   "seed": 0,
-  "benchmark_version": "0.1.0",
-  "case_hash": "11c05f1e5e475e2a3977390dabc032f5e41a8ea58f93a9c507a49e9d4bbbd422",
+  "benchmark_version": "0.2.0",
+  "case_hash": "41aeb4a277bf98862a595768200c2fc8326881dc5e05c432ad567e514940533d",
   "files": {
     "DATA_README.md": "4d91b7e1ae090beda67edd506c4e603ade043d7712f77b9e54f4ab5ba2607f32",
     "bootstrap_plan.json": "fd45860b1ea3af7acf0bb3b6626e8296a680ff145744c9de724cd603d6e16b7a",
-    "instruction.md": "a55885e4e47d8fae735eb935e87e89897252a03c0ce87992672930eadb324ea4",
+    "instruction.md": "ce956ebe386538b4c1df5dd522d9270c5d0ad1392924b61469ce0daf241d0238",
     "predictions.csv": "c73f6466c9a7b5b6c83450a230fa5e8d1aa8f8664edde68910ab7ef4b438008b",
     "protocol.json": "cbecfee5ce355d56ac59fbb6102b0721ac79d1bd0d4e58191b2862eca244d682",
     "records.csv": "a1d7332cda6539ec036b954da17f6488dd406090ae251ce3b3ca45c261cc85bd"

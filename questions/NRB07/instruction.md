@@ -56,6 +56,15 @@ answer 使用本题字段。代码、推导、图和修订稿放入 artifacts，
   }
 ]
 
+## 核心完成条件（独立于分数）
+以下责任逐项以 pass/fail/unassessed 审阅；高分不能补偿核心责任失败。
+[
+  {
+    "id": "evaluation_scope",
+    "requirement": "按独立机器与验证选模解释结果，准确区分合成预测评测与真实训练验证。"
+  }
+]
+
 Required artifacts: reasoning.md
 
 

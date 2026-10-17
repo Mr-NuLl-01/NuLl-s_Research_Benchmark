@@ -23,6 +23,7 @@ from nrb.adapters import (IncompleteGrade, ProvenanceError, candidate_sha256,
                           promptfoo_mock_provider, score_output, summarize_inspect_log,
                           summarize_promptfoo_results)
 from nrb.harness import run_command, unwrap_output
+from nrb.provenance import evaluator_identity, identity_from
 
 
 def fixture_case():
@@ -30,7 +31,7 @@ def fixture_case():
             "seed": 7, "benchmark_version": "fixture", "case_hash": "fixture-hash",
             "prompt": "Return a submission. This is synthetic test data.",
             "files": {"data/input.csv": "x,y\n1,2\n"},
-            "required_artifacts": [],
+            "required_artifacts": [], "essential_review_requirements": [],
             "expected": {"secret": "REFERENCE_ONLY_SENTINEL"},
             "rubric": [{"id": f"q{i}", "description": "fixture quality", "max": 10} for i in range(3)]}
 
@@ -39,18 +40,26 @@ def fixture_submission():
     return {"task_id": "NRB01", "answer": {"value": 2}, "artifacts": {}}
 
 
-def fixture_report(points=35, complete=True):
-    return {"task_id": "NRB01", "auto_points": points, "auto_max": 70,
-            "auto_percent": points / 70 * 100 if complete else None,
-            "coverage": 1 if complete else .5, "critical_failures": [],
-            "checks": [], "review_pending": True, "total": None}
+def fixture_report(points=35, complete=True, seed=7):
+    """A real sealed core report, with explicit synthetic callback check rows.
+
+    Optional frameworks must preserve those rows, not replace the report with a
+    total. Using the canonical constructor exercises all current report fields
+    and obligations without hand-maintaining an incomplete success dictionary.
+    """
+    from nrb.checks import check
+    from nrb.core import _report, fingerprint, get_case
+    return _report(get_case("NRB01", seed),
+                   [check("fixture_pass", points, True),
+                    check("fixture_remaining", 70-points, False if complete else None)],
+                   submission_hash=fingerprint(fixture_submission()))
 
 
 class CallbackContracts(unittest.TestCase):
     def setUp(self):
         self.case = fixture_case()
         self.context = {"vars": {"task_id": "NRB01", "seed": 7, "execution": "none",
-                                 "candidate_sha256": candidate_sha256(self.case)}}
+                                 "candidate_sha256": candidate_sha256(self.case), "evaluator_identity": evaluator_identity()}}
 
     def test_single_core_scorer_is_used_without_rescaling_to_full_score(self):
         expected = fixture_report()
@@ -59,6 +68,10 @@ class CallbackContracts(unittest.TestCase):
         self.assertEqual(result["score"], .5)
         self.assertFalse(result["pass"])
         self.assertIn('"total": null', result["reason"])
+        self.assertEqual(result["metadata"]["nrb_report"], expected)
+        self.assertEqual(result["metadata"]["nrb_report"]["checks"], expected["checks"])
+        prefix = "NRB automatic-only score; independent 30-point review remains pending. "
+        self.assertEqual(json.loads(result["reason"][len(prefix):]), expected)
         grader.assert_called_once_with(self.case, "model output", execution="none")
 
     def test_provenance_drift_fails_before_scoring(self):
@@ -67,8 +80,27 @@ class CallbackContracts(unittest.TestCase):
                 score_output("NRB01", 7, "output", candidate_hash="stale")
         grader.assert_not_called()
 
+    def test_evaluator_only_drift_fails_even_if_candidate_prompt_is_identical(self):
+        old = evaluator_identity()
+        changed = dict(old, evaluator_digest="0"*64)
+        with patch("nrb.provenance.evaluator_identity", return_value=changed), patch("nrb.core.grade_submission") as grader:
+            with self.assertRaises(ProvenanceError):
+                score_output("NRB01", 7, "output", candidate_hash=candidate_sha256(self.case), evaluator_id=old)
+        grader.assert_not_called()
+
+    def test_inspect_summary_does_not_stamp_legacy_report_with_current_identity(self):
+        report = fixture_report()
+        for key in evaluator_identity():
+            report.pop(key, None)
+        report["seed"] = 7
+        sample = SimpleNamespace(id="NRB01", epoch=1, scores={"nrb_automatic": SimpleNamespace(metadata={"nrb_report": report})})
+        result = summarize_inspect_log(SimpleNamespace(samples=[sample], status="success", invalidated=False))
+        self.assertIsNone(identity_from(result["reports"][0]))
+        self.assertEqual(result["adapter_provenance"]["unverified_export_identity_samples"], ["NRB01"])
+
     def test_incomplete_grading_is_an_error_not_zero_model_accuracy(self):
-        with patch("nrb.core.get_case", return_value=self.case), patch("nrb.core.grade_submission", return_value=fixture_report(complete=False)):
+        incomplete = fixture_report(complete=False)
+        with patch("nrb.core.get_case", return_value=self.case), patch("nrb.core.grade_submission", return_value=incomplete):
             with self.assertRaises(IncompleteGrade):
                 promptfoo_assertion("output", self.context)
 
@@ -114,6 +146,8 @@ class CallbackContracts(unittest.TestCase):
         self.assertFalse(summary["complete_auto"])
         self.assertIsNone(summary["auto_macro_percent"])
         self.assertEqual(len(summary["missing_tasks"]), 9)
+        self.assertEqual(summary["reports"][0], report)
+        self.assertEqual(summary["reports"][0]["checks"], report["checks"])
 
     def test_inspect_summary_excludes_log_with_provider_error(self):
         log = SimpleNamespace(samples=[], status="error", invalidated=False)
@@ -144,12 +178,14 @@ class CallbackContracts(unittest.TestCase):
         from nrb.core import get_case, candidate_prompt
         case = get_case("NRB01", 0)
         variables = {"task_id": case["id"], "seed": 0, "execution": "none",
-                     "candidate_sha256": candidate_sha256(case), "prompt": candidate_prompt(case)}
+                     "candidate_sha256": candidate_sha256(case), "prompt": candidate_prompt(case),
+                     "evaluator_identity": evaluator_identity()}
         grade = promptfoo_assertion('{"task_id":"NRB01","answer":{},"artifacts":{}}', {"vars": variables})
         # Observed in actual promptfoo 0.124.1 GitHub Actions results.json: a
         # SHA-looking vars value becomes [REDACTED], while vars.prompt and the
         # canonical report survive. Do not turn off framework redaction.
         variables["candidate_sha256"] = "[REDACTED]"
+        variables["evaluator_identity"]["evaluator_digest"] = "[REDACTED]"
         row = {"vars": variables, "provider": {"id": "example:model-v1", "label": "arm-a"},
                "promptIdx": 0, "score": 0, "success": False, "failureReason": 1,
                "gradingResult": {"componentResults": [grade]}}
@@ -161,6 +197,7 @@ class CallbackContracts(unittest.TestCase):
                 "runtimeOptions": {"repeat": 1, "maxConcurrency": 1, "cache": False}}
         result = summarize_promptfoo_results(data)
         self.assertEqual(result["provenance"]["hash_recovered_from_full_logged_prompt"], ["NRB01"])
+        self.assertEqual(result["provenance"]["evaluator_identity_recovered_from_canonical_report"], ["NRB01"])
         self.assertEqual(result["model_label"], "example:model-v1")
         self.assertEqual(result["harness_label"], "promptfoo")
         self.assertEqual(result["metadata"]["harness_version"], "0.124.1")
@@ -221,6 +258,8 @@ class ExportContracts(unittest.TestCase):
             config = json.loads((dest / "promptfooconfig.yaml").read_text())
             self.assertEqual(report["task_count"], 1)
             self.assertEqual(config["tests"][0]["vars"]["seed"], 7)
+            self.assertEqual(config["tests"][0]["vars"]["evaluator_identity"], evaluator_identity())
+            self.assertEqual(report["evaluator_identity"], evaluator_identity())
             self.assertEqual(config["defaultTest"]["assert"][0]["type"], "python")
             self.assertNotIn("REFERENCE_ONLY_SENTINEL", (dest / "promptfooconfig.yaml").read_text())
             with self.assertRaises(FileExistsError):
@@ -241,7 +280,10 @@ class ExportContracts(unittest.TestCase):
             self.assertFalse((environment / "nrb").exists())
             self.assertFalse((environment / "tests").exists())
             self.assertTrue((task / "tests" / "grader" / "nrb" / "core.py").is_file())
-            self.assertIn("REFERENCE_ONLY_SENTINEL", (task / "solution" / "reference.json").read_text())
+            self.assertFalse((task / "solution").exists())
+            self.assertEqual(json.loads((task / "tests" / "grader" / "case_identity.json").read_text())["evaluator_identity"], evaluator_identity())
+            self.assertTrue((task / "tests" / "grader" / "nrb" / "evaluation_policy.json").is_file())
+            self.assertEqual(json.loads((task / "tests" / "grader" / "nrb" / "_evaluator_origin.json").read_text()), evaluator_identity())
             dockerfile = (environment / "Dockerfile").read_text()
             self.assertIn("COPY packet/ /app/", dockerfile)
             self.assertNotIn("COPY . ", dockerfile)
@@ -261,6 +303,65 @@ class ExportContracts(unittest.TestCase):
                 self.assertEqual(parsed["verifier"]["environment"]["network_mode"], "no-network")
                 self.assertEqual(parsed["artifacts"], ["/app/"])
 
+    def test_harbor_oracle_is_explicit_and_api_hosts_are_explicit(self):
+        import tomllib
+        with tempfile.TemporaryDirectory() as temp:
+            default = Path(temp) / "default"
+            manifest = export_harbor([fixture_case()], default)
+            self.assertEqual(manifest["evaluator_identity"], evaluator_identity())
+            task = default / "nrb01"
+            config = tomllib.loads((task / "task.toml").read_text())
+            self.assertEqual(config["agent"]["network_mode"], "no-network")
+            self.assertNotIn("allowed_hosts", config["agent"])
+            self.assertFalse((task / "solution").exists())
+            explicit = Path(temp) / "explicit"
+            with patch("nrb.core.reference_submission", return_value=fixture_submission()):
+                export_harbor([fixture_case()], explicit, include_solution=True, agent_hosts=["api.openai.com"])
+            self.assertTrue((explicit / "nrb01" / "solution" / "reference.json").is_file())
+            config = tomllib.loads((explicit / "nrb01" / "task.toml").read_text())
+            self.assertEqual(config["agent"]["network_mode"], "allowlist")
+            self.assertEqual(config["agent"]["allowed_hosts"], ["api.openai.com"])
+            for hosts in (["*.openai.com"], ["https://api.openai.com"], ["api.openai.com/path"], ["api.openai.com", "api.openai.com"]):
+                with self.subTest(hosts=hosts), self.assertRaises(ValueError):
+                    export_harbor([fixture_case()], Path(temp) / "bad", agent_hosts=hosts)
+
+    def test_exported_harbor_evaluator_keeps_actual_policy_and_origin_identity(self):
+        import subprocess
+        with tempfile.TemporaryDirectory() as temp:
+            dest = Path(temp) / "export"
+            export_harbor([fixture_case()], dest)
+            grader = dest / "nrb01" / "tests" / "grader"
+            code = "import sys,json; sys.path.insert(0,sys.argv[1]); from nrb.provenance import evaluator_identity; print(json.dumps(evaluator_identity()))"
+            proc = subprocess.run([sys.executable, "-I", "-B", "-c", code, str(grader)], check=True, capture_output=True, text=True)
+            self.assertEqual(json.loads(proc.stdout), evaluator_identity())
+            policy = grader / "nrb" / "evaluation_policy.json"
+            policy.write_text(policy.read_text() + " ")
+            changed = subprocess.run([sys.executable, "-I", "-B", "-c", code, str(grader)], capture_output=True, text=True)
+            self.assertNotEqual(changed.returncode, 0)
+            self.assertIn("Sealed evaluator source differs", changed.stderr)
+
+    def test_candidate_isolation_static_screen_rejects_extra_copy_or_context_files(self):
+        from scripts.check_candidate_isolation import IsolationError, check_build_context
+        with tempfile.TemporaryDirectory() as temp:
+            dest = Path(temp) / "export"
+            export_harbor([fixture_case()], dest)
+            task = dest / "nrb01"
+            self.assertTrue(check_build_context(task)["passed"])
+            dockerfile = task / "environment" / "Dockerfile"
+            original = dockerfile.read_text()
+            dockerfile.write_text(original + "COPY ../tests/ /grader/\n")
+            with self.assertRaises(IsolationError):
+                check_build_context(task)
+            dockerfile.write_text(original)
+            extra = task / "environment" / "answer.json"
+            extra.write_text('"leaked"')
+            with self.assertRaises(IsolationError):
+                check_build_context(task)
+            extra.unlink()
+            (task / "environment" / "packet" / "nrb").mkdir()
+            with self.assertRaises(IsolationError):
+                check_build_context(task)
+
     def test_harbor_verifier_refuses_host_checkout(self):
         with self.assertRaises(IncompleteGrade):
             harbor_verify()
@@ -278,10 +379,12 @@ class ExportContracts(unittest.TestCase):
             result = {"exception_info": None, "verifier_environment_mode": "separate",
                       "verifier_result": {"rewards": {"reward": 1.0}}}
             (trial / "result.json").write_text(json.dumps(result))
-            report = fixture_report(points=70)
-            report.update(seed=0, adapter="harbor", input_integrity={"unchanged": True},
+            report = fixture_report(points=70, seed=0)
+            report.update( adapter="harbor", input_integrity={"unchanged": True},
                           comparison_eligible=True,
                           verifier_log_permissions={"owner_uid": 0, "mode": "0o755"})
+            from nrb.core import seal_report
+            report = seal_report(report)
             (verifier / "report.json").write_text(json.dumps(report))
             (verifier / "reward.txt").write_text("1\n")
             self.assertTrue(module.check_job(job, ["NRB01"])["passed"])

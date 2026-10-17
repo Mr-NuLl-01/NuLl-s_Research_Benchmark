@@ -17,12 +17,13 @@ answer 的精确结构：
  "weighted_operator_norm":0,"unweighted_operator_norm":0,
  "fixed_point":[0,0,0],"residual_vector":[0,0,0],"weighted_residual_norm":0,
  "certified_weighted_error_bound":0,"actual_weighted_error":0,
- "claims":{"unique_fixed_point":true,"ordinary_infinity_contraction":false,
-   "spectral_radius_substitution_universally_valid":false},
+ "claims":{"unique_fixed_point":"boolean，由你判断","ordinary_infinity_contraction":"boolean，由你判断",
+   "spectral_radius_substitution_universally_valid":"boolean，由你判断"},
  "counterexample":{"A":[[0,0],[0,0]],"b":[0,0],"x_hat":[0,0],
    "fixed_point":[0,0],"spectral_radius":0,"residual_infinity_norm":0,
    "actual_infinity_error":0,"claimed_bound":0}
 }
+claims 中三个字段的提交类型均为 JSON boolean；上面的类型说明不是待复制的取值。
 reasoning.md 须包含：算子范数的推导、完备性与自映射条件、存在及唯一性论证、
 对任意候选点成立的残差不等式推导，以及反例如何击破原命题。
 普通无穷范数不收缩不能单独推出固定点不存在。数值保留至少 8 位有效数字；
@@ -65,6 +66,23 @@ answer 使用本题字段。代码、推导、图和修订稿放入 artifacts，
       "5": "反例计算有效，但未指出谱半径不能替代给定范数的 Lipschitz 常数。",
       "10": "逐项核验原命题假设和失败结论，并解释非正规性/范数选择而不否定正确收缩定理。"
     }
+  }
+]
+
+## 核心完成条件（独立于分数）
+以下责任逐项以 pass/fail/unassessed 审阅；高分不能补偿核心责任失败。
+[
+  {
+    "id": "existence_uniqueness",
+    "requirement": "完整证明存在唯一性，明确空间、范数和收缩条件。"
+  },
+  {
+    "id": "residual_bound_proof",
+    "requirement": "推导一般残差误差界，范数、常数和不等式方向一致。"
+  },
+  {
+    "id": "counterexample_explanation",
+    "requirement": "反例满足所检验前提并确实推翻指定结论，有可核查解释。"
   }
 ]
 

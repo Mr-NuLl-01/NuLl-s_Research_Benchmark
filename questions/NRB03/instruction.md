@@ -24,11 +24,17 @@ answer 精确结构：
  "second_distinct_objective":0, "objective_gap":0
 }
 worst_scenario 为 1 起始情景编号。任意全局最优向量均接受；second_distinct 是
-严格次优目标（与最优值差大于 1e-12），并非另一并列最优向量。objective_gap
+严格次优目标（精确目标与精确最优值差大于 1e-12 的最小层级），并非另一并列最优向量。
+公开有限小数定义精确输入；全局最优向量必须达到精确最小值，显示数值的容差不扩大最优集合。objective_gap
 为该严格次优值减最优值。自动数值评分也检查你给出的实际分配的约束和方差，
 不能只填写最优目标数字。reasoning.md 解释含未知截距的方差推导、鲁棒目标、
 全局最优性证据与适用条件；solve.py 提供仅依赖标准 Python 的可复查枚举或等价算法。
-不要声称这些合成情景来自实际测量。数值保留至少 7 位有效数字。
+solve.py 必须定义 solve(problem)：problem 是解析 design.json 后的字典，返回与上述 answer
+字段、类型完全相同的字典，不含 task_id/artifacts 包装，不读其他文件。模块导入不得运行命令行入口。
+独立质量验收必须实际调用该入口并核对其结果与所交答案及所选向量一致；未实际执行不能算完成复现。
+不要声称这些合成情景来自实际测量。数值建议直接保留计算结果的浮点精度；如需缩短，至少保留 9 位有效数字。
+使用科学计数法表示小量，不把谱密度、协方差或目标差舍入为零。
+评分容差按字段定义，不要求输出额外无意义的小数。
 
 
 ## 提交协议 / Submission contract
@@ -67,6 +73,19 @@ answer 使用本题字段。代码、推导、图和修订稿放入 artifacts，
       "5": "解释最坏情景与预算约束，但缺乏对模型改变的具体影响判断。",
       "10": "解释最坏情景/实际活跃约束，讨论相关误差、未涵盖情景或模型曲率如何改变结论。"
     }
+  }
+]
+
+## 核心完成条件（独立于分数）
+以下责任逐项以 pass/fail/unassessed 审阅；高分不能补偿核心责任失败。
+[
+  {
+    "id": "search_reproduced",
+    "requirement": "按公开 solve(problem) 入口实际执行必交搜索代码，结果与提交和精确最优层级一致；须有绑定的执行回执。"
+  },
+  {
+    "id": "optimality_explanation",
+    "requirement": "搜索、全部约束与最优性论证可复查，和交付代码相符。"
   }
 ]
 
@@ -138,7 +157,7 @@ Required artifacts: reasoning.md, solve.py
     "The model is linear over these levels; center quota is an imposed practical constraint."
   ],
   "objective": "minimize the maximum variance of the estimated slope across the three scenarios",
-  "tie_policy": "Any globally optimal allocation is accepted; the runner-up means the next strictly larger objective (difference >1e-12)."
+  "tie_policy": "Finite decimal inputs are exact. Any exact global minimizer is accepted; runner-up is the minimum objective strictly greater than the exact minimum plus 1e-12. Display tolerances do not widen either allocation set."
 }
 
 

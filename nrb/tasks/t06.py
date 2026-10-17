@@ -81,7 +81,7 @@ def build(seed=0):
     for i, base_x in enumerate((0.0, 0.5, 1.2, 1.7, 2.4, 3.1, 4.0)):
         x = round(base_x*xscale, 5)
         sigma = round(rng.uniform(1.7, 5.2), 5)
-        voltage = 1000*(intercept+slope*x) + rng.gauss(0.0, sigma*1.4)
+        voltage = 1000*(intercept+slope*x) + rng.gauss(0.0, sigma)
         rows.append({"id": f"C{i+1:02d}", "reference_mm": x, "voltage_mV": round(voltage, 6),
                      "sigma_mV": sigma, "status": "valid"})
     rows.insert(rng.randrange(1, len(rows)), {"id": "C_SAT", "reference_mm": round(5.4*xscale, 5),

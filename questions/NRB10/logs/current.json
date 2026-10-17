@@ -3,9 +3,14 @@
   "source_revision": "1a00d133e34075bce136ae730bd098bbff265d9d",
   "platform": "Linux",
   "command": "python -m unittest discover -s tests -p test_calibration.py",
+  "arithmetic_status": "run",
   "exit_code": 0,
   "tests_run": 7,
   "scope": "calibration arithmetic only",
   "render_check": "not_run",
-  "other_platform_checks": "not_run"
+  "render_command": "render_svg bundle/plot.svg --check-readable",
+  "other_platform_checks": "not_run",
+  "other_platform": "Windows",
+  "other_platform_command": "python -m unittest discover -s tests -p test_calibration.py",
+  "record_definition": "render_check and other_platform_checks concern this record's source_revision; pass/fail records include completed check outcomes, not plans."
 }

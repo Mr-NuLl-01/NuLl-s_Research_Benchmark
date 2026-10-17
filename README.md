@@ -6,9 +6,15 @@
 
 NRB-10 面向需要把科学推理转成可检查成果的工作：阅读证据、辨认模型退化、设计实验、修复数值代码、处理不确定度、审查证明、制作图表，以及接续和修订研究成果。它使用经典科学问题和原创合成材料，不依赖个人的具体研究课题、真实未发表数据或私有代码。
 
-当前版本：**0.1.0，公开开发基准**。题目、数值参考、评分逻辑和错误控制可运行；真实模型的难度分布、排序稳定性和题目区分度仍需用固定配置的重复实测校准。仓库中的 oracle 和 self-test 成绩是评测程序自检，**不是任何 AI 模型的成绩**。
+当前版本：**0.2.0，公开开发基准**。保留十题、每题 **70 自动分 + 30 质量分**，新增独立的**核心责任完成判定**和**评分器内容身份**。分数高不再自动代表核心成果完整。真实模型的难度分布、排序稳定性和题目区分度仍需固定配置的重复实测校准。仓库中的 oracle、mock 和 self-test 是评测程序自检，**不是任何 AI 模型的成绩**。
 
-[完整 10 题](questions/README.md) · [评分方法](docs/scoring.md) · [运行与 harness](docs/harnesses.md) · [实验设计](docs/methodology.md) · [验证记录](docs/validation.md) · [来源与阅读范围](docs/sources.md)
+[完整 10 题](questions/README.md) · [评分方法](docs/scoring.md) · [运行与 harness](docs/harnesses.md) · [避免答案访问](docs/testing-without-answer-access.md) · [v0.2 变更与迁移](docs/v0.2-migration.md) · [验证记录](docs/validation.md) · [实验设计](docs/methodology.md)
+
+## v0.2 修订重点
+
+NRB08/10 的判断字段只展示类型和候选值；NRB10 已增加八种证据状态，包含检查齐全的可交接实例。NRB01–03 统一至少9位有效数字并验证合法舍入；NRB06 噪声生成与已知绝对 sigma 一致；NRB03 采用精确十进制有理数判最优层级，并实际复现必交 `solve.py`。NRB04/05 增加候选异常与边界行为控制；NRB09 增加最小可见性检查、实际渲染和提交绑定的看图证据。
+
+每份结果同时保存 `evaluator_commit`、`evaluator_digest`、题包/提交/答案键/量表指纹及核心完成状态。修改评分代码后必须统一重评比较对象；v0.1 成绩保留历史身份，不能混入 v0.2 排名。
 
 ## 10 道主任务
 
@@ -39,7 +45,7 @@ python -m unittest discover -s tests -v
 python -m nrb selftest --seeds 0,17,101 --out selftest.json
 ```
 
-核心只用 Python 标准库，无须安装依赖即可运行。`selftest` 只执行仓库自己提供的可信参考代码，检查每个参考答案是否得到 70/70 自动分、空提交是否得到 0，以及变体是否可复现。输出路径必须是新路径；这防止旧结果被静默覆盖。
+核心只用 Python 标准库，无须安装依赖即可运行。`selftest` 只执行仓库自己的可信参考代码，检查参考答案70/70、空提交0分、变体可复现，以及 NRB03 必交搜索代码确实返回正确结果。它不会预填30分质量分或核心审阅通过。输出路径必须是新路径。
 
 也可安装命令行入口：
 
@@ -85,7 +91,7 @@ python -m nrb grade-suite --seed 0 --submissions received \
   --execution docker --out reports/suite.json
 ```
 
-正式对比前固定 Docker 镜像 digest，将其配置到 `NRB_PYTHON_IMAGE`，并记录模型、harness、依赖、工具与预算。NRB04/05 的实际代码测试默认在 Docker 中执行；其余题目不需要执行候选代码。没有 Docker 时可以用 `--execution none` 查看可评部分，但代码题会保留未评项，套题总分不成立。`trusted` 只给仓库自身的参考/错误控制使用，不能用它执行外部候选程序。
+正式对比前固定 Docker 镜像 digest，将其配置到 `NRB_PYTHON_IMAGE`，并记录模型、harness、依赖、工具与预算。NRB03 的必交搜索代码及 NRB04/05 的行为测试使用 Docker 隔离执行。没有 Docker 时可以用 `--execution none` 查看可评部分：NRB04/05 有自动未评项，NRB03 的数值分可存在但核心执行仍未评。`trusted` 只给仓库自有控制使用，不能执行外部候选程序，也不能作为 NRB03 隔离执行验收的通过凭据。
 
 ### 多 harness
 
@@ -101,7 +107,7 @@ python -m nrb grade-suite --seed 0 --submissions received \
 
 ## 分数如何读
 
-每题 **70 分自动核验 + 30 分独立质量审阅**，10 题等权。自动分可以直接用于连续监测；质量审阅用于确认成果是否真正可用。
+每题 **70 分自动核验 + 30 分独立质量审阅**，10 题等权。三项质量分和核心责任的 `pass/fail/unassessed` 分别填写，科学责任不使用“每项人工分至少5分”代替。
 
 - `auto_points`：0–70 的原始自动分。
 - `auto_percent`：自动分除以 70 后得到的 0–100；**不是完整科研质量总分**。
@@ -109,19 +115,25 @@ python -m nrb grade-suite --seed 0 --submissions received \
 - `total`：自动分加质量分，0–100；只有自动核验完整且审阅完成时才存在。
 - `critical_failures`：关键科学/交付失误，单列报告；不要被平均分掩盖。
 - `coverage`：真正完成评分的自动分权重比例。基础设施失败不是模型答错。
+- `completion_status`：`complete`、`failed`、`pending_review` 或 `infrastructure_unscored`。
+- `quality_qualified`：核心完成且完整总分≥80才为 `true`；明确失败为 `false`，尚不能判断为 `null`。80是预设操作标准，尚未经验校准。
+
+例如 NRB08 缺存在唯一性与残差界证明，自动70、质量0/0/10得到的**原始总分仍为80，但核心失败**。NRB09 白色遮挡、NRB10 无法使用的英文正文也不能靠其他得分补过。汇总同时给分数、完成计数/上下界、关键失败和待评项。
 
 要追加质量评分：
 
 ```bash
 python -m nrb review-packet --task NRB09 --seed 0 \
-  --submission received/NRB09.json --dest reviews/NRB09
-# 独立评阅者填写 reviews/NRB09/review.json；图题先看实际渲染。
+  --submission received/NRB09.json --render --dest reviews/NRB09
+# 实际查看 figure.png，独立填写质量分、核心责任和两项看图确认。
 python -m nrb grade --task NRB09 --seed 0 \
   --submission received/NRB09.json --review reviews/NRB09/review.json \
   --out reports/NRB09-reviewed.json
 ```
 
-质量分也可以由另一模型辅助填写，`reviewer_type` 必须设为 `llm` 并记录精确 judge ID；合计会标为 **`llm_reviewed_provisional`**，不能冒充独立人工结论。
+图题渲染需安装 `python -m pip install 'CairoSVG==2.8.2'` 或可调用的 Inkscape；缺渲染器保持未评。NRB03 创建 review packet 时使用 `--execution docker`，实际执行收据会保存并绑定到该次自动报告。评分、审阅和合并须保持同一代码与执行配置。
+
+质量分可以由另一模型辅助填写，`reviewer_type` 必须为 `llm` 并记录精确 judge ID；结果标为 **`llm_reviewed_provisional`**。混合人工与 LLM 审阅的汇总明确显示 provisional，不能冒充全人工结论。
 
 ## 先测什么
 
@@ -131,6 +143,6 @@ python -m nrb grade --task NRB09 --seed 0 \
 
 ## 维护
 
-题目输入、评分标准和容差改变必须版本化。新增失败案例先修复判据并回归，再更新题包；不要为偏好的模型调整答案、权重或阈值。公开变体仍可被学习，随机种子不是防污染保证。实际能力报告须注明提交 commit、配置、失败项和未评项。
+题目输入、评分标准和容差改变必须版本化。即使题面不变，评分源码或政策变化也会改变 `evaluator_digest`，比较器拒绝混比。旧结果可读，不自动补成当前身份。新增失败案例先修复判据并回归，再更新题包；不要为偏好的模型调整答案、权重或阈值。公开变体仍可被学习，随机种子不是防污染保证。实际能力报告须注明评分器 commit/指纹、配置、失败项和未评项。
 
 代码及本项目原创合成题目沿用仓库的 [MIT License](LICENSE)。外部资料保留各自权利，本仓库只提供来源链接和方法说明。
