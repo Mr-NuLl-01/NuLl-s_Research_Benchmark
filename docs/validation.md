@@ -63,7 +63,20 @@
 
 [首次 CI：commit bfa818d](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39027479074) 已实际完成：Python 3.11 和 3.12 的核心检查均通过；Inspect 的四项真实可选运行检查（含 Harbor schema）通过；Docker 中的代码题参考及错误程序检查通过；Harbor 0.24.0/schema 1.4 的十题 oracle 均得到核心 70/70、框架 reward=1、完整覆盖和独立 verifier，未产生模型 API 调用。
 
-首次 CI 的 promptfoo 步骤发现了真实兼容性问题：promptfoo 默认将结果文件里的哈希脱敏为 `[REDACTED]`，导致结果转换器拒绝该结果。修复保留严格来源核验：只有明确的脱敏标记可以用日志中保留的完整题面重新计算哈希补证；题面缺失、改变或非脱敏的错误哈希仍会失败。该修复的真实运行结果以随后 commit 的 CI 为准，不能将首次整体 CI 描述为全绿。
+首次 CI 的 promptfoo 步骤发现了真实兼容性问题：promptfoo 默认将结果文件里的哈希脱敏为 `[REDACTED]`，导致结果转换器拒绝该结果。修复保留严格来源核验：只有明确的脱敏标记可以用日志中保留的完整题面重新计算哈希补证；题面缺失、改变或非脱敏的错误哈希仍会失败。首次整体 CI 因此没有全绿。
+
+### 修复后的完整验证：四个作业全部通过
+
+[第二次 CI：commit 755b624](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39028114298) 已实际完成，整体结论为 **success**。本页的证据记录只更新文档和验证摘要，不改变该次通过的代码、题包、评分器或工作流。
+
+| 作业 | 已观察结果 |
+|---|---|
+| Core Python 3.11 | 通过：核心回归、30 个 seeded oracle/empty 控制、冻结题包一致性 |
+| Core Python 3.12 | 通过：与 3.11 相同的检查 |
+| Inspect、promptfoo、Harbor schema | 通过：四项真实可选运行测试；promptfoo 0.124.1 的十份空提交产生 10 个预期断言失败、0 个运行错误，统一报告完整且自动分为 0 |
+| Docker 与独立 Harbor verifier | 通过：两道代码题的参考/错误程序控制；十道 Harbor oracle 的核心分均为 70/70、reward 均为 1、覆盖完整，artifact 传递与独立 verifier 已运行 |
+
+机器可读摘要：[ci-2026-10-17.json](../validation/ci-2026-10-17.json)。具体日志与 CI artifacts 在上面的固定 run 链接中。Inspect 使用 mock、Harbor 使用 oracle、promptfoo 使用空提交 provider；这些检查未调用商业模型 API，也未产生真实模型能力成绩。
 
 ## 尚未得到的证据
 

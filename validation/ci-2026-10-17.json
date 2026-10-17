@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "kind": "infrastructure_validation_not_model_performance",
+  "date": "2026-10-17",
+  "repository": "Mr-NuLl-01/NuLl-s_Research_Benchmark",
+  "tested_commit": "755b6242ff50e86cefdf57ae498d51658401df13",
+  "run_id": 39028114298,
+  "run_url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39028114298",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "job_id": 117383017414,
+      "name": "Docker and separate Harbor verifier",
+      "conclusion": "success"
+    },
+    {
+      "job_id": 117383017595,
+      "name": "Core Python 3.11",
+      "conclusion": "success"
+    },
+    {
+      "job_id": 117383017598,
+      "name": "Inspect, promptfoo, Harbor schema",
+      "conclusion": "success"
+    },
+    {
+      "job_id": 117383017605,
+      "name": "Core Python 3.12",
+      "conclusion": "success"
+    }
+  ],
+  "observed_checks": {
+    "core_python_versions": [
+      "3.11",
+      "3.12"
+    ],
+    "seeded_reference_controls": {
+      "task_instances": 30,
+      "seeds": [
+        0,
+        17,
+        101
+      ],
+      "oracle_auto_points": 70,
+      "empty_auto_points": 0
+    },
+    "optional_runtime_tests": {
+      "passed": 4,
+      "inspect_ai": "0.3.281",
+      "harbor": "0.24.0",
+      "harbor_schema": "1.4"
+    },
+    "promptfoo": {
+      "version": "0.124.1",
+      "task_count": 10,
+      "expected_empty_assertion_failures": 10,
+      "runtime_errors": 0,
+      "unified_auto_percent": 0,
+      "passed": true
+    },
+    "docker_code_tasks": {
+      "task_count": 2,
+      "reference_and_incorrect_program_controls_passed": true
+    },
+    "harbor": {
+      "task_count": 10,
+      "agent": "oracle",
+      "separate_verifier": true,
+      "all_auto_points": 70,
+      "all_rewards": 1,
+      "all_coverage": 1,
+      "passed": true
+    },
+    "commercial_model_api_calls": 0
+  },
+  "interpretation": "Framework execution, scoring integration, container verification, and synthetic controls passed at the linked commit. This is not a real-model result or empirical calibration of task discrimination."
+}
