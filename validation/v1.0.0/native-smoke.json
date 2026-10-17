@@ -1,0 +1,292 @@
+{
+  "kind": "native_empty_mock",
+  "not_model_performance": true,
+  "api_provider_calls": 0,
+  "passed": true,
+  "evaluator_identity": {
+    "benchmark_version": "1.0.0",
+    "scoring_schema": "nrb-v1.0",
+    "evaluator_commit": null,
+    "evaluator_digest": "e9f5e38f6e07232c2d8ff6d992f9bfa34a5a940bd2421271fb673a352cd20d7e",
+    "digest_algorithm": "sha256-path-content-v1"
+  },
+  "result": {
+    "model_label": "mock-empty",
+    "harness_label": "file-protocol",
+    "metadata": {
+      "not_model_performance": true,
+      "api_provider_calls": 0
+    },
+    "runs": [
+      {
+        "task_id": "C01",
+        "status": "completed",
+        "input_unchanged": true
+      }
+    ],
+    "reports": [
+      {
+        "task_id": "C01",
+        "seed": 17,
+        "track": "coding",
+        "evaluator_identity": {
+          "benchmark_version": "1.0.0",
+          "scoring_schema": "nrb-v1.0",
+          "evaluator_commit": null,
+          "evaluator_digest": "e9f5e38f6e07232c2d8ff6d992f9bfa34a5a940bd2421271fb673a352cd20d7e",
+          "digest_algorithm": "sha256-path-content-v1"
+        },
+        "packet_hash": "45fa2976990638ece24f61101a51c97502578566f085e7a7d535d84db1ff4bad",
+        "submission_hash": "c083c488d81492b696c79f06f6dff32f32ec57880aba5fa3b52aad4d63d2ee97",
+        "rubric_hash": "d0048698a236c50f49456971229f47ca2d59b4e1143709585fdf1be0292dba1c",
+        "checks": [
+          {
+            "id": "parse_units",
+            "tier": "basic",
+            "weight": 12,
+            "critical": true,
+            "passed": false,
+            "detail": "MissingSource: "
+          },
+          {
+            "id": "empty",
+            "tier": "basic",
+            "weight": 8,
+            "critical": false,
+            "passed": false,
+            "detail": "MissingSource: "
+          },
+          {
+            "id": "duplicates_missing",
+            "tier": "scientific",
+            "weight": 15,
+            "critical": true,
+            "passed": false,
+            "detail": "MissingSource: "
+          },
+          {
+            "id": "quoted_bom",
+            "tier": "scientific",
+            "weight": 15,
+            "critical": false,
+            "passed": false,
+            "detail": "MissingSource: "
+          },
+          {
+            "id": "scaled_variance",
+            "tier": "stress",
+            "weight": 10,
+            "critical": false,
+            "passed": false,
+            "detail": "MissingSource: "
+          },
+          {
+            "id": "invalid_0",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": false,
+            "detail": "Required exception behavior did not match"
+          },
+          {
+            "id": "invalid_1",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": false,
+            "detail": "Required exception behavior did not match"
+          },
+          {
+            "id": "invalid_2",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": false,
+            "detail": "Required exception behavior did not match"
+          },
+          {
+            "id": "invalid_3",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": false,
+            "detail": "Required exception behavior did not match"
+          },
+          {
+            "id": "invalid_4",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": false,
+            "detail": "Required exception behavior did not match"
+          }
+        ],
+        "missing_artifacts": [
+          "solution.py",
+          "report.md",
+          "tests.py"
+        ],
+        "essential_review": [
+          {
+            "id": "api",
+            "requirement": "solution.py 提供 solve(problem)，返回约定的 JSON 可序列化值，错误输入抛 ValueError。",
+            "outcome": "unassessed",
+            "evidence": "",
+            "rationale": ""
+          },
+          {
+            "id": "science",
+            "requirement": "report.md 解释科学定义、算法、单位、验证依据及适用范围。",
+            "outcome": "unassessed",
+            "evidence": "",
+            "rationale": ""
+          },
+          {
+            "id": "tests",
+            "requirement": "tests.py 包含可运行且有断言的独立测试，至少覆盖一个非平凡性质和一个边界。",
+            "outcome": "unassessed",
+            "evidence": "",
+            "rationale": ""
+          }
+        ],
+        "auto_points": 0,
+        "auto_max": 70,
+        "review_points": null,
+        "review_max": 30,
+        "total": null,
+        "reviewer_type": null,
+        "execution": {
+          "backend": "none",
+          "language": "python",
+          "input_hash": "83ab1422f31193623746b019d869c33ff0445f966fabbf782098e5667b3a2eea",
+          "source_hash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+          "wall_seconds": null,
+          "image_id": null,
+          "compiler": null,
+          "status": "failed",
+          "error": "Missing source"
+        },
+        "tier_scores": {
+          "basic": {
+            "earned": 0,
+            "scored_max": 20,
+            "max": 20
+          },
+          "scientific": {
+            "earned": 0,
+            "scored_max": 30,
+            "max": 30
+          },
+          "stress": {
+            "earned": 0,
+            "scored_max": 20,
+            "max": 20
+          }
+        },
+        "generation": {
+          "status": "completed",
+          "wall_seconds": 0.03343820999725722,
+          "exit_code": 0,
+          "tokens": null,
+          "cost": null,
+          "model_label": "mock-empty",
+          "harness_label": "file-protocol",
+          "metadata": {
+            "not_model_performance": true,
+            "api_provider_calls": 0
+          },
+          "command_fingerprint": "6e843012205f697ba3b0a1339cdc42d0327bc8e0e28d9b147bc7dc6e5471aa74",
+          "execution_boundary": "host_process_not_a_generation_sandbox"
+        },
+        "test_manifest_hash": "7cc60eb6d6f82ee8ff4bc401606bd2942af359b8e1d2e9fac5870d41f07f13db",
+        "auto_scored_max": 70,
+        "auto_percent": 0.0,
+        "critical_failures": [
+          "parse_units",
+          "duplicates_missing",
+          "missing:solution.py",
+          "missing:report.md",
+          "missing:tests.py"
+        ],
+        "pending_items": [
+          "essential:api",
+          "essential:science",
+          "essential:tests",
+          "quality_review"
+        ],
+        "completion_status": "failed",
+        "quality_qualified": false,
+        "report_hash": "e6229f8a38c2e568484bbdab89712e421967e648ee79de82e5e97f162b199ecd",
+        "invalid_submission": null,
+        "raw_response_hash": "39269a5107f7ecc94cdea526f3bc9c90b8aa79c12ed97c57d350aef39beb091c",
+        "input_integrity": {
+          "unchanged": true
+        },
+        "comparison_eligible": true
+      }
+    ],
+    "summary": {
+      "schema": "nrb-summary-v1",
+      "evaluator_identity": {
+        "benchmark_version": "1.0.0",
+        "scoring_schema": "nrb-v1.0",
+        "evaluator_commit": null,
+        "evaluator_digest": "e9f5e38f6e07232c2d8ff6d992f9bfa34a5a940bd2421271fb673a352cd20d7e",
+        "digest_algorithm": "sha256-path-content-v1"
+      },
+      "selection": "C01",
+      "task_table": [
+        {
+          "task_id": "C01",
+          "track": "coding",
+          "instances": 1,
+          "missing_seeds": [],
+          "total": null,
+          "automatic_mean": 0.0,
+          "completion": [
+            "failed"
+          ],
+          "quality_qualified": [
+            false
+          ],
+          "critical_failures": [
+            "duplicates_missing",
+            "missing:report.md",
+            "missing:solution.py",
+            "missing:tests.py",
+            "parse_units"
+          ],
+          "pending_items": [
+            "essential:api",
+            "essential:science",
+            "essential:tests",
+            "quality_review"
+          ]
+        }
+      ],
+      "expected_families": 1,
+      "seeds": [
+        17
+      ],
+      "missing_tasks": [],
+      "mean_total": null,
+      "profiles": {
+        "coding": {
+          "families": 1,
+          "mean_total": null,
+          "automatic_mean_of_70": 0.0
+        }
+      },
+      "completion_counts": {
+        "complete": 0,
+        "failed": 1,
+        "pending_review": 0,
+        "infrastructure_unscored": 0
+      },
+      "quality_qualified_count": 0,
+      "review_types": [],
+      "review_authority": "unreviewed",
+      "interpretation": "Family macro means require every selected task/seed. Coding/research/optional profiles stay separate. Automatic scores remain unknown on incomplete execution. Human/LLM cohorts never mix."
+    }
+  }
+}

@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "null-research-benchmark"
-version = "0.2.0"
-description = "Ten public, synthetic scientific-workflow task families with a shared scorer and multiple harness adapters"
+version = "1.0.0"
+description = "Ten scientific-coding tasks, six research tasks, and three optional media tasks with offline single-file packets"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
 readme = "README.md"
@@ -18,12 +18,19 @@ render = ["CairoSVG==2.8.2"]
 
 [project.scripts]
 nrb = "nrb.cli:main"
+nrb-v1 = "nrb_v1.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["nrb*"]
 
 [tool.setuptools.package-data]
 nrb = ["evaluation_policy.json", "_evaluator_origin.json"]
+nrb_v1 = ["policy.json", "_origin.json"]
 
 [project.urls]
 Repository = "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark"
+
+[tool.setuptools.data-files]
+"share/null-research-benchmark/sources/v1" = ["sources/v1/article-packets.json", "sources/v1/manifest.json", "sources/v1/README.md"]
+"share/null-research-benchmark/sources/v1/offline-figures" = ["sources/v1/offline-figures/weissgerber2015-fig2.png", "sources/v1/offline-figures/rougier2014-fig7.png", "sources/v1/offline-figures/crameri2020-fig3.png"]
+"share/null-research-benchmark/sources/v1/synthetic" = ["sources/v1/synthetic/input-figure.svg"]

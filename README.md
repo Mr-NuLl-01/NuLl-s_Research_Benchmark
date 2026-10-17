@@ -1,148 +1,126 @@
-# NuLl's Research Benchmark — NRB-10
+# NuLl's Research Benchmark · V1.0
 
-**10 道可生成变体的科研工作流任务，同一套评分器，支持多种模型与 agent harness。**
+**10 道有难度梯度的科学编程题 + 6 道科研工作流题 + 3 道可选扩展题。每题一个离线文件，统一评分并单独判断核心责任是否完成。**
 
 [![NRB validation](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/workflows/ci.yml)
 
-NRB-10 面向需要把科学推理转成可检查成果的工作：阅读证据、辨认模型退化、设计实验、修复数值代码、处理不确定度、审查证明、制作图表，以及接续和修订研究成果。它使用经典科学问题和原创合成材料，不依赖个人的具体研究课题、真实未发表数据或私有代码。
+面向把研究想法变成可检查成果的日常工作：Python 数据与数值计算、TMM 仿真、Fortran 漂移扩散、复杂 bug 修复、科研绘图、保守英文修订、图文写作、论文精读与部分方法复现、综述综合。全部例子来自经典公开问题、公开许可文献和原创合成数据；不使用个人正在推进的研究、未发表数据或私有代码。
 
-当前版本：**0.2.0，公开开发基准**。保留十题、每题 **70 自动分 + 30 质量分**，新增独立的**核心责任完成判定**和**评分器内容身份**。分数高不再自动代表核心成果完整。真实模型的难度分布、排序稳定性和题目区分度仍需固定配置的重复实测校准。仓库中的 oracle、mock 和 self-test 是评测程序自检，**不是任何 AI 模型的成绩**。
+当前是 **V1.0.0 公开开发基准**。难度 1–5 是设计先验；参考实现和错误候选用于检验评分，不能代替真实模型的难度校准。仓库不把 oracle、mock 或人工规则测试登记为 AI 成绩。
 
-[完整 10 题](questions/README.md) · [评分方法](docs/scoring.md) · [运行与 harness](docs/harnesses.md) · [避免答案访问](docs/testing-without-answer-access.md) · [v0.2 变更与迁移](docs/v0.2-migration.md) · [验证记录](docs/validation.md) · [实验设计](docs/methodology.md)
+**直接下载题目： [tasks/v1.0/](tasks/v1.0/README.md)**。候选每次只拿其中一个 `.md` 或 `.html` 文件。HTML 已嵌入所需图像、数据和论文文本；下载后打开即可，不需要让被测 AI 克隆或搜索这个仓库。
 
-## v0.2 修订重点
+[完整设计报告](docs/v1/design-report.md) · [运行及 harness 指南](docs/v1/usage.md) · [评分规则](docs/v1/scoring.md) · [科研题详细人工量表](docs/v1/research-guide.md) · [防答案访问](docs/v1/closed-evaluation.md) · [验证记录](docs/v1/validation.md)
 
-NRB08/10 的判断字段只展示类型和候选值；NRB10 已增加八种证据状态，包含检查齐全的可交接实例。NRB01–03 统一至少9位有效数字并验证合法舍入；NRB06 噪声生成与已知绝对 sigma 一致；NRB03 采用精确十进制有理数判最优层级，并实际复现必交 `solve.py`。NRB04/05 增加候选异常与边界行为控制；NRB09 增加最小可见性检查、实际渲染和提交绑定的看图证据。
+## 十道代码题
 
-每份结果同时保存 `evaluator_commit`、`evaluator_digest`、题包/提交/答案键/量表指纹及核心完成状态。修改评分代码后必须统一重评比较对象；v0.1 成绩保留历史身份，不能混入 v0.2 排名。
+每题 **70 自动分 + 30 人工质量分**；自动分分为基础 20、科学正确性 30、压力与边界 20。题目不仅要求代码，还要求科学说明和独立测试。Fortran 必须实际编译，候选 Python 必须实际执行。
 
-## 10 道主任务
+| 题目 | 语言 | 设计难度 | 主要区分点 | 建议作答预算 |
+|---|---|---:|---|---:|
+| [C01](tasks/v1.0/C01.md) 仪器 CSV 清洗与测量不确定度 | Python | 1/5 | 单位、重复身份、缺失记录、绝对不确定度 | 15 min |
+| [C02](tasks/v1.0/C02.md) 独立组与分层 bootstrap | Python | 2/5 | 统计单位、组与行权重、确定性随机重采样 | 15 min |
+| [C03](tasks/v1.0/C03.md) 分层导热求解器修复 | Python | 3/5 | 非均匀有限体积、界面热阻、隐式稳定性、守恒 | 15 min |
+| [C04](tasks/v1.0/C04.md) 稳定多层薄膜光学仿真 | Python | 4/5 | s/p 偏振、斜入射、复数分支、吸收与厚层稳定性 | 30 min |
+| [C05](tasks/v1.0/C05.md) 刚性反应自适应积分 | Python | 5/5 | 源项事件、拒步回滚、误差控制、浮点终点 | 30 min |
+| [C06](tasks/v1.0/C06.md) Fortran 守恒漂移扩散 | Fortran 2008 | 3/5 | SG 通量、正反漂移、非均匀网格、大 Peclet 数 | 30 min |
+| [C07](tasks/v1.0/C07.md) 逆热扩散与参数可辨识性 | Python | 4/5 | 多实验基线/幅度、剖面区间、秩退化、绝对 sigma | 40 min |
+| [C08](tasks/v1.0/C08.md) 二维异质各向异性椭圆方程 | Python | 4/5 | 面系数、方向性、边界积分通量、制造解 | 40 min |
+| [C09](tasks/v1.0/C09.md) Fortran 自洽漂移扩散–Poisson | Fortran 2008 | 5/5 | 耦合非线性、正密度、阻尼 Newton、规范不变性 | 60 min |
+| [C10](tasks/v1.0/C10.md) 反应扩散反演流水线修复 | Python | 5/5 | 守恒、离散灵敏度、协方差、JSON 重启、重拟合自举 | 75 min |
 
-每题含完整输入、提交字段、可执行自动评分与三项质量审阅量表。题内子问不是额外题目；`--seed` 改变数据、条件或参数，主任务数始终为 10。
+预算是正式比较前可统一调整的建议，不是已经验证的模型耗时。模型之间必须固定预算、工具与环境。题号按能力组合排列，不承诺难度严格递增。
 
-| ID | 任务 | 主要区分点 |
+## 科研与可选扩展题
+
+每题 100 分人工评阅，五个维度按 0–4 级加权。必须给证据和理由；看图、交互、视频、音频有明确的实际观察要求。
+
+| 题目 | 核心工作 | 必须检查的成果 |
 |---|---|---|
-| [NRB01](questions/NRB01/instruction.md) | 版本冲突下的证据与贡献审计 | 更正数据、独立统计单位、直接证据、因果与推广边界 |
-| [NRB02](questions/NRB02/instruction.md) | 热响应中的参数退化与判别实验 | 结构可辨识性、尺度等价族、有效干预、独立脉冲预测 |
-| [NRB03](questions/NRB03/instruction.md) | 有限预算下的鲁棒校准设计 | 未知截距、异方差、全部整数约束、全局 minimax 与严格次优 |
-| [NRB04](questions/NRB04/instruction.md) | 非均匀网格上的守恒热扩散修复 | 串联热阻、非均匀体积、边界条件、离散能量收支 |
-| [NRB05](questions/NRB05/instruction.md) | 自适应积分器的回滚与终止 | 全步/两半步误差、拒步不提交、终点和最小步长、有限失败 |
-| [NRB06](questions/NRB06/instruction.md) | 传感器校准、噪声谱与相关不确定度 | 已知绝对测量方差、协方差、ASD/PSD、精确通带积分 |
-| [NRB07](questions/NRB07/instruction.md) | 重复测量下的数据泄漏与分组评测 | 机器级划分、验证集选模、macro-F1、整组 bootstrap |
-| [NRB08](questions/NRB08/instruction.md) | 仿射收缩的证明、反例与误差证书 | 范数一致性、存在唯一性、残差不等式、真正有效的反例 |
-| [NRB09](questions/NRB09/instruction.md) | 从合成振子数据制作可编辑科研图 | 实际 SVG 数据坐标、来源标签、示意、图注与渲染质量 |
-| [NRB10](questions/NRB10/instruction.md) | 交接证据审计与保守英文修订 | 原始字节、revision 冲突、实际执行范围、英文保真、可接续交接 |
+| [R01](tasks/v1.0/R01.html) 参考论文图学习与 SVG | 分析三张真实参考图，再组织三面板科学表达 | 可编辑 SVG、实际 PNG、设计依据、源项目 |
+| [R02](tasks/v1.0/R02.html) Python 科研绘图 | 小差异、宽动态范围、负数/零/删失值各自选择尺度 | 代码、主图、替代尺度诊断、数值摘要 |
+| [R03](tasks/v1.0/R03.html) 保守英文润色 | 去套话、减夸张、保持事实和证据边界 | 修订正文、逐项事实账本、修改说明 |
+| [R04](tasks/v1.0/R04.html) 从图和草稿写论文 | 根据嵌入的两面板图、原始数据和作者粗略想法写结果/讨论 | 英文正文、图注、计算、主张证据表 |
+| [R05](tasks/v1.0/R05.html) 精读与部分方法复现 | 三篇论文的关键词、方法、明线暗线、落地方案及两项有界复现 | 来源卡、逻辑图表、可运行代码、真实结果图 |
+| [R06](tasks/v1.0/R06.html) 迷你综述 | 跨论文综合，完成正文、图、表和引文 | 综述、证据 SVG、比较表、BibTeX、证据账本 |
+| [X01](tasks/v1.0/X01.html) 可选 HTML | 离线科学仪表板及真实交互 | 单 HTML、交互核对记录 |
+| [X02](tasks/v1.0/X02.html) 可选视频 | 45–60 秒科学解释、字幕、场景证据和来源 | 实际 MP4、SRT、可编辑源项目 |
+| [X03](tasks/v1.0/X03.html) 可选音乐/音频 | 32 秒原创器乐，服务旁白和时间结构 | 实际 WAV、可编辑源文件、技术与听评记录 |
 
-## 立即自检：不需要模型 API
+三篇离线文献是 Weissgerber et al. (2015)、Rougier et al. (2014)、Crameri et al. (2020) 的公开图形与科学传播研究。全文供给范围、17 张原始图像的来源和准确许可见 [sources/v1/README.md](sources/v1/README.md)。这些材料检验真实阅读和方法落地，不能据此声称覆盖了所有专业领域。
 
-需要 Python 3.11+。在自己选择的工作目录执行：
+## 最短使用流程
+
+### 1. 给候选单题文件
+
+从 [tasks/v1.0/](tasks/v1.0/) 下载一题，放入新的无答案环境，使用新会话。不要同时提供仓库、量表实现、参考程序或旧对话。图文题应确认候选确实收到图像；HTML 源码中的 base64 字符串不等于已提供视觉输入。
+
+### 2. 在评分端安装并执行
+
+以下命令在评测者环境中运行，不在候选环境中运行：
 
 ```bash
 git clone https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark.git
 cd NuLl-s_Research_Benchmark
-python -m nrb list
-python -m unittest discover -s tests -v
-python -m nrb selftest --seeds 0,17,101 --out selftest.json
-```
-
-核心只用 Python 标准库，无须安装依赖即可运行。`selftest` 只执行仓库自己的可信参考代码，检查参考答案70/70、空提交0分、变体可复现，以及 NRB03 必交搜索代码确实返回正确结果。它不会预填30分质量分或核心审阅通过。输出路径必须是新路径。
-
-也可安装命令行入口：
-
-```bash
 python -m pip install -e .
-nrb list
+docker build -t nrb-v1:local -f environments/v1/Dockerfile .
+
+python -m nrb_v1 grade --task C04 --seed 17 \
+  --submission received/C04.json --execution docker \
+  --out results/C04-auto.json
 ```
 
-## 使用方式
+Python 编程题统一 `solve(problem)` 接口；Fortran 使用题内规定的数值行输入输出。提交格式是 `{"task_id":"C04","artifacts":{"solution.py":"完整文本","report.md":"完整文本","tests.py":"完整文本"},"answer":{}}`。每道题的具体合同优先。
 
-### 导出给模型或 agent 的题包
+已有真实文件可由评测者打包，二进制内容自动使用 base64：
 
 ```bash
-python -m nrb export --format native --seed 0 --dest exports/native-s0
-python -m nrb export --format jsonl --seed 0 --dest exports/nrb-s0.jsonl
+python -m nrb_v1 pack --task R01 --from-dir received/R01 \
+  --out received/R01.json
 ```
 
-`native` 题包只有题目、输入和公开质量量表，不包含答案、评分器或参考程序。正式 agent 运行时只把每题题包送入新环境，**不要把本仓库根目录交给被测 agent**。JSONL 适合现有 API 请求管线。
-
-所有 harness 交回同一个结构：
-
-```json
-{
-  "task_id": "NRB04",
-  "answer": {},
-  "artifacts": {
-    "solution.py": "完整代码内容",
-    "reasoning.md": "完整解释内容"
-  }
-}
-```
-
-`answer` 的具体字段在每题中给出；`artifacts` 必须放文件全文。框架外的本机文件路径不能代替交付文件。
-
-### 自动评分
+### 3. 人工评阅后合并
 
 ```bash
-docker pull python:3.12-slim
-python -m nrb grade --task NRB04 --seed 0 \
-  --submission received/NRB04.json --execution docker --out reports/NRB04.json
-
-python -m nrb grade-suite --seed 0 --submissions received \
-  --execution docker --out reports/suite.json
+python -m nrb_v1 review-packet --task R01 --submission received/R01.json \
+  --dest reviews/R01
 ```
 
-正式对比前固定 Docker 镜像 digest，将其配置到 `NRB_PYTHON_IMAGE`，并记录模型、harness、依赖、工具与预算。NRB03 的必交搜索代码及 NRB04/05 的行为测试使用 Docker 隔离执行。没有 Docker 时可以用 `--execution none` 查看可评部分：NRB04/05 有自动未评项，NRB03 的数值分可存在但核心执行仍未评。`trusted` 只给仓库自有控制使用，不能执行外部候选程序，也不能作为 NRB03 隔离执行验收的通过凭据。
-
-### 多 harness
-
-| 接口 | 适用范围 | 接入方式 |
-|---|---|---|
-| Inspect AI | 统一多模型 API 的固定输入测试，也可接自己的 solver | `adapters/inspect_ai/nrb_eval.py` |
-| promptfoo | 多 provider 比较、固定输入测试；另有 CLI provider | `nrb export --format promptfoo` |
-| Harbor | 在 agent 容器中做完整文件/工具任务，独立容器评分 | `nrb export --format harbor` |
-| 通用 CLI bridge | Codex、Claude Code、Gemini CLI 或任何兼容 stdin/文件交付的命令 | `nrb run --command-json ...` |
-| JSONL / 手工提交 | 自建 harness、网页模型或离线输出评分 | 统一 JSON 提交后 `nrb grade` |
-
-适配器全部调用 `nrb.core.grade_submission`，不会各写一套分数。真实模型/API/认证由用户现有的 harness 提供。具体安装、命令、支持与实际验证范围见 [harness 使用文档](docs/harnesses.md)。
-
-## 分数如何读
-
-每题 **70 分自动核验 + 30 分独立质量审阅**，10 题等权。三项质量分和核心责任的 `pass/fail/unassessed` 分别填写，科学责任不使用“每项人工分至少5分”代替。
-
-- `auto_points`：0–70 的原始自动分。
-- `auto_percent`：自动分除以 70 后得到的 0–100；**不是完整科研质量总分**。
-- `review_points`：三项各 0–10。没有审阅时是 `null`，不能填零或默认满分。
-- `total`：自动分加质量分，0–100；只有自动核验完整且审阅完成时才存在。
-- `critical_failures`：关键科学/交付失误，单列报告；不要被平均分掩盖。
-- `coverage`：真正完成评分的自动分权重比例。基础设施失败不是模型答错。
-- `completion_status`：`complete`、`failed`、`pending_review` 或 `infrastructure_unscored`。
-- `quality_qualified`：核心完成且完整总分≥80才为 `true`；明确失败为 `false`，尚不能判断为 `null`。80是预设操作标准，尚未经验校准。
-
-例如 NRB08 缺存在唯一性与残差界证明，自动70、质量0/0/10得到的**原始总分仍为80，但核心失败**。NRB09 白色遮挡、NRB10 无法使用的英文正文也不能靠其他得分补过。汇总同时给分数、完成计数/上下界、关键失败和待评项。
-
-要追加质量评分：
+评阅人打开该目录中的题目和真实成果，填写 `review.json` 的身份、各维度等级、证据、理由、核心责任和实际观察记录，然后：
 
 ```bash
-python -m nrb review-packet --task NRB09 --seed 0 \
-  --submission received/NRB09.json --render --dest reviews/NRB09
-# 实际查看 figure.png，独立填写质量分、核心责任和两项看图确认。
-python -m nrb grade --task NRB09 --seed 0 \
-  --submission received/NRB09.json --review reviews/NRB09/review.json \
-  --out reports/NRB09-reviewed.json
+python -m nrb_v1 grade --task R01 --submission received/R01.json \
+  --review reviews/R01/review.json --out results/R01-final.json
 ```
 
-图题渲染需安装 `python -m pip install 'CairoSVG==2.8.2'` 或可调用的 Inkscape；缺渲染器保持未评。NRB03 创建 review packet 时使用 `--execution docker`，实际执行收据会保存并绑定到该次自动报告。评分、审阅和合并须保持同一代码与执行配置。
+**自动 70/70 仍不是最终完成。** 汇总同时保留总分、核心完成状态、关键失败、待评项和评分器 commit/内容指纹。`complete` 表示核心责任均通过；`quality_qualified` 还要求完整总分达到 80。人工评阅与 LLM 辅助评阅分别记录，不能混在同一比较队列。
 
-质量分可以由另一模型辅助填写，`reviewer_type` 必须为 `llm` 并记录精确 judge ID；结果标为 **`llm_reviewed_provisional`**。混合人工与 LLM 审阅的汇总明确显示 provisional，不能冒充全人工结论。
+## Harness 支持
 
-## 先测什么
+- **单文件 / 任意文件型 harness**：十九题均可，成果统一 `pack → grade → review-packet`。
+- **原生命令适配器**：十九题均可；传命令 argv，保存原始输出和正式报告。宿主进程不是隔离边界，正式闭卷须使用独立环境。
+- **Inspect AI**：十道代码题，默认 response-only；公开导出不含 target 答案，统一自动评分及完整结果日志。
+- **promptfoo**：十道代码题，Python assertion 调用同一评分器；默认空 mock，不发生模型调用。
+- **Harbor**：十道代码题，candidate 与 verifier 分别构建容器，默认候选断网，参考程序仅在评分端；不默认导出 oracle。
 
-第一次运行，先用 NRB04 检查代码执行链、用 NRB09 检查文件交付链。随后跑完整 10 题。正式比较建议同一组数据变体与多个重复，每次新会话；固定模型比较 harness，或固定 harness 比较模型。详细实验矩阵和配对统计见 [方法文档](docs/methodology.md)。
+```bash
+python -m nrb_v1 export --format jsonl --tasks coding --dest exports/jsonl
+python -m nrb_v1 export --format promptfoo --tasks coding --dest exports/promptfoo
+python -m nrb_v1 export --format harbor --tasks coding --dest exports/harbor
+```
 
-本版不声称覆盖实时文献检索、真实实验操作、完整大型求解器、Lean 编译、长达数日的自主研究或所有视觉审美。NRB01 测固定证据包的审读，NRB08 测证明和反例；这些边界是分数解释的一部分。
+详细配置、可执行示例、版本和自动分的解释见 [运行指南](docs/v1/usage.md)。文本适配器不声称支持自动评判视频或音乐；这类成果进入人工模态评阅流程。
 
-## 维护
+## 版本与验证
 
-题目输入、评分标准和容差改变必须版本化。即使题面不变，评分源码或政策变化也会改变 `evaluator_digest`，比较器拒绝混比。旧结果可读，不自动补成当前身份。新增失败案例先修复判据并回归，再更新题包；不要为偏好的模型调整答案、权重或阈值。公开变体仍可被学习，随机种子不是防污染保证。实际能力报告须注明评分器 commit/指纹、配置、失败项和未评项。
+新 CLI 是 `nrb-v1` / `python -m nrb_v1`。旧 `nrb` 与 [questions/](questions/) 保留为 V0.2 历史协议，旧分数与 V1.0 不混比。
 
-代码及本项目原创合成题目沿用仓库的 [MIT License](LICENSE)。外部资料保留各自权利，本仓库只提供来源链接和方法说明。
+```bash
+python -m unittest discover -s tests_v1 -v
+python -m nrb_v1 selftest --tasks coding --seeds 0,17,2026 \
+  --include-mutants --execution trusted --out validation-run.json
+```
+
+`trusted` 只用于仓库受控参考/错误候选自检；未知代码使用 Docker。正式比较应固定 commit、评分器内容指纹、题包 hash、模型版本、harness/skills/工具、预算、环境镜像、种子和人工评阅身份。当前执行证据和限制见 [V1 验证记录](docs/v1/validation.md)。
+
+仓库代码和原创合成题目遵循 MIT；所附第三方文献/图像保留各自许可，不能用仓库 MIT 覆盖。请引用精确 commit，而不只写“用了 NRB”。

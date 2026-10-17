@@ -1,0 +1,155 @@
+[
+  {
+    "filename": "crameri2020-fig1.png",
+    "bytes": 540304,
+    "sha256": "1eb65804e037d2e78f5abd8f57825aecdeb3fcb78eb5463508bc14e81498f77a",
+    "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig1_HTML.png",
+    "retained": false,
+    "display_derivative": "offline-figures/crameri2020-fig1.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "crameri2020-fig2.png",
+    "bytes": 176281,
+    "sha256": "f4a77ecd96e32da7697ec6237d8c553139a59ce3c7449fd3b5a20840240d34a0",
+    "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig2_HTML.png",
+    "retained": false,
+    "display_derivative": "offline-figures/crameri2020-fig2.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "crameri2020-fig3.png",
+    "bytes": 178627,
+    "sha256": "f1751ed894a52db3712c49d785aaecb30b1b539bbfba1a13d375d9fbf9728394",
+    "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig3_HTML.png",
+    "retained": false,
+    "display_derivative": "offline-figures/crameri2020-fig3.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "crameri2020-fig4.png",
+    "bytes": 139724,
+    "sha256": "c733b0d7873035b197bd6f49ccac005f68c6dec53755ee29b0fd164ec0480c14",
+    "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig4_HTML.png",
+    "retained": false,
+    "display_derivative": "offline-figures/crameri2020-fig4.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "crameri2020-fig5.png",
+    "bytes": 132342,
+    "sha256": "f00394c397ac4fa1e520b82e39b24156b82a579ef5f97fd1bef66a705f6fc0bc",
+    "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig5_HTML.png",
+    "retained": false,
+    "display_derivative": "offline-figures/crameri2020-fig5.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "crameri2020-fig6.png",
+    "bytes": 450174,
+    "sha256": "9abb5f500fa6df5df8a0d807b1591b2294e1181622833ac9dddff97bf1ea46b3",
+    "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig6_HTML.png",
+    "retained": false,
+    "display_derivative": "offline-figures/crameri2020-fig6.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "rougier2014-fig1.png",
+    "bytes": 743341,
+    "sha256": "5b0c979b1076918094250101c65671e7d4e2897019b3962a30d31a3bbc5e3eb3",
+    "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g001",
+    "retained": false,
+    "display_derivative": "offline-figures/rougier2014-fig1.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "rougier2014-fig2.png",
+    "bytes": 1404815,
+    "sha256": "a9cc5e99957ef1f863d375f3a61ce33abfb9649fc7d630db8e4c3a8640ade03f",
+    "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g002",
+    "retained": false,
+    "display_derivative": "offline-figures/rougier2014-fig2.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "rougier2014-fig3.png",
+    "bytes": 2448128,
+    "sha256": "21887edd507ca14894ba2750023c777e3152f3500624068a8c91b8c5f6d2c0e4",
+    "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g003",
+    "retained": false,
+    "display_derivative": "offline-figures/rougier2014-fig3.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "rougier2014-fig4.png",
+    "bytes": 428847,
+    "sha256": "0fd04e0de95f9cb9785f4eca237f8b2964d4911de350b73062c9b4b02a989c4f",
+    "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g004",
+    "retained": false,
+    "display_derivative": "offline-figures/rougier2014-fig4.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "rougier2014-fig5.png",
+    "bytes": 2006052,
+    "sha256": "96a74013f2847558034fc0488800e05b7c57c488d56d65175900ce9e025b898a",
+    "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g005",
+    "retained": false,
+    "display_derivative": "offline-figures/rougier2014-fig5.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "rougier2014-fig6.png",
+    "bytes": 325335,
+    "sha256": "2a8a4741016449d2a40f817e7313bee4a3e9842e90b516dd9b36bbcc5b9d8e41",
+    "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g006",
+    "retained": false,
+    "display_derivative": "offline-figures/rougier2014-fig6.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "rougier2014-fig7.png",
+    "bytes": 3763039,
+    "sha256": "d9a6c505ca7c1cb7fc258d3b1c7db23a9f50817a5370ce392f9ddee899439d23",
+    "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g007",
+    "retained": false,
+    "display_derivative": "offline-figures/rougier2014-fig7.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "rougier2014-fig8.png",
+    "bytes": 816563,
+    "sha256": "2f0b532d022a3957d66ca6d40da2f0a12cf4f3741709a02e55ec0f2bd0058e37",
+    "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g008",
+    "retained": false,
+    "display_derivative": "offline-figures/rougier2014-fig8.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "weissgerber2015-fig1.png",
+    "bytes": 67313,
+    "sha256": "367ea9ee2faa278b4eaae90d6d83ea374ca2635fe18da7b211c3cc94408f5f5b",
+    "url": "https://journals.plos.org/plosbiology/article/figure/image?size=large&id=10.1371/journal.pbio.1002128.g001",
+    "retained": false,
+    "display_derivative": "offline-figures/weissgerber2015-fig1.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "weissgerber2015-fig2.png",
+    "bytes": 81374,
+    "sha256": "6c908c18ddb5819b480400f1edc4d3446e84eb2ca9ca470ab50b174175a73530",
+    "url": "https://journals.plos.org/plosbiology/article/figure/image?size=large&id=10.1371/journal.pbio.1002128.g002",
+    "retained": false,
+    "display_derivative": "offline-figures/weissgerber2015-fig2.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  },
+  {
+    "filename": "weissgerber2015-fig3.png",
+    "bytes": 53290,
+    "sha256": "c9ea70a85e5926e0bd98922103d0eb33c30ebf9a54230280fed52902c56061c0",
+    "url": "https://journals.plos.org/plosbiology/article/figure/image?size=large&id=10.1371/journal.pbio.1002128.g003",
+    "retained": false,
+    "display_derivative": "offline-figures/weissgerber2015-fig3.png",
+    "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+  }
+]

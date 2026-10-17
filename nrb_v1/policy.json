@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "coding_auto_max": 70,
+  "coding_review_max": 30,
+  "tier_maxima": {"basic": 20, "scientific": 30, "stress": 20},
+  "research_review_max": 100,
+  "completion_requires_all_essentials": true,
+  "quality_threshold": 80,
+  "difficulty_status": "design_prior_not_empirically_calibrated",
+  "default_seed": 17,
+  "default_execution": "docker",
+  "default_image": "nrb-v1:local",
+  "maximum_artifact_bytes": 104857600,
+  "candidate_network": "offline",
+  "manual_review_scale": [0, 1, 2, 3, 4]
+}

@@ -119,3 +119,107 @@ jobs:
             candidate-isolation.json
             candidate-isolation-materials
             /tmp/nrb-harbor-smoke
+
+  v1-core:
+    name: V1 science Python ${{ matrix.python }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install evaluator and real Fortran compiler
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gfortran
+          python -m pip install -e .
+          gfortran --version > fortran-version.txt
+      - name: V1 science, independent properties, malformed candidates and review contracts
+        run: python -m unittest discover -s tests_v1 -v 2>&1 | tee v1-tests.log
+      - name: Thirty seeded references and eighty-four executable wrong controls
+        run: python -m nrb_v1 selftest --tasks coding --seeds 0,17,2026 --include-mutants --execution trusted --out v1-selftest.json
+      - name: Nineteen standalone files match exact generators
+        run: |
+          python -m nrb_v1 export --format files --tasks all --seed 17 --dest /tmp/v1-frozen
+          diff -r tasks/v1.0 /tmp/v1-frozen
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: v1-core-python-${{ matrix.python }}
+          path: |
+            v1-tests.log
+            v1-selftest.json
+            fortran-version.txt
+
+  v1-framework:
+    name: V1 Inspect, promptfoo and Harbor schema
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      INSPECT_DISABLE_MODEL_API: '1'
+      PROMPTFOO_DISABLE_TELEMETRY: '1'
+      PROMPTFOO_DISABLE_UPDATE: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+      - name: Install pinned frameworks
+        run: |
+          python -m pip install -e . inspect-ai==0.3.281 harbor==0.24.0
+          npm install -g promptfoo@0.124.1
+          python -m pip freeze > v1-python-packages.txt
+          promptfoo --version > v1-promptfoo-version.txt
+      - name: Actual Inspect mock and Harbor schema plus canonical conversions
+        run: python -m unittest discover -s tests_v1 -p test_adapters.py -v 2>&1 | tee v1-framework.log
+      - name: Actual promptfoo CLI with ten expected empty failures
+        run: python adapters/v1/promptfoo_smoke.py --dest /tmp/v1-promptfoo
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: v1-framework-runtime
+          path: |
+            v1-framework.log
+            v1-python-packages.txt
+            v1-promptfoo-version.txt
+            /tmp/v1-promptfoo
+
+  v1-docker:
+    name: V1 Docker, Fortran and separate Harbor verifier
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Build scientific runtime
+        run: |
+          python -m pip install -e . harbor==0.24.0
+          docker build -t nrb-v1:local -f environments/v1/Dockerfile .
+          docker image inspect nrb-v1:local > v1-image.json
+          docker version > v1-docker-version.txt
+      - name: Execute ten references and eight scientific wrong controls
+        run: python scripts/v1/check_docker.py --image nrb-v1:local --out v1-docker-check.json
+      - name: Actual candidate image filesystem and network isolation
+        run: python scripts/v1/check_isolation.py --image nrb-v1:local --out v1-isolation.json
+      - name: Actual ten-task Harbor oracle transfer and separate verification
+        run: python adapters/v1/harbor_smoke.py --dest /tmp/v1-harbor --tasks coding --image nrb-v1:local
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: v1-docker-harbor-runtime
+          path: |
+            v1-image.json
+            v1-docker-version.txt
+            v1-docker-check.json
+            v1-isolation.json
+            v1-isolation-materials
+            /tmp/v1-harbor

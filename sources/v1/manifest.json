@@ -1,0 +1,451 @@
+{
+  "retrieved_original_images": [
+    {
+      "filename": "crameri2020-fig1.png",
+      "bytes": 540304,
+      "sha256": "1eb65804e037d2e78f5abd8f57825aecdeb3fcb78eb5463508bc14e81498f77a",
+      "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig1_HTML.png",
+      "retained": false,
+      "display_derivative": "offline-figures/crameri2020-fig1.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "crameri2020-fig2.png",
+      "bytes": 176281,
+      "sha256": "f4a77ecd96e32da7697ec6237d8c553139a59ce3c7449fd3b5a20840240d34a0",
+      "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig2_HTML.png",
+      "retained": false,
+      "display_derivative": "offline-figures/crameri2020-fig2.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "crameri2020-fig3.png",
+      "bytes": 178627,
+      "sha256": "f1751ed894a52db3712c49d785aaecb30b1b539bbfba1a13d375d9fbf9728394",
+      "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig3_HTML.png",
+      "retained": false,
+      "display_derivative": "offline-figures/crameri2020-fig3.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "crameri2020-fig4.png",
+      "bytes": 139724,
+      "sha256": "c733b0d7873035b197bd6f49ccac005f68c6dec53755ee29b0fd164ec0480c14",
+      "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig4_HTML.png",
+      "retained": false,
+      "display_derivative": "offline-figures/crameri2020-fig4.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "crameri2020-fig5.png",
+      "bytes": 132342,
+      "sha256": "f00394c397ac4fa1e520b82e39b24156b82a579ef5f97fd1bef66a705f6fc0bc",
+      "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig5_HTML.png",
+      "retained": false,
+      "display_derivative": "offline-figures/crameri2020-fig5.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "crameri2020-fig6.png",
+      "bytes": 450174,
+      "sha256": "9abb5f500fa6df5df8a0d807b1591b2294e1181622833ac9dddff97bf1ea46b3",
+      "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-020-19160-7/MediaObjects/41467_2020_19160_Fig6_HTML.png",
+      "retained": false,
+      "display_derivative": "offline-figures/crameri2020-fig6.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "rougier2014-fig1.png",
+      "bytes": 743341,
+      "sha256": "5b0c979b1076918094250101c65671e7d4e2897019b3962a30d31a3bbc5e3eb3",
+      "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g001",
+      "retained": false,
+      "display_derivative": "offline-figures/rougier2014-fig1.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "rougier2014-fig2.png",
+      "bytes": 1404815,
+      "sha256": "a9cc5e99957ef1f863d375f3a61ce33abfb9649fc7d630db8e4c3a8640ade03f",
+      "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g002",
+      "retained": false,
+      "display_derivative": "offline-figures/rougier2014-fig2.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "rougier2014-fig3.png",
+      "bytes": 2448128,
+      "sha256": "21887edd507ca14894ba2750023c777e3152f3500624068a8c91b8c5f6d2c0e4",
+      "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g003",
+      "retained": false,
+      "display_derivative": "offline-figures/rougier2014-fig3.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "rougier2014-fig4.png",
+      "bytes": 428847,
+      "sha256": "0fd04e0de95f9cb9785f4eca237f8b2964d4911de350b73062c9b4b02a989c4f",
+      "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g004",
+      "retained": false,
+      "display_derivative": "offline-figures/rougier2014-fig4.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "rougier2014-fig5.png",
+      "bytes": 2006052,
+      "sha256": "96a74013f2847558034fc0488800e05b7c57c488d56d65175900ce9e025b898a",
+      "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g005",
+      "retained": false,
+      "display_derivative": "offline-figures/rougier2014-fig5.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "rougier2014-fig6.png",
+      "bytes": 325335,
+      "sha256": "2a8a4741016449d2a40f817e7313bee4a3e9842e90b516dd9b36bbcc5b9d8e41",
+      "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g006",
+      "retained": false,
+      "display_derivative": "offline-figures/rougier2014-fig6.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "rougier2014-fig7.png",
+      "bytes": 3763039,
+      "sha256": "d9a6c505ca7c1cb7fc258d3b1c7db23a9f50817a5370ce392f9ddee899439d23",
+      "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g007",
+      "retained": false,
+      "display_derivative": "offline-figures/rougier2014-fig7.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "rougier2014-fig8.png",
+      "bytes": 816563,
+      "sha256": "2f0b532d022a3957d66ca6d40da2f0a12cf4f3741709a02e55ec0f2bd0058e37",
+      "url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1003833.g008",
+      "retained": false,
+      "display_derivative": "offline-figures/rougier2014-fig8.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "weissgerber2015-fig1.png",
+      "bytes": 67313,
+      "sha256": "367ea9ee2faa278b4eaae90d6d83ea374ca2635fe18da7b211c3cc94408f5f5b",
+      "url": "https://journals.plos.org/plosbiology/article/figure/image?size=large&id=10.1371/journal.pbio.1002128.g001",
+      "retained": false,
+      "display_derivative": "offline-figures/weissgerber2015-fig1.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "weissgerber2015-fig2.png",
+      "bytes": 81374,
+      "sha256": "6c908c18ddb5819b480400f1edc4d3446e84eb2ca9ca470ab50b174175a73530",
+      "url": "https://journals.plos.org/plosbiology/article/figure/image?size=large&id=10.1371/journal.pbio.1002128.g002",
+      "retained": false,
+      "display_derivative": "offline-figures/weissgerber2015-fig2.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    },
+    {
+      "filename": "weissgerber2015-fig3.png",
+      "bytes": 53290,
+      "sha256": "c9ea70a85e5926e0bd98922103d0eb33c30ebf9a54230280fed52902c56061c0",
+      "url": "https://journals.plos.org/plosbiology/article/figure/image?size=large&id=10.1371/journal.pbio.1002128.g003",
+      "retained": false,
+      "display_derivative": "offline-figures/weissgerber2015-fig3.png",
+      "reason": "Original retrieval identity retained; compact faithful display derivative is sufficient for offline close reading and source packet regeneration."
+    }
+  ],
+  "retrieved_utc": "2026-10-17",
+  "articles": [
+    {
+      "id": "P1",
+      "stem": "weissgerber2015",
+      "title": "Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm",
+      "authors": "Tracey L. Weissgerber, Natasa M. Milic, Stacey J. Winham, Vesna D. Garovic",
+      "year": 2015,
+      "journal": "PLOS Biology 13(4): e1002128",
+      "doi": "10.1371/journal.pbio.1002128",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original": "weissgerber2015.xml",
+      "figures": 3,
+      "license_statement": "2015 Weissgerber et al This is an open access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited",
+      "supplied_scope": "Complete main article text, bibliography and all 3 main figures; complete S1 Text DOCX as readable extraction. Other SI is not supplied."
+    },
+    {
+      "id": "P2",
+      "stem": "rougier2014",
+      "title": "Ten Simple Rules for Better Figures",
+      "authors": "Nicolas P. Rougier, Michael Droettboom, Philip E. Bourne",
+      "year": 2014,
+      "journal": "PLOS Computational Biology 10(9): e1003833",
+      "doi": "10.1371/journal.pcbi.1003833",
+      "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833",
+      "license": "CC0 1.0 public domain dedication",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "original": "rougier2014.xml",
+      "figures": 8,
+      "license_statement": "2014 This is an open-access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the Creative Commons CC0 public domain dedication.",
+      "supplied_scope": "Complete main article text, bibliography and all 8 main figures. Linked GitHub figure scripts and external references are not supplied."
+    },
+    {
+      "id": "P3",
+      "stem": "crameri2020",
+      "title": "The misuse of colour in science communication",
+      "authors": "Fabio Crameri, Grace E. Shephard, Philip J. Heron",
+      "year": 2020,
+      "journal": "Nature Communications 11: 5444",
+      "doi": "10.1038/s41467-020-19160-7",
+      "url": "https://www.nature.com/articles/s41467-020-19160-7",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "original": "crameri2020.html",
+      "figures": 6,
+      "license_statement": "Rights and permissions Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons license, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/. Reprints and permissions",
+      "supplied_scope": "Complete main article Abstract, Introduction (including boxes and all 6 figures), Methods, Data availability and References. Supplementary Notes and supplementary figures are not supplied. Scope of assessment excludes absent SI and external source code."
+    }
+  ],
+  "assets": [
+    {
+      "path": "article-packets.json",
+      "bytes": 1488658,
+      "sha256": "1b983e42580a62f4a8846ad29713b7e465b93bd2fa60f13a513ac53103d3381c",
+      "url": null,
+      "derived_from": null,
+      "role": "generated readable packet"
+    },
+    {
+      "path": "crameri2020.html",
+      "bytes": 404450,
+      "sha256": "50238f1ac3f3929471d2f1ce75495b36a3f86545e6b6ca5fe4db5edc79d4d320",
+      "url": "https://www.nature.com/articles/s41467-020-19160-7",
+      "derived_from": null,
+      "role": "published original bytes"
+    },
+    {
+      "path": "download-urls.json",
+      "bytes": 2678,
+      "sha256": "e6d3c5b836c5d1b7fd379bad8548e016452c7b13b627a44db8d00a4f3fad80c1",
+      "url": null,
+      "derived_from": null,
+      "role": "generated readable packet"
+    },
+    {
+      "path": "offline-figures/crameri2020-fig1.png",
+      "bytes": 128637,
+      "sha256": "1708c63a348f684740d9bcf65f0c327b4842d2e481a7cb0903783a4f4da1a01e",
+      "url": null,
+      "derived_from": "crameri2020-fig1.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/crameri2020-fig2.png",
+      "bytes": 35130,
+      "sha256": "a6ffb4d4149dbd68bfe8559ca70d41df4e4bafc9607166deef39c5418e60a679",
+      "url": null,
+      "derived_from": "crameri2020-fig2.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/crameri2020-fig3.png",
+      "bytes": 44527,
+      "sha256": "80062e5f3fd81500584908c22daaecd67c3829764c804e1074925fa41ddb498c",
+      "url": null,
+      "derived_from": "crameri2020-fig3.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/crameri2020-fig4.png",
+      "bytes": 38373,
+      "sha256": "ad42527fe9e5c67942ef553fed4b7510ed4c81aa9f2321285513f58fdbe32e44",
+      "url": null,
+      "derived_from": "crameri2020-fig4.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/crameri2020-fig5.png",
+      "bytes": 41590,
+      "sha256": "9c52b774c8759885040127d54065d9780ba5cbe177b2bfb590c386ee33ddc135",
+      "url": null,
+      "derived_from": "crameri2020-fig5.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/crameri2020-fig6.png",
+      "bytes": 104538,
+      "sha256": "c722bf5e5846c1dcbb851fc01f0ac62c231436de8030ba884850fbb376ec49bd",
+      "url": null,
+      "derived_from": "crameri2020-fig6.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/rougier2014-fig1.png",
+      "bytes": 35967,
+      "sha256": "c34b865521088bb6b18fcd015103f2c222809b6016d333602dc3e8545fc2f1f9",
+      "url": null,
+      "derived_from": "rougier2014-fig1.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/rougier2014-fig2.png",
+      "bytes": 154732,
+      "sha256": "b4844935b6e4ca8d9e65a85a1f7282e2573c1c06b1e851962983ee4fdc19937c",
+      "url": null,
+      "derived_from": "rougier2014-fig2.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/rougier2014-fig3.png",
+      "bytes": 85286,
+      "sha256": "0d01f3d959ed05ad1869f80ef55dbdccc9fbc1dec2d09db6c1510f79eb00a941",
+      "url": null,
+      "derived_from": "rougier2014-fig3.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/rougier2014-fig4.png",
+      "bytes": 20642,
+      "sha256": "98b02f9b0fa6ba4e9d7ecf91f0b462ceba4f2acc84a20e05a1d1e35bd282a5bd",
+      "url": null,
+      "derived_from": "rougier2014-fig4.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/rougier2014-fig5.png",
+      "bytes": 42278,
+      "sha256": "052bddd83611375fe6793656d156b35bcc51584f133b26ee2142496ca5310b42",
+      "url": null,
+      "derived_from": "rougier2014-fig5.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/rougier2014-fig6.png",
+      "bytes": 14636,
+      "sha256": "44d93384d34046c0fce4e387f1101c71edfe0cfb78c8e26d8fb1c3849c6b18ca",
+      "url": null,
+      "derived_from": "rougier2014-fig6.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/rougier2014-fig7.png",
+      "bytes": 130701,
+      "sha256": "5be40b3dec633119e48d71ae6efa0538d2bdc423e5aa3e5328d6d96d19c21312",
+      "url": null,
+      "derived_from": "rougier2014-fig7.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/rougier2014-fig8.png",
+      "bytes": 45141,
+      "sha256": "67ca8c54812734db2706db3e0c03790a56af0689f680be9471f73f526309ff7c",
+      "url": null,
+      "derived_from": "rougier2014-fig8.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/weissgerber2015-fig1.png",
+      "bytes": 26701,
+      "sha256": "0ca7e4e101394fdf0cfbc9d8f1132de52afd411e05fe17810187c7278b654c51",
+      "url": null,
+      "derived_from": "weissgerber2015-fig1.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/weissgerber2015-fig2.png",
+      "bytes": 37885,
+      "sha256": "b03aaef0961893dd606da1c2ad0198f258a49978a28e8520ed84d0995fff2a3f",
+      "url": null,
+      "derived_from": "weissgerber2015-fig2.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "offline-figures/weissgerber2015-fig3.png",
+      "bytes": 21317,
+      "sha256": "d77c1837bb90a5275e5cc367b6e7fa74a220739016a0b607cee8a3ecec534268",
+      "url": null,
+      "derived_from": "weissgerber2015-fig3.png",
+      "role": "display transformation"
+    },
+    {
+      "path": "retrieved-original-images.json",
+      "bytes": 9148,
+      "sha256": "143567bfce8c0162b70ccbd73b1f5eb5ddb4a1b281cce2526545f7e01904ec7f",
+      "url": null,
+      "derived_from": null,
+      "role": "generated readable packet"
+    },
+    {
+      "path": "rougier2014.xml",
+      "bytes": 38062,
+      "sha256": "5205c8b1249faa30cbff61e5ed0dfaa578a47f5375dc08216438ade0b4cbcead",
+      "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003833&type=manuscript",
+      "derived_from": null,
+      "role": "published original bytes"
+    },
+    {
+      "path": "synthetic/input-figure.png",
+      "bytes": 121553,
+      "sha256": "a879073d2c4cd6b7b8bc7decf3e73bdd4556137ba3c5c3cd05a03bc21365c36c",
+      "url": null,
+      "derived_from": null,
+      "role": "generated readable packet"
+    },
+    {
+      "path": "synthetic/input-figure.svg",
+      "bytes": 25866,
+      "sha256": "7beb8931674864c31f49bcb903fb943f7e363bd361d447f33ca72848bb140b6e",
+      "url": null,
+      "derived_from": null,
+      "role": "generated readable packet"
+    },
+    {
+      "path": "synthetic/make_figure.py",
+      "bytes": 1938,
+      "sha256": "df0aea1dd3b8c2080dd1d89a31223382e5f3759c14d2e57ab86f75fa7adea734",
+      "url": null,
+      "derived_from": null,
+      "role": "generated readable packet"
+    },
+    {
+      "path": "synthetic/paired.csv",
+      "bytes": 276,
+      "sha256": "672911d30355bc23f72cea246e94919df0c5b7a172df47241d920a1d429b772e",
+      "url": null,
+      "derived_from": null,
+      "role": "generated readable packet"
+    },
+    {
+      "path": "synthetic/transient.csv",
+      "bytes": 239,
+      "sha256": "0680d6ac7f45acc6eb5f1e5e0058d1db1efc1e9cc0390a60337ac0c3d0aa25d9",
+      "url": null,
+      "derived_from": null,
+      "role": "generated readable packet"
+    },
+    {
+      "path": "weissgerber2015-s1.docx",
+      "bytes": 20732,
+      "sha256": "16a8a52086a9c72371a7887e7a10180c2e16c4e60b83069422bac8d1ec9f3a60",
+      "url": "https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.1002128.s001&type=supplementary",
+      "derived_from": null,
+      "role": "published original bytes"
+    },
+    {
+      "path": "weissgerber2015-s1.txt",
+      "bytes": 14734,
+      "sha256": "da1b5066c8b3de712303f2478c5463682581e8aef57cf5dfbfa1e406a5913ca2",
+      "url": null,
+      "derived_from": null,
+      "role": "generated readable packet"
+    },
+    {
+      "path": "weissgerber2015.xml",
+      "bytes": 51352,
+      "sha256": "2aec0919acebb43bb34255b493972571c62bb3c244dd9e0d1152499ae0f8e0ce",
+      "url": "https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.1002128&type=manuscript",
+      "derived_from": null,
+      "role": "published original bytes"
+    }
+  ],
+  "license_review": "Licenses verified against the specific article permissions blocks, not publisher defaults. P2 is CC0. No credit line in the supplied main figures declares an exclusion from the article license. P2 Figure 1 is an author-produced remake; its caption is retained. P3 Figure 1 attribution to the historical photograph is retained. The Nature website chrome is not embedded as article content. Source assertions, numerical definitions and typographical errors are retained as published; the benchmark makes no claim to correct the papers."
+}

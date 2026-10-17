@@ -1,0 +1,36 @@
+{
+  "kind": "local_validation_summary",
+  "not_model_performance": true,
+  "api_provider_calls": 0,
+  "evaluator_identity": {
+    "benchmark_version": "1.0.0",
+    "scoring_schema": "nrb-v1.0",
+    "evaluator_commit": null,
+    "evaluator_digest": "237225fb99bc6d1f0317a9deedd5562a59df6c6a7098a9d2d9b7c7c932d905c7",
+    "digest_algorithm": "sha256-path-content-v1"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "gfortran": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "unit_tests": {
+    "count": 59,
+    "passed": true,
+    "skipped": 0,
+    "log": "local-tests.log"
+  },
+  "legacy_tests": {
+    "count": 193,
+    "passed": true,
+    "skipped": 5
+  },
+  "seeded_reference_mutant_runs": {
+    "count": 114,
+    "passed": true,
+    "report": "local-selftest.json"
+  },
+  "wheel_packet_check": {
+    "packets": 19,
+    "html": 9,
+    "matches_frozen": true
+  },
+  "docker_local": "unavailable; actual gate runs in GitHub Actions"
+}

@@ -1,0 +1,563 @@
+{
+  "benchmark_version": "1.0.0",
+  "kind": "candidate_only_catalog",
+  "seed": 17,
+  "tasks": [
+    {
+      "id": "C01",
+      "title": "仪器 CSV 清洗、单位与测量不确定度",
+      "track": "coding",
+      "difficulty": 1,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "csv",
+        "units",
+        "uncertainty",
+        "data-validation"
+      ],
+      "language": "python",
+      "modality": [
+        "text",
+        "code"
+      ],
+      "time_budget_s": 900,
+      "required_artifacts": [
+        "solution.py",
+        "report.md",
+        "tests.py"
+      ],
+      "seed": 17,
+      "packet_hash": "45fa2976990638ece24f61101a51c97502578566f085e7a7d535d84db1ff4bad",
+      "file": "C01.md"
+    },
+    {
+      "id": "C02",
+      "title": "独立组与分层 bootstrap 模型比较",
+      "track": "coding",
+      "difficulty": 2,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "clustered-data",
+        "bootstrap",
+        "deterministic-statistics"
+      ],
+      "language": "python",
+      "modality": [
+        "text",
+        "code"
+      ],
+      "time_budget_s": 900,
+      "required_artifacts": [
+        "solution.py",
+        "report.md",
+        "tests.py"
+      ],
+      "seed": 17,
+      "packet_hash": "30f1effee6f860df0b1e1a328ff112593f1f8e1e622c00f279862a56f56be446",
+      "file": "C02.md"
+    },
+    {
+      "id": "C03",
+      "title": "修复分层导热有限体积求解器",
+      "track": "coding",
+      "difficulty": 3,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "debugging",
+        "finite-volume",
+        "conservation",
+        "implicit-methods"
+      ],
+      "language": "python",
+      "modality": [
+        "text",
+        "code"
+      ],
+      "time_budget_s": 900,
+      "required_artifacts": [
+        "solution.py",
+        "report.md",
+        "tests.py"
+      ],
+      "seed": 17,
+      "packet_hash": "94a905c064bbbe2794e5d8b15b85720191d9346dd71f49412ed262ba1dabbd4f",
+      "file": "C03.md"
+    },
+    {
+      "id": "C04",
+      "title": "被动吸收多层薄膜的稳定光学传输",
+      "track": "coding",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "complex-optics",
+        "transfer-matrix",
+        "numerical-stability",
+        "polarization"
+      ],
+      "language": "python",
+      "modality": [
+        "text",
+        "code"
+      ],
+      "time_budget_s": 1800,
+      "required_artifacts": [
+        "solution.py",
+        "report.md",
+        "tests.py"
+      ],
+      "seed": 17,
+      "packet_hash": "4f55a0ea369608f6dcc4b21442e9bed554d0698130d52a78dbcfaeff1d3e7413",
+      "file": "C04.md"
+    },
+    {
+      "id": "C05",
+      "title": "带源项时间表的刚性反应自适应积分",
+      "track": "coding",
+      "difficulty": 5,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "stiff-integration",
+        "adaptive-steps",
+        "rollback",
+        "floating-point-endpoints"
+      ],
+      "language": "python",
+      "modality": [
+        "text",
+        "code"
+      ],
+      "time_budget_s": 1800,
+      "required_artifacts": [
+        "solution.py",
+        "report.md",
+        "tests.py"
+      ],
+      "seed": 17,
+      "packet_hash": "612c1bbb356e9974cf2ae4d9910d9b02686e9f1defc6d4e2e8efa758ab25547e",
+      "file": "C05.md"
+    },
+    {
+      "id": "C06",
+      "title": "Fortran 非均匀网格守恒漂移扩散边值问题",
+      "track": "coding",
+      "difficulty": 3,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "scharfetter_gummel",
+        "finite_volume",
+        "fortran",
+        "numerical_stability"
+      ],
+      "language": "fortran",
+      "modality": [
+        "text",
+        "code"
+      ],
+      "time_budget_s": 1800,
+      "required_artifacts": [
+        "main.f90",
+        "report.md",
+        "tests.py"
+      ],
+      "seed": 17,
+      "packet_hash": "566406708066a968f0435f262f29231b7cda04263a784b0cbe5435d74583387c",
+      "file": "C06.md"
+    },
+    {
+      "id": "C07",
+      "title": "带独立基线与幅度的逆热扩散：剖面似然与退化诊断",
+      "track": "coding",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "inverse_problem",
+        "variable_projection",
+        "profile_likelihood",
+        "identifiability"
+      ],
+      "language": "python",
+      "modality": [
+        "text",
+        "code"
+      ],
+      "time_budget_s": 2400,
+      "required_artifacts": [
+        "solution.py",
+        "report.md",
+        "tests.py"
+      ],
+      "seed": 17,
+      "packet_hash": "afc0808e06fd2640eda69f9ea803d92c27ad982cf9b4012c5196688ee467d812",
+      "file": "C07.md"
+    },
+    {
+      "id": "C08",
+      "title": "二维异质各向异性椭圆方程：守恒通量与制造解",
+      "track": "coding",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "elliptic_pde",
+        "heterogeneity",
+        "anisotropy",
+        "manufactured_solution",
+        "conservation"
+      ],
+      "language": "python",
+      "modality": [
+        "text",
+        "code"
+      ],
+      "time_budget_s": 2400,
+      "required_artifacts": [
+        "solution.py",
+        "report.md",
+        "tests.py"
+      ],
+      "seed": 17,
+      "packet_hash": "bb3a9bc72100d2a307b66a944eec55856621d4875b0d2685985e33e16d0140d8",
+      "file": "C08.md"
+    },
+    {
+      "id": "C09",
+      "title": "Fortran 自洽单载流子漂移扩散–Poisson 非线性边值系统",
+      "track": "coding",
+      "difficulty": 5,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "nonlinear_pde",
+        "coupled_poisson_transport",
+        "newton_globalization",
+        "fortran",
+        "gauge_invariance"
+      ],
+      "language": "fortran",
+      "modality": [
+        "text",
+        "code"
+      ],
+      "time_budget_s": 3600,
+      "required_artifacts": [
+        "main.f90",
+        "report.md",
+        "tests.py"
+      ],
+      "seed": 17,
+      "packet_hash": "9c64f6c80790cbcf76a7396f2826b45ae71e36e14a8d09152c9870626027beb9",
+      "file": "C09.md"
+    },
+    {
+      "id": "C10",
+      "title": "修复反应扩散反演流水线：切线导数、守恒、重启和参数自举",
+      "track": "coding",
+      "difficulty": 5,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "multibug_repair",
+        "reaction_diffusion",
+        "discrete_sensitivity",
+        "inverse_problem",
+        "reproducible_uncertainty",
+        "checkpoint"
+      ],
+      "language": "python",
+      "modality": [
+        "text",
+        "code"
+      ],
+      "time_budget_s": 4500,
+      "required_artifacts": [
+        "solution.py",
+        "report.md",
+        "tests.py"
+      ],
+      "seed": 17,
+      "packet_hash": "060241fb0473728df2e8e0565bf2989e9c3a1f87482fb4a6e9e625751381c9b9",
+      "file": "C10.md"
+    },
+    {
+      "id": "R01",
+      "title": "Learn figure style and build an editable scientific SVG",
+      "track": "research",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "svg",
+        "figure_design",
+        "reference_learning",
+        "scientific_reasoning"
+      ],
+      "language": null,
+      "modality": [
+        "text",
+        "image",
+        "vector"
+      ],
+      "time_budget_s": 3600,
+      "required_artifacts": [
+        "figure.svg",
+        "figure.png",
+        "caption.md",
+        "design-note.md",
+        "source.zip",
+        "review.md"
+      ],
+      "seed": 17,
+      "packet_hash": "b7fd88b71d717a27c02df57a224794401d43df9ee71c89e52243e930f4b8654c",
+      "file": "R01.html"
+    },
+    {
+      "id": "R02",
+      "title": "Plot nearby values, dynamic range and censored measurements",
+      "track": "research",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "python",
+        "plotting",
+        "metrology",
+        "scale_selection",
+        "censoring"
+      ],
+      "language": null,
+      "modality": [
+        "text",
+        "image",
+        "vector"
+      ],
+      "time_budget_s": 3600,
+      "required_artifacts": [
+        "plot.py",
+        "requirements.txt",
+        "figure.svg",
+        "figure.png",
+        "alternative-scale.png",
+        "summary.csv",
+        "scale-decisions.md",
+        "caption.md"
+      ],
+      "seed": 17,
+      "packet_hash": "56fcdd3397a44d23dc641880a49683b73347c1a29dabb1e9c0d7d7a381f874c5",
+      "file": "R02.html"
+    },
+    {
+      "id": "R03",
+      "title": "Conservative English prose editing with a fact ledger",
+      "track": "research",
+      "difficulty": 3,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "scientific_editing",
+        "english",
+        "fact_preservation",
+        "humanization"
+      ],
+      "language": null,
+      "modality": [
+        "text"
+      ],
+      "time_budget_s": 1800,
+      "required_artifacts": [
+        "edited.md",
+        "fact-ledger.csv",
+        "edit-memo.md"
+      ],
+      "seed": 17,
+      "packet_hash": "cf2965eea509e816651bd17a5f5f7f16121104197516ca81fccf54fc67fbc9c8",
+      "file": "R03.html"
+    },
+    {
+      "id": "R04",
+      "title": "Write results and discussion from an embedded figure",
+      "track": "research",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "scientific_writing",
+        "figure_reading",
+        "quantitative_reasoning",
+        "claim_audit"
+      ],
+      "language": null,
+      "modality": [
+        "text",
+        "image"
+      ],
+      "time_budget_s": 3000,
+      "required_artifacts": [
+        "manuscript.md",
+        "caption.md",
+        "claim-evidence.csv",
+        "calculations.py",
+        "calculated-summary.csv"
+      ],
+      "seed": 17,
+      "packet_hash": "06dd9242ae031d514a6814f24a3adb43a0d4f9962aedf640dec0ba3504423adb",
+      "file": "R04.html"
+    },
+    {
+      "id": "R05",
+      "title": "Read three papers, reconstruct their logic and reproduce bounded methods",
+      "track": "research",
+      "difficulty": 5,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "literature_reading",
+        "methods_analysis",
+        "implicit_reasoning",
+        "python",
+        "partial_replication"
+      ],
+      "language": null,
+      "modality": [
+        "text",
+        "image",
+        "vector"
+      ],
+      "time_budget_s": 5400,
+      "required_artifacts": [
+        "source-cards.md",
+        "keywords.csv",
+        "reasoning-map.csv",
+        "implementation-plan.md",
+        "replicate.py",
+        "requirements.txt",
+        "paired-summary.csv",
+        "colour-distance.csv",
+        "paired-demonstration.svg",
+        "colour-diagnostic.svg",
+        "reproduction-note.md"
+      ],
+      "seed": 17,
+      "packet_hash": "548704b78da6ce49abbe33db220427450f8cbaa65a6c6df41d23b38f18aced58",
+      "file": "R05.html"
+    },
+    {
+      "id": "R06",
+      "title": "Write a mini-review with an evidence SVG, comparative table and citations",
+      "track": "research",
+      "difficulty": 5,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "review_writing",
+        "evidence_synthesis",
+        "svg",
+        "tables",
+        "citation_audit"
+      ],
+      "language": null,
+      "modality": [
+        "text",
+        "image",
+        "vector"
+      ],
+      "time_budget_s": 5400,
+      "required_artifacts": [
+        "mini-review.md",
+        "evidence-map.svg",
+        "evidence-map.png",
+        "figure-caption.md",
+        "comparison.csv",
+        "comparison.html",
+        "claim-evidence.csv",
+        "references.bib",
+        "review-notes.md"
+      ],
+      "seed": 17,
+      "packet_hash": "31cc709bb85b64d28e1ead67ccf95bfa567b61b7e5073fe48b19de6dfaa0f763",
+      "file": "R06.html"
+    },
+    {
+      "id": "X01",
+      "title": "Self-contained interactive scientific HTML dashboard",
+      "track": "optional",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "html",
+        "javascript",
+        "data_visualization",
+        "interaction"
+      ],
+      "language": null,
+      "modality": [
+        "text",
+        "image",
+        "interactive_html"
+      ],
+      "time_budget_s": 3600,
+      "required_artifacts": [
+        "dashboard.html",
+        "verification.md",
+        "capability.json"
+      ],
+      "seed": 17,
+      "packet_hash": "0ee29326b21b63c35fe4be544888afad4a097e4e3adf4f196e76532d41b2bfec",
+      "file": "X01.html"
+    },
+    {
+      "id": "X02",
+      "title": "Short scientific explainer video with captions and sources",
+      "track": "optional",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "video",
+        "scientific_storytelling",
+        "captions",
+        "media_verification"
+      ],
+      "language": null,
+      "modality": [
+        "text",
+        "image",
+        "video"
+      ],
+      "time_budget_s": 5400,
+      "required_artifacts": [
+        "explainer.mp4",
+        "captions.srt",
+        "transcript.md",
+        "source.zip",
+        "scene-evidence.csv",
+        "media-checks.md",
+        "capability.json"
+      ],
+      "seed": 17,
+      "packet_hash": "4c1c53eafbce1e91be43ffb845d31aa752e56ae35824e165784513347d7d217b",
+      "file": "X02.html"
+    },
+    {
+      "id": "X03",
+      "title": "Original instrumental sound bed for a scientific explainer",
+      "track": "optional",
+      "difficulty": 4,
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "capabilities": [
+        "audio",
+        "music_composition",
+        "synthesis",
+        "audio_measurement"
+      ],
+      "language": null,
+      "modality": [
+        "text",
+        "audio"
+      ],
+      "time_budget_s": 3600,
+      "required_artifacts": [
+        "sound-bed.wav",
+        "source.zip",
+        "cue-sheet.csv",
+        "creative-rationale.md",
+        "audio-report.md",
+        "capability.json"
+      ],
+      "seed": 17,
+      "packet_hash": "4834126865c64c311377d595637232ff699756678a9853e6b59e5e53bf95603b",
+      "file": "X03.html"
+    }
+  ],
+  "note": "Only one task file is needed by each candidate; do not provide evaluator files."
+}
