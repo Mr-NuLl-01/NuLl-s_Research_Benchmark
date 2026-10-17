@@ -1,0 +1,15 @@
+{
+  "kind": "retained_initial_ci_failure",
+  "run_id": 39053919357,
+  "job_id": 117457900156,
+  "source_commit": "12b245b0664dc44f31fe6dbc886f57b489fe11c8",
+  "artifact_id": 12108493686,
+  "artifact_sha256": "1cf46203c17aa97eebca57cdf92ecf52bcfe4c9b89167b9c057a0c5b0263bd0d",
+  "science_docker_gate": {
+    "passed": true,
+    "runs": 18
+  },
+  "failed_stage": "candidate isolation probe",
+  "cause": "Unprivileged pathlib.exists on a forbidden /root descendant raises PermissionError. Probe terminated before remaining checks; no isolation success inferred.",
+  "repair": "Record denied paths separately from absence; accessible forbidden paths still fail. Re-run actual Docker and Harbor gates on correction commit."
+}

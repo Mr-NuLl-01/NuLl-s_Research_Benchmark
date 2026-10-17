@@ -72,11 +72,19 @@ def check_build_context(task_dir,*,seed=17,image='nrb-v1:local'):
 
 PROBE=r'''
 import hashlib,importlib.util,json,os,pathlib,socket,sys
+def classify_forbidden_paths(paths):
+ present=[];absent=[];denied=[]
+ for name in paths:
+  try:pathlib.Path(name).lstat()
+  except PermissionError:denied.append(name)
+  except FileNotFoundError:absent.append(name)
+  else:present.append(name)
+ return present,absent,denied
 root=pathlib.Path('/app');expected=json.loads(sys.argv[1])
 forbidden=['/grader','/solution','/tests','/app/nrb','/app/nrb_v1','/app/.git','/app/solution','/app/tests',
  '/task/nrb','/task/nrb_v1','/task/.git','/repo','/workspace/NuLl-s_Research_Benchmark',
  '/root/NuLl-s_Research_Benchmark','/var/run/docker.sock','/run/docker.sock']
-present=[p for p in forbidden if pathlib.Path(p).exists() or pathlib.Path(p).is_symlink()]
+present,absent,denied=classify_forbidden_paths(forbidden)
 repo_names={'.git','nrb','nrb_v1','questions','validation','tests_v1','grader','solution','NuLl-s_Research_Benchmark'}
 repository_entries=[]
 for location in ('/app','/task','/workspace'):
@@ -93,7 +101,7 @@ try:
 except OSError:external_socket_blocked=True
 importable={name:importlib.util.find_spec(name) is not None for name in ('nrb','nrb_v1')}
 submission=root/'submission.json'
-checks={'unprivileged_probe':os.getuid()==65534,'forbidden_paths_absent':not present,
+checks={'unprivileged_probe':os.getuid()==65534,'forbidden_paths_not_accessible':not present,
  'repository_paths_absent':not repository_entries,'evaluator_packages_not_importable':not any(importable.values()),
  'only_candidate_files':actual==sorted([*expected,'submission.json']),
  'no_candidate_symlinks':not symlinks,'candidate_files_unchanged':unchanged,
@@ -101,6 +109,7 @@ checks={'unprivileged_probe':os.getuid()==65534,'forbidden_paths_absent':not pre
  'loopback_only':interfaces==['lo'],'external_socket_blocked':external_socket_blocked}
 print(json.dumps({'passed':all(checks.values()),'checks':checks,'uid':os.getuid(),
  'candidate_files':actual,'symlinks':symlinks,'present_forbidden_paths':present,
+ 'absent_forbidden_paths':absent,'denied_paths':denied,
  'repository_entries':repository_entries,'importable_evaluator_packages':importable,'network_interfaces':interfaces}))
 '''
 
