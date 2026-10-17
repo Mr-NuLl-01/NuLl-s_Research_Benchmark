@@ -6,6 +6,7 @@ runtime. No model APIs are called by these tests.
 from __future__ import annotations
 
 import importlib.util
+import copy
 import json
 import os
 from pathlib import Path
@@ -119,6 +120,63 @@ class CallbackContracts(unittest.TestCase):
         summary = summarize_inspect_log(log)
         self.assertFalse(summary["complete_auto"])
         self.assertEqual(summary["inspect_status"], "error")
+
+    def test_inspect_summary_preserves_recorded_identity_and_generation_settings(self):
+        spec = SimpleNamespace(model="example/model-v1", packages={"inspect_ai": "0.3.281"},
+                               task="null_research", task_args={"seed": 7, "execution": "docker"},
+                               model_args={"api_key": "private-fixture", "temperature": .25},
+                               model_generate_config={"max_tokens": 8000}, eval_id="fixture-run")
+        log = SimpleNamespace(samples=[], status="success", invalidated=False, eval=spec,
+                              plan=SimpleNamespace(config={"temperature": .25},
+                                                   steps=[{"solver": "generate", "params": {}}]))
+        result = summarize_inspect_log(log)
+        self.assertEqual(result["model_label"], "example/model-v1")
+        self.assertEqual(result["harness_label"], "inspect_ai")
+        self.assertEqual(result["metadata"]["harness_version"], "0.3.281")
+        self.assertEqual(result["metadata"]["model_generate_config"]["max_tokens"], 8000)
+        self.assertEqual(result["metadata"]["model_args"]["api_key"], "[REDACTED]")
+        self.assertNotIn("seed", result["metadata"]["task_args"])
+        self.assertEqual(result["source_log"]["task_args"]["seed"], 7)
+        self.assertTrue(result["metadata_incomplete"])
+        self.assertIsNone(result["metadata"]["model_version"])
+
+    def test_promptfoo_runtime_redaction_requires_complete_matching_logged_input(self):
+        from nrb.core import get_case, candidate_prompt
+        case = get_case("NRB01", 0)
+        variables = {"task_id": case["id"], "seed": 0, "execution": "none",
+                     "candidate_sha256": candidate_sha256(case), "prompt": candidate_prompt(case)}
+        grade = promptfoo_assertion('{"task_id":"NRB01","answer":{},"artifacts":{}}', {"vars": variables})
+        # Observed in actual promptfoo 0.124.1 GitHub Actions results.json: a
+        # SHA-looking vars value becomes [REDACTED], while vars.prompt and the
+        # canonical report survive. Do not turn off framework redaction.
+        variables["candidate_sha256"] = "[REDACTED]"
+        row = {"vars": variables, "provider": {"id": "example:model-v1", "label": "arm-a"},
+               "promptIdx": 0, "score": 0, "success": False, "failureReason": 1,
+               "gradingResult": {"componentResults": [grade]}}
+        data = {"results": {"stats": {"successes": 0, "failures": 1, "errors": 0}, "results": [row]},
+                "metadata": {"promptfooVersion": "0.124.1"},
+                "config": {"providers": [{"id": "example:model-v1", "label": "arm-a",
+                                            "config": {"temperature": .25, "apiKey": "private-fixture"}}],
+                           "prompts": ["{{prompt}}"]},
+                "runtimeOptions": {"repeat": 1, "maxConcurrency": 1, "cache": False}}
+        result = summarize_promptfoo_results(data)
+        self.assertEqual(result["provenance"]["hash_recovered_from_full_logged_prompt"], ["NRB01"])
+        self.assertEqual(result["model_label"], "example:model-v1")
+        self.assertEqual(result["harness_label"], "promptfoo")
+        self.assertEqual(result["metadata"]["harness_version"], "0.124.1")
+        self.assertEqual(result["metadata"]["provider"]["config"]["temperature"], .25)
+        self.assertEqual(result["metadata"]["provider"]["config"]["apiKey"], "[REDACTED]")
+        self.assertTrue(result["metadata_incomplete"])
+        for mutation in ({"prompt": "changed input"}, {"prompt": None},
+                         {"candidate_sha256": "incorrect-unredacted-hash"}):
+            changed = copy.deepcopy(data)
+            changed["results"]["results"][0]["vars"].update(mutation)
+            with self.subTest(mutation=mutation), self.assertRaises(ProvenanceError):
+                summarize_promptfoo_results(changed)
+        changed = copy.deepcopy(data)
+        changed["results"]["results"][0]["gradingResult"]["componentResults"][0]["metadata"]["nrb_report"]["case_hash"] = "different-case"
+        with self.assertRaises(ProvenanceError):
+            summarize_promptfoo_results(changed)
 
     def test_promptfoo_summary_uses_canonical_reports_and_full_denominator(self):
         from nrb.core import build_suite

@@ -46,7 +46,7 @@ jobs:
     env:
       INSPECT_DISABLE_MODEL_API: '1'
       PROMPTFOO_DISABLE_TELEMETRY: '1'
-      PROMPTFOO_DISABLE_UPDATE_CHECK: '1'
+      PROMPTFOO_DISABLE_UPDATE: '1'
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: actions/setup-python@v7.0.0

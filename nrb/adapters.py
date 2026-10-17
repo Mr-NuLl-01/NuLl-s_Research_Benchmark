@@ -25,6 +25,39 @@ class IncompleteGrade(RuntimeError):
     """A dependency or verifier failure prevented a complete automatic grade."""
 
 
+def _log_value(value):
+    """Copy public log fields without requiring an optional framework import."""
+    if hasattr(value, "model_dump"):
+        return value.model_dump(mode="json")
+    if isinstance(value, dict):
+        return {str(k): _log_value(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_log_value(v) for v in value]
+    if value is None or isinstance(value, (str, int, float, bool)):
+        return value
+    # Offline contract fixtures can use SimpleNamespace instead of Pydantic.
+    if hasattr(value, "__dict__"):
+        return _log_value(vars(value))
+    return None
+
+
+def _config_value(value):
+    """Keep recorded settings while masking credential-named fields."""
+    value = _log_value(value)
+    if isinstance(value, dict):
+        return {k: ("[REDACTED]" if re.search(
+            r"api.?key|authorization|credential|password|secret|access.?token|refresh.?token", k, re.I)
+            else _config_value(v)) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_config_value(v) for v in value]
+    return value
+
+
+def _settings_hash(value):
+    return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False,
+                                     allow_nan=False).encode("utf-8")).hexdigest()
+
+
 def candidate_sha256(case):
     from nrb.core import candidate_prompt
     return hashlib.sha256(candidate_prompt(case).encode("utf-8")).hexdigest()
@@ -77,8 +110,41 @@ def summarize_inspect_log(log, *, epoch=1):
     if len(seeds) > 1:
         raise ProvenanceError("An Inspect summary must contain only one benchmark seed")
     result = summarize(reports)
+    spec = _log_value(getattr(log, "eval", None)) or {}
+    plan = _log_value(getattr(log, "plan", None)) or {}
+    packages = spec.get("packages") or {}
+    task_args = _config_value(spec.get("task_args"))
+    metadata = {
+        "harness_version": packages.get("inspect_ai") or packages.get("inspect-ai"),
+        "model_version": None,
+        "model_identity_kind": "inspect_eval_model",
+        "model_args": _config_value(spec.get("model_args")),
+        "model_generate_config": _config_value(spec.get("model_generate_config")),
+        "plan_generate_config": _config_value(plan.get("config")),
+        "plan_steps": _config_value(plan.get("steps")),
+        "plan_finish": _config_value(plan.get("finish")),
+        "task": spec.get("task"),
+        "task_args": ({k: v for k, v in task_args.items() if k != "seed"}
+                      if isinstance(task_args, dict) else None),
+        "solver": spec.get("solver"),
+        "solver_args": _config_value(spec.get("solver_args")),
+        "evaluation_config": _config_value(spec.get("config")),
+        "sandbox": _config_value(spec.get("sandbox")),
+    }
+    # A reported alias is not proof of a pinned provider-side model revision.
+    missing_metadata = ["model_version"]
+    for key, value in (("model_label", spec.get("model")),
+                       ("harness_version", metadata["harness_version"]),
+                       ("generation_config", metadata["model_generate_config"])):
+        if value is None:
+            missing_metadata.append(key)
     result.update(inspect_status=log.status, epoch=epoch, unscored_sample_ids=unscored,
-                  track="response_only", score_kind="automatic_only")
+                  track="response_only", score_kind="automatic_only", adapter="inspect_ai",
+                  model_label=spec.get("model"), harness_label="inspect_ai", metadata=metadata,
+                  metadata_incomplete=bool(missing_metadata), missing_metadata=missing_metadata,
+                  not_model_performance=str(spec.get("model", "")).startswith("mockllm/"),
+                  source_log={"eval_id": spec.get("eval_id"), "run_id": spec.get("run_id"),
+                              "created": spec.get("created"), "task_args": task_args})
     if log.status != "success" or unscored:
         result.update(complete_auto=False, auto_macro_percent=None, reviewed_macro_total=None)
     return result
@@ -120,6 +186,7 @@ def summarize_promptfoo_results(data):
     if len(providers) > 1 or len(prompts) > 1:
         raise ValueError("Summarize one provider and one prompt per results file; keep comparison arms separate")
     reports, errors, seeds, seen = [], [], set(), set()
+    recovered_hashes = []
     mock = False
     prefix = "NRB automatic-only score; independent 30-point review remains pending. "
 
@@ -155,16 +222,65 @@ def summarize_promptfoo_results(data):
         report = found[0]
         if task_id != report["task_id"] or int(variables["seed"]) != report["seed"]:
             raise ProvenanceError("promptfoo task identity differs from canonical report")
-        if candidate_sha256(get_case(task_id, report["seed"])) != variables["candidate_sha256"]:
+        case = get_case(task_id, report["seed"])
+        expected_hash = candidate_sha256(case)
+        recorded_hash = variables.get("candidate_sha256")
+        recorded_prompt = variables.get("prompt")
+        if recorded_hash == "[REDACTED]":
+            # promptfoo 0.124.1 sanitizes SHA-looking variable values in JSON
+            # exports. Its complete vars.prompt survives in the actual runtime
+            # artifact. Rehash that exact logged input; never treat redaction as
+            # permission to skip provenance or replace it from today's case.
+            if not isinstance(recorded_prompt, str) or hashlib.sha256(
+                    recorded_prompt.encode("utf-8")).hexdigest() != expected_hash:
+                raise ProvenanceError("Redacted promptfoo hash requires an intact matching logged prompt")
+            recovered_hashes.append(task_id)
+        elif recorded_hash != expected_hash:
             raise ProvenanceError("promptfoo export does not match this evaluator commit")
+        elif isinstance(recorded_prompt, str) and hashlib.sha256(
+                recorded_prompt.encode("utf-8")).hexdigest() != expected_hash:
+            raise ProvenanceError("promptfoo logged prompt differs from its candidate hash")
+        if report.get("case_hash") != case["case_hash"]:
+            raise ProvenanceError("promptfoo canonical report belongs to a different case")
         if report["auto_percent"] is not None and not math.isclose(float(row["score"]), report["auto_percent"] / 100, abs_tol=1e-10):
             raise ProvenanceError("promptfoo score was transformed or contains additional assertions")
         reports.append(report)
     if len(seeds) > 1:
         raise ProvenanceError("Mixed seeds; summarize one repetition and seed per file")
     result = summarize(reports)
+    provider_id, provider_label = next(iter(providers), (None, None))
+    config = data.get("config") or {}
+    provider_configs = config.get("providers") or []
+    if not isinstance(provider_configs, list):
+        provider_configs = [provider_configs]
+    selected = [p for p in provider_configs if isinstance(p, dict)
+                and p.get("id") == provider_id and p.get("label") == provider_label]
+    provider_config = _config_value(selected[0].get("config", {})) if len(selected) == 1 else None
+    export_metadata = data.get("metadata") or {}
+    metadata = {
+        "harness_version": export_metadata.get("promptfooVersion"),
+        "model_version": None,
+        "model_identity_kind": "promptfoo_provider_id",
+        "provider": {"id": provider_id, "label": provider_label, "config": provider_config},
+        "provider_config_sha256": _settings_hash(provider_config) if provider_config is not None else None,
+        "default_options": _config_value((config.get("defaultTest") or {}).get("options")),
+        "evaluate_options": _config_value(config.get("evaluateOptions")),
+        "runtime_options": _config_value(data.get("runtimeOptions")),
+        "prompt_template_sha256": _settings_hash(config["prompts"]) if "prompts" in config else None,
+        "test_options": {str((r.get("vars") or r.get("testCase", {}).get("vars", {})).get("task_id")):
+                         _config_value((r.get("testCase") or {}).get("options")) for r in rows},
+    }
+    missing_metadata = ["model_version"]
+    for key, value in (("provider_id", provider_id), ("harness_version", metadata["harness_version"]),
+                       ("provider_config", provider_config)):
+        if value is None:
+            missing_metadata.append(key)
     result.update(adapter="promptfoo", score_kind="automatic_only", conversion_errors=errors,
-                  promptfoo_stats=envelope["stats"], not_model_performance=mock)
+                  promptfoo_stats=envelope["stats"], not_model_performance=mock,
+                  model_label=provider_id, harness_label="promptfoo", metadata=metadata,
+                  metadata_incomplete=bool(missing_metadata), missing_metadata=missing_metadata,
+                  provenance={"hash_recovered_from_full_logged_prompt": recovered_hashes},
+                  source_log={"eval_id": data.get("evalId"), "export_metadata": export_metadata})
     if errors or envelope["stats"]["errors"]:
         result.update(complete_auto=False, auto_macro_percent=None, reviewed_macro_total=None)
     return result

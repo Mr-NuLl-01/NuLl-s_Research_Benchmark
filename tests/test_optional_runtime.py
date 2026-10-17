@@ -76,6 +76,13 @@ class InspectRuntime(unittest.TestCase):
         summary = summarize_inspect_log(log)
         self.assertFalse(summary["complete_auto"])
         self.assertEqual(len(summary["missing_tasks"]), 9)
+        self.assertEqual(summary["model_label"], "mockllm/model")
+        self.assertEqual(summary["harness_label"], "inspect_ai")
+        self.assertTrue(summary["metadata"]["harness_version"])
+        self.assertIsInstance(summary["metadata"]["model_generate_config"], dict)
+        self.assertTrue(summary["metadata"]["plan_steps"])
+        self.assertTrue(summary["not_model_performance"])
+        self.assertTrue(summary["metadata_incomplete"])
         score, _ = self.run_sample("NRB01", {"task_id": "NRB01", "answer": {}, "artifacts": {}})
         self.assertEqual(score.value, 0.0)
 

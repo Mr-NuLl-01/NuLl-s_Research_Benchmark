@@ -2,6 +2,8 @@
 
 **10 道可生成变体的科研工作流任务，同一套评分器，支持多种模型与 agent harness。**
 
+[![NRB validation](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/workflows/ci.yml)
+
 NRB-10 面向需要把科学推理转成可检查成果的工作：阅读证据、辨认模型退化、设计实验、修复数值代码、处理不确定度、审查证明、制作图表，以及接续和修订研究成果。它使用经典科学问题和原创合成材料，不依赖个人的具体研究课题、真实未发表数据或私有代码。
 
 当前版本：**0.1.0，公开开发基准**。题目、数值参考、评分逻辑和错误控制可运行；真实模型的难度分布、排序稳定性和题目区分度仍需用固定配置的重复实测校准。仓库中的 oracle 和 self-test 成绩是评测程序自检，**不是任何 AI 模型的成绩**。

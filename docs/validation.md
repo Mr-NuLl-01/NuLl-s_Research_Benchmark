@@ -8,7 +8,7 @@
 
 | 核验 | 实际结果 | 可支持的结论 |
 |---|---|---|
-| `python -m unittest discover -s tests -v` | **96 项：92 通过，4 因可选依赖未安装而跳过** | 核心科学判据、协议、离线适配器及错误控制通过；跳过的项目不是兼容性通过。 |
+| `python -m unittest discover -s tests -v` | **98 项：94 通过，4 因可选依赖未安装而跳过** | 核心科学判据、协议、离线适配器及错误控制通过；跳过的项目不是兼容性通过。 |
 | `nrb selftest --seeds 0,17,101` | 30 个任务实例的 oracle 均 **70/70**，empty 均 **0/70**，输入重生成哈希一致 | 参考交付、零控制和这些变体可运行；不是实证难度校准。 |
 | 原生 `nrb run` + 空提交测试程序 | 10 次真实子进程调用均完成，完整自动均分 **0**，质量总分仍为 `null` | 从题包、进程、输出收集到套题评分的 CLI 链已实际走通。 |
 | JSONL / promptfoo / Harbor 导出 | 每种格式均成功生成十题 | 导出代码运行成功；导出成功本身不代表外部框架已经执行。 |
@@ -58,6 +58,12 @@
 | Docker / Harbor | 代码题在真实 Docker 中执行参考与错误程序；Harbor 实际 oracle、artifact 传递、独立 verifier、核心报告与框架 reward 一致 |
 
 状态和日志以 [GitHub Actions](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/workflows/ci.yml) 中**对应 commit** 的结果为准。尚未完成的运行不能称为通过；CI 安装失败也不代表模型低分。mock 和 oracle 均无需商业模型 API，不建立能力排名。
+
+### 已观察到的远端运行
+
+[首次 CI：commit bfa818d](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39027479074) 已实际完成：Python 3.11 和 3.12 的核心检查均通过；Inspect 的四项真实可选运行检查（含 Harbor schema）通过；Docker 中的代码题参考及错误程序检查通过；Harbor 0.24.0/schema 1.4 的十题 oracle 均得到核心 70/70、框架 reward=1、完整覆盖和独立 verifier，未产生模型 API 调用。
+
+首次 CI 的 promptfoo 步骤发现了真实兼容性问题：promptfoo 默认将结果文件里的哈希脱敏为 `[REDACTED]`，导致结果转换器拒绝该结果。修复保留严格来源核验：只有明确的脱敏标记可以用日志中保留的完整题面重新计算哈希补证；题面缺失、改变或非脱敏的错误哈希仍会失败。该修复的真实运行结果以随后 commit 的 CI 为准，不能将首次整体 CI 描述为全绿。
 
 ## 尚未得到的证据
 

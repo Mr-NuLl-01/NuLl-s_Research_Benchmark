@@ -5,9 +5,11 @@ test_incomplete_grading_is_an_error_not_zero_model_accuracy (test_adapters.Callb
 test_inspect_records_do_not_contain_expected_answers (test_adapters.CallbackContracts.test_inspect_records_do_not_contain_expected_answers) ... ok
 test_inspect_summary_does_not_hide_missing_tasks (test_adapters.CallbackContracts.test_inspect_summary_does_not_hide_missing_tasks) ... ok
 test_inspect_summary_excludes_log_with_provider_error (test_adapters.CallbackContracts.test_inspect_summary_excludes_log_with_provider_error) ... ok
+test_inspect_summary_preserves_recorded_identity_and_generation_settings (test_adapters.CallbackContracts.test_inspect_summary_preserves_recorded_identity_and_generation_settings) ... ok
 test_offline_mock_explicitly_identifies_itself (test_adapters.CallbackContracts.test_offline_mock_explicitly_identifies_itself) ... ok
 test_promptfoo_cli_missing_executable_is_not_a_model_output (test_adapters.CallbackContracts.test_promptfoo_cli_missing_executable_is_not_a_model_output) ... ok
 test_promptfoo_cli_provider_runs_real_offline_subprocess (test_adapters.CallbackContracts.test_promptfoo_cli_provider_runs_real_offline_subprocess) ... ok
+test_promptfoo_runtime_redaction_requires_complete_matching_logged_input (test_adapters.CallbackContracts.test_promptfoo_runtime_redaction_requires_complete_matching_logged_input) ... ok
 test_promptfoo_summary_does_not_average_repetitions_or_runtime_errors (test_adapters.CallbackContracts.test_promptfoo_summary_does_not_average_repetitions_or_runtime_errors) ... ok
 test_promptfoo_summary_uses_canonical_reports_and_full_denominator (test_adapters.CallbackContracts.test_promptfoo_summary_uses_canonical_reports_and_full_denominator) ... ok
 test_provenance_drift_fails_before_scoring (test_adapters.CallbackContracts.test_provenance_drift_fails_before_scoring) ... ok
@@ -96,6 +98,6 @@ test_response_equivalence_for_nonstep_input (test_science_tasks.ThermalTaskTests
 test_sensor_offset_must_not_decay (test_science_tasks.ThermalTaskTests.test_sensor_offset_must_not_decay) ... ok
 
 ----------------------------------------------------------------------
-Ran 96 tests in 1.799s
+Ran 98 tests in 1.851s
 
 OK (skipped=4)

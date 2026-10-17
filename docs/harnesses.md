@@ -151,6 +151,10 @@ python adapters/promptfoo/summarize_results.py /tmp/nrb-promptfoo-s0-r1/results.
 
 转换器读取已保存的核心报告，不另设科学评分规则。它检查任务身份、自动分口径和十题完整性；评分依赖失败不会悄悄变为模型零分或从分母消失。每次模型比较都使用 `--no-cache`，否则可能测到的是缓存结果。
 
+promptfoo 0.124.1 的导出脱敏会把 64 位 SHA-256 字符串替换成 `[REDACTED]`，首次真实 CI 已观察到这个行为。转换器仅对这一明确标记，从日志中完整保留的 `vars.prompt` 重新计算输入哈希，并继续核对当前 evaluator 和 canonical report 的 `case_hash`；缺失或修改后的题面、未脱敏但错误的哈希仍会拒绝。补证的 task ID 写入 `provenance.hash_recovered_from_full_logged_prompt`，无需关闭框架的凭据脱敏。相关规则见 [0.124.1 sanitizer 源码](https://github.com/promptfoo/promptfoo/blob/0.124.1/src/util/sanitizer.ts)。
+
+Inspect 与 promptfoo 的统一结果保留实际日志中的 `model_label`、`harness_label`、框架版本和生成配置。Inspect 读取 `EvalSpec.model`、模型参数与 solver plan；promptfoo 保存 provider ID、label、配置及配置哈希。promptfoo 的 `model_label` 表示 provider ID：若它是 Python 或命令 provider 的文件名，就不能当成已知的底层模型版本。无法由日志证明的模型快照保持 `metadata.model_version = null`，并标记 `metadata_incomplete`。任务 seed、运行 ID、时间戳放在独立的 `source_log`，不会把同一设置的不同题目变体误判为不同实验配置。Inspect 字段依据见 [0.3.281 EvalSpec 与 EvalPlan](https://github.com/UKGovernmentBEIS/inspect_ai/blob/0.3.281/src/inspect_ai/log/_log.py)。
+
 ### 5.2 调用实际 CLI 代理
 
 可将导出的 `providers` 替换为以下结构，命令数组与原生 runner 兼容：
