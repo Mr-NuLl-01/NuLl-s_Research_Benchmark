@@ -1,0 +1,137 @@
+{
+  "benchmark_version": "2.0.0-rc.1",
+  "phase": "phase1",
+  "ready_tasks": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08"
+  ],
+  "planned_count": 12,
+  "github": {
+    "repository": "Mr-NuLl-01/NuLl-s_Research_Benchmark",
+    "implementation_commit": "114e27620582311160cd6c746dea6ef8137cd5e6",
+    "url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark",
+    "v2_workflow": {
+      "id": 39953613115,
+      "url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39953613115",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 120413890390,
+          "name": "V2 real Docker execution and isolation",
+          "conclusion": "success"
+        },
+        {
+          "id": 120413890616,
+          "name": "V2 contracts and webpage",
+          "conclusion": "success"
+        }
+      ]
+    },
+    "legacy_workflow": {
+      "id": 39953613057,
+      "url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39953613057",
+      "jobs": [
+        {
+          "id": 120413890205,
+          "name": "Docker and separate Harbor verifier",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 120413890273,
+          "name": "V1 science Python 3.11",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 120413890301,
+          "name": "Core Python 3.12",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 120413890305,
+          "name": "V1 Docker, Fortran and separate Harbor verifier",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 120413890346,
+          "name": "Core Python 3.11",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 120413890447,
+          "name": "V1 science Python 3.12",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 120413890474,
+          "name": "V1 Inspect, promptfoo and Harbor schema",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 120413890515,
+          "name": "Inspect, promptfoo, Harbor schema",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "artifacts": [
+      {
+        "id": 12501337574,
+        "name": "v2-core-evidence",
+        "size_in_bytes": 2723,
+        "digest": "sha256:53d82ed8bd9f30c2c915b2316fd8aa2228abcb2c4adfd3fd01197d883f083e7e",
+        "head_sha": "114e27620582311160cd6c746dea6ef8137cd5e6"
+      },
+      {
+        "id": 12501297102,
+        "name": "v2-docker-evidence",
+        "size_in_bytes": 6938,
+        "digest": "sha256:2cf48ee8948c6ac132c2ceb7fc0ee084536b768e415dd3ec2023ae09bdffffb5",
+        "head_sha": "114e27620582311160cd6c746dea6ef8137cd5e6"
+      }
+    ]
+  },
+  "site": {
+    "url": "https://research-benchmark-notebook.null-00-llun.chatgpt.site",
+    "version_number": 5,
+    "version_id": "appgprj_6ad91a10b134819196170407beda21b0~appgver_3009512db9608191874ba1605285829b",
+    "source_commit": "b1b91f31aa8f2cf1e8784375af1cea3db45b8da8",
+    "deployment_status": "succeeded",
+    "deployed_at": "2026-10-23T12:30:15.345531+00:00",
+    "audience": "owner_private",
+    "external_visitors": 0
+  },
+  "evaluator_fingerprint": "ee841ae2c0a1d98101f50f4d0b29e922275fd499ea9f37d05c8924bd86fa51c0",
+  "validation": {
+    "unit_tests": 18,
+    "frontend_node_checks": 65,
+    "trusted_controls": 93,
+    "docker_controls": 31,
+    "docker_isolation": "passed",
+    "actual_browser_qa": "passed",
+    "model_evaluations": 0
+  },
+  "drive_folder": "https://drive.google.com/drive/folders/1memk6jwu6LWzoPHGg5uhDgcFmKDi00-C",
+  "scope_limits": [
+    "No actual model scoring or difficulty calibration.",
+    "No native Windows/macOS launcher execution.",
+    "No phase-two task completion or full 20-task total.",
+    "Imported editable JSON is not execution authenticity certification."
+  ]
+}

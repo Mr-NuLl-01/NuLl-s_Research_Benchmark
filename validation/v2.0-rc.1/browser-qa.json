@@ -13,5 +13,8 @@
   "backup_merge_restored": true,
   "randomUUID_http_save_bug_fixed_and_retested": true,
   "node_checks": 65,
-  "not_model_evaluation": true
+  "not_model_evaluation": true,
+  "actual_unscored_json_file_upload": true,
+  "unscored_displayed_as_null_not_zero": true,
+  "preview_test_records_removed": true
 }

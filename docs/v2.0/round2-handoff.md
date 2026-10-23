@@ -7,6 +7,10 @@ https://research-benchmark-notebook.null-00-llun.chatgpt.site
 
 Site project ID：`appgprj_6ad91a10b134819196170407beda21b0`。保持既有身份及私有访问范围，不创建替代站点。
 
+## 本轮发布定位
+
+实现提交：`114e27620582311160cd6c746dea6ef8137cd5e6`。私有网站第5版，源提交：`b1b91f31aa8f2cf1e8784375af1cea3db45b8da8`。V2工作流39953613115两作业通过，包括真实Docker控制与隔离；详细状态见 `release-status.json`。第二轮仍先读取远端main的最新提交，可能包含追加的证据归档提交。
+
 ## 第一轮边界
 
 正式可测范围仅为 P01–P08。其余十二题的目录是规划，任何上一轮草稿、Drive材料或静态题面都不能仅因存在文件而宣称通过当前协议。
