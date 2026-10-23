@@ -1,4 +1,4 @@
-"""Execute Python submissions and derive every score from fixed check weights."""
+"""Execute code submissions or independently verify numeric answers and derive every score from fixed check weights."""
 from __future__ import annotations
 
 from datetime import datetime, timezone
@@ -15,14 +15,15 @@ from nrb_v1.grading import compare_value, EXACT_INTEGER_PATHS
 from nrb_v1.provenance import fingerprint
 from . import __version__, GRADER_VERSION, REPORT_SCHEMA
 from .packets import candidate
-from .registry import PYTHON_IDS, LEGACY, cases, module
+from .registry import OBJECTIVE_IDS, PYTHON_IDS, FORTRAN_IDS, LEGACY, cases, module, source_filename
 
 
 def identity():
     root = Path(__file__).resolve().parent.parent
     files = {}
     for directory in ("nrb_v1", "nrb_v2"):
-        for path in sorted((root / directory).rglob("*.py")):
+        for path in sorted((root / directory).rglob("*")):
+            if not path.is_file() or path.suffix not in (".py", ".json", ".lean") or "__pycache__" in path.parts: continue
             files[path.relative_to(root).as_posix()] = fingerprint(path.read_bytes())
     info = {"grader_version": GRADER_VERSION,
             "evaluator_fingerprint": fingerprint({"algorithm": "sha256-path-content-v1", "files": files}),
@@ -55,7 +56,7 @@ def public_manifest(seeds=(0, 17, 2026)):
     if not seeds or len(set(seeds)) != len(seeds):
         raise ValueError("Manifest seeds must be nonempty and unique")
     tasks = {}
-    for task_id in PYTHON_IDS:
+    for task_id in OBJECTIVE_IDS:
         seed_entries = {}
         for seed in seeds:
             test_cases = cases(task_id, seed)
@@ -102,46 +103,54 @@ def load_source(task_id, source):
         raise ValueError("Source must be an existing regular file, not a symlink")
     if path.stat().st_size > 2 * 1024 * 1024:
         raise ValueError("Source file exceeds 2 MiB")
-    return {"task_id": task_id, "artifacts": {"solution.py": path.read_text(encoding="utf-8")}, "answer": {}}
+    return {"task_id": task_id, "artifacts": {source_filename(task_id): path.read_text(encoding="utf-8")}, "answer": {}}
 
 
 def load_submission(task_id, directory):
     directory = Path(directory)
     if directory.is_symlink() or not directory.is_dir():
         raise ValueError("Submission directory must be an existing real directory")
-    return load_source(task_id, directory / "solution.py")
+    return load_source(task_id, directory / source_filename(task_id))
 
 
 def grade(task_id, submission, seed=17, backend="docker", timeout=120, image=None):
-    if task_id not in PYTHON_IDS:
-        raise ValueError("Only P01–P08 are released for execution in this phase")
+    if task_id not in OBJECTIVE_IDS:
+        raise ValueError("Select one of the thirteen automatic tasks")
     if backend not in ("docker", "trusted", "none"):
         raise ValueError("Unsupported execution backend")
     if type(timeout) not in (int, float) or not math.isfinite(timeout) or not 0 < timeout <= 3600:
         raise ValueError("Timeout must be finite and in (0,3600]")
     validate_submission(submission, task_id)
-    source = submission["artifacts"].get("solution.py")
+    filename = source_filename(task_id)
+    source = submission["artifacts"].get(filename)
     if source is not None and len(decode(source)) > 2 * 1024 * 1024:
         raise ValueError("Source file exceeds 2 MiB")
-    slim = {"task_id": task_id, "artifacts": {} if source is None else {"solution.py": source}, "answer": {}}
+    slim = {"task_id": task_id, "artifacts": {} if source is None else {filename: source}, "answer": {}}
     test_cases = cases(task_id, seed)
     manifest = _manifest(test_cases)
     checks = []
     if source is None:
-        execution = {"backend": backend, "language": "python", "status": "unavailable", "error": "Missing solution.py"}
+        execution = {"backend": backend, "language": module(task_id).TASK.get("language"), "status": "unavailable", "error": "Missing " + filename}
         records = []
     else:
         try:
-            result = execute(module(task_id), slim, test_cases, backend, timeout,
-                             image or ("nrb-v2-python:local" if backend == "docker" else None))
+            selected_image = image or ("nrb-v2-lean:local" if task_id == "L01" else "nrb-v2:local")
+            if task_id in FORTRAN_IDS:
+                from .fortran import execute as execute_fortran
+                result = execute_fortran(module(task_id), slim, test_cases, backend, timeout, selected_image)
+            elif task_id in ("L01", "H02"):
+                result = module(task_id).execute(slim, test_cases, backend, timeout, selected_image)
+            else:
+                result = execute(module(task_id), slim, test_cases, backend, timeout, selected_image)
             records = result["records"]
             execution = {k: v for k, v in result.items() if k != "records"}
             if execution.get("status") == "unavailable" and backend == "docker":
                 execution["error"] = execution.get("error", "Docker execution unavailable").replace(
                     "environments/v1/Dockerfile", "environments/v2/Dockerfile")
-                execution["error"] += "; start Docker, then run Build-Environment or build nrb-v2-python:local from environments/v2/Dockerfile"
+                dockerfile = "environments/v2/LeanDockerfile" if task_id == "L01" else "environments/v2/Dockerfile"
+                execution["error"] += f"; start Docker, then run Build-Environment or build {selected_image} from {dockerfile}"
         except (OSError, subprocess.SubprocessError) as exc:
-            execution = {"backend": backend, "language": "python", "status": "unavailable",
+            execution = {"backend": backend, "language": module(task_id).TASK.get("language"), "status": "unavailable",
                          "error": type(exc).__name__ + ": " + str(exc)[:1000]}
             records = []
     for i, case in enumerate(test_cases):
@@ -174,8 +183,11 @@ def grade(task_id, submission, seed=17, backend="docker", timeout=120, image=Non
               "environment": {"evaluator_python": platform.python_version(), "platform": platform.system(), "machine": platform.machine()},
               "submission_hash": fingerprint(slim), "source_hash": fingerprint(decode(source)) if source is not None else fingerprint(b""),
               "report_origin": "local_verifier", "control_only": backend == "trusted",
-              "comparison_eligible": derived["score"] is not None and backend == "docker",
+              "comparison_eligible": derived["score"] is not None and execution.get("backend") in ("docker", "answer"),
               "trust_note": "Local execution report. Browser import does not rerun code. Hashes detect changes but are not an authenticity signature."}
+    if task_id == "H02" and source is not None:
+        try: report["answer_payload"] = module(task_id).strict_loads(decode(source).decode("utf-8"))
+        except (ValueError, UnicodeError): report["answer_payload"] = None
     report["report_hash"] = fingerprint(report)
     return report
 
@@ -186,7 +198,7 @@ def validate_report(report, current=True):
     if report.get("benchmark_version") != __version__ or report.get("grader_version") != GRADER_VERSION:
         raise ValueError("Incompatible benchmark or grader version")
     task_id, seed = report.get("task_id"), report.get("seed")
-    if task_id not in PYTHON_IDS or type(seed) is not int:
+    if task_id not in OBJECTIVE_IDS or type(seed) is not int:
         raise ValueError("Invalid task or seed")
     test_cases = cases(task_id, seed)
     expected = _manifest(test_cases)
@@ -216,9 +228,10 @@ def validate_report(report, current=True):
     if report.get("scoring") != "automatic" or report.get("report_origin") != "local_verifier":
         raise ValueError("Unsupported report origin")
     execution = report.get("execution")
-    if not isinstance(execution, dict) or execution.get("backend") not in ("docker", "trusted", "none"):
+    if not isinstance(execution, dict) or execution.get("backend") not in ("docker", "trusted", "none", "answer"):
         raise ValueError("Invalid execution backend")
     backend, status = execution["backend"], execution.get("status")
+    if backend == "answer" and task_id != "H02": raise ValueError("Answer verification is only valid for H02")
     if status not in ("executed", "failed", "unavailable"):
         raise ValueError("Invalid execution status")
     if (report["score"] is None) is not (status == "unavailable"):
@@ -229,13 +242,17 @@ def validate_report(report, current=True):
         raise ValueError("Disabled execution cannot be scored")
     if report.get("control_only") is not (backend == "trusted"):
         raise ValueError("Control flag disagrees with execution backend")
-    if report.get("comparison_eligible") is not (report["score"] is not None and backend == "docker"):
+    if report.get("comparison_eligible") is not (report["score"] is not None and backend in ("docker", "answer")):
         raise ValueError("Comparison eligibility disagrees with execution conditions")
     for key in ("submission_hash", "source_hash", "evaluator_fingerprint", "report_hash"):
         if not isinstance(report.get(key), str) or not re.fullmatch(r"[0-9a-f]{64}", report[key]):
             raise ValueError("Invalid " + key)
     if fingerprint({k: v for k, v in report.items() if k != "report_hash"}) != report["report_hash"]:
         raise ValueError("Report content hash mismatch; this is an integrity check, not authentication")
+    if task_id == "H02" and status == "executed":
+        for check, case in zip(checks, test_cases):
+            if check["passed"] is not module(task_id).validate_output(case, report.get("answer_payload"))[0]:
+                raise ValueError("H02 check disagrees with independently regraded answer")
     if current and report["evaluator_fingerprint"] != identity()["evaluator_fingerprint"]:
         raise ValueError("Evaluator sources changed; use the selected release to regrade")
     return report

@@ -1,0 +1,31 @@
+{
+  "schema": "nrb-browser-final-data-qa-v1",
+  "date": "2026-10-23",
+  "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
+  "environment": "Cloud Chromium via managed Sites preview",
+  "not_model_performance": true,
+  "records_saved": 0,
+  "checks": [
+    {
+      "name": "r05_original_images",
+      "passed": true,
+      "observed": "Expanded all three source papers; all 17 relative PNGs had complete=true and positive naturalWidth/naturalHeight."
+    },
+    {
+      "name": "r05_current_review_identity",
+      "passed": true,
+      "observed": "Actual exported browser review draft matched input manifest 3ad1ca5eec03ac93069a5a163637cf99e2384a5a72a6a9608b56ae76e7ba2674; unobserved score remained null with 13 pending items."
+    },
+    {
+      "name": "r05_prior_manifest_rejected",
+      "passed": true,
+      "observed": "Actual file chooser imported a draft carrying prior input manifest 59769c17a1fec24684b877af0e95d271dde1f68166a23a697beb279f51049d87. UI rejected the input fingerprint and cleared previous preview/save controls."
+    },
+    {
+      "name": "final_native_report_import",
+      "passed": true,
+      "observed": "Actual file chooser imported F02 seed 17 final-native author control: 100/100, 12 passed, author-control badge, exclusion from model scores."
+    }
+  ],
+  "passed": true
+}

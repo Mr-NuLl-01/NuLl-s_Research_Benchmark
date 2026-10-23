@@ -2,12 +2,13 @@
 from __future__ import annotations
 
 import json
+from functools import lru_cache
 from pathlib import Path
 import re
 
 from nrb_v1.provenance import fingerprint
 from . import __version__
-from .registry import PYTHON_IDS, LEGACY, ids, module, spec
+from .registry import ALL_IDS, MANUAL_IDS, OBJECTIVE_IDS, PYTHON_IDS, LEGACY, ids, module, spec
 
 _TOLERANCES = {
     "P01": "浮点字段使用 |actual-expected| ≤ 1e-110 + 2e-11·|expected|；计数是精确整数。极小标准误差不能用常见默认绝对容差吞掉。",
@@ -26,7 +27,7 @@ def objective_prompt(task_id, seed=17):
         raise ValueError("Seed must be an integer in [0, 2**32)")
     task = spec(task_id)
     if task_id not in PYTHON_IDS:
-        raise ValueError("This task is planned for phase two, not a released candidate packet")
+        return f"NRB {__version__} · 题面种子 {seed}\n\n" + module(task_id).prompt(seed)
     text = module(task_id).prompt(seed).replace(LEGACY[task_id], task_id)
     # Replace the entire old common submission paragraph, preserving the science,
     # visible JSON input, and complete buggy starting programs.
@@ -57,7 +58,7 @@ def objective_prompt(task_id, seed=17):
     # Keep the task-specific human-readable interpretation after old tier labels.
     text = re.sub(r"分层：basic20，scientific30，stress20。", "", text)
     text = text.replace("basic20（", "基础检查（").replace("scientific30（", "科学检查（").replace("stress20（", "边界检查（")
-    text = (f"NRB {__version__} · Python 第一轮 · 题面种子 {seed}\n"
+    text = (f"NRB {__version__} · Python · 题面种子 {seed}\n"
             f"设计难度 {task['difficulty']}/5；尚未经过真实模型实测标定。\n\n" + text.rstrip())
     dependencies = "可用Python标准库、NumPy 2.3.5、SciPy 1.17.0；不需额外安装。"
     text += f"""
@@ -78,29 +79,60 @@ def objective_prompt(task_id, seed=17):
 
 
 def candidate(task_id, seed=17):
-    content = objective_prompt(task_id, seed)
+    if type(seed) is not int or not 0 <= seed < 2**32:
+        raise ValueError("Seed must be an integer in [0, 2**32)")
+    if task_id in OBJECTIVE_IDS:
+        content = objective_prompt(task_id, seed)
+    else:
+        if task_id not in ALL_IDS: raise ValueError("Unknown task")
+        content = f"NRB {__version__} · 题面种子 {seed}\n\n" + (Path(__file__).resolve().parents[1] / "tasks/v2.0" / (task_id + ".md")).read_text(encoding="utf-8")
     return {"task_id": task_id, "benchmark_version": __version__, "seed": seed,
             "format": "md", "content": content, "packet_hash": fingerprint(content.encode("utf-8"))}
+
+
+@lru_cache(maxsize=128)
+def input_manifest(task_id, seed=17, mode=None):
+    """Bind the complete candidate input, including actual source media bytes.
+
+    This is separate from packet_hash (the prompt text). Candidate archives use
+    the same allowlists; evaluator packages carry their required source inputs.
+    """
+    content = candidate(task_id, seed)["content"].encode("utf-8")
+    files = {task_id + ".md": content}
+    root = Path(__file__).resolve().parents[1]
+    if task_id in MANUAL_IDS:
+        from .subjective import candidate_inputs
+        for item in candidate_inputs(task_id, mode):
+            if item["source"] == "tasks/v2.0/" + task_id + ".md":
+                continue
+            files[item["path"]] = (root / item["source"]).read_bytes()
+    elif task_id == "L01":
+        for name, value in module(task_id).candidate_files(seed).items():
+            if name != task_id + ".md":
+                files[name] = value.encode("utf-8") if isinstance(value, str) else value
+    elif mode is not None:
+        raise ValueError("This task has no modes")
+    manifest = [{"path": name, "bytes": len(data), "sha256": fingerprint(data)}
+                for name, data in sorted(files.items())]
+    return {"files": manifest, "sha256": fingerprint(manifest)}
 
 
 def catalog(seed=17):
     tasks = []
     for task_id in ids("all"):
         entry = spec(task_id)
-        if task_id in PYTHON_IDS:
+        if task_id in ALL_IDS:
             packet = candidate(task_id, seed)
             entry.update(file=task_id + ".md", packet_hash=packet["packet_hash"], seed=seed)
         tasks.append(entry)
-    return {"benchmark_version": __version__, "status": "phase1", "ready_count": 8,
-            "planned_count": 12, "total_count": 20, "tasks": tasks}
+    return {"benchmark_version": __version__, "status": "complete", "ready_count": 20,
+            "planned_count": 0, "total_count": 20, "tasks": tasks}
 
 
-def export_tasks(destination, selection="python", seed=17):
+def export_tasks(destination, selection="all", seed=17):
     dest = Path(destination)
     dest.mkdir(parents=True, exist_ok=True)
     selected = ids(selection)
-    if any(t not in PYTHON_IDS for t in selected):
-        raise ValueError("Only Python packets are released in phase one; use list for the full 20-task plan")
     entries = []
     for task_id in selected:
         packet = candidate(task_id, seed)

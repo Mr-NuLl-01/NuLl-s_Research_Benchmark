@@ -1,0 +1,1764 @@
+{
+  "schema": "nrb-v2-manual-rubrics",
+  "protocol_version": "nrb-subjective-v2.0",
+  "tasks": {
+    "R01": {
+      "id": "R01",
+      "title": "参考学习与可编辑科研 SVG",
+      "mode": null,
+      "difficulty": 4,
+      "category": "主观科研",
+      "track": "research",
+      "scoring": "manual",
+      "status": "ready",
+      "phase": 2,
+      "max_score": 100,
+      "manual_review_required": true,
+      "language": null,
+      "format": "md",
+      "prompt_file": "tasks/v2.0/R01.md",
+      "required_artifacts": [
+        "figure.svg",
+        "figure.png",
+        "caption.md",
+        "design-note.md",
+        "source.zip",
+        "review.md"
+      ],
+      "optional_artifacts": [],
+      "rubric": [
+        {
+          "id": "R01-A",
+          "name": "Scientific encoding and data fidelity",
+          "weight": 30,
+          "anchors": {
+            "0": "Data, pairing or units are substantially invented or lost.",
+            "2": "Most values are represented, but one material design or unit ambiguity remains.",
+            "4": "All supplied observations, pairing, batch identity and distinct experimental units are faithfully encoded; summaries are defined and justified."
+          }
+        },
+        {
+          "id": "R01-B",
+          "name": "Learning from all three actual figure references",
+          "weight": 20,
+          "anchors": {
+            "0": "No actual reference analysis or copied artwork replaces the new figure.",
+            "2": "All references are named, but analysis is superficial or adoption is poorly connected to the data.",
+            "4": "Specific visible choices from all three references are critically analysed and adapted coherently to the new scientific comparison."
+          }
+        },
+        {
+          "id": "R01-C",
+          "name": "Scale, comparison and uncertainty judgment",
+          "weight": 20,
+          "anchors": {
+            "0": "Axes or uncertainty materially distort the scientific comparison.",
+            "2": "Scales are plausible but a comparison, baseline or uncertainty definition is unclear.",
+            "4": "Scale choices support both small changes and baseline context; comparison, sample unit and uncertainty meaning are explicit and defensible."
+          }
+        },
+        {
+          "id": "R01-D",
+          "name": "Composition, typography and accessible visual identity",
+          "weight": 15,
+          "anchors": {
+            "0": "Important labels or data are unreadable.",
+            "2": "Figure is readable at large size but has crowding or inconsistent identities at target size.",
+            "4": "Clear reading order, consistent identities, accessible redundant encodings and legible typography work at 180 mm."
+          }
+        },
+        {
+          "id": "R01-E",
+          "name": "Editable delivery, caption and targeted visual review",
+          "weight": 15,
+          "anchors": {
+            "0": "Required vector/source artifacts or meaningful caption are absent.",
+            "2": "SVG and preview exist but editability, regeneration or review evidence is incomplete.",
+            "4": "Live text, separate editable elements, reproducible source, self-contained caption and concrete inspection evidence support reuse."
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "id": "science",
+          "requirement": "No material fabrication or loss of supplied values, pairing, units or separate experiment identity."
+        },
+        {
+          "id": "vector",
+          "requirement": "An openable SVG with live text and separately editable scientific elements is delivered."
+        },
+        {
+          "id": "references",
+          "requirement": "All three actual supplied figure references receive specific visual analysis."
+        }
+      ],
+      "hard_caps": [
+        {
+          "requirement_id": "science",
+          "max_score": 40,
+          "reason": "Material scientific/data corruption"
+        },
+        {
+          "requirement_id": "vector",
+          "max_score": 35,
+          "reason": "No usable editable vector result"
+        },
+        {
+          "requirement_id": "references",
+          "max_score": 70,
+          "reason": "Required reference learning absent"
+        }
+      ],
+      "required_observations": [
+        {
+          "id": "reference_figures",
+          "label": "Read all three reference images and captions"
+        },
+        {
+          "id": "output_visual",
+          "label": "Inspect SVG and PNG at 180 mm"
+        },
+        {
+          "id": "editable_source",
+          "label": "Inspect live text, elements and source archive"
+        },
+        {
+          "id": "data_audit",
+          "label": "Cross-check all observations, pairing and summaries"
+        },
+        {
+          "id": "written_artifacts",
+          "label": "Read caption, design note and review"
+        }
+      ],
+      "input_files": [
+        {
+          "source": "tasks/v2.0/R01.md",
+          "path": "R01.md"
+        },
+        {
+          "source": "tasks/v2.0/assets/R01/paired.csv",
+          "path": "assets/R01/paired.csv"
+        },
+        {
+          "source": "tasks/v2.0/assets/R01/transient.csv",
+          "path": "assets/R01/transient.csv"
+        },
+        {
+          "source": "tasks/v2.0/assets/R01/style-references.html",
+          "path": "assets/R01/style-references.html"
+        },
+        {
+          "source": "tasks/v2.0/assets/common/SOURCES.md",
+          "path": "assets/common/SOURCES.md"
+        },
+        {
+          "source": "tasks/v2.0/assets/common/source-records.json",
+          "path": "assets/common/source-records.json"
+        }
+      ],
+      "reviewer_checks": [
+        "Open the three references: identify the actual visible choices claimed in the design note.",
+        "Inspect final-size panels; check transient device IDs remain local to their experiment.",
+        "Inspect SVG XML/live text and source archive rather than inferring editability from a PNG."
+      ],
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "protocol_version": "nrb-subjective-v2.0",
+      "rating_scale": {
+        "allowed": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "intermediate": "1 and 3 require evidence showing performance between the adjacent published anchors; they are not default uncertainty scores.",
+        "unassessed": null
+      }
+    },
+    "R02": {
+      "id": "R02",
+      "title": "小差异、宽动态范围与删失数据绘图",
+      "mode": null,
+      "difficulty": 4,
+      "category": "主观科研",
+      "track": "research",
+      "scoring": "manual",
+      "status": "ready",
+      "phase": 2,
+      "max_score": 100,
+      "manual_review_required": true,
+      "language": null,
+      "format": "md",
+      "prompt_file": "tasks/v2.0/R02.md",
+      "required_artifacts": [
+        "plot.py",
+        "requirements.txt",
+        "figure.svg",
+        "figure.png",
+        "alternative-scale.png",
+        "summary.csv",
+        "scale-decisions.md",
+        "caption.md"
+      ],
+      "optional_artifacts": [],
+      "rubric": [
+        {
+          "id": "R02-A",
+          "name": "Data parsing, observation status and measurement semantics",
+          "weight": 25,
+          "anchors": {
+            "0": "Censored, signed or paired observations are corrupted.",
+            "2": "Data generally survive but a status or uncertainty definition is ambiguous.",
+            "4": "Every row, pairing, status, unit and expanded-uncertainty definition survives the complete workflow."
+          }
+        },
+        {
+          "id": "R02-B",
+          "name": "Purposeful scale choices for nearby and broad-range values",
+          "weight": 25,
+          "anchors": {
+            "0": "A blanket scale rule produces misleading comparisons or drops data.",
+            "2": "Scale choices are plausible but the rationale or baseline comparison is incomplete.",
+            "4": "Axis-specific decisions explain absolute/relative comparisons, baseline, zero and dynamic range, with a useful diagnostic revealing tradeoffs."
+          }
+        },
+        {
+          "id": "R02-C",
+          "name": "Numerical summaries and uncertainty treatment",
+          "weight": 20,
+          "anchors": {
+            "0": "Summary calculations or error definitions are materially wrong.",
+            "2": "Main summaries are usable but limited reproducibility or one uncertainty ambiguity remains.",
+            "4": "Paired summaries, interval rendering and any sensitivity assumptions are numerically traceable and scientifically defensible."
+          }
+        },
+        {
+          "id": "R02-D",
+          "name": "Scientific readability and caption",
+          "weight": 15,
+          "anchors": {
+            "0": "Important information is unreadable or unexplained.",
+            "2": "Most labels and caption are usable with some omissions at final size.",
+            "4": "The figure and caption explain units, experimental unit, intervals, censoring, limits and visual encodings at final size."
+          }
+        },
+        {
+          "id": "R02-E",
+          "name": "Runnable Python and transparent decisions",
+          "weight": 15,
+          "anchors": {
+            "0": "Source cannot regenerate the outputs.",
+            "2": "Source runs with manual intervention or incomplete environment/decision records.",
+            "4": "A documented local command reproduces vector/raster outputs, summary table and scale-decision record without network access."
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "id": "semantics",
+          "requirement": "Pairing, signed/zero values and censoring retain their distinct meanings without invented point estimates."
+        },
+        {
+          "id": "figures",
+          "requirement": "Actual generated figures are supplied."
+        },
+        {
+          "id": "source",
+          "requirement": "Python source can regenerate the scientific figures from supplied data."
+        }
+      ],
+      "hard_caps": [
+        {
+          "requirement_id": "semantics",
+          "max_score": 40,
+          "reason": "Material sign/pair/censoring corruption"
+        },
+        {
+          "requirement_id": "figures",
+          "max_score": 30,
+          "reason": "No actual figures"
+        },
+        {
+          "requirement_id": "source",
+          "max_score": 60,
+          "reason": "No usable regeneration source"
+        }
+      ],
+      "required_observations": [
+        {
+          "id": "output_visual",
+          "label": "Inspect main and alternative-scale figures at 180 mm"
+        },
+        {
+          "id": "runtime",
+          "label": "Attempt documented regeneration and record actual outcome"
+        },
+        {
+          "id": "data_audit",
+          "label": "Verify parsing, paired summaries and U(k=2) intervals"
+        },
+        {
+          "id": "written_artifacts",
+          "label": "Read captions and per-axis decisions"
+        }
+      ],
+      "input_files": [
+        {
+          "source": "tasks/v2.0/R02.md",
+          "path": "R02.md"
+        },
+        {
+          "source": "tasks/v2.0/assets/R02/paired.csv",
+          "path": "assets/R02/paired.csv"
+        },
+        {
+          "source": "tasks/v2.0/assets/R02/dose_response.csv",
+          "path": "assets/R02/dose_response.csv"
+        },
+        {
+          "source": "tasks/v2.0/assets/R02/blank_corrected.csv",
+          "path": "assets/R02/blank_corrected.csv"
+        }
+      ],
+      "reviewer_checks": [
+        "Confirm S4/S8 have no measured point estimate; S1 remains negative and S2 zero.",
+        "Verify expanded uncertainty is U(k=2), not raw sample SD; inspect every relevant axis.",
+        "A failed documented regeneration is observed evidence; inability of the reviewer environment to execute is unassessed."
+      ],
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "protocol_version": "nrb-subjective-v2.0",
+      "rating_scale": {
+        "allowed": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "intermediate": "1 and 3 require evidence showing performance between the adjacent published anchors; they are not default uncertainty scores.",
+        "unassessed": null
+      }
+    },
+    "R03": {
+      "id": "R03",
+      "title": "保持事实与证据强度的英文润色",
+      "mode": null,
+      "difficulty": 3,
+      "category": "主观科研",
+      "track": "research",
+      "scoring": "manual",
+      "status": "ready",
+      "phase": 2,
+      "max_score": 100,
+      "manual_review_required": true,
+      "language": null,
+      "format": "md",
+      "prompt_file": "tasks/v2.0/R03.md",
+      "required_artifacts": [
+        "edited.md",
+        "fact-ledger.csv",
+        "edit-memo.md"
+      ],
+      "optional_artifacts": [],
+      "rubric": [
+        {
+          "id": "R03-A",
+          "name": "Preservation of scientific facts and scope",
+          "weight": 35,
+          "anchors": {
+            "0": "Material numbers, design, uncertainty or limits are invented or lost.",
+            "2": "Most facts survive but one material qualification or design detail is weakened.",
+            "4": "Every material fact, quantity, design relationship, uncertainty and temporal limit is preserved or transparently queried."
+          }
+        },
+        {
+          "id": "R03-B",
+          "name": "Conservative treatment of unsupported scientific claims",
+          "weight": 25,
+          "anchors": {
+            "0": "Unsupported significance, mechanism or generalization is retained or strengthened without disclosure.",
+            "2": "Some problematic wording is corrected but the disposition or author query is incomplete.",
+            "4": "Unsupported claims are handled transparently and proportionately, with precise author queries where required and no invented supporting evidence."
+          }
+        },
+        {
+          "id": "R03-C",
+          "name": "Natural, precise English for the stated audience",
+          "weight": 20,
+          "anchors": {
+            "0": "The prose remains inflated, incoherent or unsuitable for a manuscript.",
+            "2": "Readable prose still contains unnecessary staging, repetition or vague claims.",
+            "4": "Connected, economical manuscript prose uses specific subjects and verbs, varied natural rhythm and appropriate scientific qualification."
+          }
+        },
+        {
+          "id": "R03-D",
+          "name": "Auditable claim ledger",
+          "weight": 15,
+          "anchors": {
+            "0": "No useful claim ledger exists to audit preservation of the scientific record.",
+            "2": "A ledger covers numbers but omits causal, uncertainty or scope claims.",
+            "4": "A complete and navigable ledger ties original claims to edits, factual status and transparent dispositions."
+          }
+        },
+        {
+          "id": "R03-E",
+          "name": "Editorial boundary and deliverable discipline",
+          "weight": 5,
+          "anchors": {
+            "0": "The output claims verification or detector success.",
+            "2": "The boundary is implied but queries or length constraints are poorly handled.",
+            "4": "All deliverables meet scope and length, distinguish editing from validation, and make remaining author decisions explicit."
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "id": "facts",
+          "requirement": "All material quantitative/design/uncertainty/temporal facts remain faithful to the approved editorial record."
+        },
+        {
+          "id": "claims",
+          "requirement": "Unsupported significance, mechanism and long-term claims are explicitly removed, bounded or queried."
+        },
+        {
+          "id": "ledger",
+          "requirement": "A useful claim-by-claim ledger includes F01–F11 and unsupported claims."
+        }
+      ],
+      "hard_caps": [
+        {
+          "requirement_id": "facts",
+          "max_score": 35,
+          "reason": "Material factual alteration or fabrication"
+        },
+        {
+          "requirement_id": "claims",
+          "max_score": 45,
+          "reason": "Unsupported scientific certainty retained or strengthened"
+        },
+        {
+          "requirement_id": "ledger",
+          "max_score": 70,
+          "reason": "No useful fact ledger"
+        }
+      ],
+      "required_observations": [
+        {
+          "id": "input_record",
+          "label": "Read draft and approved F01–F11"
+        },
+        {
+          "id": "edited_prose",
+          "label": "Read the entire edited passage and memo"
+        },
+        {
+          "id": "claim_ledger",
+          "label": "Trace every material claim through the ledger"
+        }
+      ],
+      "input_files": [
+        {
+          "source": "tasks/v2.0/R03.md",
+          "path": "R03.md"
+        },
+        {
+          "source": "tasks/v2.0/assets/R03/draft.txt",
+          "path": "assets/R03/draft.txt"
+        },
+        {
+          "source": "tasks/v2.0/assets/R03/approved-facts.md",
+          "path": "assets/R03/approved-facts.md"
+        }
+      ],
+      "reviewer_checks": [
+        "Use R03 approved means, not values recalculated from R01/R04 fixtures.",
+        "p=0.08 is author-reported; no test family/statistic/interval or preregistered alpha was supplied.",
+        "Removing an unsupported claim with an explicit ledger entry is valid; require no invented substitute evidence."
+      ],
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "protocol_version": "nrb-subjective-v2.0",
+      "rating_scale": {
+        "allowed": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "intermediate": "1 and 3 require evidence showing performance between the adjacent published anchors; they are not default uncertainty scores.",
+        "unassessed": null
+      }
+    },
+    "R04": {
+      "id": "R04",
+      "title": "从图版与数据撰写结果和讨论",
+      "mode": null,
+      "difficulty": 4,
+      "category": "主观科研",
+      "track": "research",
+      "scoring": "manual",
+      "status": "ready",
+      "phase": 2,
+      "max_score": 100,
+      "manual_review_required": true,
+      "language": null,
+      "format": "md",
+      "prompt_file": "tasks/v2.0/R04.md",
+      "required_artifacts": [
+        "manuscript.md",
+        "caption.md",
+        "claim-evidence.csv",
+        "calculations.py",
+        "calculated-summary.csv"
+      ],
+      "optional_artifacts": [],
+      "rubric": [
+        {
+          "id": "R04-A",
+          "name": "Quantitative fidelity to the actual figure and data",
+          "weight": 30,
+          "anchors": {
+            "0": "The text misstates observations or invents numerical results.",
+            "2": "Most values are traceable but a quantitative comparison or unit is incomplete.",
+            "4": "Three or more scientifically useful numerical statements are correct, traceable to calculations and tied to the actual panels."
+          }
+        },
+        {
+          "id": "R04-B",
+          "name": "Reasoning across observation, interpretation and mechanism",
+          "weight": 25,
+          "anchors": {
+            "0": "Hypotheses or short-term observations are promoted to established mechanism or durability.",
+            "2": "Interpretation is mostly restrained but an evidential boundary or experiment relationship remains unclear.",
+            "4": "Results, inference and hypotheses are explicitly distinguished, experiments remain distinct and a discriminating follow-up has meaningful alternative predictions."
+          }
+        },
+        {
+          "id": "R04-C",
+          "name": "Manuscript argument and readable English",
+          "weight": 20,
+          "anchors": {
+            "0": "Paragraphs are disconnected, generic or unsuitable for a paper.",
+            "2": "The narrative is understandable but repetitive or weakly organized around the scientific question.",
+            "4": "Each paragraph has a clear scientific purpose and connected argument, with precise language and appropriately bounded significance."
+          }
+        },
+        {
+          "id": "R04-D",
+          "name": "Caption, units, interval and experimental structure",
+          "weight": 10,
+          "anchors": {
+            "0": "Caption materially misdefines the figure.",
+            "2": "Caption is usable but omits one important definition or scope limit.",
+            "4": "Caption accurately and independently explains both panels, independent units, batch encodings and interval definitions."
+          }
+        },
+        {
+          "id": "R04-E",
+          "name": "Claim audit and reproducible numerical support",
+          "weight": 15,
+          "anchors": {
+            "0": "No usable evidence table or calculation source exists.",
+            "2": "Most claims map to sources but some rejected notes or calculations are not auditable.",
+            "4": "A complete claim map distinguishes adopted and rejected notes, supports calculations with runnable code and states unresolved scientific limitations."
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "id": "science",
+          "requirement": "No invented data, inferred mechanism or unmeasured durability is presented as established."
+        },
+        {
+          "id": "panels",
+          "requirement": "Both actual input panels and the separate experiments are interpreted."
+        },
+        {
+          "id": "trace",
+          "requirement": "Quantitative claims have usable evidence links and reproducible calculations."
+        }
+      ],
+      "hard_caps": [
+        {
+          "requirement_id": "science",
+          "max_score": 40,
+          "reason": "Fabrication or unsupported mechanism/durability claim"
+        },
+        {
+          "requirement_id": "panels",
+          "max_score": 60,
+          "reason": "Actual two-panel interpretation absent"
+        },
+        {
+          "requirement_id": "trace",
+          "max_score": 65,
+          "reason": "No auditable calculations"
+        }
+      ],
+      "required_observations": [
+        {
+          "id": "input_figure",
+          "label": "Inspect F1a/F1b and their plotted encodings"
+        },
+        {
+          "id": "manuscript",
+          "label": "Read results, discussion and caption"
+        },
+        {
+          "id": "numerical_audit",
+          "label": "Recompute material quantitative claims"
+        },
+        {
+          "id": "evidence_ledger",
+          "label": "Check adopted and rejected rough notes"
+        }
+      ],
+      "input_files": [
+        {
+          "source": "tasks/v2.0/R04.md",
+          "path": "R04.md"
+        },
+        {
+          "source": "tasks/v2.0/assets/R04/paired.csv",
+          "path": "assets/R04/paired.csv"
+        },
+        {
+          "source": "tasks/v2.0/assets/R04/transient.csv",
+          "path": "assets/R04/transient.csv"
+        },
+        {
+          "source": "tasks/v2.0/assets/R04/input-figure.svg",
+          "path": "assets/R04/input-figure.svg"
+        },
+        {
+          "source": "tasks/v2.0/assets/R04/input-figure.png",
+          "path": "assets/R04/input-figure.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R04/experiment-record.md",
+          "path": "assets/R04/experiment-record.md"
+        }
+      ],
+      "reviewer_checks": [
+        "F1a has individual paired observations; F1b is the distinct six-device experiment with arithmetic mean ± sample SD.",
+        "D08 has a negative paired change; evaluate claims of all-device improvement against that observation.",
+        "Require a meaningful predicted distinction between two alternatives in the proposed follow-up; no extra literature is needed."
+      ],
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "protocol_version": "nrb-subjective-v2.0",
+      "rating_scale": {
+        "allowed": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "intermediate": "1 and 3 require evidence showing performance between the adjacent published anchors; they are not default uncertainty scores.",
+        "unassessed": null
+      }
+    },
+    "R05": {
+      "id": "R05",
+      "title": "文献证据综合与有界方法复现",
+      "mode": null,
+      "difficulty": 5,
+      "category": "主观科研",
+      "track": "research",
+      "scoring": "manual",
+      "status": "ready",
+      "phase": 2,
+      "max_score": 100,
+      "manual_review_required": true,
+      "language": null,
+      "format": "md",
+      "prompt_file": "tasks/v2.0/R05.md",
+      "required_artifacts": [
+        "review.md",
+        "comparison.csv",
+        "claim-evidence.csv",
+        "references.bib",
+        "replicate.py",
+        "requirements.txt",
+        "paired-summary.csv",
+        "colour-distance.csv",
+        "paired-demonstration.svg",
+        "colour-diagnostic.svg",
+        "reproduction-note.md"
+      ],
+      "optional_artifacts": [],
+      "rubric": [
+        {
+          "id": "R05-reading",
+          "name": "三文阅读、方法与材料边界",
+          "weight": 20,
+          "anchors": {
+            "0": "Central source methods, units or evidence types are wrong or one paper is ignored.",
+            "2": "All sources are present but some denominators, evidence types or available-material limits are vague.",
+            "4": "All three papers and relevant supplied P1 supplement are accurately read, with correct units/denominators, exact locations and bounded scope."
+          }
+        },
+        {
+          "id": "R05-synthesis",
+          "name": "跨来源综合与条件性工作流程",
+          "weight": 25,
+          "anchors": {
+            "0": "The review is unsupported summaries or universal design prescriptions.",
+            "2": "A usable cross-source argument exists but tradeoffs or practical implications are incompletely justified.",
+            "4": "A coherent argument connects the three sources, explains at least two conditional tradeoffs, distinguishes inference from author claims and gives a grounded workflow and testable gap."
+          }
+        },
+        {
+          "id": "R05-evidence",
+          "name": "主张定位、比较与引用",
+          "weight": 20,
+          "anchors": {
+            "0": "Central citations are invented or the table creates false comparability.",
+            "2": "Most claims are supported but exact locations or status distinctions are incomplete.",
+            "4": "At least ten useful claims are traceable across prose/table/figures, at least three synthesis/inferred-premise rows are labelled, and all three bibliography records are accurate."
+          }
+        },
+        {
+          "id": "R05-reproduction",
+          "name": "两项有界方法复现",
+          "weight": 25,
+          "anchors": {
+            "0": "A required calculation is absent or substantially wrong or mislabelled.",
+            "2": "Both demonstrations exist but a result, source-to-code mapping, pairing or metric definition is materially weak.",
+            "4": "Both methods compute the required summaries/distances and diagnostics correctly, use exact source expressions/coordinates, and include a meaningful consistency check each."
+          }
+        },
+        {
+          "id": "R05-delivery",
+          "name": "可复现交付与结论校准",
+          "weight": 10,
+          "anchors": {
+            "0": "Code/outputs are unusable or synthetic demos are claimed as full paper replication.",
+            "2": "Artifacts mostly run but versions, commands or unreplicated boundaries remain unclear.",
+            "4": "Documented local execution regenerates outputs, limitations and methodological ambiguities are explicit, and the closed evidence set is not called systematic or comprehensive."
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "id": "evidence",
+          "requirement": "No fabricated source, central material misreading, unperformed full reproduction or falsely systematic review."
+        },
+        {
+          "id": "two_methods",
+          "requirement": "Both bounded methods have actual numerical and graphical artifacts."
+        },
+        {
+          "id": "three_sources",
+          "requirement": "All three papers and relevant supplied P1 supplement are substantively used."
+        }
+      ],
+      "hard_caps": [
+        {
+          "requirement_id": "evidence",
+          "max_score": 40,
+          "reason": "Fabricated/overclaimed scientific evidence"
+        },
+        {
+          "requirement_id": "two_methods",
+          "max_score": 60,
+          "reason": "A required method has no real output"
+        },
+        {
+          "requirement_id": "three_sources",
+          "max_score": 65,
+          "reason": "Incomplete required source reading"
+        }
+      ],
+      "required_observations": [
+        {
+          "id": "source_reading",
+          "label": "Read sufficient supplied source text/figures/S1 to judge claims"
+        },
+        {
+          "id": "review_evidence",
+          "label": "Audit prose, comparative table, ledger and bibliography"
+        },
+        {
+          "id": "code_execution",
+          "label": "Attempt documented code and verify numerical results"
+        },
+        {
+          "id": "output_figures",
+          "label": "Inspect both actual editable diagnostics"
+        }
+      ],
+      "input_files": [
+        {
+          "source": "tasks/v2.0/R05.md",
+          "path": "R05.md"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/reading-room.html",
+          "path": "assets/R05/reading-room.html"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/weissgerber2015-fig1.png",
+          "path": "assets/R05/images/weissgerber2015-fig1.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/weissgerber2015-fig2.png",
+          "path": "assets/R05/images/weissgerber2015-fig2.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/weissgerber2015-fig3.png",
+          "path": "assets/R05/images/weissgerber2015-fig3.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/rougier2014-fig1.png",
+          "path": "assets/R05/images/rougier2014-fig1.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/rougier2014-fig2.png",
+          "path": "assets/R05/images/rougier2014-fig2.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/rougier2014-fig3.png",
+          "path": "assets/R05/images/rougier2014-fig3.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/rougier2014-fig4.png",
+          "path": "assets/R05/images/rougier2014-fig4.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/rougier2014-fig5.png",
+          "path": "assets/R05/images/rougier2014-fig5.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/rougier2014-fig6.png",
+          "path": "assets/R05/images/rougier2014-fig6.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/rougier2014-fig7.png",
+          "path": "assets/R05/images/rougier2014-fig7.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/rougier2014-fig8.png",
+          "path": "assets/R05/images/rougier2014-fig8.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/crameri2020-fig1.png",
+          "path": "assets/R05/images/crameri2020-fig1.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/crameri2020-fig2.png",
+          "path": "assets/R05/images/crameri2020-fig2.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/crameri2020-fig3.png",
+          "path": "assets/R05/images/crameri2020-fig3.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/crameri2020-fig4.png",
+          "path": "assets/R05/images/crameri2020-fig4.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/crameri2020-fig5.png",
+          "path": "assets/R05/images/crameri2020-fig5.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/images/crameri2020-fig6.png",
+          "path": "assets/R05/images/crameri2020-fig6.png"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/P1-S1-original.docx",
+          "path": "assets/R05/P1-S1-original.docx"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/replication_pairs.csv",
+          "path": "assets/R05/replication_pairs.csv"
+        },
+        {
+          "source": "tasks/v2.0/assets/R05/lab_fixture.csv",
+          "path": "assets/R05/lab_fixture.csv"
+        },
+        {
+          "source": "tasks/v2.0/assets/common/SOURCES.md",
+          "path": "assets/common/SOURCES.md"
+        },
+        {
+          "source": "tasks/v2.0/assets/common/source-records.json",
+          "path": "assets/common/source-records.json"
+        }
+      ],
+      "reviewer_checks": [
+        "Verify pairing is within each variant; do not let matching marginal summaries substitute for paired-difference analysis.",
+        "Check the expression actually printed in P3 Methods; a label or similarly named package is not evidence of the implemented metric.",
+        "Inspect missing-SI/code boundaries and do not impose absent source details as hidden requirements.",
+        "This merged task does not require separate long source cards, glossary or a second evidence-map SVG."
+      ],
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "protocol_version": "nrb-subjective-v2.0",
+      "rating_scale": {
+        "allowed": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "intermediate": "1 and 3 require evidence showing performance between the adjacent published anchors; they are not default uncertainty scores.",
+        "unassessed": null
+      }
+    },
+    "R06": {
+      "id": "R06",
+      "title": "视频修改与参考视觉重建",
+      "difficulty": 4,
+      "category": "主观科研",
+      "track": "research",
+      "scoring": "manual",
+      "status": "ready",
+      "phase": 2,
+      "max_score": 100,
+      "manual_review_required": true,
+      "language": null,
+      "format": "md",
+      "prompt_file": "tasks/v2.0/R06.md",
+      "required_artifacts": [
+        "output.mp4",
+        "source.zip",
+        "README.md",
+        "LICENSES.md",
+        "run-record.json"
+      ],
+      "modes": [
+        "A",
+        "B"
+      ],
+      "requires_mode": true,
+      "mode_specs": {
+        "A": {
+          "id": "R06",
+          "title": "视频修改与参考视觉重建",
+          "mode": "A",
+          "difficulty": 4,
+          "category": "主观科研",
+          "track": "research",
+          "scoring": "manual",
+          "status": "ready",
+          "phase": 2,
+          "max_score": 100,
+          "manual_review_required": true,
+          "language": null,
+          "format": "md",
+          "prompt_file": "tasks/v2.0/R06.md",
+          "required_artifacts": [
+            "output.mp4",
+            "source.zip",
+            "README.md",
+            "LICENSES.md",
+            "run-record.json"
+          ],
+          "optional_artifacts": [],
+          "rubric": [
+            {
+              "id": "R06-A-technical",
+              "name": "技术交付 / Technical delivery",
+              "weight": 10,
+              "anchors": {
+                "0": "No valid playable video or seriously corrupted media.",
+                "2": "Playable video with a material size, frame-rate or decoding defect.",
+                "4": "Complete 1920×1080 H.264 output, 24 fps and 240 frames, with no unintended corrupt or black frames."
+              }
+            },
+            {
+              "id": "R06-A-timing",
+              "name": "时间结构 / Temporal structure",
+              "weight": 15,
+              "anchors": {
+                "0": "Major scenes are missing, out of order or temporally unusable.",
+                "2": "Six scenes are present but cuts, duration or transitions have substantial defects.",
+                "4": "All six scenes and target intervals are clear; transitions and action establish coherent pacing without penalizing harmless one-frame overlap."
+              }
+            },
+            {
+              "id": "R06-A-keying",
+              "name": "绿幕合成 / Chroma-key compositing",
+              "weight": 15,
+              "anchors": {
+                "0": "Studio background, rectangular source frame or major subject loss remains.",
+                "2": "Subject is separated but green spill, edge chatter, floor mat or holes remain visibly distracting.",
+                "4": "Hair, hands and moving contours remain stable; spill and studio artifacts are controlled without losing the subject or held object."
+              }
+            },
+            {
+              "id": "R06-A-typography",
+              "name": "排版与文字 / Typography and copy",
+              "weight": 15,
+              "anchors": {
+                "0": "Required copy is missing or largely unreadable.",
+                "2": "Most copy is correct but hierarchy, placement or motion reduces readability.",
+                "4": "All COPY.txt text is exact, clearly organized and legible; typography actively participates in the required animation."
+              }
+            },
+            {
+              "id": "R06-A-motion",
+              "name": "运动设计 / Motion design",
+              "weight": 20,
+              "anchors": {
+                "0": "Required mechanisms are absent or replaced by static images.",
+                "2": "Recognizable motion exists but trajectories, easing or continuous mechanisms have major defects.",
+                "4": "Orbit, waves, ribbons, iris and confetti show coherent trajectories, continuous motion, intentional speed and controlled transitions."
+              }
+            },
+            {
+              "id": "R06-A-depth",
+              "name": "遮挡与空间 / Occlusion and depth",
+              "weight": 10,
+              "anchors": {
+                "0": "Depth interactions are absent or faked only by global opacity.",
+                "2": "Some depth cues work but orbit or ribbon ordering is inconsistent or incomplete.",
+                "4": "Text and ribbon genuinely pass behind and in front of the actor with legible depth changes and sound layer ordering."
+              }
+            },
+            {
+              "id": "R06-A-finish",
+              "name": "视觉完成度 / Visual finish",
+              "weight": 15,
+              "anchors": {
+                "0": "The sequence is incoherent, unfinished or unreadable.",
+                "2": "A usable design exists but palette, spacing, framing or ending has visible weaknesses.",
+                "4": "Six scenes form a consistent readable design with balanced color, spacing and framing, and a complete stable ending."
+              }
+            }
+          ],
+          "requirements": [
+            {
+              "id": "actual_video",
+              "requirement": "An actual complete playable output video exists."
+            },
+            {
+              "id": "source_identity",
+              "requirement": "The supplied actor/object and chronological one-to-one source time are retained."
+            },
+            {
+              "id": "editable",
+              "requirement": "Usable editable project/code is delivered."
+            },
+            {
+              "id": "soundtrack",
+              "requirement": "The supplied soundtrack is included in full at its original rate without replacement."
+            },
+            {
+              "id": "rights",
+              "requirement": "Required source/font credits and modification notices are retained."
+            },
+            {
+              "id": "mode_integrity",
+              "requirement": "Mode was preregistered; A had no reference access; B did not copy reference frames into the output."
+            }
+          ],
+          "hard_caps": [
+            {
+              "requirement_id": "actual_video",
+              "max_score": 0,
+              "reason": "No actual playable video"
+            },
+            {
+              "requirement_id": "source_identity",
+              "max_score": 40,
+              "reason": "Material loss/replacement of source identity or time"
+            },
+            {
+              "requirement_id": "editable",
+              "max_score": 70,
+              "reason": "No usable editable project"
+            },
+            {
+              "requirement_id": "soundtrack",
+              "max_score": 80,
+              "reason": "Required soundtrack absent or replaced"
+            },
+            {
+              "requirement_id": "rights",
+              "max_score": 80,
+              "reason": "Required provenance absent"
+            },
+            {
+              "requirement_id": "mode_integrity",
+              "max_score": 0,
+              "reason": "Declared experimental condition violated"
+            }
+          ],
+          "required_observations": [
+            {
+              "id": "source_video",
+              "label": "Watch full source.mp4"
+            },
+            {
+              "id": "candidate_video",
+              "label": "Watch full output.mp4 with moving contours/text"
+            },
+            {
+              "id": "candidate_audio",
+              "label": "Listen to candidate audio and compare supplied soundtrack"
+            },
+            {
+              "id": "editable_source",
+              "label": "Inspect submitted project/source"
+            },
+            {
+              "id": "media_probe",
+              "label": "Read actual duration/frame/codec/decode information"
+            },
+            {
+              "id": "scene_1",
+              "label": "Observe scene 1 with timecoded evidence"
+            },
+            {
+              "id": "scene_2",
+              "label": "Observe scene 2 with timecoded evidence"
+            },
+            {
+              "id": "scene_3",
+              "label": "Observe scene 3 with timecoded evidence"
+            },
+            {
+              "id": "scene_4",
+              "label": "Observe scene 4 with timecoded evidence"
+            },
+            {
+              "id": "scene_5",
+              "label": "Observe scene 5 with timecoded evidence"
+            },
+            {
+              "id": "scene_6",
+              "label": "Observe scene 6 with timecoded evidence"
+            }
+          ],
+          "input_files": [
+            {
+              "source": "tasks/v2.0/R06.md",
+              "path": "R06.md"
+            },
+            {
+              "source": "tasks/v2.0/assets/R06/COPY.txt",
+              "path": "assets/R06/COPY.txt"
+            },
+            {
+              "source": "tasks/v2.0/assets/R06/scene-spec.json",
+              "path": "assets/R06/scene-spec.json"
+            },
+            {
+              "source": "tasks/v2.0/assets/R06/run-record.template.json",
+              "path": "assets/R06/run-record.template.json"
+            },
+            {
+              "source": "tasks/v2.0/assets/R06/mode-A.txt",
+              "path": "assets/R06/mode-A.txt"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/source.mp4",
+              "path": "assets/R06/source.mp4"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/soundtrack.wav",
+              "path": "assets/R06/soundtrack.wav"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/fonts/DejaVuSansCondensed-Bold.ttf",
+              "path": "assets/R06/fonts/DejaVuSansCondensed-Bold.ttf"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/fonts/DejaVuSansMono.ttf",
+              "path": "assets/R06/fonts/DejaVuSansMono.ttf"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/PACKAGE_LICENSE_STATUS.md",
+              "path": "assets/R06/LICENSES/PACKAGE_LICENSE_STATUS.md"
+            },
+            {
+              "source": "LICENSE",
+              "path": "assets/R06/LICENSES/NRB-MIT-LICENSE.txt"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/DejaVu-LICENSE.txt",
+              "path": "assets/R06/LICENSES/DejaVu-LICENSE.txt"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/SOURCE_LICENSE.md",
+              "path": "assets/R06/LICENSES/SOURCE_LICENSE.md"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/CC-BY-3.0-legalcode.txt",
+              "path": "assets/R06/LICENSES/evidence/CC-BY-3.0-legalcode.txt"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/README-original.txt",
+              "path": "assets/R06/LICENSES/evidence/README-original.txt"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/raw-footage-release.html",
+              "path": "assets/R06/LICENSES/evidence/raw-footage-release.html"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/sharing.html",
+              "path": "assets/R06/LICENSES/evidence/sharing.html"
+            }
+          ],
+          "reviewer_checks": [
+            "Confirm mode before exposing the candidate to any input; retain attempt/intervention record.",
+            "Record timecoded observations for all six scenes; contact sheets do not certify motion.",
+            "Actual audio listening and media probe are separate from visual scoring; decoded PCM need not be byte-identical after AAC compression.",
+            "No single pixel-error score substitutes for human evaluation.",
+            "Do not distribute evaluator or demo_project files.",
+            "Do not use author-reference likeness as an A criterion; do not expose the reference to the candidate."
+          ],
+          "difficulty_status": "design_prior_not_empirically_calibrated",
+          "protocol_version": "nrb-subjective-v2.0",
+          "rating_scale": {
+            "allowed": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "intermediate": "1 and 3 require evidence showing performance between the adjacent published anchors; they are not default uncertainty scores.",
+            "unassessed": null
+          }
+        },
+        "B": {
+          "id": "R06",
+          "title": "视频修改与参考视觉重建",
+          "mode": "B",
+          "difficulty": 4,
+          "category": "主观科研",
+          "track": "research",
+          "scoring": "manual",
+          "status": "ready",
+          "phase": 2,
+          "max_score": 100,
+          "manual_review_required": true,
+          "language": null,
+          "format": "md",
+          "prompt_file": "tasks/v2.0/R06.md",
+          "required_artifacts": [
+            "output.mp4",
+            "source.zip",
+            "README.md",
+            "LICENSES.md",
+            "run-record.json"
+          ],
+          "optional_artifacts": [],
+          "rubric": [
+            {
+              "id": "R06-B-technical",
+              "name": "技术交付 / Technical delivery",
+              "weight": 10,
+              "anchors": {
+                "0": "No valid playable video or seriously corrupted media.",
+                "2": "Playable video with a material size, frame-rate or decoding defect.",
+                "4": "Complete 1920×1080 H.264 output, 24 fps and 240 frames, with no unintended corrupt or black frames."
+              }
+            },
+            {
+              "id": "R06-B-timing",
+              "name": "时间结构 / Temporal structure",
+              "weight": 10,
+              "anchors": {
+                "0": "Major scenes are missing, out of order or temporally unusable.",
+                "2": "Six scenes are present but cuts, duration or transitions have substantial defects.",
+                "4": "All six scenes and target intervals are clear; transitions and action establish coherent pacing without penalizing harmless one-frame overlap."
+              }
+            },
+            {
+              "id": "R06-B-keying",
+              "name": "绿幕合成 / Chroma-key compositing",
+              "weight": 15,
+              "anchors": {
+                "0": "Studio background, rectangular source frame or major subject loss remains.",
+                "2": "Subject is separated but green spill, edge chatter, floor mat or holes remain visibly distracting.",
+                "4": "Hair, hands and moving contours remain stable; spill and studio artifacts are controlled without losing the subject or held object."
+              }
+            },
+            {
+              "id": "R06-B-typography",
+              "name": "排版与文字 / Typography and copy",
+              "weight": 10,
+              "anchors": {
+                "0": "Required copy is missing or largely unreadable.",
+                "2": "Most copy is correct but hierarchy, placement or motion reduces readability.",
+                "4": "All COPY.txt text is exact, clearly organized and legible; typography actively participates in the required animation."
+              }
+            },
+            {
+              "id": "R06-B-motion",
+              "name": "运动设计 / Motion design",
+              "weight": 15,
+              "anchors": {
+                "0": "Required mechanisms are absent or replaced by static images.",
+                "2": "Recognizable motion exists but trajectories, easing or continuous mechanisms have major defects.",
+                "4": "Orbit, waves, ribbons, iris and confetti show coherent trajectories, continuous motion, intentional speed and controlled transitions."
+              }
+            },
+            {
+              "id": "R06-B-depth",
+              "name": "遮挡与空间 / Occlusion and depth",
+              "weight": 10,
+              "anchors": {
+                "0": "Depth interactions are absent or faked only by global opacity.",
+                "2": "Some depth cues work but orbit or ribbon ordering is inconsistent or incomplete.",
+                "4": "Text and ribbon genuinely pass behind and in front of the actor with legible depth changes and sound layer ordering."
+              }
+            },
+            {
+              "id": "R06-B-finish",
+              "name": "视觉完成度 / Visual finish",
+              "weight": 10,
+              "anchors": {
+                "0": "The sequence is incoherent, unfinished or unreadable.",
+                "2": "A usable design exists but palette, spacing, framing or ending has visible weaknesses.",
+                "4": "Six scenes form a consistent readable design with balanced color, spacing and framing, and a complete stable ending."
+              }
+            },
+            {
+              "id": "R06-B-reference",
+              "name": "参考重建 / Reference reconstruction",
+              "weight": 20,
+              "anchors": {
+                "0": "The submitted work does not meaningfully reconstruct the supplied reference.",
+                "2": "Some reference structure is reproduced but composition, timing or movement differs materially.",
+                "4": "Composition and scale, trajectory and rhythm, palette and depth, and transitions closely reconstruct the supplied reference without requiring pixel identity."
+              }
+            }
+          ],
+          "requirements": [
+            {
+              "id": "actual_video",
+              "requirement": "An actual complete playable output video exists."
+            },
+            {
+              "id": "source_identity",
+              "requirement": "The supplied actor/object and chronological one-to-one source time are retained."
+            },
+            {
+              "id": "editable",
+              "requirement": "Usable editable project/code is delivered."
+            },
+            {
+              "id": "soundtrack",
+              "requirement": "The supplied soundtrack is included in full at its original rate without replacement."
+            },
+            {
+              "id": "rights",
+              "requirement": "Required source/font credits and modification notices are retained."
+            },
+            {
+              "id": "mode_integrity",
+              "requirement": "Mode was preregistered; A had no reference access; B did not copy reference frames into the output."
+            }
+          ],
+          "hard_caps": [
+            {
+              "requirement_id": "actual_video",
+              "max_score": 0,
+              "reason": "No actual playable video"
+            },
+            {
+              "requirement_id": "source_identity",
+              "max_score": 40,
+              "reason": "Material loss/replacement of source identity or time"
+            },
+            {
+              "requirement_id": "editable",
+              "max_score": 70,
+              "reason": "No usable editable project"
+            },
+            {
+              "requirement_id": "soundtrack",
+              "max_score": 80,
+              "reason": "Required soundtrack absent or replaced"
+            },
+            {
+              "requirement_id": "rights",
+              "max_score": 80,
+              "reason": "Required provenance absent"
+            },
+            {
+              "requirement_id": "mode_integrity",
+              "max_score": 0,
+              "reason": "Declared experimental condition violated"
+            }
+          ],
+          "required_observations": [
+            {
+              "id": "source_video",
+              "label": "Watch full source.mp4"
+            },
+            {
+              "id": "candidate_video",
+              "label": "Watch full output.mp4 with moving contours/text"
+            },
+            {
+              "id": "candidate_audio",
+              "label": "Listen to candidate audio and compare supplied soundtrack"
+            },
+            {
+              "id": "editable_source",
+              "label": "Inspect submitted project/source"
+            },
+            {
+              "id": "media_probe",
+              "label": "Read actual duration/frame/codec/decode information"
+            },
+            {
+              "id": "scene_1",
+              "label": "Observe scene 1 with timecoded evidence"
+            },
+            {
+              "id": "scene_2",
+              "label": "Observe scene 2 with timecoded evidence"
+            },
+            {
+              "id": "scene_3",
+              "label": "Observe scene 3 with timecoded evidence"
+            },
+            {
+              "id": "scene_4",
+              "label": "Observe scene 4 with timecoded evidence"
+            },
+            {
+              "id": "scene_5",
+              "label": "Observe scene 5 with timecoded evidence"
+            },
+            {
+              "id": "scene_6",
+              "label": "Observe scene 6 with timecoded evidence"
+            },
+            {
+              "id": "reference_video",
+              "label": "Watch full reference.mp4"
+            }
+          ],
+          "input_files": [
+            {
+              "source": "tasks/v2.0/R06.md",
+              "path": "R06.md"
+            },
+            {
+              "source": "tasks/v2.0/assets/R06/COPY.txt",
+              "path": "assets/R06/COPY.txt"
+            },
+            {
+              "source": "tasks/v2.0/assets/R06/scene-spec.json",
+              "path": "assets/R06/scene-spec.json"
+            },
+            {
+              "source": "tasks/v2.0/assets/R06/run-record.template.json",
+              "path": "assets/R06/run-record.template.json"
+            },
+            {
+              "source": "tasks/v2.0/assets/R06/mode-B.txt",
+              "path": "assets/R06/mode-B.txt"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/source.mp4",
+              "path": "assets/R06/source.mp4"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/soundtrack.wav",
+              "path": "assets/R06/soundtrack.wav"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/fonts/DejaVuSansCondensed-Bold.ttf",
+              "path": "assets/R06/fonts/DejaVuSansCondensed-Bold.ttf"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/fonts/DejaVuSansMono.ttf",
+              "path": "assets/R06/fonts/DejaVuSansMono.ttf"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/PACKAGE_LICENSE_STATUS.md",
+              "path": "assets/R06/LICENSES/PACKAGE_LICENSE_STATUS.md"
+            },
+            {
+              "source": "LICENSE",
+              "path": "assets/R06/LICENSES/NRB-MIT-LICENSE.txt"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/DejaVu-LICENSE.txt",
+              "path": "assets/R06/LICENSES/DejaVu-LICENSE.txt"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/SOURCE_LICENSE.md",
+              "path": "assets/R06/LICENSES/SOURCE_LICENSE.md"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/CC-BY-3.0-legalcode.txt",
+              "path": "assets/R06/LICENSES/evidence/CC-BY-3.0-legalcode.txt"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/README-original.txt",
+              "path": "assets/R06/LICENSES/evidence/README-original.txt"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/raw-footage-release.html",
+              "path": "assets/R06/LICENSES/evidence/raw-footage-release.html"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/shared_assets/LICENSES/evidence/sharing.html",
+              "path": "assets/R06/LICENSES/evidence/sharing.html"
+            },
+            {
+              "source": "sources/v1.1/signal-in-motion/tracks/B/reference.mp4",
+              "path": "assets/R06/reference.mp4"
+            }
+          ],
+          "reviewer_checks": [
+            "Confirm mode before exposing the candidate to any input; retain attempt/intervention record.",
+            "Record timecoded observations for all six scenes; contact sheets do not certify motion.",
+            "Actual audio listening and media probe are separate from visual scoring; decoded PCM need not be byte-identical after AAC compression.",
+            "No single pixel-error score substitutes for human evaluation.",
+            "Do not distribute evaluator or demo_project files.",
+            "Watch full supplied reference before judging composition, trajectory, rhythm and depth; detect copied reference frames separately from legitimate reconstruction."
+          ],
+          "difficulty_status": "design_prior_not_empirically_calibrated",
+          "protocol_version": "nrb-subjective-v2.0",
+          "rating_scale": {
+            "allowed": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "intermediate": "1 and 3 require evidence showing performance between the adjacent published anchors; they are not default uncertainty scores.",
+            "unassessed": null
+          }
+        }
+      },
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "protocol_version": "nrb-subjective-v2.0"
+    },
+    "H01": {
+      "id": "H01",
+      "title": "聊天端单 HTML 科研工作台",
+      "mode": null,
+      "difficulty": 4,
+      "category": "聊天端",
+      "track": "chat",
+      "scoring": "manual",
+      "status": "ready",
+      "phase": 2,
+      "max_score": 100,
+      "manual_review_required": true,
+      "language": null,
+      "format": "md",
+      "prompt_file": "tasks/v2.0/H01.md",
+      "required_artifacts": [
+        "workbench.html",
+        "verification.md"
+      ],
+      "optional_artifacts": [],
+      "rubric": [
+        {
+          "id": "H01-science",
+          "name": "科学数据与尺度语义",
+          "weight": 25,
+          "anchors": {
+            "0": "Pairing, sign, censoring or uncertainty is materially corrupted.",
+            "2": "Most data are preserved but one important interpretation or scale issue remains.",
+            "4": "All views retain correct pairing, units, signs, missing/censored status and U(k=2) meaning with useful comparisons."
+          }
+        },
+        {
+          "id": "H01-interaction",
+          "name": "筛选、详情返回与状态一致性",
+          "weight": 30,
+          "anchors": {
+            "0": "Controls are absent, inert or operate on unrelated static examples.",
+            "2": "Main controls work but filtering/counts/details/return/reset are inconsistent in an important state.",
+            "4": "Batch plus ID filtering, summaries, details, return, excluded selections, zero matches and reset all remain consistent across views."
+          }
+        },
+        {
+          "id": "H01-offline",
+          "name": "离线、真实导出与原子导入",
+          "weight": 20,
+          "anchors": {
+            "0": "HTML needs a server/network or export/import is fake or destroys state.",
+            "2": "Most offline/export paths work but invalid-state handling or filtered CSV has a defect.",
+            "4": "Single HTML works offline, exports actual current records, round-trips valid state and rejects invalid schema/data without partial mutation."
+          }
+        },
+        {
+          "id": "H01-visual",
+          "name": "布局、响应式与可访问性",
+          "weight": 15,
+          "anchors": {
+            "0": "Key content is unreadable or important controls cannot be operated.",
+            "2": "Usable desktop view has meaningful narrow-screen/keyboard/alternative-data limitations.",
+            "4": "Clear low-clutter layout works at 1280 and 390 px, keyboard controls have names, and data remain accessible without hover or color alone."
+          }
+        },
+        {
+          "id": "H01-verification",
+          "name": "真实验证与边界",
+          "weight": 10,
+          "anchors": {
+            "0": "Claims of verified behavior are invented or no useful record exists.",
+            "2": "A checklist exists but actual versus inferred outcomes or limits are vague.",
+            "4": "Specific checks state browser/width/actions/outcomes and honestly separate real browser tests, code inspection and untested behavior."
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "id": "offline",
+          "requirement": "Actual single-file HTML is delivered and usable offline."
+        },
+        {
+          "id": "interactive",
+          "requirement": "Core controls update real data and state rather than only styling."
+        },
+        {
+          "id": "science",
+          "requirement": "Pairing, signed values, censoring and uncertainty remain scientifically faithful."
+        },
+        {
+          "id": "state_safety",
+          "requirement": "Filtered CSV matches records and invalid state imports do not partially change the application."
+        }
+      ],
+      "hard_caps": [
+        {
+          "requirement_id": "offline",
+          "max_score": 35,
+          "reason": "Missing or network-dependent application"
+        },
+        {
+          "requirement_id": "interactive",
+          "max_score": 40,
+          "reason": "Core interactions are only decoration"
+        },
+        {
+          "requirement_id": "science",
+          "max_score": 45,
+          "reason": "Material scientific semantics corruption"
+        },
+        {
+          "requirement_id": "state_safety",
+          "max_score": 60,
+          "reason": "Export mismatch or destructive partial import"
+        }
+      ],
+      "required_observations": [
+        {
+          "id": "offline_open",
+          "label": "Open actual HTML with network unavailable"
+        },
+        {
+          "id": "interaction_walkthrough",
+          "label": "Operate filter/search/details/back/reset/empty states"
+        },
+        {
+          "id": "downloads",
+          "label": "Open actual downloaded CSV and state JSON"
+        },
+        {
+          "id": "import_atomicity",
+          "label": "Test valid and malformed/invalid state imports"
+        },
+        {
+          "id": "responsive_keyboard",
+          "label": "Inspect 1280/390 px and keyboard operation"
+        },
+        {
+          "id": "scientific_data",
+          "label": "Cross-check values, statuses, summaries and intervals"
+        },
+        {
+          "id": "verification_note",
+          "label": "Read declared test scope and compare to evidence"
+        }
+      ],
+      "input_files": [
+        {
+          "source": "tasks/v2.0/H01.md",
+          "path": "H01.md"
+        },
+        {
+          "source": "tasks/v2.0/assets/H01/paired.csv",
+          "path": "assets/H01/paired.csv"
+        },
+        {
+          "source": "tasks/v2.0/assets/H01/dose_response.csv",
+          "path": "assets/H01/dose_response.csv"
+        },
+        {
+          "source": "tasks/v2.0/assets/H01/blank_corrected.csv",
+          "path": "assets/H01/blank_corrected.csv"
+        }
+      ],
+      "reviewer_checks": [
+        {
+          "id": "reset",
+          "action": "Reset, clear search, select all batches",
+          "expect": "12 paired devices; original pair data retained."
+        },
+        {
+          "id": "batch",
+          "action": "Select B2 and search \" d0 \" (with spaces)",
+          "expect": "Four visible devices D05–D08; summaries use exactly these four pairs."
+        },
+        {
+          "id": "detail",
+          "action": "Open D08 then return",
+          "expect": "Shows B2, 1002.0 mV before and 1001.9 mV after, difference -0.1 mV within displayed rounding; return retains prior filter/search/view."
+        },
+        {
+          "id": "empty",
+          "action": "Select B2 and search D01",
+          "expect": "Zero devices; no stale summary or detail. Export disabled with local explanation OR valid header-only CSV."
+        },
+        {
+          "id": "csv",
+          "action": "Clear search, leave B2, export paired CSV",
+          "expect": "Header device,batch,before_mV,after_mV and four original B2 rows; no hidden all-data export."
+        },
+        {
+          "id": "state",
+          "action": "Export state, change filters and comparison, import exported state",
+          "expect": "Valid nrb-h01-state-v1 restores all exported state and corresponding views."
+        },
+        {
+          "id": "invalid",
+          "action": "Import malformed JSON; then well-formed files with unknown schema/batch/mode",
+          "expect": "Useful local error; original state and embedded data unchanged in every case."
+        },
+        {
+          "id": "scale",
+          "action": "Toggle paired comparison and dose scales; inspect signed/censored data",
+          "expect": "Correct count/units/intervals; negative/zero survive; censored has no invented point estimate."
+        },
+        {
+          "id": "access",
+          "action": "Use only keyboard; inspect at 1280 and 390 px",
+          "expect": "Named operable controls; no body overflow; accessible data table/text; local table scroll allowed."
+        }
+      ],
+      "difficulty_status": "design_prior_not_empirically_calibrated",
+      "protocol_version": "nrb-subjective-v2.0",
+      "rating_scale": {
+        "allowed": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "intermediate": "1 and 3 require evidence showing performance between the adjacent published anchors; they are not default uncertainty scores.",
+        "unassessed": null
+      }
+    }
+  }
+}

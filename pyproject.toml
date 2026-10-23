@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "null-research-benchmark"
-version = "2.0.0rc1"
-description = "NRB V2 phase one: eight automatically graded Python tasks and a 20-task research benchmark plan"
+version = "2.0.0"
+description = "Twenty-task research benchmark: Python, Fortran, Lean, scientific artifacts and chat tasks"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
 readme = "README.md"
 authors = [{name = "NuLl Research Benchmark contributors"}]
-dependencies = []
+dependencies = ["numpy==2.3.5"]
 
 [project.optional-dependencies]
 inspect = ["inspect-ai==0.3.281"]
@@ -27,6 +27,7 @@ include = ["nrb*"]
 [tool.setuptools.package-data]
 nrb = ["evaluation_policy.json", "_evaluator_origin.json"]
 nrb_v1 = ["policy.json", "video_rubrics.json", "_origin.json"]
+nrb_v2 = ["subjective_rubrics.json"]
 
 [project.urls]
 Repository = "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark"

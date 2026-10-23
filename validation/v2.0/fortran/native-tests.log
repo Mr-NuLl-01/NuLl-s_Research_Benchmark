@@ -1,0 +1,17 @@
+test_f02_cannot_forge_ledger_or_final_only_solution (tests_v2.test_fortran.FortranContractTests.test_f02_cannot_forge_ledger_or_final_only_solution) ... ok
+test_f02_two_cell_closed_form_not_same_linear_solver (tests_v2.test_fortran.FortranContractTests.test_f02_two_cell_closed_form_not_same_linear_solver) ... ok
+test_f03_accepts_equations_not_reference_coordinate_identity (tests_v2.test_fortran.FortranContractTests.test_f03_accepts_equations_not_reference_coordinate_identity) ... ok
+test_missing_docker_compiler_is_environment_unscored (tests_v2.test_fortran.FortranContractTests.test_missing_docker_compiler_is_environment_unscored) ... ok
+test_nonrepresentable_sg_limit_is_an_explicit_rejection (tests_v2.test_fortran.FortranContractTests.test_nonrepresentable_sg_limit_is_an_explicit_rejection) ... ok
+test_parsers_reject_nonfinite_and_wrong_shapes (tests_v2.test_fortran.FortranContractTests.test_parsers_reject_nonfinite_and_wrong_shapes) ... ok
+test_weights_and_public_source_only_contract (tests_v2.test_fortran.FortranContractTests.test_weights_and_public_source_only_contract) ... ok
+test_compile_error_cannot_collect_error_case_points (tests_v2.test_fortran.FortranNativeTests.test_compile_error_cannot_collect_error_case_points) ... ok
+test_disabled_execution_remains_unscored (tests_v2.test_fortran.FortranNativeTests.test_disabled_execution_remains_unscored) ... ok
+test_f01_independent_exponential_solution_and_reverse_flux (tests_v2.test_fortran.FortranNativeTests.test_f01_independent_exponential_solution_and_reverse_flux) ... ok
+test_references_three_seeds_actual_compile (tests_v2.test_fortran.FortranNativeTests.test_references_three_seeds_actual_compile) ... ok
+test_scientific_mutants_do_not_receive_full_score (tests_v2.test_fortran.FortranNativeTests.test_scientific_mutants_do_not_receive_full_score) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 10.329s
+
+OK

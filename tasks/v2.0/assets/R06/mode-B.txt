@@ -1,0 +1,3 @@
+NRB 2.0 R06 mode B
+Reconstruct the supplied reference film after watching it completely. Use the reference for visual observation only, never as footage or extracted output frames.
+Declare this mode before the candidate session. Do not choose the better score after running both.

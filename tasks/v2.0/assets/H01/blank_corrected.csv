@@ -1,0 +1,9 @@
+sample,corrected_signal_au,status,limit_au
+S1,-0.03,measured,0.05
+S2,0.0,measured,0.05
+S3,0.02,measured,0.05
+S4,,left_censored,0.05
+S5,0.09,measured,0.05
+S6,0.23,measured,0.05
+S7,0.85,measured,0.05
+S8,,left_censored,0.05

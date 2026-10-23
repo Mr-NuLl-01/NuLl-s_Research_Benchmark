@@ -1,4 +1,4 @@
-"""Small standard-library CLI for file-based, fully automatic Python evaluation."""
+"""Small standard-library CLI for file-based, automatic code and numeric-answer evaluation."""
 from __future__ import annotations
 
 import argparse
@@ -10,7 +10,7 @@ import sys
 
 from . import __version__
 from .grading import grade, identity, load_source, load_submission, public_manifest, validate_report
-from .registry import PYTHON_IDS, ids, module, spec
+from .registry import OBJECTIVE_IDS, PYTHON_IDS, ids, module, spec, source_filename
 
 
 def write(path, data):
@@ -51,13 +51,13 @@ def batch(input_directory, output_directory, seed=17, backend="docker", timeout=
         raise ValueError("Batch execution supports docker or none")
     if type(timeout) not in (int, float) or not math.isfinite(timeout) or not 0 < timeout <= 3600:
         raise ValueError("Timeout must be finite and in (0,3600]")
-    planned_files = [dest / "summary.json", *(dest / (tid + ".json") for tid in PYTHON_IDS)]
+    planned_files = [dest / "summary.json", *(dest / (tid + ".json") for tid in OBJECTIVE_IDS)]
     if any(path.exists() for path in planned_files):
         raise FileExistsError("Output reports already exist; select a new results directory")
     dest.mkdir(parents=True, exist_ok=True)
     entries = []
-    for task_id in PYTHON_IDS:
-        path = source / task_id / "solution.py"
+    for task_id in OBJECTIVE_IDS:
+        path = source / task_id / source_filename(task_id)
         if not path.exists() and not path.is_symlink():
             entries.append({"task_id": task_id, "status": "not_submitted", "score": None,
                             "report_file": None, "comparison_eligible": False})
@@ -78,41 +78,44 @@ def batch(input_directory, output_directory, seed=17, backend="docker", timeout=
                         "report_file": task_id + ".json", "comparison_eligible": report["comparison_eligible"]})
         print(f"{task_id}: {report['status']} / score={report['score']}", file=sys.stderr)
     scored = [item["score"] for item in entries if item["score"] is not None]
-    complete = len(scored) == len(PYTHON_IDS)
+    complete = len(scored) == len(OBJECTIVE_IDS)
     summary = {"schema": "nrb-batch-v2", "benchmark_version": __version__, **identity(), "seed": seed,
                "created_at": datetime.now(timezone.utc).isoformat(), "entries": entries,
                "coverage": {"submitted": sum(i["status"] != "not_submitted" for i in entries),
-                            "scored": len(scored), "passed": sum(i["status"] == "passed" for i in entries), "total": 8},
-               "mean_score": round(math.fsum(scored) / 8, 6) if complete else None,
+                            "scored": len(scored), "passed": sum(i["status"] == "passed" for i in entries), "total": len(OBJECTIVE_IDS)},
+               "mean_score": round(math.fsum(scored) / len(OBJECTIVE_IDS), 6) if complete else None,
                "subset_mean": round(math.fsum(scored) / len(scored), 6) if scored else None,
                "complete": complete, "status": "complete" if complete else "partial" if scored else "unscored",
-               "note": "Missing submissions and unavailable environments are null, not zero. Full-suite mean exists only at 8/8 scored coverage."}
+               "note": "Missing submissions and unavailable environments are null, not zero. Full-suite mean exists only at 13/13 automatically scored coverage; the seven rubric tasks are separate."}
     write(dest / "summary.json", summary)
     return summary
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(prog="nrb-v2", description="NRB V2 phase one: eight Python tasks, 100% automatic scores")
+    parser = argparse.ArgumentParser(prog="nrb-v2", description="NRB V2: 20 tasks, 13 automatic scores and 7 evidence-based rubrics")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
     p = commands.add_parser("list"); p.add_argument("--tasks", default="all")
     commands.add_parser("identity")
     p = commands.add_parser("manifest"); p.add_argument("--seeds", default="0,17,2026"); p.add_argument("--out")
-    p = commands.add_parser("grade"); p.add_argument("--task", choices=PYTHON_IDS, required=True)
+    p = commands.add_parser("grade"); p.add_argument("--task", choices=OBJECTIVE_IDS, required=True)
     source = p.add_mutually_exclusive_group(required=True)
     source.add_argument("--source"); source.add_argument("--submission-dir"); source.add_argument("--submission")
-    p.add_argument("--seed", type=int, default=17); p.add_argument("--image", default="nrb-v2-python:local")
+    p.add_argument("--seed", type=int, default=17); p.add_argument("--image", default=None)
     p.add_argument("--execution", choices=("docker", "none"), default="docker")
     p.add_argument("--timeout", type=float, default=120); p.add_argument("--out", required=True)
     p = commands.add_parser("batch"); p.add_argument("--input", required=True); p.add_argument("--out-dir", required=True)
-    p.add_argument("--seed", type=int, default=17); p.add_argument("--image", default="nrb-v2-python:local")
+    p.add_argument("--seed", type=int, default=17); p.add_argument("--image", default=None)
     p.add_argument("--execution", choices=("docker", "none"), default="docker"); p.add_argument("--timeout", type=float, default=120)
     p = commands.add_parser("validate-report"); p.add_argument("report"); p.add_argument("--out")
-    p = commands.add_parser("export"); p.add_argument("--tasks", default="python"); p.add_argument("--dest", required=True)
+    p = commands.add_parser("export"); p.add_argument("--tasks", default="all"); p.add_argument("--dest", required=True)
     p.add_argument("--seed", type=int, default=17)
-    p = commands.add_parser("selftest"); p.add_argument("--tasks", default="python"); p.add_argument("--seeds", default="17")
+    p = commands.add_parser("selftest"); p.add_argument("--tasks", default="objective"); p.add_argument("--seeds", default="17")
     p.add_argument("--include-mutants", action="store_true"); p.add_argument("--execution", choices=("trusted", "docker"), default="trusted")
-    p.add_argument("--image", default="nrb-v2-python:local"); p.add_argument("--timeout", type=float, default=120); p.add_argument("--out")
+    p.add_argument("--image", default=None); p.add_argument("--timeout", type=float, default=120); p.add_argument("--out")
+    p = commands.add_parser("review-template"); p.add_argument("--task", required=True)
+    p.add_argument("--mode", choices=("A", "B")); p.add_argument("--out", required=True)
+    p = commands.add_parser("review"); p.add_argument("file"); p.add_argument("--out", required=True)
     args = parser.parse_args(argv)
     try:
         if args.command == "list":
@@ -146,6 +149,12 @@ def main(argv=None):
             from .packets import export_tasks
             result = export_tasks(args.dest, args.tasks, args.seed)
             print(json.dumps({"destination": args.dest, "tasks": len(result["tasks"])}, ensure_ascii=False))
+        elif args.command == "review-template":
+            from .subjective import blank_review
+            write(args.out, blank_review(args.task, mode=args.mode))
+        elif args.command == "review":
+            from .subjective import score_review
+            write(args.out, score_review(read(args.file)))
         elif args.command == "selftest":
             entries = []
             for seed in map(int, args.seeds.split(",")):

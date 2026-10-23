@@ -1,0 +1,2272 @@
+{
+  "schema": "nrb-fortran-native-controls-v1",
+  "created_at": "2026-10-23T13:09:03.336233+00:00",
+  "not_model_performance": true,
+  "actual_validation": "Linux native trusted gfortran; no local Docker daemon used",
+  "python": "3.12.14",
+  "sources": {
+    "nrb_v2/fortran.py": "9e772285a1b663331f455e3b54109d7f639953cdf65adb875102ad76b9e5bb91",
+    "nrb_v2/tasks/f01.py": "6a2a69a90aec33f0f9bdb4255b345add4d15c85a763b19c3660c7cbc6676895f",
+    "nrb_v2/tasks/f02.py": "74b747d241815fda13b4d563b83dd5d6fdf1cb79789565ed9285dee07a5b97b0",
+    "nrb_v2/tasks/f03.py": "376e20f81d7e8f5016e7481a8f268782f8ca8458c8158c3528a9ee6533f554a0",
+    "nrb_v1/tasks/c06.py": "2edd7f936fd05ec740fdcc0a58afd07ccf7b9e74bad8d7fd9ed9f51998b446ce",
+    "nrb_v1/tasks/c09.py": "be9e76ce6d307478b18072dedda33ba496e150b8a18e7948c52de3dd1de5e9c8",
+    "nrb_v1/execution.py": "c95c08d85d49e8778f0e4a09029516b1018a2e6225c732b4bcd93be1b006c7b1",
+    "tests_v2/test_fortran.py": "1de893b8477a8f7773b97318bdd34ac8c67e9e6a8021394241eefc6d85f6b843"
+  },
+  "runs": [
+    {
+      "task": "F01",
+      "seed": 0,
+      "variant": "reference",
+      "source_sha256": "5afb57e09baa6c40cfe056a4efffa72b7245ae45f7bf99eabe2efe568258f410",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "9a01dfb345b64c577a3bdbf5f1fcde8d7cee6349766f07b6ab8895c2864687ac",
+        "source_hash": "7d4948ec201696ea5689451d6fd510cc05eb5b9299600ae78d9e3c95e380c7c2",
+        "wall_seconds": 0.3163911919982638,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "0135645f48b5d6a9277e27819354788645d316253225a9feef3155639c05bd00",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "657637a9c84d9271670eecba5edb0f6f32b9fd6a32ea5b4fcde5c0cf75051921",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 100.0,
+      "checks": [
+        {
+          "id": "zero_drift_linear",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_reaction_balance",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_drift_exponential",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "heterogeneous_nonuniform",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "negative_drift_boundary_layer",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "peclet_2250_positive",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "peclet_2250_negative",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "near_zero_bernoulli",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unresolved_converging_flow",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_collapsed_cell",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_diffusion",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_peclet_over_2500",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F01",
+      "seed": 17,
+      "variant": "reference",
+      "source_sha256": "5afb57e09baa6c40cfe056a4efffa72b7245ae45f7bf99eabe2efe568258f410",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "f94564a51be51b0b4f2b27e0d6d4a4b5a17f875a547514ebbd65200fef457ed6",
+        "source_hash": "7d4948ec201696ea5689451d6fd510cc05eb5b9299600ae78d9e3c95e380c7c2",
+        "wall_seconds": 0.3173317490000045,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "ad27b38dab5983c3ccc5d7088698fd502674f2f14360d55be8f563bced2d98ef",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "da62dbf492d885594a62800569f165aefe70f127b4ee83129dc6e137c808bdb1",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 100.0,
+      "checks": [
+        {
+          "id": "zero_drift_linear",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_reaction_balance",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_drift_exponential",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "heterogeneous_nonuniform",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "negative_drift_boundary_layer",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "peclet_2250_positive",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "peclet_2250_negative",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "near_zero_bernoulli",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unresolved_converging_flow",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_collapsed_cell",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_diffusion",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_peclet_over_2500",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F01",
+      "seed": 17,
+      "variant": "central_drift",
+      "source_sha256": "d3087cba1c829eb4fe088eb0dbaa9f36afea527562cb5621a6ddc93b8cc8f61b",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "f94564a51be51b0b4f2b27e0d6d4a4b5a17f875a547514ebbd65200fef457ed6",
+        "source_hash": "732ad49899607b30c0a6fb4f5fd90f38205ac21948326bfa30db2c11ee49d879",
+        "wall_seconds": 0.3165129209992301,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "e63fe868f417ce4054c7f40e9590bf24945ce598e931031f39fb01fd7a1d3a0c",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "e0a39db3a3faf83e7b2b49a32852706cf7f748139c2adbc7a829ef8f8334694b",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 45.714286,
+      "checks": [
+        {
+          "id": "zero_drift_linear",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_reaction_balance",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_drift_exponential",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "heterogeneous_nonuniform",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "negative_drift_boundary_layer",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "peclet_2250_positive",
+          "weight": 4,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "peclet_2250_negative",
+          "weight": 4,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "near_zero_bernoulli",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unresolved_converging_flow",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_collapsed_cell",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_diffusion",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_peclet_over_2500",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F01",
+      "seed": 17,
+      "variant": "uniform_control_volume",
+      "source_sha256": "934a7156e363c9a24b1111443745d818bd7969dbf1c623e9c97477db0feb9d34",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "f94564a51be51b0b4f2b27e0d6d4a4b5a17f875a547514ebbd65200fef457ed6",
+        "source_hash": "5c65a0d1d9a3928538375d613afe6a85229a2f0ddd601beddbbd3b6fd0c282ba",
+        "wall_seconds": 0.36635947200193186,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "1368940d3030bc53e7e2477a544c01ea5e64aa542548af8feab6d885acd3ec50",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "1ce4a8290cca32509c35f9eb5234314529cff4f5ebcaaf6a7879e377ced67817",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 85.714286,
+      "checks": [
+        {
+          "id": "zero_drift_linear",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_reaction_balance",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_drift_exponential",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "heterogeneous_nonuniform",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "negative_drift_boundary_layer",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "peclet_2250_positive",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "peclet_2250_negative",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "near_zero_bernoulli",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unresolved_converging_flow",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_collapsed_cell",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_diffusion",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_peclet_over_2500",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F01",
+      "seed": 17,
+      "variant": "wrong_right_boundary",
+      "source_sha256": "4da40557f6d5537bd6e7d1c590021f6a32fec0d77be92688b60eaf65b95cd9ea",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "f94564a51be51b0b4f2b27e0d6d4a4b5a17f875a547514ebbd65200fef457ed6",
+        "source_hash": "3ec605e4a4bc0284587af8f53681309152580cfcd780ba11e6c05796cd3061e4",
+        "wall_seconds": 0.3686720689984213,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "481e1fa1341c4222f188994142e345e3b426f7477959d32dda06c2cdc0c5b624",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "9e74054bf3805e40cc29b7753d471c49f1aec15f7da297859b4b1caaf84c69e3",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 45.714286,
+      "checks": [
+        {
+          "id": "zero_drift_linear",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_reaction_balance",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_drift_exponential",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "heterogeneous_nonuniform",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "negative_drift_boundary_layer",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "peclet_2250_positive",
+          "weight": 4,
+          "passed": false,
+          "detail": "result.density[39]: numerical tolerance exceeded"
+        },
+        {
+          "id": "peclet_2250_negative",
+          "weight": 4,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "near_zero_bernoulli",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unresolved_converging_flow",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_collapsed_cell",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_diffusion",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_peclet_over_2500",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F01",
+      "seed": 17,
+      "variant": "reversed_velocity",
+      "source_sha256": "ad0fee84c7be036ff3ebcd37e0196b0e16c764ca415542b59db2313fee43dc55",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "f94564a51be51b0b4f2b27e0d6d4a4b5a17f875a547514ebbd65200fef457ed6",
+        "source_hash": "1929d079354f933ca819ed0037136c226ce438d13913c4737edd0a30e217cba4",
+        "wall_seconds": 0.31645706799827167,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "e6a250583dd89c610181f0af78a9f852f9e29ea08fc48e00b6cda7b9a85a2386",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "3ca741a773a79bd4ce38931cd2cddc4fc60a953c0657a4b54dbf0bb2a3d6d00c",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 42.857143,
+      "checks": [
+        {
+          "id": "zero_drift_linear",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_reaction_balance",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_drift_exponential",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "heterogeneous_nonuniform",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "negative_drift_boundary_layer",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "peclet_2250_positive",
+          "weight": 4,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "peclet_2250_negative",
+          "weight": 4,
+          "passed": false,
+          "detail": "result.density[1]: numerical tolerance exceeded"
+        },
+        {
+          "id": "near_zero_bernoulli",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unresolved_converging_flow",
+          "weight": 2,
+          "passed": false,
+          "detail": "{'ok': True, 'error': None, 'detail': '', 'value': {'density': [1.0, 0.05555555555555555, 1.0], 'flux': [-0.25, 0.25], 'mass': 0.5277777777777778, 'residual_inf': 0.0}}"
+        },
+        {
+          "id": "reject_collapsed_cell",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_diffusion",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_peclet_over_2500",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F01",
+      "seed": 2026,
+      "variant": "reference",
+      "source_sha256": "5afb57e09baa6c40cfe056a4efffa72b7245ae45f7bf99eabe2efe568258f410",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "2f7cbc6838245080ddfb5d96ed6671b9a5367701747302d6377eca77c28cbbe7",
+        "source_hash": "7d4948ec201696ea5689451d6fd510cc05eb5b9299600ae78d9e3c95e380c7c2",
+        "wall_seconds": 0.3160529100023268,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "5d705dd4a3286bb2a86fcbee61d6f47ecec5e40aa6811de60c42b9a816a797a8",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "ea69b470742fc221559194d2d351c1ed373a1ef6bc7f2073504376db88fc25f6",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 100.0,
+      "checks": [
+        {
+          "id": "zero_drift_linear",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_reaction_balance",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "constant_drift_exponential",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "heterogeneous_nonuniform",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "negative_drift_boundary_layer",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "peclet_2250_positive",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "peclet_2250_negative",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "near_zero_bernoulli",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unresolved_converging_flow",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_collapsed_cell",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_diffusion",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_peclet_over_2500",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F02",
+      "seed": 0,
+      "variant": "reference",
+      "source_sha256": "742dbf7dc08e8b6b216cba53e773aada38d04a280e8ac47d5e6e0c679f023ece",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "8ec8df30630e0c08f46c3b1f882a17350f64b6a466dfb3432fc4552708998b34",
+        "source_hash": "76c4c398fa5291f3c090dc38932d654f6a625caa801d3da0b4226bce81a7474c",
+        "wall_seconds": 0.44141382800080464,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "9bae470677742d7f8590812c4b73256c6f9d44dd6d9003c506bc714f3ab5e45a",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "ccb3f02642569c48f229cc12116ac0cdb134e4ef8a7d7381f6d36cb1f974ce49",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 100.0,
+      "checks": [
+        {
+          "id": "uniform_source_sink_equilibrium",
+          "weight": 8,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "two_cells_half_boundary",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "zero_step_identity",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "nonuniform_heterogeneous_schedule",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "outward_flux_signed_ledger",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "piecewise_source_right_interval",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "stiff_loss_positive_backward_euler",
+          "weight": 5,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_cumulative_ledger",
+          "weight": 5,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "tiny_step_then_large_step",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_cell_width",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_time_step",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_source",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F02",
+      "seed": 17,
+      "variant": "reference",
+      "source_sha256": "742dbf7dc08e8b6b216cba53e773aada38d04a280e8ac47d5e6e0c679f023ece",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "c4c020f20a691f604c21817f79c203c49385ea6d67fe0bd0674919e0ad6ec933",
+        "source_hash": "76c4c398fa5291f3c090dc38932d654f6a625caa801d3da0b4226bce81a7474c",
+        "wall_seconds": 0.4433496970013948,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "c4aa51f6a380f83de7365a0bd3f4ce92ad677f3b2b60c72b739280533807df93",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "0603384bcd2f977f28fc6c90e286ca8f66cb3df8ca3a4b1c5ee98925aef9b1c8",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 100.0,
+      "checks": [
+        {
+          "id": "uniform_source_sink_equilibrium",
+          "weight": 8,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "two_cells_half_boundary",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "zero_step_identity",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "nonuniform_heterogeneous_schedule",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "outward_flux_signed_ledger",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "piecewise_source_right_interval",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "stiff_loss_positive_backward_euler",
+          "weight": 5,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_cumulative_ledger",
+          "weight": 5,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "tiny_step_then_large_step",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_cell_width",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_time_step",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_source",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F02",
+      "seed": 17,
+      "variant": "full_cell_boundary_distance",
+      "source_sha256": "ed1e778afd510f8220b6e6b65af07f448a3b6def2274e83e127599fb94764873",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "c4c020f20a691f604c21817f79c203c49385ea6d67fe0bd0674919e0ad6ec933",
+        "source_hash": "5577047270695f49ef28756b965edb9280f7ac7d943128084c808f4c13a84602",
+        "wall_seconds": 0.49120852000123705,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "c5200398e86fc31755ac17da9aaf4d73b0dccee79a8237d5092b5fec4a9f5821",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "a6c772d11d4355e4a0f03d0690f419a01203ddec26773fe5d4278461db342cc5",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 20.0,
+      "checks": [
+        {
+          "id": "uniform_source_sink_equilibrium",
+          "weight": 8,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "two_cells_half_boundary",
+          "weight": 6,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "zero_step_identity",
+          "weight": 6,
+          "passed": false,
+          "detail": "result.flux[0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "nonuniform_heterogeneous_schedule",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "outward_flux_signed_ledger",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "piecewise_source_right_interval",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "stiff_loss_positive_backward_euler",
+          "weight": 5,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "maximum_grid_cumulative_ledger",
+          "weight": 5,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "tiny_step_then_large_step",
+          "weight": 4,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "reject_zero_cell_width",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_time_step",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_source",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F02",
+      "seed": 17,
+      "variant": "arithmetic_interface_diffusion",
+      "source_sha256": "f7581211b644bf26c0de5e21bd21c373e74a9b81110981c9bbde85093821f73e",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "c4c020f20a691f604c21817f79c203c49385ea6d67fe0bd0674919e0ad6ec933",
+        "source_hash": "f8cfe7ac229d7b93f2d9570533050ea4cc00640670440a809c4cf1024e4d83fb",
+        "wall_seconds": 0.44768130899683456,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "882e3376c4a89e2306c62c98b1e119622320f0b6ffdffb16d7a6a15ec2d624a3",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "3e87661f0114777dfcdeea0910c8179298b8b42eea23d219b937a61ec3615120",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 70.0,
+      "checks": [
+        {
+          "id": "uniform_source_sink_equilibrium",
+          "weight": 8,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "two_cells_half_boundary",
+          "weight": 6,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "zero_step_identity",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "nonuniform_heterogeneous_schedule",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "outward_flux_signed_ledger",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "piecewise_source_right_interval",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "stiff_loss_positive_backward_euler",
+          "weight": 5,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_cumulative_ledger",
+          "weight": 5,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "tiny_step_then_large_step",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_cell_width",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_time_step",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_source",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F02",
+      "seed": 17,
+      "variant": "old_state_decay_ledger",
+      "source_sha256": "bd62ef8ee53d8a944bc845c70b96276dcc5a0c808259419d6032e7f3d8e919a2",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "c4c020f20a691f604c21817f79c203c49385ea6d67fe0bd0674919e0ad6ec933",
+        "source_hash": "439762e26a4852887633767e9ad6366c366882dab244143fc56fa043bab3b851",
+        "wall_seconds": 0.5025739220000105,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "a65ecffddbb5e2f68a7f9cbd6c27c125442f644694a7712b4461793e2249251c",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "77d1b5d887d8844766d0ecb6035918d3a28bab7df9fff196a64c22df0a145b1f",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 42.857143,
+      "checks": [
+        {
+          "id": "uniform_source_sink_equilibrium",
+          "weight": 8,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "two_cells_half_boundary",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "zero_step_identity",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "nonuniform_heterogeneous_schedule",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.decay_removed: numerical tolerance exceeded"
+        },
+        {
+          "id": "outward_flux_signed_ledger",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.decay_removed: numerical tolerance exceeded"
+        },
+        {
+          "id": "piecewise_source_right_interval",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.decay_removed: numerical tolerance exceeded"
+        },
+        {
+          "id": "stiff_loss_positive_backward_euler",
+          "weight": 5,
+          "passed": false,
+          "detail": "result.decay_removed: numerical tolerance exceeded"
+        },
+        {
+          "id": "maximum_grid_cumulative_ledger",
+          "weight": 5,
+          "passed": false,
+          "detail": "result.decay_removed: numerical tolerance exceeded"
+        },
+        {
+          "id": "tiny_step_then_large_step",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_cell_width",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_time_step",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_source",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F02",
+      "seed": 17,
+      "variant": "unsigned_left_flux_ledger",
+      "source_sha256": "bbbf875cbd5f0c40ac0c43e0c07e049378258983846e60790cffce5dad28f48b",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "c4c020f20a691f604c21817f79c203c49385ea6d67fe0bd0674919e0ad6ec933",
+        "source_hash": "66e7d4ce5b5d5899315a525e517683cd88b39ed9b54545389672ffb1049e1dd0",
+        "wall_seconds": 0.4453319599997485,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "555547914507544528cca17c8387e621f4b0a8c383a86b7e6842c7e06ea4080c",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "b2919258b1d549386b240c0b0dfca02b1607cda2a1e2c1e2dc29857a9ca805fb",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 42.857143,
+      "checks": [
+        {
+          "id": "uniform_source_sink_equilibrium",
+          "weight": 8,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "two_cells_half_boundary",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "zero_step_identity",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "nonuniform_heterogeneous_schedule",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.left_in: numerical tolerance exceeded"
+        },
+        {
+          "id": "outward_flux_signed_ledger",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.left_in: numerical tolerance exceeded"
+        },
+        {
+          "id": "piecewise_source_right_interval",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.left_in: numerical tolerance exceeded"
+        },
+        {
+          "id": "stiff_loss_positive_backward_euler",
+          "weight": 5,
+          "passed": false,
+          "detail": "result.left_in: numerical tolerance exceeded"
+        },
+        {
+          "id": "maximum_grid_cumulative_ledger",
+          "weight": 5,
+          "passed": false,
+          "detail": "result.left_in: numerical tolerance exceeded"
+        },
+        {
+          "id": "tiny_step_then_large_step",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_cell_width",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_time_step",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_source",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F02",
+      "seed": 17,
+      "variant": "half_time_step",
+      "source_sha256": "107538b1a26ff611d4c5238bc5ce25d488c03e9b44d5e21b1146956712c0de00",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "c4c020f20a691f604c21817f79c203c49385ea6d67fe0bd0674919e0ad6ec933",
+        "source_hash": "e8f38cb7c3b13798ce6dca8b5449477819177db5baa3253581607665d56c0ccf",
+        "wall_seconds": 0.44389302600029623,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "4d46571eee3f0931938728e7f7ff7a4573ecce864fd54e193d9a7c4218fb1379",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "9b38a67ae256fd544234a487464a4ff8845cea1e539e4bd80deca09f7efb9bb6",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 17.142857,
+      "checks": [
+        {
+          "id": "uniform_source_sink_equilibrium",
+          "weight": 8,
+          "passed": false,
+          "detail": "result.source_added: numerical tolerance exceeded"
+        },
+        {
+          "id": "two_cells_half_boundary",
+          "weight": 6,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "zero_step_identity",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "nonuniform_heterogeneous_schedule",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "outward_flux_signed_ledger",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "piecewise_source_right_interval",
+          "weight": 10,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "stiff_loss_positive_backward_euler",
+          "weight": 5,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "maximum_grid_cumulative_ledger",
+          "weight": 5,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "tiny_step_then_large_step",
+          "weight": 4,
+          "passed": false,
+          "detail": "result.history[1][0]: numerical tolerance exceeded"
+        },
+        {
+          "id": "reject_zero_cell_width",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_time_step",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_source",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F02",
+      "seed": 2026,
+      "variant": "reference",
+      "source_sha256": "742dbf7dc08e8b6b216cba53e773aada38d04a280e8ac47d5e6e0c679f023ece",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "87aafe388a506a059f92387075d9d2db70eb23a883a15f153c1c8489c2deded4",
+        "source_hash": "76c4c398fa5291f3c090dc38932d654f6a625caa801d3da0b4226bce81a7474c",
+        "wall_seconds": 0.44468825299918535,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "c1db485cb6a059b9dbfbc50ad8de5cdb5b9ff650fcadbe3173e93c0093525eb5",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "6d0768640058176c2ddeeb816c8735482357d30a76cff15447fcfddc10f74714",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 100.0,
+      "checks": [
+        {
+          "id": "uniform_source_sink_equilibrium",
+          "weight": 8,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "two_cells_half_boundary",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "zero_step_identity",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "nonuniform_heterogeneous_schedule",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "outward_flux_signed_ledger",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "piecewise_source_right_interval",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "stiff_loss_positive_backward_euler",
+          "weight": 5,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_cumulative_ledger",
+          "weight": 5,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "tiny_step_then_large_step",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_cell_width",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_time_step",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_negative_source",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F03",
+      "seed": 0,
+      "variant": "reference",
+      "source_sha256": "4808289049fdff76f14244e8db3b1d9f5b1905063868805f56c247a435a118a5",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "f91f2ce939352a263771dd3c61d0c602aa0f545d32860ed542ac4e71f1adc1cc",
+        "source_hash": "9ac4f80ac64290dcfbd143514cd03fcaee77bd3a54bd2f0c4d213e40e6305625",
+        "wall_seconds": 0.41687961100251414,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "b754673f75994e8bbc8d9f2e72bb53c12ea10190d87aa7180e449fc7a23de73b",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "b8eebcbf23a0b5adbafdfa68e51c18d7d5a0b05c640413977d808806c8d93d12",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 100.0,
+      "checks": [
+        {
+          "id": "neutral_equilibrium",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "affine_potential_nonzero_current",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "boltzmann_zero_flux",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "coupled_manufactured_sources",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "potential_gauge_shift",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "screening_refined",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "small_field_cancellation",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_negative_gauge",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unsupported_screening",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_contact_density",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_diffusion_outside_domain",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F03",
+      "seed": 17,
+      "variant": "reference",
+      "source_sha256": "4808289049fdff76f14244e8db3b1d9f5b1905063868805f56c247a435a118a5",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "9a6509750a09206e292899df6dc697812c430d865d698dea752bc1990294a010",
+        "source_hash": "9ac4f80ac64290dcfbd143514cd03fcaee77bd3a54bd2f0c4d213e40e6305625",
+        "wall_seconds": 0.4169939009989321,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "cb19f0eab03b4cef02b531df67b6d19ccab82d93caf1fa73fcd79888ad001f4e",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "1068b1af583a4af510430e1f675b47f70d5670813e1a6483b2f59d1ee195e075",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 100.0,
+      "checks": [
+        {
+          "id": "neutral_equilibrium",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "affine_potential_nonzero_current",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "boltzmann_zero_flux",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "coupled_manufactured_sources",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "potential_gauge_shift",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "screening_refined",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "small_field_cancellation",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_negative_gauge",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unsupported_screening",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_contact_density",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_diffusion_outside_domain",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F03",
+      "seed": 17,
+      "variant": "wrong_poisson_mesh_scale",
+      "source_sha256": "1c94aab7d61cd0d9aae27dfcbea6f213927dc9ea709f53a9653b30a660c2ec68",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "9a6509750a09206e292899df6dc697812c430d865d698dea752bc1990294a010",
+        "source_hash": "caa82ec662389cd2b23eacb54768aaac9a2099433fedbc61d54563862d6a19c8",
+        "wall_seconds": 0.4171058259998972,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "8d383a76e649cf11d6c053bcbbb135d2e8b73d1fdfac0fcc0d6e852c89b62b61",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "e4be36c0ad0c6957bfda3458ce0249306def1129f65dfeb467276e256606aecb",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 42.857143,
+      "checks": [
+        {
+          "id": "neutral_equilibrium",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "affine_potential_nonzero_current",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "boltzmann_zero_flux",
+          "weight": 10,
+          "passed": false,
+          "detail": "original coupled residual exceeds 8e-8"
+        },
+        {
+          "id": "coupled_manufactured_sources",
+          "weight": 10,
+          "passed": false,
+          "detail": "original coupled residual exceeds 8e-8"
+        },
+        {
+          "id": "potential_gauge_shift",
+          "weight": 10,
+          "passed": false,
+          "detail": "original coupled residual exceeds 8e-8"
+        },
+        {
+          "id": "screening_refined",
+          "weight": 6,
+          "passed": false,
+          "detail": "original coupled residual exceeds 8e-8"
+        },
+        {
+          "id": "small_field_cancellation",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_negative_gauge",
+          "weight": 4,
+          "passed": false,
+          "detail": "{'ok': False, 'error': 'ValueError', 'detail': ''}"
+        },
+        {
+          "id": "reject_unsupported_screening",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_contact_density",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_diffusion_outside_domain",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F03",
+      "seed": 17,
+      "variant": "remove_gauge_boundary",
+      "source_sha256": "35f9f665542d5b47ff289f09fd95ac016e14570b284ca667268603838476d65c",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "9a6509750a09206e292899df6dc697812c430d865d698dea752bc1990294a010",
+        "source_hash": "45cea9f53601e07113f76d6550658f141d62f324350f877b67df044e42d5c7ac",
+        "wall_seconds": 0.41655838699807646,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "56695f398ba8589b6380adcb95a59a8078a407e349321d1f41b7971f4b0bbe15",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "55b10c9dc74c143e1bdaae3dcf3aade1ebe87f53e1de980f6b96bb6162cf2ee3",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 42.857143,
+      "checks": [
+        {
+          "id": "neutral_equilibrium",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "affine_potential_nonzero_current",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "boltzmann_zero_flux",
+          "weight": 10,
+          "passed": false,
+          "detail": "Dirichlet contact mismatch"
+        },
+        {
+          "id": "coupled_manufactured_sources",
+          "weight": 10,
+          "passed": false,
+          "detail": "Dirichlet contact mismatch"
+        },
+        {
+          "id": "potential_gauge_shift",
+          "weight": 10,
+          "passed": false,
+          "detail": "Dirichlet contact mismatch"
+        },
+        {
+          "id": "screening_refined",
+          "weight": 6,
+          "passed": false,
+          "detail": "Dirichlet contact mismatch"
+        },
+        {
+          "id": "small_field_cancellation",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_negative_gauge",
+          "weight": 4,
+          "passed": false,
+          "detail": "{'ok': False, 'error': 'ValueError', 'detail': ''}"
+        },
+        {
+          "id": "reject_unsupported_screening",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_contact_density",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_diffusion_outside_domain",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F03",
+      "seed": 17,
+      "variant": "drift_sign_reversal",
+      "source_sha256": "7fae195f96211e208e6c122d3292edf22ff103cb1be550955f2cd932b65a552b",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "9a6509750a09206e292899df6dc697812c430d865d698dea752bc1990294a010",
+        "source_hash": "f5df06a45dd3dfa4754fde0aa7983742986201d93e51413f8ef1a0c4b297fa25",
+        "wall_seconds": 0.41748195399850374,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "e94e3d9c5f8e2c0b8aaef90328840d41c66bd0ce7a0e4997e5b7fca4f3744156",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "1286c131c9dbbe60f744138239b75de67a6ab55c7a03109d5a4005a2ac98d582",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 28.571429,
+      "checks": [
+        {
+          "id": "neutral_equilibrium",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "affine_potential_nonzero_current",
+          "weight": 10,
+          "passed": false,
+          "detail": "reported flux is inconsistent with the specified SG law"
+        },
+        {
+          "id": "boltzmann_zero_flux",
+          "weight": 10,
+          "passed": false,
+          "detail": "reported flux is inconsistent with the specified SG law"
+        },
+        {
+          "id": "coupled_manufactured_sources",
+          "weight": 10,
+          "passed": false,
+          "detail": "reported flux is inconsistent with the specified SG law"
+        },
+        {
+          "id": "potential_gauge_shift",
+          "weight": 10,
+          "passed": false,
+          "detail": "reported flux is inconsistent with the specified SG law"
+        },
+        {
+          "id": "screening_refined",
+          "weight": 6,
+          "passed": false,
+          "detail": "reported flux is inconsistent with the specified SG law"
+        },
+        {
+          "id": "small_field_cancellation",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_negative_gauge",
+          "weight": 4,
+          "passed": false,
+          "detail": "reported flux is inconsistent with the specified SG law"
+        },
+        {
+          "id": "reject_unsupported_screening",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_contact_density",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_diffusion_outside_domain",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F03",
+      "seed": 17,
+      "variant": "discard_net_source",
+      "source_sha256": "9e514b8b7df9f7a58d91bd91050338955e7bbaf2b295880b3c52209db25fa535",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "9a6509750a09206e292899df6dc697812c430d865d698dea752bc1990294a010",
+        "source_hash": "ca1398d3d6fc030d03572962fd631021367928a6381132d9d174047ff09ff836",
+        "wall_seconds": 0.41662900099981925,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "ce0258ec8d5f0dc8a11da3f441a3a0277c50f8e50ae38561d7a3947b3e186c00",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "ee7ecac2b41c8b9ba48b9176baf365e28e5726466fc48ec8ee86dc58bbf4574d",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 57.142857,
+      "checks": [
+        {
+          "id": "neutral_equilibrium",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "affine_potential_nonzero_current",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "boltzmann_zero_flux",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "coupled_manufactured_sources",
+          "weight": 10,
+          "passed": false,
+          "detail": "original coupled residual exceeds 8e-8"
+        },
+        {
+          "id": "potential_gauge_shift",
+          "weight": 10,
+          "passed": false,
+          "detail": "original coupled residual exceeds 8e-8"
+        },
+        {
+          "id": "screening_refined",
+          "weight": 6,
+          "passed": false,
+          "detail": "original coupled residual exceeds 8e-8"
+        },
+        {
+          "id": "small_field_cancellation",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_negative_gauge",
+          "weight": 4,
+          "passed": false,
+          "detail": "original coupled residual exceeds 8e-8"
+        },
+        {
+          "id": "reject_unsupported_screening",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_contact_density",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_diffusion_outside_domain",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "task": "F03",
+      "seed": 2026,
+      "variant": "reference",
+      "source_sha256": "4808289049fdff76f14244e8db3b1d9f5b1905063868805f56c247a435a118a5",
+      "execution": {
+        "backend": "trusted",
+        "language": "fortran",
+        "input_hash": "81d291d374e2cafd12edebc14691413c1b537fb35bf092da7e458ea50a23ad04",
+        "source_hash": "9ac4f80ac64290dcfbd143514cd03fcaee77bd3a54bd2f0c4d213e40e6305625",
+        "wall_seconds": 0.4165550470024755,
+        "image_id": null,
+        "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "timeout_seconds": 120,
+        "exit_code": 0,
+        "stdout_hash": "160a2479c95683909a55604b25780c4c6602abf0f4f89479093e19896570c5af",
+        "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_excerpt": "",
+        "status": "executed",
+        "result_hash": "63e6f25ef54d0289a4bbbe1d7f1567c4844e55e3d5ea9c33d5b3a759efedc888",
+        "compile_flags": [
+          "-std=f2008",
+          "-O2",
+          "-fcheck=all",
+          "-ffree-line-length-none"
+        ],
+        "candidate_source": "solution.f90"
+      },
+      "score": 100.0,
+      "checks": [
+        {
+          "id": "neutral_equilibrium",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "affine_potential_nonzero_current",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "boltzmann_zero_flux",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "coupled_manufactured_sources",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "potential_gauge_shift",
+          "weight": 10,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "screening_refined",
+          "weight": 6,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "small_field_cancellation",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "maximum_grid_negative_gauge",
+          "weight": 4,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_unsupported_screening",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_zero_contact_density",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "id": "reject_diffusion_outside_domain",
+          "weight": 2,
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "reference_runs": 9,
+    "reference_checks_passed": 105,
+    "reference_checks_total": 105,
+    "mutant_runs": 13,
+    "mutants_rejected": 13
+  }
+}

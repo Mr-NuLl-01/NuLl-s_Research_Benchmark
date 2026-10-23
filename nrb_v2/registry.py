@@ -1,13 +1,17 @@
-"""Single catalog for the 20-task plan; only Python is released in phase one."""
+"""Single catalog for the complete twenty-task benchmark."""
 from __future__ import annotations
 
 import importlib
 from . import __version__
 
 PYTHON_IDS = tuple(f"P{i:02d}" for i in range(1, 9))
-OBJECTIVE_IDS = PYTHON_IDS
-PLANNED_IDS = ("F01", "F02", "F03", "L01", *(f"R{i:02d}" for i in range(1, 7)), "H01", "H02")
-ALL_IDS = (*PYTHON_IDS, *PLANNED_IDS)
+FORTRAN_IDS = ("F01", "F02", "F03")
+CODING_IDS = (*PYTHON_IDS, *FORTRAN_IDS, "L01")
+OBJECTIVE_IDS = (*CODING_IDS, "H02")
+MANUAL_IDS = (*(f"R{i:02d}" for i in range(1, 7)), "H01")
+PLANNED_IDS = ()
+ROUND2_IDS = ("F01", "F02", "F03", "L01", *(f"R{i:02d}" for i in range(1, 7)), "H01", "H02")
+ALL_IDS = (*PYTHON_IDS, *ROUND2_IDS)
 LEGACY = dict(zip(PYTHON_IDS, ("C01", "C02", "C03", "C04", "C05", "C07", "C08", "C10")))
 
 _PLANS = [
@@ -38,10 +42,24 @@ _BRIEFS = {
 
 
 def module(task_id):
+    if task_id in FORTRAN_IDS:
+        return importlib.import_module("nrb_v2.tasks." + task_id.lower())
+    if task_id == "L01":
+        return importlib.import_module("nrb_v2.lean")
+    if task_id == "H02":
+        return importlib.import_module("nrb_v2.h02")
     if task_id not in PYTHON_IDS:
-        raise ValueError(f"{task_id}: not released in phase one; only P01–P08 can be executed")
+        raise ValueError(f"{task_id}: use the evidence-based review rubric")
     name = "nrb_v2.tasks.p06" if task_id == "P06" else "nrb_v1.tasks." + LEGACY[task_id].lower()
     return importlib.import_module(name)
+
+
+def source_filename(task_id):
+    if task_id in PYTHON_IDS: return "solution.py"
+    if task_id in FORTRAN_IDS: return "solution.f90"
+    if task_id == "L01": return "proofs.json"
+    if task_id == "H02": return "answer.json"
+    raise ValueError("This task requires an evidence-based review")
 
 
 def spec(task_id):
@@ -57,17 +75,18 @@ def spec(task_id):
     for tid, title, category, difficulty, brief, scoring, legacy in _PLANS:
         if tid == task_id:
             return dict(id=tid, title=title, category=category, difficulty=difficulty, brief=brief,
-                        status="planned", phase=2, scoring=scoring, legacy_id=legacy,
+                        status="ready", phase=2, scoring=scoring, legacy_id=legacy,
                         language={"Fortran": "fortran", "Lean": "lean"}.get(category),
-                        track="planned", benchmark_version=__version__,
+                        track={"Fortran":"fortran","Lean":"lean","主观科研":"research","聊天端":"chat"}[category], benchmark_version=__version__,
+                        time_budget_s={"F01":1800,"F02":2700,"F03":3600,"L01":2400,"R01":3600,"R02":3600,"R03":1800,"R04":2400,"R05":7200,"R06":7200,"H01":2400,"H02":2400}[tid], max_score=100, format="md",
                         difficulty_status="design_prior_not_empirically_calibrated",
-                        manual_review_required=scoring == "manual", required_artifacts=[])
+                        manual_review_required=scoring == "manual", required_artifacts=[source_filename(tid)] if scoring == "automatic" else ["见题面交付清单"])
     raise ValueError("Unknown task: " + str(task_id))
 
 
 def ids(selection="all"):
-    groups = {"all": ALL_IDS, "ready": PYTHON_IDS, "python": PYTHON_IDS,
-              "coding": PYTHON_IDS, "objective": PYTHON_IDS, "planned": PLANNED_IDS,
+    groups = {"all": ALL_IDS, "ready": ALL_IDS, "python": PYTHON_IDS,
+              "coding": CODING_IDS, "objective": OBJECTIVE_IDS, "planned": PLANNED_IDS, "manual": MANUAL_IDS, "lean": ("L01",),
               "fortran": ("F01", "F02", "F03"), "research": tuple(f"R{i:02d}" for i in range(1, 7)),
               "chat": ("H01", "H02")}
     if selection in groups:
@@ -92,7 +111,7 @@ def cases(task_id, seed=17):
             raise ValueError("Missing case input or expected behavior")
         tier_weights[case["tier"]] += case["weight"]
     if tier_weights != {"basic": 20, "scientific": 30, "stress": 20}:
-        raise ValueError("Phase-one case weights must preserve 20/30/20 relative weights")
+        raise ValueError("Case weights must preserve 20/30/20 relative weights")
     return result
 
 

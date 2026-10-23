@@ -1,0 +1,1 @@
+PASS: 83 Node contract/state checks. Includes report forgery rejection, null/zero semantics, legacy preservation, save/restore/delete handlers, comparable subsets, image/budget separation and duplicate-attempt exclusion. DOM stubs; browser QA is separate. No model was evaluated.

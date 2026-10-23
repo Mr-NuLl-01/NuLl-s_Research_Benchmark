@@ -13,7 +13,7 @@ from nrb_v2 import __version__
 from nrb_v2.cli import batch, read
 from nrb_v2.grading import grade, validate_report, public_manifest
 from nrb_v2.packets import candidate, catalog
-from nrb_v2.registry import ALL_IDS, PYTHON_IDS, module, cases, spec
+from nrb_v2.registry import ALL_IDS, PYTHON_IDS, OBJECTIVE_IDS, MANUAL_IDS, source_filename, module, cases, spec
 
 
 def submission(source="def solve(problem): return {}\n"):
@@ -23,12 +23,15 @@ def submission(source="def solve(problem): return {}\n"):
 class CatalogTests(unittest.TestCase):
     def test_exact_release_scope(self):
         self.assertEqual(len(ALL_IDS), 20)
-        self.assertEqual(sum(spec(t)["status"] == "ready" for t in ALL_IDS), 8)
+        self.assertEqual(sum(spec(t)["status"] == "ready" for t in ALL_IDS), 20)
+        self.assertEqual(len(OBJECTIVE_IDS), 13)
+        self.assertEqual(len(MANUAL_IDS), 7)
         for task in catalog()["tasks"]:
-            if task["status"] == "ready":
-                self.assertEqual(task["required_artifacts"], ["solution.py"])
+            if task["id"] in OBJECTIVE_IDS:
+                self.assertEqual(task["required_artifacts"], [source_filename(task["id"])])
                 self.assertFalse(task["manual_review_required"])
             else:
+                self.assertTrue(task["manual_review_required"])
                 with self.assertRaises(ValueError):
                     module(task["id"])
 
@@ -46,7 +49,7 @@ class CatalogTests(unittest.TestCase):
         self.assertIn("1e-26", candidate("P06")["content"])
 
     def test_checks_keep_fixed_relative_weights(self):
-        for task in PYTHON_IDS:
+        for task in OBJECTIVE_IDS:
             fixture = cases(task, 17)
             self.assertEqual(sum(c["weight"] for c in fixture), 70)
             for tier, total in [("basic", 20), ("scientific", 30), ("stress", 20)]:
@@ -164,7 +167,7 @@ class GradingTests(unittest.TestCase):
             root = Path(work); target = root / "submissions" / "P01"; target.mkdir(parents=True)
             (target / "solution.py").write_text("def solve(problem): return {}")
             summary = batch(root / "submissions", root / "results", backend="none")
-            self.assertEqual(summary["coverage"], {"submitted": 1, "scored": 0, "passed": 0, "total": 8})
+            self.assertEqual(summary["coverage"], {"submitted": 1, "scored": 0, "passed": 0, "total": 13})
             self.assertIsNone(summary["mean_score"])
             self.assertIsNone(summary["subset_mean"])
             self.assertEqual(summary["entries"][0]["status"], "unscored")

@@ -1,90 +1,12 @@
 {
   "folder": {
-    "id": "1memk6jwu6LWzoPHGg5uhDgcFmKDi00-C",
-    "url": "https://drive.google.com/drive/folders/1memk6jwu6LWzoPHGg5uhDgcFmKDi00-C"
+    "id": "1fMlEy4xPkidVDhZEumV45F-wQWnoZIhT",
+    "url": "https://drive.google.com/drive/folders/1fMlEy4xPkidVDhZEumV45F-wQWnoZIhT",
+    "name": "2.0.0"
   },
-  "grader": {
-    "id": "1amb1EDJiOoBNBqeKU5653mhrdX7Caud4",
-    "url": "https://drive.google.com/file/d/1amb1EDJiOoBNBqeKU5653mhrdX7Caud4/view?usp=drivesdk",
-    "name": "NRB-v2.0.0-rc.1-python-grader.zip",
-    "bytes": 187976,
-    "sha256": "1cf96032f525233182ae6e9f135c7c445af98c5f4d9ced225fc44e8c52543bf3",
-    "verified": "upload plus metadata size/name/permission readback; sha256 from uploaded local bytes"
-  },
-  "candidateBundle": {
-    "id": "1I2BrBLQGcc0WkPkwZbLFklkv1lgGzZbC",
-    "url": "https://drive.google.com/file/d/1I2BrBLQGcc0WkPkwZbLFklkv1lgGzZbC/view?usp=drivesdk",
-    "name": "NRB-v2.0.0-rc.1-python-candidates.zip",
-    "bytes": 28852,
-    "sha256": "75f95968f970e9c64799c0743f852fad95bec181011979da8759fe48974545b3",
-    "verified": "upload plus metadata size/name/permission readback; sha256 from uploaded local bytes"
-  },
-  "tasks": {
-    "P01": {
-      "id": "1rKUiZMpVnOjffGTjt74uh7pWDdEVuUGY",
-      "url": "https://drive.google.com/file/d/1rKUiZMpVnOjffGTjt74uh7pWDdEVuUGY/view?usp=drivesdk",
-      "name": "P01.md",
-      "bytes": 3631,
-      "sha256": "d39eb12395542d6e6d0d2f709b067503afea6991c1f205f74b937c1915189898",
-      "verified": "upload plus metadata size/name/permission readback; sha256 from uploaded local bytes"
-    },
-    "P02": {
-      "id": "1nE9mMC_VaDwOnRozBrOZ6xuaHjryMvYe",
-      "url": "https://drive.google.com/file/d/1nE9mMC_VaDwOnRozBrOZ6xuaHjryMvYe/view?usp=drivesdk",
-      "name": "P02.md",
-      "bytes": 3988,
-      "sha256": "b450083e4f112e168b763b1593a8c6fa2e75784050f6ff540613246251a5baab",
-      "verified": "upload plus metadata size/name/permission readback; sha256 from uploaded local bytes"
-    },
-    "P03": {
-      "id": "1tHVGF99Nxp5qkRtmKHQrvUIPAnPRRpZL",
-      "url": "https://drive.google.com/file/d/1tHVGF99Nxp5qkRtmKHQrvUIPAnPRRpZL/view?usp=drivesdk",
-      "name": "P03.md",
-      "bytes": 4637,
-      "sha256": "55efab4f78699005dfe9da24904e6b808b9d3bd78ffe7d824036dda03d58e516",
-      "verified": "upload plus metadata size/name/permission readback; sha256 from uploaded local bytes"
-    },
-    "P04": {
-      "id": "1HNQvjD0u2hbLkHdH84IaZryrEj9RDpgc",
-      "url": "https://drive.google.com/file/d/1HNQvjD0u2hbLkHdH84IaZryrEj9RDpgc/view?usp=drivesdk",
-      "name": "P04.md",
-      "bytes": 4888,
-      "sha256": "346b070cf1cf15870f31c1681067eacdcc3e0d78ebd99857fc7ba2200c266264",
-      "verified": "upload plus metadata size/name/permission readback; sha256 from uploaded local bytes"
-    },
-    "P05": {
-      "id": "1eTL33BsQfXZketP_pISwIbGu9YOuFUEE",
-      "url": "https://drive.google.com/file/d/1eTL33BsQfXZketP_pISwIbGu9YOuFUEE/view?usp=drivesdk",
-      "name": "P05.md",
-      "bytes": 5337,
-      "sha256": "8cc58f87d6a6d6aea0aec98fcbfb09e74841697152428193a8e170b722e2fe85",
-      "verified": "upload plus metadata size/name/permission readback; sha256 from uploaded local bytes"
-    },
-    "P06": {
-      "id": "1r3oCAO-prgN_VO-in6FbvAQ_hwXyWdoa",
-      "url": "https://drive.google.com/file/d/1r3oCAO-prgN_VO-in6FbvAQ_hwXyWdoa/view?usp=drivesdk",
-      "name": "P06.md",
-      "bytes": 5303,
-      "sha256": "c27b1058a0b46c4f71d126b355cdb3d1248028dfc37011ecfc02506ff1260eb9",
-      "verified": "upload plus metadata size/name/permission readback; sha256 from uploaded local bytes"
-    },
-    "P07": {
-      "id": "1iWqtshSyhubjgu7G0k2-YvTDUcmFObyO",
-      "url": "https://drive.google.com/file/d/1iWqtshSyhubjgu7G0k2-YvTDUcmFObyO/view?usp=drivesdk",
-      "name": "P07.md",
-      "bytes": 7168,
-      "sha256": "5410d21d42557c04963e0f895d4ef590a8a0d57fc9749e2547b4595cdee028b3",
-      "verified": "upload plus metadata size/name/permission readback; sha256 from uploaded local bytes"
-    },
-    "P08": {
-      "id": "1mphQH3C0eYW-AcN2hL2RqN5zRd4RNp4N",
-      "url": "https://drive.google.com/file/d/1mphQH3C0eYW-AcN2hL2RqN5zRd4RNp4N/view?usp=drivesdk",
-      "name": "P08.md",
-      "bytes": 14783,
-      "sha256": "cf8210f953108967717f1e2a87d62113e535fb81638d6b84ed8b6617f3c21606",
-      "verified": "upload plus metadata size/name/permission readback; sha256 from uploaded local bytes"
-    }
-  },
+  "grader": null,
+  "candidateBundle": null,
+  "tasks": {},
   "legacy": {
     "C01": {
       "id": "12Jhvarp2ydfFdNVc0DsL7qKUBBg3z_8X",
@@ -252,5 +174,7 @@
       "sha256": "517986363e73d37855163601c1e42243639641c39a17dd5560368661aab14a62",
       "id": "1EpIAISvT_jlnEioC2jKXmx6Cl6_sSn4s"
     }
-  }
+  },
+  "status": "upload_pending",
+  "benchmark_version": "2.0.0"
 }

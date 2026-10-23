@@ -1,0 +1,88 @@
+{
+  "schema": "nrb-native-refresh-provenance-v1",
+  "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
+  "unit_tests": {
+    "count": 91,
+    "passed": true,
+    "skipped": 0,
+    "wall_seconds": 70.08,
+    "terminal_log": {
+      "path": "validation/v2.0/unit-tests-terminal.log",
+      "bytes": 12918,
+      "sha256": "ac77af8479c4b15da87872c7b2eac073da888163c9e087f1ff6d57d5245df45f",
+      "git_blob_sha": "a1459458b7a91aac54fed1f3a81ebdcb59d41c39"
+    },
+    "terminal_session_id": 84231,
+    "source_chunk_ids": [
+      "b59cab",
+      "c39a19",
+      "21da39",
+      "fc5e40",
+      "197be4"
+    ],
+    "extraction": "Verbatim unit-test stdout portions from the five recorded tool-return chunks, in order; the first preflight JSON and subsequent control output are outside this unit-test log.",
+    "truncated_capture": {
+      "path": "validation/v2.0/unit-tests-truncated-prepublication.log",
+      "bytes": 3862,
+      "sha256": "d181bb2ff2c470a3ba0e4ebde3819562f809362366de938dd2967426b9588763",
+      "git_blob_sha": "7b6a7cb0cf2a4200e8571ee596b8e71dfa46e7f0"
+    },
+    "truncated_capture_inode": 1704482,
+    "truncated_capture_mtime_ns": 1792765426023068385,
+    "truncated_capture_ctime_ns": 1792765428183057305,
+    "anomaly": "The tee output path retained only the initial 3862-byte prefix while the same process continued emitting the complete 91-test output. The path replacement source is unconfirmed. The retained prefix is an exact prefix of the terminal log. No additional unit-test execution was performed to recreate the log."
+  },
+  "native_controls": {
+    "entries": 52,
+    "references": 39,
+    "wrong_controls": 13,
+    "checks": 53,
+    "passed": true,
+    "wall_seconds": 27.937538954000047,
+    "all_reports_validated": true
+  },
+  "release_contracts": {
+    "checks": 5,
+    "passed": true,
+    "wall_seconds": 1.9836319320020266
+  },
+  "process_exit_code": 0,
+  "files": [
+    {
+      "path": "validation/v2.0/unit-tests-terminal.log",
+      "bytes": 12918,
+      "sha256": "ac77af8479c4b15da87872c7b2eac073da888163c9e087f1ff6d57d5245df45f",
+      "git_blob_sha": "a1459458b7a91aac54fed1f3a81ebdcb59d41c39"
+    },
+    {
+      "path": "validation/v2.0/unit-tests-truncated-prepublication.log",
+      "bytes": 3862,
+      "sha256": "d181bb2ff2c470a3ba0e4ebde3819562f809362366de938dd2967426b9588763",
+      "git_blob_sha": "7b6a7cb0cf2a4200e8571ee596b8e71dfa46e7f0"
+    },
+    {
+      "path": "validation/v2.0/native-controls.json",
+      "bytes": 293033,
+      "sha256": "ea8071c5799cdf538f59f0cd407013cfcbaedafdbd84b8281d3954237f3bd5b1",
+      "git_blob_sha": "5bb5bbed49b633e1fc0c5a377d7c855f76a7c7e6"
+    },
+    {
+      "path": "validation/v2.0/native-controls.log",
+      "bytes": 1700,
+      "sha256": "08bff2e9f660f9d1e7b6b0ea785cf7994768899a74103e3adcd15fb3a3dde874",
+      "git_blob_sha": "e0521aebcde5adbe22b8d187de2f49ae417d66a0"
+    },
+    {
+      "path": "validation/v2.0/release-contracts.json",
+      "bytes": 22743,
+      "sha256": "a10e425716705e5e8125461ef24a652ea31c8a0556bc4a3da9d73e8b196d95d9",
+      "git_blob_sha": "4ce676371a20c602cf3cf3db287efcd9b095342b"
+    },
+    {
+      "path": "validation/v2.0/release-contracts.log",
+      "bytes": 389,
+      "sha256": "0eae4c98e939c412e483b51718f9630869dda13dcd353722a6accc9f48a6bc97",
+      "git_blob_sha": "1cdc63ee39a9de278efe2da6a795823af96773f2"
+    }
+  ]
+}

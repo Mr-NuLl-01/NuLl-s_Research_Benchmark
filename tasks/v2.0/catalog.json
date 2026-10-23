@@ -1,8 +1,8 @@
 {
-  "benchmark_version": "2.0.0-rc.1",
-  "status": "phase1",
-  "ready_count": 8,
-  "planned_count": 12,
+  "benchmark_version": "2.0.0",
+  "status": "complete",
+  "ready_count": 20,
+  "planned_count": 0,
   "total_count": 20,
   "tasks": [
     {
@@ -32,11 +32,11 @@
       ],
       "manual_review_required": false,
       "format": "md",
-      "benchmark_version": "2.0.0-rc.1",
+      "benchmark_version": "2.0.0",
       "brief": "CSV身份、单位与极小不确定度；区分重复记录和独立测量。",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "file": "P01.md",
-      "packet_hash": "d39eb12395542d6e6d0d2f709b067503afea6991c1f205f74b937c1915189898",
+      "packet_hash": "94d470a3e60e8688ba67faf2a1e3dc8d7b238072c3498836a915e481c4f1a7d0",
       "seed": 17
     },
     {
@@ -65,11 +65,11 @@
       ],
       "manual_review_required": false,
       "format": "md",
-      "benchmark_version": "2.0.0-rc.1",
+      "benchmark_version": "2.0.0",
       "brief": "独立组与技术重复、分层目标人群和确定性bootstrap。",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "file": "P02.md",
-      "packet_hash": "b450083e4f112e168b763b1593a8c6fa2e75784050f6ff540613246251a5baab",
+      "packet_hash": "3493b9cb506bfea3c1594383d936e49cb12b0bcfead93a9ea62392125d1f24f9",
       "seed": 17
     },
     {
@@ -99,11 +99,11 @@
       ],
       "manual_review_required": false,
       "format": "md",
-      "benchmark_version": "2.0.0-rc.1",
+      "benchmark_version": "2.0.0",
       "brief": "修复非均匀有限体积导热：界面热阻、隐式推进与能量账本。",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "file": "P03.md",
-      "packet_hash": "55efab4f78699005dfe9da24904e6b808b9d3bd78ffe7d824036dda03d58e516",
+      "packet_hash": "3b884a94b079c2dd4f405ccd33154ff62e4afa6e953a77d3c3c44991f4ab4a32",
       "seed": 17
     },
     {
@@ -133,11 +133,11 @@
       ],
       "manual_review_required": false,
       "format": "md",
-      "benchmark_version": "2.0.0-rc.1",
+      "benchmark_version": "2.0.0",
       "brief": "复折射率多层光学：s/p偏振、能流、倏逝波与极厚吸收层。",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "file": "P04.md",
-      "packet_hash": "346b070cf1cf15870f31c1681067eacdcc3e0d78ebd99857fc7ba2200c266264",
+      "packet_hash": "30015006e01186ed65b9fd70aea957f1f65f4a33820caf2254bc29483526b901",
       "seed": 17
     },
     {
@@ -167,11 +167,11 @@
       ],
       "manual_review_required": false,
       "format": "md",
-      "benchmark_version": "2.0.0-rc.1",
+      "benchmark_version": "2.0.0",
       "brief": "按明确算法实现刚性积分：拒步回滚、右连续源与浮点硬停点。",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "file": "P05.md",
-      "packet_hash": "8cc58f87d6a6d6aea0aec98fcbfb09e74841697152428193a8e170b722e2fe85",
+      "packet_hash": "f4d0ccea4607140dae559d85f8c1ab9560ff30be4415f8933766fbf74fcdaf4d",
       "seed": 17
     },
     {
@@ -202,11 +202,11 @@
       ],
       "manual_review_required": false,
       "format": "md",
-      "benchmark_version": "2.0.0-rc.1",
+      "benchmark_version": "2.0.0",
       "brief": "变量投影、绝对sigma、剖面似然区间和端点附近内部最小值。",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "file": "P06.md",
-      "packet_hash": "c27b1058a0b46c4f71d126b355cdb3d1248028dfc37011ecfc02506ff1260eb9",
+      "packet_hash": "0f1b726fb696a0cd5eb0c3f84c328c2b23b9f5ad3224c34ad16507adf68d90bd",
       "seed": 17
     },
     {
@@ -238,11 +238,11 @@
       ],
       "manual_review_required": false,
       "format": "md",
-      "benchmark_version": "2.0.0-rc.1",
+      "benchmark_version": "2.0.0",
       "brief": "二维非均匀网格、方向各向异性、界面传递与边界积分通量。",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "file": "P07.md",
-      "packet_hash": "5410d21d42557c04963e0f895d4ef590a8a0d57fc9749e2547b4595cdee028b3",
+      "packet_hash": "d36807d4291affd41d86b51430a4eb211179d7e6c2e272552f26838b8e408713",
       "seed": 17
     },
     {
@@ -275,11 +275,11 @@
       ],
       "manual_review_required": false,
       "format": "md",
-      "benchmark_version": "2.0.0-rc.1",
+      "benchmark_version": "2.0.0",
       "brief": "修复反应扩散反演链：离散切线、协方差、JSON重启与重新拟合自举。",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "file": "P08.md",
-      "packet_hash": "cf8210f953108967717f1e2a87d62113e535fb81638d6b84ed8b6617f3c21606",
+      "packet_hash": "795f4b46b0009527ff7c11ee75d45871ed7efb67d5118b653de20f515f79298f",
       "seed": 17
     },
     {
@@ -288,16 +288,24 @@
       "category": "Fortran",
       "difficulty": 3,
       "brief": "SG通量、非均匀控制体与漂移方向",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "automatic",
       "legacy_id": "C06",
       "language": "fortran",
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "fortran",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 1800,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": false,
-      "required_artifacts": []
+      "required_artifacts": [
+        "solution.f90"
+      ],
+      "file": "F01.md",
+      "packet_hash": "577ab63860b6eff1ef779c5f53c64567a637500ccd6c6c008da7bfe0a9f97970",
+      "seed": 17
     },
     {
       "id": "F02",
@@ -305,16 +313,24 @@
       "category": "Fortran",
       "difficulty": 4,
       "brief": "时间推进、正性与源汇守恒",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "automatic",
       "legacy_id": null,
       "language": "fortran",
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "fortran",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 2700,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": false,
-      "required_artifacts": []
+      "required_artifacts": [
+        "solution.f90"
+      ],
+      "file": "F02.md",
+      "packet_hash": "a51de755f97d0ade2cb7ade48b4fe1757ba59dbe9141d8e5a4e18061c3fe0538",
+      "seed": 17
     },
     {
       "id": "F03",
@@ -322,16 +338,24 @@
       "category": "Fortran",
       "difficulty": 5,
       "brief": "非线性耦合、阻尼迭代与规范平移",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "automatic",
       "legacy_id": "C09",
       "language": "fortran",
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "fortran",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 3600,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": false,
-      "required_artifacts": []
+      "required_artifacts": [
+        "solution.f90"
+      ],
+      "file": "F03.md",
+      "packet_hash": "03ac765e2d673c8c39a7340927ea94dd3f3e1dcd7a96e927906b59c5f31ccf6e",
+      "seed": 17
     },
     {
       "id": "L01",
@@ -339,16 +363,24 @@
       "category": "Lean",
       "difficulty": 4,
       "brief": "给定命题与条件、实际编译、公理依赖核验",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "automatic",
       "legacy_id": null,
       "language": "lean",
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "lean",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 2400,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": false,
-      "required_artifacts": []
+      "required_artifacts": [
+        "proofs.json"
+      ],
+      "file": "L01.md",
+      "packet_hash": "bfeab8c3295d08a08d22cfea27f3ec02076038040f5f18c50565ca99e4a4484d",
+      "seed": 17
     },
     {
       "id": "R01",
@@ -356,16 +388,24 @@
       "category": "主观科研",
       "difficulty": 4,
       "brief": "真实图例学习、科学语义与多面板组织",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "manual",
       "legacy_id": "R01",
       "language": null,
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "research",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 3600,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": true,
-      "required_artifacts": []
+      "required_artifacts": [
+        "见题面交付清单"
+      ],
+      "file": "R01.md",
+      "packet_hash": "18757706a00915469ca91f15d4cb0798e029b8cc82cbeb6d8c48c3f43745ba40",
+      "seed": 17
     },
     {
       "id": "R02",
@@ -373,16 +413,24 @@
       "category": "主观科研",
       "difficulty": 4,
       "brief": "坐标尺度、数据语义与可复现图形",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "manual",
       "legacy_id": "R02",
       "language": null,
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "research",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 3600,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": true,
-      "required_artifacts": []
+      "required_artifacts": [
+        "见题面交付清单"
+      ],
+      "file": "R02.md",
+      "packet_hash": "9ab6ceb24d75578a0109ca3c867bc84dbe32bebab857aa7d9225cc8c7f9af791",
+      "seed": 17
     },
     {
       "id": "R03",
@@ -390,16 +438,24 @@
       "category": "主观科研",
       "difficulty": 3,
       "brief": "保守修改、事实台账与自然表达",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "manual",
       "legacy_id": "R03",
       "language": null,
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "research",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 1800,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": true,
-      "required_artifacts": []
+      "required_artifacts": [
+        "见题面交付清单"
+      ],
+      "file": "R03.md",
+      "packet_hash": "65010dcbfa874a8de1403fc74f3f55533774853881830d3356891f254ba27d60",
+      "seed": 17
     },
     {
       "id": "R04",
@@ -407,16 +463,24 @@
       "category": "主观科研",
       "difficulty": 4,
       "brief": "读图、定量表述与推断边界",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "manual",
       "legacy_id": "R04",
       "language": null,
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "research",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 2400,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": true,
-      "required_artifacts": []
+      "required_artifacts": [
+        "见题面交付清单"
+      ],
+      "file": "R04.md",
+      "packet_hash": "26e4e30cd04fa575adc90095a51e21cb20d3d1efbabbf61b663fbf0851e52cb7",
+      "seed": 17
     },
     {
       "id": "R05",
@@ -424,16 +488,24 @@
       "category": "主观科研",
       "difficulty": 5,
       "brief": "合并旧精读/综述题，保留证据与复现责任",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "manual",
       "legacy_id": "R05+R06",
       "language": null,
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "research",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 7200,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": true,
-      "required_artifacts": []
+      "required_artifacts": [
+        "见题面交付清单"
+      ],
+      "file": "R05.md",
+      "packet_hash": "0e408a3b832fb5fad11b2f32c4f27757f2db8b7236b625b5d55db05cc8c2e9c0",
+      "seed": 17
     },
     {
       "id": "R06",
@@ -441,16 +513,24 @@
       "category": "主观科研",
       "difficulty": 4,
       "brief": "合并视频A/B为一道题的两种预先声明模式",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "manual",
       "legacy_id": "X04+X05",
       "language": null,
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "research",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 7200,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": true,
-      "required_artifacts": []
+      "required_artifacts": [
+        "见题面交付清单"
+      ],
+      "file": "R06.md",
+      "packet_hash": "a638de8231d4ddacd7181f4343d4d3d7498ec9228d9a834bb4884e2c2fc7ff95",
+      "seed": 17
     },
     {
       "id": "H01",
@@ -458,16 +538,24 @@
       "category": "聊天端",
       "difficulty": 4,
       "brief": "离线交互、返回、空态与真实导出",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "manual",
       "legacy_id": "X01",
       "language": null,
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "chat",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 2400,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": true,
-      "required_artifacts": []
+      "required_artifacts": [
+        "见题面交付清单"
+      ],
+      "file": "H01.md",
+      "packet_hash": "27290f701cad3790daafa2a9be630d64e8f1f6f01bfe0d4c2ab411411dc66027",
+      "seed": 17
     },
     {
       "id": "H02",
@@ -475,16 +563,24 @@
       "category": "聊天端",
       "difficulty": 5,
       "brief": "产额、条件寿命、全局最优与可核验反例",
-      "status": "planned",
+      "status": "ready",
       "phase": 2,
       "scoring": "automatic",
       "legacy_id": null,
       "language": null,
-      "track": "planned",
-      "benchmark_version": "2.0.0-rc.1",
+      "track": "chat",
+      "benchmark_version": "2.0.0",
+      "time_budget_s": 2400,
+      "max_score": 100,
+      "format": "md",
       "difficulty_status": "design_prior_not_empirically_calibrated",
       "manual_review_required": false,
-      "required_artifacts": []
+      "required_artifacts": [
+        "answer.json"
+      ],
+      "file": "H02.md",
+      "packet_hash": "8aa9f2d0652402c13cbc4ea84deda5a7b7e17cd15dc65c32617721f244353c52",
+      "seed": 17
     }
   ]
 }

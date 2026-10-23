@@ -1,0 +1,121 @@
+{
+  "schema": "nrb-browser-qa-v1",
+  "date": "2026-10-23",
+  "environment": "Cloud Chromium via managed Sites preview",
+  "scope": "UI verification with author controls and synthetic records only",
+  "not_model_performance": true,
+  "production_records_modified": false,
+  "checks": [
+    {
+      "name": "overview",
+      "passed": true,
+      "observed": "20 tasks, 13 automatic, 7 reviewed; five category cards; visual layout inspected"
+    },
+    {
+      "name": "fortran_filter",
+      "passed": true,
+      "observed": "Fortran selection shows 3 / 20 tasks"
+    },
+    {
+      "name": "fortran_detail",
+      "passed": true,
+      "observed": "F02 full prompt and 45-minute budget render"
+    },
+    {
+      "name": "return_navigation",
+      "passed": true,
+      "observed": "Returning from F02 preserves the Fortran filter"
+    },
+    {
+      "name": "h02_wrong_answer",
+      "passed": true,
+      "observed": "Raw {task_id:H02} yields 0 / 100; six failed groups"
+    },
+    {
+      "name": "h02_duplicate_keys",
+      "passed": true,
+      "observed": "Duplicate task_id is rejected and old score/save section cleared"
+    },
+    {
+      "name": "h02_file_input",
+      "passed": true,
+      "observed": "Actual file chooser imports author reference; 100 / 100, six passed groups"
+    },
+    {
+      "name": "save_and_reload",
+      "passed": true,
+      "observed": "Explicit SYNTHETIC_BROWSER_QA record persists after reload"
+    },
+    {
+      "name": "backup_download",
+      "passed": true,
+      "observed": "Actual browser download produced a 3194-byte JSON backup with one synthetic record"
+    },
+    {
+      "name": "duplicate_backup_merge",
+      "passed": true,
+      "observed": "Actual file chooser imports same backup; confirmation says add 0, skip 1; completion retains one record"
+    },
+    {
+      "name": "fortran_report_import",
+      "passed": true,
+      "observed": "Actual file chooser imports final native F02 reference; 100 / 100, 12 checks; author-control badge and exclusion notice"
+    },
+    {
+      "name": "r06_mode_selection",
+      "passed": true,
+      "observed": "No rubric is offered until A or B is selected"
+    },
+    {
+      "name": "r06_unobserved",
+      "passed": true,
+      "observed": "Unassessed A-mode review stays unscored/null, showing 24 incomplete items"
+    },
+    {
+      "name": "backup_add_and_deduplicate",
+      "passed": true,
+      "observed": "Actual backup import adds one explicitly synthetic record and skips the identical existing record; count becomes two."
+    },
+    {
+      "name": "partial_comparison",
+      "passed": true,
+      "observed": "Two synthetic same-condition configurations show common 1 / 20, remaining tasks untested, and only the common-subset mean."
+    },
+    {
+      "name": "manual_failed_import_clears_previous_result",
+      "passed": true,
+      "observed": "After the fix, invalid review leaves no previous score and saveHidden=true."
+    },
+    {
+      "name": "manual_draft_roundtrip",
+      "passed": true,
+      "observed": "Downloaded A-mode draft and imported the actual browser file; reviewer restored, score remains null, 24 items unassessed."
+    },
+    {
+      "name": "r06_mode_b_independent",
+      "passed": true,
+      "observed": "Switching A to B clears previous reviewer/preview and uses reference-reconstruction dimension plus full-reference-video observation."
+    },
+    {
+      "name": "synthetic_record_cleanup",
+      "passed": true,
+      "observed": "Deleted only the two explicitly synthetic preview records after preserving backup; record count returned to zero. Production records untouched."
+    }
+  ],
+  "limitations": [
+    "Desktop browser only. No mobile or cross-browser execution claimed.",
+    "Hosted production deployment and final Drive anchor checks pending."
+  ],
+  "resolved_regressions": [
+    {
+      "name": "manual_failed_import_clears_previous_result",
+      "observed_before_fix": "Invalid review shows error but previous preview and save controls remain. Fix and browser retest pending.",
+      "after_fix": "Re-uploaded the same invalid JSON through the actual file chooser: error visible, preview empty, save hidden."
+    }
+  ],
+  "remaining_preview_records": 0,
+  "passed": true,
+  "evaluator_fingerprint_at_observation": "3b23c0579bf034d3b6ffd9811da6e2bce08772a79766be357e9147aa303e4eb0",
+  "app_sha256": "15665f6ba762e1823d43cdf67d347f6eb1e3192451446eb56042de2590f85be8",
+  "later_material_update": "R05 embedded images were extracted without changing image bytes or reading text. The input manifest and evaluator fingerprint changed; final data identity checks are recorded separately."
+}

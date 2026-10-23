@@ -1,0 +1,21 @@
+{
+  "task_id": "R06",
+  "mode": null,
+  "candidate_status": "not_run",
+  "model": null,
+  "model_version": null,
+  "reasoning_effort": null,
+  "tools": [],
+  "skills": [],
+  "budget": null,
+  "attempt": 1,
+  "human_intervention": [],
+  "input_hashes": {},
+  "output_hashes": {},
+  "observed_source_video": null,
+  "observed_reference_video": null,
+  "actual_elapsed_s": null,
+  "tokens": null,
+  "cost": null,
+  "limitations": []
+}

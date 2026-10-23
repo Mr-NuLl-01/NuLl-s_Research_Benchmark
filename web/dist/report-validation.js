@@ -8,10 +8,39 @@
   function same(actual, expected, label) { if (actual !== expected) fail(label + '不匹配，请使用当前题包和验证器重新评分。'); }
   function close(actual, expected, label) {
     if (expected === null) { if (actual !== null) fail(label + '应为空：存在未执行检查。'); return; }
-    if (!finite(actual) || Math.abs(actual - expected) > 1e-8) fail(label + '与逐项检查重算结果不一致。');
+    if (!finite(actual) || Math.abs(actual - expected) > 5.1e-7) fail(label + '与逐项检查重算结果不一致。');
+  }
+  function parseJSON(text) {
+    // JSON.parse alone silently overwrites duplicate members and accepts
+    // overflowed numbers as Infinity. Preserve the strict offline contract.
+    if (typeof text !== 'string') fail('JSON 输入必须是文本。');
+    const value = JSON.parse(text);
+    let i = 0;
+    const ws = () => { while (/\s/.test(text[i] || '') && i < text.length) i++; };
+    function string() {
+      const start=i++; while (i<text.length) { const c=text[i++]; if(c==='\\') i++; else if(c==='"') return JSON.parse(text.slice(start,i)); }
+      fail('JSON 字符串未结束。');
+    }
+    function scan(depth) {
+      if(depth>100) fail('JSON 嵌套层级过深。'); ws();
+      if(text[i]==='{') {
+        i++;ws();const seen=new Set();if(text[i]==='}'){i++;return;}
+        while(i<text.length){ws();const key=string();if(seen.has(key))fail('JSON 包含重复字段：'+key);seen.add(key);ws();i++;scan(depth+1);ws();if(text[i++]==='}')return;}
+      } else if(text[i]==='[') {
+        i++;ws();if(text[i]===']'){i++;return;}while(i<text.length){scan(depth+1);ws();if(text[i++]===']')return;}
+      } else if(text[i]==='"') string();
+      else {const start=i;while(i<text.length&&!/[\s,\]}]/.test(text[i]))i++;const token=text.slice(start,i);if(!['true','false','null'].includes(token)&&!Number.isFinite(Number(token)))fail('JSON 数值必须有限。');}
+    }
+    scan(0); return value;
   }
   function validateReport(report, release) {
     if (!object(report)) fail('请上传验证器生成的 JSON 对象。');
+    if (report.schema === 'nrb-answer-v2') {
+      same(report.benchmark_version,release.version,'题库版本'); same(report.task_id,'H02','题号');
+      if(!Number.isSafeInteger(report.seed)||report.seed<0||report.seed>=2**32) fail('测试种子必须是范围内的整数。');
+      return root.NRBH02.evaluate(report.answer_payload,release,report.seed);
+    }
+    if (report.schema === 'nrb-v2-manual-review') return root.NRBSubjective.validate(report,release);
     const manifest = release && release.grading;
     if (!object(manifest) || !object(manifest.tasks)) fail('当前评分白名单尚未就绪，请稍后刷新。');
     same(report.schema, manifest.schema, '报告格式');
@@ -20,13 +49,13 @@
     if (!SHA.test(report.evaluator_fingerprint || '')) fail('验证器指纹缺失或格式错误。');
     same(report.evaluator_fingerprint, manifest.evaluatorFingerprint, '验证器内容指纹');
     const task = manifest.tasks[report.task_id];
-    if (!task) fail('该报告不属于本轮已开放的 8 道 Python 题。');
+    if (!task) fail('该报告不属于当前自动评分题库。');
     if (!Number.isSafeInteger(report.seed)) fail('测试种子必须是整数。');
     const expected = task.seeds && task.seeds[String(report.seed)];
     if (!expected) fail('此测试种子尚未登记。当前支持：' + Object.keys(task.seeds || {}).join('、') + '。');
     same(report.packet_hash, expected.packet_hash || task.packet_hash, '题包指纹');
     same(report.test_manifest_hash, expected.test_manifest_hash, '检查清单指纹');
-    if (!SHA.test(report.source_hash || '') && !(report.source_hash === null && report.status === 'unscored')) fail('候选源码指纹缺失或格式错误。');
+    if (!(typeof report.source_hash==='string'&&SHA.test(report.source_hash)) && !(report.source_hash === null && report.status === 'unscored')) fail('候选源码指纹缺失或格式错误。');
     same(report.report_origin, 'local_verifier', '报告来源');
     if (!Array.isArray(expected.checks) || !expected.checks.length) fail('站点检查清单不完整。');
     if (!Array.isArray(report.checks) || report.checks.length !== expected.checks.length) fail('检查项数量不匹配；不能省略失败或未执行检查。');
@@ -50,6 +79,7 @@
       return {id:entry.id, tier:entry.tier, weight:entry.weight, critical:entry.critical, passed:check.passed, detail:check.detail};
     });
     const pending = checks.filter(x => x.passed === null).length;
+    if (pending && pending !== checks.length) fail('本版验证器不生成部分未执行的报告。');
     const failed = checks.filter(x => x.passed === false).length;
     const score = pending ? null : 100 * earned / total;
     const status = pending ? 'unscored' : failed ? 'failed' : 'passed';
@@ -59,14 +89,19 @@
     close(report.score, score, '得分');
     close(report.total, score, '总分');
     same(report.critical_passed, criticalPassed, '关键检查结论');
-    if (!object(report.execution) || !['docker','trusted','none'].includes(report.execution.backend) || !['executed','failed','unavailable'].includes(report.execution.status)) fail('执行环境或执行状态无效。');
-    if (report.execution.status === 'unavailable' && status !== 'unscored') fail('环境不可用的报告不能登记为已评分。');
+    if (!object(report.execution) || !['docker','trusted','none','answer'].includes(report.execution.backend) || !['executed','failed','unavailable'].includes(report.execution.status)) fail('执行环境或执行状态无效。');
+    if(report.execution.backend==='answer'&&report.task_id!=='H02')fail('该题必须实际执行代码。');
+    if ((report.execution.status === 'unavailable') !== (status === 'unscored')) fail('执行状态与分数是否可用不一致。');
     if (report.execution.status === 'failed' && (pending !== 0 || failed !== checks.length || score !== 0)) fail('执行进程失败时，本版协议要求全部检查失败且得分为 0。');
     if (report.execution.backend === 'none' && status !== 'unscored') fail('未执行程序的报告不能登记为已评分。');
     if (typeof report.control_only !== 'boolean' || typeof report.comparison_eligible !== 'boolean') fail('缺少报告用途及比较资格标记。');
-    if (report.execution.backend === 'trusted' && !report.control_only) fail('trusted 自检报告必须保留控制用途标记。');
-    const eligible = report.execution.backend === 'docker' && report.execution.status !== 'unavailable' && !report.control_only && status !== 'unscored';
-    if (report.comparison_eligible && !eligible) fail('该执行方式或状态不能进入模型比较。');
+    if (report.control_only !== (report.execution.backend === 'trusted')) fail('控制用途标记与执行方式不一致。');
+    const eligible = ['docker','answer'].includes(report.execution.backend) && report.execution.status !== 'unavailable' && !report.control_only && status !== 'unscored';
+    if (report.comparison_eligible !== eligible) fail('比较资格与执行方式或状态不一致。');
+    if(report.task_id==='H02'&&status!=='unscored'){
+      const graded=root.NRBH02.evaluate(report.answer_payload,release,report.seed);
+      if(checks.some(c=>graded.checks.find(v=>v.id===c.id)?.passed!==c.passed))fail('H02 检查与原始答案重算结果不一致。');
+    }
     const tiers = {};
     for (const check of checks) {
       const tier = tiers[check.tier] || (tiers[check.tier] = {earned:0, total:0, pending:0});
@@ -81,7 +116,7 @@
       criticalPassed, controlOnly:report.control_only, comparisonEligible:eligible && report.comparison_eligible,
       backend:report.execution.backend, executionStatus:report.execution.status};
   }
-  const api = {validateReport};
+  const api = {validateReport, parseJSON};
   root.NRBReports = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

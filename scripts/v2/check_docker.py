@@ -125,7 +125,7 @@ def _command(argv, timeout=20):
     return completed.stdout
 
 
-def run(output, *, image='nrb-v2-python:local', timeout=120):
+def run(output, *, image='nrb-v2:local', timeout=120):
     output = Path(output)
     if output.exists() or output.is_symlink():
         raise FileExistsError('Choose a new evidence filename; existing evidence is never overwritten')
@@ -210,7 +210,7 @@ def run(output, *, image='nrb-v2-python:local', timeout=120):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, required=True)
-    parser.add_argument('--image', default='nrb-v2-python:local')
+    parser.add_argument('--image', default='nrb-v2:local')
     parser.add_argument('--timeout', type=float, default=120)
     args = parser.parse_args(argv)
     try:

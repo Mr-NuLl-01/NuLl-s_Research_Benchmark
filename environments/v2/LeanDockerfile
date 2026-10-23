@@ -1,0 +1,19 @@
+# Fixed amd64 toolchain. On Apple Silicon build/run with --platform=linux/amd64.
+FROM python:3.12.12-slim-bookworm
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl zstd libgmp10 \
+    && rm -rf /var/lib/apt/lists/*
+ARG LEAN_VERSION=4.19.0
+ARG LEAN_SHA256=6fe3ce97a58f44e2b3567d455b994eacec5bfe9ae7774f2a573444480ba813fe
+RUN test "$(uname -m)" = x86_64 \
+    && curl --fail --location --retry 3 \
+      "https://github.com/leanprover/lean4/releases/download/v${LEAN_VERSION}/lean-${LEAN_VERSION}-linux.tar.zst" \
+      --output /tmp/lean.tar.zst \
+    && echo "${LEAN_SHA256}  /tmp/lean.tar.zst" | sha256sum --check - \
+    && mkdir -p /opt/lean \
+    && tar --no-same-owner --use-compress-program=unzstd --strip-components=1 -xf /tmp/lean.tar.zst -C /opt/lean \
+    && rm /tmp/lean.tar.zst \
+    && /opt/lean/bin/lean --version
+ENV PATH="/opt/lean/bin:${PATH}" PYTHONDONTWRITEBYTECODE=1 NRB_LEAN=/opt/lean/bin/lean
+WORKDIR /task
+USER 65534:65534
+CMD ["lean", "--version"]

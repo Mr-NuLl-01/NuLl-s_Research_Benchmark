@@ -1,0 +1,663 @@
+{
+  "schema": "nrb-v2-release-check-v1",
+  "kind": "complete_twenty_task_contracts",
+  "benchmark_version": "2.0.0",
+  "created_at": "2026-10-23T14:25:22.252269+00:00",
+  "not_model_performance": true,
+  "api_provider_calls": 0,
+  "evaluator_identity": {
+    "grader_version": "2.0.0",
+    "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
+    "source_commit": "be2f5c83c0cee908e37bc528e4001dac7a2d7fce",
+    "source_dirty": true
+  },
+  "checks": [
+    {
+      "name": "complete 20-task scope and 13/7 score partition",
+      "passed": true,
+      "detail": {
+        "Python": 8,
+        "Fortran": 3,
+        "Lean": 1,
+        "主观科研": 6,
+        "聊天端": 2
+      }
+    },
+    {
+      "name": "frozen generated prompts and hashed static sources",
+      "passed": true,
+      "detail": {
+        "P01": "94d470a3e60e8688ba67faf2a1e3dc8d7b238072c3498836a915e481c4f1a7d0",
+        "P02": "3493b9cb506bfea3c1594383d936e49cb12b0bcfead93a9ea62392125d1f24f9",
+        "P03": "3b884a94b079c2dd4f405ccd33154ff62e4afa6e953a77d3c3c44991f4ab4a32",
+        "P04": "30015006e01186ed65b9fd70aea957f1f65f4a33820caf2254bc29483526b901",
+        "P05": "f4d0ccea4607140dae559d85f8c1ab9560ff30be4415f8933766fbf74fcdaf4d",
+        "P06": "0f1b726fb696a0cd5eb0c3f84c328c2b23b9f5ad3224c34ad16507adf68d90bd",
+        "P07": "d36807d4291affd41d86b51430a4eb211179d7e6c2e272552f26838b8e408713",
+        "P08": "795f4b46b0009527ff7c11ee75d45871ed7efb67d5118b653de20f515f79298f",
+        "F01": "aaf9830e868e31469eb325f5c44f450940e505db803d776e4b8e6a168e527901",
+        "F02": "f975dca85938488f2df05927d06bd86644f19f2fa5a14dc69caf72bc969f3082",
+        "F03": "ada63a07be3f460dd20f7b8866ad902cf027543782a8a514a674f0ea78656169",
+        "L01": "e5707ef611a0e07f6d18efa948978a8362a2bb906f094b4800240843b60ce0e8",
+        "R01": "971ea84c168efe13e5836816240002d9859b50646bd3caa967c1320b7624152e",
+        "R02": "1a963defae32f39fa7d25a0f4b3bd3f6b62939d6dba36ed7db2266fe52dcb366",
+        "R03": "c8db11f08cd29f6665231ba0c4c555cd90d5ebc8cac9b9b943bc2ef1c3d017cd",
+        "R04": "f30e7932ef922eee5716099da8fdcc6148c7993fc6a61658b30019576c9222ad",
+        "R05": "18de7de1489b6845957bbce6f438f1c2f71bfc1aaf269c7d177180a98b24143c",
+        "R06": "0a39828eacc9f3392197ef80bae5fc4ad10590c8a390bef3ae1262e0291cbeaf",
+        "H01": "367d76194908ea829bdf2edd18fb685af2b7047fbc8b849676ed3d198f31ead9",
+        "H02": "00a32e6d7cddd6a91469bf3d5f82b41c0af419541450d67541df740aca51c54a"
+      }
+    },
+    {
+      "name": "candidate-only exports reproduce all public prompts",
+      "passed": true,
+      "detail": {
+        "prompt_count": 20,
+        "lean_candidate_files": [
+          "L01.md",
+          "NRBPrelude.lean",
+          "lean-toolchain",
+          "proofs.template.json"
+        ]
+      }
+    },
+    {
+      "name": "rubric input allowlists resolve and R06 modes stay separate",
+      "passed": true,
+      "detail": [
+        {
+          "task": "R01",
+          "mode": null,
+          "path": "R01.md",
+          "bytes": 3261,
+          "sha256": "971ea84c168efe13e5836816240002d9859b50646bd3caa967c1320b7624152e"
+        },
+        {
+          "task": "R01",
+          "mode": null,
+          "path": "assets/R01/paired.csv",
+          "bytes": 276,
+          "sha256": "672911d30355bc23f72cea246e94919df0c5b7a172df47241d920a1d429b772e"
+        },
+        {
+          "task": "R01",
+          "mode": null,
+          "path": "assets/R01/transient.csv",
+          "bytes": 239,
+          "sha256": "0680d6ac7f45acc6eb5f1e5e0058d1db1efc1e9cc0390a60337ac0c3d0aa25d9"
+        },
+        {
+          "task": "R01",
+          "mode": null,
+          "path": "assets/R01/style-references.html",
+          "bytes": 290502,
+          "sha256": "2fe6af23aa8e529ad04be64213900504a5b8345bbe4970ac0b331fee3b522d89"
+        },
+        {
+          "task": "R01",
+          "mode": null,
+          "path": "assets/common/SOURCES.md",
+          "bytes": 2369,
+          "sha256": "582bba3e8417761b765285af9d1492e3a8ea74d377e2a350e331ddf069eb0e28"
+        },
+        {
+          "task": "R01",
+          "mode": null,
+          "path": "assets/common/source-records.json",
+          "bytes": 3534,
+          "sha256": "c3f7515863eda41ef47b36a0b39383463764a88670a4a50945ea9c981cc32f67"
+        },
+        {
+          "task": "R02",
+          "mode": null,
+          "path": "R02.md",
+          "bytes": 2991,
+          "sha256": "1a963defae32f39fa7d25a0f4b3bd3f6b62939d6dba36ed7db2266fe52dcb366"
+        },
+        {
+          "task": "R02",
+          "mode": null,
+          "path": "assets/R02/paired.csv",
+          "bytes": 276,
+          "sha256": "672911d30355bc23f72cea246e94919df0c5b7a172df47241d920a1d429b772e"
+        },
+        {
+          "task": "R02",
+          "mode": null,
+          "path": "assets/R02/dose_response.csv",
+          "bytes": 141,
+          "sha256": "aed66ef879011fe1d76d5aa140401fe3f29a4290a9408c0088ea7691340c3594"
+        },
+        {
+          "task": "R02",
+          "mode": null,
+          "path": "assets/R02/blank_corrected.csv",
+          "bytes": 221,
+          "sha256": "614d837602b8e043593ab0c7fc0e5e86a27a27343fc8d4d33d7fab0f71ec7b49"
+        },
+        {
+          "task": "R03",
+          "mode": null,
+          "path": "R03.md",
+          "bytes": 2318,
+          "sha256": "c8db11f08cd29f6665231ba0c4c555cd90d5ebc8cac9b9b943bc2ef1c3d017cd"
+        },
+        {
+          "task": "R03",
+          "mode": null,
+          "path": "assets/R03/draft.txt",
+          "bytes": 1419,
+          "sha256": "8f25871391f9b72f34012227cc3029946d86c9ec86ac288a35751e79e8e98d08"
+        },
+        {
+          "task": "R03",
+          "mode": null,
+          "path": "assets/R03/approved-facts.md",
+          "bytes": 1161,
+          "sha256": "1e62165f8f75597ba0f8363bfec38fcab57c1df0a964ee9309e996ea2b64f3eb"
+        },
+        {
+          "task": "R04",
+          "mode": null,
+          "path": "R04.md",
+          "bytes": 2607,
+          "sha256": "f30e7932ef922eee5716099da8fdcc6148c7993fc6a61658b30019576c9222ad"
+        },
+        {
+          "task": "R04",
+          "mode": null,
+          "path": "assets/R04/paired.csv",
+          "bytes": 276,
+          "sha256": "672911d30355bc23f72cea246e94919df0c5b7a172df47241d920a1d429b772e"
+        },
+        {
+          "task": "R04",
+          "mode": null,
+          "path": "assets/R04/transient.csv",
+          "bytes": 239,
+          "sha256": "0680d6ac7f45acc6eb5f1e5e0058d1db1efc1e9cc0390a60337ac0c3d0aa25d9"
+        },
+        {
+          "task": "R04",
+          "mode": null,
+          "path": "assets/R04/input-figure.svg",
+          "bytes": 25866,
+          "sha256": "7beb8931674864c31f49bcb903fb943f7e363bd361d447f33ca72848bb140b6e"
+        },
+        {
+          "task": "R04",
+          "mode": null,
+          "path": "assets/R04/input-figure.png",
+          "bytes": 121553,
+          "sha256": "a879073d2c4cd6b7b8bc7decf3e73bdd4556137ba3c5c3cd05a03bc21365c36c"
+        },
+        {
+          "task": "R04",
+          "mode": null,
+          "path": "assets/R04/experiment-record.md",
+          "bytes": 1639,
+          "sha256": "d3c9d79bdfb28f3df59d569036752680da6693dec7702a635152ab36517f4f19"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "R05.md",
+          "bytes": 5219,
+          "sha256": "18de7de1489b6845957bbce6f438f1c2f71bfc1aaf269c7d177180a98b24143c"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/reading-room.html",
+          "bytes": 141984,
+          "sha256": "07953aa7ceaf6e0f3f7c8666f94190d306ec57ec56066eae35d42119d9392db7"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/weissgerber2015-fig1.png",
+          "bytes": 26701,
+          "sha256": "0ca7e4e101394fdf0cfbc9d8f1132de52afd411e05fe17810187c7278b654c51"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/weissgerber2015-fig2.png",
+          "bytes": 37885,
+          "sha256": "b03aaef0961893dd606da1c2ad0198f258a49978a28e8520ed84d0995fff2a3f"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/weissgerber2015-fig3.png",
+          "bytes": 21317,
+          "sha256": "d77c1837bb90a5275e5cc367b6e7fa74a220739016a0b607cee8a3ecec534268"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/rougier2014-fig1.png",
+          "bytes": 35967,
+          "sha256": "c34b865521088bb6b18fcd015103f2c222809b6016d333602dc3e8545fc2f1f9"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/rougier2014-fig2.png",
+          "bytes": 154732,
+          "sha256": "b4844935b6e4ca8d9e65a85a1f7282e2573c1c06b1e851962983ee4fdc19937c"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/rougier2014-fig3.png",
+          "bytes": 85286,
+          "sha256": "0d01f3d959ed05ad1869f80ef55dbdccc9fbc1dec2d09db6c1510f79eb00a941"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/rougier2014-fig4.png",
+          "bytes": 20642,
+          "sha256": "98b02f9b0fa6ba4e9d7ecf91f0b462ceba4f2acc84a20e05a1d1e35bd282a5bd"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/rougier2014-fig5.png",
+          "bytes": 42278,
+          "sha256": "052bddd83611375fe6793656d156b35bcc51584f133b26ee2142496ca5310b42"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/rougier2014-fig6.png",
+          "bytes": 14636,
+          "sha256": "44d93384d34046c0fce4e387f1101c71edfe0cfb78c8e26d8fb1c3849c6b18ca"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/rougier2014-fig7.png",
+          "bytes": 130701,
+          "sha256": "5be40b3dec633119e48d71ae6efa0538d2bdc423e5aa3e5328d6d96d19c21312"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/rougier2014-fig8.png",
+          "bytes": 45141,
+          "sha256": "67ca8c54812734db2706db3e0c03790a56af0689f680be9471f73f526309ff7c"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/crameri2020-fig1.png",
+          "bytes": 128637,
+          "sha256": "1708c63a348f684740d9bcf65f0c327b4842d2e481a7cb0903783a4f4da1a01e"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/crameri2020-fig2.png",
+          "bytes": 35130,
+          "sha256": "a6ffb4d4149dbd68bfe8559ca70d41df4e4bafc9607166deef39c5418e60a679"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/crameri2020-fig3.png",
+          "bytes": 44527,
+          "sha256": "80062e5f3fd81500584908c22daaecd67c3829764c804e1074925fa41ddb498c"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/crameri2020-fig4.png",
+          "bytes": 38373,
+          "sha256": "ad42527fe9e5c67942ef553fed4b7510ed4c81aa9f2321285513f58fdbe32e44"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/crameri2020-fig5.png",
+          "bytes": 41590,
+          "sha256": "9c52b774c8759885040127d54065d9780ba5cbe177b2bfb590c386ee33ddc135"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/images/crameri2020-fig6.png",
+          "bytes": 104538,
+          "sha256": "c722bf5e5846c1dcbb851fc01f0ac62c231436de8030ba884850fbb376ec49bd"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/P1-S1-original.docx",
+          "bytes": 20732,
+          "sha256": "16a8a52086a9c72371a7887e7a10180c2e16c4e60b83069422bac8d1ec9f3a60"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/replication_pairs.csv",
+          "bytes": 170,
+          "sha256": "d2fc2e952e7a795f04cac279c8d6c82789fede1856ff1f22df8fafdbc14e1d03"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/R05/lab_fixture.csv",
+          "bytes": 152,
+          "sha256": "996e174a4569fcb0d2a45d27fcd0da85d1a962ebd2fa6f5f7d089900f998ffb1"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/common/SOURCES.md",
+          "bytes": 2369,
+          "sha256": "582bba3e8417761b765285af9d1492e3a8ea74d377e2a350e331ddf069eb0e28"
+        },
+        {
+          "task": "R05",
+          "mode": null,
+          "path": "assets/common/source-records.json",
+          "bytes": 3534,
+          "sha256": "c3f7515863eda41ef47b36a0b39383463764a88670a4a50945ea9c981cc32f67"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "R06.md",
+          "bytes": 4776,
+          "sha256": "0a39828eacc9f3392197ef80bae5fc4ad10590c8a390bef3ae1262e0291cbeaf"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/COPY.txt",
+          "bytes": 93,
+          "sha256": "f55e5b74810440b24f56ad9724c544220fa577583f95db8cc7dcf764c77ce852"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/scene-spec.json",
+          "bytes": 1659,
+          "sha256": "0e1d0b6a7b55507486e43e0607f4108f92d31b9c5a24a73272dbbba8e2b59706"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/run-record.template.json",
+          "bytes": 432,
+          "sha256": "fafb895b521fbbd71cf8c27cf53400620ae97dbdd7519e8c68a26af3e5814606"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/mode-A.txt",
+          "bytes": 251,
+          "sha256": "3ac28e27ca713682705935af36329ff2ee14df2a936dd6b3f29a6f0eeff48c99"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/source.mp4",
+          "bytes": 25090487,
+          "sha256": "a882854e0d1b007e247ffc507fccee31c9bb5671810428dfe422a94317a98302"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/soundtrack.wav",
+          "bytes": 1920044,
+          "sha256": "37ed2a662d04f833165358f81374d51e59904afb9c4c00e8a9e9fad588a7145c"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/fonts/DejaVuSansCondensed-Bold.ttf",
+          "bytes": 667844,
+          "sha256": "21f02ebcea75529d3ed9d26e089cd1b9c59a4b784119ba3a96e9bc83cf755ec7"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/fonts/DejaVuSansMono.ttf",
+          "bytes": 343140,
+          "sha256": "54bf827eb99404e8f430c330ad30f063334f637eba0109b6a18d4f566a8e9dd8"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/LICENSES/PACKAGE_LICENSE_STATUS.md",
+          "bytes": 2208,
+          "sha256": "c3fcd5569e99b74354b16de8df811aa0670c2a3205635c5e1cea225fe2dda9b5"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/LICENSES/NRB-MIT-LICENSE.txt",
+          "bytes": 1067,
+          "sha256": "65a06b7d18310e6ce10add5a3576dd15c4c18505529fe202a18d4ddf9965bb35"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/LICENSES/DejaVu-LICENSE.txt",
+          "bytes": 3859,
+          "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/LICENSES/SOURCE_LICENSE.md",
+          "bytes": 3161,
+          "sha256": "ff52a9a63704e99f964b85bd6413ac93056e8f9976fcd4931539bb8502d733bf"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/LICENSES/evidence/CC-BY-3.0-legalcode.txt",
+          "bytes": 19467,
+          "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/LICENSES/evidence/README-original.txt",
+          "bytes": 343,
+          "sha256": "3622773b7986ac4f4807352b94c111670ac5f888b558f6f70f95c0b7d253aba1"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/LICENSES/evidence/raw-footage-release.html",
+          "bytes": 28258,
+          "sha256": "5c1dc6f2e00cde27d236a00fddfa6d62b0df302df2d58e6b1f6002f55cb57f85"
+        },
+        {
+          "task": "R06",
+          "mode": "A",
+          "path": "assets/R06/LICENSES/evidence/sharing.html",
+          "bytes": 11331,
+          "sha256": "c3defc0521e16af0a3afb6a96d084517620adf6434038e6a3a2ba1cf50f86947"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "R06.md",
+          "bytes": 4776,
+          "sha256": "0a39828eacc9f3392197ef80bae5fc4ad10590c8a390bef3ae1262e0291cbeaf"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/COPY.txt",
+          "bytes": 93,
+          "sha256": "f55e5b74810440b24f56ad9724c544220fa577583f95db8cc7dcf764c77ce852"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/scene-spec.json",
+          "bytes": 1659,
+          "sha256": "0e1d0b6a7b55507486e43e0607f4108f92d31b9c5a24a73272dbbba8e2b59706"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/run-record.template.json",
+          "bytes": 432,
+          "sha256": "fafb895b521fbbd71cf8c27cf53400620ae97dbdd7519e8c68a26af3e5814606"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/mode-B.txt",
+          "bytes": 280,
+          "sha256": "ad2759663e2eb4a56a794c7c8621647323f47ab3823aa6f2d5b3cd380234b936"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/source.mp4",
+          "bytes": 25090487,
+          "sha256": "a882854e0d1b007e247ffc507fccee31c9bb5671810428dfe422a94317a98302"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/soundtrack.wav",
+          "bytes": 1920044,
+          "sha256": "37ed2a662d04f833165358f81374d51e59904afb9c4c00e8a9e9fad588a7145c"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/fonts/DejaVuSansCondensed-Bold.ttf",
+          "bytes": 667844,
+          "sha256": "21f02ebcea75529d3ed9d26e089cd1b9c59a4b784119ba3a96e9bc83cf755ec7"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/fonts/DejaVuSansMono.ttf",
+          "bytes": 343140,
+          "sha256": "54bf827eb99404e8f430c330ad30f063334f637eba0109b6a18d4f566a8e9dd8"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/LICENSES/PACKAGE_LICENSE_STATUS.md",
+          "bytes": 2208,
+          "sha256": "c3fcd5569e99b74354b16de8df811aa0670c2a3205635c5e1cea225fe2dda9b5"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/LICENSES/NRB-MIT-LICENSE.txt",
+          "bytes": 1067,
+          "sha256": "65a06b7d18310e6ce10add5a3576dd15c4c18505529fe202a18d4ddf9965bb35"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/LICENSES/DejaVu-LICENSE.txt",
+          "bytes": 3859,
+          "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/LICENSES/SOURCE_LICENSE.md",
+          "bytes": 3161,
+          "sha256": "ff52a9a63704e99f964b85bd6413ac93056e8f9976fcd4931539bb8502d733bf"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/LICENSES/evidence/CC-BY-3.0-legalcode.txt",
+          "bytes": 19467,
+          "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/LICENSES/evidence/README-original.txt",
+          "bytes": 343,
+          "sha256": "3622773b7986ac4f4807352b94c111670ac5f888b558f6f70f95c0b7d253aba1"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/LICENSES/evidence/raw-footage-release.html",
+          "bytes": 28258,
+          "sha256": "5c1dc6f2e00cde27d236a00fddfa6d62b0df302df2d58e6b1f6002f55cb57f85"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/LICENSES/evidence/sharing.html",
+          "bytes": 11331,
+          "sha256": "c3defc0521e16af0a3afb6a96d084517620adf6434038e6a3a2ba1cf50f86947"
+        },
+        {
+          "task": "R06",
+          "mode": "B",
+          "path": "assets/R06/reference.mp4",
+          "bytes": 3940450,
+          "sha256": "62f5b074c10642b4f3de80676f1463e05bbc81bcc2211d7095fd62894f7193f4"
+        },
+        {
+          "task": "H01",
+          "mode": null,
+          "path": "H01.md",
+          "bytes": 4456,
+          "sha256": "367d76194908ea829bdf2edd18fb685af2b7047fbc8b849676ed3d198f31ead9"
+        },
+        {
+          "task": "H01",
+          "mode": null,
+          "path": "assets/H01/paired.csv",
+          "bytes": 276,
+          "sha256": "672911d30355bc23f72cea246e94919df0c5b7a172df47241d920a1d429b772e"
+        },
+        {
+          "task": "H01",
+          "mode": null,
+          "path": "assets/H01/dose_response.csv",
+          "bytes": 141,
+          "sha256": "aed66ef879011fe1d76d5aa140401fe3f29a4290a9408c0088ea7691340c3594"
+        },
+        {
+          "task": "H01",
+          "mode": null,
+          "path": "assets/H01/blank_corrected.csv",
+          "bytes": 221,
+          "sha256": "614d837602b8e043593ab0c7fc0e5e86a27a27343fc8d4d33d7fab0f71ec7b49"
+        }
+      ]
+    },
+    {
+      "name": "actual site prompts, rubrics and automatic manifests match evaluator",
+      "passed": true,
+      "detail": {
+        "public_prompts": 20,
+        "automatic_tasks": 13,
+        "rubric_protocols": 8
+      }
+    }
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "passed": true,
+  "wall_seconds": 1.9836319320020266,
+  "report_hash": "807deca5a40c46f3fde1684002386bf8ba4bca4ec86cfc5e5c9787e5d37e2fe8"
+}

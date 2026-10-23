@@ -1,0 +1,149 @@
+{
+  "schema": "nrb-r05-image-extraction-v1",
+  "original_html_git_blob": "c9f985fea3a3c0cc1e1a7ea5ddebb1b1c3c1e947",
+  "original_html_sha256": "9fadf229ffbaf3cdb9288d60b67f4f056aaa94c9a6a8f0f824d0924964ab46c5",
+  "original_html_bytes": 1486015,
+  "html_sha256": "07953aa7ceaf6e0f3f7c8666f94190d306ec57ec56066eae35d42119d9392db7",
+  "html_bytes": 141984,
+  "unchanged_text_and_markup_except_img_src": true,
+  "masked_content_sha256": "b4806e4f0d57b4f48c83babf4588e3ec3320a7a950a7f57211a7176109e97a98",
+  "image_count": 17,
+  "images": [
+    {
+      "source": "tasks/v2.0/assets/R05/images/weissgerber2015-fig1.png",
+      "path": "assets/R05/images/weissgerber2015-fig1.png",
+      "original_source": "sources/v1/offline-figures/weissgerber2015-fig1.png",
+      "git_blob": "fd3d2be1772aefdb27fe3653561d2508f2dcec25",
+      "bytes": 26701,
+      "sha256": "0ca7e4e101394fdf0cfbc9d8f1132de52afd411e05fe17810187c7278b654c51"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/weissgerber2015-fig2.png",
+      "path": "assets/R05/images/weissgerber2015-fig2.png",
+      "original_source": "sources/v1/offline-figures/weissgerber2015-fig2.png",
+      "git_blob": "6e770f03bfbd054fdbfe6546d218850d9afb2476",
+      "bytes": 37885,
+      "sha256": "b03aaef0961893dd606da1c2ad0198f258a49978a28e8520ed84d0995fff2a3f"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/weissgerber2015-fig3.png",
+      "path": "assets/R05/images/weissgerber2015-fig3.png",
+      "original_source": "sources/v1/offline-figures/weissgerber2015-fig3.png",
+      "git_blob": "354f4bdb6000c55592f037adbb806213acb33dce",
+      "bytes": 21317,
+      "sha256": "d77c1837bb90a5275e5cc367b6e7fa74a220739016a0b607cee8a3ecec534268"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/rougier2014-fig1.png",
+      "path": "assets/R05/images/rougier2014-fig1.png",
+      "original_source": "sources/v1/offline-figures/rougier2014-fig1.png",
+      "git_blob": "268b7cbf9136b6d98a64b2eef562746d267a2053",
+      "bytes": 35967,
+      "sha256": "c34b865521088bb6b18fcd015103f2c222809b6016d333602dc3e8545fc2f1f9"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/rougier2014-fig2.png",
+      "path": "assets/R05/images/rougier2014-fig2.png",
+      "original_source": "sources/v1/offline-figures/rougier2014-fig2.png",
+      "git_blob": "70fd3b16d6c9a4a17e1c260fb09a386073401959",
+      "bytes": 154732,
+      "sha256": "b4844935b6e4ca8d9e65a85a1f7282e2573c1c06b1e851962983ee4fdc19937c"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/rougier2014-fig3.png",
+      "path": "assets/R05/images/rougier2014-fig3.png",
+      "original_source": "sources/v1/offline-figures/rougier2014-fig3.png",
+      "git_blob": "7a78cc639af9b3b4405dcfbf4e12f012f5a76cc7",
+      "bytes": 85286,
+      "sha256": "0d01f3d959ed05ad1869f80ef55dbdccc9fbc1dec2d09db6c1510f79eb00a941"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/rougier2014-fig4.png",
+      "path": "assets/R05/images/rougier2014-fig4.png",
+      "original_source": "sources/v1/offline-figures/rougier2014-fig4.png",
+      "git_blob": "f15d4f3e880a52fe42c074209b2be52cccc65245",
+      "bytes": 20642,
+      "sha256": "98b02f9b0fa6ba4e9d7ecf91f0b462ceba4f2acc84a20e05a1d1e35bd282a5bd"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/rougier2014-fig5.png",
+      "path": "assets/R05/images/rougier2014-fig5.png",
+      "original_source": "sources/v1/offline-figures/rougier2014-fig5.png",
+      "git_blob": "1dc4c134640173a849b853fa447f792974cf79d5",
+      "bytes": 42278,
+      "sha256": "052bddd83611375fe6793656d156b35bcc51584f133b26ee2142496ca5310b42"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/rougier2014-fig6.png",
+      "path": "assets/R05/images/rougier2014-fig6.png",
+      "original_source": "sources/v1/offline-figures/rougier2014-fig6.png",
+      "git_blob": "d387da3e97c1baa448e9166d07fe88907807e804",
+      "bytes": 14636,
+      "sha256": "44d93384d34046c0fce4e387f1101c71edfe0cfb78c8e26d8fb1c3849c6b18ca"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/rougier2014-fig7.png",
+      "path": "assets/R05/images/rougier2014-fig7.png",
+      "original_source": "sources/v1/offline-figures/rougier2014-fig7.png",
+      "git_blob": "7aaa1f7aa12ca9805f6b80ba55ebf0fb3710f222",
+      "bytes": 130701,
+      "sha256": "5be40b3dec633119e48d71ae6efa0538d2bdc423e5aa3e5328d6d96d19c21312"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/rougier2014-fig8.png",
+      "path": "assets/R05/images/rougier2014-fig8.png",
+      "original_source": "sources/v1/offline-figures/rougier2014-fig8.png",
+      "git_blob": "f5110ec71d02dbe9f8db71975c32d8707a61e328",
+      "bytes": 45141,
+      "sha256": "67ca8c54812734db2706db3e0c03790a56af0689f680be9471f73f526309ff7c"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/crameri2020-fig1.png",
+      "path": "assets/R05/images/crameri2020-fig1.png",
+      "original_source": "sources/v1/offline-figures/crameri2020-fig1.png",
+      "git_blob": "953e397eb647b9785b563269931b9e3705cbd577",
+      "bytes": 128637,
+      "sha256": "1708c63a348f684740d9bcf65f0c327b4842d2e481a7cb0903783a4f4da1a01e"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/crameri2020-fig2.png",
+      "path": "assets/R05/images/crameri2020-fig2.png",
+      "original_source": "sources/v1/offline-figures/crameri2020-fig2.png",
+      "git_blob": "b529bb20928fad5c823c84515b7620cba7c9f257",
+      "bytes": 35130,
+      "sha256": "a6ffb4d4149dbd68bfe8559ca70d41df4e4bafc9607166deef39c5418e60a679"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/crameri2020-fig3.png",
+      "path": "assets/R05/images/crameri2020-fig3.png",
+      "original_source": "sources/v1/offline-figures/crameri2020-fig3.png",
+      "git_blob": "48d04b6a309b62d766f110349fe12fbee172ddb9",
+      "bytes": 44527,
+      "sha256": "80062e5f3fd81500584908c22daaecd67c3829764c804e1074925fa41ddb498c"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/crameri2020-fig4.png",
+      "path": "assets/R05/images/crameri2020-fig4.png",
+      "original_source": "sources/v1/offline-figures/crameri2020-fig4.png",
+      "git_blob": "da44266b9659b3597bc93494215a623710e54fe7",
+      "bytes": 38373,
+      "sha256": "ad42527fe9e5c67942ef553fed4b7510ed4c81aa9f2321285513f58fdbe32e44"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/crameri2020-fig5.png",
+      "path": "assets/R05/images/crameri2020-fig5.png",
+      "original_source": "sources/v1/offline-figures/crameri2020-fig5.png",
+      "git_blob": "3dd78b76ec106a744cb1535cc88fd5e5c15c128d",
+      "bytes": 41590,
+      "sha256": "9c52b774c8759885040127d54065d9780ba5cbe177b2bfb590c386ee33ddc135"
+    },
+    {
+      "source": "tasks/v2.0/assets/R05/images/crameri2020-fig6.png",
+      "path": "assets/R05/images/crameri2020-fig6.png",
+      "original_source": "sources/v1/offline-figures/crameri2020-fig6.png",
+      "git_blob": "3bdd9ff33918d3db98144d430fdf015d6dee25fa",
+      "bytes": 104538,
+      "sha256": "c722bf5e5846c1dcbb851fc01f0ac62c231436de8030ba884850fbb376ec49bd"
+    }
+  ]
+}
