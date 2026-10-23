@@ -1,0 +1,14 @@
+{
+  "schema": "nrb-site-source-parity-v1",
+  "implementation_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+  "benchmark_version": "2.0.0",
+  "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
+  "identical_non_download_files": 56,
+  "catalog_rubrics_and_grading_equal": true,
+  "private_download_resources": 23,
+  "unique_download_destinations": 23,
+  "new_download_destinations_stored_in": "owner-private site source only",
+  "passed": true,
+  "final_app_sha256": "502d1040b304baf818869599bdc871c5237060a6d41a57fd5bb0aa048a12e918",
+  "node_contract_checks": 83
+}

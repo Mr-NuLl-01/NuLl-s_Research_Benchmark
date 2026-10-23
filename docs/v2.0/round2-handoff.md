@@ -1,4 +1,4 @@
-> 第二轮任务已按本交接接续并完成实现。当前使用2.0.0；最终测试与发布证据见 [validation.md](validation.md) 和 [release-status.json](release-status.json)。下文保留第一轮任务与验证交接记录；内部部署标识已从公开文档省略。
+> 第二轮任务已完成并发布为2.0.0：完整20题、13题自动评分、23个Drive ZIP、原站第6版。实现提交 `735174612fe0fb298a83c872a0350f6eabf2d0a5` 的V2核心与Docker CI均通过。最终证据见 [validation.md](validation.md) 和 [release-status.json](release-status.json)。以下是归档的第一轮交接内容，其中“第二轮要完成”和第5版等描述保留当时语境；内部部署标识已从公开文档省略。
 
 # 第二轮接续：补齐完整20题
 

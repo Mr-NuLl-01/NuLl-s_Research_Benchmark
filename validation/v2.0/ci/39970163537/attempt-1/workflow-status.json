@@ -1,0 +1,79 @@
+{
+  "schema": "nrb-ci-legacy-status-v1",
+  "attempt": 1,
+  "repository": "Mr-NuLl-01/NuLl-s_Research_Benchmark",
+  "source_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+  "run_id": 39970163537,
+  "run_url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163537",
+  "status": "completed",
+  "conclusion": "cancelled",
+  "updated_at": "2026-10-23T14:45:32Z",
+  "jobs": [
+    {
+      "id": 120470415679,
+      "name": "Docker and separate Harbor verifier",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 120470416024,
+      "name": "Core Python 3.12",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 120470416042,
+      "name": "V1 science Python 3.11",
+      "status": "completed",
+      "conclusion": "cancelled"
+    },
+    {
+      "id": 120470416055,
+      "name": "V1 Docker, Fortran and separate Harbor verifier",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 120470416112,
+      "name": "V1 science Python 3.12",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 120470416117,
+      "name": "Inspect, promptfoo, Harbor schema",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 120470416134,
+      "name": "Core Python 3.11",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 120470416173,
+      "name": "V1 Inspect, promptfoo and Harbor schema",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "successful_jobs": 7,
+  "total_jobs": 8,
+  "affected_job_id": 120470416042,
+  "affected_job_url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163537/job/120470416042",
+  "classification": "environment_install_cancelled",
+  "affected_step": "Install evaluator and real Fortran compiler",
+  "observed_command": "sudo apt-get update",
+  "observed_mirror": "http://azure.archive.ubuntu.com/ubuntu",
+  "last_progress_at": "2026-10-23T14:30:49.1218998Z",
+  "cancelled_at": "2026-10-23T14:45:28.2766457Z",
+  "configured_job_timeout_minutes": 15,
+  "interpretation": "The runner stopped producing apt update progress and was cancelled at the configured 15-minute job limit; this is consistent with an installation timeout. V1 scientific tests and selftests did not execute in this job.",
+  "test_artifact_uploaded": false,
+  "v2_workflow": {
+    "run_id": 39970163399,
+    "conclusion": "success"
+  },
+  "rerun_requested_in_this_snapshot": false
+}

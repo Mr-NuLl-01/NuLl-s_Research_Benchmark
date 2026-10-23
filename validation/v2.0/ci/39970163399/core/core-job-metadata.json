@@ -1,0 +1,121 @@
+{
+  "job": {
+    "id": 120470415528,
+    "name": "Twenty-task contracts, native controls and webpage",
+    "status": "completed",
+    "conclusion": "success",
+    "run_id": 39970163399,
+    "logs_url": null,
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1
+      },
+      {
+        "name": "Run actions/checkout@v7.0.1",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2
+      },
+      {
+        "name": "Run actions/setup-python@v7.0.0",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3
+      },
+      {
+        "name": "Run actions/setup-node@v7.1.0",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4
+      },
+      {
+        "name": "Install evaluator and pinned native proof toolchain",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5
+      },
+      {
+        "name": "Record actual native environment",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6
+      },
+      {
+        "name": "All V2 regression tests, including real Fortran and Lean",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7
+      },
+      {
+        "name": "Thirteen references across three seeds and scientific wrong controls",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8
+      },
+      {
+        "name": "Frozen packets, input assets and public score contracts agree",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 9
+      },
+      {
+        "name": "Web score and interaction checks",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 10
+      },
+      {
+        "name": "Run actions/upload-artifact@v7.0.2",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 11
+      },
+      {
+        "name": "Post Run actions/setup-node@v7.1.0",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 20
+      },
+      {
+        "name": "Post Run actions/setup-python@v7.0.0",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 21
+      },
+      {
+        "name": "Post Run actions/checkout@v7.0.1",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 22
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 23
+      }
+    ]
+  },
+  "artifact": {
+    "id": 12508603140,
+    "name": "v2-core-evidence",
+    "size_in_bytes": 34379,
+    "url": "https://api.github.com/repos/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/artifacts/12508603140",
+    "archive_download_url": "https://api.github.com/repos/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/artifacts/12508603140/zip",
+    "expired": false,
+    "created_at": "2026-10-23T14:31:56Z",
+    "expires_at": "2027-01-21T14:30:09Z",
+    "updated_at": "2026-10-23T14:31:56Z",
+    "digest": "sha256:632f1fc34f05e28c2b8c0a5acfbd280526375ae588e306a647b348500f217b34",
+    "workflow_run": {
+      "id": 39970163399,
+      "repository_id": 1423197477,
+      "head_repository_id": 1423197477,
+      "head_branch": "main",
+      "head_sha": "735174612fe0fb298a83c872a0350f6eabf2d0a5"
+    }
+  }
+}

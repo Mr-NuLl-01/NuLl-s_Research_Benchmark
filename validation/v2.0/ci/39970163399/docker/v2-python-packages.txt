@@ -1,0 +1,3 @@
+-e git+https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark@735174612fe0fb298a83c872a0350f6eabf2d0a5#egg=null_research_benchmark
+numpy==2.3.5
+scipy==1.17.0

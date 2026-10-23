@@ -1,0 +1,642 @@
+﻿2026-10-23T14:30:13.1184734Z Current runner version: '2.338.0'
+2026-10-23T14:30:13.1202284Z ##[group]Runner Image Provisioner
+2026-10-23T14:30:13.1202869Z Hosted Compute Agent
+2026-10-23T14:30:13.1203286Z Version: 20261012.601
+2026-10-23T14:30:13.1203774Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-23T14:30:13.1204413Z Build Date: 2026-10-12T17:48:21Z
+2026-10-23T14:30:13.1204901Z Worker ID: {63d6a9c7-530f-48fa-bc7d-d63c51c3fc86}
+2026-10-23T14:30:13.1205334Z Region: centralus
+2026-10-23T14:30:13.1205705Z Cloud: Azure
+2026-10-23T14:30:13.1206030Z ##[endgroup]
+2026-10-23T14:30:13.1206832Z ##[group]Operating System
+2026-10-23T14:30:13.1207243Z Ubuntu
+2026-10-23T14:30:13.1207631Z 24.04.5
+2026-10-23T14:30:13.1207974Z LTS
+2026-10-23T14:30:13.1208274Z ##[endgroup]
+2026-10-23T14:30:13.1208567Z ##[group]Runner Image
+2026-10-23T14:30:13.1209305Z Image: ubuntu-24.04
+2026-10-23T14:30:13.1209665Z Version: 20261012.334.1
+2026-10-23T14:30:13.1210445Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-23T14:30:13.1211280Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-23T14:30:13.1211883Z ##[endgroup]
+2026-10-23T14:30:13.1212510Z ##[group]GITHUB_TOKEN Permissions
+2026-10-23T14:30:13.1213716Z Contents: read
+2026-10-23T14:30:13.1214233Z Metadata: read
+2026-10-23T14:30:13.1214630Z ##[endgroup]
+2026-10-23T14:30:13.1216021Z Secret source: Actions
+2026-10-23T14:30:13.1216605Z Cache mode: write
+2026-10-23T14:30:13.1217023Z Prepare workflow directory
+2026-10-23T14:30:13.2405554Z Prepare all required actions
+2026-10-23T14:30:13.2447909Z Getting action download info
+2026-10-23T14:30:13.5235413Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-23T14:30:13.7043422Z Download action repository 'actions/setup-python@v7.0.0' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-23T14:30:13.9711856Z Download action repository 'actions/setup-node@v7.1.0' (SHA:949feb2413d6458794dcd2491c4babbbce0c15c1)
+2026-10-23T14:30:14.9567941Z Download action repository 'actions/upload-artifact@v7.0.2' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-10-23T14:30:15.9198103Z Complete job name: Twenty-task contracts, native controls and webpage
+2026-10-23T14:30:15.9709051Z ##[group]Run actions/checkout@v7.0.1
+2026-10-23T14:30:15.9709401Z with:
+2026-10-23T14:30:15.9709549Z   repository: Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:30:15.9711141Z   token: ***
+2026-10-23T14:30:15.9711253Z   ssh-strict: true
+2026-10-23T14:30:15.9711366Z   ssh-user: git
+2026-10-23T14:30:15.9711486Z   persist-credentials: true
+2026-10-23T14:30:15.9711617Z   clean: true
+2026-10-23T14:30:15.9711744Z   sparse-checkout-cone-mode: true
+2026-10-23T14:30:15.9711895Z   fetch-depth: 1
+2026-10-23T14:30:15.9712017Z   fetch-tags: false
+2026-10-23T14:30:15.9712146Z   show-progress: true
+2026-10-23T14:30:15.9712285Z   lfs: false
+2026-10-23T14:30:15.9712395Z   submodules: false
+2026-10-23T14:30:15.9712518Z   set-safe-directory: true
+2026-10-23T14:30:15.9712739Z   allow-unsafe-pr-checkout: false
+2026-10-23T14:30:15.9713082Z env:
+2026-10-23T14:30:15.9713267Z   OPENBLAS_NUM_THREADS: 1
+2026-10-23T14:30:15.9713563Z   OMP_NUM_THREADS: 1
+2026-10-23T14:30:15.9713867Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-23T14:30:15.9714321Z ##[endgroup]
+2026-10-23T14:30:16.0433184Z Syncing repository: Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:30:16.0434967Z ##[group]Getting Git version info
+2026-10-23T14:30:16.0435530Z Working directory is '/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark'
+2026-10-23T14:30:16.0436343Z [command]/usr/bin/git version
+2026-10-23T14:30:16.0526286Z git version 2.55.0
+2026-10-23T14:30:16.0528124Z ##[endgroup]
+2026-10-23T14:30:16.0534353Z Temporarily overriding HOME='/home/runner/work/_temp/7cc895e5-bfdd-4086-85e3-f83f9faf7024' before making global git config changes
+2026-10-23T14:30:16.0535262Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-23T14:30:16.0538771Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:30:16.0585127Z Deleting the contents of '/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark'
+2026-10-23T14:30:16.0587434Z ##[group]Determining repository object format
+2026-10-23T14:30:16.0588668Z ##[endgroup]
+2026-10-23T14:30:16.0589228Z ##[group]Initializing the repository
+2026-10-23T14:30:16.0591856Z [command]/usr/bin/git init /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:30:16.0721633Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-23T14:30:16.0722230Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-23T14:30:16.0722599Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-23T14:30:16.0722892Z hint: call:
+2026-10-23T14:30:16.0723160Z hint:
+2026-10-23T14:30:16.0723445Z hint: 	git config --global init.defaultBranch <name>
+2026-10-23T14:30:16.0723804Z hint:
+2026-10-23T14:30:16.0724243Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-23T14:30:16.0725980Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-23T14:30:16.0726526Z hint:
+2026-10-23T14:30:16.0726789Z hint: 	git branch -m <name>
+2026-10-23T14:30:16.0727109Z hint:
+2026-10-23T14:30:16.0727487Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-23T14:30:16.0744949Z Initialized empty Git repository in /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/
+2026-10-23T14:30:16.0746599Z [command]/usr/bin/git remote add origin https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:30:16.0789591Z ##[endgroup]
+2026-10-23T14:30:16.0790130Z ##[group]Disabling automatic garbage collection
+2026-10-23T14:30:16.0792653Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-23T14:30:16.0826735Z ##[endgroup]
+2026-10-23T14:30:16.0827360Z ##[group]Setting up auth
+2026-10-23T14:30:16.0827820Z Removing SSH command configuration
+2026-10-23T14:30:16.0831999Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-23T14:30:16.0869779Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-23T14:30:16.1172334Z Removing HTTP extra header
+2026-10-23T14:30:16.1177444Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-23T14:30:16.1207353Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-23T14:30:16.1380800Z Removing includeIf entries pointing to credentials config files
+2026-10-23T14:30:16.1385869Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-23T14:30:16.1417132Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-23T14:30:16.1603918Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-2a3bc82c-4a79-47c3-bc97-89ad74b3e845.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-23T14:30:16.1643517Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path /home/runner/work/_temp/git-credentials-2a3bc82c-4a79-47c3-bc97-89ad74b3e845.config
+2026-10-23T14:30:16.1675053Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-2a3bc82c-4a79-47c3-bc97-89ad74b3e845.config
+2026-10-23T14:30:16.1707234Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-2a3bc82c-4a79-47c3-bc97-89ad74b3e845.config
+2026-10-23T14:30:16.1739741Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-2a3bc82c-4a79-47c3-bc97-89ad74b3e845.config
+2026-10-23T14:30:16.1769285Z ##[endgroup]
+2026-10-23T14:30:16.1769685Z ##[group]Fetching the repository
+2026-10-23T14:30:16.1776021Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +735174612fe0fb298a83c872a0350f6eabf2d0a5:refs/remotes/origin/main
+2026-10-23T14:30:17.7165991Z From https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:30:17.7168175Z  * [new ref]         735174612fe0fb298a83c872a0350f6eabf2d0a5 -> origin/main
+2026-10-23T14:30:17.7173703Z [command]/usr/bin/git branch --list --remote origin/main
+2026-10-23T14:30:17.7198876Z   origin/main
+2026-10-23T14:30:17.7204528Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-10-23T14:30:17.7225812Z 735174612fe0fb298a83c872a0350f6eabf2d0a5
+2026-10-23T14:30:17.7228978Z ##[endgroup]
+2026-10-23T14:30:17.7229352Z ##[group]Determining the checkout info
+2026-10-23T14:30:17.7229922Z ##[endgroup]
+2026-10-23T14:30:17.7232583Z [command]/usr/bin/git sparse-checkout disable
+2026-10-23T14:30:17.7283355Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-23T14:30:17.7305639Z ##[group]Checking out the ref
+2026-10-23T14:30:17.7309783Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-23T14:30:17.8232883Z Switched to a new branch 'main'
+2026-10-23T14:30:17.8237657Z branch 'main' set up to track 'origin/main'.
+2026-10-23T14:30:17.8250654Z ##[endgroup]
+2026-10-23T14:30:17.8314729Z [command]/usr/bin/git log -1 --format=%H
+2026-10-23T14:30:17.8317244Z 735174612fe0fb298a83c872a0350f6eabf2d0a5
+2026-10-23T14:30:17.8502181Z ##[group]Run actions/setup-python@v7.0.0
+2026-10-23T14:30:17.8502362Z with:
+2026-10-23T14:30:17.8502476Z   python-version: 3.12
+2026-10-23T14:30:17.8502613Z   check-latest: false
+2026-10-23T14:30:17.8504257Z   token: ***
+2026-10-23T14:30:17.8504390Z   update-environment: true
+2026-10-23T14:30:17.8504524Z   allow-prereleases: false
+2026-10-23T14:30:17.8504653Z   freethreaded: false
+2026-10-23T14:30:17.8504768Z env:
+2026-10-23T14:30:17.8504879Z   OPENBLAS_NUM_THREADS: 1
+2026-10-23T14:30:17.8505004Z   OMP_NUM_THREADS: 1
+2026-10-23T14:30:17.8505154Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-23T14:30:17.8505322Z ##[endgroup]
+2026-10-23T14:30:17.9299633Z ##[group]Installed versions
+2026-10-23T14:30:17.9359373Z Successfully set up CPython (3.12.15)
+2026-10-23T14:30:17.9359769Z ##[endgroup]
+2026-10-23T14:30:17.9509449Z ##[group]Run actions/setup-node@v7.1.0
+2026-10-23T14:30:17.9509721Z with:
+2026-10-23T14:30:17.9509895Z   node-version: 24
+2026-10-23T14:30:17.9510083Z   check-latest: false
+2026-10-23T14:30:17.9512725Z   token: ***
+2026-10-23T14:30:17.9512932Z   package-manager-cache: true
+2026-10-23T14:30:17.9513148Z env:
+2026-10-23T14:30:17.9513338Z   OPENBLAS_NUM_THREADS: 1
+2026-10-23T14:30:17.9513540Z   OMP_NUM_THREADS: 1
+2026-10-23T14:30:17.9513744Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-23T14:30:17.9514136Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:17.9514525Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-23T14:30:17.9514901Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:17.9515247Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:17.9515592Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:17.9515958Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-23T14:30:17.9516259Z ##[endgroup]
+2026-10-23T14:30:18.0384698Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+2026-10-23T14:30:18.1140651Z ##[group]Environment details
+2026-10-23T14:30:18.3886813Z node: v24.21.0
+2026-10-23T14:30:18.3887106Z npm: 11.19.0
+2026-10-23T14:30:18.3887271Z yarn: 1.22.22
+2026-10-23T14:30:18.3888513Z ##[endgroup]
+2026-10-23T14:30:18.4006557Z ##[group]Run set -euo pipefail
+2026-10-23T14:30:18.4006795Z [36;1mset -euo pipefail[0m
+2026-10-23T14:30:18.4006942Z [36;1msudo apt-get update[0m
+2026-10-23T14:30:18.4007209Z [36;1msudo apt-get install -y --no-install-recommends gfortran zstd curl ca-certificates libgmp10[0m
+2026-10-23T14:30:18.4007516Z [36;1mpython -m pip install -e . numpy==2.3.5 scipy==1.17.0[0m
+2026-10-23T14:30:18.4007819Z [36;1msh environments/v2/install_lean.sh "$RUNNER_TEMP/nrb-lean-4.19.0" 2>&1 | tee v2-lean-install.log[0m
+2026-10-23T14:30:18.4008143Z [36;1mecho "NRB_LEAN=$RUNNER_TEMP/nrb-lean-4.19.0/bin/lean" >> "$GITHUB_ENV"[0m
+2026-10-23T14:30:18.4245344Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-23T14:30:18.4245579Z env:
+2026-10-23T14:30:18.4245703Z   OPENBLAS_NUM_THREADS: 1
+2026-10-23T14:30:18.4245835Z   OMP_NUM_THREADS: 1
+2026-10-23T14:30:18.4245967Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-23T14:30:18.4246147Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:18.4246476Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-23T14:30:18.4246711Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:18.4246921Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:18.4247136Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:18.4247351Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-23T14:30:18.4247535Z ##[endgroup]
+2026-10-23T14:30:18.5013446Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-23T14:30:18.5323128Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-23T14:30:18.5412767Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-23T14:30:18.5417305Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-23T14:30:18.5473086Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-23T14:30:18.5485247Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-23T14:30:18.5933300Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [576 kB]
+2026-10-23T14:30:18.6070372Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.4 kB]
+2026-10-23T14:30:18.6134297Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [640 kB]
+2026-10-23T14:30:18.6782908Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1400 kB]
+2026-10-23T14:30:18.6833668Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [310 kB]
+2026-10-23T14:30:18.6847989Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1706 kB]
+2026-10-23T14:30:18.6905495Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-23T14:30:18.6922449Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1805 kB]
+2026-10-23T14:30:18.6997832Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+2026-10-23T14:30:18.7685864Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1146 kB]
+2026-10-23T14:30:18.7725240Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+2026-10-23T14:30:18.7733182Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1222 kB]
+2026-10-23T14:30:18.7774557Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+2026-10-23T14:30:18.8275822Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1713 kB]
+2026-10-23T14:30:18.8345374Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [392 kB]
+2026-10-23T14:30:23.9071923Z Fetched 12.5 MB in 1s (12.5 MB/s)
+2026-10-23T14:30:24.5743608Z Reading package lists...
+2026-10-23T14:30:24.5993590Z Reading package lists...
+2026-10-23T14:30:24.7945493Z Building dependency tree...
+2026-10-23T14:30:24.7950928Z Reading state information...
+2026-10-23T14:30:24.9399417Z gfortran is already the newest version (4:13.2.0-7ubuntu1).
+2026-10-23T14:30:24.9399819Z zstd is already the newest version (1.5.5+dfsg2-2build1.1).
+2026-10-23T14:30:24.9400053Z zstd set to manually installed.
+2026-10-23T14:30:24.9400293Z libgmp10 is already the newest version (2:6.3.0+dfsg-2ubuntu6.1).
+2026-10-23T14:30:24.9400523Z libgmp10 set to manually installed.
+2026-10-23T14:30:24.9400731Z The following additional packages will be installed:
+2026-10-23T14:30:24.9404982Z   libcurl3t64-gnutls libcurl4t64
+2026-10-23T14:30:24.9611417Z The following packages will be upgraded:
+2026-10-23T14:30:24.9614457Z   ca-certificates curl libcurl3t64-gnutls libcurl4t64
+2026-10-23T14:30:24.9749813Z 4 upgraded, 0 newly installed, 0 to remove and 95 not upgraded.
+2026-10-23T14:30:24.9750218Z Need to get 1046 kB of archives.
+2026-10-23T14:30:24.9750642Z After this operation, 0 B of additional disk space will be used.
+2026-10-23T14:30:24.9751043Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-23T14:30:25.0558289Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 ca-certificates all 20260816ubuntu0.24.04.1 [139 kB]
+2026-10-23T14:30:25.0914178Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 curl amd64 8.5.0-2ubuntu10.16 [226 kB]
+2026-10-23T14:30:25.1238533Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl4t64 amd64 8.5.0-2ubuntu10.16 [344 kB]
+2026-10-23T14:30:25.1567152Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl3t64-gnutls amd64 8.5.0-2ubuntu10.16 [337 kB]
+2026-10-23T14:30:25.3190514Z Preconfiguring packages ...
+2026-10-23T14:30:25.6469632Z Fetched 1046 kB in 0s (5464 kB/s)
+2026-10-23T14:30:25.6876375Z (Reading database ... 
+2026-10-23T14:30:25.6876619Z (Reading database ... 5%
+2026-10-23T14:30:25.6876819Z (Reading database ... 10%
+2026-10-23T14:30:25.6876975Z (Reading database ... 15%
+2026-10-23T14:30:25.6877108Z (Reading database ... 20%
+2026-10-23T14:30:25.6877656Z (Reading database ... 25%
+2026-10-23T14:30:25.6877860Z (Reading database ... 30%
+2026-10-23T14:30:25.6878061Z (Reading database ... 35%
+2026-10-23T14:30:25.6878288Z (Reading database ... 40%
+2026-10-23T14:30:25.6878417Z (Reading database ... 45%
+2026-10-23T14:30:25.6878546Z (Reading database ... 50%
+2026-10-23T14:30:25.6930686Z (Reading database ... 55%
+2026-10-23T14:30:25.7983486Z (Reading database ... 60%
+2026-10-23T14:30:26.0043123Z (Reading database ... 65%
+2026-10-23T14:30:26.2098024Z (Reading database ... 70%
+2026-10-23T14:30:26.3979659Z (Reading database ... 75%
+2026-10-23T14:30:26.5205100Z (Reading database ... 80%
+2026-10-23T14:30:26.7023646Z (Reading database ... 85%
+2026-10-23T14:30:26.8562813Z (Reading database ... 90%
+2026-10-23T14:30:27.0091178Z (Reading database ... 95%
+2026-10-23T14:30:27.0091504Z (Reading database ... 100%
+2026-10-23T14:30:27.0091832Z (Reading database ... 203540 files and directories currently installed.)
+2026-10-23T14:30:27.0129325Z Preparing to unpack .../ca-certificates_20260816ubuntu0.24.04.1_all.deb ...
+2026-10-23T14:30:27.0329567Z Unpacking ca-certificates (20260816ubuntu0.24.04.1) over (20260601~24.04.1) ...
+2026-10-23T14:30:27.1126523Z Preparing to unpack .../curl_8.5.0-2ubuntu10.16_amd64.deb ...
+2026-10-23T14:30:27.1146340Z Unpacking curl (8.5.0-2ubuntu10.16) over (8.5.0-2ubuntu10.15) ...
+2026-10-23T14:30:27.1492794Z Preparing to unpack .../libcurl4t64_8.5.0-2ubuntu10.16_amd64.deb ...
+2026-10-23T14:30:27.1524496Z Unpacking libcurl4t64:amd64 (8.5.0-2ubuntu10.16) over (8.5.0-2ubuntu10.15) ...
+2026-10-23T14:30:27.2014828Z Preparing to unpack .../libcurl3t64-gnutls_8.5.0-2ubuntu10.16_amd64.deb ...
+2026-10-23T14:30:27.2074786Z Unpacking libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.16) over (8.5.0-2ubuntu10.15) ...
+2026-10-23T14:30:27.2485705Z Setting up libcurl4t64:amd64 (8.5.0-2ubuntu10.16) ...
+2026-10-23T14:30:27.2506390Z Setting up libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.16) ...
+2026-10-23T14:30:27.2522946Z Setting up ca-certificates (20260816ubuntu0.24.04.1) ...
+2026-10-23T14:30:28.4210300Z Updating certificates in /etc/ssl/certs...
+2026-10-23T14:30:28.9447536Z rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2026-10-23T14:30:28.9488660Z 4 added, 5 removed; done.
+2026-10-23T14:30:28.9770977Z Setting up curl (8.5.0-2ubuntu10.16) ...
+2026-10-23T14:30:28.9793101Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-23T14:30:28.9814696Z Not building database; man-db/auto-update is not 'true'.
+2026-10-23T14:30:29.0015801Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-10-23T14:30:29.1889467Z Processing triggers for ca-certificates (20260816ubuntu0.24.04.1) ...
+2026-10-23T14:30:29.1928652Z Updating certificates in /etc/ssl/certs...
+2026-10-23T14:30:29.5396728Z 0 added, 0 removed; done.
+2026-10-23T14:30:29.5397031Z Running hooks in /etc/ca-certificates/update.d...
+2026-10-23T14:30:29.5642853Z /etc/ssl/certs/adoptium/cacerts successfully populated.
+2026-10-23T14:30:29.5643710Z done.
+2026-10-23T14:30:30.0242657Z 
+2026-10-23T14:30:30.0243309Z Running kernel seems to be up-to-date.
+2026-10-23T14:30:30.0243565Z 
+2026-10-23T14:30:30.0243671Z Restarting services...
+2026-10-23T14:30:30.0390373Z  systemctl restart packagekit.service php8.3-fpm.service
+2026-10-23T14:30:30.1269281Z 
+2026-10-23T14:30:30.1271415Z No containers need to be restarted.
+2026-10-23T14:30:30.1271825Z 
+2026-10-23T14:30:30.1272230Z No user sessions are running outdated binaries.
+2026-10-23T14:30:30.1272458Z 
+2026-10-23T14:30:30.1272719Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-23T14:30:31.7440997Z Obtaining file:///home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:30:31.7454882Z   Installing build dependencies: started
+2026-10-23T14:30:32.3407419Z   Installing build dependencies: finished with status 'done'
+2026-10-23T14:30:32.3411793Z   Checking if build backend supports build_editable: started
+2026-10-23T14:30:32.5909756Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-10-23T14:30:32.5915950Z   Getting requirements to build editable: started
+2026-10-23T14:30:32.9238400Z   Getting requirements to build editable: finished with status 'done'
+2026-10-23T14:30:32.9245527Z   Preparing editable metadata (pyproject.toml): started
+2026-10-23T14:30:33.2535650Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-10-23T14:30:33.4968613Z Collecting numpy==2.3.5
+2026-10-23T14:30:33.5655409Z   Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-10-23T14:30:33.6663397Z Collecting scipy==1.17.0
+2026-10-23T14:30:33.6826191Z   Downloading scipy-1.17.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-10-23T14:30:33.7143324Z Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+2026-10-23T14:30:33.9890013Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 66.2 MB/s  0:00:00
+2026-10-23T14:30:34.0084865Z Downloading scipy-1.17.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.0 MB)
+2026-10-23T14:30:34.3581611Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.0/35.0 MB 99.9 MB/s  0:00:00
+2026-10-23T14:30:34.4077163Z Building wheels for collected packages: null-research-benchmark
+2026-10-23T14:30:34.4083837Z   Building editable for null-research-benchmark (pyproject.toml): started
+2026-10-23T14:30:34.7498919Z   Building editable for null-research-benchmark (pyproject.toml): finished with status 'done'
+2026-10-23T14:30:34.7502155Z   Created wheel for null-research-benchmark: filename=null_research_benchmark-2.0.0-0.editable-py3-none-any.whl size=8506 sha256=927316d1725010cb879dc62c2416d9057b7bbacb7c52a7d0eda9ad3ebb767393
+2026-10-23T14:30:34.7503268Z   Stored in directory: /tmp/pip-ephem-wheel-cache-ks7c0doi/wheels/eb/bf/d6/6254cb2d91b8d69b851f0ad30f4645bf02fb33fd76288dc784
+2026-10-23T14:30:34.7516724Z Successfully built null-research-benchmark
+2026-10-23T14:30:34.7786747Z Installing collected packages: numpy, scipy, null-research-benchmark
+2026-10-23T14:30:39.2125036Z 
+2026-10-23T14:30:39.2129326Z Successfully installed null-research-benchmark-2.0.0 numpy-2.3.5 scipy-1.17.0
+2026-10-23T14:30:39.2134628Z 
+2026-10-23T14:30:39.2134894Z [notice] A new release of pip is available: 26.2.1 -> 26.2.2
+2026-10-23T14:30:39.2135325Z [notice] To update, run: pip install --upgrade pip
+2026-10-23T14:30:39.2759287Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-10-23T14:30:39.2759983Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-10-23T14:30:39.2760449Z 
+2026-10-23T14:30:39.3700003Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-23T14:30:39.3700353Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-23T14:30:39.7582216Z 
+2026-10-23T14:30:40.2281706Z  28  327M   28 91.8M    0     0   190M      0  0:00:01 --:--:--  0:00:01  190M
+2026-10-23T14:30:40.2282217Z 100  327M  100  327M    0     0   344M      0 --:--:-- --:--:-- --:--:--  503M
+2026-10-23T14:30:40.4096556Z /tmp/tmp.SiTcfdUoeq/lean.tar.zst: OK
+2026-10-23T14:30:43.1921130Z Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+2026-10-23T14:30:43.1938493Z NRB_LEAN=/home/runner/work/_temp/nrb-lean-4.19.0/bin/lean
+2026-10-23T14:30:43.2739570Z ##[group]Run set -euo pipefail
+2026-10-23T14:30:43.2739758Z [36;1mset -euo pipefail[0m
+2026-10-23T14:30:43.2739922Z [36;1mpython --version > v2-python-version.txt[0m
+2026-10-23T14:30:43.2740165Z [36;1mpython -m pip freeze > v2-python-packages.txt[0m
+2026-10-23T14:30:43.2740369Z [36;1mgfortran --version > v2-fortran-version.txt[0m
+2026-10-23T14:30:43.2740564Z [36;1m"$NRB_LEAN" --version > v2-lean-version.txt[0m
+2026-10-23T14:30:43.2740747Z [36;1mnode --version > v2-node-version.txt[0m
+2026-10-23T14:30:43.2793853Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-23T14:30:43.2794163Z env:
+2026-10-23T14:30:43.2794278Z   OPENBLAS_NUM_THREADS: 1
+2026-10-23T14:30:43.2794410Z   OMP_NUM_THREADS: 1
+2026-10-23T14:30:43.2794541Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-23T14:30:43.2794716Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:43.2794952Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-23T14:30:43.2795225Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:43.2795437Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:43.2795647Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:43.2795859Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-23T14:30:43.2796071Z   NRB_LEAN: /home/runner/work/_temp/nrb-lean-4.19.0/bin/lean
+2026-10-23T14:30:43.2796249Z ##[endgroup]
+2026-10-23T14:30:43.8692577Z ##[group]Run set -euo pipefail
+2026-10-23T14:30:43.8692894Z [36;1mset -euo pipefail[0m
+2026-10-23T14:30:43.8693209Z [36;1mpython -m unittest discover -s tests_v2 -v 2>&1 | tee v2-tests.log[0m
+2026-10-23T14:30:43.8753138Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-23T14:30:43.8753333Z env:
+2026-10-23T14:30:43.8753447Z   OPENBLAS_NUM_THREADS: 1
+2026-10-23T14:30:43.8753578Z   OMP_NUM_THREADS: 1
+2026-10-23T14:30:43.8753706Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-23T14:30:43.8753880Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:43.8754274Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-23T14:30:43.8754513Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:43.8754723Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:43.8754936Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:30:43.8755180Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-23T14:30:43.8755394Z   NRB_LEAN: /home/runner/work/_temp/nrb-lean-4.19.0/bin/lean
+2026-10-23T14:30:43.8755724Z ##[endgroup]
+2026-10-23T14:30:44.1242540Z test_all_python_packets_allow_the_same_pinned_libraries (test_core.CatalogTests.test_all_python_packets_allow_the_same_pinned_libraries) ... ok
+2026-10-23T14:30:44.1255243Z test_candidate_packets_preserve_bug_programs_and_remove_manual_gate (test_core.CatalogTests.test_candidate_packets_preserve_bug_programs_and_remove_manual_gate) ... ok
+2026-10-23T14:30:44.5425358Z test_checks_keep_fixed_relative_weights (test_core.CatalogTests.test_checks_keep_fixed_relative_weights) ... ok
+2026-10-23T14:30:44.5558663Z test_exact_release_scope (test_core.CatalogTests.test_exact_release_scope) ... ok
+2026-10-23T14:30:44.6866301Z test_p06_endpoints_are_interior_and_numeric_rank_is_public (test_core.CatalogTests.test_p06_endpoints_are_interior_and_numeric_rank_is_public) ... ok
+2026-10-23T14:30:44.9453276Z test_bad_source_does_not_abort_other_batch_tasks (test_core.GradingTests.test_bad_source_does_not_abort_other_batch_tasks) ... P01: submission_invalid / UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2026-10-23T14:30:44.9519861Z P02: unscored / score=None
+2026-10-23T14:30:44.9575769Z ok
+2026-10-23T14:30:44.9634989Z test_batch_keeps_missing_and_unavailable_separate (test_core.GradingTests.test_batch_keeps_missing_and_unavailable_separate) ... P01: unscored / score=None
+2026-10-23T14:30:44.9688433Z ok
+2026-10-23T14:30:45.0787665Z test_candidate_timeout_is_reported_not_silently_lost (test_core.GradingTests.test_candidate_timeout_is_reported_not_silently_lost) ... ok
+2026-10-23T14:30:45.0844802Z test_docker_unavailable_points_to_the_v2_environment (test_core.GradingTests.test_docker_unavailable_points_to_the_v2_environment) ... ok
+2026-10-23T14:30:45.1527836Z test_json_duplicate_keys_and_nonfinite_are_rejected (test_core.GradingTests.test_json_duplicate_keys_and_nonfinite_are_rejected) ... ok
+2026-10-23T14:30:45.1998713Z test_load_failure_cannot_earn_invalid_input_points (test_core.GradingTests.test_load_failure_cannot_earn_invalid_input_points) ... ok
+2026-10-23T14:30:45.2105363Z test_missing_source_is_unscored (test_core.GradingTests.test_missing_source_is_unscored) ... ok
+2026-10-23T14:30:45.2215396Z test_no_execution_is_null_not_zero (test_core.GradingTests.test_no_execution_is_null_not_zero) ... ok
+2026-10-23T14:30:45.2632920Z test_partial_credit_is_recomputed (test_core.GradingTests.test_partial_credit_is_recomputed) ... ok
+2026-10-23T14:30:45.2688748Z test_reference_is_fully_automatic_but_not_model_result (test_core.GradingTests.test_reference_is_fully_automatic_but_not_model_result) ... ok
+2026-10-23T14:30:45.2746417Z test_sidecars_are_not_executed (test_core.GradingTests.test_sidecars_are_not_executed) ... ok
+2026-10-23T14:30:45.2833799Z test_tampering_rejected_even_after_resealing (test_core.GradingTests.test_tampering_rejected_even_after_resealing) ... ok
+2026-10-23T14:30:45.7011582Z test_web_manifest_matches_actual_report (test_core.GradingTests.test_web_manifest_matches_actual_report) ... ok
+2026-10-23T14:30:45.7112871Z test_f02_cannot_forge_ledger_or_final_only_solution (test_fortran.FortranContractTests.test_f02_cannot_forge_ledger_or_final_only_solution) ... ok
+2026-10-23T14:30:45.7209971Z test_f02_two_cell_closed_form_not_same_linear_solver (test_fortran.FortranContractTests.test_f02_two_cell_closed_form_not_same_linear_solver) ... ok
+2026-10-23T14:30:45.7215264Z test_f03_accepts_equations_not_reference_coordinate_identity (test_fortran.FortranContractTests.test_f03_accepts_equations_not_reference_coordinate_identity) ... ok
+2026-10-23T14:30:45.7229198Z test_missing_docker_compiler_is_environment_unscored (test_fortran.FortranContractTests.test_missing_docker_compiler_is_environment_unscored) ... ok
+2026-10-23T14:30:45.7245067Z test_nonrepresentable_sg_limit_is_an_explicit_rejection (test_fortran.FortranContractTests.test_nonrepresentable_sg_limit_is_an_explicit_rejection) ... ok
+2026-10-23T14:30:45.7245799Z test_parsers_reject_nonfinite_and_wrong_shapes (test_fortran.FortranContractTests.test_parsers_reject_nonfinite_and_wrong_shapes) ... ok
+2026-10-23T14:30:45.7464430Z test_weights_and_public_source_only_contract (test_fortran.FortranContractTests.test_weights_and_public_source_only_contract) ... ok
+2026-10-23T14:30:47.0682054Z test_compile_error_cannot_collect_error_case_points (test_fortran.FortranNativeTests.test_compile_error_cannot_collect_error_case_points) ... ok
+2026-10-23T14:30:47.0797621Z test_disabled_execution_remains_unscored (test_fortran.FortranNativeTests.test_disabled_execution_remains_unscored) ... ok
+2026-10-23T14:30:48.4697220Z test_f01_independent_exponential_solution_and_reverse_flux (test_fortran.FortranNativeTests.test_f01_independent_exponential_solution_and_reverse_flux) ... ok
+2026-10-23T14:30:51.1180020Z test_references_three_seeds_actual_compile (test_fortran.FortranNativeTests.test_references_three_seeds_actual_compile) ... ok
+2026-10-23T14:30:56.1657205Z test_scientific_mutants_do_not_receive_full_score (test_fortran.FortranNativeTests.test_scientific_mutants_do_not_receive_full_score) ... ok
+2026-10-23T14:30:56.1658803Z test_alternative_counterexamples (test_h02.H02Tests.test_alternative_counterexamples) ... ok
+2026-10-23T14:30:56.1663642Z test_analytic_and_backward_equations (test_h02.H02Tests.test_analytic_and_backward_equations) ... ok
+2026-10-23T14:30:56.1664232Z test_optimum_derivative (test_h02.H02Tests.test_optimum_derivative) ... ok
+2026-10-23T14:30:56.1673447Z test_reference_and_all_mutants (test_h02.H02Tests.test_reference_and_all_mutants) ... ok
+2026-10-23T14:30:56.1674577Z test_shapes_types_and_duplicates (test_h02.H02Tests.test_shapes_types_and_duplicates) ... ok
+2026-10-23T14:30:56.1676624Z test_audit_contract_rejects_weakening_or_extra_axiom (test_lean.LeanContractTests.test_audit_contract_rejects_weakening_or_extra_axiom) ... ok
+2026-10-23T14:30:56.1677523Z test_candidate_packet_has_definitions_but_no_answer (test_lean.LeanContractTests.test_candidate_packet_has_definitions_but_no_answer) ... ok
+2026-10-23T14:30:56.1678070Z test_frozen_goals_and_weights (test_lean.LeanContractTests.test_frozen_goals_and_weights) ... ok
+2026-10-23T14:30:56.1678957Z test_malformed_source_is_failed (test_lean.LeanContractTests.test_malformed_source_is_failed) ... ok
+2026-10-23T14:30:56.1682578Z test_missing_docker_is_not_candidate_failure (test_lean.LeanContractTests.test_missing_docker_is_not_candidate_failure) ... ok
+2026-10-23T14:30:56.1683253Z test_no_execution_is_unscored (test_lean.LeanContractTests.test_no_execution_is_unscored) ... ok
+2026-10-23T14:30:56.1685524Z test_readable_audit_sources_match_runtime (test_lean.LeanContractTests.test_readable_audit_sources_match_runtime) ... ok
+2026-10-23T14:30:56.1686920Z test_strict_candidate_json (test_lean.LeanContractTests.test_strict_candidate_json) ... ok
+2026-10-23T14:30:58.4407585Z test_comments_do_not_trigger_regex_rejection (test_lean.NativeLeanTests.test_comments_do_not_trigger_regex_rejection) ... ok
+2026-10-23T14:31:00.4130906Z test_meta_terms_rejected_before_io_side_effect (test_lean.NativeLeanTests.test_meta_terms_rejected_before_io_side_effect) ... ok
+2026-10-23T14:31:30.3976686Z test_reference_and_real_negative_controls (test_lean.NativeLeanTests.test_reference_and_real_negative_controls) ... ok
+2026-10-23T14:31:30.3997648Z test_deterministic_zip_and_explicit_metadata (test_packages.ArchivePrimitiveTests.test_deterministic_zip_and_explicit_metadata) ... ok
+2026-10-23T14:31:30.4000029Z test_unsafe_or_ambiguous_paths_fail_before_writing (test_packages.ArchivePrimitiveTests.test_unsafe_or_ambiguous_paths_fail_before_writing) ... ok
+2026-10-23T14:31:33.7585659Z test_all_twenty_tasks_and_twenty_one_single_packages (test_packages.ReleasePackageTests.test_all_twenty_tasks_and_twenty_one_single_packages) ... ok
+2026-10-23T14:31:33.7750152Z test_candidate_contents_match_the_frozen_allowlist_exactly (test_packages.ReleasePackageTests.test_candidate_contents_match_the_frozen_allowlist_exactly) ... ok
+2026-10-23T14:31:33.7962460Z test_evaluator_has_inputs_templates_and_no_fake_submissions (test_packages.ReleasePackageTests.test_evaluator_has_inputs_templates_and_no_fake_submissions) ... ok
+2026-10-23T14:31:34.0516248Z test_every_manifest_hashes_actual_zip_bytes (test_packages.ReleasePackageTests.test_every_manifest_hashes_actual_zip_bytes) ... ok
+2026-10-23T14:31:34.2776495Z test_extracted_cli_and_h02_run_without_site_packages (test_packages.ReleasePackageTests.test_extracted_cli_and_h02_run_without_site_packages) ... ok
+2026-10-23T14:31:34.4273829Z test_extracted_subjective_templates_and_protocol_work_offline (test_packages.ReleasePackageTests.test_extracted_subjective_templates_and_protocol_work_offline) ... ok
+2026-10-23T14:31:34.4279259Z test_master_keeps_modes_in_separate_directories (test_packages.ReleasePackageTests.test_master_keeps_modes_in_separate_directories) ... ok
+2026-10-23T14:31:34.4486341Z test_allowlisted_materials_exist_and_are_separate (test_subjective.SubjectiveAssets.test_allowlisted_materials_exist_and_are_separate) ... ok
+2026-10-23T14:31:34.4488496Z test_fixture_semantic_controls_are_present (test_subjective.SubjectiveAssets.test_fixture_semantic_controls_are_present) ... ok
+2026-10-23T14:31:34.4489679Z test_input_figure_preserved_without_regeneration (test_subjective.SubjectiveAssets.test_input_figure_preserved_without_regeneration) ... ok
+2026-10-23T14:31:34.4542193Z test_real_figures_and_offline_reading_room (test_subjective.SubjectiveAssets.test_real_figures_and_offline_reading_room) ... ok
+2026-10-23T14:31:34.4558423Z test_seven_tasks_eight_mode_rubrics (test_subjective.SubjectiveAssets.test_seven_tasks_eight_mode_rubrics) ... ok
+2026-10-23T14:31:34.4569398Z test_video_modes_share_inputs_except_declared_reference_and_mode (test_subjective.SubjectiveAssets.test_video_modes_share_inputs_except_declared_reference_and_mode) ... ok
+2026-10-23T14:31:34.4631371Z test_blank_reviews_are_unassessed_not_zero (test_subjective.SubjectiveScoreControls.test_blank_reviews_are_unassessed_not_zero) ... ok
+2026-10-23T14:31:34.4647859Z test_each_unknown_channel_blocks_final_score (test_subjective.SubjectiveScoreControls.test_each_unknown_channel_blocks_final_score) ... ok
+2026-10-23T14:31:34.4653345Z test_forged_total_is_ignored (test_subjective.SubjectiveScoreControls.test_forged_total_is_ignored) ... ok
+2026-10-23T14:31:34.4659174Z test_full_control_and_exact_weighted_score (test_subjective.SubjectiveScoreControls.test_full_control_and_exact_weighted_score) ... ok
+2026-10-23T14:31:34.4667634Z test_hard_caps_use_minimum_and_require_evidence (test_subjective.SubjectiveScoreControls.test_hard_caps_use_minimum_and_require_evidence) ... ok
+2026-10-23T14:31:34.4683259Z test_human_and_llm_authority_cannot_share_comparison_key (test_subjective.SubjectiveScoreControls.test_human_and_llm_authority_cannot_share_comparison_key) ... ok
+2026-10-23T14:31:34.4758320Z test_invalid_ids_types_and_blank_evidence_rejected (test_subjective.SubjectiveScoreControls.test_invalid_ids_types_and_blank_evidence_rejected) ... ok
+2026-10-23T14:31:34.4805281Z test_json_integer_values_normalize_to_integer_levels (test_subjective.SubjectiveScoreControls.test_json_integer_values_normalize_to_integer_levels) ... ok
+2026-10-23T14:31:34.4826335Z test_known_missing_media_differs_from_unobserved (test_subjective.SubjectiveScoreControls.test_known_missing_media_differs_from_unobserved) ... ok
+2026-10-23T14:31:34.4834302Z test_returned_specs_are_not_shared_mutable_authority (test_subjective.SubjectiveScoreControls.test_returned_specs_are_not_shared_mutable_authority) ... ok
+2026-10-23T14:31:34.4984779Z test_review_binds_candidate_prompt_and_mode_specific_input_bytes (test_subjective.SubjectiveScoreControls.test_review_binds_candidate_prompt_and_mode_specific_input_bytes) ... ok
+2026-10-23T14:31:34.4996277Z test_reviewer_and_submission_identity_required (test_subjective.SubjectiveScoreControls.test_reviewer_and_submission_identity_required) ... ok
+2026-10-23T14:31:34.5032998Z test_version_hash_and_mode_mismatches_rejected (test_subjective.SubjectiveScoreControls.test_version_hash_and_mode_mismatches_rejected) ... ok
+2026-10-23T14:31:34.5066667Z test_video_protocol_breach_is_not_a_comparable_run (test_subjective.SubjectiveScoreControls.test_video_protocol_breach_is_not_a_comparable_run) ... ok
+2026-10-23T14:31:34.6234180Z test_actual_offline_grade_import_preserves_missing_zero_partial_and_success (test_web_h02.H02BrowserParity.test_actual_offline_grade_import_preserves_missing_zero_partial_and_success) ... ok
+2026-10-23T14:31:34.6510079Z test_any_valid_counterexample_and_invalid_counterexamples (test_web_h02.H02BrowserParity.test_any_valid_counterexample_and_invalid_counterexamples) ... ok
+2026-10-23T14:31:34.6990704Z test_browser_envelope_requires_registered_integer_seed_and_regrades_payload (test_web_h02.H02BrowserParity.test_browser_envelope_requires_registered_integer_seed_and_regrades_payload) ... ok
+2026-10-23T14:31:34.7226981Z test_independent_correct_answer_and_all_published_mutants (test_web_h02.H02BrowserParity.test_independent_correct_answer_and_all_published_mutants) ... ok
+2026-10-23T14:31:34.7719552Z test_numbers_boolean_null_and_integer_valued_counts (test_web_h02.H02BrowserParity.test_numbers_boolean_null_and_integer_valued_counts) ... ok
+2026-10-23T14:31:34.8034267Z test_numerical_tolerance_changes_only_the_intended_group (test_web_h02.H02BrowserParity.test_numerical_tolerance_changes_only_the_intended_group) ... ok
+2026-10-23T14:31:34.8455007Z test_strict_json_rejects_duplicate_keys_nonfinite_and_bad_syntax (test_web_h02.H02BrowserParity.test_strict_json_rejects_duplicate_keys_nonfinite_and_bad_syntax) ... ok
+2026-10-23T14:31:34.8917546Z test_valid_json_wrong_shapes_fail_only_the_affected_checks (test_web_h02.H02BrowserParity.test_valid_json_wrong_shapes_fail_only_the_affected_checks) ... ok
+2026-10-23T14:31:34.9200710Z test_all_mode_specific_blanks_bind_same_prompt_inputs_and_rubric (test_web_subjective.BrowserSubjectiveParity.test_all_mode_specific_blanks_bind_same_prompt_inputs_and_rubric) ... ok
+2026-10-23T14:31:34.9663255Z test_authority_identity_order_and_claimed_totals_are_recomputed (test_web_subjective.BrowserSubjectiveParity.test_authority_identity_order_and_claimed_totals_are_recomputed) ... ok
+2026-10-23T14:31:35.0264596Z test_blank_never_silently_coerces_invalid_mode_or_unbound_release (test_web_subjective.BrowserSubjectiveParity.test_blank_never_silently_coerces_invalid_mode_or_unbound_release) ... ok
+2026-10-23T14:31:35.0551798Z test_comparability_distinguishes_absence_protocol_breach_and_provisional (test_web_subjective.BrowserSubjectiveParity.test_comparability_distinguishes_absence_protocol_breach_and_provisional) ... ok
+2026-10-23T14:31:35.1872734Z test_complete_partial_zero_and_each_rating_anchor (test_web_subjective.BrowserSubjectiveParity.test_complete_partial_zero_and_each_rating_anchor) ... ok
+2026-10-23T14:31:35.3055510Z test_every_requirement_cap_and_unknown_observation (test_web_subjective.BrowserSubjectiveParity.test_every_requirement_cap_and_unknown_observation) ... ok
+2026-10-23T14:31:35.3837729Z test_malformed_reviews_and_unbound_old_records_are_rejected_by_both (test_web_subjective.BrowserSubjectiveParity.test_malformed_reviews_and_unbound_old_records_are_rejected_by_both) ... ok
+2026-10-23T14:31:35.4058462Z test_mode_and_named_reviewer_remain_in_comparison_identity (test_web_subjective.BrowserSubjectiveParity.test_mode_and_named_reviewer_remain_in_comparison_identity) ... ok
+2026-10-23T14:31:35.4064585Z 
+2026-10-23T14:31:35.4064765Z ----------------------------------------------------------------------
+2026-10-23T14:31:35.4064994Z Ran 91 tests in 51.295s
+2026-10-23T14:31:35.4065080Z 
+2026-10-23T14:31:35.4304670Z OK
+2026-10-23T14:31:35.4334254Z ##[group]Run set -euo pipefail
+2026-10-23T14:31:35.4334546Z [36;1mset -euo pipefail[0m
+2026-10-23T14:31:35.4335131Z [36;1mpython scripts/v2/check_round2.py controls --execution trusted --seeds 0,17,2026 --mutants representative --out v2-native-controls.json 2>&1 | tee v2-native-controls.log[0m
+2026-10-23T14:31:35.4404651Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-23T14:31:35.4404949Z env:
+2026-10-23T14:31:35.4405119Z   OPENBLAS_NUM_THREADS: 1
+2026-10-23T14:31:35.4405625Z   OMP_NUM_THREADS: 1
+2026-10-23T14:31:35.4405823Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-23T14:31:35.4406092Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:35.4406465Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-23T14:31:35.4406836Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:35.4407169Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:35.4407546Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:35.4407889Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-23T14:31:35.4408228Z   NRB_LEAN: /home/runner/work/_temp/nrb-lean-4.19.0/bin/lean
+2026-10-23T14:31:35.4408499Z ##[endgroup]
+2026-10-23T14:31:35.5500197Z PASS P01 seed=0 reference
+2026-10-23T14:31:35.5970462Z PASS P01 seed=17 reference
+2026-10-23T14:31:35.6424712Z PASS P01 seed=2026 reference
+2026-10-23T14:31:35.6874786Z PASS P01 seed=17 duplicate_first
+2026-10-23T14:31:35.7364223Z PASS P02 seed=0 reference
+2026-10-23T14:31:35.7837112Z PASS P02 seed=17 reference
+2026-10-23T14:31:35.8315115Z PASS P02 seed=2026 reference
+2026-10-23T14:31:35.8786440Z PASS P02 seed=17 technical_pseudoreplication
+2026-10-23T14:31:35.9272119Z PASS P03 seed=0 reference
+2026-10-23T14:31:35.9736233Z PASS P03 seed=17 reference
+2026-10-23T14:31:36.0204806Z PASS P03 seed=2026 reference
+2026-10-23T14:31:36.0663456Z PASS P03 seed=17 arithmetic_interface
+2026-10-23T14:31:36.1155652Z PASS P04 seed=0 reference
+2026-10-23T14:31:36.1616598Z PASS P04 seed=17 reference
+2026-10-23T14:31:36.2079713Z PASS P04 seed=2026 reference
+2026-10-23T14:31:36.2547868Z PASS P04 seed=17 amplitude_as_power
+2026-10-23T14:31:36.3469539Z PASS P05 seed=0 reference
+2026-10-23T14:31:36.4369041Z PASS P05 seed=17 reference
+2026-10-23T14:31:36.5261709Z PASS P05 seed=2026 reference
+2026-10-23T14:31:36.5827312Z PASS P05 seed=17 accept_rejected_state
+2026-10-23T14:31:36.9674970Z PASS P06 seed=0 reference
+2026-10-23T14:31:37.3464435Z PASS P06 seed=17 reference
+2026-10-23T14:31:37.7308536Z PASS P06 seed=2026 reference
+2026-10-23T14:31:38.1142193Z PASS P06 seed=17 discard_baseline
+2026-10-23T14:31:38.6373486Z PASS P07 seed=0 reference
+2026-10-23T14:31:39.1461971Z PASS P07 seed=17 reference
+2026-10-23T14:31:39.6443533Z PASS P07 seed=2026 reference
+2026-10-23T14:31:40.1398193Z PASS P07 seed=17 arithmetic_interface
+2026-10-23T14:31:40.4499982Z PASS P08 seed=0 reference
+2026-10-23T14:31:40.7908210Z PASS P08 seed=17 reference
+2026-10-23T14:31:41.0964198Z PASS P08 seed=2026 reference
+2026-10-23T14:31:41.4658991Z PASS P08 seed=17 lagged_reaction_transfer
+2026-10-23T14:31:41.7030393Z PASS F01 seed=0 reference
+2026-10-23T14:31:41.9375828Z PASS F01 seed=17 reference
+2026-10-23T14:31:42.1709219Z PASS F01 seed=2026 reference
+2026-10-23T14:31:42.4041066Z PASS F01 seed=17 central_drift
+2026-10-23T14:31:42.8020511Z PASS F02 seed=0 reference
+2026-10-23T14:31:43.1641404Z PASS F02 seed=17 reference
+2026-10-23T14:31:43.5288979Z PASS F02 seed=2026 reference
+2026-10-23T14:31:43.8780677Z PASS F02 seed=17 full_cell_boundary_distance
+2026-10-23T14:31:44.1632489Z PASS F03 seed=0 reference
+2026-10-23T14:31:44.4958109Z PASS F03 seed=17 reference
+2026-10-23T14:31:44.7782871Z PASS F03 seed=2026 reference
+2026-10-23T14:31:45.1102788Z PASS F03 seed=17 wrong_poisson_mesh_scale
+2026-10-23T14:31:47.2965736Z PASS L01 seed=0 reference
+2026-10-23T14:31:49.4284404Z PASS L01 seed=17 reference
+2026-10-23T14:31:51.5604236Z PASS L01 seed=2026 reference
+2026-10-23T14:31:53.4921325Z PASS L01 seed=17 sorry
+2026-10-23T14:31:53.5048716Z PASS H02 seed=0 reference
+2026-10-23T14:31:53.5148599Z PASS H02 seed=17 reference
+2026-10-23T14:31:53.5250092Z PASS H02 seed=2026 reference
+2026-10-23T14:31:53.5348893Z PASS H02 seed=17 unconditional_as_conditional
+2026-10-23T14:31:53.5395748Z PASS complete automatic-task coverage and stable evaluator
+2026-10-23T14:31:53.5457259Z {"passed": true, "checks": 53, "evidence": "v2-native-controls.json"}
+2026-10-23T14:31:53.5618312Z ##[group]Run set -euo pipefail
+2026-10-23T14:31:53.5618610Z [36;1mset -euo pipefail[0m
+2026-10-23T14:31:53.5618887Z [36;1mpython scripts/v2/check_round2.py contracts --out v2-release-contracts.json 2>&1 | tee v2-release-contracts.log[0m
+2026-10-23T14:31:53.5670572Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-23T14:31:53.5670751Z env:
+2026-10-23T14:31:53.5670858Z   OPENBLAS_NUM_THREADS: 1
+2026-10-23T14:31:53.5670980Z   OMP_NUM_THREADS: 1
+2026-10-23T14:31:53.5671104Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-23T14:31:53.5671267Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:53.5671489Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-23T14:31:53.5671709Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:53.5671907Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:53.5672109Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:53.5672339Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-23T14:31:53.5672546Z   NRB_LEAN: /home/runner/work/_temp/nrb-lean-4.19.0/bin/lean
+2026-10-23T14:31:53.5672712Z ##[endgroup]
+2026-10-23T14:31:53.6924402Z PASS complete 20-task scope and 13/7 score partition
+2026-10-23T14:31:53.7709928Z PASS frozen generated prompts and hashed static sources
+2026-10-23T14:31:53.8122492Z PASS candidate-only exports reproduce all public prompts
+2026-10-23T14:31:53.9154846Z PASS rubric input allowlists resolve and R06 modes stay separate
+2026-10-23T14:31:55.1426401Z PASS actual site prompts, rubrics and automatic manifests match evaluator
+2026-10-23T14:31:55.1432854Z {"passed": true, "checks": 5, "evidence": "v2-release-contracts.json"}
+2026-10-23T14:31:55.1631958Z ##[group]Run set -euo pipefail
+2026-10-23T14:31:55.1632146Z [36;1mset -euo pipefail[0m
+2026-10-23T14:31:55.1632321Z [36;1mnode web/checks.cjs 2>&1 | tee v2-web-checks.log[0m
+2026-10-23T14:31:55.1687122Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-23T14:31:55.1687322Z env:
+2026-10-23T14:31:55.1687440Z   OPENBLAS_NUM_THREADS: 1
+2026-10-23T14:31:55.1687569Z   OMP_NUM_THREADS: 1
+2026-10-23T14:31:55.1687705Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-23T14:31:55.1687879Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:55.1688117Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-23T14:31:55.1688352Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:55.1688565Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:55.1688779Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:55.1689031Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-23T14:31:55.1689249Z   NRB_LEAN: /home/runner/work/_temp/nrb-lean-4.19.0/bin/lean
+2026-10-23T14:31:55.1689427Z ##[endgroup]
+2026-10-23T14:31:55.2994664Z PASS: 83 Node contract/state checks. Includes report forgery rejection, null/zero semantics, legacy preservation, save/restore/delete handlers, comparable subsets, image/budget separation and duplicate-attempt exclusion. DOM stubs; browser QA is separate. No model was evaluated.
+2026-10-23T14:31:55.3140600Z ##[group]Run actions/upload-artifact@v7.0.2
+2026-10-23T14:31:55.3140769Z with:
+2026-10-23T14:31:55.3140884Z   name: v2-core-evidence
+2026-10-23T14:31:55.3141139Z   path: v2-*.log
+v2-*-version.txt
+v2-python-packages.txt
+v2-native-controls.json
+v2-release-contracts.json
+
+2026-10-23T14:31:55.3141410Z   if-no-files-found: warn
+2026-10-23T14:31:55.3141542Z   compression-level: 6
+2026-10-23T14:31:55.3141663Z   overwrite: false
+2026-10-23T14:31:55.3141783Z   include-hidden-files: false
+2026-10-23T14:31:55.3141915Z   archive: true
+2026-10-23T14:31:55.3142020Z env:
+2026-10-23T14:31:55.3142131Z   OPENBLAS_NUM_THREADS: 1
+2026-10-23T14:31:55.3142254Z   OMP_NUM_THREADS: 1
+2026-10-23T14:31:55.3142378Z   PYTHONDONTWRITEBYTECODE: 1
+2026-10-23T14:31:55.3142544Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:55.3142776Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-23T14:31:55.3143166Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:55.3143372Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:55.3143574Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-23T14:31:55.3143781Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-23T14:31:55.3144119Z   NRB_LEAN: /home/runner/work/_temp/nrb-lean-4.19.0/bin/lean
+2026-10-23T14:31:55.3144300Z ##[endgroup]
+2026-10-23T14:31:55.4060690Z With the provided path, there will be 12 files uploaded
+2026-10-23T14:31:55.4084810Z Artifact name is valid!
+2026-10-23T14:31:55.4094706Z Root directory input is valid!
+2026-10-23T14:31:55.6874854Z Uploading artifact: v2-core-evidence.zip
+2026-10-23T14:31:55.6897473Z Beginning upload of artifact content to blob storage
+2026-10-23T14:31:55.9204617Z Uploaded bytes 34379
+2026-10-23T14:31:55.9582061Z Finished uploading artifact content to blob storage!
+2026-10-23T14:31:55.9582680Z SHA256 digest of uploaded artifact is 632f1fc34f05e28c2b8c0a5acfbd280526375ae588e306a647b348500f217b34
+2026-10-23T14:31:55.9583151Z Finalizing artifact upload
+2026-10-23T14:31:56.5031930Z Artifact v2-core-evidence successfully finalized. Artifact ID 12508603140
+2026-10-23T14:31:56.5032378Z Artifact v2-core-evidence has been successfully uploaded! Final size is 34379 bytes. Artifact ID is 12508603140
+2026-10-23T14:31:56.5035804Z Artifact download URL: https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163399/artifacts/12508603140
+2026-10-23T14:31:56.5169243Z Post job cleanup.
+2026-10-23T14:31:56.5970823Z Post job cleanup.
+2026-10-23T14:31:56.6835653Z Post job cleanup.
+2026-10-23T14:31:56.7395118Z [command]/usr/bin/git version
+2026-10-23T14:31:56.7429822Z git version 2.55.0
+2026-10-23T14:31:56.7451919Z Temporarily overriding HOME='/home/runner/work/_temp/d74520d6-ffc8-462a-ba71-ed78a2d7e473' before making global git config changes
+2026-10-23T14:31:56.7452698Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-23T14:31:56.7455167Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:31:56.7485790Z Removing SSH command configuration
+2026-10-23T14:31:56.7486364Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-23T14:31:56.7515944Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-23T14:31:56.7710868Z Removing HTTP extra header
+2026-10-23T14:31:56.7716061Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-23T14:31:56.7746949Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-23T14:31:56.7946188Z Removing includeIf entries pointing to credentials config files
+2026-10-23T14:31:56.7951728Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-23T14:31:56.7976103Z includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path
+2026-10-23T14:31:56.7976943Z includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path
+2026-10-23T14:31:56.7977544Z includeif.gitdir:/github/workspace/.git.path
+2026-10-23T14:31:56.7977961Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-23T14:31:56.7983424Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path
+2026-10-23T14:31:56.8005023Z /home/runner/work/_temp/git-credentials-2a3bc82c-4a79-47c3-bc97-89ad74b3e845.config
+2026-10-23T14:31:56.8012415Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-2a3bc82c\-4a79\-47c3\-bc97\-89ad74b3e845\.config
+2026-10-23T14:31:56.8045681Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path
+2026-10-23T14:31:56.8066444Z /home/runner/work/_temp/git-credentials-2a3bc82c-4a79-47c3-bc97-89ad74b3e845.config
+2026-10-23T14:31:56.8078396Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-2a3bc82c\-4a79\-47c3\-bc97\-89ad74b3e845\.config
+2026-10-23T14:31:56.8106792Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-23T14:31:56.8127729Z /github/runner_temp/git-credentials-2a3bc82c-4a79-47c3-bc97-89ad74b3e845.config
+2026-10-23T14:31:56.8133523Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-2a3bc82c\-4a79\-47c3\-bc97\-89ad74b3e845\.config
+2026-10-23T14:31:56.8162102Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-23T14:31:56.8182347Z /github/runner_temp/git-credentials-2a3bc82c-4a79-47c3-bc97-89ad74b3e845.config
+2026-10-23T14:31:56.8187335Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-2a3bc82c\-4a79\-47c3\-bc97\-89ad74b3e845\.config
+2026-10-23T14:31:56.8216179Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-23T14:31:56.8390241Z Removing credentials config '/home/runner/work/_temp/git-credentials-2a3bc82c-4a79-47c3-bc97-89ad74b3e845.config'
+2026-10-23T14:31:56.8502301Z Cleaning up orphan processes

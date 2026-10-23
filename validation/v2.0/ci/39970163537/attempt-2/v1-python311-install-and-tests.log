@@ -1,0 +1,414 @@
+﻿2026-10-23T14:47:22.9436110Z Current runner version: '2.338.0'
+2026-10-23T14:47:22.9462610Z ##[group]Runner Image Provisioner
+2026-10-23T14:47:22.9463601Z Hosted Compute Agent
+2026-10-23T14:47:22.9464481Z Version: 20261012.601
+2026-10-23T14:47:22.9465203Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-23T14:47:22.9466032Z Build Date: 2026-10-12T17:48:21Z
+2026-10-23T14:47:22.9466786Z Worker ID: {b50a59bb-8b40-4060-8ffe-39fd1e041cdf}
+2026-10-23T14:47:22.9467605Z Region: westcentralus
+2026-10-23T14:47:22.9468224Z Cloud: Azure
+2026-10-23T14:47:22.9468839Z ##[endgroup]
+2026-10-23T14:47:22.9470316Z ##[group]Operating System
+2026-10-23T14:47:22.9470975Z Ubuntu
+2026-10-23T14:47:22.9471611Z 24.04.5
+2026-10-23T14:47:22.9472172Z LTS
+2026-10-23T14:47:22.9472713Z ##[endgroup]
+2026-10-23T14:47:22.9473415Z ##[group]Runner Image
+2026-10-23T14:47:22.9474394Z Image: ubuntu-24.04
+2026-10-23T14:47:22.9475054Z Version: 20261012.334.1
+2026-10-23T14:47:22.9476379Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-23T14:47:22.9478462Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-23T14:47:22.9479472Z ##[endgroup]
+2026-10-23T14:47:22.9480704Z ##[group]GITHUB_TOKEN Permissions
+2026-10-23T14:47:22.9482890Z Contents: read
+2026-10-23T14:47:22.9483638Z Metadata: read
+2026-10-23T14:47:22.9484553Z ##[endgroup]
+2026-10-23T14:47:22.9487318Z Secret source: Actions
+2026-10-23T14:47:22.9488513Z Cache mode: write
+2026-10-23T14:47:22.9489224Z Prepare workflow directory
+2026-10-23T14:47:22.9895308Z Prepare all required actions
+2026-10-23T14:47:22.9945061Z Getting action download info
+2026-10-23T14:47:23.3172872Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-23T14:47:23.4406353Z Download action repository 'actions/setup-python@v7.0.0' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-23T14:47:23.5196486Z Download action repository 'actions/upload-artifact@v7.0.2' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-10-23T14:47:24.3894696Z Complete job name: V1 science Python 3.11
+2026-10-23T14:47:24.4801820Z ##[group]Run actions/checkout@v7.0.1
+2026-10-23T14:47:24.4802786Z with:
+2026-10-23T14:47:24.4803330Z   repository: Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:47:24.4808260Z   token: ***
+2026-10-23T14:47:24.4808742Z   ssh-strict: true
+2026-10-23T14:47:24.4809224Z   ssh-user: git
+2026-10-23T14:47:24.4809710Z   persist-credentials: true
+2026-10-23T14:47:24.4810246Z   clean: true
+2026-10-23T14:47:24.4810728Z   sparse-checkout-cone-mode: true
+2026-10-23T14:47:24.4811306Z   fetch-depth: 1
+2026-10-23T14:47:24.4811778Z   fetch-tags: false
+2026-10-23T14:47:24.4812259Z   show-progress: true
+2026-10-23T14:47:24.4812748Z   lfs: false
+2026-10-23T14:47:24.4813221Z   submodules: false
+2026-10-23T14:47:24.4813720Z   set-safe-directory: true
+2026-10-23T14:47:24.4814429Z   allow-unsafe-pr-checkout: false
+2026-10-23T14:47:24.4815411Z ##[endgroup]
+2026-10-23T14:47:24.5898394Z Syncing repository: Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:47:24.5902102Z ##[group]Getting Git version info
+2026-10-23T14:47:24.5904080Z Working directory is '/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark'
+2026-10-23T14:47:24.5906430Z [command]/usr/bin/git version
+2026-10-23T14:47:24.5964961Z git version 2.55.0
+2026-10-23T14:47:24.5998714Z ##[endgroup]
+2026-10-23T14:47:24.6018472Z Temporarily overriding HOME='/home/runner/work/_temp/ec8ab1b4-511f-4648-8e46-1a76fafcbae5' before making global git config changes
+2026-10-23T14:47:24.6020366Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-23T14:47:24.6030331Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:47:24.6111059Z Deleting the contents of '/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark'
+2026-10-23T14:47:24.6114303Z ##[group]Determining repository object format
+2026-10-23T14:47:24.6116544Z ##[endgroup]
+2026-10-23T14:47:24.6117885Z ##[group]Initializing the repository
+2026-10-23T14:47:24.6122265Z [command]/usr/bin/git init /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:47:24.6209023Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-23T14:47:24.6214809Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-23T14:47:24.6217483Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-23T14:47:24.6218655Z hint: call:
+2026-10-23T14:47:24.6219332Z hint:
+2026-10-23T14:47:24.6220166Z hint: 	git config --global init.defaultBranch <name>
+2026-10-23T14:47:24.6221058Z hint:
+2026-10-23T14:47:24.6221928Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-23T14:47:24.6223489Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-23T14:47:24.6225218Z hint:
+2026-10-23T14:47:24.6225968Z hint: 	git branch -m <name>
+2026-10-23T14:47:24.6226764Z hint:
+2026-10-23T14:47:24.6227689Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-23T14:47:24.6229341Z Initialized empty Git repository in /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/
+2026-10-23T14:47:24.6233158Z [command]/usr/bin/git remote add origin https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:47:24.6282309Z ##[endgroup]
+2026-10-23T14:47:24.6284377Z ##[group]Disabling automatic garbage collection
+2026-10-23T14:47:24.6287314Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-23T14:47:24.6324678Z ##[endgroup]
+2026-10-23T14:47:24.6325660Z ##[group]Setting up auth
+2026-10-23T14:47:24.6326295Z Removing SSH command configuration
+2026-10-23T14:47:24.6333088Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-23T14:47:24.6377861Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-23T14:47:24.6733388Z Removing HTTP extra header
+2026-10-23T14:47:24.6740135Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-23T14:47:24.6785272Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-23T14:47:24.7033610Z Removing includeIf entries pointing to credentials config files
+2026-10-23T14:47:24.7040634Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-23T14:47:24.7081712Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-23T14:47:24.7334179Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-8df19f8c-fc4e-408a-bfef-ec63a4396fd1.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-23T14:47:24.7381616Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path /home/runner/work/_temp/git-credentials-8df19f8c-fc4e-408a-bfef-ec63a4396fd1.config
+2026-10-23T14:47:24.7418944Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-8df19f8c-fc4e-408a-bfef-ec63a4396fd1.config
+2026-10-23T14:47:24.7459785Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-8df19f8c-fc4e-408a-bfef-ec63a4396fd1.config
+2026-10-23T14:47:24.7499804Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-8df19f8c-fc4e-408a-bfef-ec63a4396fd1.config
+2026-10-23T14:47:24.7536145Z ##[endgroup]
+2026-10-23T14:47:24.7537344Z ##[group]Fetching the repository
+2026-10-23T14:47:24.7543064Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +735174612fe0fb298a83c872a0350f6eabf2d0a5:refs/remotes/origin/main
+2026-10-23T14:47:27.3507318Z From https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:47:27.3509780Z  * [new ref]         735174612fe0fb298a83c872a0350f6eabf2d0a5 -> origin/main
+2026-10-23T14:47:27.3517236Z [command]/usr/bin/git branch --list --remote origin/main
+2026-10-23T14:47:27.3551461Z   origin/main
+2026-10-23T14:47:27.3559430Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-10-23T14:47:27.3589496Z 735174612fe0fb298a83c872a0350f6eabf2d0a5
+2026-10-23T14:47:27.3594673Z ##[endgroup]
+2026-10-23T14:47:27.3596279Z ##[group]Determining the checkout info
+2026-10-23T14:47:27.3599565Z ##[endgroup]
+2026-10-23T14:47:27.3600726Z [command]/usr/bin/git sparse-checkout disable
+2026-10-23T14:47:27.3656811Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-23T14:47:27.3694815Z ##[group]Checking out the ref
+2026-10-23T14:47:27.3698719Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-23T14:47:27.5078112Z Switched to a new branch 'main'
+2026-10-23T14:47:27.5080995Z branch 'main' set up to track 'origin/main'.
+2026-10-23T14:47:27.5098560Z ##[endgroup]
+2026-10-23T14:47:27.5150944Z [command]/usr/bin/git log -1 --format=%H
+2026-10-23T14:47:27.5183241Z 735174612fe0fb298a83c872a0350f6eabf2d0a5
+2026-10-23T14:47:27.5657604Z ##[group]Run actions/setup-python@v7.0.0
+2026-10-23T14:47:27.5658856Z with:
+2026-10-23T14:47:27.5659746Z   python-version: 3.11
+2026-10-23T14:47:27.5660688Z   check-latest: false
+2026-10-23T14:47:27.5671329Z   token: ***
+2026-10-23T14:47:27.5672171Z   update-environment: true
+2026-10-23T14:47:27.5673171Z   allow-prereleases: false
+2026-10-23T14:47:27.5674310Z   freethreaded: false
+2026-10-23T14:47:27.5675189Z ##[endgroup]
+2026-10-23T14:47:27.6909752Z ##[group]Installed versions
+2026-10-23T14:47:27.6987449Z Successfully set up CPython (3.11.17)
+2026-10-23T14:47:27.6989685Z ##[endgroup]
+2026-10-23T14:47:27.7195215Z ##[group]Run sudo apt-get update
+2026-10-23T14:47:27.7196433Z [36;1msudo apt-get update[0m
+2026-10-23T14:47:27.7197555Z [36;1msudo apt-get install -y gfortran[0m
+2026-10-23T14:47:27.7198792Z [36;1mpython -m pip install -e .[0m
+2026-10-23T14:47:27.7200058Z [36;1mgfortran --version > fortran-version.txt[0m
+2026-10-23T14:47:27.7484660Z shell: /usr/bin/bash -e {0}
+2026-10-23T14:47:27.7485755Z env:
+2026-10-23T14:47:27.7486812Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:47:27.7488620Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-23T14:47:27.7490365Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:47:27.7491945Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:47:27.7493530Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:47:27.7495319Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-23T14:47:27.7496660Z ##[endgroup]
+2026-10-23T14:47:27.8399326Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-23T14:47:27.8729332Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-23T14:47:27.8836471Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-23T14:47:27.8856564Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-23T14:47:27.8933125Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-23T14:47:27.8943473Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-23T14:47:27.9597869Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [576 kB]
+2026-10-23T14:47:27.9886883Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [640 kB]
+2026-10-23T14:47:27.9989716Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.4 kB]
+2026-10-23T14:47:28.0782706Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1400 kB]
+2026-10-23T14:47:28.0956417Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [310 kB]
+2026-10-23T14:47:28.0975718Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1706 kB]
+2026-10-23T14:47:28.1061634Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-23T14:47:28.1090181Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1805 kB]
+2026-10-23T14:47:28.1186391Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+2026-10-23T14:47:28.1965605Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1146 kB]
+2026-10-23T14:47:28.2023327Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+2026-10-23T14:47:28.2046817Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1222 kB]
+2026-10-23T14:47:28.2111677Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+2026-10-23T14:47:28.2579238Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1713 kB]
+2026-10-23T14:47:28.2693613Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [392 kB]
+2026-10-23T14:47:31.6634596Z Fetched 12.5 MB in 1s (9157 kB/s)
+2026-10-23T14:47:32.6708445Z Reading package lists...
+2026-10-23T14:47:32.7045872Z Reading package lists...
+2026-10-23T14:47:32.9715334Z Building dependency tree...
+2026-10-23T14:47:32.9723241Z Reading state information...
+2026-10-23T14:47:33.1832648Z gfortran is already the newest version (4:13.2.0-7ubuntu1).
+2026-10-23T14:47:33.1833736Z 0 upgraded, 0 newly installed, 0 to remove and 99 not upgraded.
+2026-10-23T14:47:33.8915262Z Obtaining file:///home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:47:33.8937508Z   Installing build dependencies: started
+2026-10-23T14:47:34.7700259Z   Installing build dependencies: finished with status 'done'
+2026-10-23T14:47:34.7706440Z   Checking if build backend supports build_editable: started
+2026-10-23T14:47:35.1610569Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-10-23T14:47:35.1618661Z   Getting requirements to build editable: started
+2026-10-23T14:47:35.4844922Z   Getting requirements to build editable: finished with status 'done'
+2026-10-23T14:47:35.4855450Z   Preparing editable metadata (pyproject.toml): started
+2026-10-23T14:47:35.6708250Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-10-23T14:47:36.0125164Z Collecting numpy==2.3.5 (from null-research-benchmark==2.0.0)
+2026-10-23T14:47:36.1249828Z   Downloading numpy-2.3.5-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-10-23T14:47:36.1847017Z Downloading numpy-2.3.5-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+2026-10-23T14:47:36.4305187Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 81.3 MB/s  0:00:00
+2026-10-23T14:47:36.4676564Z Building wheels for collected packages: null-research-benchmark
+2026-10-23T14:47:36.4684828Z   Building editable for null-research-benchmark (pyproject.toml): started
+2026-10-23T14:47:36.6808359Z   Building editable for null-research-benchmark (pyproject.toml): finished with status 'done'
+2026-10-23T14:47:36.6813444Z   Created wheel for null-research-benchmark: filename=null_research_benchmark-2.0.0-0.editable-py3-none-any.whl size=8506 sha256=d5e57261830409fc8c6cdbddf34d65abf0ff516a907daba6d57056dcf7271952
+2026-10-23T14:47:36.6815485Z   Stored in directory: /tmp/pip-ephem-wheel-cache-p99dbkyp/wheels/16/d4/b3/5c2f3ba935fbb4360f39132bd1409092d5fc652c3e5c2fdd95
+2026-10-23T14:47:36.6833999Z Successfully built null-research-benchmark
+2026-10-23T14:47:36.7101130Z Installing collected packages: numpy, null-research-benchmark
+2026-10-23T14:47:38.7282366Z 
+2026-10-23T14:47:38.7291126Z Successfully installed null-research-benchmark-2.0.0 numpy-2.3.5
+2026-10-23T14:47:38.7299535Z 
+2026-10-23T14:47:38.7299944Z [notice] A new release of pip is available: 26.2.1 -> 26.2.2
+2026-10-23T14:47:38.7300604Z [notice] To update, run: pip install --upgrade pip
+2026-10-23T14:47:38.8585981Z ##[group]Run python -m unittest discover -s tests_v1 -v 2>&1 | tee v1-tests.log
+2026-10-23T14:47:38.8586566Z [36;1mpython -m unittest discover -s tests_v1 -v 2>&1 | tee v1-tests.log[0m
+2026-10-23T14:47:38.8659244Z shell: /usr/bin/bash -e {0}
+2026-10-23T14:47:38.8659515Z env:
+2026-10-23T14:47:38.8659795Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:47:38.8660251Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-23T14:47:38.8660686Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:47:38.8661065Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:47:38.8661465Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:47:38.8661841Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-23T14:47:38.8662167Z ##[endgroup]
+2026-10-23T14:47:39.1854995Z test_candidate_samples_are_blank_target_and_packet_bound (test_adapters.AdapterCoreContracts.test_candidate_samples_are_blank_target_and_packet_bound) ... ok
+2026-10-23T14:47:39.2378149Z test_exports_have_no_default_oracle_and_use_exact_candidate_bytes (test_adapters.AdapterCoreContracts.test_exports_have_no_default_oracle_and_use_exact_candidate_bytes) ... ok
+2026-10-23T14:47:39.2380690Z test_fresh_exports_reject_dangling_destination_symlinks (test_adapters.AdapterCoreContracts.test_fresh_exports_reject_dangling_destination_symlinks) ... ok
+2026-10-23T14:47:39.3860302Z test_harbor_trial_checker_requires_canonical_evidence_not_reward_only (test_adapters.AdapterCoreContracts.test_harbor_trial_checker_requires_canonical_evidence_not_reward_only) ... ok
+2026-10-23T14:47:39.3935770Z test_inspect_summary_preserves_partial_report_and_redacts_only_credentials (test_adapters.AdapterCoreContracts.test_inspect_summary_preserves_partial_report_and_redacts_only_credentials) ... ok
+2026-10-23T14:47:39.4071508Z test_invalid_envelope_scores_zero_but_unavailable_execution_is_unscored (test_adapters.AdapterCoreContracts.test_invalid_envelope_scores_zero_but_unavailable_execution_is_unscored) ... ok
+2026-10-23T14:47:39.4185851Z test_promptfoo_redaction_recovery_is_bound_to_full_logged_prompt (test_adapters.AdapterCoreContracts.test_promptfoo_redaction_recovery_is_bound_to_full_logged_prompt) ... ok
+2026-10-23T14:47:40.0579380Z test_promptfoo_summary_preserves_denominator_and_generation_budget (test_adapters.AdapterCoreContracts.test_promptfoo_summary_preserves_denominator_and_generation_budget) ... ok
+2026-10-23T14:47:40.0656727Z test_provenance_drift_rejected_before_actual_grading (test_adapters.AdapterCoreContracts.test_provenance_drift_rejected_before_actual_grading) ... ok
+2026-10-23T14:47:40.2262941Z test_real_grade_partial_score_and_incomplete_manual_total (test_adapters.AdapterCoreContracts.test_real_grade_partial_score_and_incomplete_manual_total) ... ok
+2026-10-23T14:47:40.2407961Z test_nonfinite_or_invalid_unicode_envelopes_are_candidate_failures (test_adapters.MalformedEnvelopeRegression.test_nonfinite_or_invalid_unicode_envelopes_are_candidate_failures) ... ok
+2026-10-23T14:47:40.2409508Z test_all_ten_exports_parse_actual_task_config (test_adapters.RealHarborSchemaRuntime.test_all_ten_exports_parse_actual_task_config) ... skipped 'Harbor absent: real schema runtime not validated'
+2026-10-23T14:47:40.2410767Z test_task_construction_and_actual_mock_eval (test_adapters.RealInspectRuntime.test_task_construction_and_actual_mock_eval) ... skipped 'inspect-ai absent: real runtime not validated'
+2026-10-23T14:47:40.2412002Z test_actual_empty_cli_ten_expected_failures (test_adapters.RealPromptfooRuntime.test_actual_empty_cli_ten_expected_failures) ... skipped 'promptfoo absent: real CLI runtime not validated'
+2026-10-23T14:47:40.2525784Z test_candidate_sample_tests_are_executable (test_c01_c05.ContractsAndControls.test_candidate_sample_tests_are_executable) ... ok
+2026-10-23T14:47:40.3452832Z test_case_tiers_weights_and_reference_execution (test_c01_c05.ContractsAndControls.test_case_tiers_weights_and_reference_execution) ... ok
+2026-10-23T14:47:40.3977274Z test_each_mutant_fails_actual_execution (test_c01_c05.ContractsAndControls.test_each_mutant_fails_actual_execution) ... ok
+2026-10-23T14:47:40.3987537Z test_c01_known_inverse_variance_and_duplicate_identity (test_c01_c05.IndependentScientificProperties.test_c01_known_inverse_variance_and_duplicate_identity) ... ok
+2026-10-23T14:47:40.3998419Z test_c02_independent_bootstrap_and_permutation (test_c01_c05.IndependentScientificProperties.test_c02_independent_bootstrap_and_permutation) ... ok
+2026-10-23T14:47:40.4027320Z test_c03_two_cell_mode_and_exact_energy_balance (test_c01_c05.IndependentScientificProperties.test_c03_two_cell_mode_and_exact_energy_balance) ... ok
+2026-10-23T14:47:40.4041617Z test_c04_independent_characteristic_matrices (test_c01_c05.IndependentScientificProperties.test_c04_independent_characteristic_matrices) ... ok
+2026-10-23T14:47:40.4057798Z test_c04_lossless_and_opaque_limits (test_c01_c05.IndependentScientificProperties.test_c04_lossless_and_opaque_limits) ... ok
+2026-10-23T14:47:40.4076732Z test_c05_clock_translation_invariance (test_c01_c05.IndependentScientificProperties.test_c05_clock_translation_invariance) ... ok
+2026-10-23T14:47:40.4202962Z test_c05_conservation_exact_forcing_and_analytic_decay (test_c01_c05.IndependentScientificProperties.test_c05_conservation_exact_forcing_and_analytic_decay) ... ok
+2026-10-23T14:47:43.5213591Z test_c06_nonuniform_exponential_is_exact (test_c06_c10.CompiledCandidates.test_c06_nonuniform_exponential_is_exact) ... ok
+2026-10-23T14:47:43.5307628Z test_c06_source_decay_conservation_and_positive_high_peclet (test_c06_c10.CompiledCandidates.test_c06_source_decay_conservation_and_positive_high_peclet) ... ok
+2026-10-23T14:47:43.5332941Z test_c09_independent_boltzmann_equilibrium_and_gauge (test_c06_c10.CompiledCandidates.test_c09_independent_boltzmann_equilibrium_and_gauge) ... ok
+2026-10-23T14:47:43.5346495Z test_c09_independent_current_solution_and_original_residual (test_c06_c10.CompiledCandidates.test_c09_independent_current_solution_and_original_residual) ... ok
+2026-10-23T14:47:44.0643045Z test_manufactured_truth_changes_with_seed (test_c06_c10.ExecutableContractsAndControls.test_manufactured_truth_changes_with_seed) ... ok
+2026-10-23T14:47:50.5061103Z test_mutants_fail_real_execution_with_scientific_score_gradient (test_c06_c10.ExecutableContractsAndControls.test_mutants_fail_real_execution_with_scientific_score_gradient) ... ok
+2026-10-23T14:47:50.5080332Z test_prompts_are_independent_of_hidden_case_factory (test_c06_c10.ExecutableContractsAndControls.test_prompts_are_independent_of_hidden_case_factory) ... ok
+2026-10-23T14:47:58.1544295Z test_reference_candidates_multiple_seeds_actual_subprocess (test_c06_c10.ExecutableContractsAndControls.test_reference_candidates_multiple_seeds_actual_subprocess) ... ok
+2026-10-23T14:47:58.9569690Z test_shipped_candidate_tests_run_as_files (test_c06_c10.ExecutableContractsAndControls.test_shipped_candidate_tests_run_as_files) ... ok
+2026-10-23T14:47:58.9618217Z test_c07_constant_signal_is_not_an_estimate_of_diffusion (test_c06_c10.IndependentPythonScience.test_c07_constant_signal_is_not_an_estimate_of_diffusion) ... ok
+2026-10-23T14:47:58.9757776Z test_c07_true_nuisance_and_absolute_sigma_scaling (test_c06_c10.IndependentPythonScience.test_c07_true_nuisance_and_absolute_sigma_scaling) ... ok
+2026-10-23T14:47:58.9875838Z test_c08_continuum_refinement_flux_and_ignore_interior_boundary (test_c06_c10.IndependentPythonScience.test_c08_continuum_refinement_flux_and_ignore_interior_boundary) ... ok
+2026-10-23T14:47:58.9881771Z test_c09_validator_recomputes_science_instead_of_trusting_claims (test_c06_c10.IndependentPythonScience.test_c09_validator_recomputes_science_instead_of_trusting_claims) ... ok
+2026-10-23T14:47:58.9990521Z test_c10_discrete_fourier_exact_tangents_and_conserved_derivative (test_c06_c10.IndependentPythonScience.test_c10_discrete_fourier_exact_tangents_and_conserved_derivative) ... ok
+2026-10-23T14:47:59.1184958Z test_c10_inverse_from_independent_modal_formula_and_rng (test_c06_c10.IndependentPythonScience.test_c10_inverse_from_independent_modal_formula_and_rng) ... ok
+2026-10-23T14:47:59.2630723Z test_imported_module_value_error_is_an_initialization_failure (test_execution_regressions.PythonExecutionPhases.test_imported_module_value_error_is_an_initialization_failure) ... ok
+2026-10-23T14:47:59.5509728Z test_input_mutation_still_overrides_returns_and_solve_exceptions (test_execution_regressions.PythonExecutionPhases.test_input_mutation_still_overrides_returns_and_solve_exceptions) ... ok
+2026-10-23T14:47:59.6954607Z test_missing_solve_earns_no_invalid_input_credit (test_execution_regressions.PythonExecutionPhases.test_missing_solve_earns_no_invalid_input_credit) ... ok
+2026-10-23T14:47:59.8406408Z test_non_json_output_still_cannot_earn_exception_credit (test_execution_regressions.PythonExecutionPhases.test_non_json_output_still_cannot_earn_exception_credit) ... ok
+2026-10-23T14:47:59.9852196Z test_noncallable_solve_is_an_initialization_failure (test_execution_regressions.PythonExecutionPhases.test_noncallable_solve_is_an_initialization_failure) ... ok
+2026-10-23T14:48:00.0600258Z test_reference_keeps_full_automatic_score (test_execution_regressions.PythonExecutionPhases.test_reference_keeps_full_automatic_score) ... ok
+2026-10-23T14:48:00.2039746Z test_solve_value_error_keeps_intended_invalid_input_credit (test_execution_regressions.PythonExecutionPhases.test_solve_value_error_keeps_intended_invalid_input_credit) ... ok
+2026-10-23T14:48:00.3482574Z test_top_level_value_error_earns_no_invalid_input_credit (test_execution_regressions.PythonExecutionPhases.test_top_level_value_error_earns_no_invalid_input_credit) ... ok
+2026-10-23T14:48:00.4424447Z test_complete_pending_failed_and_provisional_authority (test_integration_coding.ManualReviewBindingIntegration.test_complete_pending_failed_and_provisional_authority) ... ok
+2026-10-23T14:48:00.6778709Z test_numeric_score_cannot_override_critical_or_missing_artifact (test_integration_coding.ManualReviewBindingIntegration.test_numeric_score_cannot_override_critical_or_missing_artifact) ... ok
+2026-10-23T14:48:00.7835655Z test_review_binding_score_and_evidence_tampering_rejected (test_integration_coding.ManualReviewBindingIntegration.test_review_binding_score_and_evidence_tampering_rejected) ... ok
+2026-10-23T14:48:00.8643947Z test_tampered_automatic_report_and_artifact_are_rejected (test_integration_coding.ManualReviewBindingIntegration.test_tampered_automatic_report_and_artifact_are_rejected) ... ok
+2026-10-23T14:48:05.8349604Z test_visual_interactive_video_audio_observations_bind_actual_bytes (test_integration_coding.ModalObservationGateIntegration.test_visual_interactive_video_audio_observations_bind_actual_bytes) ... ok
+2026-10-23T14:48:05.8357234Z test_artifact_path_aliases_and_collisions_are_rejected (test_integration_coding.RealSubprocessCodingIntegration.test_artifact_path_aliases_and_collisions_are_rejected) ... ok
+2026-10-23T14:48:06.1345779Z test_input_mutation_and_integer_types_are_enforced (test_integration_coding.RealSubprocessCodingIntegration.test_input_mutation_and_integer_types_are_enforced) ... ok
+2026-10-23T14:48:06.5811829Z test_malformed_execution_does_not_get_exception_credits (test_integration_coding.RealSubprocessCodingIntegration.test_malformed_execution_does_not_get_exception_credits) ... ok
+2026-10-23T14:48:06.6559117Z test_malformed_worker_frame_cannot_crash_host (test_integration_coding.RealSubprocessCodingIntegration.test_malformed_worker_frame_cannot_crash_host) ... ok
+2026-10-23T14:48:07.9810367Z test_references_and_mutant_score_gradient (test_integration_coding.RealSubprocessCodingIntegration.test_references_and_mutant_score_gradient) ... ok
+2026-10-23T14:48:08.0534591Z test_scientific_seed_variation_and_visible_examples (test_integration_coding.RealSubprocessCodingIntegration.test_scientific_seed_variation_and_visible_examples) ... ok
+2026-10-23T14:48:08.2710955Z test_timeout_and_unavailable_backend_are_distinct (test_integration_coding.RealSubprocessCodingIntegration.test_timeout_and_unavailable_backend_are_distinct) ... ok
+2026-10-23T14:48:08.3481586Z test_worker_receives_only_inputs_and_declared_artifacts (test_integration_coding.RealSubprocessCodingIntegration.test_worker_receives_only_inputs_and_declared_artifacts) ... ok
+2026-10-23T14:48:08.3487078Z test_discrete_fields_still_require_exact_integer_types_and_values (test_numeric_schema_regressions.NumericSchemaRegressions.test_discrete_fields_still_require_exact_integer_types_and_values) ... ok
+2026-10-23T14:48:08.5088420Z test_float_state_c03_and_c05_keep_all_current_automatic_points (test_numeric_schema_regressions.NumericSchemaRegressions.test_float_state_c03_and_c05_keep_all_current_automatic_points) ... ok
+2026-10-23T14:48:08.5090792Z test_physical_fields_accept_equal_integer_and_float_representations (test_numeric_schema_regressions.NumericSchemaRegressions.test_physical_fields_accept_equal_integer_and_float_representations) ... ok
+2026-10-23T14:48:08.5093074Z test_real_fields_reject_bool_nonfinite_and_out_of_tolerance (test_numeric_schema_regressions.NumericSchemaRegressions.test_real_fields_reject_bool_nonfinite_and_out_of_tolerance) ... ok
+2026-10-23T14:48:08.5594658Z test_actual_reference_images_and_readable_papers_are_supplied (test_research_packets.ResearchPacketTests.test_actual_reference_images_and_readable_papers_are_supplied) ... ok
+2026-10-23T14:48:08.5596798Z test_artifact_contracts_use_concrete_names_and_observable_outputs (test_research_packets.ResearchPacketTests.test_artifact_contracts_use_concrete_names_and_observable_outputs) ... ok
+2026-10-23T14:48:08.6383569Z test_each_candidate_is_one_small_offline_html (test_research_packets.ResearchPacketTests.test_each_candidate_is_one_small_offline_html) ... ok
+2026-10-23T14:48:08.6396578Z test_figure_writing_task_contains_real_svg_and_underlying_tables (test_research_packets.ResearchPacketTests.test_figure_writing_task_contains_real_svg_and_underlying_tables) ... ok
+2026-10-23T14:48:08.6484131Z test_manual_rubrics_have_explicit_weights_anchors_and_gates (test_research_packets.ResearchPacketTests.test_manual_rubrics_have_explicit_weights_anchors_and_gates) ... ok
+2026-10-23T14:48:08.6485283Z test_required_and_optional_tracks_are_distinct (test_research_packets.ResearchPacketTests.test_required_and_optional_tracks_are_distinct) ... ok
+2026-10-23T14:48:08.6527597Z test_source_license_and_byte_provenance (test_research_packets.ResearchPacketTests.test_source_license_and_byte_provenance) ... ok
+2026-10-23T14:48:08.9235164Z test_c06_flux_is_bound_to_returned_density (test_residual_regressions.ResidualBindingRegressions.test_c06_flux_is_bound_to_returned_density) ... ok
+2026-10-23T14:48:08.9237156Z test_c06_independent_nonuniform_exponential_solution (test_residual_regressions.ResidualBindingRegressions.test_c06_independent_nonuniform_exponential_solution) ... ok
+2026-10-23T14:48:08.9239211Z test_c06_mass_is_bound_to_returned_density (test_residual_regressions.ResidualBindingRegressions.test_c06_mass_is_bound_to_returned_density) ... ok
+2026-10-23T14:48:08.9244486Z test_c06_rejects_small_density_error_with_self_reported_zero (test_residual_regressions.ResidualBindingRegressions.test_c06_rejects_small_density_error_with_self_reported_zero) ... ok
+2026-10-23T14:48:08.9250238Z test_c08_boundary_flux_is_bound_to_returned_field (test_residual_regressions.ResidualBindingRegressions.test_c08_boundary_flux_is_bound_to_returned_field) ... ok
+2026-10-23T14:48:08.9252584Z test_c08_independent_nonuniform_affine_flux_and_ignored_interior_boundary (test_residual_regressions.ResidualBindingRegressions.test_c08_independent_nonuniform_affine_flux_and_ignored_interior_boundary) ... ok
+2026-10-23T14:48:08.9281511Z test_c08_rejects_small_interior_error_with_self_reported_zero (test_residual_regressions.ResidualBindingRegressions.test_c08_rejects_small_interior_error_with_self_reported_zero) ... ok
+2026-10-23T14:48:09.2211577Z test_grading_uses_each_validator_for_returned_records (test_residual_regressions.ResidualBindingRegressions.test_grading_uses_each_validator_for_returned_records) ... ok
+2026-10-23T14:48:09.2215725Z test_incorrect_boundaries_and_integrated_quantities_are_rejected (test_residual_regressions.ResidualBindingRegressions.test_incorrect_boundaries_and_integrated_quantities_are_rejected) ... ok
+2026-10-23T14:48:09.2235438Z test_malformed_nonfinite_and_boolean_outputs_fail_closed (test_residual_regressions.ResidualBindingRegressions.test_malformed_nonfinite_and_boolean_outputs_fail_closed) ... ok
+2026-10-23T14:48:09.2241612Z test_negative_reported_residual_is_not_a_norm (test_residual_regressions.ResidualBindingRegressions.test_negative_reported_residual_is_not_a_norm) ... ok
+2026-10-23T14:48:11.4250677Z test_reference_and_exact_manufactured_outputs_multiple_seeds (test_residual_regressions.ResidualBindingRegressions.test_reference_and_exact_manufactured_outputs_multiple_seeds) ... ok
+2026-10-23T14:48:11.4312099Z test_residual_limits_allow_roundoff_but_reject_larger_equation_error (test_residual_regressions.ResidualBindingRegressions.test_residual_limits_allow_roundoff_but_reject_larger_equation_error) ... ok
+2026-10-23T14:48:11.7017264Z test_cli_resummarization_preserves_actual_runner_disqualification (test_summary_regressions.SummaryRegressions.test_cli_resummarization_preserves_actual_runner_disqualification) ... ok
+2026-10-23T14:48:11.7024256Z test_consistent_declared_eligible_reports_keep_the_mean (test_summary_regressions.SummaryRegressions.test_consistent_declared_eligible_reports_keep_the_mean) ... ok
+2026-10-23T14:48:11.7061374Z test_each_recorded_configuration_conflict_is_rejected (test_summary_regressions.SummaryRegressions.test_each_recorded_configuration_conflict_is_rejected) ... ok
+2026-10-23T14:48:11.7065879Z test_eligibility_cannot_override_modified_input (test_summary_regressions.SummaryRegressions.test_eligibility_cannot_override_modified_input) ... ok
+2026-10-23T14:48:11.7072486Z test_equivalent_integer_and_float_timeout_configuration_can_mix (test_summary_regressions.SummaryRegressions.test_equivalent_integer_and_float_timeout_configuration_can_mix) ... ok
+2026-10-23T14:48:11.7078613Z test_missing_identity_is_reported_without_fabricating_it (test_summary_regressions.SummaryRegressions.test_missing_identity_is_reported_without_fabricating_it) ... ok
+2026-10-23T14:48:11.8667671Z test_multitask_harness_error_retains_an_incomplete_run_summary (test_summary_regressions.SummaryRegressions.test_multitask_harness_error_retains_an_incomplete_run_summary) ... ok
+2026-10-23T14:48:12.8805222Z test_actual_evaluator_input_bytes_and_symlinks_are_checked (test_video_v11.VideoV11Tests.test_actual_evaluator_input_bytes_and_symlinks_are_checked) ... ok
+2026-10-23T14:48:13.0896104Z test_cli_generate_and_evaluate_skeleton_interfaces (test_video_v11.VideoV11Tests.test_cli_generate_and_evaluate_skeleton_interfaces) ... ok
+2026-10-23T14:48:13.1544249Z test_external_rubric_is_identity_bound_and_mixed_hashes_rejected (test_video_v11.VideoV11Tests.test_external_rubric_is_identity_bound_and_mixed_hashes_rejected) ... ok
+2026-10-23T14:48:13.3257366Z test_failed_gates_never_allow_unwatched_visual_credit (test_video_v11.VideoV11Tests.test_failed_gates_never_allow_unwatched_visual_credit) ... ok
+2026-10-23T14:48:13.4371030Z test_files_export_contains_real_media_directory (test_video_v11.VideoV11Tests.test_files_export_contains_real_media_directory) ... ok
+2026-10-23T14:48:13.6166512Z test_generated_packs_are_isolated_and_share_exact_common_bytes (test_video_v11.VideoV11Tests.test_generated_packs_are_isolated_and_share_exact_common_bytes) ... ok
+2026-10-23T14:48:13.6182202Z test_hash_corruption_is_detected_before_copy (test_video_v11.VideoV11Tests.test_hash_corruption_is_detected_before_copy) ... ok
+2026-10-23T14:48:14.0954194Z test_legacy_frozen_bytes_and_material_manifest (test_video_v11.VideoV11Tests.test_legacy_frozen_bytes_and_material_manifest) ... ok
+2026-10-23T14:48:14.2540024Z test_media_metadata_binds_whole_directory_not_prompt_only (test_video_v11.VideoV11Tests.test_media_metadata_binds_whole_directory_not_prompt_only) ... ok
+2026-10-23T14:48:14.4961871Z test_missing_audio_is_separate_failed_gate_not_new_score_weight (test_video_v11.VideoV11Tests.test_missing_audio_is_separate_failed_gate_not_new_score_weight) ... ok
+2026-10-23T14:48:14.4972499Z test_pack_refuses_existing_destination_and_wrong_task (test_video_v11.VideoV11Tests.test_pack_refuses_existing_destination_and_wrong_task) ... ok
+2026-10-23T14:48:14.5585695Z test_plain_grade_is_manual_and_unassessed (test_video_v11.VideoV11Tests.test_plain_grade_is_manual_and_unassessed) ... ok
+2026-10-23T14:48:15.7799574Z test_reference_listening_scene_and_hash_tampering_rejected (test_video_v11.VideoV11Tests.test_reference_listening_scene_and_hash_tampering_rejected) ... ok
+2026-10-23T14:48:15.8078406Z test_registry_appends_ids_and_preserves_required_tracks (test_video_v11.VideoV11Tests.test_registry_appends_ids_and_preserves_required_tracks) ... ok
+2026-10-23T14:48:15.9975197Z test_skeleton_contains_inputs_and_false_observations (test_video_v11.VideoV11Tests.test_skeleton_contains_inputs_and_false_observations) ... ok
+2026-10-23T14:48:15.9978696Z test_text_only_adapter_rejects_video_before_creating_output (test_video_v11.VideoV11Tests.test_text_only_adapter_rejects_video_before_creating_output) ... ok
+2026-10-23T14:48:16.5159335Z test_video_profiles_never_combine_with_each_other_or_science (test_video_v11.VideoV11Tests.test_video_profiles_never_combine_with_each_other_or_science) ... ok
+2026-10-23T14:48:16.5160401Z 
+2026-10-23T14:48:16.5160648Z ----------------------------------------------------------------------
+2026-10-23T14:48:16.5161219Z Ran 108 tests in 37.371s
+2026-10-23T14:48:16.5161433Z 
+2026-10-23T14:48:16.5161560Z OK (skipped=3)
+2026-10-23T14:48:16.5474432Z ##[group]Run python -m nrb_v1 selftest --tasks coding --seeds 0,17,2026 --include-mutants --execution trusted --out v1-selftest.json
+2026-10-23T14:48:16.5475372Z [36;1mpython -m nrb_v1 selftest --tasks coding --seeds 0,17,2026 --include-mutants --execution trusted --out v1-selftest.json[0m
+2026-10-23T14:48:16.5546003Z shell: /usr/bin/bash -e {0}
+2026-10-23T14:48:16.5546264Z env:
+2026-10-23T14:48:16.5546542Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:16.5546983Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-23T14:48:16.5547434Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:16.5547818Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:16.5548203Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:16.5548584Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-23T14:48:16.5548919Z ##[endgroup]
+2026-10-23T14:48:45.7915847Z ##[group]Run python scripts/v1/check_v11_materials.py
+2026-10-23T14:48:45.7916514Z [36;1mpython scripts/v1/check_v11_materials.py[0m
+2026-10-23T14:48:45.8009797Z shell: /usr/bin/bash -e {0}
+2026-10-23T14:48:45.8010073Z env:
+2026-10-23T14:48:45.8010357Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:45.8010815Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-23T14:48:45.8011250Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:45.8011651Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:45.8012032Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:45.8012401Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-23T14:48:45.8012725Z ##[endgroup]
+2026-10-23T14:48:46.3145759Z {"passed": true, "legacy_frozen_tasks": 19, "verified_material_files": 37, "new_media_tasks": ["X04", "X05"], "model_calls": 0, "not_model_performance": true}
+2026-10-23T14:48:46.3361301Z ##[group]Run actions/upload-artifact@v7.0.2
+2026-10-23T14:48:46.3361617Z with:
+2026-10-23T14:48:46.3362045Z   name: v1-core-python-3.11
+2026-10-23T14:48:46.3362364Z   path: v1-tests.log
+v1-selftest.json
+fortran-version.txt
+
+2026-10-23T14:48:46.3362703Z   if-no-files-found: warn
+2026-10-23T14:48:46.3362939Z   compression-level: 6
+2026-10-23T14:48:46.3363162Z   overwrite: false
+2026-10-23T14:48:46.3363379Z   include-hidden-files: false
+2026-10-23T14:48:46.3363625Z   archive: true
+2026-10-23T14:48:46.3364039Z env:
+2026-10-23T14:48:46.3364303Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:46.3364745Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-23T14:48:46.3365171Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:46.3365545Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:46.3365924Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:48:46.3366373Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-23T14:48:46.3366705Z ##[endgroup]
+2026-10-23T14:48:46.4905091Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-23T14:48:46.4907216Z The least common ancestor is /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark. This will be the root directory of the artifact
+2026-10-23T14:48:46.4908543Z With the provided path, there will be 3 files uploaded
+2026-10-23T14:48:46.4909371Z Artifact name is valid!
+2026-10-23T14:48:46.4909754Z Root directory input is valid!
+2026-10-23T14:48:46.7993714Z Uploading artifact: v1-core-python-3.11.zip
+2026-10-23T14:48:46.8031260Z Beginning upload of artifact content to blob storage
+2026-10-23T14:48:47.0899913Z Uploaded bytes 14748
+2026-10-23T14:48:47.1500899Z Finished uploading artifact content to blob storage!
+2026-10-23T14:48:47.1501820Z SHA256 digest of uploaded artifact is 0e213d09f006e70335ad1480a348fe8d9e647bb468add5cf1cb8729bdb1d187a
+2026-10-23T14:48:47.1502503Z Finalizing artifact upload
+2026-10-23T14:48:47.6921124Z Artifact v1-core-python-3.11 successfully finalized. Artifact ID 12510006961
+2026-10-23T14:48:47.6922307Z Artifact v1-core-python-3.11 has been successfully uploaded! Final size is 14748 bytes. Artifact ID is 12510006961
+2026-10-23T14:48:47.6926266Z Artifact download URL: https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163537/artifacts/12510006961
+2026-10-23T14:48:47.7116931Z Post job cleanup.
+2026-10-23T14:48:47.8498420Z Post job cleanup.
+2026-10-23T14:48:47.9401499Z [command]/usr/bin/git version
+2026-10-23T14:48:47.9464582Z git version 2.55.0
+2026-10-23T14:48:47.9507010Z Temporarily overriding HOME='/home/runner/work/_temp/88d1bfc2-3227-44db-a243-d0fe83459f71' before making global git config changes
+2026-10-23T14:48:47.9507963Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-23T14:48:47.9513353Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:48:47.9554138Z Removing SSH command configuration
+2026-10-23T14:48:47.9561923Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-23T14:48:47.9607462Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-23T14:48:47.9888053Z Removing HTTP extra header
+2026-10-23T14:48:47.9894758Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-23T14:48:47.9941367Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-23T14:48:48.0261089Z Removing includeIf entries pointing to credentials config files
+2026-10-23T14:48:48.0271326Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-23T14:48:48.0332688Z includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path
+2026-10-23T14:48:48.0334952Z includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path
+2026-10-23T14:48:48.0336230Z includeif.gitdir:/github/workspace/.git.path
+2026-10-23T14:48:48.0337100Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-23T14:48:48.0345944Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path
+2026-10-23T14:48:48.0383231Z /home/runner/work/_temp/git-credentials-8df19f8c-fc4e-408a-bfef-ec63a4396fd1.config
+2026-10-23T14:48:48.0399905Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-8df19f8c\-fc4e\-408a\-bfef\-ec63a4396fd1\.config
+2026-10-23T14:48:48.0450794Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path
+2026-10-23T14:48:48.0486735Z /home/runner/work/_temp/git-credentials-8df19f8c-fc4e-408a-bfef-ec63a4396fd1.config
+2026-10-23T14:48:48.0516234Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-8df19f8c\-fc4e\-408a\-bfef\-ec63a4396fd1\.config
+2026-10-23T14:48:48.0562502Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-23T14:48:48.0598781Z /github/runner_temp/git-credentials-8df19f8c-fc4e-408a-bfef-ec63a4396fd1.config
+2026-10-23T14:48:48.0609970Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-8df19f8c\-fc4e\-408a\-bfef\-ec63a4396fd1\.config
+2026-10-23T14:48:48.0656746Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-23T14:48:48.0689264Z /github/runner_temp/git-credentials-8df19f8c-fc4e-408a-bfef-ec63a4396fd1.config
+2026-10-23T14:48:48.0700334Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-8df19f8c\-fc4e\-408a\-bfef\-ec63a4396fd1\.config
+2026-10-23T14:48:48.0747402Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-23T14:48:48.1021435Z Removing credentials config '/home/runner/work/_temp/git-credentials-8df19f8c-fc4e-408a-bfef-ec63a4396fd1.config'
+2026-10-23T14:48:48.1199507Z Cleaning up orphan processes

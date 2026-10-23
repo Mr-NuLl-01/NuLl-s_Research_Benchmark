@@ -1,0 +1,214 @@
+﻿2026-10-23T14:30:14.0459588Z Current runner version: '2.338.0'
+2026-10-23T14:30:14.0479595Z ##[group]Runner Image Provisioner
+2026-10-23T14:30:14.0480319Z Hosted Compute Agent
+2026-10-23T14:30:14.0480824Z Version: 20261012.601
+2026-10-23T14:30:14.0481350Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-23T14:30:14.0482167Z Build Date: 2026-10-12T17:48:21Z
+2026-10-23T14:30:14.0482721Z Worker ID: {6d840d37-0457-4f99-abdd-4e3f70e5a917}
+2026-10-23T14:30:14.0483289Z Region: westus3
+2026-10-23T14:30:14.0483797Z Cloud: Azure
+2026-10-23T14:30:14.0484262Z ##[endgroup]
+2026-10-23T14:30:14.0485477Z ##[group]Operating System
+2026-10-23T14:30:14.0485984Z Ubuntu
+2026-10-23T14:30:14.0486423Z 24.04.5
+2026-10-23T14:30:14.0486911Z LTS
+2026-10-23T14:30:14.0487337Z ##[endgroup]
+2026-10-23T14:30:14.0487836Z ##[group]Runner Image
+2026-10-23T14:30:14.0488353Z Image: ubuntu-24.04
+2026-10-23T14:30:14.0488819Z Version: 20261012.334.1
+2026-10-23T14:30:14.0489875Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-23T14:30:14.0491434Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-23T14:30:14.0492341Z ##[endgroup]
+2026-10-23T14:30:14.0493303Z ##[group]GITHUB_TOKEN Permissions
+2026-10-23T14:30:14.0495021Z Contents: read
+2026-10-23T14:30:14.0495540Z Metadata: read
+2026-10-23T14:30:14.0496107Z ##[endgroup]
+2026-10-23T14:30:14.0498025Z Secret source: Actions
+2026-10-23T14:30:14.0498832Z Cache mode: write
+2026-10-23T14:30:14.0499394Z Prepare workflow directory
+2026-10-23T14:30:14.1043814Z Prepare all required actions
+2026-10-23T14:30:14.1082941Z Getting action download info
+2026-10-23T14:30:14.4427996Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-23T14:30:14.8023187Z Download action repository 'actions/setup-python@v7.0.0' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-23T14:30:14.9016024Z Download action repository 'actions/upload-artifact@v7.0.2' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-10-23T14:30:15.8353244Z Complete job name: V1 science Python 3.11
+2026-10-23T14:30:15.9062696Z ##[group]Run actions/checkout@v7.0.1
+2026-10-23T14:30:15.9063516Z with:
+2026-10-23T14:30:15.9063947Z   repository: Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:30:15.9067518Z   token: ***
+2026-10-23T14:30:15.9067901Z   ssh-strict: true
+2026-10-23T14:30:15.9068281Z   ssh-user: git
+2026-10-23T14:30:15.9068670Z   persist-credentials: true
+2026-10-23T14:30:15.9069095Z   clean: true
+2026-10-23T14:30:15.9069477Z   sparse-checkout-cone-mode: true
+2026-10-23T14:30:15.9069933Z   fetch-depth: 1
+2026-10-23T14:30:15.9070300Z   fetch-tags: false
+2026-10-23T14:30:15.9070676Z   show-progress: true
+2026-10-23T14:30:15.9071058Z   lfs: false
+2026-10-23T14:30:15.9071426Z   submodules: false
+2026-10-23T14:30:15.9071941Z   set-safe-directory: true
+2026-10-23T14:30:15.9072368Z   allow-unsafe-pr-checkout: false
+2026-10-23T14:30:15.9072990Z ##[endgroup]
+2026-10-23T14:30:15.9913611Z Syncing repository: Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:30:15.9916118Z ##[group]Getting Git version info
+2026-10-23T14:30:15.9917341Z Working directory is '/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark'
+2026-10-23T14:30:15.9919063Z [command]/usr/bin/git version
+2026-10-23T14:30:15.9985935Z git version 2.55.0
+2026-10-23T14:30:16.0011028Z ##[endgroup]
+2026-10-23T14:30:16.0024416Z Temporarily overriding HOME='/home/runner/work/_temp/179612a1-9413-4c3f-8942-d12bc2cb4884' before making global git config changes
+2026-10-23T14:30:16.0030375Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-23T14:30:16.0032022Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:30:16.0075081Z Deleting the contents of '/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark'
+2026-10-23T14:30:16.0077497Z ##[group]Determining repository object format
+2026-10-23T14:30:16.0079165Z ##[endgroup]
+2026-10-23T14:30:16.0079938Z ##[group]Initializing the repository
+2026-10-23T14:30:16.0083315Z [command]/usr/bin/git init /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:30:16.0216335Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-23T14:30:16.0218344Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-23T14:30:16.0220060Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-23T14:30:16.0221452Z hint: call:
+2026-10-23T14:30:16.0222405Z hint:
+2026-10-23T14:30:16.0223291Z hint: 	git config --global init.defaultBranch <name>
+2026-10-23T14:30:16.0224304Z hint:
+2026-10-23T14:30:16.0225363Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-23T14:30:16.0226969Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-23T14:30:16.0228313Z hint:
+2026-10-23T14:30:16.0229111Z hint: 	git branch -m <name>
+2026-10-23T14:30:16.0230001Z hint:
+2026-10-23T14:30:16.0231224Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-23T14:30:16.0233733Z Initialized empty Git repository in /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/
+2026-10-23T14:30:16.0237341Z [command]/usr/bin/git remote add origin https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:30:16.0402735Z ##[endgroup]
+2026-10-23T14:30:16.0404177Z ##[group]Disabling automatic garbage collection
+2026-10-23T14:30:16.0406616Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-23T14:30:16.0443237Z ##[endgroup]
+2026-10-23T14:30:16.0443912Z ##[group]Setting up auth
+2026-10-23T14:30:16.0444702Z Removing SSH command configuration
+2026-10-23T14:30:16.0448641Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-23T14:30:16.0481928Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-23T14:30:16.1058486Z Removing HTTP extra header
+2026-10-23T14:30:16.1063850Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-23T14:30:16.1095954Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-23T14:30:16.1307124Z Removing includeIf entries pointing to credentials config files
+2026-10-23T14:30:16.1308627Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-23T14:30:16.1331701Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-23T14:30:16.1543540Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-fa5c0ad5-4648-41e6-870d-ecf709fea979.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-23T14:30:16.1576775Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path /home/runner/work/_temp/git-credentials-fa5c0ad5-4648-41e6-870d-ecf709fea979.config
+2026-10-23T14:30:16.1605083Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-fa5c0ad5-4648-41e6-870d-ecf709fea979.config
+2026-10-23T14:30:16.1635975Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-fa5c0ad5-4648-41e6-870d-ecf709fea979.config
+2026-10-23T14:30:16.1664430Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-fa5c0ad5-4648-41e6-870d-ecf709fea979.config
+2026-10-23T14:30:16.1697072Z ##[endgroup]
+2026-10-23T14:30:16.1697997Z ##[group]Fetching the repository
+2026-10-23T14:30:16.1699141Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +735174612fe0fb298a83c872a0350f6eabf2d0a5:refs/remotes/origin/main
+2026-10-23T14:30:17.8942920Z From https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark
+2026-10-23T14:30:17.8944990Z  * [new ref]         735174612fe0fb298a83c872a0350f6eabf2d0a5 -> origin/main
+2026-10-23T14:30:17.8958418Z [command]/usr/bin/git branch --list --remote origin/main
+2026-10-23T14:30:17.8976862Z   origin/main
+2026-10-23T14:30:17.8984536Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-10-23T14:30:17.9007268Z 735174612fe0fb298a83c872a0350f6eabf2d0a5
+2026-10-23T14:30:17.9010718Z ##[endgroup]
+2026-10-23T14:30:17.9011755Z ##[group]Determining the checkout info
+2026-10-23T14:30:17.9012974Z ##[endgroup]
+2026-10-23T14:30:17.9014004Z [command]/usr/bin/git sparse-checkout disable
+2026-10-23T14:30:17.9060896Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-23T14:30:17.9091464Z ##[group]Checking out the ref
+2026-10-23T14:30:17.9094829Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-23T14:30:18.0277889Z Switched to a new branch 'main'
+2026-10-23T14:30:18.0281892Z branch 'main' set up to track 'origin/main'.
+2026-10-23T14:30:18.0294853Z ##[endgroup]
+2026-10-23T14:30:18.0337554Z [command]/usr/bin/git log -1 --format=%H
+2026-10-23T14:30:18.0362979Z 735174612fe0fb298a83c872a0350f6eabf2d0a5
+2026-10-23T14:30:18.0738957Z ##[group]Run actions/setup-python@v7.0.0
+2026-10-23T14:30:18.0739896Z with:
+2026-10-23T14:30:18.0740542Z   python-version: 3.11
+2026-10-23T14:30:18.0741256Z   check-latest: false
+2026-10-23T14:30:18.0749417Z   token: ***
+2026-10-23T14:30:18.0750076Z   update-environment: true
+2026-10-23T14:30:18.0750868Z   allow-prereleases: false
+2026-10-23T14:30:18.0751715Z   freethreaded: false
+2026-10-23T14:30:18.0752421Z ##[endgroup]
+2026-10-23T14:30:18.1702403Z ##[group]Installed versions
+2026-10-23T14:30:18.1769844Z Successfully set up CPython (3.11.17)
+2026-10-23T14:30:18.1771938Z ##[endgroup]
+2026-10-23T14:30:18.1932016Z ##[group]Run sudo apt-get update
+2026-10-23T14:30:18.1932984Z [36;1msudo apt-get update[0m
+2026-10-23T14:30:18.1933872Z [36;1msudo apt-get install -y gfortran[0m
+2026-10-23T14:30:18.1934860Z [36;1mpython -m pip install -e .[0m
+2026-10-23T14:30:18.1935862Z [36;1mgfortran --version > fortran-version.txt[0m
+2026-10-23T14:30:18.2191016Z shell: /usr/bin/bash -e {0}
+2026-10-23T14:30:18.2192041Z env:
+2026-10-23T14:30:18.2192882Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:30:18.2194283Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-23T14:30:18.2195655Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:30:18.2196896Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:30:18.2198131Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:30:18.2199429Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-23T14:30:18.2200500Z ##[endgroup]
+2026-10-23T14:30:18.3004559Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-23T14:30:18.3465723Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-23T14:30:18.4036570Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [640 kB]
+2026-10-23T14:30:18.4167998Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [576 kB]
+2026-10-23T14:30:18.4223378Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.4 kB]
+2026-10-23T14:30:48.3568233Z Ign:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-23T14:30:49.1174991Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-23T14:30:49.1203271Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-23T14:30:49.1218998Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-23T14:45:28.2766457Z ##[error]The operation was canceled.
+2026-10-23T14:45:28.2852219Z ##[group]Run actions/upload-artifact@v7.0.2
+2026-10-23T14:45:28.2852479Z with:
+2026-10-23T14:45:28.2852649Z   name: v1-core-python-3.11
+2026-10-23T14:45:28.2852894Z   path: v1-tests.log
+v1-selftest.json
+fortran-version.txt
+
+2026-10-23T14:45:28.2853155Z   if-no-files-found: warn
+2026-10-23T14:45:28.2853348Z   compression-level: 6
+2026-10-23T14:45:28.2853526Z   overwrite: false
+2026-10-23T14:45:28.2853700Z   include-hidden-files: false
+2026-10-23T14:45:28.2853890Z   archive: true
+2026-10-23T14:45:28.2854045Z env:
+2026-10-23T14:45:28.2854252Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:45:28.2854588Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+2026-10-23T14:45:28.2854916Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:45:28.2855208Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:45:28.2855513Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+2026-10-23T14:45:28.2855837Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+2026-10-23T14:45:28.2856089Z ##[endgroup]
+2026-10-23T14:45:28.4041273Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-23T14:45:28.4053470Z The least common ancestor is /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark. This will be the root directory of the artifact
+2026-10-23T14:45:28.4069122Z ##[warning]No files were found with the provided path: v1-tests.log
+v1-selftest.json
+fortran-version.txt. No artifacts will be uploaded.
+2026-10-23T14:45:28.4281343Z Post job cleanup.
+2026-10-23T14:45:28.5003252Z [command]/usr/bin/git version
+2026-10-23T14:45:28.5050301Z git version 2.55.0
+2026-10-23T14:45:28.5080952Z Temporarily overriding HOME='/home/runner/work/_temp/2c5cdcf3-8959-4eb2-a39e-461d08c154e4' before making global git config changes
+2026-10-23T14:45:28.5082190Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-23T14:45:28.5085261Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark
+2026-10-23T14:45:28.5115997Z Removing SSH command configuration
+2026-10-23T14:45:28.5120948Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-23T14:45:28.5152323Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-23T14:45:28.5364347Z Removing HTTP extra header
+2026-10-23T14:45:28.5369223Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-23T14:45:28.5402435Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-23T14:45:28.5631695Z Removing includeIf entries pointing to credentials config files
+2026-10-23T14:45:28.5637514Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-23T14:45:28.5669083Z includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path
+2026-10-23T14:45:28.5669838Z includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path
+2026-10-23T14:45:28.5670918Z includeif.gitdir:/github/workspace/.git.path
+2026-10-23T14:45:28.5671930Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-23T14:45:28.5677272Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path
+2026-10-23T14:45:28.5703857Z /home/runner/work/_temp/git-credentials-fa5c0ad5-4648-41e6-870d-ecf709fea979.config
+2026-10-23T14:45:28.5714719Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-fa5c0ad5\-4648\-41e6\-870d\-ecf709fea979\.config
+2026-10-23T14:45:28.5763039Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path
+2026-10-23T14:45:28.5805674Z /home/runner/work/_temp/git-credentials-fa5c0ad5-4648-41e6-870d-ecf709fea979.config
+2026-10-23T14:45:28.5808592Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/NuLl-s_Research_Benchmark/NuLl-s_Research_Benchmark/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-fa5c0ad5\-4648\-41e6\-870d\-ecf709fea979\.config
+2026-10-23T14:45:28.5841943Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-23T14:45:28.5871451Z /github/runner_temp/git-credentials-fa5c0ad5-4648-41e6-870d-ecf709fea979.config
+2026-10-23T14:45:28.5876417Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-fa5c0ad5\-4648\-41e6\-870d\-ecf709fea979\.config
+2026-10-23T14:45:28.5912547Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-23T14:45:28.5936132Z /github/runner_temp/git-credentials-fa5c0ad5-4648-41e6-870d-ecf709fea979.config
+2026-10-23T14:45:28.5943677Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-fa5c0ad5\-4648\-41e6\-870d\-ecf709fea979\.config
+2026-10-23T14:45:28.5977175Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-23T14:45:28.6197426Z Removing credentials config '/home/runner/work/_temp/git-credentials-fa5c0ad5-4648-41e6-870d-ecf709fea979.config'
+2026-10-23T14:45:28.6330646Z Cleaning up orphan processes

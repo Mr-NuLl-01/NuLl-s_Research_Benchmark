@@ -1,0 +1,37 @@
+{
+  "schema": "nrb-browser-download-qa-v1",
+  "date": "2026-10-23",
+  "app_sha256": "502d1040b304baf818869599bdc871c5237060a6d41a57fd5bb0aa048a12e918",
+  "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
+  "environment": "Cloud Chromium via managed Sites preview",
+  "not_model_performance": true,
+  "checks": [
+    {
+      "name": "guide_evaluator_link",
+      "passed": true,
+      "observed": "Visible guide link points to the exact uploaded evaluator Drive object."
+    },
+    {
+      "name": "guide_candidate_collection_link",
+      "passed": true,
+      "observed": "Visible guide link points to the exact uploaded full candidate collection."
+    },
+    {
+      "name": "r06_before_mode",
+      "passed": true,
+      "observed": "Before choosing a mode there is no misleading unavailable-download label or candidate link."
+    },
+    {
+      "name": "r06_mode_a_link",
+      "passed": true,
+      "observed": "Selecting A produces the verified mode-A candidate Drive link."
+    },
+    {
+      "name": "r06_mode_b_link",
+      "passed": true,
+      "observed": "Switching to B changes the candidate link to the separately verified mode-B object."
+    }
+  ],
+  "mapping_validation": "23 unique Drive resources in the private registry; all metadata verified separately. Source parity checks confirm all other release data equals public source.",
+  "passed": true
+}

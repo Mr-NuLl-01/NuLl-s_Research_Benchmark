@@ -1,7 +1,9 @@
 {
   "benchmark_version": "2.0.0",
-  "status": "implementation_verified_publication_pending",
+  "status": "published",
+  "release_date": "2026-10-23",
   "base_commit": "be2f5c83c0cee908e37bc528e4001dac7a2d7fce",
+  "implementation_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
   "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
   "tasks": 20,
   "automatic_tasks": 13,
@@ -10,10 +12,59 @@
   "native_wrong_controls_rejected": 13,
   "unit_tests_passed": 91,
   "unit_tests_skipped": 0,
-  "docker_ci": "pending",
-  "drive": "upload_pending",
+  "docker_ci": "passed",
+  "ci": {
+    "url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163399",
+    "source_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+    "conclusion": "success",
+    "core_job": "success",
+    "docker_job": "success",
+    "docker_job_references_at_100": 13,
+    "docker_job_wrong_controls_below_100": 57,
+    "docker_control_records": 70,
+    "docker_unscored": 0,
+    "code_records_executed_in_docker": 62,
+    "h02_answer_verification_records": 8,
+    "isolation_observations_passed": 13,
+    "core_evidence": "../../validation/v2.0/ci/39970163399/core/core-audit.json",
+    "docker_evidence": "../../validation/v2.0/ci/39970163399/docker/summary.json"
+  },
+  "compatibility_ci": {
+    "url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163537",
+    "source_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+    "conclusion": "success",
+    "final_attempt": 2,
+    "successful_jobs": 8,
+    "retried_jobs": 1,
+    "initial_interruption": "V1 science Python 3.11 was cancelled while refreshing an Ubuntu package mirror, before scientific tests began. One failed-jobs-only retry passed; the seven successful jobs were not rerun.",
+    "evidence": "../../validation/v2.0/ci/39970163537/summary.json"
+  },
+  "drive": {
+    "status": "uploaded_and_metadata_verified",
+    "zip_files": 23,
+    "single_condition_packets": 21,
+    "candidate_collections": 1,
+    "evaluator_packages": 1,
+    "total_bytes": 154055121,
+    "downloadable_files": 23,
+    "sharing_changed": false,
+    "addresses": "configured in the existing private site",
+    "public_manifest": "package-manifest.json",
+    "sha256_scope": "local ZIP bytes uploaded; Drive readback confirms names, sizes, parents and download permissions"
+  },
   "site": {
     "url": "https://research-benchmark-notebook.null-00-llun.chatgpt.site",
-    "deployment": "pending"
-  }
+    "deployment": "succeeded",
+    "version": 6,
+    "deployed_at": "2026-10-23T14:41:47.045602+00:00",
+    "original_site_preserved": true,
+    "access_scope_preserved": true,
+    "identical_non_download_static_files": 56,
+    "final_app_sha256": "502d1040b304baf818869599bdc871c5237060a6d41a57fd5bb0aa048a12e918",
+    "node_contract_checks_passed": 83,
+    "source_evidence": "../../validation/v2.0/site-source-parity.json",
+    "browser_scope": "Managed desktop preview of deployed source; production URL was observed at the private sign-in gate, not authenticated UI acceptance"
+  },
+  "post_ci_change": "Publication evidence and download metadata, plus one presentation-only guard hiding the R06 download action before mode selection; 83 Node checks and five actual download UI observations passed afterwards. Evaluator and all 137 packaged input files remain identical to the CI implementation commit.",
+  "real_model_runs": 0
 }

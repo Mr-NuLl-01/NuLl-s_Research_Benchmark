@@ -1,0 +1,132 @@
+{
+  "schema": "nrb-ci-compatibility-summary-v1",
+  "repository": "Mr-NuLl-01/NuLl-s_Research_Benchmark",
+  "source_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+  "run_id": 39970163537,
+  "run_url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163537",
+  "final_attempt": 2,
+  "status": "completed",
+  "conclusion": "success",
+  "updated_at": "2026-10-23T14:48:51Z",
+  "successful_jobs": 8,
+  "total_jobs": 8,
+  "jobs": [
+    {
+      "id": 120478957119,
+      "name": "V1 science Python 3.11",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-23T14:47:22Z",
+      "completed_at": "2026-10-23T14:48:50Z"
+    },
+    {
+      "id": 120478959242,
+      "name": "Docker and separate Harbor verifier",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-23T14:30:12Z",
+      "completed_at": "2026-10-23T14:36:46Z"
+    },
+    {
+      "id": 120478959954,
+      "name": "Core Python 3.11",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-23T14:30:13Z",
+      "completed_at": "2026-10-23T14:30:39Z"
+    },
+    {
+      "id": 120478960382,
+      "name": "Core Python 3.12",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-23T14:30:12Z",
+      "completed_at": "2026-10-23T14:30:40Z"
+    },
+    {
+      "id": 120479010552,
+      "name": "V1 Docker, Fortran and separate Harbor verifier",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-23T14:30:12Z",
+      "completed_at": "2026-10-23T14:37:18Z"
+    },
+    {
+      "id": 120479024012,
+      "name": "V1 Inspect, promptfoo and Harbor schema",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-23T14:30:13Z",
+      "completed_at": "2026-10-23T14:32:03Z"
+    },
+    {
+      "id": 120479028892,
+      "name": "V1 science Python 3.12",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-23T14:30:13Z",
+      "completed_at": "2026-10-23T14:31:14Z"
+    },
+    {
+      "id": 120479030806,
+      "name": "Inspect, promptfoo, Harbor schema",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-23T14:30:12Z",
+      "completed_at": "2026-10-23T14:32:14Z"
+    }
+  ],
+  "initial_attempt": {
+    "attempt": 1,
+    "conclusion": "cancelled",
+    "successful_jobs": 7,
+    "affected_job_id": 120470416042,
+    "classification": "runner_apt_update_installation_stall",
+    "mirror": "http://azure.archive.ubuntu.com/ubuntu",
+    "configured_timeout_minutes": 15,
+    "status_file": "attempt-1/workflow-status.json",
+    "log_file": "attempt-1/v1-python311-install.log"
+  },
+  "retry": {
+    "requests": 1,
+    "api": "rerun_failed_workflow_run_jobs",
+    "only_executed_job_id": 120478957119,
+    "only_executed_job_name": "V1 science Python 3.11",
+    "started_at": "2026-10-23T14:47:22Z",
+    "completed_at": "2026-10-23T14:48:50Z",
+    "carried_forward_successful_jobs": 7,
+    "carried_forward_execution_times_verified": true,
+    "source_or_workflow_changes": false,
+    "job_metadata": "attempt-2/job-120478957119.json",
+    "log_file": "attempt-2/v1-python311-install-and-tests.log",
+    "unit_tests": {
+      "reported_count": 108,
+      "skipped": 3,
+      "conclusion": "OK",
+      "wall_seconds": 37.371,
+      "skipped_framework_runtime_checks": [
+        "test_all_ten_exports_parse_actual_task_config (test_adapters.RealHarborSchemaRuntime.test_all_ten_exports_parse_actual_task_config) ... skipped 'Harbor absent: real schema runtime not validated'",
+        "test_task_construction_and_actual_mock_eval (test_adapters.RealInspectRuntime.test_task_construction_and_actual_mock_eval) ... skipped 'inspect-ai absent: real runtime not validated'",
+        "test_actual_empty_cli_ten_expected_failures (test_adapters.RealPromptfooRuntime.test_actual_empty_cli_ten_expected_failures) ... skipped 'promptfoo absent: real CLI runtime not validated'"
+      ]
+    },
+    "scientific_selftest_step": "success",
+    "frozen_materials_check": {
+      "passed": true,
+      "legacy_frozen_tasks": 19,
+      "verified_material_files": 37,
+      "new_media_tasks": [
+        "X04",
+        "X05"
+      ],
+      "model_calls": 0
+    }
+  },
+  "same_commit_v2_workflow": {
+    "run_id": 39970163399,
+    "conclusion": "success",
+    "core_audit": "../39970163399/core/core-audit.json",
+    "docker_audit_directory": "../39970163399/docker"
+  },
+  "model_evaluation_performed": false
+}

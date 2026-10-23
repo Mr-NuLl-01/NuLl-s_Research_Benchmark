@@ -4,6 +4,8 @@
 
 [使用指南](docs/v2.0/usage.zh-CN.md) · [单题材料](tasks/v2.0/) · [设计与来源](docs/v2.0/design.zh-CN.md) · [验证记录](docs/v2.0/validation.md) · [下载清单](docs/v2.0/downloads.json) · [网页源码](web/)
 
+本轮已发布至[原个人站点](https://research-benchmark-notebook.null-00-llun.chatgpt.site)第6版。23个ZIP已上传并接入私有站点的Google Drive下载入口，文件校验见[发布包清单](docs/v2.0/package-manifest.md)。实现提交`7351746`的[完整V2 CI](https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163399)已通过；具体执行范围和发布状态见[验证记录](docs/v2.0/validation.md)。
+
 本次从第一轮提交 `be2f5c8` 接续，完成其余 12 题，保留八道 Python 的科学任务、V1 原题、原始材料和历史记录。题目使用公开问题、可核验文献与合成数据；没有把作者控制或界面测试记成模型成绩。难度为设计先验，尚未做真实模型成功率标定。
 
 ## 完整题库

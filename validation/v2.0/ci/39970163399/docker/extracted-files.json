@@ -1,0 +1,47 @@
+[
+  {
+    "path": "v2-docker-controls.json",
+    "bytes": 431168,
+    "sha256": "83a459971ac2fa1f51e97073b6972ba309a373f8160103b3897aaa91e6e636e3"
+  },
+  {
+    "path": "v2-docker-controls.log",
+    "bytes": 2623,
+    "sha256": "bb4ff05aecdf19701c5160ce3a2edf6e86f7a60056c6e1840afcfc492a9b07f4"
+  },
+  {
+    "path": "v2-docker-version.txt",
+    "bytes": 769,
+    "sha256": "7ba4296d98811b3f6017879e4adb5452f8fe84ab8242b9bfd4fe14e394459098"
+  },
+  {
+    "path": "v2-images.json",
+    "bytes": 6469,
+    "sha256": "ec3c5ae234f8725d4f1d6621be632e03330e98195bc85997e27b56e7aa18cb44"
+  },
+  {
+    "path": "v2-isolation.json",
+    "bytes": 15808,
+    "sha256": "43d3d7350e5d0586e7b207060adde041ab067314848610c3f42e76173e7720a1"
+  },
+  {
+    "path": "v2-isolation.log",
+    "bytes": 80,
+    "sha256": "c696aeaab001cc9f3f705849a5f29b88a726716b3e3c36757e3f8a90a74594ff"
+  },
+  {
+    "path": "v2-lean-build.log",
+    "bytes": 11706,
+    "sha256": "10874c8d1970575512db311cf2a2d4ff51f061b5537526337b80b61bcc3ec425"
+  },
+  {
+    "path": "v2-python-packages.txt",
+    "bytes": 159,
+    "sha256": "6469cecf3ff053bc5bc0c0e8fd2c06e1d599679f8c73b1db002ed7bd7c19563f"
+  },
+  {
+    "path": "v2-runtime-build.log",
+    "bytes": 23586,
+    "sha256": "bd642b060135d9c420ecc43c44ed5f7160fd56b632dff76d7b571ec66925fb3b"
+  }
+]

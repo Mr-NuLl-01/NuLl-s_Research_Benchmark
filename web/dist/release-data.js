@@ -683,13 +683,149 @@ globalThis.NRB_RELEASE = {
   ],
   "downloads": {
     "folder": {
-      "id": "1fMlEy4xPkidVDhZEumV45F-wQWnoZIhT",
-      "url": "https://drive.google.com/drive/folders/1fMlEy4xPkidVDhZEumV45F-wQWnoZIhT",
-      "name": "2.0.0"
+      "name": "2.0.0",
+      "status": "private_site_configured"
     },
-    "grader": null,
-    "candidateBundle": null,
-    "tasks": {},
+    "grader": {
+      "name": "NRB-v2.0.0-evaluator.zip",
+      "bytes": 33149966,
+      "sha256": "a58b8d7fdb7037384d96fe2022cb9b4ef060a1b255e5921ef23e266529cebe99",
+      "status": "private_site_configured"
+    },
+    "candidateBundle": {
+      "name": "NRB-v2.0.0-all-candidates.zip",
+      "bytes": 60450997,
+      "sha256": "729726a1b92d24b801ccf3c7453bfe8ff0bedde71db67dd5a8ddc0c45f390934",
+      "status": "private_site_configured"
+    },
+    "tasks": {
+      "P01": {
+        "name": "NRB-v2.0.0-P01-candidate.zip",
+        "bytes": 3740,
+        "sha256": "7f90dbebf2e947b975039887c7af6c71c6293f89ee67a7b4c4442172dc377ac6",
+        "status": "private_site_configured"
+      },
+      "P02": {
+        "name": "NRB-v2.0.0-P02-candidate.zip",
+        "bytes": 3847,
+        "sha256": "fbac7dac4a34533a2f11b617803b7e0a7c8742c3799e277ae6b9f0d6240d93cc",
+        "status": "private_site_configured"
+      },
+      "P03": {
+        "name": "NRB-v2.0.0-P03-candidate.zip",
+        "bytes": 4151,
+        "sha256": "d999d85769bfe254ae91099d81a95996250f2b43352ea20c57ab62058cfef790",
+        "status": "private_site_configured"
+      },
+      "P04": {
+        "name": "NRB-v2.0.0-P04-candidate.zip",
+        "bytes": 4467,
+        "sha256": "607dba0267ab5b9d0703ba354857c836af0958418cbc562faa855992535793b1",
+        "status": "private_site_configured"
+      },
+      "P05": {
+        "name": "NRB-v2.0.0-P05-candidate.zip",
+        "bytes": 4709,
+        "sha256": "85f4fd6489229e3bde9eaf727d0bb211a2afeb38bd6f974192f16c6db0471d9f",
+        "status": "private_site_configured"
+      },
+      "P06": {
+        "name": "NRB-v2.0.0-P06-candidate.zip",
+        "bytes": 4659,
+        "sha256": "6dada90848ad2cf76ea17f2b78eda707fec8063c172f33408c301957fdec4f80",
+        "status": "private_site_configured"
+      },
+      "P07": {
+        "name": "NRB-v2.0.0-P07-candidate.zip",
+        "bytes": 4526,
+        "sha256": "1e3b94bd142bcf46e43be33c97fd5ceccfb3002686523ec36e7c267f08a17c1b",
+        "status": "private_site_configured"
+      },
+      "P08": {
+        "name": "NRB-v2.0.0-P08-candidate.zip",
+        "bytes": 8170,
+        "sha256": "a2fa70aa9dc6c621d34d35b82314a6714ce4db3d9623d5c873663130aa74307d",
+        "status": "private_site_configured"
+      },
+      "F01": {
+        "name": "NRB-v2.0.0-F01-candidate.zip",
+        "bytes": 5077,
+        "sha256": "79340002f5cbe32d1750f5a80f5ee5b53d7e4d2dd8f3322cf27caaee559c9bbf",
+        "status": "private_site_configured"
+      },
+      "F02": {
+        "name": "NRB-v2.0.0-F02-candidate.zip",
+        "bytes": 4266,
+        "sha256": "9fa4ae055757704084e9de032030476c5661c70b95b4a50f8ac2fc37208aa829",
+        "status": "private_site_configured"
+      },
+      "F03": {
+        "name": "NRB-v2.0.0-F03-candidate.zip",
+        "bytes": 4690,
+        "sha256": "edabb8b621b10a89d0b80222a8b12f86264c929dad77e72adf1118b388f38cbe",
+        "status": "private_site_configured"
+      },
+      "L01": {
+        "name": "NRB-v2.0.0-L01-candidate.zip",
+        "bytes": 6852,
+        "sha256": "4c9264bd2781f8b0a10d50d0ce54f1a2144f61f8669493affaf236c5cf7b5e31",
+        "status": "private_site_configured"
+      },
+      "R01": {
+        "name": "NRB-v2.0.0-R01-candidate.zip",
+        "bytes": 225199,
+        "sha256": "99ea315ef775728f6ac258ac6e34abaeaf5694ebb1e688e72802a9e2496a02c5",
+        "status": "private_site_configured"
+      },
+      "R02": {
+        "name": "NRB-v2.0.0-R02-candidate.zip",
+        "bytes": 4614,
+        "sha256": "ac33e332ed533edfc960b1497357e8384f0374c55d1bc5533091e9cc4244c61b",
+        "status": "private_site_configured"
+      },
+      "R03": {
+        "name": "NRB-v2.0.0-R03-candidate.zip",
+        "bytes": 5034,
+        "sha256": "6995d4f5a2351135ed87531251695a8f33c17dda47cca105d5f60807be4d8afd",
+        "status": "private_site_configured"
+      },
+      "R04": {
+        "name": "NRB-v2.0.0-R04-candidate.zip",
+        "bytes": 124162,
+        "sha256": "95355bf0b32e780e61be8df080831bbf6c384b6a687e8735eadebe78c3de48e4",
+        "status": "private_site_configured"
+      },
+      "R05": {
+        "name": "NRB-v2.0.0-R05-candidate.zip",
+        "bytes": 1067930,
+        "sha256": "ee2bcf130d50f8e1ecfe764afab8599fcd9e8ecf74046bcc5677fa604985874f",
+        "status": "private_site_configured"
+      },
+      "R06-A": {
+        "name": "NRB-v2.0.0-R06-A-candidate.zip",
+        "bytes": 27511526,
+        "sha256": "f6bf5e0df9fdbf68caa93cf93794b06a456d57a7e671b46e1d243026d729c5f7",
+        "status": "private_site_configured"
+      },
+      "R06-B": {
+        "name": "NRB-v2.0.0-R06-B-candidate.zip",
+        "bytes": 31447248,
+        "sha256": "09846d8545fb39fd67534daeb5bcf92625b24e684b22e98d28d1065920b7a484",
+        "status": "private_site_configured"
+      },
+      "H01": {
+        "name": "NRB-v2.0.0-H01-candidate.zip",
+        "bytes": 5389,
+        "sha256": "c299b95af2f75cc83c3b9c981f5fed47756f61c1980f5ded3376592c942c12d4",
+        "status": "private_site_configured"
+      },
+      "H02": {
+        "name": "NRB-v2.0.0-H02-candidate.zip",
+        "bytes": 3902,
+        "sha256": "6ee9c23d2d07fbbe3263364c7cd8a32ca2b7cee9ff477b0e6910d5770c08db0d",
+        "status": "private_site_configured"
+      }
+    },
     "legacy": {
       "C01": {
         "id": "12Jhvarp2ydfFdNVc0DsL7qKUBBg3z_8X",
@@ -858,8 +994,10 @@ globalThis.NRB_RELEASE = {
         "id": "1EpIAISvT_jlnEioC2jKXmx6Cl6_sSn4s"
       }
     },
-    "status": "upload_pending",
-    "benchmark_version": "2.0.0"
+    "status": "private_site_configured",
+    "benchmark_version": "2.0.0",
+    "implementation_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+    "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3"
   },
   "rubrics": {
     "R01": {

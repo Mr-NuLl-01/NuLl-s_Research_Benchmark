@@ -3,7 +3,7 @@
   "benchmark_version": "2.0.0",
   "scope": "Executable webpage files, excluding generated download manifest",
   "files": {
-    "app.js": "15665f6ba762e1823d43cdf67d347f6eb1e3192451446eb56042de2590f85be8",
+    "app.js": "502d1040b304baf818869599bdc871c5237060a6d41a57fd5bb0aa048a12e918",
     "h02-grader.js": "a3a85cdfd3ed2a99f6d598aa5a34bc667dfd914cee81a34a31c4eb82a016e0de",
     "index.html": "5aa1906d87ba14615bb9d6063ccb8ec8fb92b2bdfa00442bdc19674f17507aa1",
     "manual-grader.js": "f34abfde2ea7df5e680b9b64d05043e37b5deb13b9db2498b24614d1072cbf61",
@@ -11,5 +11,6 @@
     "report-validation.js": "b6240f48f283a641968fd008700ede4462e35c1dfb08a4b52a641b0b524870a8",
     "style.css": "abd15a8e6464dc558c7c7ec7d99eb8c3a1c3549c922416034ef3ac8c5eb0d23d",
     "tasks-data.js": "56f8b3fb9e169decd55d540b5654160e6dd97c3bb1924a7e0a03aabfbe0587ff"
-  }
+  },
+  "final_presentation_adjustment": "Hide the redundant unavailable-download label until R06 mode is selected; scoring and import logic unchanged."
 }

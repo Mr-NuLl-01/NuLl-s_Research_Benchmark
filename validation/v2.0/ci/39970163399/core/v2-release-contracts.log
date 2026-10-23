@@ -1,0 +1,6 @@
+PASS complete 20-task scope and 13/7 score partition
+PASS frozen generated prompts and hashed static sources
+PASS candidate-only exports reproduce all public prompts
+PASS rubric input allowlists resolve and R06 modes stay separate
+PASS actual site prompts, rubrics and automatic manifests match evaluator
+{"passed": true, "checks": 5, "evidence": "v2-release-contracts.json"}

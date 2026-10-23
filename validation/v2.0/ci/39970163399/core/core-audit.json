@@ -1,0 +1,141 @@
+{
+  "schema": "nrb-ci-core-audit-v1",
+  "retrieved_at": "2026-10-23T14:34:21.509690+00:00",
+  "repository": "Mr-NuLl-01/NuLl-s_Research_Benchmark",
+  "run_id": 39970163399,
+  "run_url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163399",
+  "job_id": 120470415528,
+  "job_url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163399/job/120470415528",
+  "job_conclusion": "success",
+  "source_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+  "source_dirty": false,
+  "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
+  "artifact_id": 12508603140,
+  "artifact_sha256_verified": true,
+  "artifact_zip_sha256": "632f1fc34f05e28c2b8c0a5acfbd280526375ae588e306a647b348500f217b34",
+  "not_model_performance": true,
+  "unit_tests": {
+    "passed": 91,
+    "total": 91,
+    "skipped": 0,
+    "wall_seconds": 51.295
+  },
+  "native_controls": {
+    "passed": 52,
+    "total": 52,
+    "references_at_100": 39,
+    "wrong_controls_below_100": 13,
+    "full_reports_validated": 52,
+    "gate_checks": 53,
+    "wall_seconds": 18.046647828000005
+  },
+  "release_contracts": {
+    "passed": 5,
+    "total": 5,
+    "wall_seconds": 1.525378068000009
+  },
+  "web_contracts": {
+    "passed": 83,
+    "total": 83,
+    "kind": "Node contract/state tests with DOM stubs; real-browser QA is separate"
+  },
+  "runtime_versions": {
+    "v2-fortran-version.txt": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+    "v2-lean-version.txt": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+    "v2-node-version.txt": "v24.21.0",
+    "v2-python-version.txt": "Python 3.12.15"
+  },
+  "files": [
+    {
+      "path": "core-job-metadata.json",
+      "bytes": 3400,
+      "sha256": "e9c55337c55c1951077d1aaa5600bc2c127975e945afed94673e6858faafdba7",
+      "git_blob_sha": "ef1ebc06748a43be874b1bf2688f57870597803a"
+    },
+    {
+      "path": "core-job.log",
+      "bytes": 59587,
+      "sha256": "347de37ac1221593a826fa1d88b0166b8f9a96b1e0158fa8c681714bca88efca",
+      "git_blob_sha": "c7fc0e9036407523c19f6446c24c25a6a34f7cce"
+    },
+    {
+      "path": "v2-core-evidence.zip",
+      "bytes": 34379,
+      "sha256": "632f1fc34f05e28c2b8c0a5acfbd280526375ae588e306a647b348500f217b34",
+      "git_blob_sha": "cb7c22253fbaca06f3aef83f6891d964ab98e285"
+    },
+    {
+      "path": "v2-fortran-version.txt",
+      "bytes": 254,
+      "sha256": "c077c93e4d08c80bcaaca8856d54d860655a989eb6820a5e807ac798e452e222",
+      "git_blob_sha": "c1cb8240b4b494aae16a65af213e8cedddfc1ada"
+    },
+    {
+      "path": "v2-lean-install.log",
+      "bytes": 649,
+      "sha256": "b12c39793f34456c3ad894865645f20eb27219cc4d45d37f449f08282d39f602",
+      "git_blob_sha": "81e398b61ea5ee34d509a7382f8d399a032d6683"
+    },
+    {
+      "path": "v2-lean-version.txt",
+      "bytes": 78,
+      "sha256": "5362a246ce2545424db10a77de8fd4694f4cf8b0170dfd43fa727acf7f7f259b",
+      "git_blob_sha": "507e58dc270fb40a999f3a0a9f2245cc58f7fa19"
+    },
+    {
+      "path": "v2-native-controls.json",
+      "bytes": 293101,
+      "sha256": "edf82a50a14ed429205fcfdd78c6eff3bbe9985bfea2055e55a227f09ce60e8f",
+      "git_blob_sha": "48acd64b88fe0da4432c26feeea11f9851046d50"
+    },
+    {
+      "path": "v2-native-controls.log",
+      "bytes": 1687,
+      "sha256": "97d559a70e201d1ca8d03ab458f1e9abba7e7ad84f059555fab50fc2468d9d19",
+      "git_blob_sha": "523cc582bc89d50fc01698a0aa8828a3ab37fc95"
+    },
+    {
+      "path": "v2-node-version.txt",
+      "bytes": 9,
+      "sha256": "f2ec568164f99546161909b0189b57bb5be3e80f8e2ccd8a51a4aed8c4055a04",
+      "git_blob_sha": "166aae1151bff5f181a08ba6329836c39eddb335"
+    },
+    {
+      "path": "v2-python-packages.txt",
+      "bytes": 159,
+      "sha256": "6469cecf3ff053bc5bc0c0e8fd2c06e1d599679f8c73b1db002ed7bd7c19563f",
+      "git_blob_sha": "d421e65e632f0fb342deae3770d919e2868d15f1"
+    },
+    {
+      "path": "v2-python-version.txt",
+      "bytes": 15,
+      "sha256": "9bdce2f3bc127762fcb79db8faf0385c42e81e916436db64486d7162bc1d04e0",
+      "git_blob_sha": "cb5e56a136e4cf2b7326aa1675c572db00df560b"
+    },
+    {
+      "path": "v2-release-contracts.json",
+      "bytes": 22753,
+      "sha256": "5989074f5b46aaa277f6c6bd446409b190daa699bc976226928ac150e5822a5e",
+      "git_blob_sha": "74c35bf098053ad9d87a7229ac3dd2ee939136ee"
+    },
+    {
+      "path": "v2-release-contracts.log",
+      "bytes": 376,
+      "sha256": "2e6d04a110c263a2a948bd4d7abb8fdd7cb4a1e1e6f649a65dd21cd3f6403300",
+      "git_blob_sha": "1d6d64c3eb73ee3648f850b95b62d9ddfc57a289"
+    },
+    {
+      "path": "v2-tests.log",
+      "bytes": 12918,
+      "sha256": "6f42fb8e35eb57d9aa2bea33ccfe252bbd02362c26ce3768f56f30f3ffd82210",
+      "git_blob_sha": "ff4fe207e9c5ee11d0e01635b8666ef601d7d333"
+    },
+    {
+      "path": "v2-web-checks.log",
+      "bytes": 280,
+      "sha256": "789250ad377484f2851d8e5163960e52c3ec543e5dd8b84d26eb0bbbcca4aa45",
+      "git_blob_sha": "df4181d11dc6a64844f62220b9bb7825e8476963"
+    }
+  ],
+  "passed": true
+}

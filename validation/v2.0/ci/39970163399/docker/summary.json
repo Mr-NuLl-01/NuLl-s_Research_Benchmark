@@ -1,0 +1,229 @@
+{
+  "schema": "nrb-v2-ci-docker-independent-audit-v1",
+  "passed": true,
+  "audited_at": "2026-10-23T14:36:50.810569+00:00",
+  "run_id": 39970163399,
+  "run_url": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/actions/runs/39970163399",
+  "job_id": 120470415803,
+  "commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+  "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
+  "artifact_id": 12508199381,
+  "artifact_bytes": 48542,
+  "artifact_sha256": "77b68639e6e3c23a0583c85bb1d1b00f663047494dc736ab068c06af436e52d6",
+  "control_gate_checks_passed": 72,
+  "reference_count": 13,
+  "wrong_control_count": 57,
+  "control_record_count": 70,
+  "unscored_count": 0,
+  "backend_record_counts": {
+    "docker": 62,
+    "answer": 8
+  },
+  "references": [
+    {
+      "task_id": "P01",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "P02",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "P03",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "P04",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "P05",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "P06",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "P07",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "P08",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "F01",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "F02",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "F03",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3"
+    },
+    {
+      "task_id": "L01",
+      "score": 100.0,
+      "backend": "docker",
+      "image_id": "sha256:d08cdfcaef18afdcfc2cdd5470fc899718843a377213d80a396f7e487cda523c"
+    },
+    {
+      "task_id": "H02",
+      "score": 100.0,
+      "backend": "answer",
+      "image_id": null
+    }
+  ],
+  "wrong_controls_by_task": {
+    "P01": 2,
+    "P02": 2,
+    "P03": 2,
+    "P04": 3,
+    "P05": 3,
+    "P06": 4,
+    "P07": 3,
+    "P08": 4,
+    "F01": 4,
+    "F02": 5,
+    "F03": 4,
+    "L01": 14,
+    "H02": 7
+  },
+  "isolation_observation_count": 13,
+  "isolation_observations": {
+    "nonroot_uid_gid": true,
+    "evaluator_not_importable": true,
+    "known_evaluator_and_socket_paths_absent": true,
+    "candidate_mount_only_solution_and_driver": true,
+    "root_mount_read_only": true,
+    "candidate_mount_read_only": true,
+    "root_write_blocked": true,
+    "candidate_write_blocked": true,
+    "temporary_write_allowed": true,
+    "no_new_privileges": true,
+    "effective_capabilities_empty": true,
+    "loopback_only": true,
+    "external_connect_has_no_route": true
+  },
+  "isolation_companion_control_count": 2,
+  "images": {
+    "python_fortran": {
+      "Id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3",
+      "RepoTags": [
+        "nrb-v2:local"
+      ],
+      "RepoDigests": [],
+      "Created": "2026-10-23T14:30:52.754229453Z",
+      "Architecture": "amd64",
+      "Os": "linux"
+    },
+    "lean": {
+      "Id": "sha256:d08cdfcaef18afdcfc2cdd5470fc899718843a377213d80a396f7e487cda523c",
+      "RepoTags": [
+        "nrb-v2-lean:local"
+      ],
+      "RepoDigests": [],
+      "Created": "2026-10-23T14:31:11.810726384Z",
+      "Architecture": "amd64",
+      "Os": "linux"
+    }
+  },
+  "compiler_versions": {
+    "F01": "GNU Fortran (Debian 14.2.0-19) 14.2.0",
+    "F02": "GNU Fortran (Debian 14.2.0-19) 14.2.0",
+    "F03": "GNU Fortran (Debian 14.2.0-19) 14.2.0",
+    "L01": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)"
+  },
+  "lean_fixed_obligations": [
+    {
+      "target_verified": true,
+      "statement": "∀ (s : State) (e : Event), admissible s e → total (step s e) = total s + e.injected",
+      "kernel_checked": true,
+      "goal": "step_balance",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "target_verified": true,
+      "statement": "∀ (s : State) (e : Event), e.injected = 0 → (step s e).active ≤ s.active",
+      "kernel_checked": true,
+      "goal": "zero_input_active",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "target_verified": true,
+      "statement": "∀ (s : State) (es : List Event), admissibleTrace s es → total (run s es) = total s + injected es",
+      "kernel_checked": true,
+      "goal": "trace_balance",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "target_verified": true,
+      "statement": "∀ (s : State) (xs ys : List Event), run s (xs ++ ys) = run (run s xs) ys",
+      "kernel_checked": true,
+      "goal": "restart",
+      "axioms": []
+    },
+    {
+      "target_verified": true,
+      "statement": "∀ (s : State) (xs ys : List Event), admissibleTrace s (xs ++ ys) → admissibleTrace s xs",
+      "kernel_checked": true,
+      "goal": "prefix_admissible",
+      "axioms": []
+    },
+    {
+      "target_verified": true,
+      "statement": "∀ (s : State) (es : List Event), admissibleTrace s es → (run s es).collected ≤ total s + injected es",
+      "kernel_checked": true,
+      "goal": "collected_bound",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "lean_partial_scores": {
+    "invalid_trace_induction": 78.571429,
+    "missing_obligation": 85.714286
+  },
+  "controls_wall_seconds": 94.33021839899999,
+  "isolation_wall_seconds": 1.1035260310000012,
+  "docker_server_version": "28.0.4",
+  "candidate_python": "3.12.15 (main, Oct 21 2026, 01:08:20) [GCC 14.2.0]",
+  "not_model_performance": true,
+  "api_provider_calls": 0,
+  "scope": "12 code-task references plus 50 code mutants executed through Docker; H02 reference plus 7 answer mutants use data verification. The 13-observation isolation probe uses the Python/Fortran production executor/image. Lean is separately kernel-checked in its pinned image. These authored controls do not measure model performance or establish general host/kernel exploit resistance."
+}

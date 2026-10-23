@@ -1,0 +1,491 @@
+{
+  "schema": "nrb-v2-docker-check-v1",
+  "benchmark_version": "2.0.0",
+  "kind": "actual_candidate_runtime_probe",
+  "not_model_performance": true,
+  "api_provider_calls": 0,
+  "created_at": "2026-10-23T14:31:16.868867+00:00",
+  "evaluator_identity": {
+    "grader_version": "2.0.0",
+    "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
+    "source_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+    "source_dirty": false
+  },
+  "requested_image": "nrb-v2:local",
+  "runtime_status": "executed",
+  "passed": true,
+  "checks": {
+    "probe_executed_by_production_executor": true,
+    "probe_image_matches_inspected_image": true,
+    "probe_nonce_roundtrip": true,
+    "all_boundary_observations_pass": true,
+    "reference_and_wrong_candidate_observed": true,
+    "evaluator_source_unchanged": true
+  },
+  "controls": [
+    {
+      "task_id": "P01",
+      "label": "reference",
+      "not_model_performance": true,
+      "checks": {
+        "executed": true,
+        "image_matches": true,
+        "evaluator_matches": true,
+        "no_manual_review": true,
+        "expected_score": true,
+        "expected_completion": true
+      },
+      "passed": true,
+      "report": {
+        "schema": "nrb-auto-report-v2",
+        "benchmark_version": "2.0.0",
+        "grader_version": "2.0.0",
+        "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
+        "source_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+        "source_dirty": false,
+        "task_id": "P01",
+        "seed": 17,
+        "created_at": "2026-10-23T14:31:17.527887+00:00",
+        "packet_hash": "94d470a3e60e8688ba67faf2a1e3dc8d7b238072c3498836a915e481c4f1a7d0",
+        "test_manifest_hash": "7fc0024520539bfa577500e24a312f70e6f2149860fd1dc2871ff9ae70ac5206",
+        "scoring": "automatic",
+        "manual_review_required": false,
+        "max_score": 100,
+        "weight_total": 70,
+        "checks": [
+          {
+            "id": "parse_units",
+            "tier": "basic",
+            "weight": 12,
+            "critical": true,
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "empty",
+            "tier": "basic",
+            "weight": 8,
+            "critical": false,
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "duplicates_missing",
+            "tier": "scientific",
+            "weight": 15,
+            "critical": true,
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "quoted_bom",
+            "tier": "scientific",
+            "weight": 15,
+            "critical": false,
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "scaled_variance",
+            "tier": "stress",
+            "weight": 10,
+            "critical": false,
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "invalid_0",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "invalid_1",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "invalid_2",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "invalid_3",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "invalid_4",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": true,
+            "detail": ""
+          }
+        ],
+        "score": 100.0,
+        "total": 100.0,
+        "status": "passed",
+        "critical_passed": true,
+        "critical_failures": [],
+        "completion_status": "complete",
+        "tier_scores": {
+          "basic": {
+            "earned_weight": 20,
+            "scored_weight": 20,
+            "max_weight": 20
+          },
+          "scientific": {
+            "earned_weight": 30,
+            "scored_weight": 30,
+            "max_weight": 30
+          },
+          "stress": {
+            "earned_weight": 20,
+            "scored_weight": 20,
+            "max_weight": 20
+          }
+        },
+        "passed_checks": 10,
+        "failed_checks": 0,
+        "unscored_checks": 0,
+        "execution": {
+          "backend": "docker",
+          "language": "python",
+          "input_hash": "83ab1422f31193623746b019d869c33ff0445f966fabbf782098e5667b3a2eea",
+          "source_hash": "b222e7149f53d6f358349039928edf08e9420c090eadfca4d413139f3c0b9d86",
+          "wall_seconds": 0.21754611899996235,
+          "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3",
+          "compiler": null,
+          "timeout_seconds": 120,
+          "image": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3",
+          "exit_code": 0,
+          "stdout_hash": "5a6ca5a41763a1dbc679b61e08a2af6e09cba58c381711b0c1f57b1bfec7411e",
+          "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_excerpt": "",
+          "status": "executed",
+          "result_hash": "8bcadec271b008d7dac050518ce23e0ce94c9f0ef1907b630be96ed24074fcf1"
+        },
+        "environment": {
+          "evaluator_python": "3.12.15",
+          "platform": "Linux",
+          "machine": "x86_64"
+        },
+        "submission_hash": "800e80786bf904773c6d9fbfc575abd62bde3cb51ccdd75c08500fbc7c81fa6d",
+        "source_hash": "f67059ddcfaaa0919b5ef5673246b1b61952de77499257f900b6289bcae5bd35",
+        "report_origin": "local_verifier",
+        "control_only": false,
+        "comparison_eligible": true,
+        "trust_note": "Local execution report. Browser import does not rerun code. Hashes detect changes but are not an authenticity signature.",
+        "report_hash": "ca092c02d8573323c40b6875a528c21550b1052cdf9f62386a0fa75622941c61"
+      }
+    },
+    {
+      "task_id": "P01",
+      "label": "wrong_empty_output",
+      "not_model_performance": true,
+      "checks": {
+        "executed": true,
+        "image_matches": true,
+        "evaluator_matches": true,
+        "no_manual_review": true,
+        "expected_score": true,
+        "expected_completion": true
+      },
+      "passed": true,
+      "report": {
+        "schema": "nrb-auto-report-v2",
+        "benchmark_version": "2.0.0",
+        "grader_version": "2.0.0",
+        "evaluator_fingerprint": "7f2487673f1a214d60311193a369d48ab9215f9d7006554bf5c823e6ce5c7aa3",
+        "source_commit": "735174612fe0fb298a83c872a0350f6eabf2d0a5",
+        "source_dirty": false,
+        "task_id": "P01",
+        "seed": 17,
+        "created_at": "2026-10-23T14:31:17.797048+00:00",
+        "packet_hash": "94d470a3e60e8688ba67faf2a1e3dc8d7b238072c3498836a915e481c4f1a7d0",
+        "test_manifest_hash": "7fc0024520539bfa577500e24a312f70e6f2149860fd1dc2871ff9ae70ac5206",
+        "scoring": "automatic",
+        "manual_review_required": false,
+        "max_score": 100,
+        "weight_total": 70,
+        "checks": [
+          {
+            "id": "parse_units",
+            "tier": "basic",
+            "weight": 12,
+            "critical": true,
+            "passed": false,
+            "detail": "result: missing keys"
+          },
+          {
+            "id": "empty",
+            "tier": "basic",
+            "weight": 8,
+            "critical": false,
+            "passed": false,
+            "detail": "result: missing keys"
+          },
+          {
+            "id": "duplicates_missing",
+            "tier": "scientific",
+            "weight": 15,
+            "critical": true,
+            "passed": false,
+            "detail": "result: missing keys"
+          },
+          {
+            "id": "quoted_bom",
+            "tier": "scientific",
+            "weight": 15,
+            "critical": false,
+            "passed": false,
+            "detail": "result: missing keys"
+          },
+          {
+            "id": "scaled_variance",
+            "tier": "stress",
+            "weight": 10,
+            "critical": false,
+            "passed": false,
+            "detail": "result: missing keys"
+          },
+          {
+            "id": "invalid_0",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": false,
+            "detail": "Required exception behavior did not match"
+          },
+          {
+            "id": "invalid_1",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": false,
+            "detail": "Required exception behavior did not match"
+          },
+          {
+            "id": "invalid_2",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": false,
+            "detail": "Required exception behavior did not match"
+          },
+          {
+            "id": "invalid_3",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": false,
+            "detail": "Required exception behavior did not match"
+          },
+          {
+            "id": "invalid_4",
+            "tier": "stress",
+            "weight": 2,
+            "critical": false,
+            "passed": false,
+            "detail": "Required exception behavior did not match"
+          }
+        ],
+        "score": 0.0,
+        "total": 0.0,
+        "status": "failed",
+        "critical_passed": false,
+        "critical_failures": [
+          "parse_units",
+          "duplicates_missing"
+        ],
+        "completion_status": "failed",
+        "tier_scores": {
+          "basic": {
+            "earned_weight": 0,
+            "scored_weight": 20,
+            "max_weight": 20
+          },
+          "scientific": {
+            "earned_weight": 0,
+            "scored_weight": 30,
+            "max_weight": 30
+          },
+          "stress": {
+            "earned_weight": 0,
+            "scored_weight": 20,
+            "max_weight": 20
+          }
+        },
+        "passed_checks": 0,
+        "failed_checks": 10,
+        "unscored_checks": 0,
+        "execution": {
+          "backend": "docker",
+          "language": "python",
+          "input_hash": "83ab1422f31193623746b019d869c33ff0445f966fabbf782098e5667b3a2eea",
+          "source_hash": "f8697a1757f5fa20ea93c018444a5bcd5998784e50718cfe30c5aa2aebde4e0e",
+          "wall_seconds": 0.21783232100000305,
+          "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3",
+          "compiler": null,
+          "timeout_seconds": 120,
+          "image": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3",
+          "exit_code": 0,
+          "stdout_hash": "13340e2ec4f5031aa0d98bf6e6304d68beb39b87568aee4d28e8d414c679bc7a",
+          "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_excerpt": "",
+          "status": "executed",
+          "result_hash": "e7c34f9217919f83585dd08701c54348a0ce732eec2514e14fd694c694207056"
+        },
+        "environment": {
+          "evaluator_python": "3.12.15",
+          "platform": "Linux",
+          "machine": "x86_64"
+        },
+        "submission_hash": "a6874be9d108c742a90d1683d09390497f1616a5f603e5a81d8305924bf5c50f",
+        "source_hash": "1a9a8637c3392db69884b4876ae302760c7c0c0c56cfd28d6cf8674b01cef37f",
+        "report_origin": "local_verifier",
+        "control_only": false,
+        "comparison_eligible": true,
+        "trust_note": "Local execution report. Browser import does not rerun code. Hashes detect changes but are not an authenticity signature.",
+        "report_hash": "ead9b1ee7bf6169b22ec632c9a8585125197e43b27d990f9c1d5b7259afac537"
+      }
+    }
+  ],
+  "probe_source_sha256": "0e583fa7ea7f781f0deea898ad259eade0cabd0f74e3657c4bb092726dc518ba",
+  "scope": "Observed container boundary for the current image and host via the production V2 executor; not a proof against kernel exploits, arbitrary image contents, or malicious score-report forgery.",
+  "docker_server_version": "28.0.4",
+  "actual_image": {
+    "Id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3",
+    "RepoTags": [
+      "nrb-v2:local"
+    ],
+    "RepoDigests": [],
+    "Created": "2026-10-23T14:30:52.754229453Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  "probe_execution": {
+    "backend": "docker",
+    "language": "python",
+    "input_hash": "4c2bf10af43f7076c6f3e385c1d94e8a06c7d60dc38b81f0cf6a361d8d271e4d",
+    "source_hash": "da53e0394f61f6f62d517f1ba3e36a47ec8d5ea5c48cd5a243b71696ebc96a5b",
+    "wall_seconds": 0.3226437040000292,
+    "image_id": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3",
+    "compiler": null,
+    "timeout_seconds": 120,
+    "image": "sha256:09c1891d626e895e5ef1a9caea6cced3c69c35d3017d5e2a478910206742a7c3",
+    "exit_code": 0,
+    "stdout_hash": "44d412aae042b147f9f3c66327c7ba2e77090b3c4446a051c882431b0b655c20",
+    "stderr_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_excerpt": "",
+    "status": "executed",
+    "result_hash": "4cc51406621f01fbe6c5a0dd1e7ff35dc0019be8be7963dc1a642298ad233c50"
+  },
+  "probe_output": {
+    "nonce": "cf9522704e9340e480b08af528dc7824",
+    "checks": {
+      "nonroot_uid_gid": true,
+      "evaluator_not_importable": true,
+      "known_evaluator_and_socket_paths_absent": true,
+      "candidate_mount_only_solution_and_driver": true,
+      "root_mount_read_only": true,
+      "candidate_mount_read_only": true,
+      "root_write_blocked": true,
+      "candidate_write_blocked": true,
+      "temporary_write_allowed": true,
+      "no_new_privileges": true,
+      "effective_capabilities_empty": true,
+      "loopback_only": true,
+      "external_connect_has_no_route": true
+    },
+    "uid": 65534,
+    "gid": 65534,
+    "python": "3.12.15 (main, Oct 21 2026, 01:08:20) [GCC 14.2.0]",
+    "imports": {
+      "nrb": false,
+      "nrb_v1": false,
+      "nrb_v2": false
+    },
+    "candidate_files": [
+      "_driver_nrb.py",
+      "solution.py"
+    ],
+    "candidate_symlinks": [],
+    "present_forbidden_paths": [],
+    "absent_forbidden_paths": [
+      "/task/nrb_v1",
+      "/task/nrb_v2",
+      "/task/.git",
+      "/grader",
+      "/solution",
+      "/repo",
+      "/var/run/docker.sock",
+      "/run/docker.sock"
+    ],
+    "denied_forbidden_paths": [],
+    "mounts": {
+      "/": {
+        "options": [
+          "ro",
+          "relatime"
+        ],
+        "filesystem": "overlay"
+      },
+      "/tmp": {
+        "options": [
+          "rw",
+          "nosuid",
+          "nodev",
+          "relatime"
+        ],
+        "filesystem": "tmpfs"
+      },
+      "/task": {
+        "options": [
+          "ro",
+          "relatime"
+        ],
+        "filesystem": "ext4"
+      }
+    },
+    "process_security": {
+      "CapEff": "0000000000000000",
+      "NoNewPrivs": "1"
+    },
+    "writes": {
+      "root": {
+        "written": false,
+        "errno": 30,
+        "error": "OSError"
+      },
+      "candidate": {
+        "written": false,
+        "errno": 30,
+        "error": "OSError"
+      },
+      "temporary": {
+        "written": true,
+        "errno": null,
+        "error": null
+      }
+    },
+    "network_interfaces": [
+      "lo"
+    ],
+    "connect_errno": 101
+  },
+  "wall_seconds": 1.1035260310000012,
+  "report_hash": "5eabdcfd834a4e182afbf7555911e34369d0a64d1aee2d367ba90c060b47b0a1"
+}
