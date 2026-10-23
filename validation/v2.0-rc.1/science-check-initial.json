@@ -1,0 +1,645 @@
+{
+  "optics_boundary_system": [
+    {
+      "seed": 0,
+      "case": "interface_power",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 0,
+      "case": "quarterwave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 0,
+      "case": "oblique_absorbing_s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 0,
+      "case": "oblique_absorbing_p",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 0,
+      "case": "brewster_and_lossless",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 0,
+      "case": "evanescent_substrate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 17,
+      "case": "interface_power",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 17,
+      "case": "quarterwave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 17,
+      "case": "oblique_absorbing_s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 17,
+      "case": "oblique_absorbing_p",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 17,
+      "case": "brewster_and_lossless",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 17,
+      "case": "evanescent_substrate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 2026,
+      "case": "interface_power",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 2026,
+      "case": "quarterwave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 2026,
+      "case": "oblique_absorbing_s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 2026,
+      "case": "oblique_absorbing_p",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 2026,
+      "case": "brewster_and_lossless",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "seed": 2026,
+      "case": "evanescent_substrate",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "adaptive_numpy_solve": [
+    {
+      "seed": 0,
+      "case": "equilibrium",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 0,
+      "case": "zero_rates_source",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 0,
+      "case": "stiff_rollback",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        1133,
+        6
+      ],
+      "alternative_counts": [
+        1133,
+        6
+      ]
+    },
+    {
+      "seed": 0,
+      "case": "right_continuous_schedule",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        1591,
+        18
+      ],
+      "alternative_counts": [
+        1591,
+        18
+      ]
+    },
+    {
+      "seed": 0,
+      "case": "large_absolute_clock",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        48,
+        0
+      ],
+      "alternative_counts": [
+        48,
+        0
+      ]
+    },
+    {
+      "seed": 0,
+      "case": "floating_endpoint",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        6,
+        1
+      ],
+      "alternative_counts": [
+        6,
+        1
+      ]
+    },
+    {
+      "seed": 0,
+      "case": "single_observation",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 17,
+      "case": "equilibrium",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 17,
+      "case": "zero_rates_source",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 17,
+      "case": "stiff_rollback",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        1167,
+        7
+      ],
+      "alternative_counts": [
+        1167,
+        7
+      ]
+    },
+    {
+      "seed": 17,
+      "case": "right_continuous_schedule",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        1544,
+        17
+      ],
+      "alternative_counts": [
+        1544,
+        17
+      ]
+    },
+    {
+      "seed": 17,
+      "case": "large_absolute_clock",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        48,
+        0
+      ],
+      "alternative_counts": [
+        48,
+        0
+      ]
+    },
+    {
+      "seed": 17,
+      "case": "floating_endpoint",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        6,
+        1
+      ],
+      "alternative_counts": [
+        6,
+        1
+      ]
+    },
+    {
+      "seed": 17,
+      "case": "single_observation",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 91,
+      "case": "equilibrium",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 91,
+      "case": "zero_rates_source",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 91,
+      "case": "stiff_rollback",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        1172,
+        7
+      ],
+      "alternative_counts": [
+        1172,
+        7
+      ]
+    },
+    {
+      "seed": 91,
+      "case": "right_continuous_schedule",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        1580,
+        17
+      ],
+      "alternative_counts": [
+        1580,
+        17
+      ]
+    },
+    {
+      "seed": 91,
+      "case": "large_absolute_clock",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        48,
+        0
+      ],
+      "alternative_counts": [
+        48,
+        0
+      ]
+    },
+    {
+      "seed": 91,
+      "case": "floating_endpoint",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        6,
+        1
+      ],
+      "alternative_counts": [
+        6,
+        1
+      ]
+    },
+    {
+      "seed": 91,
+      "case": "single_observation",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 2026,
+      "case": "equilibrium",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 2026,
+      "case": "zero_rates_source",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "seed": 2026,
+      "case": "stiff_rollback",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        1134,
+        6
+      ],
+      "alternative_counts": [
+        1134,
+        6
+      ]
+    },
+    {
+      "seed": 2026,
+      "case": "right_continuous_schedule",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        1510,
+        17
+      ],
+      "alternative_counts": [
+        1510,
+        17
+      ]
+    },
+    {
+      "seed": 2026,
+      "case": "large_absolute_clock",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        48,
+        0
+      ],
+      "alternative_counts": [
+        48,
+        0
+      ]
+    },
+    {
+      "seed": 2026,
+      "case": "floating_endpoint",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        6,
+        1
+      ],
+      "alternative_counts": [
+        6,
+        1
+      ]
+    },
+    {
+      "seed": 2026,
+      "case": "single_observation",
+      "passed": true,
+      "detail": "",
+      "reference_counts": [
+        2,
+        0
+      ],
+      "alternative_counts": [
+        2,
+        0
+      ]
+    }
+  ],
+  "inverse_heat_qr_and_bounded_search": [
+    {
+      "case": "noiseless_nuisance",
+      "reference_D": 0.1200000000000003,
+      "independent_D": 0.12000000082536447,
+      "D_error": 8.253641659017319e-10,
+      "chi2_error": 1.4868126176647837e-14,
+      "information_rel_error": 4.326595115802454e-09
+    },
+    {
+      "case": "known_sigma_scale",
+      "reference_D": 0.12,
+      "independent_D": 0.12000000082536443,
+      "D_error": 8.253644295797002e-10,
+      "chi2_error": 4.2508374826350904e-14,
+      "information_rel_error": 4.3265959396640696e-09
+    },
+    {
+      "case": "heteroscedastic_shared_D",
+      "reference_D": 0.09238633792639692,
+      "independent_D": 0.09238633752390568,
+      "D_error": 4.0249123478552917e-10,
+      "chi2_error": 1.8829382497642655e-13,
+      "information_rel_error": 1.805465913549633e-09
+    },
+    {
+      "case": "negative_amplitude",
+      "reference_D": 0.18890621228551085,
+      "independent_D": 0.1889062124381981,
+      "D_error": 1.526872517310096e-10,
+      "chi2_error": 1.2079226507921703e-13,
+      "information_rel_error": 9.247396017954591e-10
+    },
+    {
+      "case": "one_sided_profile",
+      "reference_D": 0.04000000000000012,
+      "independent_D": 0.04,
+      "D_error": 1.1796119636642288e-16,
+      "chi2_error": 9.742207041085749e-15,
+      "information_rel_error": 2.141105953582862e-15
+    },
+    {
+      "case": "weak_full_interval",
+      "reference_D": 0.10999999999999976,
+      "independent_D": 0.11000000032414405,
+      "D_error": 3.241442808610273e-10,
+      "chi2_error": 4.5567715203769185e-18,
+      "information_rel_error": 1.6201851143560753e-09
+    },
+    {
+      "case": "lower_endpoint_interior_minimum",
+      "reference_D": 0.015038500000000121,
+      "independent_D": 0.01503850000783705,
+      "D_error": 7.836929022397854e-12,
+      "chi2_error": 1.4947237199178623e-18,
+      "information_rel_error": 1.5792306842649027e-11
+    },
+    {
+      "case": "upper_endpoint_interior_minimum",
+      "reference_D": 0.39996149999999986,
+      "independent_D": 0.39996149996507013,
+      "D_error": 3.492972577845421e-11,
+      "chi2_error": 1.2147961465839298e-16,
+      "information_rel_error": 1.5201808065004282e-10
+    }
+  ],
+  "inverse_contract_tiny_times": {
+    "exception": "ValueError",
+    "message": "unresolved linear nuisance design",
+    "input": {
+      "length": 1.0,
+      "bounds": [
+        0.01,
+        0.2
+      ],
+      "experiments": [
+        {
+          "time": [
+            0,
+            1e-15,
+            2e-15,
+            3e-15
+          ],
+          "value": [
+            0.8,
+            0.8,
+            0.8,
+            0.8
+          ],
+          "sigma": [
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ]
+        }
+      ]
+    }
+  },
+  "pipeline_fourier_and_scipy_fit": [
+    {
+      "case": "noiseless_two_parameter_inverse",
+      "reference_parameters": [
+        0.037189135006624054,
+        0.5812974753192418
+      ],
+      "independent_parameters": [
+        0.037189135006624324,
+        0.5812974753192426
+      ],
+      "identifiable_match": true,
+      "prediction_max_error": 1.1102230246251565e-15,
+      "chi2_error": 1.0389808003166473e-25,
+      "covariance_max_absolute_error": 2.414043899674756e-20
+    },
+    {
+      "case": "absolute_sigma_parametric_bootstrap",
+      "reference_parameters": [
+        0.029998471001437977,
+        0.587495052408803
+      ],
+      "independent_parameters": [
+        0.029998471093682675,
+        0.5874950523652435
+      ],
+      "identifiable_match": true,
+      "prediction_max_error": 1.715172448513158e-10,
+      "chi2_error": 9.237055564881302e-14,
+      "covariance_max_absolute_error": 6.2897358999445315e-15
+    },
+    {
+      "case": "rank_deficient_uniform_initial",
+      "reference_parameters": null,
+      "independent_parameters": null,
+      "identifiable_match": true,
+      "prediction_max_error": 2.886579864025407e-15,
+      "chi2_error": 1.700374345559357e-24
+    }
+  ]
+}

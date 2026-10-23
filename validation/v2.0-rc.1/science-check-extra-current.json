@@ -1,0 +1,82 @@
+{
+  "elliptic": [
+    {
+      "case": "affine_harmonic",
+      "passed": true,
+      "detail": "",
+      "residual": 3.5527136788005e-14
+    },
+    {
+      "case": "isotropic_manufactured",
+      "passed": true,
+      "detail": "",
+      "residual": 3.375077994860476e-14
+    },
+    {
+      "case": "directional_anisotropy",
+      "passed": true,
+      "detail": "",
+      "residual": 4.689582056016661e-13
+    },
+    {
+      "case": "nonuniform_interfaces",
+      "passed": true,
+      "detail": "",
+      "residual": 4.405364961712621e-13
+    },
+    {
+      "case": "refined_manufactured",
+      "passed": true,
+      "detail": "",
+      "residual": 3.936406756110955e-12
+    },
+    {
+      "case": "high_contrast_interfaces",
+      "passed": true,
+      "detail": "",
+      "residual": 1.688249540165998e-11
+    },
+    {
+      "case": "rectangular_nonuniform",
+      "passed": true,
+      "detail": "",
+      "residual": 2.0747847884194925e-12
+    }
+  ],
+  "modal_state_resume": [
+    {
+      "case": "pure_reaction_conservation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "periodic_diffusion_mode",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "coupled_discrete_tangents",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "resume_nonzero_tangent_state",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "case": "stiff_positive_conservative",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "bootstrap": [
+    {
+      "case": "absolute_sigma_parametric_bootstrap",
+      "passed": true,
+      "detail": "",
+      "mean_error": 1.0798386490540324e-10,
+      "covariance_error": 1.158184342498641e-13
+    }
+  ]
+}

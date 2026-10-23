@@ -1,0 +1,197 @@
+[
+  {
+    "task_id": "X04",
+    "url": "https://drive.google.com/file/d/1C3LNiq9IQpNi3WhXpLJo3ENCrqZgcUOf/view?usp=drivesdk",
+    "bytes": 28102436,
+    "sha256": "ab02b4ad97aad91ec2a62fa56288c17d4d49d7a46a0f4ed0a42ccb6c3a066101",
+    "packetHash": "8856a9ab7a66f371e4624bddaf2a57ee6cd7b4ac8343252718d0264fd6cb3a37",
+    "commonAssetsHash": "c0fc34e66786da17fea51c8a3562f555988eabd8847ae9888c9441606add2725",
+    "input_manifest": {
+      "schema": "nrb-video-input-v1.1",
+      "benchmark_version": "1.1.0",
+      "task_id": "X04",
+      "track": "A",
+      "files": [
+        {
+          "path": "COPY.txt",
+          "bytes": 93,
+          "sha256": "f55e5b74810440b24f56ad9724c544220fa577583f95db8cc7dcf764c77ce852"
+        },
+        {
+          "path": "LICENSES/DejaVu-LICENSE.txt",
+          "bytes": 3859,
+          "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+        },
+        {
+          "path": "LICENSES/NRB-MIT-LICENSE.txt",
+          "bytes": 1067,
+          "sha256": "65a06b7d18310e6ce10add5a3576dd15c4c18505529fe202a18d4ddf9965bb35"
+        },
+        {
+          "path": "LICENSES/PACKAGE_LICENSE_STATUS.md",
+          "bytes": 2208,
+          "sha256": "c3fcd5569e99b74354b16de8df811aa0670c2a3205635c5e1cea225fe2dda9b5"
+        },
+        {
+          "path": "LICENSES/SOURCE_LICENSE.md",
+          "bytes": 3161,
+          "sha256": "ff52a9a63704e99f964b85bd6413ac93056e8f9976fcd4931539bb8502d733bf"
+        },
+        {
+          "path": "LICENSES/evidence/CC-BY-3.0-legalcode.txt",
+          "bytes": 19467,
+          "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+        },
+        {
+          "path": "LICENSES/evidence/README-original.txt",
+          "bytes": 343,
+          "sha256": "3622773b7986ac4f4807352b94c111670ac5f888b558f6f70f95c0b7d253aba1"
+        },
+        {
+          "path": "LICENSES/evidence/raw-footage-release.html",
+          "bytes": 28258,
+          "sha256": "5c1dc6f2e00cde27d236a00fddfa6d62b0df302df2d58e6b1f6002f55cb57f85"
+        },
+        {
+          "path": "LICENSES/evidence/sharing.html",
+          "bytes": 11331,
+          "sha256": "c3defc0521e16af0a3afb6a96d084517620adf6434038e6a3a2ba1cf50f86947"
+        },
+        {
+          "path": "RUN_RECORD.template.json",
+          "bytes": 1161,
+          "sha256": "15b21c458f39f015ec3b6e7e6c099219eaa43d7ffd31fa079388b2e2239aad36"
+        },
+        {
+          "path": "TASK.md",
+          "bytes": 5006,
+          "sha256": "33871bcbeb397732203e5d0b217f61dcfb5e343ceaa39ad194e60217d1e76f15"
+        },
+        {
+          "path": "assets/DejaVuSansCondensed-Bold.ttf",
+          "bytes": 667844,
+          "sha256": "21f02ebcea75529d3ed9d26e089cd1b9c59a4b784119ba3a96e9bc83cf755ec7"
+        },
+        {
+          "path": "assets/DejaVuSansMono.ttf",
+          "bytes": 343140,
+          "sha256": "54bf827eb99404e8f430c330ad30f063334f637eba0109b6a18d4f566a8e9dd8"
+        },
+        {
+          "path": "soundtrack.wav",
+          "bytes": 1920044,
+          "sha256": "37ed2a662d04f833165358f81374d51e59904afb9c4c00e8a9e9fad588a7145c"
+        },
+        {
+          "path": "source.mp4",
+          "bytes": 25090487,
+          "sha256": "a882854e0d1b007e247ffc507fccee31c9bb5671810428dfe422a94317a98302"
+        }
+      ],
+      "packet_hash": "8856a9ab7a66f371e4624bddaf2a57ee6cd7b4ac8343252718d0264fd6cb3a37",
+      "common_assets_sha256": "c0fc34e66786da17fea51c8a3562f555988eabd8847ae9888c9441606add2725",
+      "status": "prepared_only_not_a_model_test",
+      "seed": 17
+    }
+  },
+  {
+    "task_id": "X05",
+    "url": "https://drive.google.com/file/d/1EpIAISvT_jlnEioC2jKXmx6Cl6_sSn4s/view?usp=drivesdk",
+    "bytes": 32043460,
+    "sha256": "517986363e73d37855163601c1e42243639641c39a17dd5560368661aab14a62",
+    "packetHash": "f8190a1132fd730d4fba280f0387601f8e6b305ed260435513cabd8fa30c7bad",
+    "commonAssetsHash": "c0fc34e66786da17fea51c8a3562f555988eabd8847ae9888c9441606add2725",
+    "input_manifest": {
+      "schema": "nrb-video-input-v1.1",
+      "benchmark_version": "1.1.0",
+      "task_id": "X05",
+      "track": "B",
+      "files": [
+        {
+          "path": "COPY.txt",
+          "bytes": 93,
+          "sha256": "f55e5b74810440b24f56ad9724c544220fa577583f95db8cc7dcf764c77ce852"
+        },
+        {
+          "path": "LICENSES/DejaVu-LICENSE.txt",
+          "bytes": 3859,
+          "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+        },
+        {
+          "path": "LICENSES/NRB-MIT-LICENSE.txt",
+          "bytes": 1067,
+          "sha256": "65a06b7d18310e6ce10add5a3576dd15c4c18505529fe202a18d4ddf9965bb35"
+        },
+        {
+          "path": "LICENSES/PACKAGE_LICENSE_STATUS.md",
+          "bytes": 2208,
+          "sha256": "c3fcd5569e99b74354b16de8df811aa0670c2a3205635c5e1cea225fe2dda9b5"
+        },
+        {
+          "path": "LICENSES/SOURCE_LICENSE.md",
+          "bytes": 3161,
+          "sha256": "ff52a9a63704e99f964b85bd6413ac93056e8f9976fcd4931539bb8502d733bf"
+        },
+        {
+          "path": "LICENSES/evidence/CC-BY-3.0-legalcode.txt",
+          "bytes": 19467,
+          "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+        },
+        {
+          "path": "LICENSES/evidence/README-original.txt",
+          "bytes": 343,
+          "sha256": "3622773b7986ac4f4807352b94c111670ac5f888b558f6f70f95c0b7d253aba1"
+        },
+        {
+          "path": "LICENSES/evidence/raw-footage-release.html",
+          "bytes": 28258,
+          "sha256": "5c1dc6f2e00cde27d236a00fddfa6d62b0df302df2d58e6b1f6002f55cb57f85"
+        },
+        {
+          "path": "LICENSES/evidence/sharing.html",
+          "bytes": 11331,
+          "sha256": "c3defc0521e16af0a3afb6a96d084517620adf6434038e6a3a2ba1cf50f86947"
+        },
+        {
+          "path": "RUN_RECORD.template.json",
+          "bytes": 1161,
+          "sha256": "15b21c458f39f015ec3b6e7e6c099219eaa43d7ffd31fa079388b2e2239aad36"
+        },
+        {
+          "path": "TASK.md",
+          "bytes": 5319,
+          "sha256": "1a8358ed42d3ac19f0b834b65dabad3eb46e92da68f177554e00d7f8ee6daab9"
+        },
+        {
+          "path": "assets/DejaVuSansCondensed-Bold.ttf",
+          "bytes": 667844,
+          "sha256": "21f02ebcea75529d3ed9d26e089cd1b9c59a4b784119ba3a96e9bc83cf755ec7"
+        },
+        {
+          "path": "assets/DejaVuSansMono.ttf",
+          "bytes": 343140,
+          "sha256": "54bf827eb99404e8f430c330ad30f063334f637eba0109b6a18d4f566a8e9dd8"
+        },
+        {
+          "path": "reference.mp4",
+          "bytes": 3940450,
+          "sha256": "62f5b074c10642b4f3de80676f1463e05bbc81bcc2211d7095fd62894f7193f4"
+        },
+        {
+          "path": "soundtrack.wav",
+          "bytes": 1920044,
+          "sha256": "37ed2a662d04f833165358f81374d51e59904afb9c4c00e8a9e9fad588a7145c"
+        },
+        {
+          "path": "source.mp4",
+          "bytes": 25090487,
+          "sha256": "a882854e0d1b007e247ffc507fccee31c9bb5671810428dfe422a94317a98302"
+        }
+      ],
+      "packet_hash": "f8190a1132fd730d4fba280f0387601f8e6b305ed260435513cabd8fa30c7bad",
+      "common_assets_sha256": "c0fc34e66786da17fea51c8a3562f555988eabd8847ae9888c9441606add2725",
+      "status": "prepared_only_not_a_model_test",
+      "seed": 17
+    }
+  }
+]

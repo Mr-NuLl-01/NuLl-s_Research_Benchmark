@@ -1,0 +1,237 @@
+{
+  "repository": "Mr-NuLl-01/NuLl-s_Research_Benchmark",
+  "commit": "81368ec7fa68bc1739eac3eab04c09d3ad3584ce",
+  "tasks": [
+    {
+      "id": "C01",
+      "path": "tasks/v1.0/C01.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/C01.md",
+      "blobSha": "1496697de1cdf6a9ecaa00b1cd26a3e2df5b305c",
+      "originalCharacters": 2830,
+      "sha": "1496697de1cdf6a9ecaa00b1cd26a3e2df5b305c",
+      "packet": "packets/C01.md",
+      "sha256": "45fa2976990638ece24f61101a51c97502578566f085e7a7d535d84db1ff4bad",
+      "size": 5669
+    },
+    {
+      "id": "C02",
+      "path": "tasks/v1.0/C02.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/C02.md",
+      "blobSha": "602209af5346bcfc5a5ccb27f9c3d19041cb54d2",
+      "originalCharacters": 3032,
+      "sha": "602209af5346bcfc5a5ccb27f9c3d19041cb54d2",
+      "packet": "packets/C02.md",
+      "sha256": "30f1effee6f860df0b1e1a328ff112593f1f8e1e622c00f279862a56f56be446",
+      "size": 5975
+    },
+    {
+      "id": "C03",
+      "path": "tasks/v1.0/C03.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/C03.md",
+      "blobSha": "f88336fd525623b3b5992ef03b5ed695497dc783",
+      "originalCharacters": 3683,
+      "sha": "f88336fd525623b3b5992ef03b5ed695497dc783",
+      "packet": "packets/C03.md",
+      "sha256": "94a905c064bbbe2794e5d8b15b85720191d9346dd71f49412ed262ba1dabbd4f",
+      "size": 6649
+    },
+    {
+      "id": "C04",
+      "path": "tasks/v1.0/C04.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/C04.md",
+      "blobSha": "4ec09316f26b10ccd06ed0b56599aeed786ae40e",
+      "originalCharacters": 3485,
+      "sha": "4ec09316f26b10ccd06ed0b56599aeed786ae40e",
+      "packet": "packets/C04.md",
+      "sha256": "4f55a0ea369608f6dcc4b21442e9bed554d0698130d52a78dbcfaeff1d3e7413",
+      "size": 6902
+    },
+    {
+      "id": "C05",
+      "path": "tasks/v1.0/C05.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/C05.md",
+      "blobSha": "8ebce3c21fe4e98cd42c2248e2bdd15d64f611d8",
+      "originalCharacters": 3777,
+      "sha": "8ebce3c21fe4e98cd42c2248e2bdd15d64f611d8",
+      "packet": "packets/C05.md",
+      "sha256": "612c1bbb356e9974cf2ae4d9910d9b02686e9f1defc6d4e2e8efa758ab25547e",
+      "size": 7292
+    },
+    {
+      "id": "C06",
+      "path": "tasks/v1.0/C06.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/C06.md",
+      "blobSha": "9c284c09d0406e4443e26681d9e366c03af84b22",
+      "originalCharacters": 3352,
+      "sha": "9c284c09d0406e4443e26681d9e366c03af84b22",
+      "packet": "packets/C06.md",
+      "sha256": "566406708066a968f0435f262f29231b7cda04263a784b0cbe5435d74583387c",
+      "size": 6023
+    },
+    {
+      "id": "C07",
+      "path": "tasks/v1.0/C07.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/C07.md",
+      "blobSha": "627d6883d9a1a9d84aaf0a5fd90e6a93b162ae5c",
+      "originalCharacters": 3089,
+      "sha": "627d6883d9a1a9d84aaf0a5fd90e6a93b162ae5c",
+      "packet": "packets/C07.md",
+      "sha256": "afc0808e06fd2640eda69f9ea803d92c27ad982cf9b4012c5196688ee467d812",
+      "size": 5743
+    },
+    {
+      "id": "C08",
+      "path": "tasks/v1.0/C08.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/C08.md",
+      "blobSha": "a35386241acb1a494d378e6be98f095fbfc42ed0",
+      "originalCharacters": 5467,
+      "sha": "a35386241acb1a494d378e6be98f095fbfc42ed0",
+      "packet": "packets/C08.md",
+      "sha256": "bb3a9bc72100d2a307b66a944eec55856621d4875b0d2685985e33e16d0140d8",
+      "size": 8109
+    },
+    {
+      "id": "C09",
+      "path": "tasks/v1.0/C09.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/C09.md",
+      "blobSha": "2886074a6202ce79a876295939dfbaf330524d71",
+      "originalCharacters": 3506,
+      "sha": "2886074a6202ce79a876295939dfbaf330524d71",
+      "packet": "packets/C09.md",
+      "sha256": "9c64f6c80790cbcf76a7396f2826b45ae71e36e14a8d09152c9870626027beb9",
+      "size": 6479
+    },
+    {
+      "id": "C10",
+      "path": "tasks/v1.0/C10.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/C10.md",
+      "blobSha": "3885ca889730d75bc6f00f84a5287bce2bde0e0c",
+      "originalCharacters": 12232,
+      "sha": "3885ca889730d75bc6f00f84a5287bce2bde0e0c",
+      "packet": "packets/C10.md",
+      "sha256": "060241fb0473728df2e8e0565bf2989e9c3a1f87482fb4a6e9e625751381c9b9",
+      "size": 15913
+    },
+    {
+      "id": "R01",
+      "path": "tasks/v1.0/R01.html",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/R01.html",
+      "blobSha": "2f63a830314d5e3df67a651bb44aa0a0f7c5b829",
+      "originalCharacters": 296347,
+      "sha": "2f63a830314d5e3df67a651bb44aa0a0f7c5b829",
+      "packet": "packets/R01.html",
+      "sha256": "b7fd88b71d717a27c02df57a224794401d43df9ee71c89e52243e930f4b8654c",
+      "size": 296380
+    },
+    {
+      "id": "R02",
+      "path": "tasks/v1.0/R02.html",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/R02.html",
+      "blobSha": "86f42e0e71db7980f43a4b8ce02b4280b34f73ee",
+      "originalCharacters": 7644,
+      "sha": "86f42e0e71db7980f43a4b8ce02b4280b34f73ee",
+      "packet": "packets/R02.html",
+      "sha256": "56fcdd3397a44d23dc641880a49683b73347c1a29dabb1e9c0d7d7a381f874c5",
+      "size": 7648
+    },
+    {
+      "id": "R03",
+      "path": "tasks/v1.0/R03.html",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/R03.html",
+      "blobSha": "a12446f1b640a3b7e524898afb36aefdf3e44d55",
+      "originalCharacters": 7088,
+      "sha": "a12446f1b640a3b7e524898afb36aefdf3e44d55",
+      "packet": "packets/R03.html",
+      "sha256": "cf2965eea509e816651bd17a5f5f7f16121104197516ca81fccf54fc67fbc9c8",
+      "size": 7100
+    },
+    {
+      "id": "R04",
+      "path": "tasks/v1.0/R04.html",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/R04.html",
+      "blobSha": "8f5eb70fef5c75630c2b4ac37af7398645b7e863",
+      "originalCharacters": 33698,
+      "sha": "8f5eb70fef5c75630c2b4ac37af7398645b7e863",
+      "packet": "packets/R04.html",
+      "sha256": "06dd9242ae031d514a6814f24a3adb43a0d4f9962aedf640dec0ba3504423adb",
+      "size": 33716
+    },
+    {
+      "id": "R05",
+      "path": "tasks/v1.0/R05.html",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/R05.html",
+      "blobSha": "da69cdedeb9f657298071b137c193dd5fcd322cd",
+      "originalCharacters": 1492722,
+      "sha": "da69cdedeb9f657298071b137c193dd5fcd322cd",
+      "packet": "packets/R05.html",
+      "sha256": "548704b78da6ce49abbe33db220427450f8cbaa65a6c6df41d23b38f18aced58",
+      "size": 1493173
+    },
+    {
+      "id": "R06",
+      "path": "tasks/v1.0/R06.html",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/R06.html",
+      "blobSha": "dcbf64408dce4761428062434e02a77d36966036",
+      "originalCharacters": 1491155,
+      "sha": "dcbf64408dce4761428062434e02a77d36966036",
+      "packet": "packets/R06.html",
+      "sha256": "31cc709bb85b64d28e1ead67ccf95bfa567b61b7e5073fe48b19de6dfaa0f763",
+      "size": 1491598
+    },
+    {
+      "id": "X01",
+      "path": "tasks/v1.0/X01.html",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/X01.html",
+      "blobSha": "1d84d4f34a1c3e429dcf2ae447b4259c1d72f27c",
+      "originalCharacters": 6799,
+      "sha": "1d84d4f34a1c3e429dcf2ae447b4259c1d72f27c",
+      "packet": "packets/X01.html",
+      "sha256": "0ee29326b21b63c35fe4be544888afad4a097e4e3adf4f196e76532d41b2bfec",
+      "size": 6803
+    },
+    {
+      "id": "X02",
+      "path": "tasks/v1.0/X02.html",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/X02.html",
+      "blobSha": "196d30d9c845939b8cdee720ce3f261cc4a27012",
+      "originalCharacters": 1490685,
+      "sha": "196d30d9c845939b8cdee720ce3f261cc4a27012",
+      "packet": "packets/X02.html",
+      "sha256": "4c1c53eafbce1e91be43ffb845d31aa752e56ae35824e165784513347d7d217b",
+      "size": 1491135
+    },
+    {
+      "id": "X03",
+      "path": "tasks/v1.0/X03.html",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/3139c4bf89dac30c3e1d3b5e0e907d4db5183c13/tasks/v1.0/X03.html",
+      "blobSha": "c67e40896a9c170a984992c60ac66784b3f13239",
+      "originalCharacters": 6518,
+      "sha": "c67e40896a9c170a984992c60ac66784b3f13239",
+      "packet": "packets/X03.html",
+      "sha256": "4834126865c64c311377d595637232ff699756678a9853e6b59e5e53bf95603b",
+      "size": 6541
+    },
+    {
+      "id": "X04",
+      "path": "tasks/v1.1/X04.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/81368ec7fa68bc1739eac3eab04c09d3ad3584ce/tasks/v1.1/X04.md",
+      "blobSha": "bd1f4a150a9daad4046a33c16f74805c53ece155",
+      "originalCharacters": 2509,
+      "sha": "bd1f4a150a9daad4046a33c16f74805c53ece155",
+      "packet": "packets/X04.md",
+      "sha256": "33871bcbeb397732203e5d0b217f61dcfb5e343ceaa39ad194e60217d1e76f15",
+      "size": 5006
+    },
+    {
+      "id": "X05",
+      "path": "tasks/v1.1/X05.md",
+      "sourceUrl": "https://github.com/Mr-NuLl-01/NuLl-s_Research_Benchmark/blob/81368ec7fa68bc1739eac3eab04c09d3ad3584ce/tasks/v1.1/X05.md",
+      "blobSha": "7a58382af1f18130b2e3054f83f5ea22354fded2",
+      "originalCharacters": 2634,
+      "sha": "7a58382af1f18130b2e3054f83f5ea22354fded2",
+      "packet": "packets/X05.md",
+      "sha256": "1a8358ed42d3ac19f0b834b65dabad3eb46e92da68f177554e00d7f8ee6daab9",
+      "size": 5319
+    }
+  ]
+}

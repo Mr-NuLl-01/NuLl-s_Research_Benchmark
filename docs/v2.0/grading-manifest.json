@@ -1,0 +1,1507 @@
+{
+  "schema": "nrb-auto-report-v2",
+  "version": "2.0.0-rc.1",
+  "grader_version": "2.0.0-rc.1",
+  "evaluatorFingerprint": "ee841ae2c0a1d98101f50f4d0b29e922275fd499ea9f37d05c8924bd86fa51c0",
+  "seed_policy": "The manifest binds seed, check contract and evaluator source. Execution records separately hash actual numerical inputs.",
+  "tasks": {
+    "P01": {
+      "packet_hash": "d39eb12395542d6e6d0d2f709b067503afea6991c1f205f74b937c1915189898",
+      "seeds": {
+        "0": {
+          "packet_hash": "b1aee7d5a5e1d425e8e72f9d261c5a9518354107e72e513b1fb4213d20b96213",
+          "test_manifest_hash": "a43ccc8be39feb8d9f47b538b08f99cf936af359dc8c8186eb9f4cd5b0a3a441",
+          "checks": [
+            {
+              "id": "parse_units",
+              "tier": "basic",
+              "weight": 12,
+              "critical": true
+            },
+            {
+              "id": "empty",
+              "tier": "basic",
+              "weight": 8,
+              "critical": false
+            },
+            {
+              "id": "duplicates_missing",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "quoted_bom",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": false
+            },
+            {
+              "id": "scaled_variance",
+              "tier": "stress",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "invalid_0",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_1",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_2",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_3",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_4",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            }
+          ]
+        },
+        "17": {
+          "packet_hash": "d39eb12395542d6e6d0d2f709b067503afea6991c1f205f74b937c1915189898",
+          "test_manifest_hash": "e692cba41f12e33bd96b2081c1d7f7241f74ce1a6477e6fb7f6c204e9d4e6ade",
+          "checks": [
+            {
+              "id": "parse_units",
+              "tier": "basic",
+              "weight": 12,
+              "critical": true
+            },
+            {
+              "id": "empty",
+              "tier": "basic",
+              "weight": 8,
+              "critical": false
+            },
+            {
+              "id": "duplicates_missing",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "quoted_bom",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": false
+            },
+            {
+              "id": "scaled_variance",
+              "tier": "stress",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "invalid_0",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_1",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_2",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_3",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_4",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            }
+          ]
+        },
+        "2026": {
+          "packet_hash": "9e7621e4d4a8191f5c33fa0a610b277e2677c5459a28a5d4e27881163352bb8d",
+          "test_manifest_hash": "45ab379bc9f64b7a6b8c845a051ca9357b8fd0a1d6af9cafeb91e7896d6952a6",
+          "checks": [
+            {
+              "id": "parse_units",
+              "tier": "basic",
+              "weight": 12,
+              "critical": true
+            },
+            {
+              "id": "empty",
+              "tier": "basic",
+              "weight": 8,
+              "critical": false
+            },
+            {
+              "id": "duplicates_missing",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "quoted_bom",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": false
+            },
+            {
+              "id": "scaled_variance",
+              "tier": "stress",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "invalid_0",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_1",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_2",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_3",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_4",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            }
+          ]
+        }
+      }
+    },
+    "P02": {
+      "packet_hash": "b450083e4f112e168b763b1593a8c6fa2e75784050f6ff540613246251a5baab",
+      "seeds": {
+        "0": {
+          "packet_hash": "bc4e6de2534412c73bf3578b3ab6e3e3b4345640769c0299e80866667359769d",
+          "test_manifest_hash": "b8ad8c2e803ced688f122ef5a4b33f0fbdb6fea92a1af42af1978f90e4c7f2a1",
+          "checks": [
+            {
+              "id": "one_group",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "paired_groups",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "unequal_technical_repeats",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "stratum_target",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "zero_and_uint32",
+              "tier": "stress",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "invalid_0",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "invalid_1",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            }
+          ]
+        },
+        "17": {
+          "packet_hash": "b450083e4f112e168b763b1593a8c6fa2e75784050f6ff540613246251a5baab",
+          "test_manifest_hash": "67539af669dd470df2f2eab31a72ca91a7996f1b2a855034688210b7e79f72ae",
+          "checks": [
+            {
+              "id": "one_group",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "paired_groups",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "unequal_technical_repeats",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "stratum_target",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "zero_and_uint32",
+              "tier": "stress",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "invalid_0",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "invalid_1",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            }
+          ]
+        },
+        "2026": {
+          "packet_hash": "e0f1c39d9597bb47e442ef68931bf34f5a16353906ba2f990df126c9c5970368",
+          "test_manifest_hash": "30c36c3fe9d37a949d343e4803cbc305aaea21dc8f140d5e57538fb4c7fbf09d",
+          "checks": [
+            {
+              "id": "one_group",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "paired_groups",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "unequal_technical_repeats",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "stratum_target",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "zero_and_uint32",
+              "tier": "stress",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "invalid_0",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "invalid_1",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            }
+          ]
+        }
+      }
+    },
+    "P03": {
+      "packet_hash": "55efab4f78699005dfe9da24904e6b808b9d3bd78ffe7d824036dda03d58e516",
+      "seeds": {
+        "0": {
+          "packet_hash": "cd5e52d4b5c5029e44294bf8d61373dc2dcb3f4ce46c7947a43c420933f72ec2",
+          "test_manifest_hash": "7d02e36ca1b1e05c9eede1c6b24ec09d472f201f8c1ec5af8f663bdff36a2a1f",
+          "checks": [
+            {
+              "id": "one_cell_two_boundaries",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "zero_steps",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "heterogeneous_conservative",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "source_fixed_mix",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "one_cell_source",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "stiff_implicit",
+              "tier": "stress",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "nonpositive_width",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            }
+          ]
+        },
+        "17": {
+          "packet_hash": "55efab4f78699005dfe9da24904e6b808b9d3bd78ffe7d824036dda03d58e516",
+          "test_manifest_hash": "6ed03434281d30f77ad2a3e604800219f6dbddfb18b8fc893a58c0f58d7e6dc2",
+          "checks": [
+            {
+              "id": "one_cell_two_boundaries",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "zero_steps",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "heterogeneous_conservative",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "source_fixed_mix",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "one_cell_source",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "stiff_implicit",
+              "tier": "stress",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "nonpositive_width",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            }
+          ]
+        },
+        "2026": {
+          "packet_hash": "2349ff036f45fbdcd03fefb736c5af0597a1eb64859aaf7f389c410007c40fc7",
+          "test_manifest_hash": "98de397753f61704d073a3db60d78907dfe39adb00402131515b32874652225e",
+          "checks": [
+            {
+              "id": "one_cell_two_boundaries",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "zero_steps",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "heterogeneous_conservative",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "source_fixed_mix",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "one_cell_source",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "stiff_implicit",
+              "tier": "stress",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "nonpositive_width",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            }
+          ]
+        }
+      }
+    },
+    "P04": {
+      "packet_hash": "346b070cf1cf15870f31c1681067eacdcc3e0d78ebd99857fc7ba2200c266264",
+      "seeds": {
+        "0": {
+          "packet_hash": "da85e6ecee7e287b6f8da65002eba70e6e49c4003de171f20ed775a44c858f9f",
+          "test_manifest_hash": "b44e342c139d7bde33d6ebaa4cf5f5bbfa252d45bcb83bee1f26f4e2ea240873",
+          "checks": [
+            {
+              "id": "interface_power",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "quarterwave",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "oblique_absorbing_s",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "oblique_absorbing_p",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "brewster_and_lossless",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "opaque_layer",
+              "tier": "stress",
+              "weight": 6,
+              "critical": true
+            },
+            {
+              "id": "evanescent_substrate",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "long_bragg",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "gain_rejected",
+              "tier": "stress",
+              "weight": 4,
+              "critical": false
+            }
+          ]
+        },
+        "17": {
+          "packet_hash": "346b070cf1cf15870f31c1681067eacdcc3e0d78ebd99857fc7ba2200c266264",
+          "test_manifest_hash": "b82e21c851a64620a14e91eaeb3e2357e094aad3c385e6a2679c65b24f27eae5",
+          "checks": [
+            {
+              "id": "interface_power",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "quarterwave",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "oblique_absorbing_s",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "oblique_absorbing_p",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "brewster_and_lossless",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "opaque_layer",
+              "tier": "stress",
+              "weight": 6,
+              "critical": true
+            },
+            {
+              "id": "evanescent_substrate",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "long_bragg",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "gain_rejected",
+              "tier": "stress",
+              "weight": 4,
+              "critical": false
+            }
+          ]
+        },
+        "2026": {
+          "packet_hash": "ba16deb12b9ed01dd086d378752919c7f0749ad972e2bb573ba70e323d4ae5b3",
+          "test_manifest_hash": "7d25f0ab3dcf3d1a293dbc518da4c02bd4bc3216be95e73a1d08c08d75c45950",
+          "checks": [
+            {
+              "id": "interface_power",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "quarterwave",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "oblique_absorbing_s",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "oblique_absorbing_p",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "brewster_and_lossless",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "opaque_layer",
+              "tier": "stress",
+              "weight": 6,
+              "critical": true
+            },
+            {
+              "id": "evanescent_substrate",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "long_bragg",
+              "tier": "stress",
+              "weight": 5,
+              "critical": false
+            },
+            {
+              "id": "gain_rejected",
+              "tier": "stress",
+              "weight": 4,
+              "critical": false
+            }
+          ]
+        }
+      }
+    },
+    "P05": {
+      "packet_hash": "8cc58f87d6a6d6aea0aec98fcbfb09e74841697152428193a8e170b722e2fe85",
+      "seeds": {
+        "0": {
+          "packet_hash": "15571847bf483943133050aea49d6894955848a19e478eba7288a60b022383b7",
+          "test_manifest_hash": "88f05e38e324af1c072ca90bf245340cfd9a60cdae354e55f3e48745a521ea53",
+          "checks": [
+            {
+              "id": "equilibrium",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "zero_rates_source",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "stiff_rollback",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "right_continuous_schedule",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "large_absolute_clock",
+              "tier": "stress",
+              "weight": 7,
+              "critical": true
+            },
+            {
+              "id": "floating_endpoint",
+              "tier": "stress",
+              "weight": 7,
+              "critical": false
+            },
+            {
+              "id": "single_observation",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_0",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_1",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            }
+          ]
+        },
+        "17": {
+          "packet_hash": "8cc58f87d6a6d6aea0aec98fcbfb09e74841697152428193a8e170b722e2fe85",
+          "test_manifest_hash": "dbefd686236f4b18f49dd5b2b635ebab6bd56d4542379d2e784f7feeede91ac2",
+          "checks": [
+            {
+              "id": "equilibrium",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "zero_rates_source",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "stiff_rollback",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "right_continuous_schedule",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "large_absolute_clock",
+              "tier": "stress",
+              "weight": 7,
+              "critical": true
+            },
+            {
+              "id": "floating_endpoint",
+              "tier": "stress",
+              "weight": 7,
+              "critical": false
+            },
+            {
+              "id": "single_observation",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_0",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_1",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            }
+          ]
+        },
+        "2026": {
+          "packet_hash": "283a93bbb9282af06da702bf7e57f8bc65aaad3ec6bb4feebede416f304d5abc",
+          "test_manifest_hash": "acb08ae71883d45c9452cf8b3706081a5e9061292a9aa2e7c3f14c10c754e63b",
+          "checks": [
+            {
+              "id": "equilibrium",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "zero_rates_source",
+              "tier": "basic",
+              "weight": 10,
+              "critical": false
+            },
+            {
+              "id": "stiff_rollback",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "right_continuous_schedule",
+              "tier": "scientific",
+              "weight": 15,
+              "critical": true
+            },
+            {
+              "id": "large_absolute_clock",
+              "tier": "stress",
+              "weight": 7,
+              "critical": true
+            },
+            {
+              "id": "floating_endpoint",
+              "tier": "stress",
+              "weight": 7,
+              "critical": false
+            },
+            {
+              "id": "single_observation",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_0",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            },
+            {
+              "id": "invalid_1",
+              "tier": "stress",
+              "weight": 2,
+              "critical": false
+            }
+          ]
+        }
+      }
+    },
+    "P06": {
+      "packet_hash": "c27b1058a0b46c4f71d126b355cdb3d1248028dfc37011ecfc02506ff1260eb9",
+      "seeds": {
+        "0": {
+          "packet_hash": "f0b6a2f823b8fa34407ae06f8fe12bc2bd68798b30a829559dc0e7a8608070c0",
+          "test_manifest_hash": "040546455e294e00c9c7449b9a28d88602e8986645cf6c12888b91d43812278b",
+          "checks": [
+            {
+              "id": "noiseless_nuisance",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "known_sigma_scale",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "heteroscedastic_shared_D",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "negative_amplitude",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "one_sided_profile",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "structurally_flat",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "weak_full_interval",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_zero_sigma",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_unresolved_times",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_unresolved_nuisance",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "lower_endpoint_interior_minimum",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            },
+            {
+              "id": "upper_endpoint_interior_minimum",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            }
+          ]
+        },
+        "17": {
+          "packet_hash": "c27b1058a0b46c4f71d126b355cdb3d1248028dfc37011ecfc02506ff1260eb9",
+          "test_manifest_hash": "25dd4945d063f6c534954df2f866ccd960da7f700320d27127ed3664dcbf7909",
+          "checks": [
+            {
+              "id": "noiseless_nuisance",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "known_sigma_scale",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "heteroscedastic_shared_D",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "negative_amplitude",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "one_sided_profile",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "structurally_flat",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "weak_full_interval",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_zero_sigma",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_unresolved_times",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_unresolved_nuisance",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "lower_endpoint_interior_minimum",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            },
+            {
+              "id": "upper_endpoint_interior_minimum",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            }
+          ]
+        },
+        "2026": {
+          "packet_hash": "6abef3e8a641407898ae492717804afc165cac5c35902670830b4901ac8869c1",
+          "test_manifest_hash": "ce586fdbf8a3ae56df21cd7afd209cc1f5059c99533b39f61db4fdd94c79a33f",
+          "checks": [
+            {
+              "id": "noiseless_nuisance",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "known_sigma_scale",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "heteroscedastic_shared_D",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "negative_amplitude",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "one_sided_profile",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "structurally_flat",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "weak_full_interval",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_zero_sigma",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_unresolved_times",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_unresolved_nuisance",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "lower_endpoint_interior_minimum",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            },
+            {
+              "id": "upper_endpoint_interior_minimum",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            }
+          ]
+        }
+      }
+    },
+    "P07": {
+      "packet_hash": "5410d21d42557c04963e0f895d4ef590a8a0d57fc9749e2547b4595cdee028b3",
+      "seeds": {
+        "0": {
+          "packet_hash": "51156f508172dcedfa2b24c0d3374206a91e19c7ba3cbac0f28ed575afdb3f00",
+          "test_manifest_hash": "a12c1dee8cce7d5db52b818908cc9973a058ccdedbc3113c7ed16e1a30d6234a",
+          "checks": [
+            {
+              "id": "affine_harmonic",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "isotropic_manufactured",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "directional_anisotropy",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "nonuniform_interfaces",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "refined_manufactured",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "high_contrast_interfaces",
+              "tier": "stress",
+              "weight": 8,
+              "critical": true
+            },
+            {
+              "id": "rectangular_nonuniform",
+              "tier": "stress",
+              "weight": 6,
+              "critical": true
+            },
+            {
+              "id": "reject_zero_conductivity",
+              "tier": "stress",
+              "weight": 3,
+              "critical": true
+            },
+            {
+              "id": "reject_collapsed_y",
+              "tier": "stress",
+              "weight": 3,
+              "critical": true
+            }
+          ]
+        },
+        "17": {
+          "packet_hash": "5410d21d42557c04963e0f895d4ef590a8a0d57fc9749e2547b4595cdee028b3",
+          "test_manifest_hash": "05ba3cc44a168d479be3dd31b30b49ed1b05bb68421cd20abd4856f41774048b",
+          "checks": [
+            {
+              "id": "affine_harmonic",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "isotropic_manufactured",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "directional_anisotropy",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "nonuniform_interfaces",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "refined_manufactured",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "high_contrast_interfaces",
+              "tier": "stress",
+              "weight": 8,
+              "critical": true
+            },
+            {
+              "id": "rectangular_nonuniform",
+              "tier": "stress",
+              "weight": 6,
+              "critical": true
+            },
+            {
+              "id": "reject_zero_conductivity",
+              "tier": "stress",
+              "weight": 3,
+              "critical": true
+            },
+            {
+              "id": "reject_collapsed_y",
+              "tier": "stress",
+              "weight": 3,
+              "critical": true
+            }
+          ]
+        },
+        "2026": {
+          "packet_hash": "b87742f669035bed0ad7162900a6397c041f592d02b33fc5066163ae18ef284f",
+          "test_manifest_hash": "7a8937e0c4665ca75a8c8b91403f8efa68d305f50ded8b0eed1b4e9841212660",
+          "checks": [
+            {
+              "id": "affine_harmonic",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "isotropic_manufactured",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "directional_anisotropy",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "nonuniform_interfaces",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "refined_manufactured",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "high_contrast_interfaces",
+              "tier": "stress",
+              "weight": 8,
+              "critical": true
+            },
+            {
+              "id": "rectangular_nonuniform",
+              "tier": "stress",
+              "weight": 6,
+              "critical": true
+            },
+            {
+              "id": "reject_zero_conductivity",
+              "tier": "stress",
+              "weight": 3,
+              "critical": true
+            },
+            {
+              "id": "reject_collapsed_y",
+              "tier": "stress",
+              "weight": 3,
+              "critical": true
+            }
+          ]
+        }
+      }
+    },
+    "P08": {
+      "packet_hash": "cf8210f953108967717f1e2a87d62113e535fb81638d6b84ed8b6617f3c21606",
+      "seeds": {
+        "0": {
+          "packet_hash": "f09cfb15f312fa207480e463393b4193d682023300f453d6b0751622ac17b451",
+          "test_manifest_hash": "1d9d58655ea325201363218bb42cd3c2092b5371bde2b5608343ad1f3da034ab",
+          "checks": [
+            {
+              "id": "pure_reaction_conservation",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "periodic_diffusion_mode",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "coupled_discrete_tangents",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "noiseless_two_parameter_inverse",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "absolute_sigma_parametric_bootstrap",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "resume_nonzero_tangent_state",
+              "tier": "stress",
+              "weight": 6,
+              "critical": true
+            },
+            {
+              "id": "stiff_positive_conservative",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            },
+            {
+              "id": "rank_deficient_uniform_initial",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            },
+            {
+              "id": "reject_negative_initial",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_incomplete_checkpoint",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            }
+          ]
+        },
+        "17": {
+          "packet_hash": "cf8210f953108967717f1e2a87d62113e535fb81638d6b84ed8b6617f3c21606",
+          "test_manifest_hash": "ca07c9eb12758f689ce34711485148e5d37418b6fe37c3a4b9f00cb122e40230",
+          "checks": [
+            {
+              "id": "pure_reaction_conservation",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "periodic_diffusion_mode",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "coupled_discrete_tangents",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "noiseless_two_parameter_inverse",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "absolute_sigma_parametric_bootstrap",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "resume_nonzero_tangent_state",
+              "tier": "stress",
+              "weight": 6,
+              "critical": true
+            },
+            {
+              "id": "stiff_positive_conservative",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            },
+            {
+              "id": "rank_deficient_uniform_initial",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            },
+            {
+              "id": "reject_negative_initial",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_incomplete_checkpoint",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            }
+          ]
+        },
+        "2026": {
+          "packet_hash": "4946fcfa55a29607909374c7ff08ab8226e6083af656e8160edb5c5742b7fd6a",
+          "test_manifest_hash": "e36365afbe719e05524e639efbb6f2591f2835334a26c6bc7333d3484ceafd82",
+          "checks": [
+            {
+              "id": "pure_reaction_conservation",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "periodic_diffusion_mode",
+              "tier": "basic",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "coupled_discrete_tangents",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "noiseless_two_parameter_inverse",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "absolute_sigma_parametric_bootstrap",
+              "tier": "scientific",
+              "weight": 10,
+              "critical": true
+            },
+            {
+              "id": "resume_nonzero_tangent_state",
+              "tier": "stress",
+              "weight": 6,
+              "critical": true
+            },
+            {
+              "id": "stiff_positive_conservative",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            },
+            {
+              "id": "rank_deficient_uniform_initial",
+              "tier": "stress",
+              "weight": 5,
+              "critical": true
+            },
+            {
+              "id": "reject_negative_initial",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            },
+            {
+              "id": "reject_incomplete_checkpoint",
+              "tier": "stress",
+              "weight": 2,
+              "critical": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

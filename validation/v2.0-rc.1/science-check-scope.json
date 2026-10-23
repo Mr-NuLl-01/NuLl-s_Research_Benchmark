@@ -1,0 +1,104 @@
+{
+  "kind": "scoped_independent_scientific_review",
+  "date": "2026-10-23",
+  "not_model_performance": true,
+  "api_provider_calls": 0,
+  "execution_environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "historical_results_unchanged": true,
+  "results_recomputed_after_portable_script_conversion": true,
+  "portability_check": "Both current scripts parsed/imported and returned --help successfully; numerical workloads were not rerun during archival.",
+  "results": {
+    "science-check-initial.json": {
+      "sha256": "7c9bac8feda094e811da79a0c30643cbedee0527e1dfd2e9f18df4ef357bc7a5",
+      "bytes": 12411
+    },
+    "science-check-extra-initial.json": {
+      "sha256": "3b90c25c7b04ca52029964ea7c3b2a0f0ab6fe72212f5c37273ce6de78a949f7",
+      "bytes": 1699
+    }
+  },
+  "scope": [
+    {
+      "task": "P04",
+      "inputs": "c04.cases seeds 0,17,2026, excluding opaque_layer and long_bragg",
+      "count": 18,
+      "method": "Independent global complex boundary E/H continuity system",
+      "result": "18 within original comparison tolerances",
+      "independence": "Different mathematical solve from reference reflection/transmission recursion; excludes ill-conditioned thick-layer global solve."
+    },
+    {
+      "task": "P05",
+      "inputs": "c05.cases seeds 0,17,91,2026; seven valid cases per seed",
+      "count": 28,
+      "method": "Replace 2x2 explicit inverse with numpy.linalg.solve; retain specified controller",
+      "result": "All states and exact accepted/rejected counts match within original rules",
+      "independence": "Partial implementation independence only; adaptive loop copied from reference because this is a prescribed-algorithm task."
+    },
+    {
+      "task": "P06",
+      "inputs": "Pre-integration V2 draft seed17; eight nonflat valid cases incl two near-endpoint minima",
+      "count": 8,
+      "method": "Weighted numpy.linalg.lstsq plus scipy.optimize.minimize_scalar",
+      "result": "Max D difference approximately 8.3e-10",
+      "independence": "Independent profile nuisance elimination and outer search; did not independently recompute confidence endpoints."
+    },
+    {
+      "task": "P06",
+      "inputs": "Four distinct times 0,1e-15,2e-15,3e-15 with constant values",
+      "count": 1,
+      "method": "Directly invoke draft reference to demonstrate a previously unstated numeric-rank rejection",
+      "result": "ValueError: unresolved linear nuisance design",
+      "independence": "Contract counterexample using reference, not independent mathematical validation; rule has since been published in current V2."
+    },
+    {
+      "task": "P07",
+      "inputs": "c08.cases seed17; seven valid cases",
+      "count": 7,
+      "method": "Independent density-equation sparse direct solve and independent flux/residual calculation; existing validator applied",
+      "result": "7 accepted; max recomputed density residual 1.688249540165998e-11",
+      "independence": "Independent numerical solver and diagnostics; acceptance uses existing validator."
+    },
+    {
+      "task": "P08",
+      "inputs": "c10.cases seed17; three infer cases",
+      "count": 3,
+      "method": "Periodic Fourier discrete propagator, analytic tangents, scipy least_squares, covariance from J.T@J",
+      "result": "Full-rank and deficient-rank cases agree; prediction max error 1.715172448513158e-10",
+      "independence": "Independent forward and fit; same specified physical/statistical contract."
+    },
+    {
+      "task": "P08",
+      "inputs": "c10.cases seed17; four simulate and one nonzero-tangent resume case",
+      "count": 5,
+      "method": "Discrete Fourier closed-form state and tangent propagation",
+      "result": "5 satisfy original field/tangent tolerances",
+      "independence": "Independent of stepwise inverse-matrix implementation; does not independently execute JSON restart_equal route."
+    },
+    {
+      "task": "P08",
+      "inputs": "c10 absolute_sigma_parametric_bootstrap seed17, four replicates",
+      "count": 1,
+      "method": "Independent Fourier fit for original and four synthetic data refits; specified continuous RNG stream",
+      "result": "Mean max absolute difference 1.0798386490540324e-10; covariance 1.158184342498641e-13; RNG matches",
+      "independence": "Independent fitting/forward route; prescribed RNG is reproduced, not replaced."
+    }
+  ],
+  "not_covered": [
+    "No candidate model generation or difficulty calibration",
+    "No new full numerical audit for P01-P03",
+    "No general proof over continuous parameter domains",
+    "No full repeated test suite in this archival step",
+    "No Docker isolation/native Windows/macOS execution",
+    "No final website UI, Drive permission or deployment verification",
+    "Current V2 report/CLI read-only review is documented separately, not part of these numerical JSON records"
+  ],
+  "integration_rerun": {
+    "science-check-current.json": "7c9bac8feda094e811da79a0c30643cbedee0527e1dfd2e9f18df4ef357bc7a5",
+    "science-check-extra-current.json": "3b90c25c7b04ca52029964ea7c3b2a0f0ab6fe72212f5c37273ce6de78a949f7",
+    "note": "Root reran the same bounded numerical workloads against current modules after portable conversion. Initial evidence remains unchanged."
+  }
+}

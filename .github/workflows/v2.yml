@@ -1,0 +1,71 @@
+name: NRB V2 phase one
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  v2-core:
+    name: V2 contracts and webpage
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+      - name: Install evaluator
+        run: python -m pip install -e .
+      - name: V2 contracts and reference/error controls
+        run: |
+          python -m unittest discover -s tests_v2 -v 2>&1 | tee v2-tests.log
+          python -m nrb_v2 selftest --tasks python --seeds 0,17,2026 --include-mutants --execution trusted --out v2-controls.json
+      - name: Frozen candidate packets match generators
+        run: |
+          python -m nrb_v2 export --tasks python --dest /tmp/nrb-v2-packets
+          diff -r tasks/v2.0 /tmp/nrb-v2-packets
+      - name: Web contract and state checks
+        run: node web/checks.cjs
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: v2-core-evidence
+          path: |
+            v2-tests.log
+            v2-controls.json
+
+  v2-docker:
+    name: V2 real Docker execution and isolation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Install evaluator and build candidate-only environment
+        run: |
+          python -m pip install -e .
+          docker build -t nrb-v2-python:local -f environments/v2/Dockerfile .
+          docker image inspect nrb-v2-python:local > v2-image.json
+          docker version > v2-docker-version.txt
+      - name: Actual candidate isolation checks
+        run: python scripts/v2/check_docker.py --out v2-isolation.json
+      - name: Actual eight references and wrong controls
+        run: python -m nrb_v2 selftest --tasks python --seeds 17 --include-mutants --execution docker --out v2-docker-controls.json
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: v2-docker-evidence
+          path: |
+            v2-isolation.json
+            v2-docker-controls.json
+            v2-image.json
+            v2-docker-version.txt

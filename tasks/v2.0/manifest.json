@@ -1,0 +1,54 @@
+{
+  "benchmark_version": "2.0.0-rc.1",
+  "kind": "candidate_only",
+  "tasks": [
+    {
+      "task_id": "P01",
+      "file": "P01.md",
+      "seed": 17,
+      "sha256": "d39eb12395542d6e6d0d2f709b067503afea6991c1f205f74b937c1915189898"
+    },
+    {
+      "task_id": "P02",
+      "file": "P02.md",
+      "seed": 17,
+      "sha256": "b450083e4f112e168b763b1593a8c6fa2e75784050f6ff540613246251a5baab"
+    },
+    {
+      "task_id": "P03",
+      "file": "P03.md",
+      "seed": 17,
+      "sha256": "55efab4f78699005dfe9da24904e6b808b9d3bd78ffe7d824036dda03d58e516"
+    },
+    {
+      "task_id": "P04",
+      "file": "P04.md",
+      "seed": 17,
+      "sha256": "346b070cf1cf15870f31c1681067eacdcc3e0d78ebd99857fc7ba2200c266264"
+    },
+    {
+      "task_id": "P05",
+      "file": "P05.md",
+      "seed": 17,
+      "sha256": "8cc58f87d6a6d6aea0aec98fcbfb09e74841697152428193a8e170b722e2fe85"
+    },
+    {
+      "task_id": "P06",
+      "file": "P06.md",
+      "seed": 17,
+      "sha256": "c27b1058a0b46c4f71d126b355cdb3d1248028dfc37011ecfc02506ff1260eb9"
+    },
+    {
+      "task_id": "P07",
+      "file": "P07.md",
+      "seed": 17,
+      "sha256": "5410d21d42557c04963e0f895d4ef590a8a0d57fc9749e2547b4595cdee028b3"
+    },
+    {
+      "task_id": "P08",
+      "file": "P08.md",
+      "seed": 17,
+      "sha256": "cf8210f953108967717f1e2a87d62113e535fb81638d6b84ed8b6617f3c21606"
+    }
+  ]
+}

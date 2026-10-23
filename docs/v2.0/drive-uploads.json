@@ -1,0 +1,185 @@
+{
+  "verified_at": "2026-10-23",
+  "folder": {
+    "id": "1memk6jwu6LWzoPHGg5uhDgcFmKDi00-C",
+    "url": "https://drive.google.com/drive/folders/1memk6jwu6LWzoPHGg5uhDgcFmKDi00-C"
+  },
+  "files": {
+    "grader": {
+      "id": "1amb1EDJiOoBNBqeKU5653mhrdX7Caud4",
+      "url": "https://drive.google.com/file/d/1amb1EDJiOoBNBqeKU5653mhrdX7Caud4/view?usp=drivesdk",
+      "name": "NRB-v2.0.0-rc.1-python-grader.zip",
+      "bytes": 187976,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    },
+    "P01": {
+      "id": "1rKUiZMpVnOjffGTjt74uh7pWDdEVuUGY",
+      "url": "https://drive.google.com/file/d/1rKUiZMpVnOjffGTjt74uh7pWDdEVuUGY/view?usp=drivesdk",
+      "name": "P01.md",
+      "bytes": 3631,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    },
+    "P02": {
+      "id": "1nE9mMC_VaDwOnRozBrOZ6xuaHjryMvYe",
+      "url": "https://drive.google.com/file/d/1nE9mMC_VaDwOnRozBrOZ6xuaHjryMvYe/view?usp=drivesdk",
+      "name": "P02.md",
+      "bytes": 3988,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    },
+    "P03": {
+      "id": "1tHVGF99Nxp5qkRtmKHQrvUIPAnPRRpZL",
+      "url": "https://drive.google.com/file/d/1tHVGF99Nxp5qkRtmKHQrvUIPAnPRRpZL/view?usp=drivesdk",
+      "name": "P03.md",
+      "bytes": 4637,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    },
+    "P04": {
+      "id": "1HNQvjD0u2hbLkHdH84IaZryrEj9RDpgc",
+      "url": "https://drive.google.com/file/d/1HNQvjD0u2hbLkHdH84IaZryrEj9RDpgc/view?usp=drivesdk",
+      "name": "P04.md",
+      "bytes": 4888,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    },
+    "P05": {
+      "id": "1eTL33BsQfXZketP_pISwIbGu9YOuFUEE",
+      "url": "https://drive.google.com/file/d/1eTL33BsQfXZketP_pISwIbGu9YOuFUEE/view?usp=drivesdk",
+      "name": "P05.md",
+      "bytes": 5337,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    },
+    "P06": {
+      "id": "1r3oCAO-prgN_VO-in6FbvAQ_hwXyWdoa",
+      "url": "https://drive.google.com/file/d/1r3oCAO-prgN_VO-in6FbvAQ_hwXyWdoa/view?usp=drivesdk",
+      "name": "P06.md",
+      "bytes": 5303,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    },
+    "P07": {
+      "id": "1iWqtshSyhubjgu7G0k2-YvTDUcmFObyO",
+      "url": "https://drive.google.com/file/d/1iWqtshSyhubjgu7G0k2-YvTDUcmFObyO/view?usp=drivesdk",
+      "name": "P07.md",
+      "bytes": 7168,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    },
+    "P08": {
+      "id": "1mphQH3C0eYW-AcN2hL2RqN5zRd4RNp4N",
+      "url": "https://drive.google.com/file/d/1mphQH3C0eYW-AcN2hL2RqN5zRd4RNp4N/view?usp=drivesdk",
+      "name": "P08.md",
+      "bytes": 14783,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    },
+    "candidateBundle": {
+      "id": "1I2BrBLQGcc0WkPkwZbLFklkv1lgGzZbC",
+      "url": "https://drive.google.com/file/d/1I2BrBLQGcc0WkPkwZbLFklkv1lgGzZbC/view?usp=drivesdk",
+      "name": "NRB-v2.0.0-rc.1-python-candidates.zip",
+      "bytes": 28852,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    },
+    "historicalBundle": {
+      "id": "12Jhvarp2ydfFdNVc0DsL7qKUBBg3z_8X",
+      "url": "https://drive.google.com/file/d/12Jhvarp2ydfFdNVc0DsL7qKUBBg3z_8X/view?usp=drivesdk",
+      "name": "NRB-v1.1-historical-candidates.zip",
+      "bytes": 3514902,
+      "permissions": [
+        {
+          "type": "user",
+          "role": "owner",
+          "emailAddress": null,
+          "domain": null,
+          "displayName": null,
+          "allowFileDiscovery": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "scope": "relocated ZIP import, unchanged fingerprint, Docker-unavailable and invalid-UTF8 branches; no actual Docker execution",
+  "evaluator_fingerprint": "ee841ae2c0a1d98101f50f4d0b29e922275fd499ea9f37d05c8924bd86fa51c0",
+  "coverage": {
+    "submitted": 2,
+    "scored": 0,
+    "passed": 0,
+    "total": 8
+  },
+  "packet_zip_crc": true,
+  "shell_syntax": true,
+  "html_summary_created": true,
+  "invalid_submission_error_in_summary": true,
+  "test_note": "Initial packaging assertion expected a noncontract error sidecar; corrected to documented summary.error. No product change required."
+}

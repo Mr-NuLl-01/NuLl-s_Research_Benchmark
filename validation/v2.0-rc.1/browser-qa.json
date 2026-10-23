@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-23",
+  "preview_origin": "http://terminal.local:4173",
+  "production_user_records_touched": false,
+  "task_filter_return": true,
+  "full_packet_loaded": true,
+  "python_file_guidance": true,
+  "invalid_json_rejected": true,
+  "real_control_report_score": 100,
+  "control_excluded_from_model_comparison": true,
+  "save_then_refresh_persisted": true,
+  "backup_downloaded_and_parsed": true,
+  "backup_merge_restored": true,
+  "randomUUID_http_save_bug_fixed_and_retested": true,
+  "node_checks": 65,
+  "not_model_evaluation": true
+}

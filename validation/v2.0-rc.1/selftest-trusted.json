@@ -1,0 +1,1340 @@
+{
+  "kind": "reference_and_mutant_validation",
+  "not_model_performance": true,
+  "api_provider_calls": 0,
+  "benchmark_version": "2.0.0-rc.1",
+  "grader_version": "2.0.0-rc.1",
+  "evaluator_fingerprint": "ee841ae2c0a1d98101f50f4d0b29e922275fd499ea9f37d05c8924bd86fa51c0",
+  "source_commit": "81368ec7fa68bc1739eac3eab04c09d3ad3584ce",
+  "source_dirty": true,
+  "entries": [
+    {
+      "task_id": "P01",
+      "seed": 0,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P01",
+      "seed": 0,
+      "label": "duplicate_first",
+      "score": 78.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "duplicates_missing"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P01",
+      "seed": 0,
+      "label": "unweighted_summary",
+      "score": 25.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "parse_units",
+        "duplicates_missing"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "seed": 0,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "seed": 0,
+      "label": "technical_pseudoreplication",
+      "score": 64.285714,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "unequal_technical_repeats"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "seed": 0,
+      "label": "pooled_strata",
+      "score": 57.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "unequal_technical_repeats",
+        "stratum_target"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "seed": 0,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "seed": 0,
+      "label": "arithmetic_interface",
+      "score": 57.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "heterogeneous_conservative",
+        "source_fixed_mix"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "seed": 0,
+      "label": "lost_left_boundary_one_cell",
+      "score": 85.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "one_cell_two_boundaries"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 0,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 0,
+      "label": "amplitude_as_power",
+      "score": 35.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 0,
+      "label": "ignore_p_polarization",
+      "score": 55.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "oblique_absorbing_p",
+        "brewster_and_lossless",
+        "opaque_layer"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 0,
+      "label": "opaque_cutoff",
+      "score": 41.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p",
+        "opaque_layer"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 0,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 0,
+      "label": "accept_rejected_state",
+      "score": 47.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "stiff_rollback",
+        "right_continuous_schedule"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 0,
+      "label": "left_continuous_source",
+      "score": 78.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "right_continuous_schedule"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 0,
+      "label": "discard_small_remainder",
+      "score": 68.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "stiff_rollback",
+        "large_absolute_clock"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 0,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 0,
+      "label": "discard_baseline",
+      "score": 8.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "structurally_flat",
+        "weak_full_interval",
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 0,
+      "label": "ignore_sigma",
+      "score": 11.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval",
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 0,
+      "label": "conditional_information",
+      "score": 11.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval",
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 0,
+      "label": "legacy_grid_misses_endpoint_minimum",
+      "score": 85.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 0,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 0,
+      "label": "arithmetic_interface",
+      "score": 65.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "nonuniform_interfaces",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 0,
+      "label": "swap_tensor_directions",
+      "score": 37.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 0,
+      "label": "reverse_west_flux",
+      "score": 8.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "affine_harmonic",
+        "isotropic_manufactured",
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 0,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 0,
+      "label": "lagged_reaction_transfer",
+      "score": 20.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative",
+        "rank_deficient_uniform_initial"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 0,
+      "label": "reset_checkpoint_tangents",
+      "score": 55.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 0,
+      "label": "relative_sigma_covariance",
+      "score": 71.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 0,
+      "label": "reuse_bootstrap_noise",
+      "score": 85.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P01",
+      "seed": 17,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P01",
+      "seed": 17,
+      "label": "duplicate_first",
+      "score": 78.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "duplicates_missing"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P01",
+      "seed": 17,
+      "label": "unweighted_summary",
+      "score": 25.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "parse_units",
+        "duplicates_missing"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "seed": 17,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "seed": 17,
+      "label": "technical_pseudoreplication",
+      "score": 64.285714,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "unequal_technical_repeats"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "seed": 17,
+      "label": "pooled_strata",
+      "score": 57.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "unequal_technical_repeats",
+        "stratum_target"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "seed": 17,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "seed": 17,
+      "label": "arithmetic_interface",
+      "score": 57.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "heterogeneous_conservative",
+        "source_fixed_mix"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "seed": 17,
+      "label": "lost_left_boundary_one_cell",
+      "score": 85.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "one_cell_two_boundaries"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 17,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 17,
+      "label": "amplitude_as_power",
+      "score": 35.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 17,
+      "label": "ignore_p_polarization",
+      "score": 55.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "oblique_absorbing_p",
+        "brewster_and_lossless",
+        "opaque_layer"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 17,
+      "label": "opaque_cutoff",
+      "score": 41.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p",
+        "opaque_layer"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 17,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 17,
+      "label": "accept_rejected_state",
+      "score": 47.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "stiff_rollback",
+        "right_continuous_schedule"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 17,
+      "label": "left_continuous_source",
+      "score": 78.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "right_continuous_schedule"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 17,
+      "label": "discard_small_remainder",
+      "score": 68.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "stiff_rollback",
+        "large_absolute_clock"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 17,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 17,
+      "label": "discard_baseline",
+      "score": 8.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "structurally_flat",
+        "weak_full_interval",
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 17,
+      "label": "ignore_sigma",
+      "score": 11.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval",
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 17,
+      "label": "conditional_information",
+      "score": 11.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval",
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 17,
+      "label": "legacy_grid_misses_endpoint_minimum",
+      "score": 85.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 17,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 17,
+      "label": "arithmetic_interface",
+      "score": 65.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "nonuniform_interfaces",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 17,
+      "label": "swap_tensor_directions",
+      "score": 37.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 17,
+      "label": "reverse_west_flux",
+      "score": 8.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "affine_harmonic",
+        "isotropic_manufactured",
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 17,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 17,
+      "label": "lagged_reaction_transfer",
+      "score": 20.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative",
+        "rank_deficient_uniform_initial"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 17,
+      "label": "reset_checkpoint_tangents",
+      "score": 55.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 17,
+      "label": "relative_sigma_covariance",
+      "score": 71.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 17,
+      "label": "reuse_bootstrap_noise",
+      "score": 85.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P01",
+      "seed": 2026,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P01",
+      "seed": 2026,
+      "label": "duplicate_first",
+      "score": 78.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "duplicates_missing"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P01",
+      "seed": 2026,
+      "label": "unweighted_summary",
+      "score": 25.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "parse_units",
+        "duplicates_missing"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "seed": 2026,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "seed": 2026,
+      "label": "technical_pseudoreplication",
+      "score": 64.285714,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "unequal_technical_repeats"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "seed": 2026,
+      "label": "pooled_strata",
+      "score": 57.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "unequal_technical_repeats",
+        "stratum_target"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "seed": 2026,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "seed": 2026,
+      "label": "arithmetic_interface",
+      "score": 57.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "heterogeneous_conservative",
+        "source_fixed_mix"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "seed": 2026,
+      "label": "lost_left_boundary_one_cell",
+      "score": 85.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "one_cell_two_boundaries"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 2026,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 2026,
+      "label": "amplitude_as_power",
+      "score": 35.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 2026,
+      "label": "ignore_p_polarization",
+      "score": 55.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "oblique_absorbing_p",
+        "brewster_and_lossless",
+        "opaque_layer"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P04",
+      "seed": 2026,
+      "label": "opaque_cutoff",
+      "score": 41.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "oblique_absorbing_s",
+        "oblique_absorbing_p",
+        "opaque_layer"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 2026,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 2026,
+      "label": "accept_rejected_state",
+      "score": 47.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "stiff_rollback",
+        "right_continuous_schedule"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 2026,
+      "label": "left_continuous_source",
+      "score": 78.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "right_continuous_schedule"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P05",
+      "seed": 2026,
+      "label": "discard_small_remainder",
+      "score": 68.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "stiff_rollback",
+        "large_absolute_clock"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 2026,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 2026,
+      "label": "discard_baseline",
+      "score": 8.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "structurally_flat",
+        "weak_full_interval",
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 2026,
+      "label": "ignore_sigma",
+      "score": 11.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval",
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 2026,
+      "label": "conditional_information",
+      "score": 11.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_nuisance",
+        "known_sigma_scale",
+        "heteroscedastic_shared_D",
+        "negative_amplitude",
+        "one_sided_profile",
+        "weak_full_interval",
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P06",
+      "seed": 2026,
+      "label": "legacy_grid_misses_endpoint_minimum",
+      "score": 85.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "lower_endpoint_interior_minimum",
+        "upper_endpoint_interior_minimum"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 2026,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 2026,
+      "label": "arithmetic_interface",
+      "score": 65.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "nonuniform_interfaces",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 2026,
+      "label": "swap_tensor_directions",
+      "score": 37.142857,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P07",
+      "seed": 2026,
+      "label": "reverse_west_flux",
+      "score": 8.571429,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "affine_harmonic",
+        "isotropic_manufactured",
+        "directional_anisotropy",
+        "nonuniform_interfaces",
+        "refined_manufactured",
+        "high_contrast_interfaces",
+        "rectangular_nonuniform"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 2026,
+      "label": "reference",
+      "score": 100.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 2026,
+      "label": "lagged_reaction_transfer",
+      "score": 20.0,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative",
+        "rank_deficient_uniform_initial"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 2026,
+      "label": "reset_checkpoint_tangents",
+      "score": 55.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "pure_reaction_conservation",
+        "coupled_discrete_tangents",
+        "resume_nonzero_tangent_state",
+        "stiff_positive_conservative"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 2026,
+      "label": "relative_sigma_covariance",
+      "score": 71.428571,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "noiseless_two_parameter_inverse",
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "error": null
+    },
+    {
+      "task_id": "P08",
+      "seed": 2026,
+      "label": "reuse_bootstrap_noise",
+      "score": 85.714286,
+      "execution_status": "executed",
+      "passed": true,
+      "unscored": false,
+      "critical_failures": [
+        "absolute_sigma_parametric_bootstrap"
+      ],
+      "error": null
+    }
+  ],
+  "passed": true,
+  "unscored_count": 0
+}

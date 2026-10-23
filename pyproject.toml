@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "null-research-benchmark"
-version = "1.1.0"
-description = "Ten scientific-coding tasks, six research tasks, and five optional tasks with isolated video bundles"
+version = "2.0.0rc1"
+description = "NRB V2 phase one: eight automatically graded Python tasks and a 20-task research benchmark plan"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
 readme = "README.md"
@@ -19,6 +19,7 @@ render = ["CairoSVG==2.8.2"]
 [project.scripts]
 nrb = "nrb.cli:main"
 nrb-v1 = "nrb_v1.cli:main"
+nrb-v2 = "nrb_v2.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["nrb*"]

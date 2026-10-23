@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light"><meta name="description" content="NuLl 科研 AI Benchmark 私人实验簿：题库、自动验证报告与同条件模型比较。">
+  <title>实验簿 · 科研 AI Benchmark</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><span class="mark" aria-hidden="true">▤</span><span>实验簿<small>RESEARCH BENCHMARK</small></span></a>
+    <div class="workspace"><span class="workspace-icon" aria-hidden="true">研</span><div>私人研究空间<small>V2 第一轮 · Python</small></div></div>
+    <p class="nav-label">工作台</p>
+    <nav aria-label="主导航">
+      <a href="#overview" data-page="overview"><span aria-hidden="true">◫</span>总览</a>
+      <a href="#library" data-page="library"><span aria-hidden="true">▦</span>分级题库 <i>20</i></a>
+      <a href="#runs" data-page="runs"><span aria-hidden="true">☷</span>测试记录 <i id="run-count">0</i></a>
+      <a href="#compare" data-page="compare"><span aria-hidden="true">⇄</span>模型比较</a>
+    </nav>
+    <div class="side-secondary"><a href="#guide" data-page="guide">使用指南</a><a href="#history" data-page="history">V1.1 历史题库</a></div>
+    <div class="side-bottom"><details><summary>保存与备份</summary><p>记录保存在当前浏览器。导出备份后，可以在其他浏览器导入恢复。</p><button class="text-button" data-export>↓ 导出所有记录</button><button class="text-button" data-import>↑ 导入记录备份</button></details></div>
+  </aside>
+  <div class="content">
+    <header><span class="crumb">私人研究空间 <span>/</span> <strong id="breadcrumb">总览</strong></span><span class="prototype">第一轮 <span>8 / 20 已开放</span></span></header>
+    <main id="main" tabindex="-1"><p>正在载入题库…</p></main>
+    <footer>NuLl's Research Benchmark · 私人实验簿<span>Python 自动判分 · 本地报告导入 · 记录保存在浏览器</span></footer>
+  </div>
+</div>
+<dialog id="metadata-dialog" aria-labelledby="metadata-title">
+  <div class="dialog-top"><h2 id="metadata-title">编辑测试信息</h2><button class="icon-button" aria-label="关闭编辑" data-close="metadata-dialog">×</button></div>
+  <div id="metadata-body"></div>
+</dialog>
+<dialog id="confirm-dialog" aria-labelledby="confirm-title">
+  <div class="dialog-top"><h2 id="confirm-title">确认操作</h2><button class="icon-button" aria-label="关闭确认" data-close="confirm-dialog">×</button></div>
+  <div id="confirm-body"></div>
+</dialog>
+<input id="backup-file" type="file" accept=".json,application/json" hidden>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="tasks-data.js"></script><script src="release-data.js"></script><script src="report-validation.js"></script><script src="app.js"></script>
+</body>
+</html>
